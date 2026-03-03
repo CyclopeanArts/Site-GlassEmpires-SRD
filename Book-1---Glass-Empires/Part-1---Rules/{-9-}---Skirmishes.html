@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>{ 9 } - Skirmishes — Glass Empires</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Glass Empires SRD"/><meta property="og:title" content="{ 9 } - Skirmishes — Glass Empires"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="{ 9 } - Skirmishes — Glass Empires"/><meta name="twitter:description" content="One of the two potential playmodes for resolving combat."/><meta property="og:description" content="One of the two potential playmodes for resolving combat."/><meta property="og:image:alt" content="One of the two potential playmodes for resolving combat."/><meta property="twitter:domain" content="cyclopeanarts.github.io/Site-GlassEmpires-SRD"/><meta property="og:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-9-}---Skirmishes"/><meta property="twitter:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-9-}---Skirmishes"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="One of the two potential playmodes for resolving combat."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvbm9pcmUvQ3ljbG9wZWFuL0dsYXNzLUVtcGlyZXMvU1JELXF1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-9-}---Skirmishes-og-image.webp"/><meta property="og:image:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-9-}---Skirmishes-og-image.webp"/><meta name="twitter:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-9-}---Skirmishes-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Book-1---Glass-Empires/Part-1---Rules/{-9-}---Skirmishes"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">Glass Empires SRD</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-16"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-16" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/">Book 1   Glass Empires</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/Part-1---Rules/">Part 1   Rules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>{ 9 }   Skirmishes</a></div></nav><h1 class="article-title">{ 9 } - Skirmishes</h1><p show-comma="true" class="content-meta"><time datetime="2026-03-03T02:58:30.279Z">Mar 02, 2026</time><span>12 min read</span></p></div></div><article class="popover-hint"><p>One of the two potential playmodes for resolving combat. <strong>Skirmishes</strong> are intended for detailed or intricate fast-paced combat between a small number of relatively powerful individuals in a constrained combat area. They take longer to resolve than Battles and should be restrained to combats that hold a great deal of significance to the game.</p>
+<p>Battles take place as a series of <strong>Rounds</strong>. Each Round represents a brief period of time (a few seconds) wherein each character receives a <strong>Turn</strong> on which they may perform <strong>Actions</strong> (extremely short-duration Moves) to eliminate their enemies or otherwise secure their objectives.</p>
+<p>Skirmishes require the following components for a battle:</p>
+<ul>
+<li>A map of the battlefield &amp; its terrain;</li>
+<li>Some means of measurement of distance — by default, a ruler;</li>
+<li>Markers to indicate combatant locations.</li>
+</ul>
+<h2 id="round-order">Round Order<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#round-order" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Rounds in Skirmishes have 3 phases.</p>
+<ol>
+<li>The GM provides the players a brief overview of the current situation, if necessary. He informs them of what the enemies appear to be planning on doing this Round; he may fully describe the intended Actions of slower NPCs, and not at all the Actions of faster NPCs at his discretion.</li>
+<li>All players take Turns in whichever order they figure (or simultaneously).</li>
+<li>All enemies take their Turns in whichever order the GM determines (or simultaneously).</li>
+</ol>
+<p>Some characters may have Features that let them act <em>before</em> or <em>after</em> all other characters. In such a case, the Round phases look more like this:</p>
+<ol>
+<li>Overview provided</li>
+<li>Fast characters take Turns</li>
+<li>Ordinary characters take Turns</li>
+<li>Slow characters take Turns</li>
+</ol>
+<p>In <em>all</em> cases, PCs move before NPCs. If for any reason two NPCs or PCs are fighting each other, assign odds to &amp; roll a d6 to determine who goes first.</p>
+<h3 id="surprise-rounds">Surprise Rounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#surprise-rounds" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A <strong>Surprise Round</strong> is a special kind of Round where <em>only</em> characters who are ambushing another set of combatants may act.</p>
+<h2 id="turns--actions">Turns &amp; Actions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turns--actions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>On their Turn, characters may:</p>
+<ul>
+<li>Take 1 <strong>Major Action</strong> &amp; 1 <strong>Minor Action</strong>.
+<ul>
+<li>A Major Action can be used to take a Minor Action, but not vice-versa.</li>
+</ul>
+</li>
+<li>Take as many <strong>Free Actions</strong> as desired.</li>
+<li>Take a <strong>Full-Turn Action</strong> if they perform no Movement &amp; take <em>no</em> other Actions on their Turn (excepting Free Actions).</li>
+</ul>
+<h2 id="-movement--space-in-a-skirmish">@ Movement &amp; Space in a Skirmish<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-movement--space-in-a-skirmish" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Glass Empires by default uses a <em>gridless</em> approach to combat.</p>
+<h3 id="character-size">Character Size<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#character-size" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A character occupies a cylindrical battlefield area whose diameter &amp; height is equal to their Size. If you’re using miniatures, you should try to make sure their bases are scaled appropriately to the battlefield scale in use.</p>
+<h3 id="measuring-distance">Measuring Distance<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#measuring-distance" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A ruler is recommended! Any scale can be used for a given combat space so long as everyone’s using the same measurement system. The recommended scale is 1” of map space per 5ft in-game.</p>
+<p>Character movement rate, when reduced or increased over a part of a journey, is measured from the <em>point of impairment</em> to the <em>end</em> of it.</p>
+<h4 id="mixing-speed-scores">Mixing Speed Scores<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mixing-speed-scores" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>If a character uses multiple Speed scores for movement on their Turn, the <em>lowest</em> Speed score is the cap on how far the character can Move in total, overriding any higher scores used.</p>
+<h4 id="compelled-movement">Compelled Movement<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#compelled-movement" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Compelled movement, such as falling, being shoved, or knockback is not counted against a character’s Speed score for determining movement rate or total moved distance during their Turn(s).</p>
+<h3 id="difficult-terrain">Difficult Terrain<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#difficult-terrain" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Terrain or space that’s unusually difficult to navigate smoothly (such as stairs or thin suspended boards/walkways) halves a character’s movement rate.</p>
+<h3 id="trampling">Trampling<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#trampling" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Actors may move through the space of foes whose Weight is less than one-tenth their own. If they are <strong>Dashing</strong>, <strong>Sprinting</strong>, or <strong>Charging</strong>, they deal 5 Physical Damage in the process to anyone in the way. If their Weight is less than one-hundredth their own, the Damage is increased to 50.</p>
+<h2 id="skirmish-actions">Skirmish Actions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#skirmish-actions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Skirmish Actions are Moves that take a very brief amount of time to resolve. These Moves can be used outside of Skirmishes to resolve what can be accomplished with short-term action durations — generally speaking, a <em>moment’s notice</em> in reaction time is a single Major Action.</p>
+<h3 id="attack-major-action">Attack (Major Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#attack-major-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Declare a single target who you intend to harm &amp; how (kill, shove, knock out). If the defender allows it, it happens. If not, perform 1 or more Strikes; by default, characters receive 1 Strike per Attack (but may receive more through Features or other abilities).</p>
+<p>In order to attack a target, they must be within your weapon’s <strong>reach</strong>. A character’s melee reach is equal to their Size by default. Ranged attacks use the weapon’s listed range as its reach.</p>
+<p>To perform a Strike against a chosen valid target, choose an available weapon &amp; roll a Save. <strong>You may not add personal Fact bonuses to a Save</strong>, but should otherwise add factors such as the environment, Conditions, &amp; the like.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Strike Save Effects</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>The defender suffers the weapon’s effects at twice the normal severity (normally, by doubling Damage taken).</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>The defender suffer’s the weapon’s effects, including Damage taken.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>The defender suffers the weapon’s effects with <em>halved</em> normal severity (normally, by halving Damage taken; round down).</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>Your Strike is deflected, poorly aimed, or otherwise a failure.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>Your Strike fails &amp; if you’re using a windgun or weapon with Reload, it’s jammed or requires reloading.</td></tr></tbody></table></div>
+<p>If your Strike deals enough Damage to outright <em>kill</em> the defender, you receive the Action you spent on your Attack back.</p>
+<h4 id="ranged-weapon-rules">Ranged Weapon Rules<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ranged-weapon-rules" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>The following extra rules apply only to ranged attacks.</p>
+<ul>
+<li><strong>Out of Range</strong>: Ranged attacks may be performed at up to <em>twice</em> a weapon’s listed range, but when doing so, each Strike Save suffers a −1 penalty.</li>
+<li><strong>Firing into Melee</strong>: When firing on a foe engaged in melee, the victim is chosen by random die roll from among all those visible within that foe’s melee reach whose Heights are greater than half the intended target’s Height.</li>
+<li><strong>Cover</strong>: If the target has low/weak cover (half a character’s Height), ranged attacks’ Strike Saves suffer a −2 penalty. If the target has high/strong cover (covering their whole body), it’s a −4 penalty.</li>
+</ul>
+<h4 id="the-angry-step">The Angry Step<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-angry-step" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>While starting an Attack Action &amp; while not suffering any terrain or Condition that limits or alters your free movement, you may choose to move a distance up to or equal to your melee reach before making any Strikes. This extra distance is called <strong>the Angry Step</strong> &amp; it does not count against your movement for your Turn.</p>
+<h3 id="cast-major-action">Cast (Major Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cast-major-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Perform the Spellcasting Move (p. @).</p>
+<h3 id="dash-full-turn-action">Dash (Full-Turn Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#dash-full-turn-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Move up to twice any of your Speed scores. You must Save to pass through any form of difficult or slowing terrain without falling.</p>
+<h3 id="sprint-full-turn-action">Sprint (Full-Turn Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#sprint-full-turn-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Move <em>at least</em> &amp; <em>up to 3×</em> any of your Speed scores, turning no more than 45° throughout the entire distance. You must Save to pass through any form of difficult or slowing terrain without falling.</p>
+<h3 id="charge-full-turn-action">Charge (Full-Turn Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#charge-full-turn-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Move <em>at least</em> &amp; <em>up to 3×</em> any of your Speed scores in a <em>straight unobstructed line</em> &amp; then perform an Attack at the end as per the Attack Action’s rules. At the end of the Attack, the target, if less than half your Weight, must Save or Panic.</p>
+<h3 id="interact-minor-action">Interact (Minor Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#interact-minor-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Swap items around in your hands, sheathe or draw a weapon, pick up an item within your reach, or interact with something nearby (lever, door, etc). Light a torch, lantern, or flask.</p>
+<h3 id="take-coverstand-up-minor-action">Take Cover/Stand Up (Minor Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#take-coverstand-up-minor-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Become <strong>Prone</strong> (p. @) <em>or</em> recover from the Prone Condition.</p>
+<h3 id="reloadunjam-major-action">Reload/Unjam (Major Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#reloadunjam-major-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Reload or unjam a crossbow or windgun.</p>
+<h3 id="set-down-gently-major-action">Set Down Gently (Major Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#set-down-gently-major-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Set something down gently without damaging it — especially bags, backpacks, or fragile items.</p>
+<h3 id="search-your-pack-full-turn-action">Search Your Pack (Full-Turn Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#search-your-pack-full-turn-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Search a backpack or other bag for a specific item &amp; pull it into your hand.</p>
+<h3 id="jump-minor-action">Jump (Minor Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#jump-minor-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Attempt a jump as per the rules for jumping (p. @).</p>
+<h3 id="movement-minor-action">Movement (Minor Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#movement-minor-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Move a distance up to one of your Speed scores (Run, Dig, Swim, Fly) across the appropriate medium. Keep in mind:</p>
+<ul>
+<li>You may not take other Actions while in the middle of a Move; you must end your Move first.</li>
+<li>Be mindful of <strong>Engagement</strong> (p. @) &amp; <strong>Grappling</strong> (p. @), which punish &amp; prevent normal movement respectively.</li>
+<li>You may not move through space occupied by a foe or stop within space occupied by an ally.</li>
+</ul>
+<h3 id="disengage-free-action">Disengage (Free Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#disengage-free-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Break Engagement (p. @) with any number of enemies. If you don’t <em>also</em> move to a location outside their melee reach by the end of your Turn, you’ll be Engaged again.</p>
+<h3 id="shove-minor-action">Shove (Minor Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#shove-minor-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Save to shove a target in any direction that moves them further away from you. Use the adjacent Weight modifier table in addition to any other modifiers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>The opponent is…</th><th style="text-align:center;">Mod</th></tr></thead><tbody><tr><td>≥10× heavier</td><td style="text-align:center;">−4</td></tr><tr><td>≥2× heavier</td><td style="text-align:center;">−2</td></tr><tr><td>At least 10% heavier</td><td style="text-align:center;">−1</td></tr><tr><td>About the same</td><td style="text-align:center;">N/A</td></tr><tr><td>At least 10% lighter</td><td style="text-align:center;">+1</td></tr><tr><td>≥2× lighter</td><td style="text-align:center;">+2</td></tr><tr><td>≥10× lighter</td><td style="text-align:center;">+4</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Shove Save Effects</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>Target moves up to four times their Size in distance.</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>Target moves up to twice their Size in distance.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>Target moves up to their Size in distance, but may choose to pull you an equal distance along with them (into their previously occupied space), maintaining Engagement and/or initiating a Grapple if the target desires.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>Target doesn’t move.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>Target may push <em>you</em> up to <em>your</em> Size in distance.</td></tr></tbody></table></div>
+<p>Shoving may break Engagement &amp; Grappling automatically if the shover wishes; the shover may also <em>follow</em> the shoved into the space they used to occupy if desired.</p>
+<h3 id="grappling-minor-action">Grappling (Minor Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#grappling-minor-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If you have at least one free hand, you can Save to <strong>Grapple</strong> an opponent. Use the adjacent Weight modifier table in addition to any other modifiers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>The opponent is…</th><th style="text-align:center;">Mod</th></tr></thead><tbody><tr><td>≥10× heavier</td><td style="text-align:center;">−4</td></tr><tr><td>≥2× heavier</td><td style="text-align:center;">−2</td></tr><tr><td>At least 10% heavier</td><td style="text-align:center;">−1</td></tr><tr><td>About the same</td><td style="text-align:center;">N/A</td></tr><tr><td>At least 10% lighter</td><td style="text-align:center;">+1</td></tr><tr><td>≥2× lighter</td><td style="text-align:center;">+2</td></tr><tr><td>≥10× lighter</td><td style="text-align:center;">+4</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Grapple Save Effects</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>Target is Grappled &amp; may also be knocked Prone if desired.</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>Target is Grappled.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>Target can <em>choose</em> to enter a Grapple, but you don’t receive any benefits from this until the start of your next Turn.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>Target can <em>choose</em> to enter a Grapple, but you don’t receive any benefits from this until the start of your next Turn.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>Target can <em>choose</em> to enter a Grapple, but you don’t receive any benefits from this until the start of your next Turn, &amp; if they do so they can also knock you Prone.</td></tr></tbody></table></div>
+<h4 id="condition-grappled">Condition: Grappled<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#condition-grappled" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Grappling is a Condition that affects <em>both</em> characters. Neither character can move except by Shoving the other, which is also the only way to break a Grapple. Melee attacks gain a +2 to hit anyone in a Grapple, even if the attacker is outside the Grapple.</p>
+<p>Characters who are more than twice the Weight of the largest opponent in a Grapple may freely move around, dragging the Grapple with them.</p>
+<h3 id="extinguish-fire-full-turn-action">Extinguish Fire (Full-Turn Action)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#extinguish-fire-full-turn-action" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Drop to the ground (becoming <strong>Prone</strong>) &amp; simultaneously remove your own <strong>Burning</strong> Condition (p. @).</p>
+<h2 id="engagement">Engagement<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#engagement" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>When you enter an enemy’s reach, you become <strong>Engaged</strong> with them. Not as in marriage; rather, if you attempt to <em>leave</em> their reach without first taking a Disengage Action (p. @), they may perform a free Strike (p. @) on you with any valid weapon. Characters may perform <em>any number</em> of free Strikes in response to enemies leaving their reach without first disengaging.</p>
+<h2 id="flightpursuit">Flight/Pursuit<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#flightpursuit" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Flight &amp; pursuit is played out as a single Round of Battle (p. @) between all pursued &amp; pursuers.</p>
+<h2 id="panic--fear">Panic &amp; Fear<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#panic--fear" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Characters Save to avoid Panic (synonymous with  terror, fear, etc.) when any of the following happens:</p>
+<ul>
+<li>Their Group is harmed by a Strike for the first time.</li>
+<li>They personally reach ½ HP.</li>
+<li>When charged with threat of trampling.</li>
+<li>Whenever something spectacular, frightening, or sorcerous happens.</li>
+<li>A hostile Spell is cast whose HD exceeds their HD.</li>
+</ul>
+<p>Panicked NPCs flee from the source of their battle. Panicked PCs take doubled Damage (&amp; other negative effects/durations, where applicable) from <em>all</em> sources.</p>
+<p>Panic lasts until the end of combat. If Panic occurs outside of combat, it lasts for 1 hour; NPCs who are Panicked outside of combat will flee from it &amp; otherwise be anxiously trying to avoid the source of their fear.</p>
+<h2 id="mounted-combat">Mounted Combat<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mounted-combat" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Mounts are <em>combatants</em> if they’re either sapient or carnivorous. Otherwise, they’re noncombatants. The following adjustments apply for mounts &amp; their riders:</p>
+<ul>
+<li><strong>Saddles</strong>: Riders without saddles must Save each time the mount takes damage or fall from a distance equal to half the mount’s Size.</li>
+<li><strong>Incapacitation</strong>: If a mount or rider is Incapacitated (p. @) or killed, the rider(s) must Save or fall from their saddle(s). A non-combatant mount will flee battle if all riders are Incapacitated or killed.</li>
+<li><strong>Movement</strong>: Uses the mount’s scores.</li>
+<li><strong>Attacks</strong>: Non-combatant mounts can only attack with their rider during a Charge Action. Combatant mounts get their own set of Actions on their rider’s Turn.</li>
+</ul>
+<p>Sapient or Panicked (p. @) mounts may ignore their riders’ wishes &amp; take erratic action at the GM’s discretion.</p>
+<h2 id="condition-concentration">Condition: Concentration<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#condition-concentration" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Concentration</strong> is a Condition for characters who are preoccupied with an ongoing activity &amp; cannot focus clearly. Concentration ends if a character takes any amount of Damage or falls under a Condition that precludes Concentration (such as being Incapacitated). In addition, characters may have to Save up to once per round to maintain Concentration if exposed to violent motion (a moving mount, ship deck in a storm) or violent weather (blinding rain, hail).</p>
+<p>If a character loses Concentration, whatever task they were focused on fails automatically.</p>
+<h2 id="condition-burning--ignition">Condition: Burning &amp; Ignition<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#condition-burning--ignition" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Characters who are <em>ignited</em> catch the <strong>Burning</strong> Condition. While Burning, at the start of each of their Turns, characters must Save or take [Power] Fire Damage.</p>
+<p>The Burning Condition ends if a character is submerged in water. Characters may also receive a Save to attempt to put out a fire by spending a Full-Turn Action rolling on the ground.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-9" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#round-order" data-for="round-order">Round Order</a></li><li class="depth-1"><a href="#surprise-rounds" data-for="surprise-rounds">Surprise Rounds</a></li><li class="depth-0"><a href="#turns--actions" data-for="turns--actions">Turns &amp; Actions</a></li><li class="depth-0"><a href="#-movement--space-in-a-skirmish" data-for="-movement--space-in-a-skirmish">@ Movement &amp; Space in a Skirmish</a></li><li class="depth-1"><a href="#character-size" data-for="character-size">Character Size</a></li><li class="depth-1"><a href="#measuring-distance" data-for="measuring-distance">Measuring Distance</a></li><li class="depth-1"><a href="#difficult-terrain" data-for="difficult-terrain">Difficult Terrain</a></li><li class="depth-1"><a href="#trampling" data-for="trampling">Trampling</a></li><li class="depth-0"><a href="#skirmish-actions" data-for="skirmish-actions">Skirmish Actions</a></li><li class="depth-1"><a href="#attack-major-action" data-for="attack-major-action">Attack (Major Action)</a></li><li class="depth-1"><a href="#cast-major-action" data-for="cast-major-action">Cast (Major Action)</a></li><li class="depth-1"><a href="#dash-full-turn-action" data-for="dash-full-turn-action">Dash (Full-Turn Action)</a></li><li class="depth-1"><a href="#sprint-full-turn-action" data-for="sprint-full-turn-action">Sprint (Full-Turn Action)</a></li><li class="depth-1"><a href="#charge-full-turn-action" data-for="charge-full-turn-action">Charge (Full-Turn Action)</a></li><li class="depth-1"><a href="#interact-minor-action" data-for="interact-minor-action">Interact (Minor Action)</a></li><li class="depth-1"><a href="#take-coverstand-up-minor-action" data-for="take-coverstand-up-minor-action">Take Cover/Stand Up (Minor Action)</a></li><li class="depth-1"><a href="#reloadunjam-major-action" data-for="reloadunjam-major-action">Reload/Unjam (Major Action)</a></li><li class="depth-1"><a href="#set-down-gently-major-action" data-for="set-down-gently-major-action">Set Down Gently (Major Action)</a></li><li class="depth-1"><a href="#search-your-pack-full-turn-action" data-for="search-your-pack-full-turn-action">Search Your Pack (Full-Turn Action)</a></li><li class="depth-1"><a href="#jump-minor-action" data-for="jump-minor-action">Jump (Minor Action)</a></li><li class="depth-1"><a href="#movement-minor-action" data-for="movement-minor-action">Movement (Minor Action)</a></li><li class="depth-1"><a href="#disengage-free-action" data-for="disengage-free-action">Disengage (Free Action)</a></li><li class="depth-1"><a href="#shove-minor-action" data-for="shove-minor-action">Shove (Minor Action)</a></li><li class="depth-1"><a href="#grappling-minor-action" data-for="grappling-minor-action">Grappling (Minor Action)</a></li><li class="depth-1"><a href="#extinguish-fire-full-turn-action" data-for="extinguish-fire-full-turn-action">Extinguish Fire (Full-Turn Action)</a></li><li class="depth-0"><a href="#engagement" data-for="engagement">Engagement</a></li><li class="depth-0"><a href="#flightpursuit" data-for="flightpursuit">Flight/Pursuit</a></li><li class="depth-0"><a href="#panic--fear" data-for="panic--fear">Panic &amp; Fear</a></li><li class="depth-0"><a href="#mounted-combat" data-for="mounted-combat">Mounted Combat</a></li><li class="depth-0"><a href="#condition-concentration" data-for="condition-concentration">Condition: Concentration</a></li><li class="depth-0"><a href="#condition-burning--ignition" data-for="condition-burning--ignition">Condition: Burning &amp; Ignition</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript.js" type="module" data-persist="true"></script></html>

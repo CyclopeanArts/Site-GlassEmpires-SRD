@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>{ 7 } - Adventure — Glass Empires</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Glass Empires SRD"/><meta property="og:title" content="{ 7 } - Adventure — Glass Empires"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="{ 7 } - Adventure — Glass Empires"/><meta name="twitter:description" content="@ This playmode is applicable to when you’re adjudicating the adventure &amp; movement of a handful of characters through dangerous environments."/><meta property="og:description" content="@ This playmode is applicable to when you’re adjudicating the adventure &amp; movement of a handful of characters through dangerous environments."/><meta property="og:image:alt" content="@ This playmode is applicable to when you’re adjudicating the adventure &amp; movement of a handful of characters through dangerous environments."/><meta property="twitter:domain" content="cyclopeanarts.github.io/Site-GlassEmpires-SRD"/><meta property="og:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-7-}---Adventure"/><meta property="twitter:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-7-}---Adventure"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="@ This playmode is applicable to when you’re adjudicating the adventure &amp; movement of a handful of characters through dangerous environments."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvbm9pcmUvQ3ljbG9wZWFuL0dsYXNzLUVtcGlyZXMvU1JELXF1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-7-}---Adventure-og-image.webp"/><meta property="og:image:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-7-}---Adventure-og-image.webp"/><meta name="twitter:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-7-}---Adventure-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Book-1---Glass-Empires/Part-1---Rules/{-7-}---Adventure"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">Glass Empires SRD</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-14"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-14" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/">Book 1   Glass Empires</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/Part-1---Rules/">Part 1   Rules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>{ 7 }   Adventure</a></div></nav><h1 class="article-title">{ 7 } - Adventure</h1><p show-comma="true" class="content-meta"><time datetime="2026-03-03T14:19:17.684Z">Mar 03, 2026</time><span>24 min read</span></p></div></div><article class="popover-hint"><p>@ This playmode is applicable to when you’re adjudicating the adventure &amp; movement of a handful of characters through dangerous environments.</p>
+<blockquote>
+<p>tldr: everything in this section is specifically for “how does [my character] interact with [the world] in a way that makes sense?”. it’s for resolving basic low-level tensions. it’s VERY STANDARD and covered in almost every RPG, and it is therefore in need of being SEPARATED by a GREAT WALL from our more interesting stuff about Factions. @@@</p>
+</blockquote>
+<h2 id="-encumbrance">@ Encumbrance<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-encumbrance" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>10lb is <strong>1 stone</strong> (<strong>1#</strong>). Everything is weighed in stone.</p>
+<p>Characters have a <strong>Max. Load</strong> indicating how many stone they can carry safely (assuming they have storage for those goods). Each hand can hold up to 1# <em>independently</em> from your Max. Load. The impact of encumbrance depends on how much of a character’s Max. Load is occupied:</p>
+<ul>
+<li><strong>Up to half</strong> (rounded up): No effect.</li>
+<li><strong>Up to full</strong>: Suffer the <strong>Encumbered</strong> Condition.</li>
+<li><strong>More than full</strong>: You cannot <em>usefully</em> move.</li>
+</ul>
+<p>Characters can Save to <em>deadlift</em> up to twice their Max. Load for up to 1 Round (10 seconds), after which they must Save again.</p>
+<p><strong>Small Items</strong>: Most small items weighing less than 1# but more than 2lb weigh ¼#. Smaller items are weightless. Items sold as bundles in the marketplace weigh their listed weight for a bundle of that quantity.</p>
+<p><strong>Item Slots &amp; Cards</strong>: On your sheet, Max. Load is represented by 1½” item slots on the edge of the sheet. 1 slot is 1#. Items weighing ¼# can be stacked up to 4 per slot. Print out item cards &amp; attach them with paperclips, or just write in the spaces with a pencil.</p>
+<h4 id="encumbrance-condition">Encumbrance Condition<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#encumbrance-condition" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>While <strong>Encumbered</strong>, characters halve their effective Speed scores while measuring long-distance travel. Short-term movement rates such as in combat are not affected.</p>
+<p>In addition, being Encumbered is a −1 penalty on Saves made for dexterity or agility. This does not include Strike Saves made for Attacks.</p>
+<h2 id="-move-foresight">@ Move: Foresight<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-move-foresight" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>PCs are generally assumed to be competent &amp; to also notice a variety of details &amp; niche planning that their players may not have had the time or focus to realize. For this reason, when presented with challenges or obstacles that weren’t explicitly foreseen but that may have potentially come up in off-screen planning or logistical actions, players may assert <strong>foresight</strong> by stating an action their PC made in advance to deal with the situation &amp; making a Save to determine if their PC was active, wise, or perceptive enough to have done so.</p>
+<p>The criteria for foresight is as follows:</p>
+<ul>
+<li>Doesn’t require knowing anything the PCs had <em>absolutely no way</em> of knowing.</li>
+<li>Doesn’t require things or events that are absolutely impossible or that contradict anything that’s already been established within the game world.</li>
+<li>No other PC has attempted to have foresight over this specific obstacle.</li>
+</ul>
+<p>You may receive a penalty on your Save depending on how complex &amp; unlikely the action you want to take was, which fills in for the ordinary situational penalties a GM may apply on a case-by-case basis:</p>
+<ul>
+<li><strong>No penalty</strong>: Ordinary action which you had ample opportunity to perform.
+<ul>
+<li>Was the action trivial to perform?</li>
+<li>If it wasn’t trivial to perform, was it at least cheap &amp; the benefits foreseeable?</li>
+</ul>
+</li>
+<li><strong>−2 penalty</strong>: Complex action or unlikely opportunities.
+<ul>
+<li>Does the plan have several moving parts?</li>
+<li>Does it rely on additional events which weren’t guaranteed?</li>
+<li>Did the preparation rely on Retainers or other servants with an incomplete grasp of the motives at play, or a reason to interfere?</li>
+</ul>
+</li>
+<li><strong>−4 penalty</strong>: Exceptionally elaborate, specialized, or implausible actions or research.
+<ul>
+<li>Does it rely on unlikely facts about the world that are <em>unestablished</em> or <em>uncorroborated</em> — facts that are made up on the spot by the player?</li>
+<li>Did the players have at best a very tenuous opportunity to acquire information critical to the foresight?</li>
+<li>Secretly, by GM’s judgement: Is the Player relying on an entity that <em>wanted</em> to betray or sabotage them &amp; that would have seen this sabotage as worth the risk?</li>
+</ul>
+</li>
+</ul>
+<p>While most normal situational penalties are wrapped up in this scale, characters may still add various bonuses from their Facts and other relevant modifiers to the Save.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Foresight Save Effect</th></tr></thead><tbody><tr><td style="text-align:center;">Crit &amp; Pass<br/><em>8–11</em></td><td>You planned in advance what you needed to overcome this specific obstacle more or less as stated.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>You have something similar to but insufficient for the task at hand, originally intended for a different contingency — at least enough for a +1 bonus to a Save, if that’s what you’re trying to overcome. If no partial preparation is obviously possible, you suffer a Failure instead.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>You failed to have foresight &amp; have nothing special prepared.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>You were <em>catastrophically wrong</em> in your efforts. The situation at hand is as bad as the worst thing the GM can think of given the preparation you claimed to have done.</td></tr></tbody></table></div>
+<h2 id="conditions">Conditions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#conditions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Conditions</strong> are <em>temporary</em> Facts that affect characters or objects in various ways. Most are harmful, but some can be helpful in certain situations. Conditions last until narratively countered (i.e. being Prone is countered by taking the Stand Up Action) or until a specified duration elapses.</p>
+<p>Generally, Conditions behave like Facts with special rules attached. They can be invoked by players &amp; GMs for ±1 modifiers on applicable Saves.</p>
+<p>Characters cannot suffer more than one Condition of the same type at once. If they would &amp; the new duration is longer than the current one, the duration of their existing Condition is extended to meet it.</p>
+<h2 id="damage-incapacitation--death">Damage, Incapacitation &amp; Death<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#damage-incapacitation--death" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Characters lose 1 HP per point of <strong>Damage</strong> dealt to them. If a character is reduced to 0 or less HP, the character is <strong>Incapacitated</strong>. (Characters can have infinite negative HP.)</p>
+<p>Incapacitated characters are unconscious &amp; essentially useless.</p>
+<p>When a character <em>becomes</em> Incapacitated or has <em>just</em> lost additional HP while already Incapacitated, roll all their Hit Dice as d6 dice &amp; compare:</p>
+<ul>
+<li>If the result is more than their current negative HP (i.e. a roll of 6 vs HP −5), they’re still hanging onto life.</li>
+<li>If the result added to their current HP is less than 0, <strong>they die</strong>.</li>
+</ul>
+<p>If an Incapacitated character is left alone for an hour, he may Save to revive himself with a Wound (p. @). If he fails, <strong>he dies</strong>. If a character arrives to assist him before that hour is up, he may add a +2 bonus to his Save for being assisted &amp; may also borrow the assistant’s Facts (i.e. Lessons pertaining to being a doctor, etc.) while making his Save.</p>
+<h3 id="funerals">Funerals<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#funerals" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>The survivors of characters who die may have a Jester (p. @) host a funeral (p. @) to alert a psychopomp to the dead soul in need of ferrying.</p>
+<h3 id="armor--armor-points">Armor &amp; Armor Points<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#armor--armor-points" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Armor</strong> is a score (usually from 1 to 4) granted by equipment or Features that lets a character gain <strong>Armor Points</strong> (hereafter AP), which is essentially a backup pool of HP.</p>
+<p>If a character has AP &amp; takes Damage, they may deplete their AP before subtracting Damage from their HP. If you run out of AP while absorbing a blow, the remaining Damage spills over to &amp; is subtracted from your HP.</p>
+<p>The amount of AP granted by Armor is variable, because Armor is a multiplier of Power (which is HD + Level). If you have 4 Armor and 8 Power (i.e. if you’re a HD 2 human at Lv6), your Armor will grant you 4 × 8 = 32 AP. In practical terms, with 4 HP being typical per HD for most cases, a full set of plate armor will double your effective HP.</p>
+<p>Characters can have multiple Armor scores from many sources, but <em>only</em> the best is ever used for determining how much AP is gained. AP is reset to its maximum value whenever a character Rests (p. @).</p>
+<h4 id="healing-ap">Healing AP<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#healing-ap" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Whenever you rest, you also heal AP. See the Resting Move (p. @) for details.</p>
+<h4 id="removing-armor">Removing Armor<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#removing-armor" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>If you remove equipment that’s giving you an Armor score, you must reduce your AP to your next highest Armor score (if any) times your Power. After you put on equipment with an Armor score, you must heal HP from resting in order to reset your AP.</p>
+<h3 id="damage-types">Damage Types<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#damage-types" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Damage may have 1 or more Types. The 7 Types are:</p>
+<ul>
+<li><strong>Acid</strong>: Corrosive burns.</li>
+<li><strong>Electric</strong>: Powerful electrical currents.</li>
+<li><strong>Ice</strong>: Hypothermic exposure.</li>
+<li><strong>Fire</strong>: Hyperthermic exposure.</li>
+<li><strong>Mind</strong>: Psychic, mental &amp; emotional trauma.</li>
+<li><strong>Physical</strong>: Slashing, puncturing, &amp; blunt-force trauma damage.</li>
+<li><strong>Poison</strong>: Internal toxins.</li>
+</ul>
+<p>If no Damage Type is specified, it is said to be Typeless Damage.</p>
+<h3 id="resistances-weaknesses--immunities">Resistances, Weaknesses, &amp; Immunities<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#resistances-weaknesses--immunities" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Characters may be <strong>Weak</strong>, <strong>Resistant</strong>, or <strong>Immune</strong> to certain Damage Types.</p>
+<ul>
+<li><strong>Resistance</strong> <em>halves</em> all Damage of that Type, rounded down.</li>
+<li><strong>Weakness</strong> <em>doubles</em> all Damage of that Type.</li>
+<li><strong>Immunity</strong> neutralizes all Damage of a given Type.</li>
+</ul>
+<p>If a source of Damage has more than 1 Type (designated with a slash, i.e. “6 Ice/Fire Damage”), the <em>weakest</em> resistance status is always used.</p>
+<blockquote>
+<p>For example, if a character took 6 Ice/Fire Damage &amp; had Ice Resistance while being Weak to Fire, the character would take 12 Fire Damage (instead of taking 3 Ice Damage).</p>
+</blockquote>
+<h4 id="typeless-damage">Typeless Damage<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#typeless-damage" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Typeless Damage cannot be resisted.</p>
+<h2 id="move-resting">Move: Resting<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-resting" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Resting is an extended Move performable by both individual characters &amp; whole Factions. It is the primary way of healing.</p>
+<p>When you choose to Rest, your character (or Faction) remains idle (performing no strenuous physical or mental activity) until the end of the intended period or until interrupted by an intruding force. Generally, this will involve a timeskip.</p>
+<h3 id="duration">Duration<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#duration" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>The Deadline is set by the group Leader as the intended date of resuming activity.</p>
+<h3 id="on-the-date">On the Date<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#on-the-date" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If the resting period was <em>at least</em> an hour, then at the end, for each involved character, count how many of the following conditions were true for the period:</p>
+<ul>
+<li>No Wounds.</li>
+<li>Good food &amp; drink available (travel rations don’t count, but monsters cooked fresh do).</li>
+<li>Rested for 8 hours or more (i.e. overnight) in a bed (sleeping bags count).</li>
+<li>Rested for a day or more.</li>
+<li>Rested for a week or more.</li>
+<li>Rested for a month or more.</li>
+</ul>
+<p>Take the number of true conditions &amp; multiply it by [Power]. If the result is greater than the character’s current HP, the character’s HP is increased to match the result.</p>
+<h3 id="repairing-armor-points">Repairing Armor Points<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#repairing-armor-points" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>When you heal <em>any</em> amount of HP by resting, you may reset your AP to be equal to your best Armor times your Power, up to <em>at most</em> as much HP was healed from the rest.</p>
+<h2 id="movement">Movement<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#movement" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="rough-terrain">Rough Terrain<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#rough-terrain" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Stairs &amp; hills steeper than 45° are Rough Terrain &amp; halve your Run score. The GM may also rule certain other kinds of terrain (such as tightropes, which may require a Save to cross successfully, or narrow cracks) as being Rough Terrain due to difficulty of navigation.</p>
+<p>Rough Terrain usually doesn’t matter unless you’re in a Skirmish (p. @) or are very pressed for time.</p>
+<h3 id="climbing">Climbing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#climbing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="ladders--ropes">Ladders &amp; Ropes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ladders--ropes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Ladders, hand-holds &amp; other implements made to be climbed can be climbed at a speed no greater than <em>one quarter</em> your Run score.</p>
+<h4 id="free-climbing">Free Climbing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#free-climbing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>You may Save to travel up a rough surface steeper than 60° to a point that you can see. For each additional 10° of slope (including if it becomes an overhang), add a −1 penalty. Add a bonus for the time spent <em>studying</em> the route:</p>
+<ul>
+<li><strong>≥1 minute</strong>: +1</li>
+<li><strong>≥10 minutes</strong>: +2</li>
+<li><strong>≥1 hour</strong>: +3</li>
+</ul>
+<p>Climbing is too slow for combat if you lack a Feature that grants climbing ability.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Climbing Save Effect</th></tr></thead><tbody><tr><td style="text-align:center;">Pass &amp; Crit<br/><em>≥8</em></td><td>You reach the point you’re climbing to safely.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>Fall if you cannot reach the top by the end of your movement at your chosen pace.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>Fall at the middle of your climb.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>Fall <em>just</em> before reaching the top of your climb.</td></tr></tbody></table></div>
+<p>If your climb is longer than you can see (i.e. due to light source range), you must Save repeatedly.</p>
+<h3 id="falling-damage">Falling Damage<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#falling-damage" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>When a character falls, determine the distance fallen.</p>
+<ul>
+<li><strong>500’ or less</strong>: You may not take any actions excepting those that are essentially instantaneous, &amp; take ([Weight] + your carried equipment’s weight in #) Physical Damage upon striking the ground, capped to at most the distance in feet you fell (if you fall 3’, you can’t take more than 3 Physical Damage).</li>
+<li><strong>Greater than 500’</strong>: You take ([Weight] + your carried equipment’s weight in #) × 5 Physical Damage upon striking the ground &amp; may take 1 Major Action during your fall for each <em>complete</em> 500 feet that you fall.</li>
+</ul>
+<p>Water reduces fall damage by 5. Cushions (such as hay) reduce fall damage by 10.</p>
+<h4 id="catching-an-idiot">Catching an Idiot<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#catching-an-idiot" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Always succeeds, if you’re in a position to do so. Split Damage equally between everyone in a position to help.</p>
+<h3 id="condition-prone">Condition: Prone<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#condition-prone" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Being on the ground is called being <strong>Prone</strong>, and this Condition covers crawling, sitting, &amp; any other form of limited movement. A character’s effective Speed scores (&amp; height) is quartered while Prone.</p>
+<p>The Prone Condition counts as a Fact for any Save where it’s relevant (i.e. prone characters have a hard time defending against melee strikes, but an easier time against long-distance ranged attacks).</p>
+<h3 id="jumping">Jumping<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#jumping" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>In tense situations, you may make a Save to attempt a jump. Gain a +2 bonus if you spend at least half your Run score on a straight running start.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Jump Save Effects</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>Travel up to 1/2 [Run] distance.</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>Travel up to 1/3 [Run] distance.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>Travel up to 1/4 [Run] distance.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>Travel up to 1/5 [Run] distance.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>You trip &amp; fall immediately.</td></tr></tbody></table></div>
+<p>If your intended destination is less than your actual distance traveled, you fall at the furthest point you manage.</p>
+<h4 id="high-jumps">High Jumps<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#high-jumps" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Measuring from the ground where you jump, you can reach up to <em>twice</em> your Size for a pull-up grab. You may also perform a vault over an object of up to your Size if you treat the vertical height of the object as distance traveled for movement’s sake.</p>
+<h3 id="rounding-speed-scores">Rounding Speed Scores<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#rounding-speed-scores" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Always round Speed scores (whenever divided) to the nearest 5’ increment.</p>
+<h2 id="tidbits">Tidbits<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tidbits" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>These are pieces of trivia that have occasionally proved useful for calculating rulings.</p>
+<h3 id="excavation">Excavation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#excavation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Characters can move cubic feet of earth equal to their Max. Load in # per hour, assuming appropriate tools are possessed. The rate is halved for improvised tools, and quartered for a lack of them. Dressed stone brick takes twice as long to excavate.</p>
+<h3 id="making-rations">Making Rations<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#making-rations" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Creatures produce ¼# in rations per 1# of weight when skinned, smoked, &amp; salted. Salting consumes ¼# of salt per 1# of rations.</p>
+<h2 id="move-travel">Move: Travel<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-travel" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Travel by a Party or mobile Factions (such as Armies) is resolved via <em>free movement</em> tracked on a map of the campaign world by the GM.</p>
+<p>In order to Travel, you must have a <strong>route</strong> &amp; <strong>destination</strong> in mind. The route may be a <em>path</em> or a <em>direction</em>. The destination can be a <em>literal place</em> or a <em>time-based trigger</em> such as “three days north”. Announce both to the GM.</p>
+<h3 id="travel-procedure">Travel Procedure<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#travel-procedure" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>The GM determines if the route can actually take you to the destination.</li>
+<li>The GM measures out the path to the destination &amp; determines the total distance that either <em>must</em> be traveled (to reach a target place). or that <em>will</em> be traveled (to travel for a certain period of time).
+<ul>
+<li>If the party is following an erroneous route, the destination is the distance that the Party would have to travel before obviously realizing something is wrong (i.e. encountering an obviously out-of-the-way landmark or passing enough time to have reached the destination if on the correct course).</li>
+</ul>
+</li>
+<li>The GM determines if there’s possible overlap with any other Faction movement based on relative Speeds &amp; routes taken. If there appears to be a point of encounter, the GM (<em>secretly</em>) alters the destination to instead be the encounter &amp; recalculates travel distance &amp; time.</li>
+<li>The GM sets a (<em>secret</em>) Deadline as the time at which the destination will be reached.</li>
+<li>For each week of travel (or at the midpoint, if less than one), the GM calls for PCs in a traveling party to check for an Exhaustion Save if necessary &amp; simultaneously rolls on the Discoveries table.</li>
+<li>When the Deadline for a Travel Move to finish comes up, the GM rolls a Travel Save for the party.</li>
+</ol>
+<h3 id="exhaustion-save">Exhaustion Save<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#exhaustion-save" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Each week</strong>, each PC in a party should check if any of the following conditions are true:</p>
+<ul>
+<li>A PC or their followers are carrying <em>less</em> than 2# of supplies each &amp; are also not in a farmland, pastures, or otherwise settled region.
+<ul>
+<li>None at all.</li>
+</ul>
+</li>
+<li>The terrain is <em>barrens/wasteland</em> where food &amp; water cannot be found easily.</li>
+<li>Your mounts are <em>unfit for the biome</em> (horses in the desert, camels in the arctic).</li>
+</ul>
+<p>For each true condition, each <em>affected</em> PC in the Party must perform an Exhaustion Save. Add leadership, quartermastery &amp; hunting skills as +1 bonuses.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Exhaustion Save Effects</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>You can bump the Result of 1 other PC in the Party who failed up by 1 step — i.e. from a Fumble to a Failure.</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>Nothing bad happens.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>Lose 10% of all nameless Followers traveling with you, rounded down. Lose [Power] HP.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>Lose 33% of all nameless Followers traveling with you, rounded down. Half of them are dead; the other half deserted. For each named Retainer or Follower, roll 1d6. On 1, they’re dead; on 2, they deserted. Lose [Power] × 2 HP.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>Lose 50% of all nameless Followers traveling with you, rounded down. Two thirds of them are dead; the other third deserted. For each named Retainer or Follower, roll 1d6. On 1–2, they’re dead; on 3, they deserted. Lose [Power] × 3 HP.</td></tr></tbody></table></div>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>What if not all NPCs in the group are Followers of a PC? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>If some members of the group are not Followers of any PC, one PC must on their Save treat them as their Followers for the sake of determining their fates, so as to prevent them from being immune to exhaustion or starvation.</p>
+</div>
+</blockquote>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>But I want food &amp; water to matter on a general basis. </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>And it does. With 20lb of gear dedicated towards survival, people &amp; animals have enough in excess capacity &amp; storage to escape starvation &amp; malnutrition 95% of the time. Instead of slowing down the game by explicitly modeling this, we just ask if you have that equipment &amp; if you don’t (or if you’re in a desert where things are harsher), we punish you based on the rate of starvation you’d see versus your PC’s leadership &amp; survival skills.</p>
+<p>This may not be to your preference, but God forbid we make people do the rocket equation for equipping an army every time they wanted to go somewhere. I felt that this was beneath the scope of the game. It’s actually the same reason we don’t generally track discrete quantities of cash. When you’re rich &amp; powerful, you rely more on the heuristics of cashflow versus expenditures, not on nickels &amp; dimes; penny-pinching is for the poor.</p>
+</div>
+</blockquote>
+<h3 id="discoveries-table">Discoveries Table<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#discoveries-table" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>The GM rolls once on the Discoveries table per week (or part thereof) that a Party spends traveling.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Discoveries</th></tr></thead><tbody><tr><td style="text-align:center;">1–2</td><td><strong>Encounter</strong>. An encounter with another traveler, travelers, or local Monsters. There is a 2-in-6 chance it is actually a Lair (mark it on the map as a Location), unless this Route already passes by a Lair.</td></tr><tr><td style="text-align:center;">3–4</td><td><strong>Location</strong>. A new formerly unmarked Location is discovered. If the determined Location closely matches the identity of a Location that’s already marked along the Route (i.e. if you roll a tower, &amp; there’s a castle on the way), there’s no new Location; it’s the existing one, instead.</td></tr><tr><td style="text-align:center;">5</td><td><strong>Omen</strong>. Roll for 2 Encounters &amp; determine the most likely thing that would happen if the two of them met. Traces of that outcome are discovered by the Party. A pointer indicating the identity of the first Encounter rolled remains (i.e. tattered banner, dead body, viscous slime, dropped letter, observant/curious local, paw-print) provided that anyone in the Party would recognize what it meant.</td></tr><tr><td style="text-align:center;">6</td><td><strong>Nothing</strong>.</td></tr></tbody></table></div>
+<p>In geographic terms, each Discovery is spaced out more or less evenly across the route.</p>
+<p>The GM’s Guide has instructions on how to create &amp; manage tables of Encounters &amp; Locations, as well as generators to help produce both.</p>
+<h3 id="measuring-distance--time-taken">Measuring distance &amp; time taken<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#measuring-distance--time-taken" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Characters can travel ~1 mile per day across a medium for each 1’ of Speed score they possess</strong>. A human with a Run of 25’ can travel 25 miles per day. A bird with a Fly of 40’ can travel 40 miles per day.</p>
+<p>The GM is recommended to use a measuring tool alongside a world map to track the actual location of each Party on the move, as well as to determine distances traveled.</p>
+<p>The table of multipliers below is used for determining the effective distance traveled when moving through rough/obstructed terrain.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Type</th><th>Examples</th><th style="text-align:center;">Distance Multiplier</th></tr></thead><tbody><tr><td>Clear/road</td><td>Plains, grasslands, farmland, highways &amp; roads</td><td style="text-align:center;">×1</td></tr><tr><td>Rough</td><td>Hills, desert, marsh, forest</td><td style="text-align:center;">×2</td></tr><tr><td>Heavy</td><td>Dunes, forested/snowy hills, swamp</td><td style="text-align:center;">×3</td></tr><tr><td>Mountainous</td><td>Mountain</td><td style="text-align:center;">×4</td></tr><tr><td>Extreme</td><td>Forested/snowy mountain</td><td style="text-align:center;">×5</td></tr><tr><td>River</td><td><em>Adds +5 miles of the same terrain type it’s located in</em></td><td style="text-align:center;">+5mi</td></tr></tbody></table></div>
+<p>Divide the effective distance in miles by the <em>slowest</em> Speed score among all traveling Party members. Remember: If any part of the route is off-road, the Speed of all wheeled vehicles is halved &amp; if any Party member is Encumbered, their Speed is halved too.</p>
+<p>The result is the number of days until the Deadline (at which point the Party reaches the destination).</p>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>What about super short distances/high speeds? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>If your Deadline before rounding is less than 1 day, you probably should have realized that instead of calculating this out — but in any case, feel free to use the value in hours if they’re for some reason critical for the game.</p>
+</div>
+</blockquote>
+<h3 id="visibility">Visibility<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#visibility" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Aia is a flat disc &amp; Glass is not an exception. <strong>Your view is not limited by the curvature of the Earth</strong>. Atmospheric scattering, weather, and terrain irregularities are the primary limiter of vision. Aia has a thick atmosphere, but it isn’t <em>that</em> thick.</p>
+<p>The basic determinant of view distance is <strong>observer height</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Observer Position</th><th>Base Visibility</th><th>Distinguishable at this distance</th></tr></thead><tbody><tr><td>Flat ground</td><td>5 miles</td><td>Individuals, buildings</td></tr><tr><td>Watchtower</td><td>10 miles</td><td>Formations, buildings, ship types</td></tr><tr><td>Hills</td><td>20 miles</td><td>Armies, towns, fleets, castles</td></tr><tr><td>Mountains</td><td>40 miles</td><td>Armies, cities, major terrain</td></tr><tr><td>Peak</td><td>80 miles</td><td>Only the largest features</td></tr></tbody></table></div>
+<p>Multiply by the following (all armies carry telescopes):</p>
+<ul>
+<li><strong>Hazy</strong>: ×0.5</li>
+<li><strong>Foggy</strong>: ×0.25</li>
+<li><strong>No telescope</strong>: ×0.5</li>
+</ul>
+<h2 id="advancement">Advancement<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#advancement" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>When one of the Factions (p. @) you’re the Leader of <em>or</em> a cult Faction dedicated to you grows in Families past the <em>minimum Families threshold</em> required to support a Leader of the next Level up, <strong>AND</strong> you do not yet have as many Class Features as your highest Faction Level, you can pick a Class from those you qualify for (as defined by <em>what you have done recently</em> &amp; <em>what Factions you currently lead</em>) to gain a Class Feature from according to that Class’s method.</p>
+<p>There are two methods of qualifying for a Class:</p>
+<ul>
+<li>Do something heroic since the last time you gained a Level that unarguably reflects the nature of that Class.</li>
+<li>The Faction that gained enough Followers to qualify you for the next Level has a government type (p. @) that explicitly qualifies you for that Class.</li>
+</ul>
+<h3 id="taking-control-of-a-bigger-faction">Taking Control of a Bigger Faction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#taking-control-of-a-bigger-faction" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If you are <em>given</em> control of a large Faction, you don’t get any extra Class Features for it. You <em>only</em> gain a <em>single</em> Class Feature when:</p>
+<ul>
+<li>Your largest controlled Faction’s Level <em>increases</em>.</li>
+<li>Through <em>guile</em>, <em>wit</em>, &amp; <em>brute force</em>, you <em>seize</em> control of a Faction larger than yours <em>against the will</em> of its current owner.</li>
+</ul>
+<p>For this reason, apprentices to power are normally handed smaller responsibilities to govern &amp; grow first. It’s why all aristocracy deliberately engages in frivolous &amp; ritualized warfare. This is also one of the reasons why regencies &amp; abrupt transitions of power are unstable periods.</p>
+<h3 id="loss-of-levels">Loss of Levels<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#loss-of-levels" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Your Factions can be destroyed. If this happens, you don’t personally lose your Class Features — but you won’t get any more until you build a new Faction up to meet &amp; exceed the Level of your previous one.</p>
+<p>You DO, however, lose the benefits of boosted HP while healing, since your greatest Level is now much smaller. If you lose your Faction but not your current HP, guard it zealously — you won’t be able to raise it that high again for quite a while.</p>
+<h2 id="resources">Resources<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#resources" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>A <strong>Resource</strong> is a strategically valuable material produced only at certain Locations (p. @), which are called <strong>Resource Nodes</strong>.</p>
+<h3 id="obtaining-resources">Obtaining Resources<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#obtaining-resources" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Glass Empires deliberately eschews complex modeling of commodities exchange markets on the basis that emulating a proper dynamic economy is nearly impossible for computers, let alone a GM’s brain. The point of the game is not individual acts of arbitrage!</p>
+<p>As a result, we use a simplified model. We assume the following things:</p>
+<ol>
+<li>The GM determines &amp; places Resource Nodes at the time of building the campaign world.</li>
+<li>Resource Nodes, when made into Settlements, produce 1 or more <em>copies</em> of a Resource.</li>
+<li><em>Access</em> to a Resource is a binary yes/no. We do not measure or combine sums. Each copy is a sufficient supply for a single <em>sovereign</em> Faction.</li>
+<li>If a Faction has one of the following, they have <em>access</em> to the Resource:
+<ul>
+<li>Direct <em>control</em> over a Resource Node producing that specific Resource.</li>
+<li>An agreement with a Faction who has a copy of that Resource to have that copy continuously shipped via a currently <em>unblocked</em> trade route.</li>
+<li>Another Leader in the same sovereign realm who has met one of these other conditions.</li>
+</ul>
+</li>
+<li>A Faction with <em>no access</em> suffers penalties based on the Resource in question.</li>
+</ol>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Design Implications </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>GMs should note that this design implicitly means that a single copy is always sufficient for an empire of <em>any</em> size. There are various compromises you can try to make here (i.e. Resource Nodes that are only good up to a certain Level of Faction), but most will be quite ugly. For the sake of the core game, try ~1 Resource copies per 10,000 square miles on your campaign map.</p>
+</div>
+</blockquote>
+<h3 id="types-of-resource">Types of Resource<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#types-of-resource" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>There are two types of Resource:</p>
+<ul>
+<li><strong>Ordinary</strong>: If you have no access, all Deadlines &amp; items that would logically require that resource have their cost/necessary Deadline duration <em>doubled</em>.</li>
+<li><strong>Exotic</strong>: As Ordinary, but costs increase 10-fold.</li>
+</ul>
+<p>Ordinary Resources are assumed to be abundant in the world, such that alternative trade routes &amp; distant shipping could be arranged even if it came at great friction. Exotic Resources are assumed to be produced only by a handful of locations &amp; in great demand.</p>
+<h3 id="trade-routes">Trade Routes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#trade-routes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A <em>trade route</em> is a path along <em>connected</em>, <em>unblocked</em> roads or naval routes between a Resource &amp; a target Location.</p>
+<ul>
+<li><strong>Connected</strong> means a continuous unbroken line of roads. Trade <em>demands</em> roads, even if it’s a simple dirt trail. Navigable rivers &amp; open waters are included.</li>
+<li><strong>Unblocked</strong> means no hostile army occupies the road or is within a 50-mile radius of a traced route across the seas.</li>
+</ul>
+<h3 id="resources-on-glass">Resources on Glass<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#resources-on-glass" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>In Glass, there are two Resources in play, both of which are Ordinary:</p>
+<ul>
+<li><strong>Wood</strong>: High-quality timber required for <em>ships</em> &amp; <em>siege machines</em>.
+<ul>
+<li>Impacts <em>shipbuilding</em>, <em>siege duration</em>, &amp; <em>lumber construction</em>.</li>
+</ul>
+</li>
+<li><strong>Metal</strong>: Needed for almost everything. All of Glass’s mines are managed by salamander slave clans.
+<ul>
+<li>Impacts <em>Army raising time</em> &amp; <em>all</em> construction/manufacturing/fortifications.</li>
+</ul>
+</li>
+</ul>
+<h3 id="game-design-notes">Game Design Notes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#game-design-notes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="why-wood--metal">Why Wood &amp; Metal?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#why-wood--metal" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>We track <strong>Wood</strong> because Aian warfare is heavily dependent on siege machinery due to extensive fortifications, &amp; <strong>Metal</strong> because salamanders hold a <em>total monopoly</em> on mining in Glass — as a consequence, we must track the leverage they hold, but need not differentiate in type of metal as not only are all critical, but all are commanded by the same group.</p>
+<h4 id="distributed-resources">Distributed Resources<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#distributed-resources" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>We might refer to the standard Resource described here as a <em>monopoly</em> Resource, as specific Locations are assumed to have a monopoly on their production. However, some cases will require tracking of the availability of generalized materials such as <strong>food</strong> — which, notably, is produced by every Settlement in some quantity &amp; is desired by those who cannot grow it.</p>
+<p>Rather than tracking these explicitly, we generally use Features for Faction Types that <em>demand</em> access to one or more friendly Settlements exceeding a certain size. The <strong>Families</strong> metric of a Settlement is, in a real sense, the resource volume for such distributed/generalized resources.</p>
+<h4 id="what-about-magical-resources">What About Magical Resources?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#what-about-magical-resources" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Here’s a fun note for adventurous GMs with homebrewed Resources: Theoretically, control over a given Resource could grant <em>any</em> benefit desired to Factions so long as it reflected the underlying fiction. Magical rocks that are used in cool guns? Only <em>those</em> Factions can mix in cool gun units. Fancy construction materials? Construction <em>bonus</em> instead of a penalty. Cheaper castles &amp; housing. All you have to do is plot out all of the logical consequences &amp; use-cases of a given material’s existence &amp; estimate how they should show up in the rules.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-7" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#-encumbrance" data-for="-encumbrance">@ Encumbrance</a></li><li class="depth-0"><a href="#-move-foresight" data-for="-move-foresight">@ Move: Foresight</a></li><li class="depth-0"><a href="#conditions" data-for="conditions">Conditions</a></li><li class="depth-0"><a href="#damage-incapacitation--death" data-for="damage-incapacitation--death">Damage, Incapacitation &amp; Death</a></li><li class="depth-1"><a href="#funerals" data-for="funerals">Funerals</a></li><li class="depth-1"><a href="#armor--armor-points" data-for="armor--armor-points">Armor &amp; Armor Points</a></li><li class="depth-1"><a href="#damage-types" data-for="damage-types">Damage Types</a></li><li class="depth-1"><a href="#resistances-weaknesses--immunities" data-for="resistances-weaknesses--immunities">Resistances, Weaknesses, &amp; Immunities</a></li><li class="depth-0"><a href="#move-resting" data-for="move-resting">Move: Resting</a></li><li class="depth-1"><a href="#duration" data-for="duration">Duration</a></li><li class="depth-1"><a href="#on-the-date" data-for="on-the-date">On the Date</a></li><li class="depth-1"><a href="#repairing-armor-points" data-for="repairing-armor-points">Repairing Armor Points</a></li><li class="depth-0"><a href="#movement" data-for="movement">Movement</a></li><li class="depth-1"><a href="#rough-terrain" data-for="rough-terrain">Rough Terrain</a></li><li class="depth-1"><a href="#climbing" data-for="climbing">Climbing</a></li><li class="depth-1"><a href="#falling-damage" data-for="falling-damage">Falling Damage</a></li><li class="depth-1"><a href="#condition-prone" data-for="condition-prone">Condition: Prone</a></li><li class="depth-1"><a href="#jumping" data-for="jumping">Jumping</a></li><li class="depth-1"><a href="#rounding-speed-scores" data-for="rounding-speed-scores">Rounding Speed Scores</a></li><li class="depth-0"><a href="#tidbits" data-for="tidbits">Tidbits</a></li><li class="depth-1"><a href="#excavation" data-for="excavation">Excavation</a></li><li class="depth-1"><a href="#making-rations" data-for="making-rations">Making Rations</a></li><li class="depth-0"><a href="#move-travel" data-for="move-travel">Move: Travel</a></li><li class="depth-1"><a href="#travel-procedure" data-for="travel-procedure">Travel Procedure</a></li><li class="depth-1"><a href="#exhaustion-save" data-for="exhaustion-save">Exhaustion Save</a></li><li class="depth-1"><a href="#discoveries-table" data-for="discoveries-table">Discoveries Table</a></li><li class="depth-1"><a href="#measuring-distance--time-taken" data-for="measuring-distance--time-taken">Measuring distance &amp; time taken</a></li><li class="depth-1"><a href="#visibility" data-for="visibility">Visibility</a></li><li class="depth-0"><a href="#advancement" data-for="advancement">Advancement</a></li><li class="depth-1"><a href="#taking-control-of-a-bigger-faction" data-for="taking-control-of-a-bigger-faction">Taking Control of a Bigger Faction</a></li><li class="depth-1"><a href="#loss-of-levels" data-for="loss-of-levels">Loss of Levels</a></li><li class="depth-0"><a href="#resources" data-for="resources">Resources</a></li><li class="depth-1"><a href="#obtaining-resources" data-for="obtaining-resources">Obtaining Resources</a></li><li class="depth-1"><a href="#types-of-resource" data-for="types-of-resource">Types of Resource</a></li><li class="depth-1"><a href="#trade-routes" data-for="trade-routes">Trade Routes</a></li><li class="depth-1"><a href="#resources-on-glass" data-for="resources-on-glass">Resources on Glass</a></li><li class="depth-1"><a href="#game-design-notes" data-for="game-design-notes">Game Design Notes</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript.js" type="module" data-persist="true"></script></html>
