@@ -1,0 +1,2310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>{ 3 } - Character Creation — Glass Empires</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Glass Empires SRD"/><meta property="og:title" content="{ 3 } - Character Creation — Glass Empires"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="{ 3 } - Character Creation — Glass Empires"/><meta name="twitter:description" content="This procedure creates a Player Character embedded in Glass’s factional landscape."/><meta property="og:description" content="This procedure creates a Player Character embedded in Glass’s factional landscape."/><meta property="og:image:alt" content="This procedure creates a Player Character embedded in Glass’s factional landscape."/><meta property="twitter:domain" content="cyclopeanarts.github.io/Site-GlassEmpires-SRD"/><meta property="og:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-3-}---Character-Creation"/><meta property="twitter:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-3-}---Character-Creation"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="This procedure creates a Player Character embedded in Glass’s factional landscape."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvbm9pcmUvQ3ljbG9wZWFuL0dsYXNzLUVtcGlyZXMvU1JELXF1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-3-}---Character-Creation-og-image.webp"/><meta property="og:image:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-3-}---Character-Creation-og-image.webp"/><meta name="twitter:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-3-}---Character-Creation-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Book-1---Glass-Empires/Part-1---Rules/{-3-}---Character-Creation"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">Glass Empires SRD</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-9"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-9" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/">Book 1   Glass Empires</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/Part-1---Rules/">Part 1   Rules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>{ 3 }   Character Creation</a></div></nav><h1 class="article-title">{ 3 } - Character Creation</h1><p show-comma="true" class="content-meta"><time datetime="2026-03-14T13:28:33.261Z">Mar 14, 2026</time><span>41 min read</span></p></div></div><article class="popover-hint"><p>This procedure creates a Player Character embedded in Glass’s factional landscape. New characters begin as leaders of small Factions with a Follower or two, some resources, and the scars of their past.</p>
+<blockquote>
+<p>@ We have to explain how Levels work first. check Faction section for the table on that</p>
+</blockquote>
+<h2 id="procedure-overview">Procedure Overview<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#procedure-overview" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>Choose Class</strong> - Select your social position as a Class &amp; gain 2 Class Features, an Origin, &amp; a Sex</li>
+<li><strong>Choose Race</strong> - Choose a Race from those within your Class &amp; copy its statblock &amp; Racial Features</li>
+<li><strong>Roll Origin</strong> - Determine your background within that Class
+<ul>
+<li>@ this might not actually be significant at <em>all</em> to the game.</li>
+</ul>
+</li>
+<li><strong>Roll Crisis</strong> - Discover what disrupted your path</li>
+<li><strong>Roll Distinction</strong> - Add personal color</li>
+<li><strong>Roll Follower</strong> - Determine your starting Faction
+<ul>
+<li><strong>Optional: Re-roll Feature</strong> - You may drop your second Class Feature &amp; re-roll it on your Follower’s Class Features table.</li>
+</ul>
+</li>
+<li><strong>Define Lessons</strong> - Phrase what you learned from Origin and Crisis</li>
+<li><strong>Group Entanglement</strong> - Determine why the Party works together &amp; optionally set your PC as a Follower of another PC</li>
+</ol>
+<h2 id="1-choose-class">1) Choose Class<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-choose-class" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Your <strong>Class</strong> is your literal social position in Glass. It determines what you can become and which pools of power you can draw from.</p>
+<ol>
+<li><strong>Choose one Class</strong> from the list below, or roll randomly. Your choice determines which Races you can play, which Feature pool you draw from when gaining power, &amp; your starting social position.</li>
+<li><strong>Determine your Class Feature</strong> according to that Class’s means of doing so. Write it down.</li>
+<li><strong>Roll for an Origin</strong> on your Class’s table of Origins. Write the whole thing down.</li>
+</ol>
+<h3 id="tables-of-classes">Tables of Classes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tables-of-classes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Class</th></tr></thead><tbody><tr><td style="text-align:center;">2</td><td>Lord</td></tr><tr><td style="text-align:center;">3</td><td>Magistrate</td></tr><tr><td style="text-align:center;">4</td><td>Jester</td></tr><tr><td style="text-align:center;">5</td><td>Magician</td></tr><tr><td style="text-align:center;">6</td><td>Burgher</td></tr><tr><td style="text-align:center;">7</td><td>Mercenary</td></tr><tr><td style="text-align:center;">8</td><td>Bandit (Criminal? Thief? Assassin?)</td></tr><tr><td style="text-align:center;">9</td><td></td></tr><tr><td style="text-align:center;">10</td><td></td></tr><tr><td style="text-align:center;">11</td><td></td></tr><tr><td style="text-align:center;">12</td><td>[Foreign Class]</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Foreign Class</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>Hydrean Jesuit</td></tr><tr><td style="text-align:center;">2</td><td>Salamander Administrator</td></tr><tr><td style="text-align:center;">3</td><td>Salamander Miner</td></tr><tr><td style="text-align:center;">4</td><td>Harpy Scout</td></tr><tr><td style="text-align:center;">5</td><td>Harpy Savage</td></tr><tr><td style="text-align:center;">6</td><td>Sucker Searaider</td></tr></tbody></table></div>
+<blockquote>
+<p>@ you’re fucking insane if you think you can manage EIGHTEEN UNIQUE GOOD CLASSES. no fucking way. you’ll manage, like, 5 of them.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>d66</th><th></th></tr></thead><tbody><tr><td>11</td><td></td></tr><tr><td>12</td><td></td></tr><tr><td>13</td><td></td></tr><tr><td>14</td><td></td></tr></tbody></table></div>
+<h3 id="lord">Lord<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#lord" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Races</strong>: Human Glassians only
+<strong>Sex</strong>: Male only (occasional exceptions made for reasons of inheritance)</p>
+<p>You have a porcelain mask. It covers half your face. It is traced with ruby &amp; jade &amp; sweeping gilded lines. You were given one at birth &amp; have worn one since that day.</p>
+<p>You have a duty. You are the miniature Kain of your domain. You are a poet, a judge, &amp; a general. You are a murderer. You were born to rule.</p>
+<p>And just might have, if the world hadn’t fallen to pieces.</p>
+<p>If you start as part of this class, you are part of a Governing House, descended from the Second Phoenix’s children through at least one tenuous familial link. The three main houses are Eagle, Beacon, and Arcades, but you may always invent a smaller Cadet House. There are <em>many</em> children of Kain.</p>
+<h4 id="class-features">Class Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-features" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>During character generation, roll once per Level. If you roll a Feature you already have, you may choose a Feature from above or below it on the list that you don’t have yet.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Class Feature</th></tr></thead><tbody><tr><td style="text-align:center;">2–3</td><td><strong>Killer Instinct</strong>: If you can observe someone move or speak for at least 10 seconds, you can tell if they’ve killed nobody, somebody, or many people, &amp; may have the GM tell you their most immediate intentions as expressed by a single word.</td></tr><tr><td style="text-align:center;">4</td><td><strong>Command</strong>: You may issue single-sentence commands to any non-Lord Glassian of lower Level &amp; they will obey (possibly after hesitation) as if you were their unquestioned superior. If their Level is equal or greater than yours <em>or</em> your order contradicts a superior’s orders, you must make a Persuasion Save (p. @) to influence them, adding your Level to the Save &amp; subtracting their Level (or their superior’s Level, if it’s greater) as a modifier.</td></tr><tr><td style="text-align:center;">5</td><td><strong>Defeat Means Respect</strong>: If you defeat a Glassian or other honorable warrior in battle &amp; afterwards treat their wounds or injuries, you may compel them (with the same rules as the Command Class Feature) to join you as Retainers or as Followers of a Faction. Units are affected as a group, or by influencing their Leader if one is present.</td></tr><tr><td style="text-align:center;">6</td><td><strong>Cleaver</strong>: Your Strikes in an Attack can target any number of valid characters &amp; if a target dies, you may retarget unspent Strikes to new valid targets within reach — and you may make a new Angry Step before each Strike if doing so would pull an otherwise out-of-reach character into your reach.</td></tr><tr><td style="text-align:center;">7</td><td><strong>Murderer</strong>: Gain an extra Strike per Attack.</td></tr><tr><td style="text-align:center;">8</td><td><strong>Courtly Influence</strong>: You can automatically obtain invites to balls &amp; other public, semi-public, or closed events through fame, guile, or familiarity. Other Lords are obligated to grant you a court appearance if they aren’t Hostile to you.</td></tr><tr><td style="text-align:center;">9</td><td><strong>Blade Wind</strong>: You may take [HD] Damage to <em>instantaneously</em> move to any spot that can contain you within the greatest of your Speed scores, faster than anything can track or react to, so long as a taut rope could tie your current location to it. This Feature can interrupt any Move &amp; might negate that Move thereby.</td></tr><tr><td style="text-align:center;">10</td><td><strong>Master of the Hunt</strong>: Your hand-held ranged weapons have no maximum range, provided you can see your target. You never take range penalties.</td></tr><tr><td style="text-align:center;">11–12</td><td><strong>Strength Training</strong>: Choose one Type of Damage. You are Resistant to it.</td></tr></tbody></table></div>
+<h4 id="class-backgrounds">Class Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-backgrounds" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>If this is your first Class at character creation, roll twice. For each, write a Fact that describe a true lesson of your choice you learned from the experience: “<em>Because I [was (a)…], I learned [lesson].</em>” You can play with the phrasing so long as the background &amp; lesson are both included.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">d66</th><th>I was (a)…</th></tr></thead><tbody><tr><td style="text-align:center;">11−12</td><td>Favored heir, pampered at every turn &amp; envied by my relatives</td></tr><tr><td style="text-align:center;">13−14</td><td>Ignored extra, left to scrounge wisdom from idle courtiers</td></tr><tr><td style="text-align:center;">15−16</td><td>Student of (<strong>1d6</strong>: 1–2 <em>history</em> / 3–4 <em>language</em> 5–6: <em>medicine</em>)</td></tr><tr><td style="text-align:center;">21−22</td><td>Unwanted problem who survived everything meant to have killed me</td></tr><tr><td style="text-align:center;">23−24</td><td>Secretly responsible for the disappearance of my parents</td></tr><tr><td style="text-align:center;">25−26</td><td>Incompetent tyrant</td></tr><tr><td style="text-align:center;">31−32</td><td>Hobbyist (<strong>1d6</strong>: 1–2 <em>gardener</em> / 3–4 <em>astronomer</em> / 5–6 <em>drug alchemist</em>)</td></tr><tr><td style="text-align:center;">33−34</td><td>Wanton (<strong>1d6</strong>: 1–2 <em>drunkard</em> / 3–4 <em>casanova</em> / 5–6 <em>addict; say how</em>)</td></tr><tr><td style="text-align:center;">35−36</td><td>Scribe &amp; expert calligraphist</td></tr><tr><td style="text-align:center;">41−42</td><td>Catastrophically failed (<strong>1d6</strong>: 1–2 <em>poet</em> / 3–4 <em>banker</em> / 5–6 <em>businessman</em>)</td></tr><tr><td style="text-align:center;">43−44</td><td>Never fond of the harpies my father kept as servants</td></tr><tr><td style="text-align:center;">45−46</td><td>Ruthless duelist</td></tr><tr><td style="text-align:center;">51−52</td><td>Scheming courtier in my Liege’s court</td></tr><tr><td style="text-align:center;">53−54</td><td>Driven from home by a Commons’ Uprising</td></tr><tr><td style="text-align:center;">55−56</td><td>Always hosting guests who were taking advantage of hospitality customs</td></tr><tr><td style="text-align:center;">61−62</td><td>Known for firing windgun warning shots at annoying petitioners in court</td></tr><tr><td style="text-align:center;">63−64</td><td>Spendthrifty administrator</td></tr><tr><td style="text-align:center;">65−66</td><td>Struggling (<strong>1d6</strong>: 1–2 <em>mercenary</em> / 3–4 <em>revolutionary</em> / 5–6 <em>commander</em>)</td></tr></tbody></table></div>
+<h3 id="-magistrate">@ Magistrate<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-magistrate" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Races</strong>: Mostly human, plus a handful of salamanders who graduated from servitude
+<strong>Sex</strong>: Male only (occasional exceptions made for reasons of inheritance)</p>
+<p>scholar-bureaucrats, Imperial administration, legal authority
+Administration, legal manipulation, institutional power</p>
+<p>alchemy, literacy &amp; bookmaking.</p>
+<p>@@ maybe: form oaths between parties with gods as enforcers. your seals &amp; contracts count as this; if you’re alive, you know when someone has illegally broken a seal &amp; may enact punishment on that person based on the oath/sacrifice you offered to a god at the time of that seal’s or contract’s creation. <strong>HOWEVER</strong> this is complicated &amp; likely better off as a general game rule (since it’s a deal system similar to Negotiation).</p>
+<h4 id="class-features-1">Class Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-features-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>During character generation, roll once per Level. If you roll a Feature you already have, you may choose a Feature from above or below it on the list that you don’t have yet.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Class Feature</th></tr></thead><tbody><tr><td style="text-align:center;">2–3</td><td><strong>Orator</strong>: Anyone willing to listen to you for a minute (a Persuasion Save if in doubt, p. @) can be made to listen to you for up to eight hours.</td></tr><tr><td style="text-align:center;">4</td><td>@ alchemy</td></tr><tr><td style="text-align:center;">5</td><td>@ political power</td></tr><tr><td style="text-align:center;">6</td><td><strong>Bureaucrat</strong>: You cannot be made to admit to having made any claim or statement, especially if it would violate dogma or authority. You may automatically know the immediate intent, hidden or otherwise, of any bureaucrat or fellow Magistrate you talk to.</td></tr><tr><td style="text-align:center;">7</td><td><strong>Legal Precedent</strong>: When you need to establish a legal claim, dispute someone’s authority, or uncover recorded history, if written records <em>could</em> reasonably exist, you find them <em>automatically</em>. The GM must tell you what they reveal, even if they hadn’t prepared such documentation beforehand.</td></tr><tr><td style="text-align:center;">8</td><td><strong>Coded Language</strong>: You can write poems with encoded messages hidden in the subtext that only either a specific target you know well (as a friend or acquaintance) or another person with this power can interpret the true meaning of.</td></tr><tr><td style="text-align:center;">9</td><td><strong>Document Forgery</strong>: You can instantaneously recognize forgeries of official Glassian documents, seals, contracts, or titles &amp; with a day’s work &amp; calligraphic tools create your own that nobody other than another Magistrate will recognize as a forgery.</td></tr><tr><td style="text-align:center;">10</td><td><strong>Courtly Influence</strong>: You can automatically obtain invites to balls &amp; other public, semi-public, or closed events through fame, guile, or familiarity. Lords are obligated to grant you a court appearance if they aren’t Hostile to you.</td></tr><tr><td style="text-align:center;">11–12</td><td>@</td></tr></tbody></table></div>
+<h4 id="-class-backgrounds">@ Class Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-class-backgrounds" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>If this is your first Class at character creation, roll twice. For each, write a Fact that describe a true lesson of your choice you learned from the experience: “<em>Because I [was (a)…], I learned [lesson].</em>” You can play with the phrasing so long as the background &amp; lesson are both included.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">d66</th><th>I was (a)…</th></tr></thead><tbody><tr><td style="text-align:center;">11−12</td><td></td></tr><tr><td style="text-align:center;">13−14</td><td></td></tr><tr><td style="text-align:center;">15−16</td><td></td></tr><tr><td style="text-align:center;">21−22</td><td></td></tr><tr><td style="text-align:center;">23−24</td><td></td></tr><tr><td style="text-align:center;">25−26</td><td></td></tr><tr><td style="text-align:center;">31−32</td><td></td></tr><tr><td style="text-align:center;">33−34</td><td></td></tr><tr><td style="text-align:center;">35−36</td><td></td></tr><tr><td style="text-align:center;">41−42</td><td></td></tr><tr><td style="text-align:center;">43−44</td><td></td></tr><tr><td style="text-align:center;">45−46</td><td></td></tr><tr><td style="text-align:center;">51−52</td><td></td></tr><tr><td style="text-align:center;">53−54</td><td></td></tr><tr><td style="text-align:center;">55−56</td><td></td></tr><tr><td style="text-align:center;">61−62</td><td></td></tr><tr><td style="text-align:center;">63−64</td><td></td></tr><tr><td style="text-align:center;">65−66</td><td></td></tr></tbody></table></div>
+<h3 id="jester">Jester<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#jester" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Races</strong>: Mostly human Glassians, but a handful of salamanders &amp; harpies are also Jesters.
+<strong>Sex</strong>: Stereotyped as female, but approximately 50:50 split.</p>
+<p>A clown is a warning. An excess of fear, of curiosity, of sloth, of disregard. Clowns are <em>excessive</em>. They warn through example.</p>
+<p>Glass is a forbidden fantasy, a dance of light &amp; color among the falling blade of civil war. Glass as a hidden kaleidoscope of spirits in the woods is the vision that the Jesters reveal. In Glass, the monster is in your house; in your drink; in your mind. In Glass, the monster is smiling, dancing, dressed in rainbow or in general’s ribbons, leading your children away — away to a fairies’ feast, or to the war — as the prize dish in either case!</p>
+<p>O, to the Jesters you will walk when your body gives out! They know more than dance &amp; song. Their shrines house graveyards for Man &amp; beast alike. More than warn, they <em>negotiate</em>. A Jester teases the beast who’d eat you away from the thought. Color &amp; light to speak to the spirits who’d never utter a word. Tricks &amp; surprises are what keep you alive when you’re up against the woodlands. They are, at their best, every mythic trickster in a frail mortal shell.</p>
+<h4 id="class-features-2">Class Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-features-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>When you gain your first Level in Jester, gain the Spiritual Neutrality Class Feature.</p>
+<ul>
+<li><strong>Spiritual Neutrality</strong>: You can perform funerals. You have an <em>assumed neutrality</em> at every social event &amp; function that transfers to all shrines &amp; other sacred spaces &amp; are treated as an arbiter. Glassian spirits also respect this.
+<ul>
+<li>If you attack someone on sacred grounds or while under hospitality, all of your SD are immediately exhausted &amp; may not be restored for 24 hours.</li>
+<li>If someone attacks <em>you</em> on such grounds, you have unlimited SD for the express purposes of escaping them.</li>
+</ul>
+</li>
+</ul>
+<p>On all future Levels, roll once on the table below. If you roll a Feature you already have, you may choose a Feature from above or below it on the list that you don’t have yet.</p>
+<p>Change what people are thinking without realizing that’s what you’re trying to do.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Class Feature</th></tr></thead><tbody><tr><td style="text-align:center;">2–3</td><td><strong>Mob</strong>: Given 10 minutes, you can <em>raise</em> &amp; <em>calm</em> mobs of Commoners as an army in service to a cause. A raised mob’s number of participants cannot exceed 5 times your Level’s minimum Followers requirement or the Followers of the Settlement it was raised from. The cause can be almost anything. The mob only lasts as long as you are personally leading it.</td></tr><tr><td style="text-align:center;">4</td><td><strong>Spirit’s eyes</strong>: In bright light, you can see invisible things (including spirits) as a faint lensing outline. Through direct eye contact, you can tell if someone is possessed, charmed, divine, or soulless. Magical items glow with a faint rainbow hue.</td></tr><tr><td style="text-align:center;">5</td><td><strong>Courtly Influence</strong>: You can automatically obtain invites to balls &amp; other public, semi-public, or closed events through fame, guile, or familiarity. Lords are obligated to grant you a court appearance if they aren’t Hostile to you.</td></tr><tr><td style="text-align:center;">6</td><td><strong>Performance</strong>: Given a stage to perform on, you may attempt a mass Persuasion Save (p. @) against an entire audience. A performance can only be used to convey a general lesson or teaching, not specifics to a present case, but you may attempt a Save for performance quality to qualify you for Persuasion’s incentive requirement (“Does the target like you?“).</td></tr><tr><td style="text-align:center;">7</td><td><strong>Magical Wisdom</strong>: You have mastered the art of being implicitly treated as an authority on almost any topic relating to the supernatural, spiritual, &amp; divine. Your warnings &amp; instructions are taken with paranoid, superstitious credence, provided consistency (p. @) is met. Only other magicians are unaffected by this.</td></tr><tr><td style="text-align:center;">8</td><td></td></tr><tr><td style="text-align:center;">9</td><td><strong>Read the Spirit</strong>: When encountering a corpse who died less than one week ago with no funeral or a spirit in a Totem, you may ask the deceased a single yes/no question. The GM must answer truthfully from the knowledge of the spirit.</td></tr><tr><td style="text-align:center;">10</td><td><strong>Identify Spirit</strong>: Given 1 hour of study, you can identify if something is enchanted or possessed by a spirit &amp; the approximate nature &amp; intent of that spirit. This accounts for all permanent &amp; temporary effects inflicted by casting (p. @).</td></tr><tr><td style="text-align:center;">11–12</td><td><strong>Teach By Experience</strong>: Anyone you’ve been traveling with for more than a week can, while traveling with you, borrow any Facts of yours that describe lessons or experiences (not skills) that are unambiguously describable as wisdom for use on their own Saves.</td></tr></tbody></table></div>
+<h4 id="class-backgrounds-1">Class Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-backgrounds-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>If this is your first Class at character creation, roll twice. For each, write a Fact that describe a true lesson of your choice you learned from the experience: “<em>Because I [was (a)…], I learned [lesson].</em>” You can play with the phrasing so long as the background &amp; lesson are both included.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">d66</th><th>I was (a)…</th></tr></thead><tbody><tr><td style="text-align:center;">11−12</td><td>Always starving, looking for the next meal.</td></tr><tr><td style="text-align:center;">13−14</td><td>Hereditary keeper of a (<strong>1d6</strong>: 1–2 <em>roadside shrine</em> / 3–4 <em>graveyard</em> / 5–6 <em>festival hall</em>)</td></tr><tr><td style="text-align:center;">15−16</td><td>Blind since birth &amp; raised as a seer</td></tr><tr><td style="text-align:center;">21−22</td><td>Survivor of a plague that killed everyone I knew</td></tr><tr><td style="text-align:center;">23−24</td><td>Wandering performer who stumbled into a real funeral &amp; couldn’t refuse</td></tr><tr><td style="text-align:center;">25−26</td><td>Apprentice to an older Jester who (1d6: 1–2 <em>went mad</em> / 3–4 <em>was murdered</em> / 5–6 <em>simply left</em>)</td></tr><tr><td style="text-align:center;">31−32</td><td>Shrine-brat who grew up eavesdropping on lords’ oaths</td></tr><tr><td style="text-align:center;">33−34</td><td>Possessed &amp; promptly thrown out of my father’s castle</td></tr><tr><td style="text-align:center;">35−36</td><td>Runaway who took sanctuary in a shrine &amp; never left</td></tr><tr><td style="text-align:center;">41−42</td><td>Festival organizer who discovered how to speak to spirits</td></tr><tr><td style="text-align:center;">43−44</td><td>Failed (<strong>1d6</strong>: 1–2 <em>lord’s heir</em> / 3–4 <em>merchant</em> / 5–6 <em>soldier</em>) who found the shrines</td></tr><tr><td style="text-align:center;">45−46</td><td>Gravekeeper’s assistant, more comfortable with the dead than the living</td></tr><tr><td style="text-align:center;">51−52</td><td>Itinerant traveler beholden to the fates</td></tr><tr><td style="text-align:center;">53−54</td><td>Oathbreaker whose punishment was a lifetime of shrine service</td></tr><tr><td style="text-align:center;">55−56</td><td>Sold to a shrine by family to settle a funeral debt</td></tr><tr><td style="text-align:center;">61−62</td><td>Known for (1d6: 1–2 <em>vicious satire</em> / 3–4 <em>prophecy</em> / 5–6 <em>obscene comedy</em>)</td></tr><tr><td style="text-align:center;">63−64</td><td>Confidant to a lord who told me everything &amp; then died</td></tr><tr><td style="text-align:center;">65−66</td><td>Child who kept seeing spirits nobody else could &amp; was given to the Jesters to “fix”</td></tr></tbody></table></div>
+<h3 id="-magician">@ Magician<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-magician" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Race:</strong> Varies by Tradition.</li>
+<li><strong>Sex</strong>: Varies by Tradition.</li>
+</ul>
+<p>@ Magicians are rare.</p>
+<p>@ Magicians are <strong>unstable</strong>. Magic is horrifically dangerous. Few magicians live without suffering mutations, personal injury, and an eventual horrifying death. Sorcerer-kings are feared. Tame magicians are kept on tight leashes. Their prowess is unquestionable, but their training makes it difficult for them to rule men. And yet, the most powerful wizards of all have done just that — commanding through force of sorcerous magic or institutional benefice as Fisher Kings who shape their realms as surely as it shapes them.</p>
+<p>@ <strong>Magicians are not a straightforward Class to play</strong>. Unlike lords, magistrates, or gangsters, all of whom have direct &amp; intrinsic paths to the institutional power Glass Empires revolves around, magicians rely on specialized magical abilities that carry enormous risks. They have little in the way of institutional ability &amp; therefore most “sorcerer-kings” rely on unique combinations of talent &amp; discovered magic to power their conquests. Because of this, most lack a straightforward route to power. Most magicians are the <em>right-hand man</em> of conquerors, not the conqueror themselves. That doesn’t mean it’s impossible; rather, it means finesse &amp; intelligence is required to succeed.</p>
+<p>@ A spell in the context of a magician is a miniature spirit, sprite, demon, devil, angel, elemental, or outsider presence whose body can serve as a <em>lens</em> for power. Magicians funnel large quantities of power into the spirit (in the form of their own SD &amp; HP) &amp; in exchange for effects that occur as a result.</p>
+<h4 id="class-features-3">Class Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-features-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>The <em>first time</em> you take a rank in Magician, pick a Tradition. It’s yours now. You can’t change it later. You gain all its listed perks &amp; drawbacks.</p>
+<p><em>Every time</em> you take a Magician rank, gain +1 Spell Die. You also attract an additional random spell from your Tradition’s spell list as soon as you make or otherwise obtain a Totem capable of holding it.</p>
+<p>Every <em>even-numbered</em> Magician rank, roll once on the table of Class Features &amp; gain that Feature.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Magician Class Feature</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td><strong>Overcharging</strong>: Every time you cast a spell, you can declare you’re overcharging the spell. When you do so, take 1d6 Damage, boost your [Sum] by the amount of Damage taken &amp; increase your [Dice] by 1.</td></tr><tr><td style="text-align:center;">2</td><td><strong>Addiction</strong>: Whenever you suffer a Mishap, restore one of your exhausted SD.</td></tr><tr><td style="text-align:center;">3</td><td><strong>Magician’s Eyes</strong>: In bright light, you can see invisible things (including spirits) as a faint lensing outline. Through direct eye contact, you can tell if someone is possessed, charmed, or soulless. Enchanted items (p. @) glow with a faint rainbow hue.</td></tr><tr><td style="text-align:center;">4</td><td><strong>Magical Identification</strong>: Given 1 hour of study, you can identify if something is enchanted or possessed by a spirit &amp; the approximate nature &amp; intent of that spirit. This accounts for all permanent &amp; temporary effects inflicted by casting (p. @).</td></tr><tr><td style="text-align:center;">5</td><td><strong>Cautious Casting</strong>: Once per day, when you cast a spell but before calculating spell effects, you may willingly reduce any single Spell Die’s rolled result to 1.</td></tr><tr><td style="text-align:center;">6</td><td><strong>Spell Possession</strong>: You can treat your head as being a Totem capable of housing 2 spirits. Internally-held spirits are always available for casting &amp; can only be unwillingly extracted from your body if you are killed. You count as possessed if you have any spirits inside you.</td></tr></tbody></table></div>
+<h4 id="class-backgrounds-2">Class Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-backgrounds-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Your backgrounds are determined by your Tradition (p. @).</p>
+<h3 id="-burgher">@ Burgher<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-burgher" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Race</strong>: Human only</li>
+<li><strong>Sex</strong>:</li>
+</ul>
+<p>make friends
+take out beeeg loans
+lie :^)
+guildsmanship
+craftsmanship</p>
+<h4 id="-class-features">@ Class Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-class-features" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>During character generation, roll once per Level. If you roll a Feature you already have, you may choose a Feature from above or below it on the list that you don’t have yet.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Class Feature</th></tr></thead><tbody><tr><td style="text-align:center;">2–3</td><td>@ <strong>Art of the Deal</strong>: Anything you have</td></tr><tr><td style="text-align:center;">4</td><td>@</td></tr><tr><td style="text-align:center;">5</td><td>@ <strong>Art of the Backstab</strong>:</td></tr><tr><td style="text-align:center;">6</td><td><strong>Trade Network Whispers</strong>: If you want to know anything substantial (defeats, leadership changes, debt crises, shifts in priority) that occur to any Faction whose Capital is part of your physical trade routes (i.e. city governments) or supply chains (i.e. material suppliers), the GM <em>must</em> supply you a truthful answer.</td></tr><tr><td style="text-align:center;">7</td><td>@</td></tr><tr><td style="text-align:center;">8</td><td><strong>Carouser</strong>: If you can convince someone to spend a night committing a crime (however minor) or indulging in their favorite vice with you, they automatically become Friendly towards you. (Chaining a variety of crime &amp; vice proposals is still a severe social offense.)</td></tr><tr><td style="text-align:center;">9</td><td><strong>Honor Gifts</strong>: When you <em>offer</em> someone a gift, regardless of whether they accept it or not, there is an implicit understanding that <em>they owe you</em> for it &amp; they gain a Debt described as an “<em>Obligation</em>” with a Value equal to that of the gift’s Value or other identity. If the gift is <em>refused</em>, you must immediately choose between calling the Debt in (as an attack on their honor &amp; character) or forgiving it.</td></tr><tr><td style="text-align:center;">10</td><td><strong>Art of Subtlety</strong>: You cannot incriminate <em>yourself</em> for bribery while making bribes or while commanding a Faction to a Move with that intent; your words or actions are always too slippery.</td></tr><tr><td style="text-align:center;">11–12</td><td>@</td></tr></tbody></table></div>
+<h3 id="-mercenary">@ Mercenary<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-mercenary" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>@ [Description of professional fighters, loyalty-for-hire, martial expertise]</li>
+<li><strong>Race:</strong> Human, @ [others?]</li>
+<li><strong>Role:</strong> Combat, temporary allegiance, survival</li>
+</ul>
+<h4 id="-class-features-1">@ Class Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-class-features-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>During character generation, roll once per Level. If you roll a Feature you already have, you may choose a Feature from above or below it on the list that you don’t have yet.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Class Feature</th></tr></thead><tbody><tr><td style="text-align:center;">2–3</td><td></td></tr><tr><td style="text-align:center;">4</td><td></td></tr><tr><td style="text-align:center;">5</td><td></td></tr><tr><td style="text-align:center;">6</td><td></td></tr><tr><td style="text-align:center;">7</td><td><strong>Murderer</strong>: Gain an extra Strike per Attack.</td></tr><tr><td style="text-align:center;">8</td><td></td></tr><tr><td style="text-align:center;">9</td><td><strong>Cleaver</strong>: Your Strikes in an Attack can target any number of valid characters &amp; if a target dies, you may retarget unspent Strikes to new valid targets within reach — and you may make a new Angry Step before each Strike if doing so would pull an otherwise out-of-reach character into your reach.</td></tr><tr><td style="text-align:center;">10</td><td></td></tr><tr><td style="text-align:center;">11–12</td><td></td></tr></tbody></table></div>
+<h3 id="gangster">Gangster<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#gangster" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Race:</strong> Human, harpy, or salamander
+<strong>Sex</strong>: Either</p>
+<p>You are a smuggler, racketeer, &amp; underworld financier. You <em>solve problems</em> beyond the scope of what the Lords’ courts can help with. You enforce contracts &amp; loans a Magistrate would arrest both parties for. You deal in foreign windguns &amp; gold. You deal in the shadows. If you had your way, nobody would ever know you existed — and most never do.</p>
+<h4 id="class-features-4">Class Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-features-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>During character generation, roll once per Level. If you roll a Feature you already have, you may choose a Feature from above or below it on the list that you don’t have yet.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Class Feature</th></tr></thead><tbody><tr><td style="text-align:center;">2–3</td><td><strong>Murderer</strong>: Gain an extra Strike per Attack.</td></tr><tr><td style="text-align:center;">4</td><td><strong>Network of Whispers</strong>: If you hear about an event &amp; can talk with someone tied to the <em>event</em> or the <em>parties supposedly involved</em>, the GM must tell you (as an uncanny sense) the full list of Factions who were <em>actually</em> involved (but not how or why). If you didn’t prior know of any of the Factions, you stumble across their full name by the end of the day.</td></tr><tr><td style="text-align:center;">5</td><td><strong>Carouser</strong>: If you can convince someone to spend a night committing a crime (however minor) or indulging in their favorite vice with you, they automatically become Friendly towards you.</td></tr><tr><td style="text-align:center;">6</td><td><strong>Suspicion</strong>: You always know when someone is lying to you. You automatically know that disguises &amp; illusions are that, but not what’s beneath.</td></tr><tr><td style="text-align:center;">7</td><td><strong>Fixer</strong>: If you Persuade someone (p. @) that you can <em>without question</em> destroy them (by whatever metric they care about; life, family, plans, etc.) &amp; survive their retaliation, you may automatically make them a <em>hidden</em> Subfaction for you or one of your Retainers. This doesn’t impact Mood or bring loyalty if you don’t maintain your power.</td></tr><tr><td style="text-align:center;">8</td><td><strong>Master of Implication</strong>: Your verbal lies cannot be detected, <em>including</em> by rules that say they can be detected; this Feature trumps all other rules regarding lie detection. You cannot be implicated for crimes by what you say.</td></tr><tr><td style="text-align:center;">9</td><td><strong>Blackmail Ledger</strong>: The first time you personally spend at least an hour with someone, you may ask the GM one of these questions about them: “What’s their deepest secret?” “Who do they fear?” “What debt burdens them the most?” “Who would they betray first?” The GM must answer truthfully, no longer than a sentence.</td></tr><tr><td style="text-align:center;">10</td><td><strong>Strings Attached</strong>: You can call in any Debt a character or Faction owes you at <em>any</em> time. If they cannot pay/default, you may instantly perform a successful Sabotage Move (p. @) for free.</td></tr><tr><td style="text-align:center;">11–12</td><td><strong>Insurance</strong>: When a Faction you personally know the Leader of suffers a loss of Followers &amp; if you can explain how to deploy your Factions’ resources to do so, you may cover for them by redirecting some or all of that loss onto <em>one or more</em> Factions or Subfactions you control or hold dominion over.</td></tr></tbody></table></div>
+<h4 id="class-backgrounds-3">Class Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-backgrounds-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>If this is your first Class at character creation, roll twice. For each, write a Fact that describe a true lesson of your choice you learned from the experience: “<em>Because I [was (a)…], I learned [lesson].</em>” You can play with the phrasing so long as the background &amp; lesson are both included.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">d66</th><th>I was (a)…</th></tr></thead><tbody><tr><td style="text-align:center;">11−12</td><td>Mathematician &amp; (<strong>1d6</strong>: 1–2 <em>card sharp</em> / 3–4 <em>book-cooker</em> / 5–6 <em>extortionist</em>)</td></tr><tr><td style="text-align:center;">13−14</td><td>Orphaned (<strong>1d6</strong>: 1–2 <em>con artist</em> / 3–4 <em>petty pickpocket</em> / 5–6 <em>fence</em>)</td></tr><tr><td style="text-align:center;">15−16</td><td>Indebted wrestler who started throwing fights</td></tr><tr><td style="text-align:center;">21−22</td><td>Legitimate businessman ruined by a rival</td></tr><tr><td style="text-align:center;">23−24</td><td>Decadent beyond decadent, indulging in every vice</td></tr><tr><td style="text-align:center;">25−26</td><td>Openly a criminal &amp; beloved by the Commons</td></tr><tr><td style="text-align:center;">31−32</td><td>Forger of Lords’ pedigrees &amp; land claims</td></tr><tr><td style="text-align:center;">33−34</td><td>Unforgiving (<strong>1d6</strong>: 1–2 <em>serial killer</em> / 3–4 <em>assassin</em> / 5–6 <em>lawyer</em>)</td></tr><tr><td style="text-align:center;">35−36</td><td>Good lord turned to crime by desperation</td></tr><tr><td style="text-align:center;">41−42</td><td>Blue-blooded psychopathic burgher</td></tr><tr><td style="text-align:center;">43−44</td><td>Common thief-turned-ringleader</td></tr><tr><td style="text-align:center;">45−46</td><td>Obsessed with ciphers &amp; code-breaking</td></tr><tr><td style="text-align:center;">51−52</td><td>Taught by a sect master who adopted me</td></tr><tr><td style="text-align:center;">53−54</td><td>Full-time (<strong>1d6</strong>: 1–2 <em>pirate</em> / 3–4 <em>smuggler</em> / 5–6 <em>mercenary</em>)</td></tr><tr><td style="text-align:center;">55−56</td><td>Betrayed by family &amp; driven to crime to survive</td></tr><tr><td style="text-align:center;">61−62</td><td>Opera performer in a traveling troupe</td></tr><tr><td style="text-align:center;">63−64</td><td>Crooked accountant</td></tr><tr><td style="text-align:center;">65−66</td><td>Street peddler at Jesters’ shrine festivals</td></tr></tbody></table></div>
+<h3 id="-foreign">@ Foreign<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-foreign" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Coraler Searaider</strong></p>
+<ul>
+<li>@ [Description of amphibious invaders, cephalopod warriors, coastal raids]</li>
+<li><strong>Race:</strong> Coraler only</li>
+<li><strong>Role:</strong> Naval warfare, raiding, opportunistic conquest</li>
+</ul>
+<h2 id="-magical-traditions">@ Magical Traditions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-magical-traditions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>@ Your <strong>Tradition</strong> is the philosophy &amp; frame by which you see the world.</p>
+<h3 id="-origami-assassin">@ Origami Assassin<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-origami-assassin" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Race</strong>: Human, if questionably so.</li>
+<li><strong>Sex</strong>: Both.</li>
+</ul>
+<p>@</p>
+<h4 id="perks--drawbacks">Perks &amp; Drawbacks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perks--drawbacks" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>When you incapacitate or kill a character, restore 1 exhausted Spell Die.</li>
+<li>You can only cast spells while touching a bladed weapon; a sheathed one is fine.</li>
+<li>You can fold origami.</li>
+</ul>
+<h4 id="backgrounds">Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#backgrounds" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Backgrounds</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>@</td></tr><tr><td style="text-align:center;">2</td><td>@</td></tr><tr><td style="text-align:center;">3</td><td>@</td></tr><tr><td style="text-align:center;">4</td><td>@</td></tr><tr><td style="text-align:center;">5</td><td>@</td></tr><tr><td style="text-align:center;">6</td><td>@</td></tr></tbody></table></div>
+<h4 id="spells">Spells<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spells" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>Papercut</strong>: Affected held thin object develops a lethal blade edge for [Dice] hours &amp; may be used as a Throwing weapon with a +[Dice] Damage bonus.</li>
+<li><strong>Execution</strong>: Split [Sum] + [Dice]² Damage between any valid targets within reach of your current available movement this Turn; you may commit Actions to movement-enabling actions to expand your reach.</li>
+<li><strong>Escape Artist</strong>: Escape from [Dice] sets of bonds constraining your movement: ropes, handcuffs, magical prison gates, awkward or formal conversations.</li>
+<li><strong>Lightning Strikes Twice</strong>: Make a melee Attack (as normal, sans Action cost) with [Dice] additional bonus Strikes. If you forego a Strike, you may draw &amp; sheathe a weapon for free without additional Actions. If you forego <em>two</em> Strikes, your remaining Strikes occur so fast that viewers cannot observe that you attacked at all.</li>
+<li><strong>Paper Link</strong>: For [Dice] days, up to [Dice] + 1 sheets of paper are entangled together. Everything that happens to one sheet is duplicated to all others, including tearing, ignition, &amp; ink or other fluids soaking into the sheet.</li>
+<li><strong>Origami Servant</strong>: Animate a single-sheet work of origami for [Dice] hours. They are mute, but capable of <em>frighteningly</em> intelligent action &amp; interpretation of intent. One golem can move a coin or pen, carry itself at a Run of 25’ (or Fly if given wings), climb rough surfaces, &amp; attack targets for [Dice] Damage.</li>
+<li><strong>Silence</strong>: Create a spherical cloak of overwhelming silence of up to [Dice] × 10’ diameter for [Sum] Rounds. At 4+ SD, the effect may be permanent until canceled. Spells cannot usually be cast in silence.</li>
+<li><strong>Whirlwind Blade</strong>: For the next [Dice] Rounds, at the end of a melee-only Attack, anything within a touched character’s weapon’s reach that wasn’t struck by a Strike in the Attack takes Damage as if struck by a Seven (halved Damage/effects) using any of the weapons the character used during the Attack.</li>
+<li><strong>Zero Point Edge</strong>: For the next [Dice] hours, a specific touched weapon does an additional [Dice] × [Dice] Damage of a chosen Type.</li>
+<li><strong>Flesh Folding</strong>: Touched target creature or object is flattened paper-thin for [Sum] Rounds. They may Save to negate with a −[Dice] penalty. While flattened, characters take doubled Damage &amp; have a −2 penalty on all physical actions, but may move normally &amp; can slip through any gap thin enough to fit paper through.</li>
+<li>@</li>
+<li>@</li>
+</ol>
+<p><strong>@ Infiltrator</strong>: At any time, you may “walk off-screen”, disap­pearing into a crowd, out a window, etc. Later, you may reappear, either by revealing yourself as having been a minor unnamed NPC in the current scene or by entering through an available entrance. @</p>
+<h3 id="-flesh-worker">@ Flesh Worker<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-flesh-worker" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Race</strong>:</li>
+<li><strong>Sex</strong>:</li>
+</ul>
+<p>@</p>
+<h4 id="perks--drawbacks-1">Perks &amp; Drawbacks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perks--drawbacks-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>@</li>
+</ul>
+<h4 id="backgrounds-1">Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#backgrounds-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Backgrounds</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>@</td></tr><tr><td style="text-align:center;">2</td><td>@</td></tr><tr><td style="text-align:center;">3</td><td>@</td></tr><tr><td style="text-align:center;">4</td><td>@</td></tr><tr><td style="text-align:center;">5</td><td>@</td></tr><tr><td style="text-align:center;">6</td><td>@</td></tr></tbody></table></div>
+<h4 id="spells-1">Spells<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spells-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>@</strong>:</li>
+</ol>
+<h3 id="-forester">@ Forester<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-forester" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Race</strong>:</li>
+<li><strong>Sex</strong>:</li>
+</ul>
+<p>@</p>
+<h4 id="perks--drawbacks-2">Perks &amp; Drawbacks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perks--drawbacks-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>@</li>
+</ul>
+<h4 id="backgrounds-2">Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#backgrounds-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Backgrounds</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>@</td></tr><tr><td style="text-align:center;">2</td><td>@</td></tr><tr><td style="text-align:center;">3</td><td>@</td></tr><tr><td style="text-align:center;">4</td><td>@</td></tr><tr><td style="text-align:center;">5</td><td>@</td></tr><tr><td style="text-align:center;">6</td><td>@</td></tr></tbody></table></div>
+<h4 id="spells-2">Spells<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spells-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>@</strong>:</li>
+</ol>
+<h3 id="-metallurge">@ Metallurge<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-metallurge" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Race</strong>:</li>
+<li><strong>Sex</strong>:</li>
+</ul>
+<p>@</p>
+<h4 id="perks--drawbacks-3">Perks &amp; Drawbacks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perks--drawbacks-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>@</li>
+</ul>
+<h4 id="backgrounds-3">Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#backgrounds-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Backgrounds</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>@</td></tr><tr><td style="text-align:center;">2</td><td>@</td></tr><tr><td style="text-align:center;">3</td><td>@</td></tr><tr><td style="text-align:center;">4</td><td>@</td></tr><tr><td style="text-align:center;">5</td><td>@</td></tr><tr><td style="text-align:center;">6</td><td>@</td></tr></tbody></table></div>
+<h4 id="spells-3">Spells<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spells-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>@</strong>:</li>
+</ol>
+<h3 id="-jester">@ Jester<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-jester" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Race</strong>:</li>
+<li><strong>Sex</strong>:</li>
+</ul>
+<p>@ it’s the magician version of the normal class. you can mix-and-match.</p>
+<h4 id="perks--drawbacks-4">Perks &amp; Drawbacks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perks--drawbacks-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>@</li>
+</ul>
+<h4 id="backgrounds-4">Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#backgrounds-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Backgrounds</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>@</td></tr><tr><td style="text-align:center;">2</td><td>@</td></tr><tr><td style="text-align:center;">3</td><td>@</td></tr><tr><td style="text-align:center;">4</td><td>@</td></tr><tr><td style="text-align:center;">5</td><td>@</td></tr><tr><td style="text-align:center;">6</td><td>@</td></tr></tbody></table></div>
+<h4 id="spells-4">Spells<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spells-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>To roll on the spell list, choose a number from 0 to 6 &amp; add 1d6 to it. Pick the corresponding spell. If you get a spell you already possess, you may pick from all those on the list — you may select &amp; receive a duplicate if desired.</p>
+<ol>
+<li><strong>Portable Pocket</strong>: Designated touched portal becomes a pitch-black pocket that can hold up to [Dice] × 1# in Weight for [Sum] hours without adding weight or bulk. Items that fit are still limited by the pocket’s lip. All items are abruptly expelled when the effect ends.</li>
+<li><strong>Candlejack</strong>: Place an illuminating light on a line-of-sight point within 30’. The light has a [Dice] × 10’ radius. Hostile entities within a mile who are <em>noticed</em> or <em>mentioned</em> by any illuminated characters (or their Players) are alerted to their presence. The effect lasts [Sum] hours.</li>
+<li><strong>Insight</strong>: See into someone’s spirit within your line of sight. What you learn depends on how high your [Dice] is:
+<ul>
+<li><strong>1 SD</strong>: Learn what their next course of action will be.</li>
+<li><strong>2 SD</strong>: Also learn the most immediate reason for their taking that action.</li>
+<li><strong>3 SD</strong>: Also learn the best way to solve a problem that’d change their mind.</li>
+</ul>
+</li>
+<li><strong>Grease</strong>: Coat a [Sum] × 5’ square surface (or equivalent area) or [Sum] object(s) within 120’ in an ultra-slippery grease for [Sum] Rounds (or [Sum] × 10 seconds). Victims must Save or fall when moving over affected surfaces.</li>
+<li><strong>Paralyze Bird</strong>: [Sum] Power in target avian(s) within line-of-sight are stunned senseless. Harpies are valid targets. If used for hunting, produces [Sum] × 4 days of food for a human.</li>
+<li><strong>Laughing Fit</strong>: At 1 SD, make a jest funny to all in earshot. At 2+ SD, for [Dice] Rounds, up to [Sum] Power in targets are so busy laughing that they take [Dice] Damage for each Action taken (if any). Alternatively, add a +[Dice] bonus to relevant social Saves.</li>
+<li><strong>Last Laugh</strong>: Tell an extended 10-minute joke to a willing audience. Up to [Sum] Power in characters must Save or die from asphyxiation laughing. Characters of [Dice] Power or less don’t get a save.</li>
+<li><strong>Ventriloquism</strong>: For up to [Sum] minutes, project your voice to any point within line-of-sight. At 2+ SD, change it to any voice of the same species. At 3+ SD, project to any point in earshot &amp; alter the voice to any sound you’ve heard before.</li>
+<li><strong>Divine Offering</strong>: Add a +[Dice] bonus to a Divination Save (p. @). You take [Dice] Damage.</li>
+<li><strong>@ Rude Awakening</strong>: Target object becomes an aggressively uncooperative animated item for [Sum] Rounds.</li>
+<li><strong>@</strong> a</li>
+<li><strong>@</strong> a</li>
+</ol>
+<h3 id="-snow-jester">@ Snow Jester<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-snow-jester" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Out in the taiga, beneath boughs of cold conifers, silence deafens the senses.</p>
+<p>A blanket of snow is a quieting thing. It cushions sound, smothers it as it does life.</p>
+<p>Snow Jesters are not excessive. They are stilling. They control excess.</p>
+<blockquote>
+<p><strong>Socioeconomic function</strong>: Same as Jesters. They’re just a branch that deals heavily with the dead. Their work is in reanimation &amp; ancestral work. The wilderness is colder &amp; more dangerous out rimward than coreward.</p>
+</blockquote>
+<h4 id="perks--drawbacks-5">Perks &amp; Drawbacks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perks--drawbacks-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>As a Full-Turn Action, you can freeze up to your own body weight in water.</li>
+<li>You are sworn to muteness. You can communicate through gestures &amp; writing, but not voice. This is a penalty for persuasion &amp; negotiation.</li>
+<li>You can cast spells without speaking.</li>
+</ul>
+<h4 id="backstories">Backstories<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#backstories" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>I was (a)…</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td></td></tr><tr><td style="text-align:center;">2</td><td></td></tr><tr><td style="text-align:center;">3</td><td></td></tr><tr><td style="text-align:center;">4</td><td></td></tr><tr><td style="text-align:center;">5</td><td></td></tr><tr><td style="text-align:center;">6</td><td></td></tr></tbody></table></div>
+<h4 id="spells-5">Spells<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spells-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>Animate Corpse</strong>: Animate [Sum] corpses within 30’ as Undead under your control for [Dice] days. If cast with 3+ SD, the animation is permanent &amp; your control lasts until you die. There’s a 1-in-6 chance that any given Undead is willful enough to stick around as feral Undead after the spell ends.</li>
+<li><strong>Command Undead</strong>: Shout a single clear order to a group of up to [Sum] Undead in earshot. They obey until the command is resolved or for [Dice] × 10 minutes, overriding any existing controller.</li>
+<li><strong>@ Agitate Ghost</strong>: Turn a spirit in a Totem into a Ghost, functioning as a trap. You must have another spell or special ability that approximates the effect desired.</li>
+<li><strong>@ Blizzard</strong>:</li>
+<li>@ Hideous Stare:</li>
+<li>@ Delicious Feast:</li>
+<li>@ Petrification:</li>
+<li>@ Read the Spirit: Ancestral/deceased questioning.</li>
+<li>@ Snowflakes:</li>
+<li>@ Silence:</li>
+<li>@ Order: Troops following target leader cannot suffer Morale loss.</li>
+<li>@ Will of the Way: pathfinding in wilderness.</li>
+</ol>
+<h3 id="telluric-priest">Telluric Priest<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#telluric-priest" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Race</strong>: Salamander only</li>
+<li><strong>Sex</strong>: Both.</li>
+</ul>
+<p>The salamanders’ world is split in two, &amp; the halves are necessary, complementary &amp; harmonious. Qali reigns in heaven as sky, overseeing ten thousand stellar patriarchs; Impa rests beneath as earth, enveloping ten thousand gemstone mothers — her heart gifted to the sky as the Moon.</p>
+<p>The Telluric Priest is a teacher, oracle &amp; pilgrim. Charitable but pragmatic; past training, they wander adrift across the plains &amp; open skies until they find a place within the earth.</p>
+<h4 id="perks--drawbacks-6">Perks &amp; Drawbacks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#perks--drawbacks-6" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Once per day, you may call upon the collective strength of your ancestors’ spirits to heal any character for HP equal to your Power.</li>
+</ul>
+<h4 id="backgrounds-5">Backgrounds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#backgrounds-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Backgrounds</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>@</td></tr><tr><td style="text-align:center;">2</td><td>@</td></tr><tr><td style="text-align:center;">3</td><td>@</td></tr><tr><td style="text-align:center;">4</td><td>@</td></tr><tr><td style="text-align:center;">5</td><td>@</td></tr><tr><td style="text-align:center;">6</td><td>@</td></tr></tbody></table></div>
+<h4 id="spells-6">Spells<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spells-6" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>Earthworks</strong>: Tunnel through &amp; reinforce up to [Dice] 5-foot cubes of touched soil. At 2+ SD, tunnel through and reinforce stone. At 3+ SD, tunnel through and reinforce especially hard, resilient, or magical kinds of stone, and double the amount of soil removed if the stone <em>isn’t</em> hard or magical. This spell can also prevent cave-ins and reinforce [Sum] 5-foot squares of loose wall or ceiling tiles. Designate a place to dump any spare material dug up within [Dice] hours, or have it dumped on your head.</li>
+<li><strong>Earthen Sanctuary</strong>: Designate an underground or wholly stone/soil-built chamber. Those who would wish you harm &amp; who do not know of your presence are unknowingly led away for [Dice] × [Dice] hours.</li>
+<li><strong>Good Health</strong>: Restore [Dice] × [Dice] HP to a touched target, or grant the target a +[Dice] × [Dice] bonus to a Save for medical purposes.</li>
+<li><strong>Draw Water</strong>: Extract pure water from a touched target object. This can dry a sponge, draw [Sum] gallons of drinkable water from swamp dirt or bog water, or instantly deal [Dice] × [Dice] Damage from dehydration to a living character, among other things.</li>
+<li><strong>Metal Detector</strong>: Specify a metal (copper, iron, tin, silver, lead, )</li>
+</ol>
+<h2 id="-2-race">@ 2) Race<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-2-race" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Your <strong>Race</strong> is your lineage. You may pick any Race that your Class is eligible for. Your character inherits the Race’s <em>statblock</em> (write down each stat on your character sheet) as well as its Racial Features (write all of these down too).</p>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Optional: Weight Adjustment </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>You may adjust your Weight from the listed Race value by up to two 3# steps in either direction. Adjust Max. Load by ±2# for each 3# Weight adjustment.</p>
+</div>
+</blockquote>
+<h3 id="coraler">Coraler<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#coraler" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody><tr><td>HD</td><td>1</td></tr><tr><td>BR</td><td>1</td></tr><tr><td>Power</td><td>[HD] + [Level]</td></tr><tr><td>Starting HP</td><td>6 × [Power]</td></tr><tr><td>Speeds</td><td>Run 25’, Swim 50’</td></tr><tr><td>Weight</td><td>12#</td></tr><tr><td>Max. Load</td><td>8# (2 per 3# Weight)</td></tr><tr><td>Size</td><td>5’</td></tr></tbody></table></div>
+<p><em>@ tbh this needs a rewrite. too poetic &amp; not relevant enough to Glass’s context.</em></p>
+<p><strong>You only really solidify under pressure</strong>. That’s what the Coralers know. The instant they lose a clear target &amp; source of resistance, their clans dissolve into a fiery mess of tangled feuds.</p>
+<p>Coralers are frighteningly quick to violence &amp; almost as quick to forgive; playful &amp; vicious, voracious artisans &amp; (often) schizophrenics; their ink makes them natural painters. They are as ephemeral as the tides &amp; as ever-resurgent. Their dominion over the Inner Sea’s trade will remain unquestioned insofar as their coral reefs are a redoubt no enemy can assault. They will never rule Aia, but will always command its heart.</p>
+<p><strong>Almost every Coraler in Glass is an invader from the decades of their conquest of the coast</strong>, or a refugee fleeing the new imperial powers of the Inner Sea who’ve swept in to take revenge after their latest explosion of violence &amp; a devastating plague ripping through their under-sea reefs. A rare few are Deep Nomads on pilgrimage or estranged from their clan, a tribal distinction that nobody else ever cares to make.</p>
+<h4 id="racial-features">Racial Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#racial-features" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Fists (Natural Weapon)</strong>: 2 Physical.</li>
+<li><strong>Bloodthirst</strong>: In combat, so long as you have not yet made a defensive or protective Action (moving away, shielding yourself, dodging an area effect), you are immune to Panic &amp; take 1 fewer Damage from direct attacks.</li>
+<li><strong>Ink</strong>: You produce brightly-colored bio-luminescent ink as saliva. As a 1-per-hour Free Action, it’s enough to cloud a 15’ radius glowing sphere underwater. With a brush &amp; glue medium, it becomes neon glow-in-the-dark underwater paint, good for a few days. Changing your ink color takes an hour of concentration (&amp; changes your tentacle color to match).</li>
+<li><strong>Obligate Carnivore</strong>: You can <em>only</em> eat animal products &amp; fruit. You can safely drink saltwater.</li>
+</ul>
+<h3 id="harpy">Harpy<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#harpy" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody><tr><td>HD</td><td>1</td></tr><tr><td>BR</td><td>1</td></tr><tr><td>Power</td><td>[HD] + [Level]</td></tr><tr><td>Starting HP</td><td>6 × [Power]</td></tr><tr><td>Speeds</td><td>Run 25’, Fly 50’</td></tr><tr><td>Weight</td><td>15#</td></tr><tr><td>Max. Load</td><td>10#</td></tr><tr><td>Size</td><td>5’</td></tr></tbody></table></div>
+<p>Harpies have a bad rap. It’s not that flying isn’t useful — they’re favored as messengers &amp; scouts. But when you can’t manage an ounce of foresight &amp; your principal unit of society is <em>an invading flock</em>, you might <em>expect</em> you’d become known as “bird-brains”, “featherheads”, or “rats with wings”. But that doesn’t matter. As far as you know, <strong>your kin, the flock, is the only way to survive</strong>.</p>
+<p><strong>Glassian harpies are split between urban “townbirds” &amp; wild hunter-gatherers.</strong> Harpies are the backbone of every village defense &amp; military reconnaissance plan in addition to serving as a vast distributed post office capable of delivering almost anywhere on Glass in under a week. Even though harpies are <em>disastrously</em> unproductive &amp; energy-intensive in an agricultural society (averaging 1 family per 50 supporting human families),</p>
+<p>Wilderness harpies are, in contrast, intermittently <em>tolerated</em> &amp; <em>despised</em>. The wilderness is home to thousands of harpies, none of whom properly prepare for winter; and so, summertime fur-traders, itinerant laborers &amp; hunters transform with the approach of winter into nomadic flocks of highwaymen &amp; mercenaries.</p>
+<p>Through the dawn of the Civil War, many a harpy has picked up a bow &amp; learned to hunt their ‘fellow’ Glassian.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Harpy type</th></tr></thead><tbody><tr><td style="text-align:center;">2</td><td>Crane</td></tr><tr><td style="text-align:center;">3</td><td>Turkey</td></tr><tr><td style="text-align:center;">4</td><td>Blue jay</td></tr><tr><td style="text-align:center;">5</td><td>Owl</td></tr><tr><td style="text-align:center;">6</td><td>Pidgeon</td></tr><tr><td style="text-align:center;">7</td><td>Crow</td></tr><tr><td style="text-align:center;">8</td><td>Starling</td></tr><tr><td style="text-align:center;">9</td><td>Falcon</td></tr><tr><td style="text-align:center;">10</td><td>Eagle</td></tr><tr><td style="text-align:center;">11</td><td>Robin</td></tr><tr><td style="text-align:center;">12</td><td>Vulture</td></tr></tbody></table></div>
+<h4 id="racial-features-1">Racial Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#racial-features-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Talons (Natural Weapon)</strong>: 2 Physical.</li>
+<li><strong>Clumsy Flight</strong>: Whenever you fly under a natural Fly speed you possess, your flight is always subject to the following restrictions:
+<ul>
+<li>You cannot hold or use items while flying. (Your arms <em>are</em> your wings.)</li>
+<li>You need a 15’ cubic area in order to fly &amp; cannot hover; being struck or flying through a smaller area triggers a Save to avoid crashing, as if falling (p. @) from your present height in a downward arc from the point at which you crash in the direction you were heading.</li>
+<li>You can only fly for a number of hours per day equal to your unfilled Max. Load.</li>
+</ul>
+</li>
+<li><strong>Bird Joints</strong>: You cannot throw things. Your shoulder joints just don’t work that way.</li>
+<li><strong>Ooo Shiny</strong>: Once per scene/event, if you see something <em>immediately</em> valuable (treasure, useful item, food, opportunity) that wasn’t planned for, you may interrupt any ongoing action or discussion to pursue it immediately &amp; gain +2 on any Save(s) required to do so. You must declare this before anyone else acts on the same opportunity. You cannot use Foresight (p. @).</li>
+</ul>
+<h3 id="human">Human<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#human" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody><tr><td>HD</td><td>2</td></tr><tr><td>BR</td><td>1</td></tr><tr><td>Power</td><td>[HD] + [Level]</td></tr><tr><td>Starting HP</td><td>6 × [Power]</td></tr><tr><td>Speeds</td><td>Run 25’</td></tr><tr><td>Weight</td><td>15#</td></tr><tr><td>Max. Load</td><td>10# (2 per 3# Weight)</td></tr><tr><td>Size</td><td>5’</td></tr></tbody></table></div>
+<p>Glass — the rivers run with ruby-crusted sands! Glass — the water-flows off arching rooftop gutter channels! Glass — gold-white birches paint the land!</p>
+<p>People keep drinking to pretend things are okay.</p>
+<p>Imagine what that’s like. The festivals are dying out &amp; the forest spirits are rioting. The greatest war in all known history is eating the world. Everyone’s a slave, broken, fleeing, joining General Ram, or turning mercenary.</p>
+<p>And they’re still here, partying. <strong>Because nobody has ever invaded Glass &amp; won</strong>. Nobody has ever made finer pottery or jewels. None were ruled by a wiser lord. Nobody was wealthier, or more beautiful — yes, you, <em>slender &amp; porcelain-white &amp; tall</em>, you <em>Men of Glass</em> — the gods themselves crawl in every cup &amp; tree &amp; make themselves your servants—</p>
+<p>—and yet, it all burns. Immortal or not, reincarnating or not — the free Men of this island will die with it if they don’t soon learn to fight.</p>
+<h4 id="racial-features-2">Racial Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#racial-features-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Fists (Natural Weapon)</strong>: 2 Physical.</li>
+</ul>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>What makes humans any good? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>What humans lack in special qualities (the flight, caving, or swimming of other races) they gain in <em>logistical</em> power. <strong>Humans are made for war</strong>. They have the best carrying capacity &amp; their base 2 HD means that they can field armies of <em>twice</em> the brute strength of the other races, who only make up for it by their environmental advantages. You can’t challenge a harpy in the air, a salamander underground, or a seasucker in the depths — but you <em>cannot</em> fight an armed human on dry land, &amp; every other race is in some way dependent upon that land.</p>
+</div>
+</blockquote>
+<h3 id="salamander">Salamander<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#salamander" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody><tr><td>HD</td><td>1</td></tr><tr><td>BR</td><td>1</td></tr><tr><td>Power</td><td>[HD] + [Level]</td></tr><tr><td>Starting HP</td><td>6 × [Power]</td></tr><tr><td>Speeds</td><td>Run 25’</td></tr><tr><td>Weight</td><td>12#</td></tr><tr><td>Max. Load</td><td>8# (2 per 3# Weight)</td></tr><tr><td>Size</td><td>5’</td></tr></tbody></table></div>
+<p>There are no records of dwarves. No faces, no records in the Templevaults they were said to have built. After their supposed vanishing off the face of Aia, the salamanders are their only testament — a strange race of predatory lizard-like “humans” with scaled tails, claws, and hydra’s ears, brought forth from the depths of the earth.</p>
+<p><strong>Glass’s salamanders are all imported &amp; mostly not by choice</strong>. Intermittent wars with the Bread Bay kingdoms saw captives made servants on both sides, &amp; in Glass, ‘mander slaves found a potent role in <em>underground labor</em>. Mines are brutal, unrelenting places for a human, but for a salamander, it’s home — so much a home that as centuries passed, <strong>mining clans</strong> <em>wholly native</em> to Glass formed around fractured blood-memories of their prairie homeland.</p>
+<p>Salamanders dominate the mineral trade. Glassians haven’t mined ore in a full century. You <em>are</em> the mining guilds. You <em>are</em> the source of iron, bronze, &amp; steel. After centuries of slavery, you control the beating heart of <em>every</em> war machine fighting for control over Glass. <strong>In the midst of this infernal slaughter, your clans may find a permanent freedom</strong>.</p>
+<h4 id="your-role-on-glass">Your Role on Glass<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#your-role-on-glass" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>If you’re playing a salamander, you are <em>descended from a mining colony</em> or <em>from a servant family that governed those colonies</em>. Playing a salamander means navigating institutional problems (<em>you are nominally subservient</em>) while wielding strategic monopoly (<em>you control what everybody needs</em>). You have access to secret tunnels, smuggling routes, mineral guilds, &amp; more that nobody else can broach.</p>
+<p>While you may struggle to gain respect from humans who refuse to see you as worthy of a crown, you can always force their compliance by commanding the root of their power.</p>
+<h4 id="racial-features-3">Racial Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#racial-features-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Claws (Natural Weapon)</strong>: 4 Physical. Excavate dirt &amp; stone at twice a normal human rate.</li>
+<li><strong>Semi-Subterranean</strong>: You can detect all harmful gases &amp; can identify their effects (if not their names) with the slightest whiff at <em>least</em> a split second before you start to suffer from it (&amp; can choose to hold your breath). Your scaled ears always know the direction to go in to find the nearest open-air exit in any structure or underground cavern from subtle air currents (unless the air is being heavily disturbed).</li>
+<li><strong>Cave Joints</strong>: Being Prone has no impact on your Run score. When wearing no armor, you can double over yourself &amp; turn around in crawlspaces. You cannot throw things.</li>
+<li><strong>Prehensile Tail</strong>: You have a lizard-tail that can serve as a hand for holding &amp; lightly manipulating things (i.e. lanterns, Totems for casting). It lacks the strength &amp; dexterity required for complex or forceful motions.</li>
+<li><strong>Dwarven Blood Progenitor</strong>: <em>If you were born into a Salamander clan</em>, you have a legendary dwarf ancestor. You <em>genuinely</em> believe he existed. Make up (or roll for, see below) an absurd dwarven heraldic feat &amp; write down the one-sentence story as a Fact. Each Salamander PC, if they declare themselves part of your clan at character creation, can add their own absurd heraldic feat (&amp; sentence) to the Fact &amp; share in its combined legend. The legend can be invoked any time you attempt something related to your clan’s legend. No matter how many feats are added, it’s still only one Fact, so it can only be invoked once for any given Save or other effect.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Progenitor</th><th>Mythical feat</th><th>Heraldic beast</th></tr></thead><tbody><tr><td style="text-align:center;">2</td><td>Montanduq</td><td>Architecture</td><td>Apogeac bull</td></tr><tr><td style="text-align:center;">3</td><td>Ironqing</td><td>Challenging</td><td>Chimera</td></tr><tr><td style="text-align:center;">4</td><td>Qarriman</td><td>Craftsmanship</td><td>Dragon</td></tr><tr><td style="text-align:center;">5</td><td>Qindac</td><td>Digging</td><td>Hydra</td></tr><tr><td style="text-align:center;">6</td><td>Smith</td><td>Divination</td><td>Duckbill lizard</td></tr><tr><td style="text-align:center;">7</td><td>Taqman</td><td>Drinking</td><td>Giraffe</td></tr><tr><td style="text-align:center;">8</td><td>Thimrur</td><td>Fearlessness</td><td>Horse</td></tr><tr><td style="text-align:center;">9</td><td>Urist</td><td>Greed</td><td>Lammasu</td></tr><tr><td style="text-align:center;">10</td><td>Varn</td><td>Grudges</td><td>Lion</td></tr><tr><td style="text-align:center;">11</td><td>Yewman</td><td>Leadership</td><td>Llama</td></tr><tr><td style="text-align:center;">12</td><td>Yonderqog</td><td>Magic resistance</td><td>Mountain lion</td></tr></tbody></table></div>
+<h2 id="-3-crisis">@ 3) Crisis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-3-crisis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Something disrupted your trajectory and set you on the path to power. Roll d66 on the <strong>Crisis</strong> table to figure out what.</p>
+<p>@@ let’s remake this into “Life Events” and make several. one for Glassians, one for foreigners. or make some race-specific tables. class-specific?</p>
+<p>nah, let’s merge it with classes. every class gets a table, roll twice, then choose a distinction.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">d66</th><th>I was (a)…</th></tr></thead><tbody><tr><td style="text-align:center;">11</td><td>Watching when my master was executed for treason</td></tr><tr><td style="text-align:center;">12</td><td>Exiled for “dishonoring” a higher-ranking Lord</td></tr><tr><td style="text-align:center;">13</td><td>Secretly raised as a witch</td></tr><tr><td style="text-align:center;">14</td><td>Taught (poorly) how to bind spirits to my flesh</td></tr><tr><td style="text-align:center;">15</td><td>Master of the local harpy post network</td></tr><tr><td style="text-align:center;">16</td><td>Double-crossing thief</td></tr><tr><td style="text-align:center;">21</td><td>Expelled unfairly from my Governing House</td></tr><tr><td style="text-align:center;">22</td><td>Born a bastard, but still made a Lord</td></tr><tr><td style="text-align:center;">23</td><td>Coraler searaider collaborator</td></tr><tr><td style="text-align:center;">24</td><td>Raised by a cynical Jester priestess</td></tr><tr><td style="text-align:center;">25</td><td>Warlord-in-training</td></tr><tr><td style="text-align:center;">26</td><td>Countryside bandit</td></tr><tr><td style="text-align:center;">31</td><td>Accidental plague-bringer</td></tr><tr><td style="text-align:center;">32</td><td>Responsible for a catastrophic failure of marriage</td></tr><tr><td style="text-align:center;">33</td><td>Former Jester shrinemaster</td></tr><tr><td style="text-align:center;">34</td><td>Serial arsonist</td></tr><tr><td style="text-align:center;">35</td><td>Village orphan</td></tr><tr><td style="text-align:center;">36</td><td>Self-taught “magician”</td></tr><tr><td style="text-align:center;">41</td><td>Mercenary</td></tr><tr><td style="text-align:center;">42</td><td>Shipwrecked in the Inner Sea</td></tr><tr><td style="text-align:center;">43</td><td>Driven mad</td></tr><tr><td style="text-align:center;">44</td><td>Betrothed to someone I fled from</td></tr><tr><td style="text-align:center;">45</td><td>Savior to someone who funded my ambition as thanks</td></tr><tr><td style="text-align:center;">46</td><td>Kidnapped to serve as an apprentice</td></tr><tr><td style="text-align:center;">51</td><td>Kidnapped by a god &amp; taught magic</td></tr><tr><td style="text-align:center;">52</td><td>The only survivor when my village was razed</td></tr><tr><td style="text-align:center;">53</td><td>Depraved, desperate orphan</td></tr><tr><td style="text-align:center;">54</td><td>Under a stint of crushing poverty</td></tr><tr><td style="text-align:center;">55</td><td>Briefly employed as a bureaucrat</td></tr><tr><td style="text-align:center;">56</td><td>Falling in with the Twintail Cultists</td></tr><tr><td style="text-align:center;">61</td><td>Dabbling in necromancy</td></tr><tr><td style="text-align:center;">62</td><td>Debt-slave</td></tr><tr><td style="text-align:center;">63</td><td>Taught shrine-dance &amp; rites by a Jester</td></tr><tr><td style="text-align:center;">64</td><td>Accidentally thrust into command of a battle</td></tr><tr><td style="text-align:center;">65</td><td>Negotiator &amp; thriving merchant</td></tr><tr><td style="text-align:center;">66</td><td>My parents’ pride &amp; joy</td></tr></tbody></table></div>
+<h2 id="4-distinction">4) Distinction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-distinction" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Your <strong>Distinction</strong> is a notable Fact of your character that transcends class; something about your appearance, bearing, or presence that people notice. Roll on the table below, or come up with one of your own — subject to GM approval.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">d66</th><th>Result</th><th style="text-align:center;">d66</th><th>Result</th><th style="text-align:center;">d66</th><th>Result</th></tr></thead><tbody><tr><td style="text-align:center;">11</td><td>Absentminded</td><td style="text-align:center;">31</td><td>Brave</td><td style="text-align:center;">51</td><td>Frail delicacy</td></tr><tr><td style="text-align:center;">12</td><td>Infectuously chipper</td><td style="text-align:center;">32</td><td>Bully instinct</td><td style="text-align:center;">52</td><td>Guilty conscious</td></tr><tr><td style="text-align:center;">13</td><td>Ambitious</td><td style="text-align:center;">33</td><td>Cautious</td><td style="text-align:center;">53</td><td>Honor-bound</td></tr><tr><td style="text-align:center;">14</td><td>Athletic</td><td style="text-align:center;">34</td><td>Cold-blooded</td><td style="text-align:center;">54</td><td>I get my way!</td></tr><tr><td style="text-align:center;">15</td><td>Battle-hardened</td><td style="text-align:center;">35</td><td>Contrary</td><td style="text-align:center;">55</td><td>Idiot savant</td></tr><tr><td style="text-align:center;">16</td><td>Booming voice</td><td style="text-align:center;">36</td><td>Dead sexy</td><td style="text-align:center;">56</td><td>Industrious</td></tr><tr><td style="text-align:center;">21</td><td>Inept poet</td><td style="text-align:center;">41</td><td>Pack leader</td><td style="text-align:center;">61</td><td>Silver hair</td></tr><tr><td style="text-align:center;">22</td><td>Infinite passion</td><td style="text-align:center;">42</td><td>Paranoid schemer</td><td style="text-align:center;">62</td><td>Survivalist</td></tr><tr><td style="text-align:center;">23</td><td>Know-it-all</td><td style="text-align:center;">43</td><td>Piercing gaze</td><td style="text-align:center;">63</td><td>Timid</td></tr><tr><td style="text-align:center;">24</td><td>Loyal servant</td><td style="text-align:center;">44</td><td>Scarred face</td><td style="text-align:center;">64</td><td>Tower of muscles</td></tr><tr><td style="text-align:center;">25</td><td>Nimble fingers</td><td style="text-align:center;">45</td><td>Sharp hearing</td><td style="text-align:center;">65</td><td>Unmoving zealot</td></tr><tr><td style="text-align:center;">26</td><td>Noble bearings</td><td style="text-align:center;">46</td><td>Sharp eyes</td><td style="text-align:center;">66</td><td>Wannabe hero</td></tr></tbody></table></div>
+<p>@ merge this with races. every race gets a table that specifically conveys their physical features &amp; mindset.</p>
+<h2 id="-5-level--retainer">@ 5) Level &amp; Retainer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-5-level--retainer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Your <strong>Level</strong> in Glass Empires is derived from <em>the people who depend upon &amp; support you</em>. Your “Level” is <em>borrowed</em> from your <em>largest</em> ruled <strong>Faction</strong> (p. @) — specifically, it’s determined by the number of <strong>Families</strong> in the <strong>Capital</strong> of your largest ruled Faction.</p>
+<p>While a Family for population’s sake is estimated to be ~5 people (a husband, wife, &amp; 3 offspring of whom ~1.5 on average can work), for the sake of getting Level 1, <em>any</em> number of dependents qualifies you. If you have a <strong>Retainer</strong> you’re responsible for, whether that be your squire, little sibling, wise old parent, or apprentice, <em>you have a Family</em>.</p>
+<p><strong>For the sake of PCs alone</strong>, the Party (as in a “traditional” tightly-knit group of PCs) qualifies as a Family, because you all depend upon each other &amp; support each other (as a gaming group). Therefore, all PCs have <em>at least</em> 1 Family even if they have no Retainer, and are Level 1.</p>
+<p>Since a traditional Party of PCs is at the outset <em>likely</em> a mobile band, you qualify as Nomads (p. @) &amp; therefore your Capital is your mobile encampment. As a consequence, your Retainers are qualified as Family by virtue of being “in your Capital” as in “being your traveling partners”.</p>
+<p>You may check the adjacent table to find the association between ruled Families &amp; Faction Level.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Families<br/>in Capital</th><th style="text-align:center;">Faction<br/>Level</th></tr></thead><tbody><tr><td>0</td><td style="text-align:center;">—</td></tr><tr><td>1+</td><td style="text-align:center;">1</td></tr><tr><td>3+</td><td style="text-align:center;">2</td></tr><tr><td>10+</td><td style="text-align:center;">3</td></tr><tr><td>30+</td><td style="text-align:center;">4</td></tr><tr><td>100+</td><td style="text-align:center;">5</td></tr><tr><td>300+</td><td style="text-align:center;">6</td></tr><tr><td>1,000+</td><td style="text-align:center;">7</td></tr><tr><td>3,000+</td><td style="text-align:center;">8</td></tr><tr><td>10k+</td><td style="text-align:center;">9</td></tr><tr><td>30k+</td><td style="text-align:center;">10</td></tr><tr><td>100k+</td><td style="text-align:center;">11</td></tr><tr><td>300k+</td><td style="text-align:center;">12</td></tr></tbody></table></div>
+<p><em>Your</em> Retainer (p. @) is the person (or people) who follow you and form the fledgling nucleus of your power. All Retainers start Friendly (p. @) to you.</p>
+<p>@ hey, to what extent should we fill in detail for these guys? let the player decide??</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">d66</th><th>@ Result</th><th style="text-align:center;">d66</th><th>@ Result</th><th style="text-align:center;">d66</th><th>@ Result</th></tr></thead><tbody><tr><td style="text-align:center;">11</td><td>Apprentice scribe</td><td style="text-align:center;">31</td><td></td><td style="text-align:center;">51</td><td></td></tr><tr><td style="text-align:center;">12</td><td>Unscrupulous mercenary</td><td style="text-align:center;">32</td><td></td><td style="text-align:center;">52</td><td></td></tr><tr><td style="text-align:center;">13</td><td>Zealous fan</td><td style="text-align:center;">33</td><td></td><td style="text-align:center;">53</td><td></td></tr><tr><td style="text-align:center;">14</td><td>Sworn servant</td><td style="text-align:center;">34</td><td></td><td style="text-align:center;">54</td><td></td></tr><tr><td style="text-align:center;">15</td><td>Little sibling</td><td style="text-align:center;">35</td><td></td><td style="text-align:center;">55</td><td></td></tr><tr><td style="text-align:center;">16</td><td>Cousin, once-removed</td><td style="text-align:center;">36</td><td></td><td style="text-align:center;">56</td><td></td></tr><tr><td style="text-align:center;">21</td><td>Identical twin brother/sister</td><td style="text-align:center;">41</td><td></td><td style="text-align:center;">61</td><td></td></tr><tr><td style="text-align:center;">22</td><td></td><td style="text-align:center;">42</td><td></td><td style="text-align:center;">62</td><td></td></tr><tr><td style="text-align:center;">23</td><td></td><td style="text-align:center;">43</td><td></td><td style="text-align:center;">63</td><td></td></tr><tr><td style="text-align:center;">24</td><td></td><td style="text-align:center;">44</td><td></td><td style="text-align:center;">64</td><td></td></tr><tr><td style="text-align:center;">25</td><td></td><td style="text-align:center;">45</td><td></td><td style="text-align:center;">65</td><td></td></tr><tr><td style="text-align:center;">26</td><td></td><td style="text-align:center;">46</td><td></td><td style="text-align:center;">66</td><td></td></tr></tbody></table></div>
+<p>@@@</p>
+<ul>
+<li>Human Retainer
+<ul>
+<li>Apprentice, scribe/specialist, fellow mercenary, maybe ambitious &amp; competent</li>
+<li>not all that enthused about “dying for glory”</li>
+</ul>
+</li>
+<li>Animal companion
+<ul>
+<li>never betrays you but not that useful compared to people</li>
+</ul>
+</li>
+<li>Spirit companion
+<ul>
+<li>PHENOMENAL COSMIC POWER &amp; completely fucking alien morality</li>
+<li>also itty bitty living space (- -”)</li>
+</ul>
+</li>
+<li>Zealot/true believer
+<ul>
+<li>ABSOLUTELY loyal, MOTIVATED, won’t betray, RECRUITS OTHERS</li>
+<li>HOLDS YOU TO YOUR OWN COMMITMENT, might be liability, PURITY SPIRALS</li>
+</ul>
+</li>
+<li>Servant or Slave</li>
+<li>Kin
+<ul>
+<li>sibling, orphan, cousin, bastard child, wise/knowledgeable parent</li>
+</ul>
+</li>
+</ul>
+<h2 id="-6-group-entanglement">@ 6) Group Entanglement<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-6-group-entanglement" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>@ Braunsteins </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>I should investigate how to run Braunsteins. May be a better setup than this gang thing. When I do, this section will need rewriting.</p>
+</div>
+</blockquote>
+<p>Stop. <strong>This step is done by all Players at once</strong> &amp; you should wait until everyone is done with their PC before proceeding. The most important element to the creation of a new Party is making sure that all PCs in the Party are capable of working together &amp; have a good reason to do so. Therefore, all Players must collectively identify a reason for them to trust each other &amp; be working towards the same approximate goal — power &amp; security.</p>
+<p>To do this, the Players may collectively come up with a novel reason or roll on the table below to generate a conceptual seed to expand on. Alternatively, the GM may establish a campaign-specific reason for entanglement.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Entanglement</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>You’re all in debt to the same local Faction who <em>called in favors simultaneously</em>.</td></tr><tr><td style="text-align:center;">2</td><td>You’re old friends, <em>planning joint revenge</em> against a shared enemy who wronged you all.</td></tr><tr><td style="text-align:center;">3</td><td>You’re old friends planning a joint venture to <em>survive the civil war’s chaos</em>.</td></tr><tr><td style="text-align:center;">4</td><td>You’re collectively <em>seeking a treasure, person, or secret</em> that requires all your skills.</td></tr><tr><td style="text-align:center;">5</td><td>You’ve been <em>hired</em> by a local Faction for a specific dangerous job none could do alone.</td></tr><tr><td style="text-align:center;">6</td><td>You’re all being <em>hunted</em> by the same Faction; there’s safety in numbers.</td></tr></tbody></table></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-3" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#procedure-overview" data-for="procedure-overview">Procedure Overview</a></li><li class="depth-0"><a href="#1-choose-class" data-for="1-choose-class">1) Choose Class</a></li><li class="depth-1"><a href="#tables-of-classes" data-for="tables-of-classes">Tables of Classes</a></li><li class="depth-1"><a href="#lord" data-for="lord">Lord</a></li><li class="depth-1"><a href="#-magistrate" data-for="-magistrate">@ Magistrate</a></li><li class="depth-1"><a href="#jester" data-for="jester">Jester</a></li><li class="depth-1"><a href="#-magician" data-for="-magician">@ Magician</a></li><li class="depth-1"><a href="#-burgher" data-for="-burgher">@ Burgher</a></li><li class="depth-1"><a href="#-mercenary" data-for="-mercenary">@ Mercenary</a></li><li class="depth-1"><a href="#gangster" data-for="gangster">Gangster</a></li><li class="depth-1"><a href="#-foreign" data-for="-foreign">@ Foreign</a></li><li class="depth-0"><a href="#-magical-traditions" data-for="-magical-traditions">@ Magical Traditions</a></li><li class="depth-1"><a href="#-origami-assassin" data-for="-origami-assassin">@ Origami Assassin</a></li><li class="depth-1"><a href="#-flesh-worker" data-for="-flesh-worker">@ Flesh Worker</a></li><li class="depth-1"><a href="#-forester" data-for="-forester">@ Forester</a></li><li class="depth-1"><a href="#-metallurge" data-for="-metallurge">@ Metallurge</a></li><li class="depth-1"><a href="#-jester" data-for="-jester">@ Jester</a></li><li class="depth-1"><a href="#-snow-jester" data-for="-snow-jester">@ Snow Jester</a></li><li class="depth-1"><a href="#telluric-priest" data-for="telluric-priest">Telluric Priest</a></li><li class="depth-0"><a href="#-2-race" data-for="-2-race">@ 2) Race</a></li><li class="depth-1"><a href="#coraler" data-for="coraler">Coraler</a></li><li class="depth-1"><a href="#harpy" data-for="harpy">Harpy</a></li><li class="depth-1"><a href="#human" data-for="human">Human</a></li><li class="depth-1"><a href="#salamander" data-for="salamander">Salamander</a></li><li class="depth-0"><a href="#-3-crisis" data-for="-3-crisis">@ 3) Crisis</a></li><li class="depth-0"><a href="#4-distinction" data-for="4-distinction">4) Distinction</a></li><li class="depth-0"><a href="#-5-level--retainer" data-for="-5-level--retainer">@ 5) Level &amp; Retainer</a></li><li class="depth-0"><a href="#-6-group-entanglement" data-for="-6-group-entanglement">@ 6) Group Entanglement</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript.js" type="module" data-persist="true"></script></html>
