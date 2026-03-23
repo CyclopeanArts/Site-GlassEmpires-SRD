@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>{ 8 } - Armies — Glass Empires</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Glass Empires SRD"/><meta property="og:title" content="{ 8 } - Armies — Glass Empires"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="{ 8 } - Armies — Glass Empires"/><meta name="twitter:description" content="@ Axioms Aia is a flat discworld &amp; the implications of this has a radical impact on military operations, which renders the entirety of the real world’s strategic &amp; tactical doctrine incomplete, misleading, or entirely obsolete."/><meta property="og:description" content="@ Axioms Aia is a flat discworld &amp; the implications of this has a radical impact on military operations, which renders the entirety of the real world’s strategic &amp; tactical doctrine incomplete, misleading, or entirely obsolete."/><meta property="og:image:alt" content="@ Axioms Aia is a flat discworld &amp; the implications of this has a radical impact on military operations, which renders the entirety of the real world’s strategic &amp; tactical doctrine incomplete, misleading, or entirely obsolete."/><meta property="twitter:domain" content="cyclopeanarts.github.io/Site-GlassEmpires-SRD"/><meta property="og:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-8-}---Armies"/><meta property="twitter:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-8-}---Armies"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="@ Axioms Aia is a flat discworld &amp; the implications of this has a radical impact on military operations, which renders the entirety of the real world’s strategic &amp; tactical doctrine incomplete, misleading, or entirely obsolete."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvbm9pcmUvQ3ljbG9wZWFuL0dsYXNzLUVtcGlyZXMvU1JELXF1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-8-}---Armies-og-image.webp"/><meta property="og:image:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-8-}---Armies-og-image.webp"/><meta name="twitter:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-8-}---Armies-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Book-1---Glass-Empires/Part-1---Rules/{-8-}---Armies"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">Glass Empires SRD</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-15"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-15" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/">Book 1   Glass Empires</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/Part-1---Rules/">Part 1   Rules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>{ 8 }   Armies</a></div></nav><h1 class="article-title">{ 8 } - Armies</h1><p show-comma="true" class="content-meta"><time datetime="2026-03-12T20:57:30.810Z">Mar 12, 2026</time><span>12 min read</span></p></div></div><article class="popover-hint"><h2 id="-axioms">@ Axioms<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-axioms" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Aia is a flat discworld &amp; the implications of this has a radical impact on military operations</strong>, which renders the entirety of the real world’s strategic &amp; tactical doctrine incomplete, misleading, or <em>entirely</em> obsolete.</p>
+<p>If you set out to lead an army &amp; do not keep the following points in mind, you will make <em>catastrophic</em> errors.</p>
+<ul>
+<li><strong>The horizon does not exist.</strong> On a flat disc, you can see 10 miles on flat terrain — 3 times greater than on Earth. From a decent hill or watchtower, you can see 20 miles away. From a mountain, <em>80 miles of low-fidelity terrain</em> is visible. This is an <em>order of magnitude</em> greater than on Earth.</li>
+<li><strong>Fog of war does not exist.</strong> <em>Every</em> army employs harpy scouts. Harpies can fly 5 miles straight up &amp; gain a mountain’s view within an hour. Every army can see a minimum of 80 miles around itself. Armies can only march 10 to 25 miles in a day — a single harpy messenger manages 50 per day. Surprise is all but impossible for any band bigger than 10 or 20 people. You don’t have to fight if you don’t want to — nobody can close distance fast enough.</li>
+<li><strong>Naval warfare is impacted too.</strong> Stealth is almost impossible on Aia’s waters for anyone other than coraler armies. Only storms &amp; darkness provide cover.</li>
+<li><strong>Sieges &amp; defenses are extremely important.</strong> Because there’s no fog of war, the best way to win a fight is to <em>force engagement on favorable ground</em>. The easiest way to force engagement is to build high walls, which also negate the speed advantages of horses or harpy flocks in open terrain.</li>
+<li><strong>Heroes are extremely important.</strong> <em>One king</em> or his <em>right-hand man</em> can fight with the force of a thousand soldiers, <em>especially</em> in bottlenecked one-on-one fights through urban interiors. It’s one thing for a company of men to face down Achilles; it’s another for a <em>single</em> soldier to meet him surging through the castle halls when an experienced general can shatter a gatehouse &amp; penetrate the greatest defenses through force of will &amp; supernatural experience. Just as ordinary men are critical for holding &amp; taking ground, the heroic bravery of warriors &amp; conquerors also holds a critical place on the battlefield.</li>
+</ul>
+<h2 id="-methods-to-raise-an-army">@ Methods to Raise an Army<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-methods-to-raise-an-army" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>You can raise armies in 3 ways.</p>
+<ul>
+<li><strong>You can raise an army from an existing Settlement</strong>. This produces an army approximating that Settlement’s <em>cultural retinues</em> — the soldiers its society naturally creates. This costs MP.</li>
+<li><strong>You can equip green troops to create retinues</strong>. This creates an army of custom design &amp; training at <em>great</em> up-front &amp; ongoing cost.</li>
+<li><strong>You can hire mercenaries</strong>. Mercenaries demand ongoing pay per month — $10 per BR.</li>
+</ul>
+<h2 id="army-proficiency">Army Proficiency<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#army-proficiency" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Armies have a <strong>proficiency</strong> ranking; they can be <strong>green</strong>, <strong>veteran</strong>, or <strong>elite</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Army Type</th><th>Soldier HD</th><th>Feat. Bonus</th></tr></thead><tbody><tr><td>Green</td><td>—</td><td>—</td></tr><tr><td>Veteran</td><td>+1 HD</td><td>+1 Feature</td></tr><tr><td>Elite</td><td>+2 HD</td><td>+2 Feature</td></tr></tbody></table></div>
+<p><strong>In an army, we always assume the average Level is 1</strong>. This assumption doesn’t change no matter how large <em>or experienced</em> the Faction gets — remember that experience has no correlation to <em>Level</em>. Most soldiers have a family or other network &amp; qualify for Level 1, &amp; the ones that don’t are covered by high-ranking officers.</p>
+<p><strong>Similarly, we assume each soldier has 1 combat-useful Class Feature</strong>. Soldiers tend to have a mixture of Features drawn from Class Features (primarily officers or famous soldiers) or from the Racial Features of great beasts near their home. Some have accompanying Mutations (p. @).</p>
+<p>It is possible to have exceptionally specialized &amp; talented <em>special units</em> with a dramatically higher HD, Feature list, magical powers &amp; other beneficial traits. These elite units are not modeled by the basic experience table &amp; are best treated as similar to Resources (p. @): Defined at world creation as valuable assets tied to locations or titles that are worth fighting over.</p>
+<h3 id="increasing-army-proficiency">Increasing Army Proficiency<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#increasing-army-proficiency" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Armies gain a level of proficiency when they defeat an army of equal proficiency.</p>
+<h2 id="cultural-retinues">Cultural Retinues<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cultural-retinues" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>A <strong>culture</strong> in the context of war is a distinct military tradition shaped by a region’s social structure, strategic doctrine, technological capability, demographics &amp; economic infrastructure that determines what an <strong>army</strong> (as a gathering of <strong>soldiers</strong>) can possess. Each Culture has a set of <strong>troop types</strong> &amp; a <strong>muster table</strong> displaying the different kinds of soldiers that can be deployed in a given army based on that culture.</p>
+<p><strong>Raising a cultural retinue costs MP debt only</strong>. The soldiers already exist. They are supported in the quantities your culture manages. The only constraint is economic: you can only pull 1 soldier per Family before you risk economic collapse.</p>
+<p>You can choose to <em>only</em> raise a <em>specific</em> troop type from a given Settlement. If you do so, you must specify the troop type(s) you raised &amp; may only raise a percentage of the total MP available equal to that troop type’s percentage of the culture’s army.</p>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>These are averaged stats, not specific stats </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>A troop type’s BR represents the averaged combat power of a group <em>including</em> its officers, not any individual person. A unit of 100 light foot soldiers includes Level 0 skirmishers with spears, Level 2 sergeants with swords &amp; chain, and a Level 3 captain/lord in plate; its 6 BR is the <em>mean</em> of that distribution, not the actual value for every soldier.</p>
+</div>
+</blockquote>
+<h3 id="glassian-human">Glassian Human<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#glassian-human" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Humans fight in open terrain &amp; if they cannot do so, they will <em>force</em> the terrain to be flattened.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Troop Type</th><th style="text-align:center;">%</th><th style="text-align:center;">BR</th><th style="text-align:center;">(Vet)</th><th style="text-align:center;">(Elite)</th><th style="text-align:center;">Equip Cost</th><th>Notes &amp; Features</th></tr></thead><tbody><tr><td>Light foot</td><td style="text-align:center;">30%</td><td style="text-align:center;">11</td><td style="text-align:center;">23</td><td style="text-align:center;">38</td><td style="text-align:center;">$100</td><td>—</td></tr><tr><td>Medium foot</td><td style="text-align:center;">30%</td><td style="text-align:center;">18</td><td style="text-align:center;">36</td><td style="text-align:center;">60</td><td style="text-align:center;">$400</td><td>—</td></tr><tr><td>Heavy foot</td><td style="text-align:center;">6%</td><td style="text-align:center;">24</td><td style="text-align:center;">48</td><td style="text-align:center;">80</td><td style="text-align:center;">$600</td><td>—</td></tr><tr><td>Light cavalry</td><td style="text-align:center;">4%</td><td style="text-align:center;">23</td><td style="text-align:center;">39</td><td style="text-align:center;">60</td><td style="text-align:center;">$700</td><td>Cavalry</td></tr><tr><td>Medium cavalry</td><td style="text-align:center;">3%</td><td style="text-align:center;">36</td><td style="text-align:center;">63</td><td style="text-align:center;">96</td><td style="text-align:center;">$1,500</td><td>Cavalry</td></tr><tr><td>Heavy cavalry</td><td style="text-align:center;">2%</td><td style="text-align:center;">56</td><td style="text-align:center;">96</td><td style="text-align:center;">144</td><td style="text-align:center;">$6,000</td><td>Cavalry, Thunderous</td></tr><tr><td>Windgun sniper</td><td style="text-align:center;">20%</td><td style="text-align:center;">15</td><td style="text-align:center;">30</td><td style="text-align:center;">50</td><td style="text-align:center;">$200</td><td>Windguns</td></tr><tr><td>Windgun heavy</td><td style="text-align:center;">4%</td><td style="text-align:center;">24</td><td style="text-align:center;">48</td><td style="text-align:center;">80</td><td style="text-align:center;">$700</td><td>Windguns</td></tr><tr><td>Harpy scout</td><td style="text-align:center;">1%</td><td style="text-align:center;">4</td><td style="text-align:center;">8</td><td style="text-align:center;">13</td><td style="text-align:center;">$50</td><td>Flying, Reconnaissance</td></tr><tr><td><strong>Average</strong></td><td style="text-align:center;"><strong>—</strong></td><td style="text-align:center;"><strong>17</strong></td><td style="text-align:center;"><strong>34</strong></td><td style="text-align:center;"><strong>56</strong></td><td style="text-align:center;"><strong>$450</strong></td><td><strong>—</strong></td></tr></tbody></table></div>
+<h3 id="house-eagle">House Eagle<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#house-eagle" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Humans fight in open terrain &amp; if they cannot do so, they will <em>force</em> the terrain to be flattened.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Troop Type</th><th style="text-align:center;">%</th><th style="text-align:center;">BR</th><th style="text-align:center;">(Vet)</th><th style="text-align:center;">(Elite)</th><th style="text-align:center;">Equip Cost</th><th>Notes &amp; Features</th></tr></thead><tbody><tr><td>Windgun sniper</td><td style="text-align:center;">50%</td><td style="text-align:center;">15</td><td style="text-align:center;">30</td><td style="text-align:center;">50</td><td style="text-align:center;">$125</td><td>Windguns</td></tr><tr><td>Windgun heavy</td><td style="text-align:center;">16%</td><td style="text-align:center;">24</td><td style="text-align:center;">48</td><td style="text-align:center;">80</td><td style="text-align:center;">$625</td><td>Windguns</td></tr><tr><td>Medium foot</td><td style="text-align:center;">20%</td><td style="text-align:center;">18</td><td style="text-align:center;">36</td><td style="text-align:center;">60</td><td style="text-align:center;">$400</td><td>—</td></tr><tr><td>Heavy foot</td><td style="text-align:center;">6%</td><td style="text-align:center;">24</td><td style="text-align:center;">48</td><td style="text-align:center;">80</td><td style="text-align:center;">$600</td><td>—</td></tr><tr><td>Light cavalry</td><td style="text-align:center;">4%</td><td style="text-align:center;">23</td><td style="text-align:center;">39</td><td style="text-align:center;">60</td><td style="text-align:center;">$700</td><td>Cavalry</td></tr><tr><td>Medium cavalry</td><td style="text-align:center;">3%</td><td style="text-align:center;">36</td><td style="text-align:center;">63</td><td style="text-align:center;">96</td><td style="text-align:center;">$1,500</td><td>Cavalry</td></tr><tr><td>Harpy scout</td><td style="text-align:center;">1%</td><td style="text-align:center;">4</td><td style="text-align:center;">8</td><td style="text-align:center;">13</td><td style="text-align:center;">$50</td><td>Flying, Reconnaissance</td></tr><tr><td><strong>Average</strong></td><td style="text-align:center;"><strong>—</strong></td><td style="text-align:center;"><strong>18</strong></td><td style="text-align:center;"><strong>36</strong></td><td style="text-align:center;"><strong>60</strong></td><td style="text-align:center;"><strong>$350</strong></td><td><strong>—</strong></td></tr></tbody></table></div>
+<h3 id="outlander-harpy">Outlander Harpy<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#outlander-harpy" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Harpies do not fight in open terrain. Harpies fuck up your supply chains, snipe people from a distance, scatter when marched on, &amp; hide in dense woods where they can forage &amp; sleep during the warm months.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Troop Type</th><th style="text-align:center;">%</th><th style="text-align:center;">BR</th><th style="text-align:center;">(Vet)</th><th style="text-align:center;">(Elite)</th><th style="text-align:center;">Equip Cost</th><th>Notes &amp; Features</th></tr></thead><tbody><tr><td>Harpy scout</td><td style="text-align:center;">50%</td><td style="text-align:center;">4</td><td style="text-align:center;">8</td><td style="text-align:center;">13</td><td style="text-align:center;">$50</td><td>Flying, Guerrilla, Reconnaissance</td></tr><tr><td>Highwayman</td><td style="text-align:center;">40%</td><td style="text-align:center;">11</td><td style="text-align:center;">23</td><td style="text-align:center;">38</td><td style="text-align:center;">$80</td><td>Flying, Guerrilla</td></tr><tr><td>Hunter</td><td style="text-align:center;">10%</td><td style="text-align:center;">23</td><td style="text-align:center;">38</td><td style="text-align:center;">56</td><td style="text-align:center;">$100</td><td>Flying, Guerrilla</td></tr><tr><td><strong>Average</strong></td><td style="text-align:center;"><strong>—</strong></td><td style="text-align:center;"><strong>9</strong></td><td style="text-align:center;"><strong>17</strong></td><td style="text-align:center;"><strong>27</strong></td><td style="text-align:center;"><strong>$70</strong></td><td><strong>—</strong></td></tr></tbody></table></div>
+<ul>
+<li><strong>Harpy scout</strong>: Lightweight harpy spies carrying little more than a purse for letters &amp; some light padded armor while relying on natural claws for defense.</li>
+<li><strong>Highwayman</strong>: Leather plus real weapons for landing &amp; ambushing targets. Extremely loose &amp; discordant harassment units.</li>
+<li><strong>Hunter</strong>: Experienced highwaymen &amp; raiders who often appear as half-beast chimeras from mutation.</li>
+</ul>
+<h3 id="glassian-salamander">Glassian Salamander<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#glassian-salamander" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Salamanders do not fight in open terrain. Salamanders sink you into a quagmire of defense-in-depth. Engineered road sinkholes, windgun sniper murderholes in hillsides, trenches &amp; tunnel warfare, mass punji spike pits &amp; worse.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Troop Type</th><th style="text-align:center;">%</th><th style="text-align:center;">BR</th><th style="text-align:center;">(Vet)</th><th style="text-align:center;">(Elite)</th><th style="text-align:center;">Equip Cost</th><th>Notes &amp; Features</th></tr></thead><tbody><tr><td>Tunnelrat</td><td style="text-align:center;">50%</td><td style="text-align:center;">5</td><td style="text-align:center;">11</td><td style="text-align:center;">20</td><td style="text-align:center;">$50</td><td>Tunneling, Guerrilla</td></tr><tr><td>Engineer</td><td style="text-align:center;">40%</td><td style="text-align:center;">9</td><td style="text-align:center;">20</td><td style="text-align:center;">36</td><td style="text-align:center;">$80</td><td>Tunneling, Guerrilla</td></tr><tr><td>Prairie wolf</td><td style="text-align:center;">9%</td><td style="text-align:center;">12</td><td style="text-align:center;">27</td><td style="text-align:center;">48</td><td style="text-align:center;">$300</td><td>Tunneling, Guerrilla, Windguns</td></tr><tr><td>Harpy scout</td><td style="text-align:center;">1%</td><td style="text-align:center;">4</td><td style="text-align:center;">8</td><td style="text-align:center;">13</td><td style="text-align:center;">$50</td><td>Flying, Reconnaissance</td></tr><tr><td><strong>Average</strong></td><td style="text-align:center;"><strong>—</strong></td><td style="text-align:center;"><strong>7</strong></td><td style="text-align:center;"><strong>16</strong></td><td style="text-align:center;"><strong>29</strong></td><td style="text-align:center;"><strong>$85</strong></td><td><strong>—</strong></td></tr></tbody></table></div>
+<ul>
+<li><strong>Tunnelrat</strong>: Guerrilla warriors with light armor, natural ‘mander claws &amp; a toolkit for trapping, stabbing &amp; digging. Some carry crossbows for sniping.</li>
+<li><strong>Engineer</strong>: Armored miners &amp; sappers just as competent at combat as in engineering.</li>
+<li><strong>Prairie wolf</strong>: A mountainous variant of the snipers seen in Apogea — elite hunters who adopted long-range windguns to act in squads both above- &amp; underground.</li>
+</ul>
+<h3 id="coraler">Coraler<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#coraler" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Coralers do not fight in open terrain. They live almost exclusively on warm coastlines, where amphibious cities sit mostly untouchable by land-locked armies. Searaiders plunder &amp; raze enemy Settlements wherever they lie within spitting distance of a river or stream &amp; move essentially unchallenged &amp; invisibly through larger bodies of water.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Troop Type</th><th style="text-align:center;">%</th><th style="text-align:center;">BR</th><th style="text-align:center;">(Vet)</th><th style="text-align:center;">(Elite)</th><th style="text-align:center;">Equip Cost</th><th>Notes &amp; Features</th></tr></thead><tbody><tr><td>Searaider</td><td style="text-align:center;">80%</td><td style="text-align:center;">8</td><td style="text-align:center;">17</td><td style="text-align:center;">30</td><td style="text-align:center;">$100</td><td>Amphibious</td></tr><tr><td>Landguard</td><td style="text-align:center;">19%</td><td style="text-align:center;">16</td><td style="text-align:center;">36</td><td style="text-align:center;">64</td><td style="text-align:center;">$600</td><td>Lightly amphibious</td></tr><tr><td>Harpy scout</td><td style="text-align:center;">1%</td><td style="text-align:center;">4</td><td style="text-align:center;">8</td><td style="text-align:center;">13</td><td style="text-align:center;">$50</td><td>Flying, Reconnaissance</td></tr><tr><td><strong>Average</strong></td><td style="text-align:center;"><strong>—</strong></td><td style="text-align:center;"><strong>10</strong></td><td style="text-align:center;"><strong>20</strong></td><td style="text-align:center;"><strong>36</strong></td><td style="text-align:center;"><strong>$200</strong></td><td><strong>—</strong></td></tr></tbody></table></div>
+<ul>
+<li><strong>Searaider</strong>: Spears &amp; long knives for close combat, minimal leather armor &amp; maximum speed. Searaiders travel light, hit hard &amp; carry a lot of loot.
+<ul>
+<li><em>Can treat map-marked rivers &amp; water bodies as roads.</em></li>
+</ul>
+</li>
+<li><strong>Landguard</strong>: Plate &amp; polearms plus knives prohibit land-locked coralers from swimming <em>effectively</em>, but enable better stationary defenses. Almost never taken along on raids.</li>
+</ul>
+<h2 id="-personal-retinues">@ Personal Retinues<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-personal-retinues" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>You can build your own army by paying the cost for <em>equipment</em> &amp; <em>training</em>.</p>
+<p>This costs $ to start up &amp; acts as an ongoing drain on settlement income for other purposes comparable to army MP debt — a permanent reduction in MP to the tune of 1 MP per soldier.</p>
+<h2 id="move-raise-an-army">Move: Raise an Army<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-raise-an-army" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>While in your Faction’s Capital (or otherwise able to issue orders to your officers), you may call to raise an <strong>Army</strong> as a Move.</p>
+<p>Raising an Army incurs a <strong>Manpower Debt</strong> (MP Debt). You are taking the healthiest, most capable men of a Faction &amp; marching them off to war. This is more severe than simple silver; it takes a long time to replace a young man &amp; there are few substitutes. In financial terms, <strong>1 MP Debt is equivalent to $1 in economic impact</strong>. When measuring the impact of a Debt on your ability to loan, convert accordingly.</p>
+<p>Your maximum MP Debt is <em>equal</em> to your Faction’s Capital’s Families. The Deadline depends on your Families; it takes around 1 day per 100 Families to raise an army, up to 10 days at most.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Families</th><th>Recruitment Time</th></tr></thead><tbody><tr><td style="text-align:center;">≤100</td><td>Just a few hours</td></tr><tr><td style="text-align:center;">100</td><td>1 day</td></tr><tr><td style="text-align:center;">300</td><td>3 days</td></tr><tr><td style="text-align:center;">1,000</td><td>10 days</td></tr></tbody></table></div>
+<p>When the Deadline expires, you automatically raise the Army; no Success Save required.</p>
+<p>If you need a bigger Army than your Capital alone can provide, consider having your loyal Retainers raise Armies from <em>their</em> Capitals so that you can combine your collective forces.</p>
+<h3 id="-army-br">@ Army BR<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-army-br" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>This is a placeholder, but for now, assume Army BR is 5× the race’s base BR per character i.e. humans have a BR of 1, so their armies are 10 BR per soldier.</p>
+<blockquote>
+<p>@ why? well, soldiers will have Levels &amp; equipment. mounts &amp; armor &amp; weapons. even a very modest leather + medium 1H weapon (4 sharp) human (HD 2) soldier (Lv1) has a BR of ~4.5 if we assume he has no beneficial Class Feature (maybe unlikely if he’s a Mercenary) &amp; BR 9 if he <em>does</em> have a good Class Feature for combat.</p>
+<p>calculating an expected BR per soldier might actually be harder than this. we might expect that the BR per MP would be more like … 10 × MP, on the basis that officers &amp; heavy soldiers will be much better equipped than the light grunt I just outlined. we need an economic basis for the cost of supporting 1 BR.</p>
+<p>shit no, this is wrong. racial BR is heavily impacted by <em>natural weaponry</em> and some races are only decent on paper because their <em>natural weaponry</em> is boosting their BR. salamander claws are as good as a bronze sword in melee … but that’s a weight advantage at best. they’d have kickass light troops but … hey, wait. that’s a skirmishing thing.</p>
+</blockquote>
+<h2 id="recovering-from-mp-debt">Recovering from MP Debt<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#recovering-from-mp-debt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="procedure-disbanding-an-army">Procedure: Disbanding an Army<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#procedure-disbanding-an-army" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If an Army with soldiers from a Faction is within that Faction’s realm, those soldiers can be <em>disbanded</em>. All surviving troops are subtracted from the MP Debt owed by the Faction to its Followers.</p>
+<p>If an Army is disbanded outside its Faction’s territory, only half of the surviving MP is subtracted from the Debt owed — the rest of the soldiers desert &amp; disappear into the world. In extreme cases (i.e. disbandment on another continent), the GM may rule that <em>no</em> MP is returned to the pool.</p>
+<h3 id="family-growth--replacement">Family Growth &amp; Replacement<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#family-growth--replacement" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If a Faction grows in Families via other means, for every Family it obtains, it may erase 1 MP Debt.</p>
+<p>In addition, at the start of every <em>in-game year</em>, each Faction’s MP Debt is reduced by 10% of its current Families, rounded up.</p>
+<h2 id="-desperation-recruitment">@ Desperation Recruitment<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-desperation-recruitment" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>If a Faction is <em>truly desperate</em> to recruit soldiers despite massive outstanding MP Debt, there are two main routes available.</p>
+<h3 id="create-a-new-subfaction">Create a New Subfaction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#create-a-new-subfaction" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>New Subfactions (p. @) start with no MP Debt, but you can’t easily erase them once they exist, and creating new Subfactions may anger any existing Subfaction whose interests are threatened by the gesture. It also requires that you as a Leader have spare Settlements, competent &amp; loyal Retainers, and enough time to spare to go through the procedures of setting one up.</p>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Why don't new Subfactions inherit MP Debt? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Subfactions partly represent administrative efficiency at the cost of loss of control. Delegation offers advantages that centralized control doesn’t have — such as tapping into manpower that wouldn’t otherwise be available.</p>
+<p>It also dramatically simplifies the math by preventing cascading population calculation dependencies, and you can never get enough of that when you have to do most of the math in your head.</p>
+</div>
+</blockquote>
+<h2 id="-raising-the-armies-of-your-subfactions">@ Raising the Armies of Your Subfactions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-raising-the-armies-of-your-subfactions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Rulers can &amp; often rely upon Armies raised from their Subfactions to supplement their forces. In fact, this is one of the main benefits of having Subfactions.</p>
+<p>To do so, simply contact &amp; ask whichever of your Retainers is in command of that Subfaction to do so. This is treated as any other request to a subservient NPC. Try not to rely on Retainers who have grown angry at you lately … or who have reasons to stick a knife in your back.</p>
+<h2 id="-fortification">@ Fortification<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-fortification" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>See Structural HP (p. @).</p>
+<h2 id="-move-siege">@ Move: Siege<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-move-siege" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Deadline</strong>: Sum the defending armies’ BR along with the Location’s Families &amp; SHP. Divide it by the attacking armies’ BR &amp; multiply by 100. The result is how many days out the Deadline should be set for.</p>
+<p>At the end of the period, Save.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Success Save Effect</th></tr></thead><tbody><tr><td style="text-align:center;">Crit &amp;<br/>Pass<br/><em>≥8</em></td><td>The besieged Location falls under the besieging armies’ control.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>Make another Save tomorrow.</td></tr><tr><td style="text-align:center;">Failure &amp;<br/>Fumble<br/><em>≤6</em></td><td>The siege has been delayed. Recalculate &amp; reset the siege Deadline.</td></tr></tbody></table></div>
+<p>When the Location is captured, resolve casualties by hosting a Battle between the two sides — sans any Families, SHP bonus, or terrain/defensive fortification bonuses. Flight for the defenders is considered surrender instead of escape.</p>
+<h3 id="assaults">Assaults<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#assaults" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>An <em>assault</em> is a rapid assault of a fortification. It is played out as a Battle (p. @) with each Turn covering 1 day of events. Add the assaulted Location’s Families &amp; SHP to the defending side’s BR.</p>
+<p>Sieges consist of comparing Defender Strength vs Attacker Strength &amp; adding variables like relevant Facts (on each side’s commanders + the Factions themselves), determining a numerical signed integer score, then comparing that against a chart that produces a “duration of siege” value. That’s how long before someone cracks if nothing changes.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-8" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#-axioms" data-for="-axioms">@ Axioms</a></li><li class="depth-0"><a href="#-methods-to-raise-an-army" data-for="-methods-to-raise-an-army">@ Methods to Raise an Army</a></li><li class="depth-0"><a href="#army-proficiency" data-for="army-proficiency">Army Proficiency</a></li><li class="depth-1"><a href="#increasing-army-proficiency" data-for="increasing-army-proficiency">Increasing Army Proficiency</a></li><li class="depth-0"><a href="#cultural-retinues" data-for="cultural-retinues">Cultural Retinues</a></li><li class="depth-1"><a href="#glassian-human" data-for="glassian-human">Glassian Human</a></li><li class="depth-1"><a href="#house-eagle" data-for="house-eagle">House Eagle</a></li><li class="depth-1"><a href="#outlander-harpy" data-for="outlander-harpy">Outlander Harpy</a></li><li class="depth-1"><a href="#glassian-salamander" data-for="glassian-salamander">Glassian Salamander</a></li><li class="depth-1"><a href="#coraler" data-for="coraler">Coraler</a></li><li class="depth-0"><a href="#-personal-retinues" data-for="-personal-retinues">@ Personal Retinues</a></li><li class="depth-0"><a href="#move-raise-an-army" data-for="move-raise-an-army">Move: Raise an Army</a></li><li class="depth-1"><a href="#-army-br" data-for="-army-br">@ Army BR</a></li><li class="depth-0"><a href="#recovering-from-mp-debt" data-for="recovering-from-mp-debt">Recovering from MP Debt</a></li><li class="depth-1"><a href="#procedure-disbanding-an-army" data-for="procedure-disbanding-an-army">Procedure: Disbanding an Army</a></li><li class="depth-1"><a href="#family-growth--replacement" data-for="family-growth--replacement">Family Growth &amp; Replacement</a></li><li class="depth-0"><a href="#-desperation-recruitment" data-for="-desperation-recruitment">@ Desperation Recruitment</a></li><li class="depth-1"><a href="#create-a-new-subfaction" data-for="create-a-new-subfaction">Create a New Subfaction</a></li><li class="depth-0"><a href="#-raising-the-armies-of-your-subfactions" data-for="-raising-the-armies-of-your-subfactions">@ Raising the Armies of Your Subfactions</a></li><li class="depth-0"><a href="#-fortification" data-for="-fortification">@ Fortification</a></li><li class="depth-0"><a href="#-move-siege" data-for="-move-siege">@ Move: Siege</a></li><li class="depth-1"><a href="#assaults" data-for="assaults">Assaults</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript.js" type="module" data-persist="true"></script></html>

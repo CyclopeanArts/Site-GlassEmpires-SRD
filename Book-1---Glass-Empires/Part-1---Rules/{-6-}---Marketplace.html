@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>{ 6 } - Marketplace — Glass Empires</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Glass Empires SRD"/><meta property="og:title" content="{ 6 } - Marketplace — Glass Empires"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="{ 6 } - Marketplace — Glass Empires"/><meta name="twitter:description" content="A marketplace is a gathering of people offering goods &amp; services within a given domain."/><meta property="og:description" content="A marketplace is a gathering of people offering goods &amp; services within a given domain."/><meta property="og:image:alt" content="A marketplace is a gathering of people offering goods &amp; services within a given domain."/><meta property="twitter:domain" content="cyclopeanarts.github.io/Site-GlassEmpires-SRD"/><meta property="og:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-6-}---Marketplace"/><meta property="twitter:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-6-}---Marketplace"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="A marketplace is a gathering of people offering goods &amp; services within a given domain."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvbm9pcmUvQ3ljbG9wZWFuL0dsYXNzLUVtcGlyZXMvU1JELXF1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-6-}---Marketplace-og-image.webp"/><meta property="og:image:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-6-}---Marketplace-og-image.webp"/><meta name="twitter:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-6-}---Marketplace-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Book-1---Glass-Empires/Part-1---Rules/{-6-}---Marketplace"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">Glass Empires SRD</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-13"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-13" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/">Book 1   Glass Empires</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/Part-1---Rules/">Part 1   Rules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>{ 6 }   Marketplace</a></div></nav><h1 class="article-title">{ 6 } - Marketplace</h1><p show-comma="true" class="content-meta"><time datetime="2026-03-13T13:34:31.151Z">Mar 13, 2026</time><span>10 min read</span></p></div></div><article class="popover-hint"><p>A marketplace is a gathering of people offering goods &amp; services within a given domain. Every populated <strong>Settlement</strong> has a marketplace with its own prices &amp; availability of goods. When you buy from a marketplace, you’re buying from the Settlement.</p>
+
+<h2 id="-debt--credit">@ Debt &amp; Credit<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-debt--credit" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="debts">Debts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#debts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A <strong>Debt</strong> is a Condition (a temporary Fact, p.@) assigned a Value, whether monetary or intangible (i.e. blood debts, “he murdered my relative”). It represents what you owe to a creditor — the person you took from. Both the nature of the Debt &amp; the creditor must be described in the Debt’s text; for example:</p>
+<blockquote>
+<p><span class="text-highlight">Debt to [creditor] - [value of debt]</span></p>
+</blockquote>
+<p>So, <em>Debt to Baker - gift of dozen loaves $0.3</em> is a valid Debt meaning a Debt worth $0.3. You might shorten it to <em>Debt to Baker $0.3</em>, but story helps memory.</p>
+<p>Or, if you wanted to note the debt on the creditor’s side:</p>
+<blockquote>
+<p><span class="text-highlight">Credit to [debtor] - [value of credit]</span></p>
+</blockquote>
+<p>Debts can be one-sided &amp; may be emotional, not just financial. If you murder a person’s servant, they may <em>unilaterally</em> mark your action as a Debt you owe to them, even if you are indifferent. (This is in part the source of feuds.)</p>
+<p>Debts, like Facts, may be used to sway or influence Saves over which their existence would hold influence. For instance, the existence of Debt may impact your ability to fight off foreign Sabotage efforts, raise Armies, develop new assets, or other things dependent on financial health.</p>
+<h3 id="-loans">@ Loans<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-loans" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A <strong>loan</strong> is an act of giving that creates a Debt. The terms of a loan are subject to negotiation (p. @).</p>
+<p><strong>A loan is a trust issue</strong>. Loans are taken out against your estimated future ability to repay. That may be measured via your Families (if you rule a Faction) or against past records of success in business ventures (if you have any) or against your personal relationship with the financier.</p>
+<p>Normal Factions can only “loan” by giving a direct sum in $ to a character &amp; can only maintain 1 cash loan at a time. They also have to manually mark a loan down.</p>
+<p>Merchant &amp; Financier Factions (p. @) can issue substantially larger sums; 10× Followers &amp; unlimited respectively.</p>
+<h4 id="calling-a-debt-in">Calling a Debt in<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#calling-a-debt-in" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>When a creditor <em>calls in</em> a Debt, they declare a demand that would satisfy the Debt. In theory, creditors can demand anything. In practice, they are constrained by Negotiation (p. @) &amp; perceived value. When the demand is issued, the debtor must choose:</p>
+<ul>
+<li><strong>Accept</strong>: Fulfill the demand. The Debt is erased (or reduced by the agreed Value, if not fully paid off).</li>
+<li><strong>Negotiate</strong>: Attempt to negotiate (p. @) with the creditor.</li>
+<li><strong>Default</strong>: The Debt remains, but its wording is adjusted to indicate it has been <em>violated</em> with a reason as to why. This may Anger (p. @) the creditor.</li>
+</ul>
+<p>Creditors may also <em>forgive</em> a Debt. Beside repayment, forgiveness is the only way to eliminate a Debt. Forgiveness may Anger those who stood to benefit from the repayment.</p>
+<h5 id="violation-of-debts">Violation of Debts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#violation-of-debts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>If you violate the terms of a Debt (i.e. by defaulting — canceling the agreed-upon terms), the Debt remains as a Fact on your sheet until every participant who could possibly call upon that Debt is dead — but reword it to reflect your refusal to pay that Debt.</p>
+<h4 id="trading-debt">Trading debt<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#trading-debt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Debts have Value, and therefore you can <em>trade</em> a Debt that a debtor owes you to another person if they think the Debt owed is of value to them.</p>
+<h4 id="debt-bondage">Debt Bondage<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#debt-bondage" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Debtors who cannot pay off their debts may become a slave so that their labor over a period may pay them off. This is the basis of Glass’s system of indentured servitude. Traditionally, one day’s unskilled labor is worth $1, minus cost of living.</p>
+<h4 id="informers-bounty-hunters--collections-agents">Informers, Bounty Hunters, &amp; Collections Agents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#informers-bounty-hunters--collections-agents" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>The traditional solution to a rogue debtor, particularly one on the run, is to offer a percentage of a debt or an unrelated reward for the debtor’s capture or execution, or for the recovery of assets associated with the debt.</p>
+<p>Bounty hunters don’t always employ lethal force to capture targets, especially if the target is a large Faction of some complexity whose assets cannot be easily hidden. Instead, sophisticated bounty hunters hunting wealthy or powerful targets will use organizations (their own or their friends’) to find complex financial, legal, social, or blackmail-based pressure points that can quietly force even kings into compliance under threat of greater harm.</p>
+<blockquote>
+<p>@ We could use charts of what kind of bounty hunters are attracted to what magnitudes of debts. Maybe tie it into income calculations &amp; Level.</p>
+<p>It should be approximately equal to the payment/interest rate agreed upon, or a fixed value of the Debt. Like, 10%? Per month? 3%?</p>
+</blockquote>
+<h2 id="using-this-chapter">Using This Chapter<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#using-this-chapter" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Every RPG book has a price list. Normally, it doesn’t make much sense. Lots of the prices are cargo-cult listings copied down from many eras of history; some of the items have no apparent use in the game.</p>
+<p>For Glass Empires, the situation is a bit worse. Faction Leaders are assumed to have a stable income &amp; many items can be bought using a Faction’s influence rather than out-of-pocket with discrete coin.</p>
+<p>Use this chapter to <em>determine prices for large bulk purchases</em> or for low-level play where characters manage only a couple hundred silver dollars each. Don’t use it to <em>bicker over exact pricing for small purchases</em>, especially when a character rules a Faction of such scale that obtaining small items is a trivial act.</p>
+<h2 id="availability--pricing">Availability &amp; Pricing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#availability--pricing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="item-availability-by-price">Item Availability by Price<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#item-availability-by-price" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If it’s necessary to determine the quantity of an item that can be bought in a given Settlement, divide 5 times the Settlement’s Families by the item’s Value. The result, rounded down, is how many can be found. If the result is less than 1, the GM may at his discretion set an X-in-6 chance that a <em>single</em> item can be found this month; otherwise, none are available.</p>
+<h3 id="item-availability-by-commission">Item Availability by Commission<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#item-availability-by-commission" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Regardless of how many are available to purchase outright, items can also be commissioned from capable craftsmen. The average craftsman produces $50 worth of goods per day.</p>
+<h2 id="weapon-categories">Weapon Categories<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#weapon-categories" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Weapons are categorized by hands occupied (1H vs. 2H) &amp; Weight. Each category can represent a wide variety of weapons, <em>including shields</em>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Weapon Category</th><th style="text-align:center;">Hands</th><th>Damage</th><th>Weight</th><th>Effects</th><th>Value</th></tr></thead><tbody><tr><td>Rock</td><td style="text-align:center;">1H</td><td>2 Physical</td><td>—</td><td>Throwable (30’)</td><td>Free</td></tr><tr><td>Throwable</td><td style="text-align:center;">1H</td><td>3 Physical</td><td>¼#</td><td>Throwable (30’)</td><td>$10</td></tr><tr><td>Light melee</td><td style="text-align:center;">1H</td><td>4 Physical</td><td>¼#</td><td></td><td>$30</td></tr><tr><td>Medium melee</td><td style="text-align:center;">1H/2H</td><td>5 Physical</td><td>1#</td><td>Hand-and-a-half</td><td>$50</td></tr><tr><td>Heavy melee</td><td style="text-align:center;">2H</td><td>8 Physical</td><td>2#</td><td>Reach</td><td>$70</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Ranged Weapons</th><th style="text-align:center;">Hands</th><th>Damage</th><th>Weight</th><th>Range</th><th>Effects</th><th>Value</th></tr></thead><tbody><tr><td>Sling</td><td style="text-align:center;">2H</td><td>4 Physical</td><td>¼#</td><td>90’</td><td>Sling</td><td>$10</td></tr><tr><td>Bow</td><td style="text-align:center;">2H</td><td>5 Physical</td><td>1#</td><td>150’</td><td></td><td>$50</td></tr><tr><td>Crossbow</td><td style="text-align:center;">2H</td><td>8 Physical</td><td>1#</td><td>150’</td><td>Reload</td><td>$25</td></tr><tr><td>Windgun pistol</td><td style="text-align:center;">1H</td><td>5 Physical</td><td>¼#</td><td>120’</td><td>Melee</td><td>$200</td></tr><tr><td>Windgun</td><td style="text-align:center;">2H</td><td>8 Physical</td><td>1#</td><td>180’</td><td></td><td>$150</td></tr></tbody></table></div>
+<h3 id="gear-effects">Gear Effects<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#gear-effects" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Hand-and-a-half</strong>: If wielded with two hands, gain +1 Damage. This can represent an arming sword being wielded in two hands, or a shield that’s optionally storable.</li>
+<li><strong>Range</strong>: Weapon is a ranged weapon with the listed distance as its maximum reach.</li>
+<li><strong>Reach</strong>: Melee reach is doubled while measuring in Skirmish combat.</li>
+<li><strong>Reload</strong>: User must take a Reload Action after every shot in Skirmish combat.</li>
+<li><strong>Sling</strong>: You need a 15’ diameter, 10’ tall cylinder around yourself to be clear in order to use a sling.</li>
+<li><strong>Melee</strong>: This weapon can be dual-wielded as a half of a Medium Melee weapon category pair (increasing Damage by 1 in Melee only).</li>
+</ul>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>What makes crossbows good? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>They’re easy to train with &amp; inexpensive, which is mostly irrelevant for PCs &amp; in danger of being supplanted by the relatively new, equally trainable &amp; far more lethal windgun.</p>
+</div>
+</blockquote>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Why are shields weapons? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Simplification &amp; fun. Rather than making one pairing of weapon + shield obviously superior, you can design a weapon of a given category to be many hypothetical weapon combinations. Besides, you wouldn’t like it if due to a dumb quirk of the math, a shortsword + shield was the only logical combination, would you?</p>
+<p>That said, if you get a magical shield, you can feasibly swap it into a Medium Melee combo or pair it with a Light Melee weapon (&amp; subsequently boost the Light Melee weapon’s Damage by +2 while wielding a shield so it’s on par with a Medium Melee combo).</p>
+</div>
+</blockquote>
+<h2 id="armor">Armor<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#armor" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Worn armor grants Armor (p. @), which provides ablative Armor Points (AP).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Armor</th><th style="text-align:center;">Weight</th><th style="text-align:center;">Value</th><th style="text-align:center;">Armor</th></tr></thead><tbody><tr><td>Leather/padded</td><td style="text-align:center;">1#</td><td style="text-align:center;">$10</td><td style="text-align:center;">1</td></tr><tr><td>Chainmail/scale</td><td style="text-align:center;">2#</td><td style="text-align:center;">$250</td><td style="text-align:center;">2</td></tr><tr><td>Plate</td><td style="text-align:center;">4#</td><td style="text-align:center;">$500</td><td style="text-align:center;">4</td></tr></tbody></table></div>
+<p>Barding, specialized armor for animals, is priced &amp; weighted based on the size of the animal in question.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Barding</th><th style="text-align:center;">Armor</th><th style="text-align:center;">5’</th><th style="text-align:center;">5’</th><th style="text-align:center;">10’</th><th style="text-align:center;">10’</th><th style="text-align:center;">15’</th><th style="text-align:center;">15’</th><th style="text-align:center;">20’</th><th style="text-align:center;">20’</th></tr></thead><tbody><tr><td></td><td style="text-align:center;"></td><td style="text-align:center;">Value</td><td style="text-align:center;">Weight</td><td style="text-align:center;">Value</td><td style="text-align:center;">Weight</td><td style="text-align:center;">Value</td><td style="text-align:center;">Weight</td><td style="text-align:center;">Value</td><td style="text-align:center;">Weight</td></tr><tr><td>Leather</td><td style="text-align:center;">1</td><td style="text-align:center;">$100</td><td style="text-align:center;">1#</td><td style="text-align:center;">$300</td><td style="text-align:center;">2#</td><td style="text-align:center;">$600</td><td style="text-align:center;">3#</td><td style="text-align:center;">$1,600</td><td style="text-align:center;">4#</td></tr><tr><td>Chain</td><td style="text-align:center;">2</td><td style="text-align:center;">$400</td><td style="text-align:center;">2#</td><td style="text-align:center;">$600</td><td style="text-align:center;">3#</td><td style="text-align:center;">$1,200</td><td style="text-align:center;">5#</td><td style="text-align:center;">$3,200</td><td style="text-align:center;">8#</td></tr><tr><td>Plate</td><td style="text-align:center;">4</td><td style="text-align:center;">$800</td><td style="text-align:center;">4#</td><td style="text-align:center;">$1,200</td><td style="text-align:center;">6#</td><td style="text-align:center;">$2,400</td><td style="text-align:center;">10#</td><td style="text-align:center;">$6,400</td><td style="text-align:center;">16#</td></tr></tbody></table></div>
+<h2 id="magicians-clothes">Magician’s Clothes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#magicians-clothes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Properly engineered robes &amp; equipment can substantially increase magical power. If worn from the point of waking onward, these robes increase their wearer’s Spell Dice (p. @) by the amount listed. When removed, the caster immediately loses that much SD, starting with any remaining unexhausted capacity.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Robes</th><th style="text-align:center;">Weight</th><th style="text-align:center;">Value</th><th style="text-align:center;">Extra SD</th></tr></thead><tbody><tr><td>Magician’s clothing</td><td style="text-align:center;">1/4#</td><td style="text-align:center;">$200</td><td style="text-align:center;">1</td></tr><tr><td>Noble’s clothing</td><td style="text-align:center;">1/4#</td><td style="text-align:center;">$2,000</td><td style="text-align:center;">2</td></tr></tbody></table></div>
+<h2 id="-other-stuff">@ other stuff<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-other-stuff" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>do we just straight import equipment list stuff from taiao?</p>
+<p>no, why would you. this is a different game that is in theory about a different thing.</p>
+<p>realistically speaking, common law will become civil law over time</p>
+<h2 id="retainers">Retainers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#retainers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>@ need something on recruiting weird dysgenic mutant retainers. there’s lots of ways to get that &amp; not enough ways to <em>generate</em> it.</p>
+<h3 id="number-available">Number Available<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#number-available" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>To find out how many characters of a certain Level (# of Class Features) are available for hire in a Settlement per season, use the table below.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Settlement<br/>Level (pop)</th><th style="text-align:center;">Char.<br/>Lv0</th><th style="text-align:center;">Char.<br/>Lv1</th><th style="text-align:center;">Char.<br/>Lv2</th><th style="text-align:center;">Char.<br/>Lv3</th><th style="text-align:center;">Char.<br/>Lv4</th></tr></thead><tbody><tr><td>Lv6 (100+)</td><td style="text-align:center;">8</td><td style="text-align:center;">1</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td></tr><tr><td>Lv7 (300+)</td><td style="text-align:center;">24</td><td style="text-align:center;">2</td><td style="text-align:center;">1</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td></tr><tr><td>Lv8 (1k+)</td><td style="text-align:center;">80</td><td style="text-align:center;">8</td><td style="text-align:center;">5</td><td style="text-align:center;">3</td><td style="text-align:center;">2</td></tr><tr><td>Lv9 (3k+)</td><td style="text-align:center;">240</td><td style="text-align:center;">24</td><td style="text-align:center;">15</td><td style="text-align:center;">9</td><td style="text-align:center;">6</td></tr><tr><td>Lv10 (10k+)</td><td style="text-align:center;">800</td><td style="text-align:center;">80</td><td style="text-align:center;">50</td><td style="text-align:center;">30</td><td style="text-align:center;">20</td></tr><tr><td>Lv11 (30k+)</td><td style="text-align:center;">2,400</td><td style="text-align:center;">240</td><td style="text-align:center;">150</td><td style="text-align:center;">90</td><td style="text-align:center;">60</td></tr><tr><td>Lv12 (100k+)</td><td style="text-align:center;">8,000</td><td style="text-align:center;">800</td><td style="text-align:center;">500</td><td style="text-align:center;">300</td><td style="text-align:center;">200</td></tr><tr><td>Lv13 (300k+)</td><td style="text-align:center;">24,000</td><td style="text-align:center;">2,400</td><td style="text-align:center;">1,500</td><td style="text-align:center;">900</td><td style="text-align:center;">600</td></tr><tr><td>Lv14 (1m+)</td><td style="text-align:center;">80,000</td><td style="text-align:center;">8,000</td><td style="text-align:center;">5,000</td><td style="text-align:center;">3,000</td><td style="text-align:center;">2,000</td></tr></tbody></table></div>
+<p>This excludes unemployment &amp; unwillingness to work. Around 10% of a Settlement can be hired in total. Characters of Level 5 or greater are not normally available for recruitment — they have too much going on running their own organizations.</p>
+<p>The vast majority of Glassians are agricultural laborers, but cities &amp; settlements are disproportionately specialized. In a Settlement, of those <em>available to hire</em>, approximately:</p>
+<ul>
+<li>15% are criminals &amp; gangsters;</li>
+<li>20% are mercenaries &amp; sailors of various rank;</li>
+<li>40% are commoners — laborers (skilled or otherwise), slaves, &amp; servants;</li>
+<li>20% are burghers — artisans, merchants, entrepreneurs, doctors, &amp; other specialists:</li>
+<li>5% are governors &amp; magicians — Jesters, magicians, &amp; lords.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">d66</th><th>Class</th><th>Subclass</th><th>Job</th></tr></thead><tbody><tr><td style="text-align:center;">11</td><td>Criminal</td><td>—</td><td>Gangster</td></tr><tr><td style="text-align:center;">12</td><td>Criminal</td><td>—</td><td>Assassin</td></tr><tr><td style="text-align:center;">13</td><td>Criminal</td><td>—</td><td>Thief</td></tr><tr><td style="text-align:center;">14</td><td>Criminal</td><td>—</td><td>Harpy mercenary</td></tr><tr><td style="text-align:center;">15</td><td>Criminal</td><td>—</td><td>Pickpocket</td></tr><tr><td style="text-align:center;">16</td><td>Commons</td><td>Military</td><td>Mercenary</td></tr><tr><td style="text-align:center;">21</td><td>Commons</td><td>Military</td><td>Specialist</td></tr><tr><td style="text-align:center;">22</td><td>Commons</td><td>Military</td><td>Officer</td></tr><tr><td style="text-align:center;">23</td><td>Commons</td><td>Military</td><td>Soldier/sailor</td></tr><tr><td style="text-align:center;">24</td><td>Commons</td><td>Military</td><td>Soldier/sailor</td></tr><tr><td style="text-align:center;">25</td><td>Commons</td><td>Military</td><td>Soldier/sailor</td></tr><tr><td style="text-align:center;">26</td><td>Commons</td><td>Military</td><td>Soldier/sailor</td></tr><tr><td style="text-align:center;">31</td><td>Commons</td><td>Labor</td><td>Debtor’s slave</td></tr><tr><td style="text-align:center;">32</td><td>Commons</td><td>Labor</td><td>Debtor’s slave</td></tr><tr><td style="text-align:center;">33</td><td>Commons</td><td>Labor</td><td>Hereditary servant</td></tr><tr><td style="text-align:center;">34</td><td>Commons</td><td>Labor</td><td>Harpy courier</td></tr><tr><td style="text-align:center;">35</td><td>Commons</td><td>Labor</td><td>Unskilled laborer</td></tr><tr><td style="text-align:center;">36</td><td>Commons</td><td>Labor</td><td>Unskilled laborer</td></tr><tr><td style="text-align:center;">41</td><td>Commons</td><td>Labor</td><td>Unskilled laborer</td></tr><tr><td style="text-align:center;">42</td><td>Commons</td><td>Labor</td><td>Skilled laborer</td></tr><tr><td style="text-align:center;">43</td><td>Commons</td><td>Labor</td><td>Skilled laborer</td></tr><tr><td style="text-align:center;">44</td><td>Commons</td><td>Labor</td><td>Skilled laborer</td></tr><tr><td style="text-align:center;">45</td><td>Commons</td><td>Labor</td><td>Skilled laborer</td></tr><tr><td style="text-align:center;">46</td><td>Commons</td><td>—</td><td>Hunter</td></tr><tr><td style="text-align:center;">51</td><td>Commons</td><td>—</td><td>Scout</td></tr><tr><td style="text-align:center;">52</td><td>Burgher</td><td>—</td><td>Craftsman</td></tr><tr><td style="text-align:center;">53</td><td>Burgher</td><td>—</td><td>Artisan</td></tr><tr><td style="text-align:center;">54</td><td>Burgher</td><td>—</td><td>Entrepreneur</td></tr><tr><td style="text-align:center;">55</td><td>Burgher</td><td>—</td><td>Doctor</td></tr><tr><td style="text-align:center;">56</td><td>Burgher</td><td>—</td><td>Engineer</td></tr><tr><td style="text-align:center;">61</td><td>Burgher</td><td>—</td><td>Clerk/scribe</td></tr><tr><td style="text-align:center;">62</td><td>Burgher</td><td>—</td><td>Writer</td></tr><tr><td style="text-align:center;">63</td><td>Magician</td><td>Jester</td><td>Jester</td></tr><tr><td style="text-align:center;">64–65</td><td>—</td><td>—</td><td><em>Ruler subtable</em></td></tr><tr><td style="text-align:center;">66</td><td>—</td><td>—</td><td><em>Foreigner subtable</em></td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Class</th><th>Subclass</th><th>Ruler Job</th></tr></thead><tbody><tr><td style="text-align:center;">1–3</td><td>Governor</td><td>Magistrate</td><td>Magistrate</td></tr><tr><td style="text-align:center;">4–5</td><td>Governor</td><td>Lord</td><td>Lord</td></tr><tr><td style="text-align:center;">6</td><td>Jester</td><td>Jester</td><td>Jester</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Class</th><th>Subclass</th><th>Foreigner Job</th></tr></thead><tbody><tr><td style="text-align:center;">1–3</td><td>Foreigner</td><td>—</td><td>Harpy</td></tr><tr><td style="text-align:center;">4–5</td><td>Foreigner</td><td>—</td><td>Salamander</td></tr><tr><td style="text-align:center;">6</td><td>Foreigner</td><td>—</td><td>Sucker</td></tr></tbody></table></div>
+<h3 id="monthly-wages">Monthly Wages<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#monthly-wages" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A Retainer hired for monthly wages will expect wages measured by how many Class Features they have <em>or</em> by their Battle Rating score (p. @), depending on the purpose of their employment (specialist labor vs. military force).</p>
+<h4 id="wages-by-levelclass-features">Wages by Level/Class Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#wages-by-levelclass-features" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Generally speaking, you cannot hire anyone over the rank of Level 4, but this table goes to Level 14 for completeness’ sake. The cost reflects the expected monthly income for that character if they were to take up managing a Faction of a size befitting their experience.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Level</th><th>Monthly Wage</th></tr></thead><tbody><tr><td style="text-align:center;">0</td><td>$30</td></tr><tr><td style="text-align:center;">1</td><td>$45</td></tr><tr><td style="text-align:center;">2</td><td>$60</td></tr><tr><td style="text-align:center;">3</td><td>$90</td></tr><tr><td style="text-align:center;">4</td><td>$300</td></tr><tr><td style="text-align:center;">5</td><td>$1,000</td></tr><tr><td style="text-align:center;">6</td><td>$3,000</td></tr><tr><td style="text-align:center;">7</td><td>$10,000</td></tr><tr><td style="text-align:center;">8</td><td>$30,000</td></tr><tr><td style="text-align:center;">9</td><td>$100,000</td></tr><tr><td style="text-align:center;">10</td><td>$300,000</td></tr><tr><td style="text-align:center;">11</td><td>$1,000,000</td></tr><tr><td style="text-align:center;">12</td><td>$3,000,000</td></tr><tr><td style="text-align:center;">13</td><td>$10,000,000</td></tr><tr><td style="text-align:center;">14</td><td>$30,000,000</td></tr></tbody></table></div>
+<h4 id="wages-by-br">Wages by BR<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#wages-by-br" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Mercenaries charge $10 per BR per month</strong> &amp; usually come as a packaged unit consisting of at least a <em>lance</em> — a 3-man fire-squad consisting of a swordsman, archer (or windgunner), &amp; specialist.</p>
+<p>An average human mercenary is 4.5 BR — a Level 0 spearman with a shield &amp; chain armor. That’s $45/month.</p>
+<p>If that sounds expensive, <strong>they are</strong>. Try taking out a Loan (p. @) from a bank — maybe the Venetians.</p>
+<h2 id="animals">Animals<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#animals" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Animal</th><th>Value</th><th>Max. Load</th><th></th></tr></thead><tbody><tr><td>Donkey</td><td>$100</td><td></td><td></td></tr><tr><td>Draft horse</td><td>$300</td><td>100#</td><td></td></tr><tr><td>Horse</td><td>$400</td><td>60#</td><td></td></tr><tr><td>Warhorse</td><td>$4,000</td><td>80#</td><td></td></tr></tbody></table></div>
+<h2 id="vehicles">Vehicles<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#vehicles" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Vehicle</th><th>Value</th><th>Weight</th><th>Max. Load</th></tr></thead><tbody><tr><td>Cart, 1-horse</td><td>$500</td><td></td><td>100#</td></tr><tr><td>Cart, 2-horse</td><td>$500</td><td></td><td>200#</td></tr><tr><td>Covered wagon, 1-horse</td><td>$2,000</td><td></td><td>150#</td></tr><tr><td>Covered wagon, 2-horse</td><td>$2,000</td><td></td><td>300#</td></tr></tbody></table></div>
+<h2 id="general-goods">General Goods<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#general-goods" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Item</th><th>Value</th><th>Weight</th></tr></thead><tbody><tr><td>Book (instruction/novel/poetry)</td><td>$50</td><td>1/4#</td></tr><tr><td>Compass</td><td>$150</td><td>—</td></tr><tr><td>Traveler’s materials</td><td>$30</td><td>2#</td></tr><tr><td>Rope (30’ length, 1” diameter, 50# safe load)</td><td>$7</td><td>1/2#</td></tr><tr><td>Chain (30’ length, ¼” diameter, 50# safe load)</td><td>$8</td><td>1#</td></tr></tbody></table></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-6" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#-debt--credit" data-for="-debt--credit">@ Debt &amp; Credit</a></li><li class="depth-1"><a href="#debts" data-for="debts">Debts</a></li><li class="depth-1"><a href="#-loans" data-for="-loans">@ Loans</a></li><li class="depth-0"><a href="#using-this-chapter" data-for="using-this-chapter">Using This Chapter</a></li><li class="depth-0"><a href="#availability--pricing" data-for="availability--pricing">Availability &amp; Pricing</a></li><li class="depth-1"><a href="#item-availability-by-price" data-for="item-availability-by-price">Item Availability by Price</a></li><li class="depth-1"><a href="#item-availability-by-commission" data-for="item-availability-by-commission">Item Availability by Commission</a></li><li class="depth-0"><a href="#weapon-categories" data-for="weapon-categories">Weapon Categories</a></li><li class="depth-1"><a href="#gear-effects" data-for="gear-effects">Gear Effects</a></li><li class="depth-0"><a href="#armor" data-for="armor">Armor</a></li><li class="depth-0"><a href="#magicians-clothes" data-for="magicians-clothes">Magician’s Clothes</a></li><li class="depth-0"><a href="#-other-stuff" data-for="-other-stuff">@ other stuff</a></li><li class="depth-0"><a href="#retainers" data-for="retainers">Retainers</a></li><li class="depth-1"><a href="#number-available" data-for="number-available">Number Available</a></li><li class="depth-1"><a href="#monthly-wages" data-for="monthly-wages">Monthly Wages</a></li><li class="depth-0"><a href="#animals" data-for="animals">Animals</a></li><li class="depth-0"><a href="#vehicles" data-for="vehicles">Vehicles</a></li><li class="depth-0"><a href="#general-goods" data-for="general-goods">General Goods</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript.js" type="module" data-persist="true"></script></html>
