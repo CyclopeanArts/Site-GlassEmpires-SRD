@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>{ 4 } - Factions — Glass Empires</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Glass Empires SRD"/><meta property="og:title" content="{ 4 } - Factions — Glass Empires"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="{ 4 } - Factions — Glass Empires"/><meta name="twitter:description" content="A Faction is one or more characters that compose a set of dependent &amp; supportive Families surrounding a place of operations called a Capital, working under a notable or charismatic Leader (or Ruler) for the sake of achieving a shared agenda, represented by a series of Moves set &amp; achieved on..."/><meta property="og:description" content="A Faction is one or more characters that compose a set of dependent &amp; supportive Families surrounding a place of operations called a Capital, working under a notable or charismatic Leader (or Ruler) for the sake of achieving a shared agenda, represented by a series of Moves set &amp; achieved on..."/><meta property="og:image:alt" content="A Faction is one or more characters that compose a set of dependent &amp; supportive Families surrounding a place of operations called a Capital, working under a notable or charismatic Leader (or Ruler) for the sake of achieving a shared agenda, represented by a series of Moves set &amp; achieved on..."/><meta property="twitter:domain" content="cyclopeanarts.github.io/Site-GlassEmpires-SRD"/><meta property="og:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-4-}---Factions"/><meta property="twitter:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-4-}---Factions"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="A Faction is one or more characters that compose a set of dependent &amp; supportive Families surrounding a place of operations called a Capital, working under a notable or charismatic Leader (or Ruler) for the sake of achieving a shared agenda, represented by a series of Moves set &amp; achieved on..."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvbm9pcmUvQ3ljbG9wZWFuL0dsYXNzLUVtcGlyZXMvU1JELXF1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-4-}---Factions-og-image.webp"/><meta property="og:image:url" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-4-}---Factions-og-image.webp"/><meta name="twitter:image" content="https://cyclopeanarts.github.io/Site-GlassEmpires-SRD/Book-1---Glass-Empires/Part-1---Rules/{-4-}---Factions-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Book-1---Glass-Empires/Part-1---Rules/{-4-}---Factions"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">Glass Empires SRD</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-11"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-11" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/">Book 1   Glass Empires</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Book-1---Glass-Empires/Part-1---Rules/">Part 1   Rules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>{ 4 }   Factions</a></div></nav><h1 class="article-title">{ 4 } - Factions</h1><p show-comma="true" class="content-meta"><time datetime="2026-03-09T16:01:36.807Z">Mar 09, 2026</time><span>37 min read</span></p></div></div><article class="popover-hint"><p>A <strong>Faction</strong> is one or more characters that compose a set of dependent &amp; supportive <strong>Families</strong> surrounding a place of operations called a <strong>Capital</strong>, working under a notable or charismatic <strong>Leader</strong> (or <strong>Ruler</strong>) for the sake of achieving a shared agenda, represented by a series of <strong>Moves</strong> set &amp; achieved on or after their <strong>Deadlines</strong> come to pass.</p>
+<p>Factions may occasionally also have <strong>Features</strong> just like characters. Features represent exceptional abilities or rules that apply to that Faction and usually relate to the <em>institutional structure</em> of a Faction (i.e. feudal kings vs. mercantile enterprises).</p>
+<blockquote class="callout example" data-callout="example">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Example</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>The following is a complete Faction:</p>
+<ul>
+<li><strong>Myrtle Seedshall</strong> (Seedshall Cottage, 0) - <em>Work up the nerve to ask Mausashi to take her to the Academy in the Woods</em> (April 4)
+<ul>
+<li>Debt to Mausashi for saving her life</li>
+</ul>
+</li>
+</ul>
+<p><em>Name</em>, <em>Capital</em> &amp; <em>Families</em> (0 means it’s just the Leader), <em>Move</em>, <em>Deadline</em>, &amp; a <em>Debt</em> to Mausashi.</p>
+</div>
+</blockquote>
+<h2 id="sovereignty--subfactions">Sovereignty &amp; Subfactions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#sovereignty--subfactions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Many of a Faction’s Actions are delegated to <strong>Subfactions</strong>, which are <strong>Subordinate</strong> Factions. Each Subfaction is led by its own Leader, who is a <strong>Retainer</strong> of their <strong>Liege</strong> (the Leader of the master Subfaction). Factions with no master are <strong>Sovereign</strong>.</p>
+<p>A Faction can be <strong>Subordinate</strong> to <em>at most</em> one Faction, and is also considered Subordinate to any Faction <em>above</em> their Liege if their Liege is not <strong>Sovereign</strong> (a Faction that is not Subordinate to any other Faction is Sovereign).</p>
+<blockquote class="callout example" data-callout="example">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Example</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>An Earl whose direct Liege is a Count is <em>also</em> a Subordinate Subfaction to the <em>Count’s</em> Liege, the King of England. The Earl cannot have a second Liege — for who can serve two masters without loving one &amp; despising the other?</p>
+</div>
+</blockquote>
+<h2 id="limits-on-factions">Limits on Factions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#limits-on-factions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="leader-limitations">Leader Limitations<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#leader-limitations" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A character can be the Leader of many Factions at one time, but their Factions can only work on a Move if the Leader <em>personally</em> dedicates himself full-time to overseeing the Move.</p>
+<p>Therefore, a Leader overseeing multiple Factions without delegation to Subfactions is substantially weaker than one who delegates, &amp; he is likely to invite catastrophe.</p>
+<p>A Faction delegated to a Retainer will do nothing without its Leader unless it is <em>wholly</em> granted to that Retainer &amp; made into a permanent Subfaction (p. @).</p>
+<h3 id="factions-cant-have-facts">Factions Can’t Have Facts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#factions-cant-have-facts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Factions cannot have Facts. Only their leaders can. They <em>do</em> have <em>types</em> (p. @), which are similar in that they allow specialization of purpose.</p>
+<h3 id="factions-dont-have-moods">Factions Don’t Have Moods<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#factions-dont-have-moods" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Factions share the Mood (p. @) of their Leaders.</p>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>What If a Faction's Population Hates Its Ruler? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Then it should have a Subfaction representing its angered Families (maybe a Cult of Personality?), with a Leader who hates his Liege. Remember that characters can be part of any number of Factions, so there’s no reason they can’t share most of the same Families! Doing it this way also provides you the mechanical framework for hostilities between the populace &amp; the Leader.</p>
+</div>
+</blockquote>
+<h2 id="families-capitals--settlements">Families, Capitals &amp; Settlements<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#families-capitals--settlements" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Families</strong> is a score indicating the <em>number of households</em> located in a Faction’s <strong>Capital</strong> that provide <em>support for</em> &amp; <em>has a dependency</em> on that Faction. <em>All</em> human power is downstream from the Families who follow a Leader.</p>
+<p>One household is estimated to be 5 people — on average, a husband, his wife, and three children, of whom one is capable of labor &amp; war &amp; might be an independent unmarried agent.</p>
+<p>The table adjacent correlates <em>Families</em> to <strong>Faction Level</strong>. The scale is <em>approximately</em> logarithmic; each step is around 3.16 × the Follower count of the previous step.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Families<br/>in Capital</th><th style="text-align:center;">Faction<br/>Level</th><th>Capital<br/>Size</th><th>Army<br/>Size</th><th>Realm<br/>Size</th><th>Euro Nobility<br/>Equivalent</th></tr></thead><tbody><tr><td>0</td><td style="text-align:center;">—</td><td>—</td><td>A person</td><td>—</td><td>—</td></tr><tr><td>1+</td><td style="text-align:center;">1</td><td>Cottage</td><td>3-man lance</td><td>Farm</td><td>Gentleman</td></tr><tr><td>3+</td><td style="text-align:center;">2</td><td>Manor</td><td>Squad</td><td>Manor</td><td>Lord</td></tr><tr><td>10+</td><td style="text-align:center;">3</td><td>Hamlet</td><td>Platoon</td><td>—</td><td>—</td></tr><tr><td>30+</td><td style="text-align:center;">4</td><td>Small village</td><td>Company</td><td>—</td><td>—</td></tr><tr><td>100+</td><td style="text-align:center;">5</td><td>Village</td><td>Cohort</td><td>—</td><td>—</td></tr><tr><td>300+</td><td style="text-align:center;">6</td><td>Small town</td><td>Battalion</td><td>—</td><td>—</td></tr><tr><td>1,000+</td><td style="text-align:center;">7</td><td>Large town</td><td>Brigade</td><td>Barony</td><td>Baron</td></tr><tr><td>3,000+</td><td style="text-align:center;">8</td><td>City</td><td>Division</td><td>County</td><td>Count</td></tr><tr><td>10k+</td><td style="text-align:center;">9</td><td>Large city</td><td>Corps</td><td>Duchy</td><td>Duke</td></tr><tr><td>30k+</td><td style="text-align:center;">10</td><td>Metropolis</td><td>Field army</td><td>Petty kingdom</td><td>King</td></tr><tr><td>100k+</td><td style="text-align:center;">11</td><td>Megalopolis</td><td>Imperial army</td><td>Kingdom</td><td>—</td></tr><tr><td>300k+</td><td style="text-align:center;">12</td><td>Rome</td><td>Front</td><td>Empire</td><td>Emperor</td></tr></tbody></table></div>
+<p><strong>To determine Faction Level from a Families score</strong>:</p>
+<ol>
+<li>Find the <em>number of digits</em> in the Families stat (<em>i.e. a village of 120 = 3</em>).</li>
+<li>Double it (<em>i.e. 3 × 2 = 6</em>).</li>
+<li>If the first digit in the Families stat is 2 or 1, subtract 1 (<em>i.e. “1” in 120, so 6 − 1 = 5</em>).</li>
+</ol>
+<p><strong>To determine a viable Families number from a given character Level</strong>:</p>
+<ol>
+<li>Divide the character’s Level by 2 (<em>i.e. Level 7 ÷ 2 = 3.5</em>).</li>
+<li>Write any number with that many digits. If you got a 0.5, round up, but the first digit <em>must</em> be 1 or 2 (<em>i.e. 3.5 = 4 digits, but no more than 2,999</em>).</li>
+</ol>
+<p>The Followers of the Leader of an entire Settlement (a Government, p. @) is equal to the number of Families living in that Settlement, because even if they don’t like their Leader, their presence is still contributing to that Leader’s power.</p>
+<p>If a Leader <em>doesn’t</em> control the entirety of a Settlement, their Capital is a smaller structure within that Settlement (such as its market, gate society/guards, temple, bank, or a business) &amp; his Families represent the attendees, customers, employees, or other people who support his Faction, depending on his Faction Type (p. @).</p>
+<p>A Faction’s Level is tied to its current Families score &amp; is <em>frequently</em> referenced by a character, so it’s worth writing down the Level of a Leader’s controlled Factions on his sheet.</p>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Tip</p></div>
+                  
+                </div>
+<div class="callout-content">
+<blockquote>
+<p><strong>For example</strong>, a city of 40,000 has 5 digits (×2 = 10) &amp; the highest digit (4) is greater than 3; therefore, that city’s Leader has a Level of 11. And if you look at the table, you’ll find that that’s exactly correct.</p>
+</blockquote>
+<p>Similarly, you can convert from Leader Level to Follower score by dividing the Leader’s Level by 2 &amp; writing a number with that many digits, starting with 3 if there’s a 0.5 remainder &amp; 1 if there isn’t.</p>
+<blockquote>
+<p><strong>For example</strong>, a Leader of Lv13: 13 ÷ 2 = 6.5. There’s a 0.5 remainder &amp; 6 digits, so the Leader must rule a Capital of <em>at least</em> 300,000 people (but not ≥1,000,000, or else he’d be Level 14).</p>
+</blockquote>
+</div>
+</blockquote>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>How many Factions can someone be a Follower of? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>People can be Followers to many Factions at once.</p>
+<p>The Followers of the smallest village in a kingdom are considered Followers of the village mayor, the local province’s lord, the magistrate above him, the bureaucratic body overseeing the region, &amp; the emperor himself, in addition to being Followers of whichever businesses &amp; gods &amp; family members they patronize. Their commitments directly serve to reinforce &amp; enhance the Factions they commit to. The degree of their devotion doesn’t matter; the math already accounts for variation in support.</p>
+</div>
+</blockquote>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Why do we track or care about Capitals? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Many reasons!</p>
+<ul>
+<li>You do not rule <em>territory</em>; you rule <em>people</em>. Rural regions are of such thin density that to declare control over them is at best a technicality.</li>
+<li>You need administrators to rule any other settlement. They’re simply too distant to monitor.</li>
+<li>It is trivial (both in-world &amp; as a GM) to count the population of one city, which is related to the fact that it’s a small area that’s easily managed by a person living in a single fortified location nearby.
+<ul>
+<li>As soon as you start counting all controlled populations, you have a billion issues determining which areas are controlled &amp; which aren’t; this leads to drawing borders &amp; arguing over population density for people you’d have no right to know even existed.</li>
+<li>Additionally, outlying populations’ proof of existence is in <em>the existence of the city itself</em>. If a city didn’t have rural populations, <em>the city would not exist</em>. It is dependent upon them for survival. Therefore, we can simplify them out of the equation &amp; only account for the city.</li>
+</ul>
+</li>
+<li>Gods, too, are limited in power by space &amp; distance. Every god is local.</li>
+<li>Rulers, for much the same as the above reasons, cared far more about their local demesne &amp; capital than outlying regions, and tended to invest heavily in their own capital precisely because it was most important to them.</li>
+<li>Nearly all pre-industrial capitals were the single largest city in their respective realms, because power attracts <em>people</em> — specifically, it attracts courtesans, foreign diplomats, assassins &amp; thieves, mercenaries, fellow rulers, scribes, spies, and every other form of scum who seek proximity to power.</li>
+<li>It is absolutely critical to maintain a basis in economics. All human relationships are economic in nature, especially grudges. A defined capital allows tethering of Faction activity to in-game economic factors (such as trade routes, iron mines, and population densities) which lets us turn proximity into relationships that matter.</li>
+</ul>
+</div>
+</blockquote>
+<h2 id="-factions-performing-moves">@ Factions Performing Moves<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-factions-performing-moves" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>A Leader can orchestrate one of their Factions into performing a Move with them, such as Resting (p. @) an Army or stockpiling assets (p. @) using the Faction’s collective labor force. Many Moves are in fact designed <em>exclusively</em> for use by Leaders who are orchestrating a Faction &amp; <em>require</em> that a Faction be involved.</p>
+<p>When a Move is set for a Faction by its Leader, the GM writes down a <strong>Description</strong> of what the Move is set to accomplish adjacent to the Faction name on his list along with the <strong>Deadline</strong> on the calendar (p. @), the date on which it will be completed.</p>
+<h2 id="faction-move-calendar-process">Faction Move Calendar Process<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#faction-move-calendar-process" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Whenever the Deadline for a Move made by a Faction comes up on the calendar (p. @), run through the procedure below.</p>
+<h3 id="1-save-modifiers">1) Save Modifiers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-save-modifiers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Factions don’t have Facts</strong> other than for Debts (p. @), although a Leader’s Facts can still impact his Faction. Instead, every time a Leader performs a Save for his Faction, he must run through this list of questions. <strong>For each question</strong>, give +1 if it resolves unquestionably in the Leader’s favor, and penalize −1 if it’s unquestionably against it.</p>
+<ul>
+<li><strong>Institutional Knowledge</strong>: Is this within the Faction’s <em>role</em> as an organization to do, as determined by the social context of what the Faction is?</li>
+<li><strong>Power</strong>: Is it obviously within the Faction’s power (financial, military, social) to accomplish?</li>
+<li><strong>Precedent</strong>: Has this ever been done before (to local knowledge)?</li>
+<li><strong>Foreign</strong>: Is it reliant on foreign technology/methods that aren’t adopted locally?</li>
+<li><strong>Opposition</strong>: Is at least one Faction strongly opposed &amp; in a position to interfere/deploy at least <em>some</em> countermeasures?</li>
+</ul>
+<h3 id="2-faction-opinions--counter-moves">2) Faction Opinions &amp; Counter-Moves<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-faction-opinions--counter-moves" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Whenever a Move is completed, scan the Faction List for Factions that were harmed or aided by the outcome:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:right;">Faction is…</th><th><strong>Harmed/Offended</strong></th><th><strong>Given opportunity</strong></th><th><strong>Directly Benefited</strong></th></tr></thead><tbody><tr><td style="text-align:right;"><strong>Busy</strong></td><td>Grows Angry &amp; alters Move to undermine, oppose, confront, or attack perpetrator or outcome.</td><td>Nothing for now.</td><td>Grows Pleased with the perpetrator.</td></tr><tr><td style="text-align:right;"><strong>Idle</strong></td><td>Grows Angry &amp; immediately starts plotting revenge, payback, or confrontation.</td><td>Immediately starts a new Move to seize the opportunity.</td><td>Grows Pleased &amp; starts a new Move if opportunity exists</td></tr></tbody></table></div>
+<p>If more than one Faction is Angered by a Move’s outcome, they will join forces if appropriate &amp; scheme together to bring about their revenge or adaptations to the outcome of the Move.</p>
+<h3 id="3-inform-the-players">3) Inform the Players<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-inform-the-players" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Whatever the effects, <em>find a way to inform the Party that it happened</em>. Gossip, town criers, briefings by castellans or stewards or courtiers; if a Faction did it, it comes up soon after with the cause-effect relationship reasonably clear. Even if it was an act of espionage or subtlety, they hear about the consequences or something related to it in a subtle or coded way. Make a note on the calendar if you have to delay it.</p>
+<h3 id="4-new-move--outcomes">4) New Move &amp; Outcomes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-new-move--outcomes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Next, the GM comes up with a new Move for the original Faction to pursue.</p>
+<p><strong>If it isn’t obvious</strong> what the Faction would do next based on their current Debts, agenda, enemies, or situation, roll on the table below to generate a new Move.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Faction Move</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>(<em>Conquer</em>/<em>sabotage</em>/<em>subjugate</em>/<em>destroy</em>/<em>supplant</em>) the most vulnerable neutral/hostile Faction, whichever is most appropriate.</td></tr><tr><td style="text-align:center;">2</td><td>Build/expand on either the easiest or most substantial advantage available to either create a new Subfaction or to gain powers/resources/manpower directly</td></tr><tr><td style="text-align:center;">3</td><td>Form a friendship, alliance, exploitative partnership, exchange/trade agreement, or vassal protection scheme with a Faction who has common interests for the sake of extracting a specific advantage or achievement</td></tr><tr><td style="text-align:center;">4−6</td><td>Do something related to satisfying the Leader’s personal interests or agenda.</td></tr></tbody></table></div>
+<p>Then, try to fit it to the Faction. The final Move should be both:</p>
+<ul>
+<li>Applicable to the agenda &amp; capabilities of the Faction;
+<ul>
+<li>Remember that Subfactions are not <em>obligated</em> to act in their Liege’s interest and will, Leader morality notwithstanding, generally pursue their own even if it conflicts with their Liege’s interests <em>if</em> they believe they can get away with it.</li>
+</ul>
+</li>
+<li>Capable of impacting the PCs, their environment, or any party they care about.</li>
+</ul>
+<p>If you try as hard as you can &amp; <em>fail</em> to find a Move that meets both of these criteria, ask yourself if the Faction is still relevant to the PCs, their subordinates, Factions they care about, or their environment:</p>
+<ul>
+<li><strong>Yes</strong>: The Faction becomes <strong>Idle</strong>, working on nothing in particular.</li>
+<li><strong>No</strong>: The Faction becomes <strong>Veiled</strong> &amp; you must roll a Random Faction Event (p. @).</li>
+</ul>
+<h3 id="5-pc-recruitment-event">5) PC Recruitment Event<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-pc-recruitment-event" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>At the outset of any new Move</strong>, if members of the Faction believe <em>any</em> PC in the area can potentially help with it &amp; that seeking their assistance is <em>unlikely</em> to compromise their goals, one of them will reach out to one of the viable PCs (chosen at random) to recruit them.</p>
+<h3 id="6-random-faction-events">6) Random Faction Events<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-random-faction-events" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Roll a Random Faction Event only if a Faction’s current position makes it ineligible to develop a new Move to pursue.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Event</th></tr></thead><tbody><tr><td style="text-align:center;">2</td><td><strong>Development</strong>. The Faction with the most developed (<strong>1d6</strong>: 1–2 <em>technological</em>, 3–4 <em>social or cultural</em>, 5–6 <em>economic or legal</em>) capabilities has their primary advantage wiped out by a brand-new advancement that makes it (<strong>1d6</strong>: 1–3 <em>too common</em>, 4–6 <em>too expensive or niche</em>) &amp; that brings about a new Faction who principally benefits from &amp; represents the change. The change might not be immediately &amp; uniformly available, but soon will be. All other Factions are impacted as would be logically expected.</td></tr><tr><td style="text-align:center;">3–4</td><td><strong>New Desire</strong>. The least interesting Idle Faction spontaneously develops a brand-new agenda/desire. Roll a random Move, then pick a Faction &amp; figure out why the new Move puts them in conflict with that Faction. If in doubt, they were offended.</td></tr><tr><td style="text-align:center;">5–9</td><td><strong>New Faction</strong> with a new randomly-rolled Move suddenly fulfilled for the advancement of a new, broader agenda that frightens <em>at least one</em> existing Faction.</td></tr><tr><td style="text-align:center;">10</td><td><strong>Disastrous failure</strong>. The most megalomaniacal Faction’s attempts to achieve their Move suddenly becomes a public crisis (affecting at least half of the active Factions) in the most plausible way possible.</td></tr><tr><td style="text-align:center;">11</td><td><strong>Resource shortage</strong>. The least stable Faction’s primary advantage is wiped out via a shortage of whatever was most critical to it. Everyone else who would be strengthened/weakened by this is also affected accordingly.</td></tr><tr><td style="text-align:center;">12</td><td><strong>Disaster</strong>. A natural disaster outside anyone’s control hits. Fire, flood, tornado, hurricane, blizzard, earthquake, volcano, plague of locusts. If the region is known for a particular kind of disaster, it’s that.</td></tr></tbody></table></div>
+<p>If you need to know why this suddenly happened (i.e. there isn’t an obvious candidate or explanation), roll on the table below.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Explanation</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td><strong>Secrets leaked</strong>. Someone’s awful secret leaked through espionage, discovery in an archive, intercepted letters, witnessed events, or purported rumor/prophecy.</td></tr><tr><td style="text-align:center;">2</td><td><strong>External sovereign risk</strong>. Someone’s liege’s liege made a flippant decision to replace a local Leader with a personally-preferred replacement.</td></tr><tr><td style="text-align:center;">3</td><td><strong>Economic shift</strong>. A major trade route changed, monopoly broke, or bank imploded in a nearby area &amp; the cascade finally caught up to this Settlement.</td></tr><tr><td style="text-align:center;">4</td><td><strong>Master arrival/departure</strong>. A master craftsman, mercenary captain, exiled noble, heretical magician, or refugee community chose to appear (or flee). They brought their skills, resources, or legitimacy with them.</td></tr><tr><td style="text-align:center;">5</td><td><strong>Cultural shift</strong>. Something’s become cool/uncool, generationally or otherwise.</td></tr><tr><td style="text-align:center;">6</td><td><strong>Environment</strong>. Seasonal change, harvest quality, resources, disease, or distant natural disaster. Nature doesn’t care about your plans!</td></tr></tbody></table></div>
+<h4 id="new-faction-generation">New Faction Generation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#new-faction-generation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>You can use these tables to produce the outline of new Factions when required.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">1d6</th><th>Faction Origin</th></tr></thead><tbody><tr><td style="text-align:center;">1</td><td>From the surrounding region (or beyond it).</td></tr><tr><td style="text-align:center;">2</td><td>Breakaway group from one of the most fragmentary active Factions.</td></tr><tr><td style="text-align:center;">3</td><td>A resurrection of an old local problem in a new form.</td></tr><tr><td style="text-align:center;">4</td><td>Risen from a newly-troubled or empowered sect of the local economy, especially one not already represented by an existing Faction.</td></tr><tr><td style="text-align:center;">5</td><td>Formed under (&amp; loyal to) an existing random Faction as a specialized group.</td></tr><tr><td style="text-align:center;">6</td><td>Emerged to combat a perceived growing crisis. If there’s an obvious crisis brewing in the city, it’s that; otherwise, make one up. 3-in-6 chance the crisis actually exists &amp; isn’t just a confused error, misjudgement, or cunning power grab.</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">2d6</th><th>Faction Makeup</th><th>Faction Vibe</th><th>Typical Agendas</th></tr></thead><tbody><tr><td style="text-align:center;">2</td><td>Youths</td><td>Enthusiastic violence</td><td>Carve out a private chunk of Glass</td></tr><tr><td style="text-align:center;">3</td><td>Artisans</td><td>Visionary</td><td>Glorious revolution</td></tr><tr><td style="text-align:center;">4</td><td>Magistrate</td><td>Stewardly precision</td><td>Make the world orderly &amp; legible</td></tr><tr><td style="text-align:center;">5</td><td>Criminal</td><td>Disorganized violence</td><td>Emotional opportunism</td></tr><tr><td style="text-align:center;">6</td><td>Burgher</td><td>Profiteering</td><td>Stabilize their wealth &amp; industry</td></tr><tr><td style="text-align:center;">7</td><td>Commoners</td><td>Industrious</td><td>Peace, no taxes &amp; debauchery</td></tr><tr><td style="text-align:center;">8</td><td>Lords</td><td>Lording military might</td><td>Tame these unruly wartime people</td></tr><tr><td style="text-align:center;">9</td><td>Jester</td><td>Strict comic priests</td><td>Enforce education &amp; divine order</td></tr><tr><td style="text-align:center;">10</td><td>Slaves</td><td>Debtor’s desperation</td><td>Murder or legally dissolve their creditors</td></tr><tr><td style="text-align:center;">11</td><td>Servants</td><td>Angry indignity</td><td>Liberation from insolvent masters</td></tr><tr><td style="text-align:center;">12</td><td>Magicianry</td><td>Erudite esoterism</td><td>Every deep divine secret revealed</td></tr></tbody></table></div>
+<p>If not specified, the Faction is 1d6 Levels smaller than the Settlement itself (or the Faction it’s related to, if any), minimum 0 (a single crank/lunatic).</p>
+<h2 id="procedure-unveiling-factions">Procedure: Unveiling Factions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#procedure-unveiling-factions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Veiled Factions</strong> are those that have become, for the time being, irrelevant to the game. Maybe the scope of play moved far beyond or beneath their interest; maybe the PCs left the city to chase various quests.</p>
+<p>Whenever the Party re-enters the area of influence of a Veiled Faction (by literally re-entering a controlled region such as the capitol or by attempting to probe/interact with the Faction), the GM performs a Save to assess changes to that Faction. Add the Faction Leader’s Level; subtract a penalty based on time passed using the adjacent Time Passed/Penalty table.</p>
+<p>The GM may add additional ±1 modifiers, but they should relate to factors impacting <em>institutional inertia</em> &amp; not whether or not the change is <em>empowering</em> or <em>weakening</em> for the Faction.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Time Passed</th><th>Penalty</th></tr></thead><tbody><tr><td>1 month</td><td>0</td></tr><tr><td>3 months</td><td>−1</td></tr><tr><td>1 year</td><td>−3</td></tr><tr><td>3 years</td><td>−5</td></tr><tr><td>10 years</td><td>−7</td></tr><tr><td>30 years</td><td>−9</td></tr><tr><td>100 years</td><td>−12</td></tr><tr><td>300 years</td><td>−15</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Unveiling Save Effects</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>The Faction is fundamentally stable; all changes are essentially superficial.</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>Shift in focus in 1: goals, methods, leadership, assets.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>Completely replace/overhaul 1 &amp; change 1: goals, methods, leadership, assets.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>Completely replace/overhaul 1 &amp; change 2: goals, methods, leadership, assets.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>Fundamental transformation. Roll 1d6:<br/>- <strong>1–2</strong>: Completely replaced with an alien successor;<br/>- <strong>3–4</strong>: Completely replaced, but is still clearly descended from the same Faction;<br/>- <strong>5–6</strong>: Gone with no replacement; fractured into constituents or simply erased.</td></tr></tbody></table></div>
+<p>@@ need a way to determine population changes over time.</p>
+<h2 id="-the-party-is-a-faction">@ The Party is a Faction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-the-party-is-a-faction" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>But only if the PCs make it one.</p>
+<p>In other words, the Party is a Faction so long as all PCs merge their own activities &amp; Subfactions underneath its banner, and clearly delinate the Party as an entity that actually exists in the world. It might be framed as a warband, a traveling carvan, or a nascent government — just so long as it can encompass the Factions the PCs also run.</p>
+<p>Any PC may represent the Party as its Leader for any situation requiring a Leader’s action.</p>
+<h2 id="predefined-moves">Predefined Moves<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#predefined-moves" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="move-general-faction-activity">Move: General Faction Activity<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-general-faction-activity" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Lots of weird Faction actions won’t cleanly fall into any other niche. In these cases, a GM may determine a <strong>Deadline</strong> based on the nature of the act &amp; use the Success Save template table below to determine the general outcome of the Move.</p>
+<p>At the Deadline, Save.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Success Save Effect</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>The Move succeeds twice as well as anyone hoped for, or in an exceptional way. If the outcome <em>directly</em> benefited or aided other Factions, they grow Pleased.</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>The Move succeeds exactly as intended.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>The Move succeeds half as well as intended.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>A new, secondary problem has emerged that prevents the completion of the Move until resolved. Pick a Faction (<em>preferably an Idle one that would be opposed to the Move</em>) that’s to blame for or related to the new problem.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>The Move fails catastrophically. The worst possible thing that could happen (for you &amp; the local environment) happens.</td></tr></tbody></table></div>
+<h3 id="move-create-a-new-subfaction">Move: Create a new Subfaction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-create-a-new-subfaction" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>To create a new Subfaction, you must:</p>
+<ol>
+<li><strong>Promote a Leader</strong>: You have to promote one of your Retainers or someone else you know to the position of Leader.</li>
+<li><strong>Define its role</strong>: Determine the nature of the Subfaction. This has a direct impact on its actual ability to serve you; you are shaping the structure of the institution, and that’s limited by what your realm is actually capable of supporting.</li>
+<li><strong>Gift a Capital</strong>: A physical Settlement or other Capital (such as a castle, or a building or district inside a larger Settlement) suited to its nature must be gifted to the Leader. The new Capital must:
+<ul>
+<li>Be <em>controlled</em> by you.</li>
+<li>Possess Families at least equal to the minimum Families required to support a Subfaction of the Level you wish to create — you can’t make a high-Level Faction without gifting them a <em>real</em> Capital.</li>
+<li>Be <em>unclaimed</em> — not currently be the Capital of <em>any other</em> active Faction, excepting claimed subdivisions (i.e. buildings in a city, offices in a building).
+<ul>
+<li>No active Faction doesn’t mean “no current government” — it means the current institution isn’t organized or independent enough to resist your administrative meddling.</li>
+</ul>
+</li>
+<li>Come with any <em>territory or land</em> that would <em>de jure</em> be part of its domain (you can’t gift a castle without gifting the lands around it, after all).</li>
+</ul>
+</li>
+<li><strong>Transfer assets</strong>: You may need to transfer assets such as Settlements located within the territory granted to a Subfaction.</li>
+</ol>
+<p>The <strong>Deadline</strong> for creating a new Subfaction is set based on the adjacent table &amp; the Followers in the new Capital.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Followers<br/>in Capital</th><th style="text-align:center;">Faction<br/>Level</th><th>Deadline</th></tr></thead><tbody><tr><td>1+</td><td style="text-align:center;">2</td><td>1 day</td></tr><tr><td>3+</td><td style="text-align:center;">3</td><td>1 day</td></tr><tr><td>10+</td><td style="text-align:center;">4</td><td>2 days</td></tr><tr><td>30+</td><td style="text-align:center;">5</td><td>2 days</td></tr><tr><td>100+</td><td style="text-align:center;">6</td><td>3 days</td></tr><tr><td>300+</td><td style="text-align:center;">7</td><td>4 days</td></tr><tr><td>1,000+</td><td style="text-align:center;">8</td><td>5 days</td></tr><tr><td>3,000+</td><td style="text-align:center;">9</td><td>10 days</td></tr><tr><td>10k+</td><td style="text-align:center;">10</td><td>20 days</td></tr><tr><td>30k+</td><td style="text-align:center;">11</td><td>30 days</td></tr><tr><td>100k+</td><td style="text-align:center;">12</td><td>100 days</td></tr><tr><td>300k+</td><td style="text-align:center;">13</td><td>200 days</td></tr><tr><td>1,000k+</td><td style="text-align:center;">14</td><td>1 year</td></tr></tbody></table></div>
+<p>At the Deadline, the Subfaction is automatically formed; no Save required.</p>
+<h3 id="move-sabotage">Move: Sabotage<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-sabotage" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Intangible forms of harm; trade deals, subterfuge, espionage, debt, political &amp; religious conflict, &amp; other forms of intangible &amp; indirect conflict are handled via this Move. To commit Sabotage, explain the plausible means by which you would conduct it. You need a valid attack vector on the target &amp; the tools &amp; methodology to exploit the weakness.</p>
+<p>The <strong>Deadline</strong> is set to be 1 month from the day that planning begins.</p>
+<p>At the Deadline, Save.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Success Save Effect</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>The target loses 50% of their current Followers!</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>The target loses 30% of their current Followers.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>The target loses 10% of their current Followers.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>The GM picks a Faction (<em>preferably an Idle one that would be opposed to the Move</em>) that’s to blame for or related to getting in the way of your sabotage (by incompetence, opposition, or accident). That Faction grows Angrier with you.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>The sabotage fails catastrophically. You lose 10% of your Followers; roll for a Random Faction Event &amp; interpret it as the worst possible consequence of the failed sabotage.</td></tr></tbody></table></div>
+<h3 id="pay-debts">Pay Debts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#pay-debts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Pay off a financial or Manpower-derived (p. @) Debt.</p>
+<p>The <strong>Deadline</strong> is</p>
+<h3 id="move-make-asset">Move: Make Asset<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-make-asset" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Make a non-commodity physical asset, such as a statue, building, fortress, bridge, or road.</p>
+<p>The <strong>Deadline</strong> is equal to the asset value in $ times 6, divided by your number of Families.</p>
+<p>Alternatively, you can invest $5 per month or ~$0.17 per day per Family.</p>
+<p>The <em>minimum</em> Deadline is 1 day per $1,000. Even if you have liquid capital (i.e. silver, gold) on hand, expensive assets require extensive negotiations as well as search &amp; construction periods.</p>
+<p>At the Deadline, Save.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Success Save Effect</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>The asset is complete on time &amp; clever management has eliminated the debts involved in the asset’s creation (if any were made through prior cost overruns).</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>The asset is complete on time.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>There were cost overruns. You can either find a valid Faction who will loan you <strong>10%</strong> of the asset’s value within the next week to complete it at the time of the loan, or set a new Deadline to finish the project using the remaining cost to pay as the basis for determining Deadline.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>There were cost overruns. You can either find a valid Faction who will loan you <strong>50%</strong> of the asset’s value within the next week to complete it at the time of the loan, or set a new Deadline to finish the project using the remaining cost to pay as the basis for determining Deadline.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>The construction fails catastrophically. You lose 10% of your Followers; roll for a Random Faction Event &amp; interpret it as the worst possible consequence of the failed efforts.</td></tr></tbody></table></div>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>How do I make an asset when I don't rule a Faction? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Characters may treat their job as a Fact. Similarly, applicable Facts (i.e. greed, thriftiness) may indicate higher production capacity than your Faction’s Followers otherwise suggests. In addition, if you have a liquid sum (such as silver dollars you plundered), you can simply dump that into an Asset.</p>
+<p>Then again, even a master blacksmith is Level 3 — he has journeymen &amp; apprentices under him — and a fundamental tenant of Glass Empires is that <em>no man is an island</em>. If you need better production capacity, the best place to get it is to learn to command.</p>
+</div>
+</blockquote>
+<h3 id="move-plunder-a-settlement">Move: Plunder a Settlement<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-plunder-a-settlement" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>To plunder a controlled Settlement, you must order an Army whose BR is at least equal to the Settlement’s Families to do so.</p>
+<p>You may simultaneously plunder any number of smaller nearby controlled Settlements so long as they <em>aren’t</em> closer to a Settlement larger than the main target. Add 1 day to the Deadline for each additional Settlement plundered in this manner.</p>
+<p>The <strong>Deadline</strong> for plundering in days is equal to the Army’s number of troops divided by the total plundered Families (across all afflicted Settlements), minimum 1 day.</p>
+<p>At the end of the Deadline, you &amp; your Army gain <em>$5 × 3d6 × [Families plundered]</em> in $. Afterwards, each affected Settlement’s Families score is halved &amp; you may destroy any notable landmarks within the plundered Settlement(s). No Save is required.</p>
+<p>You can repeatedly loot Settlements. If you want to <em>obliterate</em> them &amp; all surrounding farmland, it takes 4 times as long as usual &amp; turns all Settlements into voided ruins with 25% of their original SHP value (if any).</p>
+<h3 id="move-grow-follower-base">Move: Grow Follower Base<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-grow-follower-base" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If your Faction has its Capital located <em>inside</em> a Settlement &amp; only has Families equal to a <em>portion</em> of that Settlement’s total Families, you may attempt to raise your number of Families by converting more people within the Settlement to follow <em>you</em>, an <em>ally</em>, one of your <em>Retainers</em>/<em>Subfactions</em> or your <em>Liege</em>.</p>
+<p>Describe to the GM how you are plausibly attempting to convert people &amp; to whose side. It doesn’t have to be <em>your</em> Faction; you can work on someone else’s behalf.</p>
+<p>The <strong>Deadline</strong> is <strong>2 months</strong> for low switching costs (commodities &amp; entertainment), <strong>4 months</strong> for medium (guilds &amp; banking, mercenary services), &amp; <strong>8 months</strong> for high switching costs (ethnic associations, religious faiths, nobility).</p>
+<p>At the Deadline, make a Success Save to determine the <em>base number</em> of how many Families <em>could</em> be gained.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Success Save Effect</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>100% of the target’s current Families.</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>50% of the target’s current Families.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>10% of the target’s current Families.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>Nothing.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>10% of <em>your</em> current Families (not the target’s) leave <em>you</em>.</td></tr></tbody></table></div>
+<p>Reduce the amount gained to <em>at most</em>:</p>
+<blockquote>
+<p>([Settlement’s Families] − [Competitors’ Families]) ÷ 2.</p>
+</blockquote>
+<p>A Competitor is a Faction in the same Settlement that shares the <em>same financial niche</em> as you — whether that be a <em>mercantile</em>, <em>banking</em>, <em>legal</em>, <em>government</em>, <em>military</em>, <em>magical</em>, <em>educational</em>, <em>industrial</em>, or <em>entertainment</em> niche matters not.</p>
+<p><strong>Examples abound</strong>: Two bakeries serving the same artisan niche; a messenger guild &amp; a cult serving a divine messenger; two gate/guard societies; two banking houses; two divisions within the same company (they can’t share employees). When in doubt, ask: “Would a customer choosing Faction A have <em>any</em> reason to also patronize Faction B?” If not, they’re Competitors.</p>
+<p>If you want to try to claim Families from a Competitor, you should try Sabotage (p. @), warfare, or other forms of attack. You can also differentiate your offerings so that you’re not directly competing with entrenched forces — for example, a revolutionary movement would struggle to make <em>open</em> headway against an established town police force, so they can differentiate by <em>instead</em> going underground &amp; only move to the open after growing in numbers.</p>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Wait, so can't I found a business or bank in a major city &amp; get tons of Followers quickly, and then hit a high level? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p><strong>Yes</strong>, but there are <em>no Class Features for doing this</em> since peacetime businesses aren’t relevant to any Classes, so you don’t get any heroic power, just institutional power. It’s also still difficult &amp; time-consuming to make a business work &amp; transferring business assets into conquest is a tricky business by itself.</p>
+</div>
+</blockquote>
+<h2 id="hidden-factions">Hidden Factions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hidden-factions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>A <em>hidden</em> Faction is trying to hide itself from others, or from a specific Faction. It may only be trying to hide a specific secret (such as that it’s actually the Subfaction of a different Faction). It suffers a −1 penalty to all Moves for as long as it continues to hide secrets.</p>
+<p>A hidden Faction is revealed to <em>everyone</em> if it suffers a Fumble on a Save while trying to be hidden, &amp; cannot hide itself thereafter.</p>
+<h2 id="faction-types">Faction Types<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#faction-types" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>A Faction has exactly 1 type</strong>. Nobody can be good at everything, &amp; every institution has its own weaknesses reflected in its intrinsic character.</p>
+<p>In economics, this is called “Dutch Disease” — the weakness of overspecialization — but in truth, everyone has it. The Navy could never do as good a job at making burgers as McDonalds does. Even <em>you</em>, dear reader, have specializations (i.e. your chosen career skills) that you cannot take back. You too have Dutch Disease.</p>
+<p>If you want to reap the benefits of a second type (i.e. you rule a city, but also want a militia), create a Subfaction (p. @) of that type.</p>
+<h3 id="-government">@ Government<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-government" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Your Capital is a <em>Settlement</em>. You rule the <em>entire</em> Settlement as its formal governmental authority, whether that be as a monarchy, oligarchic mayoral tenure, or republic. Your income is <em>tax money</em> from the population, expressed as labor, agricultural products, &amp; some loose coin. You also rule the fertile lands surrounding the Settlement; in truth, your total realm’s population is maybe twice what the Settlement’s Families alone number.</p>
+<p>You have no special features. Unless otherwise stated, your rules are as what’s stated as default.</p>
+<h3 id="financier">Financier<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#financier" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Qualified Classes</strong>: None.</p>
+<p>Your Capital is a <em>banking family’s palace</em>, a massive complex of vaults, offices, &amp; residential quarters that oversees financing to uncountable clients.</p>
+<ul>
+<li><strong>Creditor Network</strong>: You know <em>every</em> financial debt, <em>defaulted</em> or otherwise, that all Factions owe to other Financier Factions. The GM reveals it by default as relevant.</li>
+<li><strong>Promissory Banking</strong>: Your <strong>Capital</strong> is equal to your silver $ reserves <em>plus</em> your Followers, who represent civilian depositors. You can extend loans up to your total Capital to an <em>unlimited</em> number of debtors <em>without losing any $</em> — you gave them your silver, but you have an IOU saying they’ll pay it back (plus interest), which is <em>as good as money</em> to you. This suffers the following restrictions:
+<ul>
+<li>When a loan is fully repaid with interest, increase your $ by the interest (typically 10% to 20% of the principal).</li>
+<li>If anyone defaults on a loan (p. @), even if <em>you</em> forgave it, you <em>instantly</em> lose that much $ — because the IOU won’t be paid back. It <strong>goes bad</strong>. If you can’t lose $, you lose 1 Follower per $ instead.</li>
+<li>If more than 25% of your Capital is lost from loans <em>going bad</em> within a single month, you trigger a <strong>liquidity crisis</strong>.</li>
+<li>When a liquidity crisis occurs, you have 1 month to find the funds (i.e. by calling in other debts you’re owed) to cover the entirety of the $ value of the loans that <em>went bad</em>. If you fail by the deadline, your Faction <strong>implodes</strong> from a cascade of depositors &amp; debtors realizing you’ve become insolvent. If you succeed, you keep any $ you recovered to survive the crisis, but lost Followers are gone for good.</li>
+</ul>
+</li>
+<li><strong>Non-Territorial</strong>: Your actual staff is only at most a couple hundred clerks &amp; guards. Your Followers are debtors &amp; civilian depositors, <em>not</em> productive labor assets. You cannot <em>directly</em> control any Location other than for your business centers (but you can have Subfactions that hold other property). If you lose your vaults (in the Settlement your Capital is in) &amp; haven’t taken precautions, you lose all of your Faction’s $ (possibly triggering a liquidity crisis).</li>
+</ul>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Playing a Financier </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Financiers are <strong>information brokers</strong> who turn debt relationships into political leverage. Your power comes from <em>knowing who owes what to whom</em> &amp; twisting those relationships to ensure you can cover your bases.</p>
+<p>Your primary tools are:</p>
+<ul>
+<li><strong>Debt coordination</strong>. Offer (complete or partial) debt forgiveness (p. @) to one client if they take hostile action against a second defaulting client. See Negotiation (p. @).</li>
+<li><strong>Selective credit</strong>. Choose who gets your money. Deny to enemies, extend to allies.</li>
+<li><strong>Intelligence</strong>. You know everyone’s financial position &amp; can use this to predict future moves.</li>
+<li><strong>Reputation</strong>. One unpunished default encourages more. Make <em>brutal examples</em> of your defaulting debtors.</li>
+<li><strong>Caution</strong>. You can loan tremendous sums, but keeping loans beneath 20% of your Capital prevents a single loan from triggering a crisis.</li>
+</ul>
+<p><strong>You are vulnerable to sovereign risk</strong>. Your direct liege can seize your offices &amp; vaults &amp; expel you from the realm. If you loan to someone who can kill you, make sure you have allies you can rely on to scare them away from trying. Just remember: One defaulting lord can become the target of <em>all</em> his neighbors who owe you, who will leap at the chance to plunder his realm to pay off their own debts.</p>
+</div>
+</blockquote>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>GM Advice for a Financial Crisis </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>A Financier’s implosion sends shockwaves through every Faction that interacted with them.</p>
+<ul>
+<li><strong>Oustanding Debts</strong> are sold to the highest bidder — rival Factions, vulture investors, foreign interests, or any other Financiers operating in the region, if any. <strong>Debts are sold for 30% of their actual value &amp; the receiving Faction must pay for it</strong>. If no Faction can buy a Debt, find a new world entity that isn’t modeled yet who could see an opportunity in it. If there is genuinely <em>nobody</em> who could plausibly collect on the Debt (by forcing the debtor to pay), it will vanish — but this is rare.</li>
+<li><strong>Credit availability</strong> becomes a problem, especially if the Financier was the only source of liquid cash. Mercenaries can no longer be hired &amp; Factions can only rely on their own limited discretionary income — only $1 per month per Follower.</li>
+<li>Speaking of hiring mercenaries, <strong>mercenaries become a problem</strong>. If nobody is hiring them, <em>they’re going to be plundering Settlements for $ to operate with</em>.</li>
+<li>Every Faction &amp; everyone <em>in</em> a Faction or <em>subordinate</em> to a Faction that owed a Debt to the Financier gets a <strong>Economic Collapse until [date it ends]</strong> Condition that lasts for 1 year. It penalizes <em>every</em> financial &amp; economic Save. Even random commoners who live in an affected Settlement receive this penalty.</li>
+<li>New, smaller banking families have an opportunity to move into the capital city where the old one operated to take over the larger Settlement &amp; thereby expand their basis of Capital. This may produce a brief zero-sum <strong>banking war</strong> as several families move from a previous city to war over the larger one.</li>
+</ul>
+</div>
+</blockquote>
+<h3 id="-business">@ Business<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-business" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Your Capital is a <em>business</em>, a mercantile or artisan venture. @</p>
+<p>@@ IT’S POSSIBLE THAT TRADE &amp; ARTISAN VENTURES ARE DISTINCT ENOUGH THAT WE NEED A DIFFERENT FACTION TYPE FOR THEM</p>
+<ul>
+<li><strong>No Army</strong>: You cannot directly raise an army or manage forces beyond that of guards for your holdings. Your Followers represent customers &amp; employees, not loyal soldiers.</li>
+</ul>
+<h3 id="-army">@ Army<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-army" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Your Capital is a <em>mobile encampment</em>. @</p>
+<p>What gets created when you raise an Army (p. @).</p>
+<p>If you’re a band of PCs in a Party &amp; don’t have a place of residence, your Faction Type is <em>probably</em> that of an army.</p>
+<ul>
+<li><strong>Army</strong>: Your entire Faction is an Army composed of soldiers, sans baggage train (which is another 25% or so, treated as invisible the same way Settlements don’t count rural population).</li>
+<li><strong>Supply Lines</strong>: You require an unobstructed <em>road or path</em> leading back to a Settlement with as many Families as you have soldiers at all times. If the supply line is ever disrupted (i.e. by enemy forces blocking all valid paths), you must <em>immediately</em> roll an Exhaustion Save (p. @) &amp; make a new one each week.</li>
+</ul>
+<p>Armies do not have a Families stat.</p>
+<h3 id="-mobile">@ Mobile<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-mobile" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>nomads, merchant caravans, etc.</p>
+<ul>
+<li><strong>Mobile</strong>: You’re not located <em>in</em> a Settlement; you <em>are</em> a Settlement.</li>
+<li>@ <strong>Foraging</strong>: You’ll exhaust areas after a while. You anger locals &amp; piss off farmers if you stay in farmlands since you hunt-and-gather to death.</li>
+</ul>
+<h3 id="godscult">Godscult<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#godscult" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Qualified Classes</strong>: Jesters &amp; other magicians.</p>
+<p>Your Capital is a <em>shrine</em> or <em>temple</em>, a complex of magical &amp; spiritual artifacts &amp; training that reflects your power.</p>
+<ul>
+<li><strong>Temple</strong>: Your Capital is a temple with a <em>shrine</em> that’s dedicated to a specific entity serving as your subject of worship. So long as you exist, you support the formation &amp; extension of a Godhead (p. @) centered on that entity.</li>
+<li><strong>Expensive Maintenance</strong>: Cults require upkeep across sacrifice, worship, maintenance of services &amp; other factors that causes them to punch below their weight on everything that isn’t related to religious or magical expertise. Take a −1 penalty to all Saves not <em>explicitly</em> relating to your Leader’s Facts.</li>
+</ul>
+<h3 id="cult-of-personality">Cult of Personality<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cult-of-personality" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Qualified Classes</strong>: All Classes.</p>
+<p>Your Capital is <em>your reputation</em> in this Settlement — the stories, songs &amp; legends that follow you. You don’t command any of these people &amp; you have no institutions to speak of (you certainly can’t hold a Subfaction with a fan club), but they’ll show up when you need them.</p>
+<ul>
+<li><strong>Popular Support</strong>: Your Followers represent people who admire you, tell stories about you, or would come to your aid when called upon. You <strong>cannot</strong> command them to make Moves (this means you can’t use Grow Follower Base, p. @) &amp; <strong>do not</strong> control Locations with them, but you <strong>can</strong> call upon them for <em>shelter &amp; supplies</em>, <em>information gathering</em>, <em>crowd support</em>, &amp; <em>volunteers for desperate &amp; heroic causes</em> to the tune of at most $1 or 1 day of labor per Follower per month.</li>
+<li><strong>Reputation-Based</strong>: Your Follower count grows through <em>heroic deeds</em>, <em>public victories</em>, <em>artistic works</em>, or <em>dramatic gestures</em> that capture public imagination. It shrinks through <em>public failures</em>, <em>betrayals</em>, or <em>extended absences</em>.
+<ul>
+<li>Gain 1 Follower per HD of enemies you defeat (doesn’t have to be murder) &amp; publicly champion. Gain 1 Follower per $30 you “invest” in <em>carousing</em> — partying &amp; schmoozing.</li>
+<li>On any <em>minor public victory/defeat</em>, judged by the GM based on popular attitudes, (gain 50%/lose 33%) of your current Followers.</li>
+<li>On any <em>major public triumph/catastrophe</em>, judged by the GM based on popular attitudes, (gain 100%/lose 50%) of your current Followers.</li>
+<li>You don’t lose the Level benefits of a personality cult until you return (“I’m still big back home!”), but when you <em>do</em> return to a Settlement where you have one, reduce Followers by 10% if it’s been 3 months, 50% if it’s been 1 year, 75% if it’s been 2 years, or 90% if it’s been 10+ years. Negate 10% of the loss for each <em>wild victorious story</em> you can bring home with you.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>How do I get a fanbase? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Just start wasting money on partying &amp; bragging about your victories. Try not to brag about anything that will get you in trouble with the law — remember that cash from tomb-raiding is taxable &amp; might be the Lord’s property by law … keeping in mind that “the law” is his sword.</p>
+<p>You’re still limited in Level by the Settlement you’re showing off in, though; you can’t have more Followers than there is Families to adore you. To get a high Level, you may want to move away from your little village to the big city, where you not only compete with other celebrities, but may end up involved in serpentine political skullduggery in your efforts to become a hero…</p>
+</div>
+</blockquote>
+<h3 id="-mine-clan">@ Mine Clan<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-mine-clan" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Your Capital is a <em>mine</em>, an underground center for resource production. In Glass, <em>every</em> Mine is managed by Salamanders; Glassians no longer know how. Old restrictions on underground housing have long since worn away, &amp; now every mine is virtually a fully-fledged colony.</p>
+<ul>
+<li><strong>Surface Dependency</strong>: You require regular food, water, &amp; air from a Neutral, Friendly, or subjugated Subfaction surface trade partner. If these supplies are cut off by hostile forces controlling your surface access, you cannot perform Moves dependent on surface resources, &amp; after 1 month, your Families begin starving <em>en masse</em> as per the rules on Exhaustion Saves (p. @).</li>
+<li><strong>Salamander Warrens</strong>: Your mine is an unwieldy nightmare of winding tunnels unnavigable by <em>anyone</em> other than salamanders. Armies composed of non-subterranean races cannot invade or occupy you.</li>
+<li><strong>Resource Monopoly (Minerals)</strong>: As a Move with a 1-day Deadline, you can Deny Minerals to <em>any</em> Faction. If that Faction doesn’t have a Neutral or Friendly relationship with a sovereign who directly or indirectly (through a chain of Subfactions) controls a Mine, all Moves they take that require minerals have a doubled Deadline, and all mineral-dependent items have a doubled cost in $.</li>
+</ul>
+<h2 id="-growing-a-settlement">@ Growing a Settlement<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-growing-a-settlement" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>In order to <em>grow</em> a Settlement to the minimum required Families for its Ruler to gain a Level, the following conditions must be true:</p>
+<ul>
+<li>There is no pre-existing <em>bigger</em> Settlement within a radius of ([Families] ÷ 100) miles;</li>
+<li>There are at least 3 Settlements with Families large enough to sustain the Ruler’s current Level in the <em>same realm</em> (counting “realm” as <em>including</em> your sovereign’s realm, if you are a vassal) that are <em>not</em> closer to a Settlement that is already larger;
+<ul>
+<li>If your Settlement’s Ruler is currently Level 7 or less, you <em>instead</em> need farmland of area meeting or exceeding your Ruler’s Level squared (i.e. to go from 7 to 8, you need ~50 square miles of farmland).</li>
+</ul>
+</li>
+<li>The new Families level must not exceed the value set by the adjacent table.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Terrain<br/>Type</th><th>Max.<br/>Families</th><th>Effective Max.<br/>Ruler Level</th></tr></thead><tbody><tr><td>Desert</td><td>99</td><td>5</td></tr><tr><td>Alpine/arctic</td><td>2,900</td><td>8</td></tr><tr><td>Desert oasis/arid</td><td>9,900</td><td>9</td></tr><tr><td>Mountain valley</td><td>29,000</td><td>10</td></tr><tr><td>Hills/coast</td><td>99,000</td><td>11</td></tr><tr><td>Riverless plains</td><td>290,000</td><td>12</td></tr><tr><td>Fertile river</td><td>2,900,000</td><td>14</td></tr></tbody></table></div>
+<p>Settlements who by virtue of changing circumstances come to violate these rules do not lose Families for it, but cannot grow any further.</p>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Why these rules? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Central Place Theory, mostly, plus ensuring that cities can’t grow to unreasonable sizes unless they have suitable agricultural lands around them. Note that <em>trade routes</em> are a means by which massive empires can grow larger, but generally, large sums of food won’t be funneled to a city from foreign lands until those lands are conquered &amp; made to do so — Rome had to conquer Egypt before it reaped the full benefits of Alexandria &amp; the Nile.</p>
+</div>
+</blockquote>
+<h3 id="investment">Investment<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#investment" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Once per month per Settlement</strong>, you can spend $ to raise a Settlement’s Families. For every $150 you spend, the Settlement gains 1 Family. You can only spend the <em>greater</em> of $1,500 or 5 times the Settlement’s current Families per month (so even in a village of 55 Families, you can still spend a full $1,500 to draw 10 new Families to the village).</p>
+<h3 id="move-settlement-growth">Move: Settlement Growth<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#move-settlement-growth" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>You may use your Faction’s ongoing revenues to produce growth in a Settlement you fully control. Tell the GM how you’re investing into your Settlement with your Faction’s labor &amp; resources.</p>
+<p>If a Faction has a Manpower Debt (p. @), this Move can be used to eliminate an amount of Debt equal to the number of Families that would otherwise be gained. No Families are added if this Move is used to pay off MP Debt.</p>
+<p><strong>Deadline</strong>: 1 month.
+<strong>Result</strong>: Success Save, with additional effects.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Result</th><th>Additional Effects</th></tr></thead><tbody><tr><td style="text-align:center;">Crit<br/><em>≥12</em></td><td>The Settlement gains 10% of its current Families.</td></tr><tr><td style="text-align:center;">Pass<br/><em>8–11</em></td><td>The Settlement gains 5% of its current Families.</td></tr><tr><td style="text-align:center;">Seven<br/><em>7</em></td><td>The Settlement gains 1% of its current Families.</td></tr><tr><td style="text-align:center;">Failure<br/><em>3–6</em></td><td>Gain nothing.</td></tr><tr><td style="text-align:center;">Fumble<br/><em>≤2</em></td><td>Gain nothing.</td></tr></tbody></table></div>
+<p>In all cases, round to the nearest 3 significant digits.</p>
+<blockquote class="callout example" data-callout="example">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Example</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>The City of Riverbrook gets a Seven, providing 1% of its current Families of 3,600 (36). This would put them at Pop. 3,636, rounded to 3,640.</p>
+<p>A city with 124,000 getting a Seven would get 1,240 new Families, rounding to 125,000.</p>
+</div>
+</blockquote>
+<h2 id="-capital-relocation">@ Capital Relocation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-capital-relocation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>You can relocate your Capital.</p>
+<p><strong>Placeholder</strong>: This takes 1 month.</p>
+<p>When you do, you may qualify for Advancement (p. @).</p>
+<p>ah, but this means you have to merge the governments?</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-4" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#sovereignty--subfactions" data-for="sovereignty--subfactions">Sovereignty &amp; Subfactions</a></li><li class="depth-0"><a href="#limits-on-factions" data-for="limits-on-factions">Limits on Factions</a></li><li class="depth-1"><a href="#leader-limitations" data-for="leader-limitations">Leader Limitations</a></li><li class="depth-1"><a href="#factions-cant-have-facts" data-for="factions-cant-have-facts">Factions Can’t Have Facts</a></li><li class="depth-1"><a href="#factions-dont-have-moods" data-for="factions-dont-have-moods">Factions Don’t Have Moods</a></li><li class="depth-0"><a href="#families-capitals--settlements" data-for="families-capitals--settlements">Families, Capitals &amp; Settlements</a></li><li class="depth-0"><a href="#-factions-performing-moves" data-for="-factions-performing-moves">@ Factions Performing Moves</a></li><li class="depth-0"><a href="#faction-move-calendar-process" data-for="faction-move-calendar-process">Faction Move Calendar Process</a></li><li class="depth-1"><a href="#1-save-modifiers" data-for="1-save-modifiers">1) Save Modifiers</a></li><li class="depth-1"><a href="#2-faction-opinions--counter-moves" data-for="2-faction-opinions--counter-moves">2) Faction Opinions &amp; Counter-Moves</a></li><li class="depth-1"><a href="#3-inform-the-players" data-for="3-inform-the-players">3) Inform the Players</a></li><li class="depth-1"><a href="#4-new-move--outcomes" data-for="4-new-move--outcomes">4) New Move &amp; Outcomes</a></li><li class="depth-1"><a href="#5-pc-recruitment-event" data-for="5-pc-recruitment-event">5) PC Recruitment Event</a></li><li class="depth-1"><a href="#6-random-faction-events" data-for="6-random-faction-events">6) Random Faction Events</a></li><li class="depth-0"><a href="#procedure-unveiling-factions" data-for="procedure-unveiling-factions">Procedure: Unveiling Factions</a></li><li class="depth-0"><a href="#-the-party-is-a-faction" data-for="-the-party-is-a-faction">@ The Party is a Faction</a></li><li class="depth-0"><a href="#predefined-moves" data-for="predefined-moves">Predefined Moves</a></li><li class="depth-1"><a href="#move-general-faction-activity" data-for="move-general-faction-activity">Move: General Faction Activity</a></li><li class="depth-1"><a href="#move-create-a-new-subfaction" data-for="move-create-a-new-subfaction">Move: Create a new Subfaction</a></li><li class="depth-1"><a href="#move-sabotage" data-for="move-sabotage">Move: Sabotage</a></li><li class="depth-1"><a href="#pay-debts" data-for="pay-debts">Pay Debts</a></li><li class="depth-1"><a href="#move-make-asset" data-for="move-make-asset">Move: Make Asset</a></li><li class="depth-1"><a href="#move-plunder-a-settlement" data-for="move-plunder-a-settlement">Move: Plunder a Settlement</a></li><li class="depth-1"><a href="#move-grow-follower-base" data-for="move-grow-follower-base">Move: Grow Follower Base</a></li><li class="depth-0"><a href="#hidden-factions" data-for="hidden-factions">Hidden Factions</a></li><li class="depth-0"><a href="#faction-types" data-for="faction-types">Faction Types</a></li><li class="depth-1"><a href="#-government" data-for="-government">@ Government</a></li><li class="depth-1"><a href="#financier" data-for="financier">Financier</a></li><li class="depth-1"><a href="#-business" data-for="-business">@ Business</a></li><li class="depth-1"><a href="#-army" data-for="-army">@ Army</a></li><li class="depth-1"><a href="#-mobile" data-for="-mobile">@ Mobile</a></li><li class="depth-1"><a href="#godscult" data-for="godscult">Godscult</a></li><li class="depth-1"><a href="#cult-of-personality" data-for="cult-of-personality">Cult of Personality</a></li><li class="depth-1"><a href="#-mine-clan" data-for="-mine-clan">@ Mine Clan</a></li><li class="depth-0"><a href="#-growing-a-settlement" data-for="-growing-a-settlement">@ Growing a Settlement</a></li><li class="depth-1"><a href="#investment" data-for="investment">Investment</a></li><li class="depth-1"><a href="#move-settlement-growth" data-for="move-settlement-growth">Move: Settlement Growth</a></li><li class="depth-0"><a href="#-capital-relocation" data-for="-capital-relocation">@ Capital Relocation</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript.js" type="module" data-persist="true"></script></html>
