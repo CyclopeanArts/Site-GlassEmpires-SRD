@@ -28,6 +28,24 @@ const entry = fullId ? await getEntry('bestiary', fullId) : null;
 if (!entry) return Astro.redirect('/bestiary');
 const d = entry.data;
 
+function renderBestiaryBody(text: string): string {
+  const blocks = text.split(/\n\n+/);
+  const parts: string[] = [];
+  for (const block of blocks) {
+    const lines = block.split('\n');
+    const hasBullets = lines.some(l => l.trimStart().startsWith('- '));
+    if (hasBullets) {
+      const items = lines
+        .filter(l => l.trimStart().startsWith('- '))
+        .map(l => `<li>${l.trimStart().slice(2).trim().replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>')}</li>`);
+      parts.push(`<ul>${items.join('\n')}</ul>`);
+    } else {
+      parts.push(`<p>${block.replace(/\n/g, '<br>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>')}</p>`);
+    }
+  }
+  return parts.join('\n');
+}
+
 const all = allEntries
   .map(e => ({
     slug: e.id.split('/').pop()!.replace(/\.(yaml|mdx)$/, ''),
@@ -39,12 +57,12 @@ const prev = idx > 0 ? all[idx - 1] : null;
 const next = idx < all.length - 1 ? all[idx + 1] : null;
 ---
 
-<BookLayout title={d.name}>
+<BookLayout title={d.name} tags={d.tags}>
   <Ref collection="bestiary" slug={fullId!} variant="stat" />
 
   {d.gm_note && (
     <Callout type="gm" heading={d.gm_note.heading}>
-      <p>{d.gm_note.body}</p>
+      <div class="callout-body-content" set:html={renderBestiaryBody(d.gm_note.body)} />
     </Callout>
   )}
 

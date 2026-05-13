@@ -47,6 +47,24 @@ function mdToHtml(md: string): string {
     .replace(/\*(.+?)\*/g, '<em>$1</em>');
 }
 
+function renderLore(text: string): string {
+  const blocks = text.split(/\n\n+/);
+  const parts: string[] = [];
+  for (const block of blocks) {
+    const lines = block.split('\n');
+    const hasBullets = lines.some(l => l.trimStart().startsWith('- '));
+    if (hasBullets) {
+      const items = lines
+        .filter(l => l.trimStart().startsWith('- '))
+        .map(l => `<li>${mdToHtml(l.trimStart().slice(2).trim())}</li>`);
+      parts.push(`<ul>${items.join('\n')}</ul>`);
+    } else {
+      parts.push(`<p>${mdToHtml(block.replace(/\n/g, '<br>'))}</p>`);
+    }
+  }
+  return parts.join('\n');
+}
+
 function buildSpeeds(speeds: any): { label: string; value: string }[] {
   const parts: { label: string; value: string }[] = [];
   if (speeds?.run)  parts.push({ label: 'Run', value: `${speeds.run}'` });
@@ -56,10 +74,13 @@ function buildSpeeds(speeds: any): { label: string; value: string }[] {
   return parts;
 }
 
-function computeBR(d: any): number {
+function computeBR(d: any): number | string {
+  // Explicit override via frontmatter
+  if (d.br !== undefined) return d.br;
+
   const power = (d.level || 0) + d.hd;
   const armorMult = 1 + ((d.armor || 0) / 4);
-  const dmgMult = d.damagemultiplier || 1;
+  const dmgMult = d.damagemultiplier ?? 1;
   const features = d.features || [];
   const posSum = features.reduce((s: number, f: any) => s + (f.combat > 0 ? f.combat : 0), 0);
   const negSum = features.reduce((s: number, f: any) => s + (f.combat < 0 ? Math.abs(f.combat) : 0), 0);
@@ -143,11 +164,6 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
 {d && effectiveVariant === 'stat' && (
   <div class="ref-stat">
     <div class="ref-stat-name">{displayName}</div>
-    {d.tags?.length > 0 && (
-      <p class="ref-stat-tags">
-        {d.tags.map((t: string) => <span class="ref-tag">{t}</span>)}
-      </p>
-    )}
     <table class="ref-stat-table">
       <tbody>
         <tr>
@@ -155,7 +171,7 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
           <td class="sb-data">
             <span class="sb-stat"><strong>HD</strong>{' '}{d.hd}{' '}({hp}{ap > 0 ? ` + ${ap} AP` : ''})</span>
             <span class="sb-stat"><strong>BR</strong>{' '}{br}</span>
-            {d.size && <span class="sb-stat"><strong>Size</strong>{' '}{d.size}'</span>}
+            {d.size !== undefined && d.size !== null && d.size !== false && <span class="sb-stat"><strong>Size</strong>{' '}{d.size}'</span>}
             {weight && <span class="sb-stat"><strong>Weight</strong>{' '}{weight}</span>}
             {maxload && <span class="sb-stat"><strong>Max. Load</strong>{' '}{maxload}</span>}
             {speeds.length > 0 && speeds.map((s: { label: string; value: string }) => (
@@ -192,7 +208,7 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
     )}
 
     {d.lore && (
-      <div class="ref-stat-lore" set:html={mdToHtml(d.lore.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>').replace(/^/, '<p>').replace(/$/, '</p>'))} />
+      <div class="ref-stat-lore" set:html={renderLore(d.lore)} />
     )}
 
     {d.treasure && (
@@ -312,7 +328,7 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
   /* ── Stat block ────────────────────────────────────── */
   .ref-stat { margin: 1.5em 0; }
   .ref-stat-name {
-    font-size: 1.65em;
+    font-size: 2.2em;
     margin-bottom: 0.35em;
   }
   .ref-stat-tags {

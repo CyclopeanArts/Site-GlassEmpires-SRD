@@ -7,8 +7,6 @@ const tables = (await getCollection('tables'))
 ---
 
 <BookLayout title="Tables">
-  <h1>Random Tables</h1>
-  <hr class="rule-divider" />
 
   {tables.length === 0 ? (
     <p class="empty-note">No standalone tables written yet.</p>

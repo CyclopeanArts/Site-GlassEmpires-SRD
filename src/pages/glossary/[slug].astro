@@ -15,9 +15,7 @@ if (!entry) return Astro.redirect('/glossary');
 const d = entry.data as any;
 ---
 
-<BookLayout title={d.name}>
-  <h1>{d.name}</h1>
-  {d.tags?.length > 0 && (
+<BookLayout title={d.name}><div data-pagefind-ignore>
     <p class="tags">{d.tags.map((t: string) => <span class="tag">{t}</span>)}</p>
   )}
   {d.summary && <p class="summary">{d.summary}</p>}
@@ -37,7 +35,7 @@ const d = entry.data as any;
       </div>
     </section>
   )}
-</BookLayout>
+</div></BookLayout>
 
 <style>
   .tags { display: flex; gap: 0.4em; flex-wrap: wrap; margin: 0.5em 0 1em; }

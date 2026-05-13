@@ -1,0 +1,72 @@
+name: Ghost
+tags: [spirit, undead, trap, ephemeral, hazard]
+summary: "A looping psychic recording of an unfortunate moment."
+hd: 4
+armor: 0
+damagemultiplier: 0
+br: "N/A"
+size: 0
+weight: 0
+maxload: 0
+group: "1 solo"
+desc: "If as anything at all, a looping psychic recording of an unfortunate moment. Flickering, broken apparitions of distended body parts & warped faces. May oscillate between dead silence, quiet whispers, & chilling shrieks."
+wants: "You to meet its fate."
+intellect: "Essentially absent."
+morality: "No."
+treasure: "Sometimes, a dead body to be looted (p. @)."
+features:
+  - name: "Illusion"
+    text: "You are not incorporeal. You aren't even undead. You don't exist at all. You are a projection of light & sound from a corpse-body serving as a Totem, housing a trapped & tortured spirit. If your Totem is destroyed, you revert to being a normal loose spirit."
+    combat: 0
+lore: |
+  Ghosts aren't monsters. They're psychic splatters of horrible violent deaths ... or deliberate traps made by unscrupulous magicians. Their manifestation is a shattered vision of whatever transpired.
+
+  A ghost is composed of 4 components: The **Totem**, generally within 30'; the **premonition**, an emotional or physical flash of warning; the **effect**, the onset symptoms; and the **satiation**, a means of ending the effect.
+
+  Besides satiation, ghosts may also be dealt with by:
+  - **Destruction**: Destroying the Totem-corpse will end an effect, but place a curse upon the defiler.
+  - **Holding a Funeral**: A Psychopomp (p. @) will be attracted to the funerary rites; they will handle the ghost.
+  - **Clever Means**: If a Party comes up with an innovative solution to a curse that thematically resolves the ghost's fate, it may be treated as satiation. In this sense, the listed satiations may be considered suggestions rather than iron requirements.
+tables:
+  - label: "Ghost Manifestations"
+    die: d20
+    entries:
+      - roll: 1
+        max: 2
+        result: "**Death**: Abandoned.\n**Premonition**: Lights leaving, laughter fading. Crushing loneliness creeping in.\n**Effect**: Lights slowly go out; Party quickly grows deaf.\n**Satiation**: Bring ghost's corpse to the surface, or to friends' corpses, or leave another nearby."
+      - roll: 3
+        result: "**Death**: Beheaded.\n**Premonition**: A sharp, tearing pressure on one side of your neck that builds rapidly. Visions of guillotines & scythes.\n**Effect**: Blood starts leaking, a cut forms rapidly. Fatal in 2d6+2 Rounds without extreme magic.\n**Satiation**: Reattach head of ghost's corpse to its body."
+      - roll: 4
+        result: "**Death**: Betrayed.\n**Premonition**: Hear whispers from party, paranoia creeping. They're plotting against you.\n**Effect**: Flee from the Party in whatever direction the Party is least familiar with. Cannot stop until you're at least 10 minutes away.\n**Satiation**: Remove the weapon from ghost's corpse, or destroy betrayer's corpse (if present)."
+      - roll: 5
+        result: "**Death**: Betrayer.\n**Premonition**: Envious, hateful gaze upon least liked ally.\n**Effect**: Sneak attack them at nearest opportunity.\n**Satiation**: Destroy the ghost's corpse."
+      - roll: 6
+        result: "**Death**: Buried Alive.\n**Premonition**: Pressing, straining against stone coffin roof.\n**Effect**: Sink slowly underground over 1d6+1 Rounds.\n**Satiation**: Remove ghost's corpse from sarcophagus."
+      - roll: 7
+        result: "**Death**: Burnt.\n**Premonition**: Searing heat, blazing hot air and smoke.\n**Effect**: You suffer 1d6 Fire Damage per round.\n**Satiation**: Soak ghost's corpse in water."
+      - roll: 8
+        result: "**Death**: Crushed.\n**Premonition**: Walls pressing in, extreme claustrophobia. The ceiling is coming down on you.\n**Effect**: Every round, your Speed scores are halved. At 5' or less, take 1d6 Damage per Round.\n**Satiation**: Reassemble ghost's corpse. Takes 1d6+1 full turns split between up to 4 participants."
+      - roll: 9
+        result: "**Death**: Drowned.\n**Premonition**: Choking, gasping, sinking down & down. The bubbles of your last breath slipping.\n**Effect**: Fall into the water. You are unable to leave it. It will rise to drag you back in if you try.\n**Satiation**: Remove ghost's corpse from the water."
+      - roll: 10
+        result: "**Death**: Falling.\n**Premonition**: Horrible vertigo, painful aching in your limbs and bones.\n**Effect**: All attempts to climb fail at around their half-way point. Grips slip, pitons loosen.\n**Satiation**: Reassemble ghost's corpse, twist bent parts back into shape."
+      - roll: 11
+        max: 11
+        result: "**Death**: Freezing.\n**Premonition**: Heat rushing out from your limbs, the crack of ice underneath. Your fire doesn't aid you. You're so cold.\n**Effect**: Hands lock up, unable to hold anything. Take [HD] Ice Damage every 10 minutes.\n**Satiation**: Move ghost's corpse near a source of heat, or set it ablaze."
+      - roll: 12
+        result: "**Death**: Impaled.\n**Premonition**: Sudden wet shlick and crunch of something stabbing through your ribs.\n**Effect**: Pinned in place by a heavy, painful, penetrating pressure upon your chest.\n**Satiation**: Remove ghost's corpse from source of impalement."
+      - roll: 13
+        result: "**Death**: Imprisoned.\n**Premonition**: Weighty iron digs into your ankles & wrists. You are going to die here.\n**Effect**: Your wrists & ankles are unable to leave the room.\n**Satiation**: Cut the iron chains binding the ghost's corpse."
+      - roll: 14
+        result: "**Death**: Lost Item.\n**Premonition**: Frightening vision of having lost a treasure. It's down here somewhere, it has to be...\n**Effect**: A random item disappears from your pack (but not your hands) every 10 minutes.\n**Satiation**: Return envisioned item to ghost's corpse. Items are found in a pile soon afterwards."
+      - roll: 15
+        result: "**Death**: Parasite.\n**Premonition**: Something's growing inside you. You can feel it. You know it's there. It has to die, before it eats you inside-out.\n**Effect**: Every 10 minutes, Save vs Panic or drink poison & rip at your flesh & stomach to get the parasite out.\n**Satiation**: Find and kill a member of the species that infested the ghost's corpse."
+      - roll: 16
+        result: "**Death**: Petrified.\n**Premonition**: Heavy pressure on your skull; reaching out for something and never touching.\n**Effect**: Limbs lock up and petrify as rounds pass. Only continual human touch restores you to life.\n**Satiation**: Move the ghost's statue to whatever it was trying to reach before it was petrified."
+      - roll: 17
+        result: "**Death**: Terrified.\n**Premonition**: Sharp, sheer terror that cripples and shocks you. Overwhelming paralysis.\n**Effect**: 1d6 Mind Damage per round. At 0 HP, you suffer a heart attack & die.\n**Satiation**: Physically comfort the ghost's corpse as you might a scared child (or equivalent)."
+      - roll: 18
+        result: "**Death**: Sacrificed.\n**Premonition**: Black shouted chanting, wisps of oil smoke, the rest of a dagger's tip over your heart.\n**Effect**: Victim compelled to lie down on altar, heart carved and ripped out after 1d6+1 Rounds.\n**Satiation**: Reassemble nearby jarred organs inside ghost's corpse, or sacrifice an ally/treasure."
+      - roll: 19
+        max: 20
+        result: "**Death**: Starving.\n**Premonition**: A gnawing, ravenous hunger intensifies by the second. You haven't eaten anything in weeks.\n**Effect**: Eat every 10 minutes. If you skip a meal, lose [HD] HP from starvation.\n**Satiation**: Place food inside the ghost's corpse."

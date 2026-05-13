@@ -25,19 +25,3 @@ lore: |
   They are not mindless. A jiangshi can hold a conversation, draft a warrant, review tax records, and explain — at length — why its presence in your home is legally justified under subsection 47(c) of the Interior Revenue Code of the Third Glass Dynasty. It will cite precedents that don't exist. It will produce documents it wrote itself five minutes ago as evidence.
 
   The mercury that drips from their nails, hair, and robes is alchemically significant — it preserves their corpses and poisons the living. Killing a jiangshi is less about combat prowess and more about finding the legal loophole that lets you do it.
-tables:
-  - label: "What Does the Jiangshi Want Right Now?"
-    die: d6
-    entries:
-      - roll: 1
-        result: "To count everything in the room before speaking."
-      - roll: 2
-        result: "To recruit the nearest warm body into its administrative hierarchy."
-      - roll: 3
-        result: "To locate a missing file it has been searching for since its death."
-      - roll: 4
-        result: "To explain, in exhausting bureaucratic detail, why it is legally permitted to be here."
-      - roll: 5
-        result: "To consume the most spiritually potent creature present."
-      - roll: 6
-        result: "To draft a formal complaint against whoever disturbed it."

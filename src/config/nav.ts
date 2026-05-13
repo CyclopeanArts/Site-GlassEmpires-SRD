@@ -61,7 +61,7 @@ export const nav: NavItem[] = [
     "resources",
   ]},
   { label: "Magic", children: [
-    "spell-dice", "totems", "move-casting",
+    "magic-spell-dice-totems", "move-casting",
     "using-corpses-spirits", "extracting-spirits", "ritual-cooking", "divination",
   ]},
   { label: "Marketplace", children: [
@@ -71,7 +71,7 @@ export const nav: NavItem[] = [
   { label: "Combat", children: [
     { slug: "skirmishes", children: ["movement-space", "skirmish-actions", "engagement", "flight-pursuit", "panic-fear", "mounted-combat", "battle-conditions"] },
     { slug: "battles", children: ["battle-rating", "battle-procedure", "end-of-battle"] },
-    "damage-types", "armor", "damage-death", "funerals",
+    "damage-types", "armor", "damage-death", "mutations-and-wounds", "funerals",
   ]},
   { label: "Armies", children: [
     "axioms",
@@ -90,16 +90,14 @@ export const nav: NavItem[] = [
       "commons-revolt", "glass-coralers",
       "imperial-family", "oropolis-and-kain", "minor-powers",
     ]},
-    { slug: "society", children: ["glassian-identity", "religion-and-gods"] },
-    { slug: "the-moon", children: ["lunar-landscape", "getting-there-and-back", "lunarian-kingdom", "practical-role"] },
+    "society",
+    "religion-and-gods",
+    { slug: "the-moon", children: ["getting-there-and-back", "lunarian-kingdom", "practical-role"] },
   ]},
-  { label: "Bestiary", href: "/bestiary", children: [
-    { label: "By Tradition",     href: "/bestiary?sort=tradition" },
-    { label: "By Biome",         href: "/bestiary?sort=biome" },
-    { label: "By Battle Rating", href: "/bestiary?sort=br" },
-    { label: "All Tags",         href: "/bestiary/tags" },
+  { label: "Bestiary", children: [
+    { label: "By Alphabetical", href: "/bestiary" },
+    { label: "By Tag", href: "/bestiary/tags" },
   ]},
-  "gm-guide",
   { label: "Indices", children: [
     { label: "Moves",      href: "/moves" },
     { label: "Conditions", href: "/conditions" },

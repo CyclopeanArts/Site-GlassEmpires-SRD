@@ -17,6 +17,8 @@ body {
   font-family: 'Literata Variable', Georgia, serif;
   line-height: 2;
   -webkit-font-smoothing: antialiased;
+}
+body.theme-fade {
   transition: background 0.25s, color 0.25s;
 }
 img { max-width: 100%; height: auto; display: block; }

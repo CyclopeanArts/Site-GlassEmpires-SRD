@@ -1,0 +1,130 @@
+name: Psychopomp
+tags: [spirit, ephemeral, death, funerals]
+summary: "Spirit couriers & task-runners for the death gods."
+hd: 1
+armor: 0
+damagemultiplier: 0
+size: 1
+weight: 0
+maxload: 1
+speeds:
+  run: 15
+  fly: 15
+  swim: 10
+group: "1 solo / 1d6 loose network"
+desc: "A small, skittish creature (see table) with too much intelligence in its eyes."
+wants: "To do & be recognized for its job. To complain about it."
+intellect: "Shrewd about petty local spirit politics."
+morality: "Will do anything if the price is right."
+treasure: "Stashes of trinkets, candles, incense, and offerings in its lair."
+features:
+  - name: "Spirit-Touched"
+    text: "You are able to speak, even if your species is not normally capable of doing so."
+    combat: 0
+lore: |
+  Psychopomps are the undignified creatures who handle the messy job of ferrying messages & souls around for more powerful spirits. Sometimes called "familiars" when employed by human magicians, they are in fact just regular animals possessed by a touch of power.
+
+  A psychopomp in the wild is likely running a job.
+tables:
+  - label: "Psychopomp form"
+    die: d66
+    entries:
+      - roll: 11
+        max: 12
+        result: "**Crow/raven**. Speaks in clipped sentences. CAW!"
+      - roll: 13
+        max: 14
+        result: "**Fox**. Trades riddles for information."
+      - roll: 15
+        max: 16
+        result: "**Ferret/weasel**. Will steal small objects to hold as collateral."
+      - roll: 21
+        max: 22
+        result: "**Mouse**. Unnervingly still."
+      - roll: 23
+        max: 24
+        result: "**Owl**. SIlent. Judges you."
+      - roll: 25
+        max: 26
+        result: "**Toad/frog**. Patient & slow."
+      - roll: 31
+        max: 32
+        result: "**Moth**. Drawn to candlelight."
+      - roll: 33
+        max: 34
+        result: "**Small dog**. Loyal to whoever fed it last."
+      - roll: 35
+        max: 36
+        result: "**Cat**. Appears when it wants to, leaves when it wants to."
+      - roll: 41
+        max: 42
+        result: "**Snake/eel**. Slithers through cracks in reality."
+      - roll: 43
+        max: 44
+        result: "**Whirling mote**. A fire, smoke, or dust spirit. Leaves scorch marks or dust trails in the shape of words."
+      - roll: 45
+        max: 46
+        result: "**Swarm**. A collective intelligence of insects. Completely mindless."
+      - roll: 51
+        max: 52
+        result: "**Tired human runner**. A living person hired by a nearby temple, half-possessed by a psychopomp spirit. They're exhausted. Offer them tea."
+      - roll: 53
+        max: 54
+        result: "**Newt**. Lives in cremation ash and warm places. Smells of smoke. Emits a faint glow."
+      - roll: 55
+        max: 56
+        result: "**Hare/rabbit**. Skittish, twitchy. Speaks in rapid bursts."
+      - roll: 61
+        max: 62
+        result: "**Large spider**. Silent."
+      - roll: 63
+        max: 64
+        result: "**Fish**. Only near a body of water."
+      - roll: 65
+        max: 66
+        result: "**Something Wrong**. A ghostly presence. Rustling leaves, foreign creeping shadows."
+  - label: "Current job"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Soul collection**. Going to pick up a recently deceased spirit & deliver it to the appropriate afterlife."
+      - roll: 2
+        result: "**Message delivery**. 2-in-6 chance it's for the PCs, from the most powerful local spirit."
+      - roll: 3
+        result: "**Haunting remediation**: Investigating reports of a ghost or restless spirit. Tasked with either resolving it or reporting back to a higher power."
+      - roll: 4
+        result: "**Boundary Patrol**: Scouting for intruding foreigners. Will report to its master."
+      - roll: 5
+        result: "**Debt Collection**: Tracking down someone whose family owes a godscult payment for a late grandparent's internment."
+      - roll: 6
+        result: "**Errand for a God**: But it forgot what it was. Maybe the Party can help it remember?"
+  - label: "Patron god/force"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**A Named Cult**. Works for a specific temple or cult hierarchy. Protective of its employer's reputation."
+      - roll: 2
+        result: "**A local God of thresholds**. Transitions, doorways, dawn/dusk. The psychopomp handles the 'crossing over' moment specifically; it is normally a doorman."
+      - roll: 3
+        result: "**Magistrate's familiar**. Records the names and stories of the dead."
+      - roll: 4
+        result: "**Law**. Investigates wrongful deaths. This psychopomp is offputtingly professional. Takes notes. Asks pointed questions."
+      - roll: 5
+        result: "**Freelance**. No boss. Shows up where it smells opportunity — unattended corpses, loose spirits, neglected funeral rites. Will negotiate its own price."
+      - roll: 6
+        result: "**The Moon**. Currently pretending otherwise."
+  - label: "Petty complaints"
+    die: d6
+    entries:
+      - roll: 1
+        result: "The incense at the last temple that paid me was substandard. Wanna know where their vault is?"
+      - roll: 2
+        result: "I carried a soul seventeen miles through a battlefield and all I got was a 'that'll do.'"
+      - roll: 3
+        result: "The other psychopomps the priests employ won't share the good jobs."
+      - roll: 4
+        result: "Somebody keeps stealing my candle-stubs. I had them stacked neatly by my roadside shrine and now they're gone."
+      - roll: 5
+        result: "Nobody donates enough. Hey, you look wealthy."
+      - roll: 6
+        result: "Someone keeps performing funerals for all kinds of things I can't do anything about. Can you show up and tell her to knock it off?"

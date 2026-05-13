@@ -1,0 +1,45 @@
+name: "Tiger, Vanishing"
+tags: [beast, predator, feline, vanishing, magical]
+summary: "Huge black & orange cat plastered with stripes. Cold yellow eyes."
+hd: 5
+armor: 0
+damagemultiplier: 3
+size: 10
+weight: 48
+maxload: 32
+speeds:
+  run: 35
+group: "Solo / mother & 1d6−2 cubs"
+desc: "Huge black & orange cat plastered with stripes. Cold yellow eyes."
+wants: "Proud grandeur; a thrilling hunt."
+intellect: "Animalistic, but as cunning & ruthless as the most dedicated human hunters."
+morality: "Bows only to greater strength. Catlike, sans mercy."
+treasure: "A pelt is worth $1,000. Tigers collect gemstones; a lair holds 3d6 × $100 worth."
+features:
+  - name: "Claws & Fangs (Natural Weapon)"
+    text: "8 Physical."
+    combat: 0
+  - name: "Vanishing Cat"
+    text: "Once per day as a Minor Action, turn invisible for an hour. This does not hide scent, sound, or other traces, but you are almost undetectable if still & enemies suffer a −2 to Strike Saves even if they can approximate your location."
+    combat: 2
+  - name: "Tree Climbing"
+    text: "You can climb trees & other sturdy flora as if flat ground using your Run score."
+    combat: 0
+lore: |
+  There is a 3-in-6 chance that a tiger displays itself *prominently* before its prey, then disappears & stalks them for the rest of the day, striking at the most opportune moment.
+tables:
+  - label: "Mythical Tiger Features"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Night Hunter**: If shrouded in total darkness, you may relocate yourself (& any carried prey, etc.) to the lair in which you last slept."
+      - roll: 2
+        result: "**Shadow of Death**: A tiger's shadow & spirit will hunt your killer starting the day after your death, as an invisible tiger."
+      - roll: 3
+        result: "**Whirlwind**: As a Minor Action, summon or maintain an ongoing 60' diameter cylindrical whirlwind centered on you; deal 1d6 Physical Damage to everything inside excepting you."
+      - roll: 4
+        result: "**Trickster**: If you *could* trick someone or make a fool of them, Save or attempt to do so. You can mimic any voice or sound you've heard, & perform feats of agility or dexterity as per a trained acrobat."
+      - roll: 5
+        result: "**Snow Tiger**: You are immune to Cold damage. Your fur/hair is bright white. Snow & ice cannot fall on you."
+      - roll: 6
+        result: "**Spirit Vision**: You can see through dead material (i.e. wood walls)."

@@ -450,3 +450,81 @@ tables:
       - roll: 43
         max: 44
         result: "**Scheming.** Working an angle. Sizing you up for usefulness and mark-status."
+      - roll: 45
+        max: 46
+        result: "**Emptied out.** Too exhausted to be scared. No energy left for lies."
+      - roll: 51
+        max: 52
+        result: "**Nostalgic.** Won't stop talking about how much better things were under Kain."
+      - roll: 53
+        max: 54
+        result: "**Protective rage.** Someone loved is in danger. Will do *anything* to keep them safe."
+      - roll: 55
+        max: 56
+        result: "**Unnerving cheer.** Laughing at everything. Famine is more tolerable with a jest."
+      - roll: 61
+        max: 62
+        result: "**Hedging.** Polite relations with two or more factions. Entire village follows lead."
+      - roll: 63
+        max: 64
+        result: "**Displaced.** Not from here. Visibly doesn't fit. Trying to be useful enough to stay."
+      - roll: 65
+        max: 66
+        result: "**Frozen.** Waiting. For news, for the war to end. Can't make decisions. Needs a push."
+  - label: "Village Landmark & Pride"
+    die: d66
+    entries:
+      - roll: 11
+        max: 12
+        result: "Negotiations-friendly teahouse."
+      - roll: 13
+        max: 14
+        result: "Stone bridge, collectively built."
+      - roll: 15
+        max: 16
+        result: "Hot spring & bathhouse."
+      - roll: 21
+        max: 22
+        result: "Famous kiln employs half the village."
+      - roll: 23
+        max: 24
+        result: "Market square under massive oak."
+      - roll: 25
+        max: 26
+        result: "Watermill; processes all grains."
+      - roll: 31
+        max: 32
+        result: "Shrine & annual festival to local hero."
+      - roll: 33
+        max: 34
+        result: "Only Jester for miles."
+      - roll: 35
+        max: 36
+        result: "Famous brewery."
+      - roll: 41
+        max: 42
+        result: "Eccentric Lord's huge manor."
+      - roll: 43
+        max: 44
+        result: "Beautiful terraced hill gardens."
+      - roll: 45
+        max: 46
+        result: "Old stone wall from Kain's era."
+      - roll: 51
+        max: 52
+        result: "Bee-keeping collective."
+      - roll: 53
+        max: 54
+        result: "Prosperous silk workshop."
+      - roll: 55
+        max: 56
+        result: "Locally-known cave system."
+      - roll: 61
+        max: 62
+        result: "Enormous communal granary."
+      - roll: 63
+        max: 64
+        result: "Natural harbor, fishing fleet."
+      - roll: 65
+        max: 66
+        result: "Standing stone circle."

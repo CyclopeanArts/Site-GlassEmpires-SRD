@@ -1,36 +1,181 @@
 ---
 import { getCollection } from 'astro:content';
 import BookLayout from '../../layouts/BookLayout.astro';
-import Ref from '../../components/Ref.astro';
 
 const all = await getCollection('bestiary');
 const sorted = all.sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-// Build full-ID → flat slug map for linkSlug
+const groups: Record<string, typeof sorted> = {};
+for (const entry of sorted) {
+  const letter = entry.data.name.charAt(0).toUpperCase();
+  if (!groups[letter]) groups[letter] = [];
+  groups[letter].push(entry);
+}
+
+const letters = Object.keys(groups).sort();
+
 function flatSlug(id: string): string {
   return id.split('/').pop()!.replace(/\.(yaml|mdx)$/, '');
 }
+
+function computeBR(d: any): number | string {
+  if (d.br !== undefined) return d.br;
+  const power = (d.level || 0) + d.hd;
+  const armorMult = 1 + ((d.armor || 0) / 4);
+  const dmgMult = d.damagemultiplier ?? 1;
+  const features = d.features || [];
+  const posSum = features.reduce((s: number, f: any) => s + (f.combat > 0 ? f.combat : 0), 0);
+  const negSum = features.reduce((s: number, f: any) => s + (f.combat < 0 ? Math.abs(f.combat) : 0), 0);
+  const featMult = (posSum + 1) / (negSum + 1);
+  return Math.round(power * armorMult * dmgMult * featMult);
+}
 ---
 
-<BookLayout title="Bestiary">
-  <h1>Bestiary</h1>
-  <hr class="rule-divider" />
+<BookLayout title="Alphabetical">
 
-  <div class="bestiary-grid">
-    {sorted.map(c => (
-      <Ref collection="bestiary" slug={c.id} linkSlug={flatSlug(c.id)} variant="card" />
-    ))}
-    {sorted.length === 0 && (
-      <p class="empty-note">No bestiary entries yet.</p>
-    )}
-  </div>
+  {letters.length === 0 && (
+    <p class="empty-note">No bestiary entries yet.</p>
+  )}
+
+  {letters.map(letter => (
+    <section class="letter-group">
+      <div class="lg-row">
+        <h2 class="lg-letter">{letter}</h2>
+        <div class="lg-entries">
+          {groups[letter].map(c => {
+            const d = c.data;
+            const slug = flatSlug(c.id);
+            const power = (d.level || 0) + d.hd;
+            const hp = power * 4;
+            const br = computeBR(d);
+            return (
+              <a href={`/bestiary/${slug}`} class="bx">
+                <span class="bx-name">{d.name}</span>
+                <span class="bx-stats">
+                  <strong>HD</strong> {d.hd} ({hp})
+                  {d.armor !== undefined && d.armor !== null && <><span class="bx-dot"></span><strong>Armor</strong> {d.armor}</>}
+                  <span class="bx-dot"></span><strong>BR</strong> {br}
+                  {d.size !== undefined && d.size !== null && <><span class="bx-dot"></span><strong>Size</strong> {d.size}'</>}
+                  {d.weight !== undefined && d.weight !== null && <><span class="bx-dot"></span><strong>Weight</strong> {d.weight}#</>}
+                  {d.maxload !== undefined && d.maxload !== null && <><span class="bx-dot"></span><strong>Max. Load</strong> {d.maxload}#</>}
+                  {d.speeds?.run && <><span class="bx-dot"></span><strong>Run</strong> {d.speeds.run}'</>}
+                  {d.speeds?.fly && <><span class="bx-dot"></span><strong>Fly</strong> {d.speeds.fly}'</>}
+                  {d.speeds?.swim && <><span class="bx-dot"></span><strong>Swim</strong> {d.speeds.swim}'</>}
+                  {d.speeds?.dig && <><span class="bx-dot"></span><strong>Dig</strong> {d.speeds.dig}'</>}
+                </span>
+                {d.tags?.length > 0 && (
+                  <span class="bx-tags">
+                    {d.tags.map((t: string) => (
+                      <span class="bx-tag">{t}</span>
+                    ))}
+                  </span>
+                )}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  ))}
 </BookLayout>
 
 <style>
-  .bestiary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
-    gap: 0.85em;
+  .letter-group { margin-bottom: 1.5em; }
+
+  .lg-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
   }
+
+  .lg-letter {
+    width: 1.25em;
+    flex-shrink: 0;
+    text-align: right;
+    font-family: 'Inknut Antiqua', Georgia, serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 1.9em;
+    line-height: 1.0;
+    color: var(--heading-col);
+  }
+
+  .lg-entries {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15em;
+    padding-top: 0.35em;
+  }
+
+  .bx {
+    display: block;
+    padding: 0.4em 0.85em;
+    text-decoration: none;
+    border-left: 1.5px solid var(--gold-400);
+    border-right: 1.5px solid var(--gold-400);
+    border-radius: 0.4em;
+    transition: background 0.12s, border-color 0.15s;
+  }
+  .bx:hover {
+    background: color-mix(in srgb, var(--callout-ex-bg) 40%, transparent);
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+
+  .bx-name {
+    display: block;
+    font-family: 'Inknut Antiqua', Georgia, serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 1.35em;
+    color: var(--heading-col);
+    line-height: 1.0;
+    margin-bottom: 0.1em;
+  }
+  .bx:hover .bx-name { color: var(--link); }
+
+  .bx-stats {
+    display: block;
+    font-family: 'Literata Variable', serif;
+    font-size: 0.78em;
+    color: var(--text);
+    line-height: 1.45;
+  }
+  .bx-stats strong {
+    font-weight: 700;
+    color: var(--text-soft);
+  }
+  .bx-dot {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    margin: 0 0.4em;
+    vertical-align: middle;
+  }
+
+  .bx-tags {
+    display: flex;
+    gap: 0.35em;
+    flex-wrap: wrap;
+    margin-top: 0.1em;
+  }
+  .bx-tag {
+    font-size: 0.65em;
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    padding: 0.1em 0.5em;
+    background: var(--bg-elevated);
+    color: var(--text-muted);
+    border-radius: 0.2em;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.3;
+  }
+
   .empty-note { color: var(--text-muted); font-style: italic; }
 </style>

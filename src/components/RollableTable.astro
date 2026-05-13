@@ -108,7 +108,10 @@ function rangeDisplay(r: number, m?: number): string {
   }
 
   function mdToHtml(s) {
-    return s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    return s
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
   }
 
   function doRoll(wrap) {
@@ -181,6 +184,13 @@ function rangeDisplay(r: number, m?: number): string {
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.rt-wrap').forEach(wrap => doRoll(wrap));
   });
+  // Re-roll after ClientRouter navigation
+document.addEventListener("astro:page-load", () => {
+  document.querySelectorAll(".rt-wrap").forEach(wrap => {
+    const text = wrap.querySelector(".rt-result-text");
+    if (text && !text.innerHTML) doRoll(wrap);
+  });
+});
 </script>
 
 <style>

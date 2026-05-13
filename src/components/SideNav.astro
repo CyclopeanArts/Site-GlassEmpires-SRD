@@ -16,30 +16,47 @@ const { currentPath = '', id } = Astro.props;
       <NavTree items={nav} currentPath={currentPath} />
     </ul>
   </div>
+
+  <button class="cyclopean-logo-btn" id="cyclopean-logo-btn" aria-label="About Cyclopean">
+    <img src="/logo/cyclopean-logo-wordmark-black.png" alt="Cyclopean" class="cyclopean-logo-img" />
+  </button>
 </nav>
 
+<!-- Cyclopean Modal -->
+<div class="modal-overlay" id="cyclopean-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="About Cyclopean">
+  <div class="modal-content modal-cyclopean">
+    <button class="modal-close" id="cyclopean-modal-close" aria-label="Close">✕</button>
+    <div class="modal-body">
+      <img src="/logo/cyclopean-logo-wordmark-black.svg" alt="Cyclopean" class="cyclopean-modal-logo" />
+      <p class="cyclopean-provenance">Glass Empires is a game by <strong>Cyclopean</strong>. We make fantasy tabletop roleplaying games and supplements.</p>
+      <div class="cyclopean-links">
+        <a href="https://dndungeon.com" target="_blank" rel="noopener" class="cyclopean-link">
+          <img src="/logo/Logo-Icon-Name-Outline.svg" alt="DnDungeon" class="cyclopean-link-logo" />
+          <span class="cyclopean-link-label">Battle Maps &amp; Assets</span>
+          <span class="cyclopean-link-desc">at DnDungeon</span>
+        </a>
+        <a href="https://sakiroku.com" target="_blank" rel="noopener" class="cyclopean-link cyclopean-link-sakiroku">
+          <span class="cyclopean-link-label">Dev Blog</span>
+          <span class="cyclopean-link-desc">Sakiroku</span>
+        </a>
+        <a href="https://www.drivethrurpg.com/en/publisher/24595/Cyclopean" target="_blank" rel="noopener" class="cyclopean-link">
+          <img src="/logo/dtrpg.png" alt="DriveThruRPG" class="cyclopean-link-logo" />
+          <span class="cyclopean-link-label">Publisher Page</span>
+          <span class="cyclopean-link-desc">DriveThruRPG</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <script>
-  // Persist sidebar scroll position across page navigations
-  const navScroll = document.querySelector('.nav-scroll');
-  const key = 'ge-nav-scroll';
-
-  // Restore scroll position, or scroll active item into view
-  const saved = sessionStorage.getItem(key);
-  if (saved) {
-    navScroll.scrollTop = parseInt(saved, 10);
-  } else {
-    const active = navScroll.querySelector('.is-active');
-    if (active) {
-      active.scrollIntoView({ block: 'nearest', behavior: 'instant' });
-    }
-  }
-
-  // Save on unload
-  window.addEventListener('beforeunload', () => {
-    sessionStorage.setItem(key, navScroll.scrollTop);
+  window.addEventListener("beforeunload", () => {
+    const ns = document.querySelector(".nav-scroll");
+    if (ns) sessionStorage.setItem("ge-nav-scroll", ns.scrollTop);
   });
 </script>
-
 <style>
   .side-nav {
     width: var(--nav-width);
@@ -66,7 +83,7 @@ const { currentPath = '', id } = Astro.props;
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
   .nav-logo {
     display: block;
@@ -92,6 +109,144 @@ const { currentPath = '', id } = Astro.props;
     padding: 0 0 1em;
     flex: 1;
   }
+
+  /* ── Cyclopean logo button ──────────────────────────── */
+  .cyclopean-logo-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    border-top: 1px solid rgba(196,146,52,0.15);
+    padding: 0.75em 1.25em;
+    cursor: pointer;
+    color: var(--nav-accent);
+    transition: background 0.15s, opacity 0.15s;
+    flex-shrink: 0;
+  }
+  .cyclopean-logo-btn:hover {
+    background: var(--nav-hover);
+  }
+  .cyclopean-logo-btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ── Cyclopean Modal ────────────────────────────────── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .modal-overlay[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-content {
+    position: relative;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 0.5em;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    max-width: 90vw;
+    padding: 2em 2em 1.5em;
+  }
+  .modal-close {
+    position: absolute;
+    top: 0.6em;
+    right: 0.6em;
+    background: none;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    color: var(--text-muted);
+    width: 1.8em;
+    height: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2em;
+    z-index: 1;
+  }
+  .modal-close:hover {
+    color: var(--text);
+    background: var(--nav-hover);
+  }
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  .modal-cyclopean {
+    max-width: 24em;
+  }
+  .cyclopean-modal-logo {
+    display: block;
+    width: 100%;
+    max-width: 18em;
+    height: auto;
+  }
+  .cyclopean-provenance {
+    font-family: 'Literata Variable', serif;
+    font-size: 0.85em;
+    color: var(--text-soft);
+    margin: 0;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .cyclopean-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+    margin-top: 0.5em;
+  }
+  .cyclopean-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 0.5em 0.75em;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.25em;
+    text-decoration: none;
+    color: var(--heading-col);
+    font-family: 'Literata Variable', serif;
+    transition: border-color 0.15s;
+  }
+  .cyclopean-link:hover {
+    border-color: var(--gold-ui);
+    text-decoration: none;
+  }
+  .cyclopean-link-logo {
+    display: block;
+    height: 1.5em;
+    width: auto;
+    flex-shrink: 0;
+  }
+  .cyclopean-link-label {
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.85em;
+    color: var(--heading-col);
+    letter-spacing: 0.04em;
+  }
+  .cyclopean-link-desc {
+    font-size: 0.75em;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
   @media (max-width: 48em) {
     .side-nav {
       position: fixed;

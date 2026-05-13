@@ -11,8 +11,6 @@ const entries = (await getCollection('gm-guide'))
 ---
 
 <BookLayout title="GM Guide">
-  <h1>GM Guide</h1>
-  <hr class="rule-divider" />
 
   {entries.length === 0 ? (
     <p class="empty-note">No GM guide pages written yet.</p>

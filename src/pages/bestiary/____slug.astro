@@ -32,7 +32,7 @@ const prev = idx > 0 ? all[idx - 1] : null;
 const next = idx < all.length - 1 ? all[idx + 1] : null;
 ---
 
-<BookLayout title={d.name}>
+<BookLayout title={d.name} tags={d.tags}>
   <Ref collection="bestiary" slug={fullId!} variant="stat" />
 
   {d.tables?.length > 0 && d.tables.map((t: any) => (

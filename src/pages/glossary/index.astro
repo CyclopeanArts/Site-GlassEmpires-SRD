@@ -7,8 +7,6 @@ const terms = (await getCollection('glossary'))
 ---
 
 <BookLayout title="Glossary">
-  <h1>Glossary</h1>
-  <hr class="rule-divider" />
 
   {terms.length === 0 ? (
     <p class="empty-note">No glossary terms written yet.</p>

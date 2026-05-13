@@ -11,8 +11,6 @@ const entries = (await getCollection('rules'))
 ---
 
 <BookLayout title="Rules">
-  <h1>Rules</h1>
-  <hr class="rule-divider" />
 
   {entries.length === 0 ? (
     <p class="empty-note">No rules pages written yet.</p>

@@ -5,4 +5,64 @@ draft: false
 summary: "Faction resources, assets, and economic factors."
 ---
 
-**Placeholder**: This section previously lived under the old Adventure chapter and will be expanded here with rules for faction resources, asset management, and economic factors.
+A **Resource** is a strategically valuable material produced only at certain Locations (p. @), which are called **Resource Nodes**.
+
+### Obtaining Resources
+
+Glass Empires deliberately eschews complex modeling of commodities exchange markets on the basis that emulating a proper dynamic economy is nearly impossible for computers, let alone a GM's brain. The point of the game is not individual acts of arbitrage!
+
+As a result, we use a simplified model. We assume the following things:
+
+1. The GM determines & places Resource Nodes at the time of building the campaign world.
+2. Resource Nodes, when made into Settlements, produce 1 or more *copies* of a Resource.
+3. *Access* to a Resource is a binary yes/no. We do not measure or combine sums. Each copy is a sufficient supply for a single *sovereign* Faction.
+4. If a Faction has one of the following, they have *access* to the Resource:
+	- Direct *control* over a Resource Node producing that specific Resource.
+	- An agreement with a Faction who has a copy of that Resource to have that copy continuously shipped via a currently *unblocked* trade route.
+	- Another Leader in the same sovereign realm who has met one of these other conditions.
+5. A Faction with *no access* suffers penalties based on the Resource in question.
+
+<Callout heading="Design Implications">
+GMs should note that this design implicitly means that a single copy is always sufficient for an empire of *any* size. There are various compromises you can try to make here (i.e. Resource Nodes that are only good up to a certain Level of Faction), but most will be quite ugly. For the sake of the core game, try ~1 Resource copies per 10,000 square miles on your campaign map.
+</Callout>
+
+### Types of Resource
+
+There are two types of Resource:
+
+- **Ordinary**: If you have no access, all Deadlines & items that would logically require that resource have their cost/necessary Deadline duration *doubled*.
+- **Exotic**: As Ordinary, but costs increase 10-fold.
+
+Ordinary Resources are assumed to be abundant in the world, such that alternative trade routes & distant shipping could be arranged even if it came at great friction. Exotic Resources are assumed to be produced only by a handful of locations & in great demand.
+
+### Trade Routes
+
+A *trade route* is a path along *connected*, *unblocked* roads or naval routes between a Resource & a target Location.
+
+- **Connected** means a continuous unbroken line of roads. Trade *demands* roads, even if it's a simple dirt trail. Navigable rivers & open waters are included.
+- **Unblocked** means no hostile army occupies the road or is within a 50-mile radius of a traced route across the seas.
+
+### Resources on Glass
+
+In Glass, there are two Resources in play, both of which are Ordinary:
+
+- **Wood**: High-quality timber required for *ships* & *siege machines*.
+	- Impacts *shipbuilding*, *siege duration*, & *lumber construction*.
+- **Metal**: Needed for almost everything. All of Glass's mines are managed by salamander slave clans.
+	- Impacts *Army raising time* & *all* construction/manufacturing/fortifications.
+
+### Game Design Notes
+
+#### Why Wood & Metal?
+
+We track **Wood** because Aian warfare is heavily dependent on siege machinery due to extensive fortifications, & **Metal** because salamanders hold a *total monopoly* on mining in Glass — as a consequence, we must track the leverage they hold, but need not differentiate in type of metal as not only are all critical, but all are commanded by the same group.
+
+#### Distributed Resources
+
+We might refer to the standard Resource described here as a *monopoly* Resource, as specific Locations are assumed to have a monopoly on their production. However, some cases will require tracking of the availability of generalized materials such as **food** — which, notably, is produced by every Settlement in some quantity & is desired by those who cannot grow it.
+
+Rather than tracking these explicitly, we generally use Features for Faction Types that *demand* access to one or more friendly Settlements exceeding a certain size. The **Families** metric of a Settlement is, in a real sense, the resource volume for such distributed/generalized resources.
+
+#### What About Magical Resources?
+
+Here's a fun note for adventurous GMs with homebrewed Resources: Theoretically, control over a given Resource could grant *any* benefit desired to Factions so long as it reflected the underlying fiction. Magical rocks that are used in cool guns? Only *those* Factions can mix in cool gun units. Fancy construction materials? Construction *bonus* instead of a penalty. Cheaper castles & housing. All you have to do is plot out all of the logical consequences & use-cases of a given material's existence & estimate how they should show up in the rules.

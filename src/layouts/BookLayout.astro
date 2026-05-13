@@ -2,12 +2,14 @@
 import SideNav from '../components/SideNav.astro';
 import TopBar from '../components/TopBar.astro';
 import PagePreviews from '../components/PagePreviews.astro';
+import ClientRouter from 'astro/components/ClientRouter.astro';
 import '../styles/global.css';
 
 const {
   title = 'Glass Empires SRD',
   draft = false,
   headings = [],
+  tags = [],
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -23,9 +25,149 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
   <meta name="description" content={`${title} — Glass Empires System Reference Document`} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <!-- Theme initialization: run before paint to prevent flash -->
+  <ClientRouter />
   <script is:inline>
+    // ── Global component init queue ────────────────────────────────
+    // Components push their setup functions here. They run immediately
+    // on page load AND after every ClientRouter navigation, so interactive
+    // elements work without per-component astro:page-load listeners.
+    window.__astroInit = [];
+    document.addEventListener('astro:page-load', () => {
+      window.__astroInit.forEach(fn => fn());
+    });
+
+    // ── Theme: read from localStorage before paint ────────────────
     const t = localStorage.getItem('ge-theme');
     if (t) document.documentElement.dataset.theme = t;
+  </script>
+  <script is:inline>
+    document.addEventListener('astro:page-load', () => {
+      const path = location.pathname;
+      document.querySelectorAll('.nav-child-link, .nav-section-label').forEach(el => {
+        const href = el.getAttribute('href');
+        el.classList.toggle('is-active', href === path);
+      });
+      // Restore nav scroll
+      const ns = document.querySelector('.nav-scroll');
+      if (ns) {
+        const s = sessionStorage.getItem('ge-nav-scroll');
+        if (s) ns.scrollTop = parseInt(s, 10);
+      }
+      // Re-apply theme from localStorage (ClientRouter may reset <html> attrs)
+      const theme = localStorage.getItem('ge-theme');
+      if (theme) document.documentElement.dataset.theme = theme;
+      // Re-initialize PagefindUI if the search area was swapped
+      if (typeof PagefindUI !== 'undefined' && document.getElementById('search-area') && !document.querySelector('#search-area .pagefind-ui')) {
+        new PagefindUI({
+          element: '#search-area',
+          showSubResults: false,
+          resetStyles: true,
+          pageSize: 6,
+        });
+      }
+    });
+
+    // ── Delegated interactions (survive ClientRouter DOM swaps) ────────
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+
+      // Mobile nav toggle
+      const toggle = target.closest('#nav-toggle');
+      if (toggle) {
+        const sideNav = document.getElementById('side-nav');
+        const open = sideNav?.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(!!open));
+        return;
+      }
+
+      // Close nav when clicking outside
+      if (target.closest('.side-nav.is-open') === null &&
+          document.getElementById('side-nav')?.classList.contains('is-open') &&
+          !target.closest('#nav-toggle')) {
+        const sideNav = document.getElementById('side-nav');
+        const toggle = document.getElementById('nav-toggle');
+        sideNav?.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      }
+
+      // Theme toggle
+      const themeBtn = target.closest('#theme-toggle');
+      if (themeBtn) {
+        const html = document.documentElement;
+        const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.body.classList.add('theme-fade');
+        html.dataset.theme = next;
+        localStorage.setItem('ge-theme', next);
+        // Remove class after transition completes
+        setTimeout(() => document.body.classList.remove('theme-fade'), 300);
+        return;
+      }
+
+      // Subscribe modal open
+      if (target.closest('#subscribe-btn')) {
+        const modal = document.getElementById('subscribe-modal');
+        const close = document.getElementById('modal-close');
+        modal?.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        close?.focus();
+        return;
+      }
+
+      // Subscribe modal close
+      if (target.closest('#modal-close') || target.closest('#subscribe-modal[aria-hidden="false"]:not(.modal-content)')) {
+        const modal = document.getElementById('subscribe-modal');
+        modal?.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.getElementById('subscribe-btn')?.focus();
+        return;
+      }
+
+      // Cyclopean modal open
+      if (target.closest('#cyclopean-logo-btn')) {
+        const modal = document.getElementById('cyclopean-modal');
+        const close = document.getElementById('cyclopean-modal-close');
+        modal?.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        close?.focus();
+        // Save nav scroll before nav changes
+        const ns = document.querySelector('.nav-scroll');
+        if (ns) sessionStorage.setItem('ge-nav-scroll', ns.scrollTop);
+        return;
+      }
+
+      // Cyclopean modal close
+      if (target.closest('#cyclopean-modal-close') || target.closest('#cyclopean-modal[aria-hidden="false"]:not(.modal-content)')) {
+        const modal = document.getElementById('cyclopean-modal');
+        modal?.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.getElementById('cyclopean-logo-btn')?.focus();
+        return;
+      }
+
+      // Save nav scroll before navigating
+      if (target.closest('.nav-list a')) {
+        const ns = document.querySelector('.nav-scroll');
+        if (ns) sessionStorage.setItem('ge-nav-scroll', ns.scrollTop);
+      }
+    });
+
+    // Escape key for modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const subs = document.getElementById('subscribe-modal');
+        if (subs?.getAttribute('aria-hidden') === 'false') {
+          subs.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          document.getElementById('subscribe-btn')?.focus();
+        }
+        const cyc = document.getElementById('cyclopean-modal');
+        if (cyc?.getAttribute('aria-hidden') === 'false') {
+          cyc.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          document.getElementById('cyclopean-logo-btn')?.focus();
+        }
+      }
+    });
   </script>
 </head>
 <body>
@@ -43,6 +185,14 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
         )}
 
         <article class="prose">
+          <h1>{title}</h1>
+
+          {tags.length > 0 && (
+            <p class="page-tags">
+              {tags.map((t: string) => <span class="ref-tag">{t}</span>)}
+            </p>
+          )}
+
           <slot />
         </article>
 
@@ -94,6 +244,49 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
     flex: 1;
     min-width: 0;
     max-width: 38em;
+  }
+
+  .page-tags {
+    display: flex;
+    gap: 0.4em;
+    flex-wrap: wrap;
+    margin: 0 0 0.75em;
+    text-indent: 0;
+  }
+  .prose h1::after {
+    content: '';
+    display: block;
+    width: 3.5em;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold-ui), transparent);
+    margin: 0.35em 0 0.7em;
+    border: none;
+  }
+  .page-tags .ref-tag {
+    font-size: 0.68em;
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    padding: 0.15em 0.6em;
+    background: var(--bg-elevated);
+    color: var(--text-muted);
+    border-radius: 0.2em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+  }
+
+  /* ── View transitions: prevent white flash on dark mode ──────────── */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    background: var(--bg);
+    mix-blend-mode: normal;
+  }
+
+  /* ── Search drawer hidden by default (PagefindUI toggles visibility) ─ */
+  .search-area :global(.pagefind-ui__drawer.pagefind-ui__hidden) {
+    display: none !important;
   }
 
   /* ── Page TOC (right column) ───────────────────────── */

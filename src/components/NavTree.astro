@@ -11,7 +11,12 @@ interface Props {
 const { items, depth = 0, currentPath = '' } = Astro.props;
 const slugMap = getSlugMap();
 
-function isActive(href: string | null): boolean {
+function isExactMatch(href: string | null): boolean {
+  if (!href) return false;
+  return currentPath === href;
+}
+
+function isSectionOpen(href: string | null): boolean {
   if (!href) return false;
   return currentPath === href || currentPath.startsWith(href + '/');
 }
@@ -34,11 +39,12 @@ const depthClass = `nav-depth-${depth}`;
 {depth === 0 && (
   items.map(item => {
     const r = resolve(item);
-    const active = isActive(r.href);
+    const open = isSectionOpen(r.href);
+    const active = isExactMatch(r.href);
     const hasKids = r.children && r.children.length > 0;
 
     return (
-      <li class:list={['nav-section', { 'is-open': active }]}>
+      <li class:list={['nav-section', { 'is-open': open }]}>
         {r.href
           ? <a href={r.href}
                class:list={['nav-section-label', { 'is-active': active }]}
@@ -60,7 +66,7 @@ const depthClass = `nav-depth-${depth}`;
 {depth > 0 && (
   items.map(item => {
     const r = resolve(item);
-    const active = isActive(r.href);
+    const active = isExactMatch(r.href);
     const hasKids = r.children && r.children.length > 0;
 
     return (

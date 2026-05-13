@@ -11,8 +11,6 @@ const entries = (await getCollection('lore'))
 ---
 
 <BookLayout title="Lore">
-  <h1>Island of Glass</h1>
-  <hr class="rule-divider" />
 
   {entries.length === 0 ? (
     <p class="empty-note">No lore pages written yet.</p>

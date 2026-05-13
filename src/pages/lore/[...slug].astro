@@ -18,6 +18,6 @@ if (!entry) return Astro.redirect('/lore');
 const { Content } = await render(entry);
 ---
 
-<BookLayout title={entry.data.title}>
+<BookLayout title={entry.data.title} tags={entry.data.tags}>
   <Content components={{ Callout, RollableTable, Ref, Diagram }} />
 </BookLayout>

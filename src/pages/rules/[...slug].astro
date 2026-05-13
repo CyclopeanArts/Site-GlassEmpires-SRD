@@ -17,7 +17,6 @@ if (!entry) return Astro.redirect('/rules');
 const { Content } = await render(entry);
 ---
 
-<BookLayout title={entry.data.title}>
-  <h1>{entry.data.title}</h1>
+<BookLayout title={entry.data.title} tags={entry.data.tags}>
   <Content components={{ Callout, RollableTable, Ref }} />
 </BookLayout>
