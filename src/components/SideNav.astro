@@ -18,7 +18,7 @@ const { currentPath = '', id } = Astro.props;
   </div>
 
   <button class="cyclopean-logo-btn" id="cyclopean-logo-btn" aria-label="About Cyclopean">
-    <img src="/logo/cyclopean-logo-wordmark-black.png" alt="Cyclopean" class="cyclopean-logo-img" />
+    <img src="/logo/cyclopean-logo-wordmark-white.svg" alt="Cyclopean" class="cyclopean-logo-img" />
   </button>
 </nav>
 
@@ -27,7 +27,8 @@ const { currentPath = '', id } = Astro.props;
   <div class="modal-content modal-cyclopean">
     <button class="modal-close" id="cyclopean-modal-close" aria-label="Close">✕</button>
     <div class="modal-body">
-      <img src="/logo/cyclopean-logo-wordmark-black.svg" alt="Cyclopean" class="cyclopean-modal-logo" />
+      <img src="/logo/cyclopean-logo-wordmark-black.svg" alt="Cyclopean" class="cyclopean-modal-logo cyclopean-modal-logo-light" />
+      <img src="/logo/cyclopean-logo-wordmark-white.svg" alt="Cyclopean" class="cyclopean-modal-logo cyclopean-modal-logo-dark" />
       <p class="cyclopean-provenance">Glass Empires is a game by <strong>Cyclopean</strong>. We make fantasy tabletop roleplaying games and supplements.</p>
       <div class="cyclopean-links">
         <a href="https://dndungeon.com" target="_blank" rel="noopener" class="cyclopean-link">
@@ -36,6 +37,7 @@ const { currentPath = '', id } = Astro.props;
           <span class="cyclopean-link-desc">at DnDungeon</span>
         </a>
         <a href="https://sakiroku.com" target="_blank" rel="noopener" class="cyclopean-link cyclopean-link-sakiroku">
+          <img src="/logo/sakiroku-wordmark-thin-red.png" alt="Sakiroku" class="cyclopean-link-logo" />
           <span class="cyclopean-link-label">Dev Blog</span>
           <span class="cyclopean-link-desc">Sakiroku</span>
         </a>
@@ -195,6 +197,10 @@ const { currentPath = '', id } = Astro.props;
     max-width: 18em;
     height: auto;
   }
+  .cyclopean-modal-logo-dark { display: none; }
+  .cyclopean-modal-logo-light { display: block; }
+  :global([data-theme="dark"]) .cyclopean-modal-logo-light { display: none; }
+  :global([data-theme="dark"]) .cyclopean-modal-logo-dark { display: block; }
   .cyclopean-provenance {
     font-family: 'Literata Variable', serif;
     font-size: 0.85em;
