@@ -1,0 +1,81 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BookLayout from '../../layouts/BookLayout.astro';
+import Ref from '../../components/Ref.astro';
+import RollableTable from '../../components/RollableTable.astro';
+
+const allEntries = await getCollection('bestiary');
+const slugToId: Record<string, string> = {};
+for (const e of allEntries) {
+  const flat = e.id.split('/').pop()!.replace(/\.(yaml|mdx)$/, '');
+  slugToId[flat] = e.id;
+}
+
+export async function getStaticPaths() {
+  return Object.keys(slugToId).map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const fullId = slugToId[slug!];
+const entry = fullId ? await getEntry('bestiary', fullId) : null;
+if (!entry) return Astro.redirect('/bestiary');
+const d = entry.data;
+
+const all = allEntries
+  .map(e => ({
+    slug: e.id.split('/').pop()!.replace(/\.(yaml|mdx)$/, ''),
+    name: e.data.name
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+const idx = all.findIndex(e => e.slug === slug);
+const prev = idx > 0 ? all[idx - 1] : null;
+const next = idx < all.length - 1 ? all[idx + 1] : null;
+---
+
+<BookLayout title={d.name}>
+  <Ref collection="bestiary" slug={fullId!} variant="stat" />
+
+  {d.tables?.length > 0 && d.tables.map((t: any) => (
+    <RollableTable label={t.label} die={t.die} entries={t.entries} />
+  ))}
+
+  <nav class="bestiary-nav" aria-label="Bestiary navigation">
+    {prev
+      ? <a href={} class="bn-prev">← {prev.name}</a>
+      : <span />
+    }
+    <a href="/bestiary" class="bn-index">Index</a>
+    {next
+      ? <a href={} class="bn-next">{next.name} →</a>
+      : <span />
+    }
+  </nav>
+</BookLayout>
+
+<style>
+  .bestiary-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid var(--border);
+  }
+  .bestiary-nav a {
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.85em;
+    color: var(--link-col);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .bestiary-nav a:hover { color: var(--accent); text-decoration: none; }
+  .bn-prev { text-align: left; }
+  .bn-next { text-align: right; }
+  .bn-index {
+    font-size: 0.75em;
+    color: var(--text-muted) !important;
+  }
+  .bn-index:hover { color: var(--text) !important; }
+</style>

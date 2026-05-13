@@ -1,0 +1,155 @@
+---
+const { title = '' } = Astro.props;
+---
+
+<header class="top-bar" id="top-bar">
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="side-nav">
+    <span class="hamburger"></span>
+  </button>
+
+  <span class="page-title">{title}</span>
+
+  <div class="top-bar-right">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="theme-icon" aria-hidden="true">◐</span>
+    </button>
+    <div id="search-container">
+      <!-- Pagefind search UI mounts here -->
+    </div>
+  </div>
+</header>
+
+<script>
+  // ── Scroll-aware top bar (hide on down, show on up) ──────────────────────
+  const bar = document.getElementById('top-bar');
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < 60) {
+      bar?.classList.remove('is-hidden');
+    } else if (y > lastY) {
+      bar?.classList.add('is-hidden');
+    } else {
+      bar?.classList.remove('is-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+
+  // ── Mobile nav toggle ─────────────────────────────────────────────────────
+  const toggle = document.getElementById('nav-toggle');
+  const sideNav = document.getElementById('side-nav');
+  toggle?.addEventListener('click', () => {
+    const open = sideNav?.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  // Close nav when clicking outside it on mobile
+  document.addEventListener('click', (e) => {
+    if (sideNav?.classList.contains('is-open') &&
+        !sideNav.contains(e.target as Node) &&
+        !toggle?.contains(e.target as Node)) {
+      sideNav.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ── Theme toggle ──────────────────────────────────────────────────────────
+  const themeBtn = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const stored = localStorage.getItem('ge-theme');
+  if (stored) html.dataset.theme = stored;
+
+  themeBtn?.addEventListener('click', () => {
+    const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    html.dataset.theme = next;
+    localStorage.setItem('ge-theme', next);
+  });
+</script>
+
+<style>
+  .top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    padding: 0.6em 1.25em;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+    transition: transform 0.25s ease, background 0.25s;
+    min-height: 3rem;
+  }
+  .top-bar.is-hidden {
+    transform: translateY(-110%);
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4em;
+    color: var(--text-soft);
+    flex-shrink: 0;
+  }
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    display: block;
+    width: 1.25em;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.2s;
+  }
+  .hamburger { position: relative; }
+  .hamburger::before {
+    content: '';
+    position: absolute;
+    top: -0.45em;
+  }
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    top: 0.45em;
+  }
+
+  .page-title {
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-size: 0.78em;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 0.25em;
+    cursor: pointer;
+    padding: 0.3em 0.55em;
+    color: var(--text-muted);
+    font-size: 0.85em;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .theme-toggle:hover {
+    border-color: var(--gold-ui);
+    color: var(--text);
+  }
+
+  @media (max-width: 48em) {
+    .nav-toggle { display: flex; }
+  }
+</style>

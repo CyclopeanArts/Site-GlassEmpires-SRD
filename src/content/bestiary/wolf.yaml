@@ -1,0 +1,67 @@
+name: Wolf
+tags: [beast, woodland, predator, common, pack]
+summary: "White and rust-red fur for Birchwood camouflage. Sleek, stalking. Yips, barks, and eerie howls."
+hd: 2
+armor: 0
+damagemultiplier: 1.5
+size: 5
+weight: 6
+maxload: 4
+speeds:
+  run: 40
+group: "Solo / 2d6 mated pair & offspring"
+desc: "White and rust-red fur for Birchwood camouflage. Sleek, stalking. Yips, barks, and eerie howls."
+wants: "Territory and prey. The pack is above all else. To please Tanto-on-the-Moon."
+intellect: "Animalistic but cunning. Body language before words."
+morality: "Hunger is neither cruel nor kind. Gentle if fed."
+treasure: "N/A"
+features:
+  - name: "Bite (Natural Weapon)"
+    text: "6 Physical."
+    combat: 0
+  - name: "Pack Hunter"
+    text: "Gain +2 to Strike Saves against targets Engaged with an ally."
+    combat: 1
+  - name: "Nose Knows"
+    text: "Can track any creature by scent whose trail is less than 3 days old. While outdoors, you cannot be surprised by anything with a scent."
+    combat: 1
+lore: |
+  The Jesters say Tanto-on-the-Moon wants the wolves hungry. If they're hungry, they're hunting. If they're hunting, they won't forget.
+tables:
+  - label: "Wolf Variants"
+    die: d6
+    entries:
+      - roll: 1
+        max: 2
+        result: "**Domestic Dog**. HD 3. Loyal to master, won't act on hunger unless starving. Can be trained for specific tasks (guard, herd, hunt, war)."
+      - roll: 3
+        max: 4
+        result: "**Giant Badger**. HD 3, Dig 5'. White fur. Hunts and burrows in the high passes."
+      - roll: 5
+        max: 6
+        result: "**Holy Wolf**. HD 3. Subtle lunar halo and magnetic aura. Manages a congregation shrine. Only respects parishioners with gifts. Can only die if struck on a New Moon; will otherwise heal any injury."
+  - label: "Pack Activity"
+    die: 2d6
+    entries:
+      - roll: 2
+        result: "Wolf shrine. Arranged boulders, planted fir trees in conspicuous circle, makeshift altar. 2-in-6 chance a pack & Holy Wolf is present."
+      - roll: 3
+        result: "Wounded, dragging a kill home. Will fight viciously to defend it."
+      - roll: 4
+        result: "Chasing prey that crossed your path."
+      - roll: 5
+        result: "Resting. Pups nearby. Maximum aggression if approached."
+      - roll: 6
+        result: "Hunting something else. May ignore party unless provoked."
+      - roll: 7
+        result: "Hungry and testing the party. Will attack if they show weakness."
+      - roll: 8
+        result: "Territorial display. Growling, circling. Seeking to drive party away."
+      - roll: 9
+        result: "Following at distance. Waiting for someone to fall behind or get injured."
+      - roll: 10
+        result: "Pack led by a Werewolf in search of converts or flesh."
+      - roll: 11
+        result: "Pack war with rival pack. Party stumbles into the middle."
+      - roll: 12
+        result: "Harangued by and fleeing another hunter. Seeking protection."

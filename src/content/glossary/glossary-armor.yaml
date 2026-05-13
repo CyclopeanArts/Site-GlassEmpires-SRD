@@ -1,0 +1,30 @@
+name: Armor
+tags: [combat, equipment, defense]
+summary: "A score (usually 1–4) granted by equipment or Features that generates Armor Points as a backup HP pool."
+definition: |
+  Armor is a score (usually from 1 to 4) granted by equipment or Features that
+  lets a character gain **Armor Points (AP)** — essentially a backup pool of HP.
+
+  **AP Calculation**: AP = Armor × Power (where Power = HD + Level). If a character
+  with 4 Armor and Power 8 (HD 2, Lv6) has 32 AP. In practical terms, a full set
+  of plate armor roughly doubles effective HP for a typical character.
+
+  **Damage Absorption**: If a character has AP and takes Damage, they may deplete
+  AP before subtracting Damage from HP. Damage spilling past depleted AP is
+  subtracted from HP.
+
+  **Multiple Armor Sources**: Characters can have multiple Armor scores from many
+  sources, but only the *best* is ever used for determining AP.
+
+  **Resetting AP**: AP resets to its maximum value whenever a character Rests.
+  When you heal any amount of HP by resting, you may reset AP up to at most as
+  much HP was healed.
+
+  **Removing Armor**: If you remove equipment granting an Armor score, reduce AP
+  to your next highest Armor score × Power. After donning new armor, you must rest
+  to reset your AP.
+related_rule: "adventure/armor"
+see_also: [armor-points, power, hit-dice, resting, damage]
+author: Histoire
+status: draft
+date: 2026-05-05

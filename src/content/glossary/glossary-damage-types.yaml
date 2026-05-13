@@ -1,0 +1,23 @@
+name: Damage Types
+tags: [core, mechanics, combat]
+summary: "The seven categories of Damage — Acid, Electric, Ice, Fire, Mind, Physical, and Poison — that determine resistance, weakness, and immunity interactions."
+definition: |
+  Damage may have one or more Types. The seven Types are:
+
+  - **Acid**: Corrosive burns.
+  - **Electric**: Powerful electrical currents.
+  - **Ice**: Hypothermic exposure.
+  - **Fire**: Hyperthermic exposure.
+  - **Mind**: Psychic, mental, and emotional trauma.
+  - **Physical**: Slashing, puncturing, and blunt-force trauma damage.
+  - **Poison**: Internal toxins.
+
+  If no Damage Type is specified, it is said to be **Typeless Damage**,
+  which cannot be resisted. A single source of Damage may have multiple
+  Types (e.g., "6 Ice/Fire Damage"), in which case the target's weakest
+  resistance among the constituent Types is used.
+related_rule: "adventure/damage-types"
+see_also: [damage, resistance, weakness, immunity, typeless-damage]
+author: Histoire
+status: draft
+date: 2026-05-05

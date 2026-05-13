@@ -1,0 +1,23 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BookLayout from '../../layouts/BookLayout.astro';
+import Callout from '../../components/Callout.astro';
+import RollableTable from '../../components/RollableTable.astro';
+import Ref from '../../components/Ref.astro';
+import Diagram from '../../components/Diagram.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('lore', e => !e.data.draft);
+  return entries.map(e => ({ params: { slug: e.id } }));
+}
+
+const { slug } = Astro.params;
+const entry = await getEntry('lore', slug!);
+if (!entry) return Astro.redirect('/lore');
+
+const { Content } = await render(entry);
+---
+
+<BookLayout title={entry.data.title}>
+  <Content components={{ Callout, RollableTable, Ref, Diagram }} />
+</BookLayout>

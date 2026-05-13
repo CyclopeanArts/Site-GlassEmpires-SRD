@@ -1,0 +1,30 @@
+name: Max. Load and Stone
+tags: [core, mechanics, equipment, encumbrance]
+summary: "Carrying capacity measured in stone (#) — 10 lb = 1 stone. Max. Load determines encumbrance penalties."
+definition: |
+  10 pounds is **1 stone** (abbreviated **1#**). Everything is weighed in
+  stone. Characters have a **Max. Load** indicating how many stone they can
+  carry safely, assuming they have appropriate storage.
+
+  **Encumbrance thresholds** depend on how much of a character's Max. Load
+  is occupied:
+
+  - **Up to half** (rounded up): No effect.
+  - **Up to full**: Suffer the **Encumbered** Condition.
+  - **More than full**: Cannot *usefully* move.
+
+  Characters can Save to *deadlift* up to twice their Max. Load for up to
+  1 Round (10 seconds), after which they must Save again.
+
+  **Small Items**: Most small items weighing less than 1# but more than 2 lb
+  weigh 1/4#. Smaller items are weightless. Each hand can hold up to 1#
+  independently from Max. Load.
+
+  **Item Slots**: On the character sheet, Max. Load is represented by 1.5"
+  item slots on the edge of the sheet. 1 slot = 1#. Items weighing 1/4# can
+  be stacked up to 4 per slot.
+related_rule: "adventure/encumbrance"
+see_also: [encumbered, hit-dice, equipment]
+author: Histoire
+status: draft
+date: 2026-05-05

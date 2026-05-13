@@ -1,0 +1,58 @@
+name: Porcelain Doll
+tags: [construct, undead, noble, haunted, urban]
+summary: "Animated porcelain doll-servants of fallen Lords, still performing their dead masters' routines."
+hd: 1
+armor: 0
+damagemultiplier: 0.25
+size: 2
+weight: 0.5
+maxload: 0.25
+speeds:
+  run: 15
+group: "Solo / Collection 2d6"
+desc: |
+  A child-sized painted figure of glazed white porcelain, jointed at the elbows, knees, and neck
+  like an articulated doll.
+wants: "To complete their last assigned task; to have a master to serve; to punish those who break household rules."
+intellect: "Mimics routines & etiquette with eerie precision & without deeper understanding of purpose."
+morality: "Follows household rules literally, even when centuries out of date."
+treasure: "Doll body is worth $200 to a collector or magician."
+features:
+  - name: "Household Rules"
+    text: |
+      Porcelain Dolls operate according to the household rules of their dead masters' estates.
+      - They cannot enter a room without being invited (by anyone, including a party member).
+      - They will not attack anyone who observes proper etiquette (bowing, addressing them
+      by title, removing shoes at the door).
+      - They attempt to correct & may become violent toward anyone who repeatedly breaks an observable household rule
+      (tracking mud inside, sitting in the master's chair, speaking out of turn).
+    combat: 0
+  - name: "Mimicry"
+    text: "You can flawlessly repeat any phrase or sound you have heard, in the exact voice & inflection of the original speaker. This does not grant understanding of the phrase or sound."
+    combat: 0
+  - name: "PorcelainFists (Natural Weapon)"
+    text: "1 Physical."
+    combat: 0
+lore: |
+  Porcelain dolls have become an occasional sight in the foothills where grand estates were once built, in the wake of the war's sweeping disruptions.
+
+  It's rumored that some are powered by the souls of servants whose contracts were unwillingly extended into the afterlife.
+when_eaten:
+  flavor: "Gritty, chalky, with an aftertaste of old regret."
+  notes: "Consuming ground porcelain inflicts 1 Poison Damage."
+tables:
+  - label: "What Was Its Last Task?"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Dusting the nursery**. It carries a feather duster and obsessively wipes surfaces."
+      - roll: 2
+        result: "**Guarding a door**. It stands immobile before a specific doorway and will not yield."
+      - roll: 3
+        result: "**Setting the table**. Constantly arranging & rearranging decaying place settings."
+      - roll: 4
+        result: "**Singing a lullaby**. Anyone sleeping in earshot has strange dreams of its old masters."
+      - roll: 5
+        result: "**Delivering a message**. The addressed Lord has a 4-in-6 chance of being dead."
+      - roll: 6
+        result: "**Waiting for master**. It will follow the first person who matches its master's general description."

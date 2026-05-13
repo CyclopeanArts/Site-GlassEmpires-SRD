@@ -1,0 +1,58 @@
+name: Horse
+tags: [beast, domesticated, mount, cavalry]
+summary: "Long legs, alert ears. Glossy coat, nervous eyes. Snorts and whinnies when alarmed."
+hd: 3
+armor: 0
+damagemultiplier: 1.25
+size: 10
+weight: 90
+maxload: 60
+speeds:
+  run: 50
+group: "Solo / 2d6 herd / 3d6 × 10 cavalry"
+desc: "A tall, sleek animal with a glossy coat, long muscled legs, and large dark eyes that miss nothing. Its ears swivel independently, tracking every sound. When alarmed it snorts explosively and stamps — a warning that carries across any camp. A good horse knows its rider's mood better than the rider does."
+wants: "Grass, water, the herd. A rider who knows what they're doing."
+intellect: "Reads emotion and intent. Can be trained extensively but panics easily."
+morality: "Flight before fight. Loyal to those who treat them well."
+treasure: "N/A"
+features:
+  - name: "Hooves (Natural Weapon)"
+    text: "5 Physical."
+    combat: 0
+lore: |
+  House Beacon cavalry is renowned across the Inner Sea. The war has made a horse precious; every faction raids for them. Injured horses are eaten rather than healed — the calculus of scarcity leaves no room for sentiment.
+
+  Untrained horses always flee anything that seems dangerous. A trained warhorse is an entirely different animal: steady under fire, responsive to knee pressure alone, and capable of fighting even after its rider has fallen.
+
+  A horse's worth is measured not in coin but in what it enables. A lord with a stable of warhorses commands a different kind of respect than one without. Cavalry raids, messenger relays, rapid redeployment — the horse is the engine of Glassian warfare, second only to the harpy in strategic importance.
+when_eaten:
+  flavor: "Lean and slightly sweet, with a texture somewhere between beef and venison. The meat darkens considerably when cooked and takes marinades well."
+  notes: "A horse is worth vastly more alive than as meat. Eating one is an act of desperation — or a deliberate statement. Cavalry units consider it a betrayal of the worst kind. Roll 1d6: on a 1, the eater gains the horse's memory of its last rider (the GM provides one relevant secret). On a 2–6, no special effect."
+tables:
+  - label: "Horse Variants"
+    die: d6
+    entries:
+      - roll: 1
+        max: 2
+        result: "**Draft horse**. HD 4, Weight 150#, Max. Load 100#, Run 35'. Always flees from combat."
+      - roll: 3
+        max: 4
+        result: "**Warhorse**. HD 4, Weight 120#, Max. Load 80#. Trained for combat; immune to Panic."
+      - roll: 5
+        max: 6
+        result: "**Steppe horse**. HD 3, Weight 60#, Max. Load 40#. Can survive on steppe grass alone."
+  - label: "Why Is This Horse Alone?"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Rider killed nearby. Body within 100'. Ambush possibly still present."
+      - roll: 2
+        result: "Escaped from bandits/army camp. Branded. Someone wants it back."
+      - roll: 3
+        result: "Wild mountain herd horse. Unbroken. Will flee."
+      - roll: 4
+        result: "Draft horse slipped its harness and hid. Overturned cart nearby. Owner searching."
+      - roll: 5
+        result: "Messenger horse whose rider vanished en route. Saddlebags contain important secrets from a presently-relevant Faction."
+      - roll: 6
+        result: "Decoy. Trained to lure horse-thieves into ambush."

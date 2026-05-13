@@ -1,0 +1,25 @@
+name: Resistance, Weakness and Immunity
+tags: [core, mechanics, combat, defense]
+summary: "Damage modifiers: Resistance halves, Weakness doubles, and Immunity neutralizes Damage of a given Type."
+definition: |
+  Characters may be **Weak**, **Resistant**, or **Immune** to certain
+  Damage Types:
+
+  - **Resistance** halves all Damage of that Type, rounded down.
+  - **Weakness** doubles all Damage of that Type.
+  - **Immunity** neutralizes all Damage of a given Type entirely.
+
+  **Multiple Damage Types**: If a source of Damage has more than one Type
+  (designated with a slash, e.g., "6 Ice/Fire Damage"), the *weakest*
+  resistance status is always used. For example, a character with Ice
+  Resistance and Fire Weakness taking 6 Ice/Fire Damage would take
+  12 Fire Damage (instead of the more favorable 3 Ice Damage).
+
+  **Typeless Damage** has no Type and cannot be resisted.
+
+  These modifiers are applied before Armor Points absorb Damage.
+related_rule: "adventure/damage-types"
+see_also: [damage, damage-types, armor-points]
+author: Histoire
+status: draft
+date: 2026-05-05

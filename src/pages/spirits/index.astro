@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BookLayout from '../../layouts/BookLayout.astro';
+import Ref from '../../components/Ref.astro';
+
+const all = (await getCollection('spirits'))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const byTier: Record<string, typeof all> = { tradition: [], commodity: [], trophy: [], other: [] };
+for (const s of all) {
+  const tier = (s.data as any).tier ?? 'other';
+  (byTier[tier] ?? byTier.other).push(s);
+}
+const tiers = ['tradition', 'commodity', 'trophy', 'other'] as const;
+const tierLabels: Record<string, string> = {
+  tradition: 'Tradition Spirits',
+  commodity: 'Commodity Spirits',
+  trophy: 'Trophy Spirits',
+  other: 'Other',
+};
+---
+
+<BookLayout title="Spirits">
+  <h1>Spirits</h1>
+  <hr class="rule-divider" />
+
+  {all.length === 0 ? (
+    <p class="empty-note">No spirits written yet.</p>
+  ) : tiers.map(tier => byTier[tier].length > 0 && (
+    <section class="tier-section">
+      <h2>{tierLabels[tier]}</h2>
+      <div class="index-grid">
+        {byTier[tier].map(s => (
+          <Ref collection="spirits" slug={s.id} variant="card" />
+        ))}
+      </div>
+    </section>
+  ))}
+</BookLayout>
+
+<style>
+  .tier-section { margin-top: 2em; }
+  .index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    gap: 0.75em;
+    margin-top: 0.75em;
+  }
+  .empty-note { color: var(--text-muted); font-style: italic; }
+</style>

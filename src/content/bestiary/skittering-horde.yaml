@@ -1,0 +1,67 @@
+name: Skittering Horde
+tags: [swarm, vermin, hazard]
+summary: "A seething carpet of countless tiny bodies — chittering, rustling, overwhelming."
+hd: 4
+armor: 0
+damagemultiplier: 1
+size: 10
+weight: 0.25
+maxload: 0
+speeds:
+  run: 10
+group: "Solo"
+desc: "A seething carpet of countless tiny bodies. Chittering, rustling, overwhelming."
+wants: "Food. Kill enemies. Nest."
+intellect: "Beneath even animalistic."
+morality: "Hunger."
+treasure: "N/A (though their nest may hold valuables from victims)."
+features:
+  - name: "Bites & Stings (Natural Weapon)"
+    text: "Physical/Poison. Damage equal to your HD."
+    combat: 0
+  - name: "Swarm"
+    text: |
+      You gain all of the following effects:
+      - You're composed of a large swarm of tiny entities.
+      - You are functionally immune to any special effect that only affects a single target.
+      - Damage that only affects a single target is reduced to 1.
+      - You can move through any gap a single member could fit through.
+      - You cannot be Grappled, shoved, knocked Prone, *or* prevent characters from moving into or through the space you occupy.
+      - Damage from area effects is multiplied by your current HD before being applied.
+    combat: 1
+  - name: "Swarming Strikes"
+    text: "You may make 1 Strike per Attack against *every* creature Engaged with you or within your occupied area simultaneously."
+    combat: 1
+lore: |
+  When reduced to 0 HP, the horde dies and disperses; survivors scatter into cracks and shadows.
+tables:
+  - label: "Swarm Variants"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Rats.** Speed 20'. Spread disease. After being damaged by bites, Save or contract Sewer Fever (onset: 3 days)."
+      - roll: 2
+        result: "**Cockroaches.** Fly 15'. Immune to Physical Damage."
+      - roll: 3
+        result: "**Paper Flies.** Fly 30'. Builds flammable nests of paper high in dark enclosures. Swarm can take 2 damage to extinguish a torch by having members explode into gooey fire retardant."
+      - roll: 4
+        result: "**Bullet Ants.** Also deals Mind damage."
+      - roll: 5
+        result: "**Wasps.** Fly 30'. Stings deal Mind damage on top of Physical/Poison. Burning smoke forces a Save or Panic."
+      - roll: 6
+        result: "**Vampire Mosquitos.** Fly 30'. Heals HP equal to Damage dealt to enemies."
+  - label: "What Is This Horde Doing?"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Feeding on a corpse. Will defend food source aggressively."
+      - roll: 2
+        result: "Following a pheromone trail toward food/nest. Party is in the path."
+      - roll: 3
+        result: "Fleeing from fire, flood, or predator. Stampede over anything in the way."
+      - roll: 4
+        result: "Nesting. Swarm is dormant but fills an entire room/area."
+      - roll: 5
+        result: "Attracted to light, warmth, or specific scent the party carries."
+      - roll: 6
+        result: "Migrating. Endless river of creatures moving in one direction for hours."

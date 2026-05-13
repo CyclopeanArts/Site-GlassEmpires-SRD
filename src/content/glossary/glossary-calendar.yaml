@@ -1,0 +1,33 @@
+name: Calendar
+tags: [core, campaign]
+summary: "A timekeeping system required to track Deadlines for Moves and synchronize Players with the world state."
+definition: |
+  A **calendar** is required in order to keep track of Deadlines for Moves and for synchronizing Players with the current state of the world.
+
+  Ideally, a private/public calendar split should be set up so that the current date is accessible not just by the GM but also by the Players so that they can take their own notes.
+
+  **Aia's Calendar** — the calendar in use on Glass:
+
+  - **Every year** has 360 days, divided evenly into 12 months.
+  - **Every month** has 30 days, separated into 4 weeks.
+  - **Each week** has 7 days, but the 2nd and 4th week of each month ends in the Full Moon Day (15th) and New Moon Day (30th) respectively, neither of which are formally part of the week.
+  - **The current year** is 1002.
+
+  |  Mon  | Tue | Wed | Thu | Fri | Sun |  Sat   | Special        |
+  | :---: | :-: | :-: | :-: | :-: | :-: | :----: | :------------- |
+  |   1   |  2  |  3  |  4  |  5  |  6  |   7    | —              |
+  | **8** |  9  | 10  | 11  | 12  | 13  |   14   | 15 (Full Moon) |
+  |  16   | 17  | 18  | 19  | 20  | 21  | **22** | —              |
+  |  23   | 24  | 25  | 26  | 27  | 28  |   29   | 30 (New Moon)  |
+
+  | Season | 1st Month | 2nd Month | 3rd Month |
+  | ------ | --------- | --------- | --------- |
+  | Spring | January   | February  | March     |
+  | Summer | April     | May       | June      |
+  | Autumn | July      | August    | September |
+  | Winter | October   | November  | December  |
+related_rule: "Core Terms / Calendar"
+see_also: [campaign, deadline]
+author: Histoire
+status: draft
+date: 2026-05-05

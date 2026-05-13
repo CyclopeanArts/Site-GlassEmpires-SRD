@@ -1,0 +1,68 @@
+---
+title: Growing a Settlement
+tags: [core, rules, factions]
+draft: false
+summary: "Terrain limits, investment spending, and the Settlement Growth move."
+---
+
+In order to *grow* a Settlement to the minimum required Families for its Ruler to gain a Level, the following conditions must be true:
+
+- There is no pre-existing *bigger* Settlement within a radius of ([Families] / 100) miles;
+- There are at least 3 Settlements with Families large enough to sustain the Ruler's current Level in the *same realm* (counting "realm" as *including* your sovereign's realm, if you are a vassal) that are *not* closer to a Settlement that is already larger;
+  - If your Settlement's Ruler is currently Level 7 or less, you *instead* need farmland of area meeting or exceeding your Ruler's Level squared (i.e. to go from 7 to 8, you need ~50 square miles of farmland).
+- The new Families level must not exceed the value set by the table below.
+
+| Terrain<br />Type   | Max.<br />Families | Effective Max.<br />Ruler Level |
+| ----------------- | ---------------- | ----------------------------- |
+| Desert            | 99               | 5                             |
+| Alpine/arctic     | 2,900            | 8                             |
+| Desert oasis/arid | 9,900            | 9                             |
+| Mountain valley   | 29,000           | 10                            |
+| Hills/coast       | 99,000           | 11                            |
+| Riverless plains  | 290,000          | 12                            |
+| Fertile river     | 2,900,000        | 14                            |
+
+Settlements who by virtue of changing circumstances come to violate these rules do not lose Families for it, but cannot grow any further.
+
+<Callout type="rule" heading="Tip">
+
+**Why these rules?** Central Place Theory, mostly, plus ensuring that cities can't grow to unreasonable sizes unless they have suitable agricultural lands around them. Note that *trade routes* are a means by which massive empires can grow larger, but generally, large sums of food won't be funneled to a city from foreign lands until those lands are conquered & made to do so — Rome had to conquer Egypt before it reaped the full benefits of Alexandria & the Nile.
+
+</Callout>
+
+### Investment
+
+**Once per month per Settlement**, you can spend $ to raise a Settlement's Families. For every $150 you spend, the Settlement gains 1 Family. You can only spend the *greater* of $1,500 or 5 times the Settlement's current Families per month (so even in a village of 55 Families, you can still spend a full $1,500 to draw 10 new Families to the village).
+
+### Move: Settlement Growth
+
+You may use your Faction's ongoing revenues to produce growth in a Settlement you fully control. Tell the GM how you're investing into your Settlement with your Faction's labor & resources.
+
+If a Faction has a Manpower Debt, this Move can be used to eliminate an amount of Debt equal to the number of Families that would otherwise be gained. No Families are added if this Move is used to pay off MP Debt.
+
+For every $5 spent on this Move, you may increase the number of *effective* current Families for the sake of growth by 1.
+
+<Callout type="example">
+
+If your Settlement has 100 people & you spend $250, the Settlement is treated as having 150 current Families; if you get a Pass, you will gain 7 Families instead of 5.
+
+</Callout>
+
+**Deadline**: 1 month.
+**Result**: Success Save, with additional effects.
+
+|      Result      | Additional Effects                                |
+| :--------------: | ------------------------------------------------- |
+|  Crit<br />*≥12*   | The Settlement gains 10% of its current Families. |
+|  Pass<br />*8–11*  | The Settlement gains 5% of its current Families.  |
+|   Seven<br />*7*   | The Settlement gains 1% of its current Families.  |
+| Failure<br />*3–6* | Gain nothing.                                     |
+|  Fumble<br />*≤2*  | Gain nothing.                                     |
+
+In all cases, round to the nearest 3 significant digits.
+
+<Callout type="example">
+The City of Riverbrook gets a Seven, providing 1% of its current Families of 3,600 (36). This would put them at Pop. 3,636, rounded to 3,640.
+
+A city with 124,000 getting a Seven would get 1,240 new Families, rounding to 125,000.
+</Callout>

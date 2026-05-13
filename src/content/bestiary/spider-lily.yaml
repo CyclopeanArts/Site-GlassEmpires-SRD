@@ -1,0 +1,65 @@
+name: Spider Lily
+tags: [plant, poison, undead-adjacent, swarm, hazard, corpse-feeder]
+summary: "Pale red egg-body on ten spindly legs, with a thick brown proboscis. Silent skitter. Faint sweet stink. Where they gather, the world of the dead draws close."
+hd: 1
+armor: 0
+damagemultiplier: 0.5
+size: 2
+weight: 0.25
+maxload: 0
+speeds:
+  run: 25
+group: "2d6"
+desc: "Pale red egg-body on ten spindly red legs. Thick long brown proboscis underneath supports the body while feeding. Padded feet, silent skitter. Faint sweet stink."
+wants: "Corpses. If there are none, it will make some."
+intellect: "Notices only warmth, moisture, and decay."
+morality: "Hunger, sans haste."
+treasure: "N/A"
+features:
+  - name: "Proboscis (Natural Weapon)"
+    text: "2 Poison."
+    combat: 0
+  - name: "Miasma"
+    text: "When you remain stationary for a minute or more, you emit a poisonous haze in a 10' radius. Creatures in the area take 1 Poison Damage per minute, starting as soon as they enter, stacking with other nearby lilies. Sleeping or unconscious creatures don't notice the damage until they wake (or don't)."
+    combat: 0.5
+  - name: "Tangled Red Roots"
+    text: "As a Full-Turn Action, you can root or unroot in any corpse or helpless creature. While rooted, heal 1 HP per hour."
+    combat: 0
+lore: |
+  The Jesters say the spider lilies are born from where the world of the dead draws close. They are correct in the sense that spider lilies *create* the world of the dead.
+
+  Spider lily clusters migrate toward warmth and the smell of the living. Villages hire exterminators. Armies post sentries over the dead. In this age of war, nobody sleeps near an unburied corpse.
+when_eaten:
+  flavor: "Crunchy, silken limbs like bitter dandelions; egg-like body is thick like offal."
+  notes: "If the egg is eaten, Save or die in 1d6 hours from horrible, painful, bloody vomiting. Legs are edible."
+tables:
+  - label: "What Did They Grow From?"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Shallow roadside grave. Fresh. Personal effects still on the body. Someone's searching for the corpse."
+      - roll: 2
+        result: "Dead livestock in a pen. Owner can't afford the loss of the meat and begs you not to burn them."
+      - roll: 3
+        result: "Under a building's floorboards. Inhabitants are pale, coughing, and don't understand why. Someone died in the crawlspace weeks ago."
+      - roll: 4
+        result: "Battlefield dead in a depression. Hundreds of lilies across the field. Gear is salvageable if you can clear them."
+      - roll: 5
+        result: "A living person, asleep in their bed. Proboscises embedded in their skin. Still breathing. Removing the lilies will kill them faster than leaving them."
+      - roll: 6
+        result: "A cracked tomb or shrine. Whatever was sealed inside is no longer whole. Local Jester wants it resealed but won't go near it."
+  - label: "Why It's Even Worse"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Someone important lives in the infested building and refuses to leave."
+      - roll: 2
+        result: "The locals claim the lilies are sacred; the spirit world is speaking through them. Destroying them would be sacrilege."
+      - roll: 3
+        result: "The lilies have rooted into a well or stream and are poisoning everything downstream."
+      - roll: 4
+        result: "Someone is cultivating them deliberately as a weapon of war."
+      - roll: 5
+        result: "The dead person had something valuable on them. It's in the middle of the cluster."
+      - roll: 6
+        result: "What you see is the edge. The infestation stretches underground and through connected structures."

@@ -1,0 +1,48 @@
+name: Boar
+tags: [beast, wilderness, aggressive]
+summary: "Territorial beast."
+hd: 2
+armor: 0
+damagemultiplier: 1.25
+size: 5
+weight: 18
+maxload: 12
+speeds:
+  run: 35
+group: "2d6 sounder / 3d6 × 10 warband"
+desc: "A bristle-backed beast with a low-slung head, two curved tusks jutting from its jaw, and a thick hide caked with mud and filth."
+wants: "To eat and wallow. To be left alone."
+intellect: "Animalistic. Can be domesticated, but never tamed."
+morality: "Wanton pride, stubbornness, and wrath."
+treasure: "None."
+features:
+  - name: "Tusks (Natural Weapon)"
+    text: "5 Physical."
+    combat: 0
+  - name: "Gore Charge"
+    text: "You count as twice your Weight when performing a Charge attack."
+    combat: 0.5
+  - name: "Spiteful Stubbornness"
+    text: "If you are incapacitated or killed in melee combat, immediately make a free Strike against the perpetrator."
+    combat: 0.5
+lore: |
+  Hated by the Commons; a sounder can wreck a season's harvest in a night. Loved by Lords; there's nothing better than a boar at a feast.
+tables:
+  - label: "Boar Encounters"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Rooting in forest. Will ignore Party unless approached within 20'."
+      - roll: 2
+        result: "Drinking at water source. Territorial. Will charge if party approaches water."
+      - roll: 3
+        result: "Fleeing from something worse (wolves, bear, hunters, fire). Stampede through party's location."
+      - roll: 4
+        result: "Lone boar, separated from sounder. Paranoid and aggressive."
+      - roll: 5
+        result: "Sow with piglets, no boar nearby. Will not attack first but will not retreat."
+      - roll: 6
+        result: "Aggressive. Recently wounded, encountered hunters, or in mating season. Attacks on sight."
+when_eaten:
+  flavor: "Rich, gamey, and dense. The flesh darkens to near-black when roasted. Marbled with fat that renders to a savory dripping."
+  notes: "None."

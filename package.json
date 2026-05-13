@@ -1,0 +1,21 @@
+{
+  "name": "srd-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.4",
+    "@fontsource-variable/literata": "^5.2.8",
+    "@fontsource/inknut-antiqua": "^5.2.8",
+    "astro": "^6.1.9",
+    "astro-pagefind": "^1.8.6"
+  }
+}

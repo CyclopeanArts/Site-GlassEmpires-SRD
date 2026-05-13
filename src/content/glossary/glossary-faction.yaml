@@ -1,0 +1,27 @@
+name: Faction
+tags: [factions, core, campaign]
+summary: "A statistical grouping of many characters taking collective action, led by a Leader."
+definition: |
+  A **Faction** is a statistical grouping of many characters taking collective
+  action. Factions are distinct from individual characters — they operate at a
+  different scale, managing Resources, conducting Moves that span weeks or
+  months, and wielding influence across the campaign map.
+
+  A Faction is led by a **Leader** — a character who controls and represents the
+  Faction. Leaders may oversee their Faction performing Moves instead of taking
+  Moves personally. A Leader who serves another Leader commands a
+  **Subfaction**.
+
+  Factions are measured by:
+  - **Families** — the number of family-units within the Faction, determining
+    its Level and capabilities
+  - **Resources** — strategic assets the Faction controls or has access to
+  - **Faction Type** — defines the Faction's special capabilities and Feature
+    acquisition method (e.g., Merchant Republic, Cult, Kingdom)
+
+  The Party itself is typically treated as a Faction for strategic-scale play.
+related_rule: "factions"
+see_also: [leader, subfaction, families, faction-type, level, resource, party, campaign]
+author: Histoire
+status: draft
+date: 2026-05-05

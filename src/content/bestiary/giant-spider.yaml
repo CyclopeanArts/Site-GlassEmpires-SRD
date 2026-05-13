@@ -1,0 +1,61 @@
+name: Giant Spider
+tags: [birchwood, vermin, ambush, predator]
+summary: "Wolf-sized spider with thick limbs and leathery skin — scratchy hair, beady eyes dotting a fanged face."
+hd: 2
+armor: 1
+damagemultiplier: 1.5
+size: 10
+weight: 6
+maxload: 4
+speeds:
+  run: 30
+group: "Solo / 1d6+1 mated pair & offspring"
+desc: "Wolf-sized spider with thick limbs and leathery skin. Scratchy hair, beady eyes dotting a fanged face. Moves with unsettling silence and precision."
+wants: "Food, safety, eaten competitors. Especially safety."
+intellect: "A predator's cunning."
+morality: "Nope!"
+treasure: "Raw silk ($50 per spider)."
+features:
+  - name: "Bite (Natural Weapon)"
+    text: "6 Physical."
+    combat: 0
+  - name: "Wall Climber"
+    text: "You can use your Run speed to climb any surface, including ceilings. You fall if knocked prone."
+    combat: 0.5
+  - name: "Web"
+    text: "Once per hour, spend 10 minutes making a translucent web over a 10'×10'×10' cubic area. Creatures entering without seeing it are *webbed* until freed (1 Round with a blade, 3 without). You can move through webs and sense anything touching a continuous stretch of webbing you also touch."
+    combat: 0.5
+  - name: "Wrap"
+    text: "Spend 1 Round to cocoon a webbed or grappled target. Cocooned targets can't move or act until freed by another (1 Round with a blade, 3 without)."
+    combat: 0.5
+lore: |
+  Spiders are solitary ambush predators. They set up dense networks of webs in dark corners and jump on you once you're caught.
+tables:
+  - label: "Spider Variants"
+    die: d6
+    entries:
+      - roll: 1
+        max: 2
+        result: "**Cellar Spider.** HD 1, Weight 2#. Infests ruins and basements. Timid, flees if web fails."
+      - roll: 3
+        max: 4
+        result: "**Hunting Spider.** No Web or Wrap. Run 45'. Chases prey overland."
+      - roll: 5
+        result: "**Trapdoor Spider.** Dig 10'. Buries itself under a concealed lid. Surprise attack from below, then drags prey underground."
+      - roll: 6
+        result: "**Brood Mother.** HD 3, Weight 12#. Surrounded by 2d6 HD ½ spiderlings. Will die to protect them."
+  - label: "What Is This Spider Doing?"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Freshly webbed a doorway or mangrove chokepoint. Sitting above it. Waiting."
+      - roll: 2
+        result: "Feeding on a cocooned victim. Victim may still be alive (1-in-6 chance it's a person)."
+      - roll: 3
+        result: "Relocating. Dragging an egg sac to new territory. Non-aggressive unless blocked."
+      - roll: 4
+        result: "Territorial dispute with another spider. Hissing match. Loser will flee toward the party."
+      - roll: 5
+        result: "Web is old and abandoned. Spider is dead nearby. Something else killed it. What?"
+      - roll: 6
+        result: "Nesting near a heat source (chimney, hot spring, forge). Locals know and avoid the area."

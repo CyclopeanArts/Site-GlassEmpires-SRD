@@ -1,0 +1,701 @@
+---
+tags:
+  - tg/glassempire
+draft: true
+---
+# Maps of Intent
+
+What makes a setting book good?
+
+Philosophy. Memetics. Embody the thing described. Propagate it in such a way that *readers* embody the thing described.
+
+What is Glass Empires about?
+
+It's about power. It's about the will-to-power. It's about the death of an empire & its reimagining. It's about finance, capital, & debt. It's about patronage & the power of people working together. It's about animism.
+
+People forget how wonderful the world can be — in that it may *inspire wonder*.
+
+My concern shall be in figuring out how to present everything that Glass is in a way that is *intuitive* & *instructive* & *entertaining* all at once.
+
+# Faction Notes
+
+- Every major Faction leader in Glass needs a powerful vision for the future.
+	- Except the **Imperial Family**. Their son is a psychic reincarnation of Solar, but the regent Mother Empress is a flailing possessed corpse who's choking the life out of the dynasty, and she has no vision other than for extinction.
+
+## What we need
+
+### What is the GEODESTINY of Glass?
+
+- Glass is an island on the Discworld of Aia.
+	- North is also "moonward"; the moon appears to bob at a consistent point north of the disc, serving as a natural compass while above the rim. Coreward/rimward & clockwise/counterwise are also used.
+- Its land area is ~half that of Honshu (50k sqmi). The nearest landmass is the counterwise Boreal Coast at around 150 miles, comparable to the distance between Japan & Korea. To the coreward Inner Sea's archipelagos & the rimward Frozen Rim, approximately 100 miles each; to the clockwise Cyclopean Continent mainland, around 250 miles.
+- Glass is largely *temperate continental* to *humid subtropical* with a rimward tendency to boreal/taiga features on the Arcades (the rimward coast, whose coastal pillars form stone arcades).
+- Glass is approximately triangular & has one large, long mountain range on its counterclockwise side & a smaller point-like cluster of mountains to its clockwise point. The land mass between these mountains is functionally like a valley, raised near its center.
+- Glass possesses the following natural resources:
+	- **Abundance**: Ruby, hardwood timber, quality stone, jade, salt, coal, porcelain, farmland.
+	- **Lesser quantities**: Copper, lead, diamonds, gold, silver, softwood timber, iron.
+	- **Trace quantities**: Tin, most other gemstones.
+	- **Notably absent**: Nickel.
+- **Supernatural components**: Note that we don't differentiate between "natural" and "supernatural" in this setting; everything is alchemical & elemental. There is no "magic". Everything is "magic". All water is an elemental; it's just that making it angry enough to slap you is really hard. The world is animistic. Glass is *infested* with spirits of every kind. Think *kami* in their more active forms — a la Ghibli films with Western mythological motives & bloodthirst.
+- **Neighbors**:
+	- The north Boreal Coast (or "Bread Bay") is actually a Mediterranean breadbasket & a *massive* iron exporter. Historically speaking, Glass has had a long-term rivalry with & several attempted back-and-forth invasions with the local salamanders.
+	- The Cyclopean Continent is too full of monsters to pose a foreign national threat; the locals are busy killing each other. It's said that ancient secrets from past ages lie here, still untapped & waiting to be reawakened.
+	- The Inner Sea is *always* conquered (or at least shared with the Coralers) by the current largest empire. Not sure what the implications of this is, to have it *right there*. It's sorta like the Holy Land & would probably make the natives kinda like the Jews in that regard — paranoid hedging negotiators who struggle to control their own sovereignty. Currently, the Inner Sea is a war between the Hydreans and the Venetians.
+		- **Venetian League**: Renaissance Italy started the Industrial Revolution, united in a singular League under an oligarchy of merchant-bankers (which is a microcosm of their *own deities'* behavior), and have started practicing capitalistic polytheistic financial warfare on *everyone*. Religious shorthand: "very much like Carthage or the Romans, bronze age polytheism but the gods are real". Financial/banking/industrial threat.
+			- **Primary Assets**: Windguns. Hydraulic water-elemental automatons. Extremely wealthy banking industry, advanced mathematics, highly coordinated proto-capitalist cabal class. Other more bizarre elementally-driven developments rapidly coming online now that the god that had been maintaining a technological stasis is fucking *dead* (Chimatocoatl's fault); likely to either become an elemental-punk industrial power *or* detonate violently & possibly take the Grand Disc with it a la Endon of Magical Industrial Revolution.
+		- **Hydrea**: Think Catholic-Jesuit Aztec Roman Empire led by the Goddess of Wisdom Chimatocoatl, an exile from the Venetians' pantheons & built an empire *entirely* as an exercise in revenge — to intercept & crush the Venetians so that she can *eat* the gods who kicked her out of their pantheon. Religious shorthand: "Chimato is the only true god, the rest are fragments & we have to merge the rest of them with her again." Catholics plus Aztec divine blood/deicide sacrifice. Industrial/military/CIA-Jesuit color revolution threat.
+			- **Primary Assets**: Explosives (brand-new). Lots of powerful god-channeling magicians. Spies & full-spectrum religious warfare. Altars that they bind gods & spirits on to ship back to Monsoon to sacrifice & merge with Chimatocoatl. Mild experimentation with blood magic; think primitive diesel engines powered by animal sacrifice. They've got mines & mills, and are dangerously close to a blood-powered rail engine (& Apogean salamander "prairie wolf" resistance is giving them a good reason to build one).
+		- **Coralers**: The native cephalopod-people of the inner sea. Up until recently, unparalleled in their command of it by virtue of a natural amphibiousness enabling stealth (on a flat discworld where an absence of curvature means every ship can see ~20 miles out to the horizon, eliminating maneuver warfare). Playful, vicious, fractious, somewhat cowardly; prone to hit-and-run attacks. A universal infestation in every coral reef. Still dependent on the surface (their greatest weakness) because, among a couple of other things, 1) their squid form has terrible grip strength & mobility 2) *you can't use fire underwater*. Currently losing a war to the combined efforts of the Hydreans & Venetians.
+			- Functionally, they're kinda like hill people, except the shatterzone is *always right there, under the surface of the water*, and it grants *infinity* naval stealth to raiders, and *no empire can ever invade it*.
+- Glass can support a massive agricultural population. Its inner valley is a breadbasket & is undergoing active deforestation.
+- Glass has an abundance of freshwater & no particularly notable or dominant rivers.
+
+All things considered, it's rather similar to Japan — which is really funny since that wasn't my intention for the island.
+
+So what does all of this indicate for development patterns? What does geodestiny inform? Everything else is downstream of this.
+
+### History — OLD, needs adjustment
+
+To make a very long TLDR short, we have to change the timeline. Kain abdicated just 20 years ago. This is important because it means "the good times" were in living memory. The crisis now is that his system was totally unstable without him. See *Axioms*.
+
+#### Millennia ago...
+
+**The Blooming** cut the prior Age short & filled the world with jungle & ruin. The old kings of the world, the **Sleepers**, hid us — their servants — along with themselves in great underground vaults ... along with many lost secrets. It was the work of the immortal **Kain** who led us to freedom out of the **Undergarden** 1,820 years ago to the day.
+
+#### Centuries ago...
+
+Kain was known to be unstable & enigmatic during his reign, and was never forthcoming with information even when it would prevent national crises; even still, his reign was stable right up until he massacred the *entirety* of **Glass**'s court in the **City of Leaves** around 250 years ago & subsequently abdicated the throne to his most recently-born & at-the-time absentee son.
+
+The **Abdication War** lasted five years, and ended with the crowning of the **Saint Emperor** as the ruler to carry on in Kain's path — a victory only achieved with the approval of the **Five Gods of Glass**, who were the only figures other than for Kain himself that could force Glass to its knees before a new crown.
+
+#### A hundred years ago...
+
+Decades of foreign conquest reaped bloody fruits for the realm; **tributary states** up & down the **Boreal Coast** & **Inner Sea** sent wealth beyond comparison to burgeoning warehouse-cities. Domestic production withered & entire local industries grew ceremonial.
+
+The commoners largely continued to worship Kain, who now resides in the **Oropolis**, the temple-mountain at the heart of Glass near **Theomni**. The entire mountain is one massive city of temples maintained by masked servants & elemental automatons.
+
+#### @ Decades ago...
+
+The collapse of most of the Inner Sea island states was followed by a invasion of Glass by the Coralers — hordes of vicious cephalo-people — who suddenly spilled inward from the seas, pillaging our trade & slaughtering our soldiers. With them, they brought weaponry inherited from the Venetians, who had equipped their High General with new weaponry the likes of which the Coralers had never before enjoyed, forged in the fires of the Venetians' civil wars.
+
+The resultant economic chaos & imbalanced strife (as coastal lords suffered much greater losses) threw an already unstable aristocracy off its feet. A cascade of chaos & shifting power-balances gradually amplified discontent amongst an elite whose revenues were increasingly dead in the water.
+
+Some turned to borrowing from foreign powers. 
+
+#### And now, just recently...
+
+One year ago, at a rapidly escalating verbal shouting match during a major play in the City of Leaves, the suspiciously recently widowed **Mother-Empress** was declared possessed by a seer lord, & she responded by exiling the entirety of the visiting aristocracy from the City & imprisoning the already disputed **Heir Son** in the palace. War erupted immediately.
+
+Now the **Three Houses** & a **Populist Uprising** kill each other over inheritance while enemies loot the realm.
+
+### The Wonders of Glass
+
+Glass is peppered with a handful of strategically significant wonders.
+
+- **The Lighthouse**: Nearly omniscient vision over the entirety of the underground on this half of Aia. Was formerly used to suppress Impish invasions, then was later destroyed & abandoned during the Abdication War. Functionally allowed the discovery of most tunnel & mine networks across the underworld & allowed the mapping of the local Undergarden.
+- **The Panopticon**: Instantaneous undetectable real-time top-down vision of every location on Glass & on most of the surrounding islands & ocean in a spherical radius around the tower with fidelity sufficient enough to make out individual people by their dress, limited only by the focus & intent of the operator. Currently held by Lord Arcades; the Tower itself is built on one of the largest coastal sea-pillars in the Rim Arcades.
+- **The Curtain**: The City of Leaves, the historical capital of Glass, is built inside two massive concentric granite walls of nearly impervious engineering. The outer wall once held a substantial amount of farmland, but urban sprawl over time has resulted in its internal production being too low to support the population indefinitely. The Curtain is the only thing keeping the Regency in power.
+- **The Theomni Templevault**: A gigantic fortified temple-palace of ancient design built underneath the city of Theomni, one of *dozens* known to exist across Aia.
+
+### What is the ECONOMIC MODEL for Glass?
+
+Like, in terms of economics, where does the wealth come from? Also, finance. Who finances projects? Is there a caste system? To what extent was political theory developed? What is the texture of society? Is slavery normalized?
+
+I wonder if we can figure this out from the status of the world.
+
+It was "intended" that the world be sort of like a Renaissance or somewhat post-Renaissance setting, with increasing clockwork/elemental steampunk-ish components. "The industrial revolution is approximately one steam engine away."
+
+Magic is increasingly frequent. There are entire university cities dedicated to the arts of spirit-wrangling — this is Papermark's claim to fame, for example. A Green Revolution is under way, as agricultural magic becomes affordable & widely deployed.
+
+Capitalistic theory is spreading. The Venetians developed the theory & imported it to Glass around 30 years ago — shortly before the Coralers struck with windguns & an almost comical viciousness. They might have joint-stock corporations if it weren't for the fact that the entire empire started going through a normal imperial cycle of decay starting with the Abdication.
+
+Probably in a severe terminal empire crisis. Debt, no more tributaries. What does that look like? They're flooded with foreign mercenaries & operations from the two other notable foreign powers (Hydrea, Venice).
+
+### Religion
+
+They're isolationist xenophobic people who believe that they're unique amongst all the people on Aia in that they are immortal. They're reborn after death, like Kain, who is reborn (very quickly & abruptly) after his deaths.
+
+"An ecosystem of gods."
+
+There's a twintails-worshiping cult that was originally encouraged & fostered by Kain. Yes, the hairstyle. They have a dedicated arts to the twintail spirits they foster & manage. They insist on the existence of a deity they call Solar, who may or may not be real.
+
+> Note that while faith *can* warp reality on Aia, it takes a certain critical mass to create a god ... or an originating mortal soul.
+
+#### Reincarnation
+
+Glass **renews itself**. The Gods are part of this. The **Gods of Glass** are agents of renewal & rebirth. **Rejuvination** is their prime symbol. Kain's heraldry is the **PHOENIX**. They sing in rhyme & dance to their festivals well into the night because
+
+> WE
+> WILL
+> REINCARNATE
+
+Up until now, every hymn and verse has been cyclical. Ages pass, and all that is fades to dust, but patterns remain, and Glass is the grandest of patterns.
+
+... and so the tremor in society now is that, *we won't reincarnate.*
+
+That's the fear.
+
+The split is between *reincarnationists* and *absolutists*,
+
+The 2-decade-long invasion of every force on Aia to ruin Glass is *unprecedented.* They have *never* had a comparable moment in history, and Kain is *not here to weather the storm with them*. He is playing the fiddle on the Oropolis. The last 200 years is the first time in history that Glass has *not* been ruled by an angel ... but by men, as weak and corrupt and faltering as the rest of Aia.
+
+"Are we really immortals?"
+
+That's the question — and the creeping doubtful terror — of the age.
+
+### Folklore
+
+I don't mean this as in "what are their hymns."
+
+What makes it *attractive as a story?*
+
+I was listening to an Owl City song where he describes the countryside of Minnesota.
+
+> Back home where the corn grows ten feet tall /
+> and every year is measured on the pantry wall /
+
+These people have lives. These people have a legacy. They're extraordinarily proud of themselves. Glass was a godlike Disc-spanning force. Glass was led by a physical god. Glass had everything. Glass was the envy of the world. Every treasure of Aia once flowed into its coffers. The people were free. They were as immortal as Kain.
+
+Kain abandoned them. They grew indebted. They forgot & then lost their basis. They grew anxious. Creditors came calling. The people are impoverished. The ranks of the indentured servants are swelling with formerly free men.
+
+The entire country is burning.
+
+People keep drinking to pretend things are okay.
+
+Imagine what that's like. The festivals are dying out & the spirits are rioting. The demands of a war that's growing more furious than any prior conflict in the *history of the island* are eating the economy. Everyone's a slave, broken, fleeing, or joining General Ram.
+
+What is the character of these people? What do they believe in & rally around? What are their hymns & songs, yes, but also, how do they *see* the world? What are their *slogans* and *truisms*, their tribal memes? What separates them, memetically, from the rest of the world?
+
+And it is the *memes* that matter most extensively. The memetic linguistic barriers that separate the Glassian from the rest of Aia. They *believe in things* that nobody else does.
+
+- We alone reincarnate into *ourselves*.
+- We are guided by the blood & wisdom of the *only* [T/N: known] true immortal on Aia.
+- We are *the most beautiful & pure* people on Aia.
+	- They're porcelain-white, slender & tall.
+- We have the *most beautiful country*.
+	- In fairness, it *is* a beautiful country.
+- Nobody has ever invaded us & they never will.
+	- Which is why the Venetians would rather put you in *debt*. Forever.
+- And our culture!
+	- **Governors**: The subtleties of our plays & entertainment.
+	- **Commoners**: The roar of the bonfires as we roast the House Effigies.
+		- They celebrate the Red Autumn in November.
+	- Nobody has *ever* made finer statuary, pottery, or timberwood structures.
+- The gods themselves crawl in every cup & tree & make themselves our servants.
+	- *Until they don't anymore.*
+- Glass — the rivers run with ruby-crusted sands!
+- Glass — the water-flows off arching rooftop gutter channels!
+- Glass — birchwood sprawls paint the land!
+
+#### Workshopping a bad poem about educational Jesters
+
+> **Below the sconce-slung candle-show,** A
+> The Jester-girls pause frenzied dance B
+> To warn the pupils' rowdy row — A
+> "You mind loose words, or lose your toes, A
+> To dragon-gods and mountain imps C
+> who'd eat them just by happenstance B
+> with no remorse, a grin for woe A
+> borne by the careless kids who'd chance B
+> offense to gods — the Jesters know!" A
+
+// dumb. you're doing tell-not-show. if you want poetic irony, the jesters tell a story *by way of dance*. they do *not* lecture. they *show* error by *demonstration of folly & consequence*.
+
+and the poetry is chaotic because it has no structure. rather, you should break rhythm at poignant moments specifically to draw attention to the VIOLATION OF ORDER. the jesters piss off the god. NO RHYME. return to rhythm. things happen. the reader's attention is drawn to the missing body parts & wounds. NO RHYME. AABB / CCXD / EEFF / GYHH
+
+demonstrate they're not telling past memory by showing, not telling, the consequence in not-directly-spoken language.
+
+---
+
+A Three jester-girls on-stage spin on six feet /
+A a light stumble from a dancer / 
+B voices from the back stage narrate /
+B an ancient story of children long ago
+
+C village girls who laugh and mock the spirits
+C for being silly & impotent before the power of man
+D they laugh and agree, and smiling
+X bites off her toes XX VIOLATION OF RHYME SCHEME
+
+E children's horror in audience
+E spirit pleased in rush/panic by dancers
+F and so the land returns to peace
+F and all's well for the next century — but still some children eye in doubt
+
+G ... and a couple notice the dancers' grace is feigned,
+Y for missing toes XX VIOLATION OF RHYME SCHEME
+	"Three jesters spin on seven toes between them"
+H ... and yet they dance despite this
+H for what else will they do, but teach the lessons that they learnt by blood?
+
+---
+
+## Social Classes
+
+- ==Outlaws==
+	- **3% - Foreigners**: 
+	- **4% - Criminals**: 
+	- **4% - Mercenaries**: Some are foreign; others, native. Some are former Lords; others, beggars. Some are strong, stronger than gods. They're not criminal enough to be outlawed. Everyone pays for their services; they can't afford not to. Not really a class; just a sign that everything's gone *wrong*.
+- ==Slaves==
+	- **5% - Servants**: Hereditary family servants descended from foreigners — most are descended from captives taken home following invasions. Coralers, salamanders, harpies, foreign humans. Strict laws protect their rights, but they aren't considered Glassian.
+		- Position: *Hereditary. Glassians cannot be servants.*
+		- How to enter: *Be captured in war as spoils, or be born to a Servant family.*
+		- How to escape: *Persuade your master, or try to flee.*
+	- **5% - Slaves**: People contracted to work without salary for a number of years. The number has nearly doubled in recent years due to the various disasters & wars. An indenture is a debt & Indentures can be sold. Glassians cannot be Servants, but they *can* become Slaves (voluntarily or otherwise) to pay a debt. The war has provided many opportunities for Slaves to flee their debts.
+		- Position: *Exclusively debt-based.*
+		- How to enter: *Owe debts & either agree to enter or be forced by an Imperial Court into servitude.*
+		- How to escape: *Serve the terms, or try to flee.*
+- ==The Commons==
+	- How to enter: *If you're a Glassian & not a Governor, you're here by default.*
+	- How to escape: *Become a Slave via debt, find a Magician willing to train you, or catch the eye of a Governor.*
+	- **70% - Commoners**: Laborers, farmers, soldiers, entertainers, the impoverished & destitute. Anyone who sells raw labor. Many strive to be Burghers.
+		- Position: *Purely socioeconomic.*
+	- **15% - Burghers**: Entrepreneurs & artisans; the middle & upper economic/mercantile class. Serves as the primary source of new Magistrates.
+		- Position: *Purely socioeconomic.*
+- ==The Magicians==
+	- How to enter: *Be born into a family or persuade a Magician to train you.*
+	- How to escape: *Abandon your duties & become part of the Commons or the State ... but nobody can ever truly flee the gods.*
+	- **1% - Jesters**: The shrine-keeping priests who try to keep the peace between the rest of Glass & the Gods of Glass. Often mistrusted by everyone, but begrudgingly accepted insofar as their negotiation with the spirits is critical to survival. Stereotypically a girl's job, but in truth is evenly split.
+		- Position: *Apprenticeship-based & often functionally hereditary. In theory, open to anyone from any class.*
+	- **N/A% - Magicians**: The various warlocks & god-cults that don't deal with the Gods of Glass. This includes the Solar Cult & most foreign schools of magic. Held to the same standards as the Priests under law — which means that in practice, they are in varying degrees of *continuous* violation of Imperial Law.
+		- Position: *Apprenticeship-based. Open to anyone from any class. Technically illegal, but this is generally ignored.*
+- ==The State==
+	- ==Governors==
+		- How to enter: *Be promoted or elected to the role of a Magistrate. Be born into a House. Somehow persuade a Lord to adopt you into their House — probably with a flimsy bloodline justification.*
+		- How to escape: *Get fired as a Magistrate. Lose a war to another Lord or someone who's allied with a Lord to seize your titles. Or you can abdicate.*
+		- **2% - Magistrates**: The scholar-bureaucracy. All non-Lord government officials who engage with or act under the Imperial organs. Alchemists & book-printers must legally be companies managed by a Magistrate.
+			- Position: *Theoretically at-will & position-based. In practice, Magistrates command allies among the Lords & Burghers, popular opinion, & legal rhetoric to retain what is often hereditary power comparable to the Lords.*
+		- **1% - Lords**: The scholar-warrior military. All of them trace their bloodlines patrilineally to Kain through his many bastard children over his two millennia of rule & derive their land claims from this assertion of privilege.
+			- Position: *Hereditary & male-only (by common law; exceptions exist). Tied to cities as capitals, often transferred, traded, or taken via small wars.*
+	- **N/A% - Imperial Family**: The current ruling family, descended from the Saint Emperor.
+		- Position: *Absolutely patrilineally hereditary.*
+		- How to enter: *Be born into the Imperial House.*
+		- How to escape: *You cannot.*
+
+## The Jesters
+
+> off-kilter unreal rural birch-wood lands in light, airy stilt-built houses on the pine-staffed misty salt-washed cliffs
+> 
+> armored forts & marble-jade-lined **rainbow autumn courts** on basts of porcelain clays
+
+The psychological and societal role of a clown is to serve as a warning, and their function is very closely tied to the mechanics behind a witch doctor's practice. A witch doctor will don ridiculous masks and dance, flail, drink, to draw out a spirit of hysteria by being *even more* hysterical. The mask is an entity. The Jester wears masks.
+
+Clowns are similar, relying on similar mindsets but they serve a different purpose - their job is to warn people about excess, and provide a target for relief of stress. "Look at that idiot." Angry clown, sad clown, trickster clown, oblivious clown. Clowns for spirits.
+
+Clowns to draw the spirits.
+
+Glass as a fey-like land — as its people know it.
+
+Glass as a forbidden fantasy, a dance of light and color amongst the falling blade of civil war. Mynone as a hidden kaleidoscope of spirits in the woods, a light and brlliant contrast to Cascadia's monster-in-the-woods. In Mynone, the monster is in your house; in your drink; in your mind. In Mynone, the monster is smiling, dancing, dressed in rainbow (or general's ribbons), leading your children away — away to a feast, or to the war.
+
+Glass cares about **purity**. It cares about elegance, but it is a *strongly excessive* society. It demands **rigorous grace** in the same breath in which it demands an **uproarious party**. Glass is drunk, even in its twilight hours, on the remnants of centuries of sheer abundance provided by a literal God-Emperor.
+
+Glass demands **entertainment**. The gods want it too. The Jesters provide, if only from obligation. Guard the shrines. Perform the dance. The smile & laughter is the rite. The jokes are the stabs in the dark at the souls of men who need to hear the warning — to see the warning of the fool who falls prey to the invisible wolves of the birches at night. And of the wisdom of that fool, to wretch her fate back from the jaws of the gods.
+
+The purpose of a mask amongst the Glassian Lords is to adopt the spirit you must hold to lead society. The purpose of a mask amongst the Glassian Commoners is to adopt the spirit you must hold to be in society.
+
+The purpose of a mask is to hold a spirit. The purpose of a Jester is to hold many masks.
+
+## Artisanry
+
+Pottery, stoneworking, statuary, prose & verse. By far the most important is *verse*, and more broadly *linguistics*. Glassians write elegant calligraphy & literature is a popular domestic industry. So too are plays & theatre, which often incorporate dances.
+
+Glassian themes are often self-referential & alliterative. Glassians see the world as cycles of reincarnation.
+
+# Axioms
+
+There is an advantage to making your world "like Earth, but with just one addition." Every axiom you change shifts the entire balance of power radically.
+
+## Aia - Disc-wide
+
+### Intelligence
+
+The four sapient, civilized species are the *humans*, *harpies*, *salamanders*, & *coralers*. All other races are *unintelligent* or *uncivilized* — in that their institutions are at best tribal & local to their region of habitation, & that their qualities or characteristics makes them unpredictable or dangerous to introduce into society in such a way that they exist on the periphery if at all.
+
+And we'll note that it's a stretch to call the harpies civilized, but at least they have petty kings & can work alongside the other three races.
+
+### Measurements
+
+- Aia is a flat disc measuring ~2,000 miles in diameter.
+- On flat terrain, you can see 10 miles (unobstructed by forests, hills).
+	- Hills: 20 miles.
+	- Mountains: 40 miles.
+	- Peaks & top harpy flight: 80 miles.
+
+Aia is not Earth.
+
+Case in point: **Aia is a flat disc**. You can see *10 miles* to the horizon on flat terrain. With a hill, 20; with a mountain, 40; from a peak, 80. Real-world fog of war is predicated on the notion that the horizon & your absence of *flight* limits observation to around 3 miles to the horizon. Militaries are forced to acquire scouting instruments that enable vision. In Aia, not only is the Disc flat, but you can hire harpies (p. @) that secure a 5-mile height advantage (equivalent to Everest, your 80-mile visibility) with trivial ease. **You don't have to fight if you aren't going to win. You can see every army**. Harpies are *everywhere* in small numbers, restricted by their hunter-gatherer tendencies. This applies to everyone.
+
+### 2× Medieval Population Capacity
+
+We assume approximately a 10:1 split between developed & peripheral hexes for a total density of ~24 people per square mile. This is twice the real-world medieval standard on the basis of the impact of gods & magic.
+
+- **Developed**: ~1,000 people per 5-mile square at ~40 per square mile.
+- **Peripheral**: ~500 people per 5-mile square at ~20 per square mile.
+
+We assume that in a *stable equilibrium*, Aian *divinity* & *magic* plus *predation from dangerous native wildlife* changes the rural-urban balance to approximately a 60% rural, 40% urban split. The primary causes are:
+
+- **Reduced spoilage** (preservation magic)
+- **Increased yields** (harvest gods)
+- **Efficient distribution** (harpy messengers coordinate supplies)
+- **Urban spirits** (improving sanitation & health, preventing starvation & disease)
+
+This is dependent on **cooperation of native gods** (thinking beasts who offer support in good times in exchange for sacrifices & surplus) & **magicians** (in extremely limited supply).
+
+In cases of crisis, effective population drops ~25% as funding for festivals & divine offerings plummets. This creates an accelerating crisis that drives famine & other failures.
+
+#### Corollary: Surplus Elites
+
+Huge volumes of urban surplus means surplus elite production. Literacy rates are likely rising dramatically. Literacy enables standardization & mass mobilization — a general draft. Nationalism may be coming soon — so is industrial capitalism.
+
+### Capital City Ratios
+
+The ratio of total population to capital occupancy varies based on the historical structure of the realm.
+
+- **Imperial** capitals are around 1% to 2% of their total empire's population.
+- **Kingdoms** are closer to 5% to 20%.
+- **City-states** are 10% to 30%.
+
+### Impact of Levels on Military Capacity & Aristocracy
+
+A single personally competent Leader is a terror on the battlefield. A Level 10 king who earned his position through relentless combat has: 
+
+> ***20 Power** (Level 10 + 2 human HD + 8 from eating great beasts) ×*
+> ***2 Armor** (plate armor) ×*
+> ***12 Damage Bonus** (16 damage per strike, 3 strikes assumed from Features)* ×
+> ***11 Features Bonus** (assumed 10 from Class Features, 2 of which are irrelevant to combat & 2 of which are included in the Damage Bonus as the source of extra strikes, plus 2 that were granted from eating monsters)*
+> *= 5,280 BR.*
+
+A longswordsman in chain has 5.25 BR (2 × 1.5 × 1.75 × 1). A gentleman (knight) with a Family (therefore Level 1) with the same equipment has 15.75 BR (3 × 1.5 × 1.75 × 2).
+
+The Level 10 king is worth 1,000 green human recruits with good gear, or about 335 knights/professional Level 1 soldiers.
+
+Aristocracy becomes Wuxia. But a cycle of instability sets in. **Inheritance grants no capacity**. You only gain Class Features from taking a Faction from 0 to 10 through struggle & war, not from inheriting it at 10.
+
+**All kingships produce constant low-level borderlands warfare to try to level their heirs**. This is also the source of hunting lodges — if your son can eat a great beast, he may gain monstrous powers to make up for his lack of personal experience on the battlefield ... or he might turn into a lion.
+
+**Ritual warfare is institutionalized across all of Aia, in every society**. It may take many forms:
+
+- Annual border raids;
+- Seasonal campaigns for young nobles;
+- Petty rivalries escalating over the chance to blood your heirs;
+- Hunts & hunting rare beasts as noble pursuit.
+
+And it has many utilities:
+
+- Generates strong heirs suitable for succession;
+- Perpetually employs intelligence assets like harpies;
+- Captives produce slaves, who are a labor force;
+- Constant combat exhausts Subfactions who would otherwise be disloyal.
+
+Peace is always temporary. Everyone is preparing for war at all times because anyone whose heirs are incompetent in war will fall behind when they come to inevitable blows with their better-prepared neighbors ... but nobody can hold a peace forever, even if they win.
+
+### Society
+
+**The typical evolution of a non-Glass society is towards Aztec Flower Wars**. This isn't just a military thing; it's a broad-scope optimization strategy that you also see across every other Bronze Age (pre-Christian) civilization from Hindu kingdoms to the Pagan Norse. Every noble on Aia needs his heir to fight in war to be capable enough to succeed him, or else he will be overrun by other nobles who more happily prepared for war. Every noble will tell the stories required to justify this. The optimization formalizes itself into institutions that justify expansionism — and where that isn't possible, creates infinite internal low-level conflict, preferably in the forms that stabilize a ruling dynasty the best.
+
+### Impact of Cheap Omnipresent Scouting on Continental Warfare
+
+**Aia is accelerating towards an industrial era at exceptional pace**. 
+
+1. Harpies provide omnipresent & cheap surveillance in limited quantities to forces of any size.
+2. This means battles cannot be pitched or forced, because you can *always* see enemies coming.
+3. This makes fortifications & defensive barriers critical, as controlling *where* battles can happen & under *what circumstances* becomes paramount.
+4. Massive investment in fortifications causes an equally-intensive investment in siege engines.
+5. The engineering requirements of siege warfare — both via fortifications & via engines — requires vast engineering corps.
+6. Not only are warfare innovations applicable to civilian life, but engineers in their spare time will actively seek to apply them.
+
+#### Fortifications Density
+
+**Aian Settlements will almost always build walls of even a crude nature**. Even if that's just a palisade. Two driving factors:
+
+- **The wilderness is comically dangerous**. There are *actually* beasts that can turn you to stone at a glance. There are *actually* dragons. There is *actually* murderous forest-spirits that will coordinate to protect themselves. There are *actually* imps in the mountains. It's not just wolves you have to be afraid of — there's plenty of youkai to go around & keeping them out is important.
+	- Farming is maybe a risky business; even small farming hamlets will be defensively-oriented.
+		- Does this mean that commoners will be well-armed & organized as a rule?
+- **Surveillance makes knowing threats easier & everyone wants to try to force engagement on agreeable grounds**. Surprise is difficult with big armies. The primary threats are small bandits or...
+
+#### Special Operations Forces
+
+Kings & exceptionally capable hunters/mercenaries are individually exceptionally rare & inevitably important because personal power is intimately married to position & heroic feats. But when these people *do* exist, they'd be ludicrously dangerous in a siege-focused environment by virtue of potentially being able to crack open fortresses by themselves.
+
+The real stranglehold is that power is derived mostly from leadership & monster-hunting. That means you will inevitably have a severe scarcity of truly excellent combat talent, most of whom will be preoccupied as officers.
+
+### Decentralized Mail Service
+
+**Harpies serve the role of complex & uncontrollably decentralized mail services**.
+
+1. Harpies are omnipresent in the wilderness. They're just as happy living in the woods as among people.
+2. Even the wilderness harpies will ferry messages.
+3. It takes at most a week for a message to be delivered by harpy from one end of the island of Glass to the other.
+
+Empires cannot control the flow of information through language. Kings cannot prohibit vassals from plotting in secret via managing the flow of letters.
+
+Greecian-style torch relay networks may be used by developed empires to transmit messages at lightspeed, but there's tremendous cost involved in building & maintaining that network & encryption is required.
+
+### Settlement Patterns & Racial Distinction
+
+Interestingly, **I don't think we'd see a lot of multiracial Settlements**. It's theoretically possible that salamanders or coralers would live in a human city, but both have unique environmental demands:
+
+- Coralers don't feel secure away from (warm) water.
+- Salamanders *must* live at least partially underground.
+
+Human cities aren't built to accommodate their concerns. Likewise, both coraler & salamander cities are so unlivable for humans that their intrinsic nature counts as natural fortifications.
+
+In comparison, harpies can adapt to almost any surface environment, provided that a supply of food is reasonably uninterrupted ... but their own villages are generally tipi-style mobile tents set up in the wilderness, which appeals to no other race.
+
+Human cities might end up being a natural congregation point just because they're meeting grounds that naturally accommodate every species.
+
+This also means that **humans are unique in having exceptionally assailable dwellings** ... except that they're building gigantic curtain wall fortifications everywhere, since they're so busy killing each other & can't force an engagement in any way other than at "must-be-attacked" chokepoints.
+
+### Windguns & Fortifications
+
+The demand for siege technology led Venetian engineers to **steam power** as the only cost-effective means of accelerating projectiles beyond the achievements of kinetic torsion & loaded springs. Pneumatics in turn enabled **pressure vessels**, **seals**, **precision boring**, **valves** & **pumps** as critical technology.
+
+This leads directly into a critical development of recent warfare: the **windgun**, a small man-portable pressurized rifled air-gun built of wood & iron capable of firing lead projectiles at somewhere around 1,000psi. Windguns are:
+
+- **Relatively expensive.** A single gun costs somewhere around half a year's wages even for the Venetians.
+- **Not effective against castles.** This means decentralization is still largely in effect as kings cannot reliably dismantle fortifications of vassals.
+- **Not as effective against armor.** Even a 800psi round has relatively little energy density compared to a musket shot. Windguns are *dangerous* but plate armor is still effective enough against them to justify keeping it around. Heavy cavalry is not obsolete.
+- **Demanding in maintenance.** Valves have to be lubricated & the exchangeable gun-butt air reservoirs are relatively fragile. This is triply so due to their expense; one gun is three times as expensive as a bow & much fussier.
+- **Difficult to refill.** Reservoirs take around an hour of hand-pumping.
+- **Exceptionally quiet & stealthy**. Windguns produce no smoke & have a *far* quieter report; sniping is one of their most important & valuable roles.
+
+Armies in Venice & other adopting regions have adapted accordingly:
+
+- **Fortifications now include pressurizers.** Air pumps are built using waterwheels & windmills as well as other mechanical solutions in order to expedite tank-filling machinery. Some ships now include such devices by default. The pump machinery is itself expensive to maintain, so supply chains & competent gunsmiths are in hot demand.
+- **Armies now require wagon logistics.** Wagon-mounted windgun pumps are essentially a requirement for any army wielding them.
+
+The people best-suited to establish pneumatic-industrial infrastructure are highly urbanized city centers who can summon the supply chain integrity & specialist expertise required to maintain windgun armies. Rural regions & isolated baronies who have been introduced to windguns are usually unable to manifest the infrastructure to maintain these weapons; consequentially, they mostly rely on local spirits or magic.
+
+This is a strong pressure towards city-state republicanism that simply doesn't scale to national democracy or general drafts.
+
+### @ Gods & Spirits
+
+### @ Immortals & The World
+
+Nothing in this section is common knowledge.
+
+The Aether is actually the *uncreated void* beyond the edge of the universe (the "celestial sphere", upon which is the stars). It is beyond time. It is what is external to the universe.
+
+There is only one universe, **ever**. It continually recreates itself, over and over. The center of Aia is the Eye of the universe. *That* is what is at the heart of the hurricane in the center of the Inner Sea. It is inactive right now — a crackling impenetrable blacker-than-night sphere — but it still commands the maelstrom & storm.
+
+Things that enter into the Eye at the end become part of the seed for the next universe. Normally, this is lethal. The immortals broke that. In positioning themselves "beyond the cycle of life & death", they unknowingly embedded themselves into the Eye. This also put them into an uncomfortable position: They have an ability to influence the structure of the next universe.
+
+Much of Aia's circumstances was set in motion at the outset of the universe, carved out piece-by-piece. There is no god supporting the system of gravity that forces orbits around the Telluric Veil. No god commands the Sun.
+
+## Glass
+
+### Measurements
+
+Note that a Family, averaged, is ~5 people; husband, wife, one capable child & two dependents.
+
+- **Area**: Approximately ~50,000 square miles. Similar to Hokkaido.
+- **Farmland**: ~17,000 sq. mi
+- **Wilderness**: ~20,000 sq. mi
+- **Dangerous Wilderness**: ~14,000 sq. mi
+- **Estimated Maximum Families**: 81,600 Fam. (~24 per sq. mi of farmland + urban)
+- **Actual Current Human Families**: ~64,000 Fam.
+	- **Wilderness Harpy Families**: 1,380
+	- **Domestic Harpy Families**: 1,280
+- **Capital Population**: 76,000 pop.
+
+The City of Leaves only has 15,200 Families in it.
+
+### Conclusions From Earlier Research
+
+**Politically:**
+
+- Distributed feudalism (Three Houses + vassals)
+- Somewhat antiquated but regenerating military traditions
+- Fortification arms race (due to siege dominance, because of harpy intelligence networks)
+- Intelligence competition (harpy subsidies)
+
+**Militarily:**
+
+- Limited hero-worship culture (Kain suppressed typical Aian tendency for nobility to become Wuxia-esque gods)
+- Siege-focused doctrine
+- Ritualized combat seasons
+
+**Economically:**
+
+- Agricultural base with magical intensification
+- Slave labor for fortifications/armies
+- Tributary extraction (when empire existed)
+- Boom-bust cycles (harpy subsidies unsustainable)
+
+**Religiously**:
+
+- War gods gaining prominence due to civil war
+- Rising temple prostitution for mass human production (Jesters?)
+
+### Structure of Glass
+
+- **Official religious & national stance is that Glassians are free**, & furthermore that *Glassians are equal in death* — through reincarnation.
+- **This status quo was established & enforced by Kain**, an immortal tyrant who *could not be challenged* by anyone who sought to overthrow him. This force of will sustained a free perspective on the world that couldn't be developed elsewhere, because ...
+- **Everywhere else on Aia is caught in the Bronze Age optimization cycle**. Every other god & king on Glass is subject to mortal power concerns — evolutionary pressures to optimize the cycles of fertility, war, & slavery. This extended not just to temporal rulers but *also* to gods, who (being little more than super-powered & sometimes ageless mortals themselves) were no better than their contemporary rulers in requiring maximum possible extraction of labor from increasingly dehumanized serfs & peasants to compete in war.
+- **Worse, the impact of conquest on personal power creates a cycle of Flower War-style low-intensity conflict**. Because Men only grow powerful when exposed to war, most societies advance towards ensuring a constant state of conflict with neighbors in order to avoid producing weak heirs whose rule can be challenged by internal or external enemies. The most accomplished conquerors are capable of *fighting a thousand swordsmen toe-to-toe & winning single-handedly*. Their heir has no such power unless he replicates his feats.
+- **The Commons loved Kain**. Kain was not a *moral* or *lawful* man — he was a flippant, arbitrary murderer — but he was a stabilizing force with no dependencies & little to ask from his subjects other than that conflict be kept low. The common man, with nothing to gain from ruling his fellow Glsasian, finds freedom in the yoke placed upon his masters...
+- **But the magistrates hated him**. For every ten thousand commoners, an elite of exceptional administrative & military talent was being exposed to the arbitrary & absurdist rulings of a man focused on keeping them chained with as little personal effort expended as possible. Every single lord plotted silently against Kain — silence for fear, but of intent nonetheless.
+
+### Kain
+
+Kain is screwed up. Human psychology is not made to last tens of trillions of years. He can only remember a small portion of his own history, but it's a kaleidoscope of every pattern imaginable compressed into a nearly perfect predictive engine. He can see everything coming. He has heard & done everything.
+
+Knowing the shape & nature of yourself — your own emotions — does nothing to let you level their impact upon your psyche; they *are* your psyche. Kain is deeply aware of every way in which he fails & is unable to stop or correct it.
+
+The handful of human true immortals have a habit of fluctuating over centuries-long cycles between mindsets & behaviors. Kain is the only one who regularly tries to build recognizably human empires. The others are normally reclusive & hard to find.
+
+#### Statblock
+
+|     **Stats** | Whatever he needs.                                                                                                                           |
+| ------------: | -------------------------------------------------------------------------------------------------------------------------------------------- |
+|     **Group** | Solo                                                                                                                                         |
+|     **Desc.** | A foreign-looking pale-skinned blonde resembling no human race on Aia, dressed in finest silk.                                               |
+|     **Wants** | You cannot offer him anything.                                                                                                               |
+| **Intellect** | A reasonably smart human with *unlimited* wisdom & a crippling resignation.                                                                  |
+|  **Morality** | Morality is for peers in power, and only five in Aia are his equals. What king can be moral to a peasant — or likewise, a peasant to a king? |
+
+- **Hourai Immortal**: You are a *true immortal*.
+	- Your body replaces limbs, implants, Mutations, Wounds, new HD or Racial Features, & other abnormalities to perfectly restore itself to ordinary functionality within 24 hours of any damage or change being inflicted.
+	- If killed, in 1d6 Rounds, you immolate into ash & reconstitute instantly in a burst of light & cold flame at a place of your choosing that you have prior visited.
+		- *Kain has visited every single location in Aia's tiny universe.*
+	- You are always conscious, even in death, & as a Free Action may choose to die & begin resurrecting.
+	- Your soul is not in your body; it is beyond the cycle of life & death. No effect targeting a soul works on you.
+	- You are still subject to all natural needs & vulnerabilities & have no special resistances to Damage, but you regenerate fast enough that only an absence of air will kill you.
+	- *This Feature can never be copied, borrowed, stolen, given, removed, inherited, overruled, etc. by any means whatsoever.*
+
+Kain automatically kills anyone who inconveniences him in a deliberate effort to kill him or harm his priorities. He otherwise tries to avoid violence. He prefers immolation, but will use flashy or discrete methods if required to avoid undesirable consequences.
+
+Kain does not have stats or a spell list. If you think you need one, you're using him wrong. Kain is not a monster to defeat. His role is to be persuaded to stay on his mountain, or to return to his throne.
+
+If he's led into fighting another true immortal (i.e. the Lunar Princess) & the GM is *in doubt* about if the argument can be resolved, then the Disc is shattered into hundreds of islands, the Moon becomes an asteroid field, a second Moon is created in the process, & a new Age begins. Restart the campaign with surviving cavemen *Grug*, *Thag*, et al.
+
+#### Persuading Kain
+
+Kain is absolutely aware of every cycle in history. He has seen the rise & fall of every nation that ever existed, bar the rounding error of those presently around.
+
+The only people who really care about doing this is General Ram's Revolt, but a PC might pick up the same goal at some point.
+
+@ WORKSHOPPING
+
+- promises made to glass re: freedom
+	- motivation: dim sense of responsibility for his own bastard child at the time & extreme cognizance of the general trajectory of all of Glass
+
+the entire governorship, lords & magistrates alike, are descended from Kain through *some* sort of tangled lineage (he's been having mortal kids on an irregular basis for ~1,050 years) along with much of the body of Glass
+
+when kain abdicated, he massacred most of his court at the time & left the throne in the hands of his most recent son, absentee. "You're my son, so you rule now."
+
+- fight between governors & kain → lost temper & killed them all → ugh, i've done this a million times before, let's just see if they can take the preparations i did for them & last longer than the rest & fuck off for a while
+	- ==he'd know they'd fail==. he'd know he'd be losing his temper & patience at this time, too, if that was a pressure point — exhaustion out of repetition. Glass might be one effort of hundreds to overcome the ennui of being a permanent shepherd. Who knows how many cycles of chaos on Aia Kain has overseen? Aian historical records only start from around the emergence in Year 0–100.
+	- ==he may have had a plan in place specifically for this==. a stupid, ludicrous, recursive plan.
+	- ==he probably doesn't care about Aia being a deathtrap==. "yep, this shit again."
+	- ==he probably resents being depended upon==. he cannot be an omnipresent cosmic force. he isn't Jesus Christ & definitely isn't God. even insofar as he builds, he knows that it all dies as soon as he leaves. in this sense, he may be resigned to that fate.
+	- ==his promises may be a point of leverage== insofar as he promised to his children when glass was founded that he would protect him.
+		- ==he wouldn't have done this without a way out==. it's not possible for him, or any immortal, to scopelessly intervene in the world without setting themselves up to betray the people they support. humans will optimize around the dependency of proximity to an immortal without considering the consequences for their descendants. self-domestication. (see: wolf → dog, human → post-AI human)
+			- ==he keeps trying anyways==.
+- maybe we should leave it publicly unknown how the Autumn Massacre happened — he *killed all of the direct witnesses* & any corroborating events are fragmented & self-serving, Rashomon-style.
+	- Gather clues as to how it happened → try to guess when you actually go to confront him? dangerous game! he's not gonna murder you for trying but you'd have to climb & fight through the Oropolis first.
+
+maybe if a faction leader fights their way through the Oropolis & appeals to Kain on the basis of being his child, he'll say "yeah, okay. i'll write you a letter saying you're the king now." but i'm not sure why he'd do this? from his eyes, they'd be just as damned as any mortal king, and subject to the same pressures. if they came back to the Oropolis hoping to lean on his power to back up a claim ... ?
+
+> "Yeah. You can be king, if you can win & survive. At least for a few decades. Maybe you can go on a crusade overseas & eat one of those ageless foreign rulers, & extend it up to a few centuries before someone does to you what you did to the last guy. I'll write you a letter saying I approve, so long as you keep them free."
+
+it's not appealing for a PC to get that far hoping for a strategically significant endorsement only to get that. "If your players buy into the premise, they'll be quite angry."
+
+His weakness is a dim human emotion.
+
+### Harpy & Coraler Architecture
+
+## Coraler
+
+- **Slurs**: Suckers, seasuckers, "those underwater fuckers," "the Inkan Empire"
+- **See also**: Sucker-punch
+
+**Coralers dominate all maritime trade control**. They are communal, violent, amphibious octopus-adolescents who have the *only* viable naval stealth (see the flat discworld problems; every ship can see 25 miles around) & complete command of the Inner Sea's coral reefs, where they build their homes.
+
+@ To put in casual terms, they tariff the fuck out of you and you can't do ANYTHING about it. What're you gonna do? Shoot at the WATER? give us 25% or we put 10,000 holes in the hull.
+
+**A stark-white spiked shell sits on an atoll like an iceberg gone too far south**. A small port on one side, a hideously overbuilt gatehouse into the shell, & a handful of square-ish towers painted intermittently with bright colors stabbing through its upper layers are its only adornments. Barnacles, salt buildup, & hastily-patched cracking plaster marks the tidal line. The shell is surrounded by brightly-colored anchored floating plantations, submerged during crisis by ropes pulled from below. Beneath the waves, color ripples & flows through an untouchable reef like spilt oil on the surface. At night, eerie rainbow glows fill the sky from new murals painted by day.
+
+### Appearance
+
+- Four feet tall, twice as mean.
+- Prehensile tentacle hair, normally kept wrapped. Octopus clans have just 4, but cuttlefish & squid clans have 6.
+- Tiny suckers on the hands & feet aid grip underwater.
+- Ringed color-patches on the peripheral cheeks & limbs indicate mood by shifting color/transparency according to current ink color.
+- Mouth is somewhat *too wide* for a human. Single-notched thick opalescent beak instead of teeth. A grin like the devil himself was slicing you up for dinner.
+	- Err on the side of moé & not so much creepy.
+- Eyes are a deep black, with white horizontal pupils.
+
+### Amphibious Clothing
+
+**Clothes absorb water & get in the way of swimming**. Coralers wear *wraps*, & minimally at that. Fish leather, oiled linens, bark cloth & **sea silk** — silk fibers from *mussels*, an expensive luxury. Their daily clothes resemble swimsuits & islander dress.
+
+- Their ornamentation is **coral, pearl, & shell jewelry**, augmented with gems.
+- When they use metals, they prefer **bronze** & **copper** as it doesn't rust like iron.
+- The same **nets & meshes** they use for carrying & catching is also used in clothing & as decorative elements on architecture.
+
+**When they're seen on land, they dress up in ridiculously overblown emulations of land-dwelling merchants**. This is partially to show off, partially out of confusion, & partially out of mockery received for otherwise being "nearly naked." But they never dress heavily among each other.
+
+### Iceberg Fortresses
+
+**Coralers build cities like if beaver lodges were icebergs**. They *need* the surface — you *cannot* forge metal underwater — but almost all trade goes in & out through the ocean, with a minimally-sized heavily-guarded port entrance for everything that *absolutely cannot touch seawater* & can't be packed into a watertight crate. Beneath the low white hulking mass of the fortified shell, a sprawl fifty feet deep & a hundred times as wide spills out through a cultivated coral reef containing all the dwellings of the Clanners.
+
+**Floating gardens grow their fruit, anchored to reefs**. They're pulled underwater in case of storm or siege, & are defended heavily — Coralers can only herd & farm so much aquatic life. Their population depends on massive fruit plantations.
+
+Bio-luminescent ink mixed with preservatives & stored in bottles are the dim lanterns of underwater cities. The Coralers can't produce enough to serve like lightbulbs, but there's enough to serve like candles. **An eerie rainbow glow drifts up from the depths** from underwater highways.
+
+Primary construction resource is **shellcrete** — crushed shells mixed with lime — painted a firm white, mixed with **coral blocks** carved from reefs, **timber piles** for surface stability, **volcanic stone** for color & durability, & **ceramic clays & porcelains** for anything that has to be dry.
+
+Waterproofing is performed extensively with pitch/tar from trees, oiled leather, & white mortar.
+
+**Nobody can invade the Coralers except other Coralers**. Maybe you could poison them ... & kill everything else in the Inner Sea in the process.
+
+## Harpies
+
+**Harpies have a low population**. They cannot sustain an agricultural civilization; they don't have the brainpower to prepare for the future (i.e. WINTER) & prefer to use their natural talents as hunter-gatherers.
+
+- **Agricultural civilizations** support 1 harpy Family per 50 human/Coraler/salamander Families — they can only spend so much surplus.
+	- Does this account for rural population?
+- **Wilderness** supports 2 harpy Families per 25 square miles (per 5-mile square). Extremely hostile terrain (i.e. tundra) may only support 1 Family per 25 square miles (per 5-mile square).
+	- We are accounting for some wilderness being more dangerous.
+
+**Harpies blow out the fog of war**. They can fly 50 miles in a day if unburdened (losing ~6.25 miles per 1# of carried weight) & achieve mountain peak reconnaissance angles (80 miles of visibility). An army employing 10 harpies can maintain a *massive* (if not unlimited) visibility net.
+
+**Only around ~20% of the entire harpy population is military-ready**. These are the young male harpies suited for flight, reconnaissance, & fighting who have enough discipline & perhaps even foresight to manage a role in a military organization.
+
+**Harpies would be subsidized on the basis of their strategic significance**. Controlling a flock of harpy messengers & scouts means you can see the entirety of Glass & all major troop movements with *at most* one week of delay end-to-end, limited only by the memory & journal capacity of a single harpy. And when you buy a harpy, you aren't just buying one — you're buying an entire family; you need *5 harpies* to get 1 soldier.
+
+Lords would dump money into supporting a native but unproductive harpy population just to keep parity with their competitors in messaging & scouting.
+
+**Harpies become bandits in winter**. When the food runs out by early December, they rely on tribe & kin ... to help them pillage local human villages they'd otherwise be trading with.
+
+**Harpies become bandits when subsidies run out**. Civil war means surplus runs dry & prosperity implodes.
+
+**This breeds class conflict**. Lords have political & military reasons to want harpies around. Commoners gain few direct benefits & suffer massively over wild harpies. Kings, as story-tellers (stories are the root of all power — via *human design*), would tell stories to get commoners to adopt local harpies & mentally segregate between bandits & dependents. "Our harpies are good, but those harpies are bandits."
+
+**Kings are incentivized to suppress wild harpies, but cannot do it**. Wild harpies are a perpetual access point for decentralized communications outside royal oversight. But! *It's almost impossible to assault them in their natural habitat & wild harpies have strong incentives to trade with agricultural commoners.*
+
+**This all creates monster-fuckers**. Even if humans & harpies can't crossbreed, the combinations of social pressures will result in it being an occasional occurrence — probably looked down upon, if it's not genetically productive, or relegated to the realm of prostitution or other "surplus men" social shame categories. Do harpies pair-bond strongly?
+
+---
+
+## Salamanders
+
+### Random Thoughts
+
+- Their racial BR is deceptive because it's boosted by a high-damage natural weapon (dealing 4 Physical). that's as good as a light melee weapon, saving them 1/4# & preventing them from being disarmed, but ... their 1 HD is actually pretty crippling.
+
+# Design Notes
+
+## Naming Rules
+
+These are rules for naming *things* in your fictional setting. If you are not J.R.R. Tolkien, you are only allowed **five** made-up words.
+
+1. **Memorable**. Must be remembered by English speakers.
+2. **Memetic**. 
+3. **Clear in meaning**.
+4. clear when used in text  
+5. **Pleasant to the senses**. We can extend this into several component factors.
+	- **Mouth-feel rhythm**.
+6. easy to mangle or associate with hypothetical in-world slurs

@@ -1,0 +1,78 @@
+name: Giant Toad
+tags: [amphibian, swamp, wetland, poison, omen]
+summary: "Boulder-sized warty amphibian of mottled grey-green hide with bulging eyes, deceptively quick tongue, and comically unassuming appearance."
+hd: 2
+armor: 0
+damagemultiplier: 1
+size: 5
+weight: 4
+maxload: 3
+speeds:
+  run: 5
+  swim: 30
+group: "Solo / 1d6 congregation"
+desc: "Boulder-sized warty amphibian. Mottled grey-green hide, bulging eyes. Comical, unassuming appearance. Deceptively quick tongue."
+wants: "Prey smaller than itself. A pond to claim. To be left undisturbed."
+intellect: "Dim animal cunning. Waits. Remembers locations and seasonal patterns."
+morality: "Never eats children of any species. Waits until they're older, juicier."
+treasure: "2-in-6 chance of swallowed valuables. Roll on Swallowed Treasures table."
+features:
+  - name: "Frog Tongue (Natural Weapon)"
+    text: "Range 15'; 4 Physical. Counts as melee. If the Strike lands, pull target adjacent to you (or into your mouth if less than half your Size) before dealing Damage."
+    combat: 0.5
+  - name: "Poison Skin"
+    text: "Any non-toad creature that Grapples you (or otherwise touches you) or that you successfully bite must Save or be Poisoned for 1 hour (−1 on all Saves, halved Speeds)."
+    combat: 1
+  - name: "Bound"
+    text: "Once per Turn as a Free Action, leap up to 15' in any direction."
+    combat: 0
+  - name: "Swamp Camouflage"
+    text: "You may always have surprise in a swamp, bog, or marsh."
+    combat: 1
+lore: |
+  Imported to Glass from Inner Sea archipelagos as novelty hunting game by bored Lords. Their populations exploded in coastal marshlands after Coraler invasion disrupted control efforts. Now they're a fixture of the wetlands — and occasionally, a shrine-guardian or omen-bearer.
+
+  Jesters claim the toads bear messages from water-spirits. Whether this is true or convenient superstition remains unclear, but disturbing a toad's pond is considered inviting misfortune.
+tables:
+  - label: "Toad Variants"
+    die: d6
+    entries:
+      - roll: 1
+        max: 2
+        result: "**Gilded Toad**. HD 3, Weight 6#. Golden-yellow hide. Poison skin also inflicts Mind damage. Sought by alchemists. Skin is worth $500 per toad. Roll twice for swallowed treasures."
+      - roll: 3
+        max: 4
+        result: "**Blood Toad**. Crimson skin with black warts. Poison causes uncontrollable bleeding (1 damage per minute until treated). Hates sunlight."
+      - roll: 5
+        max: 6
+        result: "**Spirit-Claimed Toad**. Eyes glow faintly. A ghost speaks through its croaks. Will not attack those who listen patiently."
+  - label: "Swallowed Treasures"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Merchant's purse. 3d6 × $1 in coins, waterlogged trade documents pointing to a nearby Settlement."
+      - roll: 2
+        result: "Jade prayer beads (Value 200 sp). Belonged to a Jester (name carved on a bead)."
+      - roll: 3
+        result: "Intact but ammoless windgun pistol."
+      - roll: 4
+        result: "Child's wooden toy boat with a name carved underneath. The child is probably still alive somewhere. Probably."
+      - roll: 5
+        result: "Random potion, or a bag of alchemical reagents worth 3d6 × $10."
+      - roll: 6
+        result: "Small bronze mirror, tarnished. If polished and willed to activate, shows reflections from the current area of up to one day in the past. Cracks after 1d6+1 uses."
+  - label: "The Toad's Omen"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Three slow croaks, then silence**: A death within three days. The pond marks the boundary where it will occur."
+      - roll: 2
+        result: "**Rapid staccato ribbits**: Betrayal approaches from someone trusted. The louder the croaking, the closer the betrayer."
+      - roll: 3
+        result: "**Deep warbling that echoes**: A spirit grows angry nearby. Appease it before the next full moon or suffer its attention."
+      - roll: 4
+        result: "**Alternating high and low tones**: A duel or battle will occur here within the week. The victor will be decided by water."
+      - roll: 5
+        result: "**Soft, almost musical croaking**: A treasure or secret lies within the pond's vicinity. The toad guards it."
+      - roll: 6
+        result: "**Complete silence when it should croak**: The toad has been claimed by something worse. Leave immediately and do not look back."

@@ -1,0 +1,41 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BookLayout from '../../layouts/BookLayout.astro';
+import Ref from '../../components/Ref.astro';
+
+export async function getStaticPaths() {
+  const moves = await getCollection('moves');
+  return moves.map(m => ({ params: { slug: m.id } }));
+}
+
+const { slug } = Astro.params;
+const entry = await getEntry('moves', slug!);
+if (!entry) return Astro.redirect('/moves');
+
+const d = entry.data;
+---
+
+<BookLayout title={d.name}>
+  <Ref collection="moves" slug={slug!} variant="inline" />
+
+  {d.see_also?.length > 0 && (
+    <section class="see-also">
+      <h3>See Also</h3>
+      <div class="see-also-grid">
+        {d.see_also.map((s: string) => (
+          <Ref collection="moves" slug={s} variant="card" />
+        ))}
+      </div>
+    </section>
+  )}
+</BookLayout>
+
+<style>
+  .see-also { margin-top: 2.5em; }
+  .see-also-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+    gap: 0.65em;
+    margin-top: 0.75em;
+  }
+</style>

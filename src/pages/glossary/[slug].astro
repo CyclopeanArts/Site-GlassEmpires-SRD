@@ -1,0 +1,59 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BookLayout from '../../layouts/BookLayout.astro';
+import Ref from '../../components/Ref.astro';
+
+export async function getStaticPaths() {
+  const terms = await getCollection('glossary');
+  return terms.map(t => ({ params: { slug: t.id } }));
+}
+
+const { slug } = Astro.params;
+const entry = await getEntry('glossary', slug!);
+if (!entry) return Astro.redirect('/glossary');
+
+const d = entry.data as any;
+---
+
+<BookLayout title={d.name}>
+  <h1>{d.name}</h1>
+  {d.tags?.length > 0 && (
+    <p class="tags">{d.tags.map((t: string) => <span class="tag">{t}</span>)}</p>
+  )}
+  {d.summary && <p class="summary">{d.summary}</p>}
+  {d.definition && <div class="definition"><p>{d.definition}</p></div>}
+  {d.related_rule && (
+    <p class="related-rule">
+      See rule: <a href={`/rules/${d.related_rule}`}>{d.related_rule}</a>
+    </p>
+  )}
+  {d.see_also?.length > 0 && (
+    <section class="see-also">
+      <h3>See Also</h3>
+      <div class="see-also-grid">
+        {d.see_also.map((s: string) => (
+          <Ref collection="glossary" slug={s} variant="card" />
+        ))}
+      </div>
+    </section>
+  )}
+</BookLayout>
+
+<style>
+  .tags { display: flex; gap: 0.4em; flex-wrap: wrap; margin: 0.5em 0 1em; }
+  .tag {
+    font-size: 0.75em; padding: 0.2em 0.55em;
+    background: var(--surface-2); border-radius: 3px;
+    color: var(--text-muted); font-variant-caps: small-caps;
+  }
+  .summary { font-style: italic; color: var(--text-muted); margin-bottom: 1em; }
+  .definition { margin-bottom: 1.5em; }
+  .related-rule { font-size: 0.9em; color: var(--text-muted); }
+  .see-also { margin-top: 2.5em; }
+  .see-also-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+    gap: 0.65em;
+    margin-top: 0.75em;
+  }
+</style>

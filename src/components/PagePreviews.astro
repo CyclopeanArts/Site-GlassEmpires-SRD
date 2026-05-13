@@ -1,0 +1,163 @@
+<script>
+  // Page preview popups — Wikipedia-style hover tooltips
+  // Loads /page-previews.json once, then shows popovers on internal links.
+
+  let previews = null;
+  let loading = false;
+  let pending = null;
+
+  const DELAY = 500;
+  const popup = document.createElement('div');
+  popup.className = 'page-popup';
+  popup.setAttribute('aria-live', 'polite');
+  document.body.appendChild(popup);
+
+  let timer = null;
+  let currentLink = null;
+
+  function position(link) {
+    const rect = link.getBoundingClientRect();
+    let left = rect.left + rect.width / 2;
+    let top = rect.bottom + 8;
+
+    popup.style.display = 'block';
+    popup.style.opacity = '0';
+    const pw = popup.offsetWidth;
+    const ph = popup.offsetHeight;
+
+    if (left - pw / 2 < 10) left = 10 + pw / 2;
+    if (left + pw / 2 > window.innerWidth - 10) left = window.innerWidth - 10 - pw / 2;
+    if (top + ph > window.innerHeight - 10) {
+      top = rect.top - ph - 8;
+    }
+
+    popup.style.left = left + 'px';
+    popup.style.top = top + 'px';
+  }
+
+  function renderMarkdown(text) {
+    // Escape raw HTML first (safety), then convert markdown patterns
+    let h = text
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    // Images: ![alt](url)
+    h = h.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<em>[$1]</em>');
+    // Links: [text](url)
+    h = h.replace(/\[([^\]]*)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    // Bold: **text** or __text__
+    h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    h = h.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+    // Italic: *text* or _text_
+    h = h.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    h = h.replace(/_([^_]+)_/g, '<em>$1</em>');
+    // Inline code: `text`
+    h = h.replace(/`([^`]+)`/g, '<code>$1</code>');
+    return h;
+  }
+
+  function show(data) {
+    if (!data) return;
+    popup.innerHTML = `
+      <div class="pp-title">${renderMarkdown(data.title)}</div>
+      <div class="pp-preview">${renderMarkdown(data.preview)}</div>
+    `;
+    popup.style.display = 'block';
+    if (currentLink) position(currentLink);
+    requestAnimationFrame(() => {
+      popup.style.opacity = '1';
+    });
+  }
+
+  function hide() {
+    popup.style.opacity = '0';
+    popup.style.display = 'none';
+    currentLink = null;
+  }
+
+  async function loadPreviews() {
+    if (previews) return previews;
+    if (loading) {
+      return new Promise(resolve => { pending = resolve; });
+    }
+    loading = true;
+    try {
+      const resp = await fetch('/page-previews.json');
+      previews = await resp.json();
+      if (pending) { pending(previews); pending = null; }
+      return previews;
+    } catch {
+      previews = {};
+      return previews;
+    } finally {
+      loading = false;
+    }
+  }
+
+  document.addEventListener('mouseover', async (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:')) return;
+
+    let path = href;
+    if (path.endsWith('/')) path = path.slice(0, -1);
+
+    currentLink = link;
+    clearTimeout(timer);
+    timer = setTimeout(async () => {
+      const data = await loadPreviews();
+      const entry = data[path];
+      if (entry) show(entry);
+    }, DELAY);
+  });
+
+  document.addEventListener('mouseout', (e) => {
+    // Hide if we're leaving a link AND the new target is NOT a link or the popup
+    if (!currentLink) return;
+    const to = e.relatedTarget;
+    if (!to || (!to.closest('a[href]') && !to.closest('.page-popup'))) {
+      clearTimeout(timer);
+      hide();
+    }
+  });
+
+  // Hide on scroll
+  let scrollTimer;
+  window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      if (currentLink) hide();
+    }, 150);
+  }, { passive: true });
+</script>
+
+<style is:global>
+  .page-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    max-width: 22em;
+    background: var(--bg-elevated);
+    color: var(--text);
+    border: 1px solid var(--gold-ui-sub);
+    border-radius: 4px;
+    padding: 0.65em 0.9em;
+    font-family: 'Literata Variable', Georgia, serif;
+    font-size: 0.85em;
+    line-height: 1.5;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .pp-title {
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    color: var(--heading-col);
+    margin-bottom: 0.3em;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+  }
+  .pp-preview {
+    color: var(--text-soft);
+  }
+</style>

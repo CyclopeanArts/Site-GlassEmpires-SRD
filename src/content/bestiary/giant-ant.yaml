@@ -1,0 +1,93 @@
+name: Giant Ant
+tags: [insect, colony, hive, subterranean, glassian-kingdoms]
+summary: "Dog-sized six-legged insects organized into vast colonies ruled by mad queens and scheming princes."
+hd: 2
+armor: 2
+damagemultiplier: 1
+size: 2
+weight: 6
+maxload: 12
+speeds:
+  run: 30
+group: "3d6 × 10 colony / royal siblings & 2d6 soldiers"
+desc: "Dog-sized six-legged insects. Giant ant colonies are the boon & bane alike of the kingdoms where they settle."
+wants: "To slavishly serve the colony."
+intellect: "Entirely driven by pheromones."
+morality: "Serving the colony is morally correct."
+treasure: "100 sp × 3d6 in loose coin & valuables stored within the colony's garbage chamber."
+features:
+  - name: "Ant Mandibles (Natural Weapon)"
+    text: "4 Physical."
+    combat: 0
+  - name: "Ant Armor"
+    text: "Your exoskeleton grants a natural Armor 2 score."
+    combat: 0
+  - name: "Formidian Strength"
+    text: "You are unaffected by encumbrance and may carry up to your full Max. Load without suffering any ill effects."
+    combat: 0
+  - name: "Alarm Pheromones"
+    text: "When you're attacked for the first time, there's a 3-in-6 chance that 3d6 ants who share a colony with you within a 100' radius will converge on your location to attack the source of the attack."
+    combat: 1
+  - name: "Colony Pheromones"
+    text: "You produce pheromones that, when rubbed on people or objects, marks them as part of the colony (for people) or to be carried back to the colony (for objects) by workers or soldiers."
+    combat: 0
+castes:
+  - name: Worker
+    desc: "As default."
+  - name: Soldier
+    desc: "10% of all ants. BR 18, HD 3, Armor 4. Ant Mandibles deals 6 Physical."
+  - name: Prince/Princess
+    desc: "1% of all ants. BR 12, HD 4. As intelligent as a human, but for morality & wants, defines 'the colony' as 'its own needs.'"
+  - name: Queen
+    desc: "HD 12, immobile. One per colony. Tyrannical ruler. Idiotically, slavishly focused on the colony's welfare."
+lore: |
+  Giant ant colonies are the boon & bane alike of the kingdoms where they settle. If they had any diplomatic sense to commit to negotiations, they might be practical partners — but their queens are mad & their princes & princesses dangerous, fickle creatures.
+
+  The average ant has a Battle Rating of 7.26. A regular colony of 100 ants has a BR of 726.
+when_eaten:
+  flavor: "Nutty and slightly acidic, with a texture like damp chalk. The abdomen has a honey-like sac that bursts with sweetness."
+  notes: "Roll a Save. On success, gain the Ant Armor ability (Armor 2) for 1 hour as your skin hardens with a chitinous sheen. On failure, you are overwhelmed by colony pheromones and must Save again each round or spend that round performing repetitive, ant-like behaviors."
+tables:
+  - label: "Ant Emotion"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Yearning.** Confused, lost the colony or its job. If isolated, latches onto the first colony-marked creature it encounters."
+      - roll: 2
+        result: "**Spiraling.** Keeps repeating the same behaviors over and over."
+      - roll: 3
+        max: 4
+        result: "**Working.** Knows exactly what it's doing. Stay out of the way."
+      - roll: 5
+        max: 6
+        result: "**Alarm.** Something's spooked it. Roll another encounter."
+  - label: "Royal Ant Goals & Problems"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Assassinate the idiot queen so that I can step in as the new one."
+      - roll: 2
+        result: "A princess preparing for a nuptial flight needs resources and territory to found a new colony. Will trade tunnel maps, troop counts, and the colony's food-store locations for protection during the vulnerable founding period."
+      - roll: 3
+        result: "We know there's a spider in the colony pretending to be an ant. There might be dozens of them. We can only see the chemicals. Find and kill them. Please."
+      - roll: 4
+        result: "We want to broker a peace with the neighboring colony, but the soldiers and workers won't stop attacking each other; they only see enemy pheromones! Please negotiate for us. Also, figure out how we can trust you. Because we don't."
+      - roll: 5
+        result: "We can't make tools and the lower castes wouldn't know how to use them. Please make us mining or farming tools that we can use."
+      - roll: 6
+        result: "A prince has heard that he may die after mating. He and his princess want a way around it. They'd pledge allegiance to someone who can find a solution. 2-in-6 chance they'd honor this promise without force behind it."
+  - label: "Ant Treasures"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Royal Jelly.** You count as a queen for a single colony and can command with pheromones (now produced naturally) or verbal commands. Most ants are like stupid, untrained, slavishly loyal laborers and thugs. They cannot learn much."
+      - roll: 2
+        result: "**Spare princess.** She's too much trouble. If she listens to you and survives, we'll give her a prince when you return in 5 years."
+      - roll: 3
+        result: "**Truffles.** Grown in a farm. Delicious and rare. $100 for a 1/4# box and they have enough for 3d6 boxes. A colony can grow 3d6 × 10 boxes per year."
+      - roll: 4
+        result: "**Honeypots.** Specialized ants with abdomens bloated to the size of yoga balls. Serves as living, walking larders and grazes for food. A honeypot is horrifying, but eliminates the need for a survival kit for 1 person wherever plant life is found."
+      - roll: 5
+        result: "**Concentrated pheromones.** Alarm, colony, or dead chemicals in membrane-containers, set aside by nobles with special needs."
+      - roll: 6
+        result: "**Underground Intel.** Detailed charts of local aquifers, mineral deposits, tunnel geography and ruins."

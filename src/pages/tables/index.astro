@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import BookLayout from '../../layouts/BookLayout.astro';
+
+const tables = (await getCollection('tables'))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<BookLayout title="Tables">
+  <h1>Random Tables</h1>
+  <hr class="rule-divider" />
+
+  {tables.length === 0 ? (
+    <p class="empty-note">No standalone tables written yet.</p>
+  ) : (
+    <ul class="table-list">
+      {tables.map(t => (
+        <li>
+          <a href={`/tables/${t.id}`}>{t.data.name}</a>
+          <span class="die">{t.data.die}</span>
+          {t.data.tags?.length > 0 && (
+            <span class="tags">{t.data.tags.map((tag: string) => <span class="tag">{tag}</span>)}</span>
+          )}
+        </li>
+      ))}
+    </ul>
+  )}
+</BookLayout>
+
+<style>
+  .table-list { list-style: none; padding: 0; }
+  .table-list li {
+    display: flex; align-items: baseline; gap: 0.6em;
+    padding: 0.4em 0; border-bottom: 1px solid var(--border-subtle);
+  }
+  .table-list a { font-weight: 600; color: var(--link); }
+  .die { font-size: 0.8em; color: var(--text-muted); font-variant-caps: small-caps; }
+  .tags { display: flex; gap: 0.3em; }
+  .tag { font-size: 0.72em; padding: 0.15em 0.45em; background: var(--surface-2); border-radius: 3px; color: var(--text-muted); }
+  .empty-note { color: var(--text-muted); font-style: italic; }
+</style>

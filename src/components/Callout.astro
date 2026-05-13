@@ -1,0 +1,55 @@
+---
+// type: 'gm' | 'rule' | 'example' | 'hazard'
+// heading: optional override; defaults to the type label
+const {
+  type = 'gm',
+  heading,
+} = Astro.props;
+
+const defaults: Record<string, string> = {
+  gm:      'GM Note',
+  rule:    'Rule',
+  example: 'Example',
+  hazard:  'Hazard',
+};
+
+const label = heading ?? defaults[type] ?? '';
+---
+
+<div class={`callout callout-${type}`} role="note">
+  {label && <div class="callout-heading">{label}</div>}
+  <div class="callout-body">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .callout {
+    padding: 0em 1em;
+    margin: 1.2em 0;
+    border-radius: 0 0.25em 0.25em 0;
+  }
+  .callout-heading {
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 1.25em;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.35em;
+  }
+  .callout-body {
+    font-family: 'Literata Variable', serif;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  /* Per-type color via CSS custom properties */
+  .callout-gm      { background: var(--callout-gm-bg);   border: 2px solid var(--callout-gm-bdr); }
+  .callout-rule    { background: var(--callout-rule-bg);  border: 2px solid var(--callout-rule-bdr); }
+  .callout-example { background: var(--callout-ex-bg);    border: 2px solid var(--callout-ex-bdr); }
+  .callout-hazard  { background: var(--callout-hz-bg);    border: 2px solid var(--callout-hz-bdr); }
+
+  .callout-gm      .callout-heading { color: var(--callout-gm-head); }
+  .callout-rule    .callout-heading { color: var(--callout-rule-head); }
+  .callout-example .callout-heading { color: var(--callout-ex-head); }
+  .callout-hazard  .callout-heading { color: var(--callout-hz-head); }
+</style>

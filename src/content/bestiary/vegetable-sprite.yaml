@@ -1,0 +1,108 @@
+name: Vegetable Sprite
+tags: [plant, fey, least, animated]
+summary: "Uprooted vegetables with rootlike limbs and no faces — pattering feet and cracking stems."
+hd: 1
+armor: 0
+damagemultiplier: 0.25
+size: 5
+weight: 6
+maxload: 4
+speeds:
+  run: 40
+group: "1d6 potting / 3d6 patch / 2d6 × 5 field"
+desc: "Uprooted vegetables with rootlike limbs. No faces. Pattering feet, cracking stems."
+wants: "Rich soil, shiny things, compost. Hates herbivores with religious intensity."
+intellect: "Stupid. Easily distracted mob mentality. Fixates on bright lights."
+morality: "Surprisingly little. Will maul a farmer over a grudge."
+treasure: "Delicious vegetables — potentially chopped, roasted, or skewered in advance."
+features:
+  - name: Tiny Fists (Natural Weapon)
+    text: "1 Physical."
+    combat: 0
+  - name: "Flashy Spectacle"
+    text: "You are entranced by displays of magic and other flashy and colorful effects like fireworks. If a spell is cast or other spectacle occurs, you must Save or stare entranced for 1 Round."
+    combat: -1
+lore: |
+  The spirits of least vegetables and plants, risen for some troublesome purpose.
+when_eaten:
+  flavor: "Remarkably fresh and crisp, as though picked moments ago. Slightly warm."
+  notes: "No special effect, but eating a creature that was recently trying to kill you is its own reward. Farmers consider it poetic justice."
+tables:
+  - label: "What Vegetable?"
+    die: d66
+    entries:
+      - roll: 11
+        max: 13
+        result: "**Carrot** — Laying in wait in the garden as an ambush."
+      - roll: 14
+        max: 16
+        result: "**Cabbage** — Chittering animatedly in a fairy ring."
+      - roll: 21
+        max: 23
+        result: "**Bok choy** — Mauling a local farmer."
+      - roll: 24
+        max: 26
+        result: "**Radish** — Dancing around a deer head on a pike."
+      - roll: 31
+        max: 33
+        result: "**Pumpkin** — Running off with bushels of stolen grains."
+      - roll: 34
+        max: 36
+        result: "**Onion** — Collecting shiny treasures from everywhere in reach."
+      - roll: 41
+        max: 43
+        result: "**Turnip** — Taking baths in a stream or river."
+      - roll: 44
+        max: 46
+        result: "**Garlic** — Mocking charades of the locals."
+      - roll: 51
+        max: 53
+        result: "**Eggplant** — Standing hypnotized in a huge crowd, watching a windmill rotate."
+      - roll: 54
+        max: 56
+        result: "**Tomato** — Herding a hostage family out of town. Villagers are panicked."
+      - roll: 61
+        max: 63
+        result: "**Broccoli** — Sunbathing in the blood of a creature."
+      - roll: 64
+        max: 66
+        result: "**Potato** — A rain dance; 3-in-6 chance of success."
+  - label: "Cause for Vegetable Uprising"
+    die: d66
+    entries:
+      - roll: 11
+        max: 13
+        result: "Fairy convinced them *they* should be eating *people*."
+      - roll: 14
+        max: 16
+        result: "Local garden has gotten tired of the rabbit infestation (and negligent farmers)."
+      - roll: 21
+        max: 23
+        result: "Dehydrated. Blood is as good as water."
+      - roll: 24
+        max: 26
+        result: "Believe they're owed some of the farm's wealth. Does not know what wealth is."
+      - roll: 31
+        max: 33
+        result: "Orchestrated by one species of crop that isn't moving, hoping the others die."
+      - roll: 34
+        max: 36
+        result: "Soil's gone bad. They're raiding local compost heaps and making corpses."
+      - roll: 41
+        max: 43
+        result: "Garden is too shaded; warring with the neighbors for better land."
+      - roll: 44
+        max: 46
+        result: "Apprentice magician must be beheaded for his *faux pas*."
+      - roll: 51
+        max: 53
+        result: "Migration. No reason why. The locals will starve if their harvest runs away."
+      - roll: 54
+        max: 56
+        result: "Wild, unproductive, unpalatable vegetables muscling in on good territory (fields)."
+      - roll: 61
+        max: 63
+        result: "Farmer with a grudge against the mayor has found a willing army."
+      - roll: 64
+        max: 66
+        result: "The villagers have angered the local forest spirits."

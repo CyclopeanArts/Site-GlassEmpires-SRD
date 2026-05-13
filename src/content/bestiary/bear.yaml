@@ -1,0 +1,63 @@
+name: Bear
+tags: [beast, woodland, predator, common]
+summary: "Massive brown-furred omnivore."
+hd: 6
+armor: 0
+damagemultiplier: 5
+size: 10
+weight: 75
+maxload: 50
+speeds:
+  run: 35
+  swim: 20
+group: "Solo / Mother & 1d6−2 cubs"
+desc: "Brown shag, button eyes. Limbs like trunks. Rotting breath and deep, rumbling grunts. Stands tall enough to look a man in the eyes."
+wants: "Food. Territory. Cubs are sacred. To be left alone."
+intellect: "Animalistic but clever. Excellent memory for food sources, threats, and grudges."
+morality: "No malice, no mercy. Protects its own."
+treasure: "N/A"
+features:
+  - name: "Teeth & Claws (Natural Weapon)"
+    text: "10 Physical."
+    combat: 0
+  - name: "Claws & Teeth"
+    text: "You get an extra Strike per Attack made with a natural weapon."
+    combat: 0
+  - name: "Mauling Embrace"
+    text: "If you strike an enemy twice in melee with natural weapons, you may immediately Grapple them."
+    combat: 1
+  - name: "Terrible Roar"
+    text: "Once per 10 minutes, may roar as a Free Action. All creatures of lesser Power within earshot must Save or Panic."
+    combat: 1
+lore: |
+  Can smell food from a mile away. Will investigate anything edible. A brown bear in your granary is a problem you solve not by fighting, but by moving.
+
+  Some Lords ("foolishly") keep trained bears as status symbols.
+tables:
+  - label: "Bear Variants"
+    die: d6
+    entries:
+      - roll: 1
+        max: 2
+        result: "**Black Bear**. HD 3. Smaller, skittish. Always flees when able."
+      - roll: 3
+        max: 4
+        result: "**Cave Bear**. HD 7. Larger. Gets an additional Strike (3 total) per natural weapon Attack. Mountain-dwelling."
+      - roll: 5
+        max: 6
+        result: "**Rim Bear**. HD 7. Resistant to Ice Damage. White-furred, aggressive."
+  - label: "What is this bear doing?"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Eating. Will defend food source. Beehive (angry bees), fish (at river), carrion (disease), or stolen human food (angry owner)."
+      - roll: 2
+        result: "Hibernating in den. Will not wake unless physically disturbed or fire/smoke introduced."
+      - roll: 3
+        result: "Foraging with cubs. Maximum aggression. Will not stop until threat eliminated or cubs escape."
+      - roll: 4
+        result: "Marking territory. Clawing trees, rubbing. Not immediately hostile but will challenge if party doesn't retreat."
+      - roll: 5
+        result: "Following a scent trail. May be tracking the Party's food, or something else entirely that leads past them."
+      - roll: 6
+        result: "Wounded and irritable. Previous encounter with hunters, rival bear, or mountain imp trap. Attacks first."

@@ -1,0 +1,142 @@
+---
+import type { NavItem } from '../config/nav';
+import { getSlugMap } from '../config/slug-resolver';
+
+interface Props {
+  items: NavItem[];
+  depth?: number;
+  currentPath?: string;
+}
+
+const { items, depth = 0, currentPath = '' } = Astro.props;
+const slugMap = getSlugMap();
+
+function isActive(href: string | null): boolean {
+  if (!href) return false;
+  return currentPath === href || currentPath.startsWith(href + '/');
+}
+
+function resolve(item: NavItem): { href: string | null; label: string; children?: NavItem[] } {
+  if (typeof item === 'object' && 'label' in item && !('slug' in item)) {
+    return { href: item.href || null, label: item.label, children: item.children };
+  }
+  const slug = typeof item === 'string' ? item : item.slug;
+  const found = slugMap[slug];
+  const href = found ? found.path : `/rules/${slug}`;
+  const label = found ? found.title : slug;
+  const children = typeof item === 'object' && 'children' in item ? item.children : undefined;
+  return { href, label, children };
+}
+
+const depthClass = `nav-depth-${depth}`;
+---
+
+{depth === 0 && (
+  items.map(item => {
+    const r = resolve(item);
+    const active = isActive(r.href);
+    const hasKids = r.children && r.children.length > 0;
+
+    return (
+      <li class:list={['nav-section', { 'is-open': active }]}>
+        {r.href
+          ? <a href={r.href}
+               class:list={['nav-section-label', { 'is-active': active }]}
+               aria-current={active ? 'page' : undefined}>
+              {r.label}
+            </a>
+          : <span class="nav-section-label nav-section-nolink">{r.label}</span>
+        }
+        {hasKids && (
+          <ul class="nav-children">
+            <Astro.self items={r.children!} depth={1} currentPath={currentPath} />
+          </ul>
+        )}
+      </li>
+    );
+  })
+)}
+
+{depth > 0 && (
+  items.map(item => {
+    const r = resolve(item);
+    const active = isActive(r.href);
+    const hasKids = r.children && r.children.length > 0;
+
+    return (
+      <li class:list={{ 'is-stub': !r.href }}>
+        <a href={r.href ?? '#'}
+           class:list={['nav-child-link', depthClass, { 'is-active': active }]}
+           aria-current={active ? 'page' : undefined}>
+          {r.label}
+        </a>
+        {hasKids && (
+          <ul class="nav-children">
+            <Astro.self items={r.children!} depth={depth + 1} currentPath={currentPath} />
+          </ul>
+        )}
+      </li>
+    );
+  })
+)}
+
+<style>
+  .nav-section { padding: 0; }
+  .nav-section-label {
+    display: block;
+    padding: 0.45em 1.25em;
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.7em;
+    letter-spacing: 0.12em;
+    color: var(--nav-accent);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .nav-section-label:hover { background: var(--nav-hover); text-decoration: none; }
+  .nav-section-label.is-active { background: var(--nav-active); color: #fff; }
+  .nav-section-nolink { cursor: default; }
+  .nav-section-nolink:hover { background: none; }
+
+  .nav-children {
+    list-style: none;
+    padding: 0 0 0.5em;
+  }
+  .nav-child-link {
+    display: block;
+    padding: 0.35em 1.25em 0.35em 2em;
+    font-family: 'Literata Variable', serif;
+    font-size: 0.82em;
+    color: rgba(240,230,208,0.75);
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1.4;
+  }
+  .nav-child-link:hover {
+    background: var(--nav-hover);
+    color: var(--nav-text);
+    text-decoration: none;
+  }
+  .nav-child-link.is-active {
+    background: var(--nav-active);
+    color: var(--nav-text);
+    border-left: 2px solid var(--nav-accent);
+    padding-left: calc(2em - 2px);
+  }
+
+  .nav-depth-1 { padding-left: 2em; font-size: 0.82em; }
+  .nav-depth-1.is-active { padding-left: calc(2em - 2px); }
+  .nav-depth-2 { padding-left: 3em; font-size: 0.78em; font-style: italic; }
+  .nav-depth-2.is-active { padding-left: calc(3em - 2px); }
+  .nav-depth-3 { padding-left: 4em; font-size: 0.74em; }
+  .nav-depth-3.is-active { padding-left: calc(4em - 2px); }
+
+  .is-stub > .nav-child-link,
+  .is-stub > .nav-section-label {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+  }
+</style>

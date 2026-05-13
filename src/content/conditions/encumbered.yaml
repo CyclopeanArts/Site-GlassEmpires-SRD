@@ -1,0 +1,18 @@
+name: Encumbered
+tags: [physical, movement, equipment]
+summary: "Halves effective Speed for long-distance travel; −1 penalty on dexterity/agility Saves."
+rules: |
+  While Encumbered, characters halve their effective Speed scores while measuring
+  long-distance travel. Short-term movement rates such as in combat are not affected.
+
+  In addition, being Encumbered is a −1 penalty on Saves made for dexterity or agility.
+  This does not include Strike Saves made for Attacks.
+
+  Characters become Encumbered when their carried load exceeds half (rounded up) of
+  their Max. Load. The Condition is removed when the carried load drops to half or less
+  of Max. Load.
+duration: "Until load is reduced to half Max. Load or less"
+see_also: []
+author: Histoire
+status: draft
+date: 2026-05-05

@@ -1,0 +1,107 @@
+---
+import { nav } from '../config/nav';
+import NavTree from './NavTree.astro';
+
+const { currentPath = '', id } = Astro.props;
+---
+
+<nav class="side-nav" id={id} aria-label="Site navigation">
+  <a href="/" class="nav-home-link" aria-label="Glass Empires SRD home">
+    <img src="/logo/main.webp" alt="Glass Empires" class="nav-logo" />
+    <span class="nav-wordmark-sub">System Reference Document</span>
+  </a>
+
+  <div class="nav-scroll">
+    <ul class="nav-list" id="nav-list">
+      <NavTree items={nav} currentPath={currentPath} />
+    </ul>
+  </div>
+</nav>
+
+<script>
+  // Persist sidebar scroll position across page navigations
+  const navScroll = document.querySelector('.nav-scroll');
+  const key = 'ge-nav-scroll';
+
+  // Restore scroll position, or scroll active item into view
+  const saved = sessionStorage.getItem(key);
+  if (saved) {
+    navScroll.scrollTop = parseInt(saved, 10);
+  } else {
+    const active = navScroll.querySelector('.is-active');
+    if (active) {
+      active.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+    }
+  }
+
+  // Save on unload
+  window.addEventListener('beforeunload', () => {
+    sessionStorage.setItem(key, navScroll.scrollTop);
+  });
+</script>
+
+<style>
+  .side-nav {
+    width: var(--nav-width);
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    height: 100dvh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(196,146,52,0.2) transparent;
+  }
+  .nav-home-link {
+    display: block;
+    padding: 1.5em 1.25em 1.1em;
+    border-bottom: 1px solid rgba(196,146,52,0.15);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .nav-scroll {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 2rem;
+  }
+  .nav-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    animation: logo-glow 4s ease-in-out infinite;
+  }
+  @keyframes logo-glow {
+    0%, 100% { filter: drop-shadow(0 0 6px rgba(98,237,216,0.03)) drop-shadow(0 0 18px rgba(98,237,216,0.01)); }
+    50%      { filter: drop-shadow(0 0 10px rgba(98,237,216,0.08)) drop-shadow(0 0 28px rgba(98,237,216,0.04)); }
+  }
+  .nav-wordmark-sub {
+    display: block;
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-size: 0.6em;
+    color: var(--nav-accent);
+    letter-spacing: 0.15em;
+    margin-top: 0.5em;
+  }
+  .nav-list {
+    list-style: none;
+    padding: 0 0 1em;
+    flex: 1;
+  }
+  @media (max-width: 48em) {
+    .side-nav {
+      position: fixed;
+      left: -100%;
+      z-index: 200;
+      transition: left 0.25s ease;
+      width: min(var(--nav-width), 85vw);
+    }
+    .side-nav.is-open {
+      left: 0;
+    }
+  }
+</style>

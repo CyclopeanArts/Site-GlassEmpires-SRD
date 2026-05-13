@@ -1,0 +1,10 @@
+name: Glass Wisp
+tags: [spirit, tradition, elemental, glass]
+summary: "Ambient spirit of shattered or molten glass; faint luminescence, no will of its own."
+tier: tradition
+# Tradition spirits are ambient — they have no bestiary entry and need no HD/BR.
+# They are extracted via Ritual Cooking or harvested from the environment.
+# cost: HP cost to cast a spell housed in this spirit type
+cost: "1 HP per use"
+spellhome: "A sealed glass vessel; shatters on final use."
+see_also: [iron-spirit, salt-spirit]

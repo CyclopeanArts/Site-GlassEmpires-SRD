@@ -1,0 +1,82 @@
+---
+/**
+ * Diagram — inline SVG that inherits the page's text color.
+ *
+ * Reads an SVG file from public/assets/ at build time and inlines it
+ * with `color: var(--text)` so that any `currentColor` references inside
+ * the SVG automatically match the active theme (light or dark).
+ *
+ * Usage in MDX:
+ *   import Diagram from '../../components/Diagram.astro';
+ *   <Diagram src="/assets/aia-cosmology.svg" alt="Diagram of Aia's cosmology" />
+ *
+ * To make a new diagram work with this component:
+ *   1. Save the SVG to public/assets/
+ *   2. Use `currentColor` instead of hex colors for lines/text you want
+ *      themed. Pattern fills and fixed colors (e.g. #ff8800 highlights)
+ *      are left alone — only `currentColor` gets themed.
+ *   3. Drop <Diagram src="..." /> into any MDX page.
+ */
+
+import { readFileSync } from 'fs';
+
+interface Props {
+  src: string;
+  alt?: string;
+  width?: string;
+  maxWidth?: string;
+}
+
+const { src, alt = '', width = '100%', maxWidth = '500px' } = Astro.props;
+
+// Read the SVG file from the public directory at build time
+const svgPath = process.cwd() + '/public' + src;
+let svgContent = '';
+
+try {
+  svgContent = readFileSync(svgPath, 'utf-8');
+} catch (e) {
+  // If the file doesn't exist, render a placeholder
+  svgContent = `<text x="50%" y="50%" text-anchor="middle" fill="currentColor">Diagram not found: ${src}</text>`;
+}
+
+// Strip Inkscape/Sodipodi namespaced attributes and comments
+svgContent = svgContent
+  .replace(/<\?xml[^>]*\?>/g, '')
+  .replace(/<!--[\s\S]*?-->/g, '')
+  .replace(/\s+xmlns:(inkscape|sodipodi|svg)="[^"]*"/g, '')
+  .replace(/\s+inkscape:[^=]+="[^"]*"/g, '')
+  .replace(/\s+sodipodi:[^=]+="[^"]*"/g, '');
+
+// Remove any existing <style> blocks (the component applies its own)
+svgContent = svgContent.replace(/<style[\s\S]*?<\/style>/g, '');
+
+// Remove <sodipodi:namedview> blocks
+svgContent = svgContent.replace(/<sodipodi:namedview[\s\S]*?<\/sodipodi:namedview>/g, '');
+
+// Remove <defs> that only contain Inkscape metadata (keep real pattern defs)
+// We keep the full <defs> — pattern definitions are real content
+
+// Ensure the root <svg> element has theme color + responsive sizing
+// Strip any existing root style, width, and height; set them fresh
+svgContent = svgContent
+  .replace(/style="[^"]*"/, '') // remove any existing style on svg root
+  .replace(/\s+width="[^"]*"/, '') // remove explicit width
+  .replace(/\s+height="[^"]*"/, '') // remove explicit height
+  .replace(/<svg/, `<svg style="color: var(--text); width: 100%; height: auto;"`);
+
+// Clean up: remove standalone xmlns attributes that were for Inkscape
+svgContent = svgContent.replace(/\s+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/, '');
+---
+
+<figure class="diagram-figure" style="display: flex; flex-direction: column; align-items: center; margin: 1.5em 0;">
+  <div role={alt ? "img" : undefined} aria-label={alt || undefined} title={alt || undefined} style="width: 100%; max-width: {maxWidth};" set:html={svgContent}></div>
+</figure>
+
+<style>
+  .diagram-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>

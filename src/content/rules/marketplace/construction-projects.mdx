@@ -1,0 +1,74 @@
+---
+title: "Construction & Projects"
+tags: [rules, marketplace, construction]
+draft: false
+summary: "Building and infrastructure projects — SHP, costs, material hardness, and labor rates."
+---
+Rules for construction projects, fortifications, infrastructure, and public works.
+
+Construction projects are performed using the [[move-faction-make-asset|Make Asset]] Faction Move.
+
+## Excavation
+
+Characters can move cubic feet of earth equal to their Max. Load in # per hour, assuming appropriate tools are possessed. The rate is halved for improvised tools, and quartered for a lack of them. Dressed stone brick & smooth rock takes twice as long to excavate.
+
+A single fully-dedicated human laborer (10# Max. Load) completes $1 in excavation construction cost per day, or $5/month if working from a Faction's Families for labor.
+
+| Material Type     | Cost per Cubic Foot |
+| ----------------- | ------------------- |
+| Soil & loose rock | $0.05               |
+| Stone             | $0.10               |
+
+## Structural HP
+
+**Structural Hit Points** (SHP) is a measure of *fortification troop capacity* (how many soldiers you can fit inside a Location) combined with *durability* (how resilient it is to assault). Every Location can have an SHP score. 1 SHP is approximately 1 ton of material.
+
+Structures cost approximately $100 per SHP for mixed wood & stone construction. Pure wood is cheaper but more vulnerable. Especially nice materials are double cost.
+
+| Material | Cost per SHP | Capacity per SHP | Notes                              |
+| -------- | :----------: | :--------------: | ---------------------------------- |
+| Wood     |     $100     |        1         | Can be burned.                     |
+| Mixed    |     $100     |        ⅔         | Typical for Glassian construction. |
+| Stone    |     $100     |        ½         | Doesn't burn easily.               |
+
+### Structural Hardness
+
+Structures divide all Damage delivered via weapons of *inferior hardness* by 10, rounded down. Hardness in ascending order is as follows:
+
+- Wood & bone & copper
+- Stone & keratin & bronze
+- Iron & steel
+- Gemstones
+
+Siege machines count as the toughest material used in their weapons' construction.
+
+### Structural Unit Capacity
+
+Structures are assumed to be able to *operationally* hold 1 soldier per 1 SHP. This is not accurate for small volume-focused civilian buildings (i.e. warehouses, which could manage up to 10 soldiers per SHP) or for heavily-fortified defensive structures (i.e. walls, sanctums) but is approximately correct for castles & Settlement fortifications taken as a whole.
+
+## Structures
+
+| Item                                         | Material | Occupancy | SHP    | Value      |
+| -------------------------------------------- | -------- | --------- | ------ | ---------- |
+| Hut, poor commons'                           | Wood     | 5         | 5      | $500       |
+| Cottage, craftsman's                         | Mixed    | 10        | 15     | $1,600     |
+| Painted temple, Jester's (30' × 20')         | Wood     | 50        | 50     | $5,000     |
+| Townhouse w/ courtyard                       | Stone    | 50        | 100    | $10,000    |
+| Country manor, Magistrate's                  | Stone    | 150       | 300    | $30,000    |
+| Country manor, Imperial luxury               | Stone    | 10,000    | 20,000 | $4,000,000 |
+| Beacon tower, wooden                         | Wood     | 16        | 16     | $1,600     |
+| Palisade, wood (100' long × 10' tall, 1 row) | Wood     | 100       | 15     | $1,500     |
+| Tower, fortified square (20' × 40')          | Stone    | 100       | 1,000  | $100,000   |
+| Castle, small                                | Stone    | 7,500     | 15,000 | $1,500,000 |
+| Castle, fortified                            | Stone    | 15,000    | 30,000 | $3,000,000 |
+
+Glass doesn't build watchtowers, as harpy scouts essentially supercede any information advantage even when scarce in numbers. Glass *does* build fortresses, and in increasing volume.
+
+## Roads
+
+| Item                      | Value  |
+| ------------------------- | ------ |
+| Road, gravel & dirt (1mi) | $1,000 |
+| Paved road (1mi)          | $5,000 |
+
+Road cost is based on ground travel speed, not on actual distance. A mountain that takes four times as long to cross than usual is four times more expensive to build a road through.

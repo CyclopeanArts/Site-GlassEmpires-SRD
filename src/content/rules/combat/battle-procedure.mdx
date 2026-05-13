@@ -1,0 +1,118 @@
+---
+title: "Battle Procedure"
+tags: [rules, combat, battles, procedure]
+draft: false
+author: Histoire
+status: draft
+date: 2026-05-05
+summary: "Units, Round Duration, and the 6-step Battle Round procedure."
+---
+
+## Units
+
+A **Unit** is a single character, or a Group (p. @) of statistically equivalent characters, representing a discrete unit of command on the battlefield.
+
+Generally speaking, no side should have more than 20 Units. If a side has more than this, some of them should be consolidated into larger Units.
+
+## Round Duration
+
+Rounds last a variable amount of in-game time depending on the number of participants. These are approximate numbers, & if the GM has a case for why a different period would elapse per Round for a given Battle, he may enforce it.
+
+- Less than 100: 1 minute per Round.
+- ≥100: 10 minutes per Round.
+- ≥1,000: 1 hour per Round.
+- ≥10,000: 1 day per Round.
+- ≥100,000: 1 month per Round.
+- ≥1,000,000: 1 year per Round.
+
+<Callout type="gm" heading="Why does each Round take so long at small scales?">
+We have to account for the time required to clean up & double-check the battle space after a combat.
+</Callout>
+
+<Callout type="rule" heading="Tip">
+You can resolve an entire war as a single lengthy Battle, and might wish to do so if you just need to determine an outcome fast with low fidelity. The Bonuses may prove to be hard to adjudicate, but treat it as a Fermi Estimate & round appropriately. Make sure to account for alliances, trade, supply chains & logistics, resource availability, & the state of the realms' finances.
+</Callout>
+
+## Procedure: Battle Round
+
+Each Round of Battle is resolved by the following procedure done in order of the listed steps.
+
+### 1. Declare Intent to Flee
+
+If one side is not yet fully defeated but wishes to flee, it must be declared as the Round is starting. If one side is fleeing, the Round is a **Pursuit**, which is managed as another full Round of Battle.
+
+### 2. Declare manual & one-time use effects
+
+Characters may declare that they are temporarily boosting their own Battle Rating using any manual effects that isn't accounted for by the default BR calculation method. Examples include one-time use items & Features that can only be activated once within a certain period of time.
+
+Characters get:
+
+- +0.25 BR per point of damage or HP healed;
+- To multiply their BR by the number of nonlinear beneficial special Features triggered by the effect for this round only.
+
+For multi-target & area effects, multiply damage by total number of reachable targets (at the GM's discretion). If you don't know the enemy formation ahead of time, area effects hit up to their widest diameter in feet divided by 5' in characters when targeting disorganized (loose, chaotic) formations, including chaotic Groups as well as masses of individual characters. Square this value if targeting a unit that's a Group in organized formation or if the targets are known to be tightly clustered (i.e. from a chokepoint).
+
+### 3. BR ratio
+
+Sum the BR of all allied units together for every side. Determine which side has more BR and by what ratio. It gains:
+
+- +1 If it's at least 10% stronger than the enemy, but by less than a 2:1 ratio.
+- +X if it's X times stronger, ignoring the remainder.
+
+### 4. Tactical bonuses
+
+Add the following bonuses if their matching condition is true. If the Party's *enemy* has the listed advantage, instead of adding it as a bonus, subtract it as a penalty.
+
+- ±2 if you are **ambushing or surprising** the target (independent of positioning; only applicable on the 1st Round).
+- +1 if the enemy is fleeing & this Round is a Pursuit.
+- ±1 for each **disease, poison, or other broad debilitation** the enemy suffers.
+
+In addition, give ±1 to a side for each of the following questions that *unquestionably* resolves in their favor:
+
+- **Terrain**: Do you hold better, more defensible ground?
+- **Perception**: Is your commanders' vision of the enemy's positioning & movements superior to their commanders' perception of yours?
+- **Flanking**: Are your units flanking the foe?
+- **Maneuverability**: Do your Units have superior speed, flight, swimming, tunneling, climbing, or other abilities that are not matched by a meaningful proportion of the enemy's Units, or have you pinned the enemy in place (i.e. via encirclement)?
+- **Area vs Formation**: Does your side field area-of-effect weaponry against a tightly-formed & regimented enemy?
+- **Morale**: Are your Units defending their home and/or children?
+
+Players, while arguing for tactical bonuses, may at this time may note any tactics or stratagems that depend upon the current state of the battlefield.
+
+### 5. Making the Battle Save
+
+The Battle Save is made by the PCs' side's commander. (If PCs are on all sides, flip a coin for who rolls.) The TN is 7 plus the enemy's Mod. Compare the Result:
+
+|       Result       | Battle Save Effects               | Defeat %<br />(You) | Defeat %<br />(Enemy) |
+| :-------------------: | ----------------------------------- | :-------------------: | :---------------------: |
+|  Crit<br />*≥12*  | The enemy suffers a Morale Break. |       1-in-6       |        3-in-6        |
+|  Pass<br />*8–11*  | Your side gains a Bonus Shift.    |       1-in-6       |        2-in-6        |
+|   Seven<br />*7*   | The violence continues.           |       1-in-6       |        1-in-6        |
+| Failure<br />*3–6* | The enemy gains a Bonus Shift.    |       2-in-6       |        1-in-6        |
+|  Fumble<br />*≤2*  | Your side suffers a Morale Break. |       3-in-6       |        1-in-6        |
+
+Each side's commander rolls the listed X-in-6 chance of Defeat for each NPC Unit on their side. Players may roll their PC's own dice to determine if they were Defeated in the skirmish.
+
+Units that are totally Immune to all forms of attack that the enemy is bringing to bear in a fight cannot be Defeated.
+
+#### Bonus Shifts
+
+When a side receives a Bonus Shift, the GM describes how this Round's victor's position improves, or how the losers' position worsens, represented by a gain of a +1 bonus for the victor or the loss of a +1 bonus for the loser. If the commanders stated a tactical goal at the opening of this Round, the GM may grant that achievement as the bonus. Otherwise, the GM rolls 1d6 to determine characteristic gained/lost:
+
+| 1d6 | Characteristic gained or lost |
+| :---: | :------------------------------ |
+|  1  | Terrain/footing               |
+|  2  | Range/freedom of movement     |
+|  3  | Energy/exhaustion             |
+|  4  | Confusion/perception          |
+|  5  | Command/control               |
+|  6  | Confidence/morale             |
+
+#### Morale Break
+
+If the losing side's NPCs are capable of fleeing (physically & mentally), they will flee during the next Round, making the final round a Pursuit. If they *cannot* flee & *can* surrender, they will attempt to surrender. If they *cannot* surrender, they will remain on the battlefield & become immune to Morale Breaks until killed or victorious.
+
+If only *some* NPCs can flee, the ones who do have a 3-in-6 chance of Defeat, & are otherwise removed from the battlefield as escaped & undefeated.
+
+### 6. End of Round
+
+At the end of a Round, if no side is yet fully defeated or currently fleeing, start a new Round.

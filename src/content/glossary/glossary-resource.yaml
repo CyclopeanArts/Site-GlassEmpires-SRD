@@ -1,0 +1,10 @@
+name: Resource
+tags: [core, location, faction]
+summary: "A Location that, when settled, produces trade goods of strategic significance — production bases worth fighting over."
+definition: |
+  A **Resource** is a Location that, when settled, produces some form of trade goods that can be transported and benefited from elsewhere. They represent production of strategic significance — such that actors may want to attack their production bases, trade access, or secure them with additional forces.
+related_rule: "Core Terms / Location"
+see_also: [location, settlement, campaign]
+author: Histoire
+status: draft
+date: 2026-05-05

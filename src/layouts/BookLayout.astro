@@ -1,0 +1,144 @@
+---
+import SideNav from '../components/SideNav.astro';
+import TopBar from '../components/TopBar.astro';
+import PagePreviews from '../components/PagePreviews.astro';
+import '../styles/global.css';
+
+const {
+  title = 'Glass Empires SRD',
+  draft = false,
+  headings = [],
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Empires SRD`;
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={`${title} — Glass Empires System Reference Document`} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- Theme initialization: run before paint to prevent flash -->
+  <script is:inline>
+    const t = localStorage.getItem('ge-theme');
+    if (t) document.documentElement.dataset.theme = t;
+  </script>
+</head>
+<body>
+  <div class="site-wrapper">
+    <SideNav id="side-nav" currentPath={currentPath} />
+
+    <div class="content-column">
+      <TopBar title={title} />
+
+      <main class="page-content" id="main-content">
+        {draft && (
+          <div class="draft-banner" role="status">
+            ◆ Draft — this page is incomplete
+          </div>
+        )}
+
+        <article class="prose">
+          <slot />
+        </article>
+
+        {headings.length > 0 && (
+          <nav class="page-toc" aria-label="On this page">
+            <div class="toc-heading">On this page</div>
+            <ul class="toc-list">
+              {headings.map((h: { depth: number; slug: string; text: string }) => (
+                h.depth <= 3 && (
+                  <li class={`toc-item depth-${h.depth}`}>
+                    <a href={`#${h.slug}`}>{h.text}</a>
+                  </li>
+                )
+              ))}
+            </ul>
+          </nav>
+        )}
+      </main>
+    </div>
+  </div>
+  <PagePreviews />
+</body>
+</html>
+
+<style>
+  .site-wrapper {
+    display: flex;
+    min-height: 100dvh;
+  }
+
+  .content-column {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-content {
+    display: flex;
+    gap: 2em;
+    padding: 2.5em 3em;
+    flex: 1;
+    max-width: 80em;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .prose {
+    flex: 1;
+    min-width: 0;
+    max-width: 38em;
+  }
+
+  /* ── Page TOC (right column) ───────────────────────── */
+  .page-toc {
+    width: 12em;
+    flex-shrink: 0;
+    position: sticky;
+    top: 4rem;
+    align-self: flex-start;
+    max-height: calc(100dvh - 5rem);
+    overflow-y: auto;
+    padding-left: 1.25em;
+    border-left: 1px solid var(--border);
+  }
+
+  .toc-heading {
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.65em;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.75em;
+  }
+
+  .toc-list { list-style: none; padding: 0; }
+  .toc-item { padding: 0.2em 0; }
+  .toc-item a {
+    font-size: 0.78em;
+    color: var(--text-muted);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+    transition: color 0.15s;
+  }
+  .toc-item a:hover { color: var(--text); text-decoration: none; }
+  .toc-item.depth-3 { padding-left: 0.85em; }
+
+  @media (max-width: 72em) {
+    .page-toc { display: none; }
+    .page-content { padding: 2em 2em; }
+  }
+
+  @media (max-width: 48em) {
+    .page-content { padding: 1.5em 1.25em; }
+  }
+</style>

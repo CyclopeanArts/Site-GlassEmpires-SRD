@@ -1,0 +1,77 @@
+name: Monkey
+tags: [fauna, beast, troop, forest]
+summary: "Ugly 3-foot-tall white/pale red-faced monkey with a tail. Horse-like grin with powerful jaws. Devious, brilliant schemer."
+hd: 2
+armor: 0
+damagemultiplier: 1
+size: 5
+weight: 6
+maxload: 4
+speeds:
+  run: 25
+group: "1d6 + 1 small troop / 2d6 × 4 troop"
+desc: "Ugly 3-foot-tall white/pale red-faced monkey with a tail. Horse-like grin with powerful jaws."
+wants: "Monkey *see*, monkey *want*."
+intellect: "Very intelligent (for an animal). Devious, brilliant schemer."
+morality: "None, really."
+treasure: "N/A"
+features:
+  - name: "Claws (Natural Weapon)"
+    text: "4 Physical."
+    combat: 0
+  - name: "Tree Climbing"
+    text: "You can climb trees and other sturdy flora as if flat ground using your Run score."
+    combat: 0.5
+  - name: "Monkey Brain"
+    text: "When executing a plan, you must Save or somehow ruin it by impulse (eating your own bait, falling for the trap yourself, getting into a fight with a co-conspirator)."
+    combat: -0.5
+lore: |
+  Glassian monkeys are clever, opportunistic, and utterly amoral. They watch, they scheme, and they take what they want — often before you realize they've been planning it for days. A troop of monkeys is chaos in motion, held together only by the fragile authority of whichever male currently dominates.
+
+  Their "Monkey Brain" is legendary among Glassian folk: a monkey will outsmart itself as readily as it outsmarts you. Many a hunter has set bait only to watch a monkey eat it, spring the trap on *another* monkey, and flee cackling — only to fall into a rival troop's ambush moments later.
+when_eaten:
+  flavor: "Gamy and tough, with an unsettling hint of intelligence in the taste."
+  notes: "Eating monkey brain is said to transfer the Monkey Brain Feature to the eater for 1d6 days. Most consider this a curse rather than a boon."
+tables:
+  - label: "Monkey Troop Structure"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Tension from multiple competing males."
+      - roll: 2
+        result: "All-male troop of rejects from other troops."
+      - roll: 3
+        result: "Females scrambling for a new leader."
+      - roll: 4
+        result: "Sole female; rest of troop is infants."
+      - roll: 5
+        result: "Sole male leading a harem."
+      - roll: 6
+        result: "Leader and many loyal paired goons."
+  - label: "Monkey Encounter"
+    die: d6
+    entries:
+      - roll: 1
+        result: "Migrating, looking for new land."
+      - roll: 2
+        result: "Fleeing from apex predator; will evaluate and flee from hostility."
+      - roll: 3
+        result: "Patrolling territory; will intimidate and posture ritualistically."
+      - roll: 4
+        result: "Hungry from famine, drought, or calamity; seeking food. May become recurring pest."
+      - roll: 5
+        result: "In nesting grounds, confused; will move to intimidation to drive you out."
+      - roll: 6
+        result: "Bound and escorted by mercenaries or harpies."
+  - label: "Monkey Variants"
+    die: d6
+    entries:
+      - roll: 1
+        max: 2
+        result: "**Golden**. Glittering fur. Extremely rare. If touched or clawed, Save vs. *greedy intent* or petrify into a fool's gold statue. If skinned, worth 2d6 × 10,000 sp."
+      - roll: 3
+        max: 4
+        result: "**Chimpanzee**. No Monkey Brain Feature. Warlike, mischievous, aggressively territorial. Capable of organized aggressive action."
+      - roll: 5
+        max: 6
+        result: "**Orangutan**. Arboreal, intrinsically solitary. Pretends to wisdom, in a pantomime manner."

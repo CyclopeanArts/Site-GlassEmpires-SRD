@@ -1,0 +1,452 @@
+name: Commoner
+tags: [humanoid, glassian, npc, settlement, faction-neutral]
+summary: "The ordinary people of Glass."
+hd: 2
+armor: 0
+damagemultiplier: 1
+size: 5
+weight: 15
+maxload: 10
+speeds:
+  run: 25
+group: "Solo / 1d6 household / 2d6 work gang / 3d6 × 10 angry mob"
+desc: "Calloused hands, sunburnt face. Carries tools or a basket. Moves with purpose."
+wants: "Stability, prosperity, and to be left the hell alone. Failing that, revenge."
+intellect: "Shrewd about anything they can see and touch. Credulous about anything they can't."
+morality: "Generous in times of plenty, ruthless in scarcity. Always hedging."
+treasure: "1d6−2 × $1 in pocket money. A household has 3d6 × $10 in savings, tools, home and trade goods investments, for a plundering bandit."
+features:
+  - name: "Improvised Weapon (Weapon)"
+    text: "4 Physical. Hatchet, mattock, hammer, kitchen knife, or whatever's at hand."
+    combat: 0
+gm_note:
+  heading: "Playing a Glassian Commoner"
+  body: |
+    These are not medieval serfs. Kain's long reign suppressed the worst excesses of intermediate lordship. Glassian commoners are commercially literate, own property, haggle confidently, and hold strong opinions about the quality of their local products versus the next village's. They remember prosperity and are *furious* about losing it.
+
+    Spirits are landlords. Commoners negotiate with river spirits the way you negotiate with your landlords. They set out offering plates at tree roots, consult the shrine-keeper before building an extension, and teach their children which mushrooms have spirits in them.
+
+    Glassians know their trade, their village, their local spirits and rumors from the last trader or harpy courier who came through. They don't know politics or how magic works, but they're not stupid. Everything they know works because it worked for the last thousand years.
+
+    **Glassians are not neutral.** Under competing warlords, commoners hedge between factions the way a trader diversifies debts. They hide grain, maintain polite relations with whoever's currently armed, and gossip as intelligence-gathering. They will sell information for safety. Their children are simultaneously their retirement, labor force, and army.
+
+    Commoners will rarely attack directly, but when they do, they attack with ruthless mania. They feel emotions stronger than you do. The most dangerous thing is a tight-knit village that's got nothing left to lose.
+lore: |
+  Grand and free Glass — the Commoner will sing to its history, wherever they hold a voice to sing with, for they believe themselves its blood and soul. And a betrayed blood and soul!
+tables:
+  - label: "Male Names"
+    die: d66
+    entries:
+      - roll: 11
+        result: Fen
+      - roll: 12
+        result: Cole
+      - roll: 13
+        result: Ash
+      - roll: 14
+        result: Tam
+      - roll: 15
+        result: Rill
+      - roll: 16
+        result: Garth
+      - roll: 21
+        result: Holt
+      - roll: 22
+        result: Keel
+      - roll: 23
+        result: Moss
+      - roll: 24
+        result: Breck
+      - roll: 25
+        result: Slade
+      - roll: 26
+        result: Marsh
+      - roll: 31
+        result: Bren
+      - roll: 32
+        result: Tarn
+      - roll: 33
+        result: Culm
+      - roll: 34
+        result: Dray
+      - roll: 35
+        result: Flint
+      - roll: 36
+        result: Gale
+      - roll: 41
+        result: Hart
+      - roll: 42
+        result: Jem
+      - roll: 43
+        result: Knox
+      - roll: 44
+        result: Lan
+      - roll: 45
+        result: Noll
+      - roll: 46
+        result: Pike
+      - roll: 51
+        result: Roan
+      - roll: 52
+        result: Tor
+      - roll: 53
+        result: Voss
+      - roll: 54
+        result: Ward
+      - roll: 55
+        result: Cade
+      - roll: 56
+        result: Lorne
+      - roll: 61
+        result: Sett
+      - roll: 62
+        result: Thane
+      - roll: 63
+        result: Oak
+      - roll: 64
+        result: Mace
+      - roll: 65
+        result: Wren
+      - roll: 66
+        result: Yew
+  - label: "Female Names"
+    die: d66
+    entries:
+      - roll: 11
+        result: Lark
+      - roll: 12
+        result: Sedge
+      - roll: 13
+        result: Pearl
+      - roll: 14
+        result: Rue
+      - roll: 15
+        result: Ember
+      - roll: 16
+        result: Vine
+      - roll: 21
+        result: Coral
+      - roll: 22
+        result: Brine
+      - roll: 23
+        result: Fern
+      - roll: 24
+        result: Hazel
+      - roll: 25
+        result: Ivy
+      - roll: 26
+        result: Aster
+      - roll: 31
+        result: Dusk
+      - roll: 32
+        result: Shale
+      - roll: 33
+        result: Reed
+      - roll: 34
+        result: Plum
+      - roll: 35
+        result: Clove
+      - roll: 36
+        result: Sorrel
+      - roll: 41
+        result: Teal
+      - roll: 42
+        result: Alder
+      - roll: 43
+        result: Cress
+      - roll: 44
+        result: Dale
+      - roll: 45
+        result: Elm
+      - roll: 46
+        result: Flax
+      - roll: 51
+        result: Glen
+      - roll: 52
+        result: Iris
+      - roll: 53
+        result: Myrtle
+      - roll: 54
+        result: Sage
+      - roll: 55
+        result: Wren
+      - roll: 56
+        result: Opal
+      - roll: 61
+        result: Birch
+      - roll: 62
+        result: Lea
+      - roll: 63
+        result: Kit
+      - roll: 64
+        result: Rue
+      - roll: 65
+        result: Nettie
+      - roll: 66
+        result: June
+  - label: "Occupations"
+    die: d66
+    entries:
+      - roll: 11
+        result: Rice farmer
+      - roll: 12
+        result: Orchardist
+      - roll: 13
+        result: Tea grower
+      - roll: 14
+        result: Silkworm keeper
+      - roll: 15
+        result: Charcoal burner
+      - roll: 16
+        result: River fisherman
+      - roll: 21
+        result: Potter
+      - roll: 22
+        result: Weaver
+      - roll: 23
+        result: Dyer
+      - roll: 24
+        result: Carpenter
+      - roll: 25
+        result: Cooper
+      - roll: 26
+        result: Tanner
+      - roll: 31
+        result: Brewer
+      - roll: 32
+        result: Ferryman
+      - roll: 33
+        result: Carter and porter
+      - roll: 34
+        result: Market stall keeper
+      - roll: 35
+        result: Innkeeper
+      - roll: 36
+        result: Teahouse operator
+      - roll: 41
+        result: Shrine keeper
+      - roll: 42
+        result: Spirit-ward braider
+      - roll: 43
+        result: Midwife and herbalist
+      - roll: 44
+        result: Bee-keeper
+      - roll: 45
+        result: Pig-keeper
+      - roll: 46
+        result: Salt-maker
+      - roll: 51
+        result: Rope-maker
+      - roll: 52
+        result: Thatcher
+      - roll: 53
+        result: Kiln-worker
+      - roll: 54
+        result: Harpy-mail clerk
+      - roll: 55
+        result: Iron wholesaler
+      - roll: 56
+        result: Bath-house keeper
+      - roll: 61
+        result: Festival organizer
+      - roll: 62
+        result: Militia drill leader
+      - roll: 63
+        result: Wall-mender
+      - roll: 64
+        result: Scavenger/rag-picker
+      - roll: 65
+        result: Grave-digger
+      - roll: 66
+        result: Night-soil collector
+  - label: "Items Carried"
+    die: d66
+    entries:
+      - roll: 11
+        result: Jade amulet from before the war
+      - roll: 12
+        result: Knife, clearly military salvage
+      - roll: 13
+        result: Grandmother's spirit-ward
+      - roll: 14
+        result: Token of debt from a failed credit union
+      - roll: 15
+        result: Letter they can't read, wax-sealed
+      - roll: 16
+        result: Seeds wrapped in oilcloth, hoarded
+      - roll: 21
+        result: Brass bell for spirit offerings
+      - roll: 22
+        result: Half-empty medicine pouch
+      - roll: 23
+        result: Ceramic flask of plum wine
+      - roll: 24
+        result: Iron nails and hammer
+      - roll: 25
+        result: Rolled warrant with a Lord's seal
+      - roll: 26
+        result: Sack of rice that isn't theirs
+      - roll: 31
+        result: Harpy feather and knot in hat
+      - roll: 32
+        result: Worn prayer beads for a dead god
+      - roll: 33
+        result: Pouch of market-day coins (1d6 × $1)
+      - roll: 34
+        result: Beautiful hat. Very proud of it
+      - roll: 35
+        result: Portable clay spirit-house
+      - roll: 36
+        result: Someone else's family seal; why?
+      - roll: 41
+        result: Rope, bundled
+      - roll: 42
+        result: Offering bowl and morning rice
+      - roll: 43
+        result: Herbs, bundled
+      - roll: 44
+        result: Deed to cottage and farm
+      - roll: 45
+        result: Live belligerent chicken
+      - roll: 46
+        result: Stolen military rations
+      - roll: 51
+        result: Old flute
+      - roll: 52
+        result: Ceramic honey jug
+      - roll: 53
+        result: Hand-drawn local map
+      - roll: 54
+        result: Incense sticks for offerings
+      - roll: 55
+        result: Single ancient tool, treated like gold
+      - roll: 56
+        result: Basket of fresh vegetables
+      - roll: 61
+        result: Out-of-season festival decorations
+      - roll: 62
+        result: Shield, salvaged and dented
+      - roll: 63
+        result: Bag of lime morite and trowel
+      - roll: 64
+        result: Handful of bent nails and scrap metal
+      - roll: 65
+        result: Small knife and whetstone
+      - roll: 66
+        result: Nothing but worn, ragged clothes
+  - label: "Surname Convention"
+    die: 2d6
+    entries:
+      - roll: 2
+        max: 3
+        result: "**Debt.** Embarrassing outstanding obligation. \"Fen Owes-the-Shrine.\""
+      - roll: 4
+        result: "**Ancestor.** Named for a supposedly embodied ancestor. Roll again for regular name. \"Aster Pearl.\""
+      - roll: 5
+        result: "**Deed.** Something they or an ancestor did. \"Ward Bridgebuilder,\" \"Flint Pigkiller.\" Almost never chosen; imposed by the community."
+      - roll: 6
+        result: "**None.** Just a given name."
+      - roll: 7
+        result: "**Family trade.** \"Breck Cooper\" or \"Dusk Dyer.\" Family trade changes, but names don't, which causes confusion."
+      - roll: 8
+        result: "**Village.** \"Keel of Oxbow\" or \"Sedge Millford.\" Used mainly by people who've moved. Marks you as an outsider wherever you go except home."
+      - roll: 9
+        result: "**Beast.** Named for a creature. \"Hart Boar.\" \"Lark Crane.\" May be subtly mutated to resemble it from extensive dynastic ritual consumption."
+      - roll: 10
+        result: "**Patronymic.** \"Gale Fernson\" or \"Cress Tamson.\" Roll again for father's name and append \"-son\"."
+      - roll: 11
+        max: 12
+        result: "**Landmark.** \"Tor Cliff\" or \"Glen Ford.\" Implies the family *is* that place; they maintain it, they're responsible for it, and they'd die for it."
+  - label: "Commoner Problems"
+    die: d66
+    entries:
+      - roll: 11
+        max: 12
+        result: "Son (or daughter) conscripted by force."
+      - roll: 13
+        max: 14
+        result: "Daughter ran off with a merc company. She *chose* to go. Parents furious, ashamed."
+      - roll: 15
+        max: 16
+        result: "Creditor calling in debts the family can't pay. Debt slavery may be forced."
+      - roll: 21
+        max: 22
+        result: "Kid found a staircase in a dry well. Has started sleepwalking toward it."
+      - roll: 23
+        max: 24
+        result: "Bandits on the road demanding tolls. Too organized to be desperate."
+      - roll: 25
+        max: 26
+        result: "Neighbor accused of feeding an evil spirit. Village split on topic of exile."
+      - roll: 31
+        max: 32
+        result: "Local magistrate vanished a week ago during water rights crisis."
+      - roll: 33
+        max: 34
+        result: "Harpy courier wrongly delivered letter with *dangerous* contents."
+      - roll: 35
+        max: 36
+        result: "Family member ate something bad and is mutating. Won't discuss what."
+      - roll: 41
+        max: 42
+        result: "Way too many daughters and nobody to marry them to."
+      - roll: 43
+        max: 44
+        result: "Soldiers quartered in the village refuse to leave. Eating everything."
+      - roll: 45
+        max: 46
+        result: "Cow dying of a disease. Herbalist and Jester disagree how; both want payment."
+      - roll: 51
+        max: 52
+        result: "Someone's robbing grave offerings. The dead are restless. Help!"
+      - roll: 53
+        max: 54
+        result: "The wind spirit won't move the windmill anymore. Says the contract is void!"
+      - roll: 55
+        max: 56
+        result: "Fire destroyed the granary. There's no reserves."
+      - roll: 61
+        max: 62
+        result: "Strangers are lurking and asking odd pointed questions. We're being cased!"
+      - roll: 63
+        max: 64
+        result: "Two villages in a feud over a shared resource (ford, mill, grazing land). This commoner is trying to broker peace before it turns bloody."
+      - roll: 65
+        max: 66
+        result: "Something in the forest ate our horses. The tracks are strange."
+  - label: "Mood and Demeanor"
+    die: d66
+    entries:
+      - roll: 11
+        max: 12
+        result: "**Grim endurance.** Treats the war like weather. Terrible, inevitable, endured."
+      - roll: 13
+        max: 14
+        result: "**Manic commerce.** Selling everything not nailed down while coins still matter."
+      - roll: 15
+        max: 16
+        result: "**Doubled faith.** Tripled offerings to the spirits. Judges anyone impious."
+      - roll: 21
+        max: 22
+        result: "**Simmering fury.** At the current lord, at the war, at armed strangers, at *everything*."
+      - roll: 23
+        max: 24
+        result: "**Performing fine.** Insists everything is normal. Smile doesn't reach the eyes."
+      - roll: 25
+        max: 26
+        result: "**Drunk all day.** Still working, but starting to fray around the edges."
+      - roll: 31
+        max: 32
+        result: "**Deep suspicion.** Asks questions. Watching your hands. Counting your weapons."
+      - roll: 33
+        max: 34
+        result: "**Desperate hospitality.** Overfeeding you. Insisting you stay. Lonely and terrified."
+      - roll: 35
+        max: 36
+        result: "**Bitter clarity.** Too smart for hope. Brilliant and ambitious if you can motivate them."
+      - roll: 41
+        max: 42
+        result: "**Gossip engine.** Everything you say is transmitted to everyone within a day's walk."
+      - roll: 43
+        max: 44
+        result: "**Scheming.** Working an angle. Sizing you up for usefulness and mark-status."

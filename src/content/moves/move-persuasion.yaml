@@ -1,0 +1,27 @@
+name: Persuasion
+tags: [social, interaction]
+summary: "Convince a target that something is true, regardless of whether it actually is."
+rules: |
+  When you try to persuade a target of something meaningful, consider two axes:
+
+  - **Consistency**: Does the information *jarringly* contradict anything the target already believes?
+    - Is it *immediately* and *obviously* false based on *currently observable data*?
+    - Does it upset/disrupt their existing worldview, life context, history, or biases?
+    - Do they believe you would be likely to lie about this?
+  - **Incentive**: Does the target have an incentive *proportionate to the scale of the claim* to believe you?
+    - Is the target's life made *easier* (or prevented from getting *worse*) by believing you?
+    - Does the target like you?
+    - Do they believe you to be an authority on the topic?
+
+  If both are *true*, the target will believe you. If both are *false*, the target will never believe you. If *only one* is true, a Save is required.
+
+  | Result      | Persuasion Save Effects |
+  |-------------|-------------------------|
+  | Crit ≥12    | Target wholly accepts your information and alters or synthesizes their worldview to adapt to it. This may cause a radical or unpredictable realignment. |
+  | Pass 8–11   | Target accepts your *specific* point, but works it into their existing worldview (i.e. as an exception or oddity) and will not strongly/openly espouse it or any downstream consequences. |
+  | Seven 7     | Target demands additional evidence (or action on your part) beyond what you've already provided. If not provided, see Failure. |
+  | Failure 3–6 | The target doesn't believe you. The GM rolls for a Disbelief penalty (see below). |
+  | Fumble ≤2   | The target doesn't believe you. The GM rolls 3 Disbelief penalties. |
+
+  **Disbelief Penalties (d6)**: 1 — The target is Angered. 2 — The target takes the most immediate possible action against you as retribution. 3 — The target calls in all like-minded allies in a collective action against you. 4 — The target will begin plotting to prove your assertion wrong. 5 — The target no longer believes you're an authority on the topic. 6 — No consequence, other than the target taking note of the incident.
+see_also: [negotiation, mood]

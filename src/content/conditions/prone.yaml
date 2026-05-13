@@ -1,0 +1,18 @@
+name: Prone
+tags: [physical, movement, combat, position]
+summary: "On the ground; quartered Speed and height. Counts as a Fact where relevant."
+rules: |
+  Being on the ground is called being Prone, and this Condition covers crawling,
+  sitting, and any other form of limited movement. A character's effective Speed
+  scores (and height) is quartered while Prone.
+
+  The Prone Condition counts as a Fact for any Save where it's relevant — prone
+  characters have a hard time defending against melee strikes, but an easier time
+  against long-distance ranged attacks.
+
+  The Prone Condition is countered by taking the Stand Up Action.
+duration: "Until countered by the Stand Up Action"
+see_also: []
+author: Histoire
+status: draft
+date: 2026-05-05

@@ -1,0 +1,10 @@
+name: Attack
+tags: [combat, basic]
+summary: "Deal damage to a target in melee or ranged."
+# The `rules` field is the full mechanical text — rendered verbatim in the inline/detail view.
+# Use plain text or simple markdown. Newlines become <br> in the inline variant.
+rules: |
+  Declare a target and a weapon. Roll to hit (or use the system's attack procedure).
+  On a hit, deal the weapon's Damage to the target.
+  On a miss, the attack has no effect.
+see_also: [defend, move]

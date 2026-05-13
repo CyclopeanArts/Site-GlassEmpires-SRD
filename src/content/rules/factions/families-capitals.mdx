@@ -1,0 +1,77 @@
+---
+title: Families, Capitals & Settlements
+tags: [core, rules, factions]
+draft: false
+summary: "Families score, Faction Level calculation, Capital concept, and Settlement relationships."
+---
+
+**Families** is a score indicating the *number of households* located in a Faction's **Capital** that provide *support for* & *has a dependency* on that Faction. *All* human power is downstream from the Families who follow a Leader.
+
+One household is estimated to be 5 people — on average, a husband, his wife, and three children, of whom one is capable of labor & war & might be an independent unmarried agent.
+
+The table adjacent correlates *Families* to **Faction Level**. The scale is *approximately* logarithmic; each step is around 3.16 × the Follower count of the previous step up.
+
+| Families in Capital | Faction Level | Capital Size | Army Size | Realm Size | Euro Nobility Equivalent |
+| :--------------------: | :--------------: | --------------- | ------------- | ------------- | --------------------------- |
+| 0                      |        —        | —              | A person      | —            | —                          |
+| 1+                     |        1         | Cottage         | 3-man lance   | Farm          | Gentleman                   |
+| 3+                     |        2         | Manor           | Squad         | Manor         | Lord                        |
+| 10+                    |        3         | Hamlet          | Platoon       | —            | —                          |
+| 30+                    |        4         | Small village   | Company       | —            | —                          |
+| 100+                   |        5         | Village         | Cohort        | —            | —                          |
+| 300+                   |        6         | Small town      | Battalion     | —            | —                          |
+| 1,000+                 |        7         | Large town      | Brigade       | Barony        | Baron                       |
+| 3,000+                 |        8         | City            | Division      | County        | Count                       |
+| 10k+                   |        9         | Large city      | Corps         | Duchy         | Duke                        |
+| 30k+                   |        10        | Metropolis      | Field army    | Petty kingdom | King                        |
+| 100k+                  |        11        | Megalopolis     | Imperial army | Kingdom       | —                          |
+| 300k+                  |        12        | Rome            | Front         | Empire        | Emperor                     |
+
+To determine Faction Level from a Families score:
+
+1. Find the *number of digits* in the Families stat (*i.e. a village of 120 = 3*).
+2. Double it (*i.e. 3 × 2 = 6*).
+3. If the first digit in the Families stat is 2 or 1, subtract 1 (*i.e. "1" in 120, so 6 - 1 = 5*).
+
+To determine a viable Families number from a given character Level:
+
+1. Divide the character's Level by 2 (*i.e. Level 7 ÷ 2 = 3.5*).
+2. Write any number with that many digits. If you got a 0.5, round up, but the first digit *must* be 1 or 2 (*i.e. 3.5 = 4 digits, but no more than 2,999*).
+
+The Followers of the Leader of an entire Settlement (a Government, p. @) is equal to the number of Families living in that Settlement, because even if they don't like their Leader, their presence is still contributing to that Leader's power.
+
+If a Leader *doesn't* control the entirety of a Settlement, their Capital is a smaller structure within that Settlement (such as its market, gate society/guards, temple, bank, or a business) & his Families represent the attendees, customers, employees, or other people who support his Faction, depending on his Faction Type (p. @).
+
+A Faction's Level is tied to its current Families score & is *frequently* referenced by a character, so it's worth writing down the Level of a Leader's controlled Factions on his sheet.
+
+<Callout type="rule" heading="Tip">
+**For example**, a city of 40,000 has 5 digits (×2 = 10) & the highest digit (4) is greater than 3; therefore, that city's Leader has a Level of 11. And if you look at the table, you'll find that that's exactly correct.
+
+Similarly, you can convert from Leader Level to Follower score by dividing the Leader's Level by 2 & writing a number with that many digits, starting with 3 if there's a 0.5 remainder & 1 if there isn't.
+
+**For example**, a Leader of Lv13: 13 ÷ 2 = 6.5. There's a 0.5 remainder & 6 digits, so the Leader must rule a Capital of *at least* 300,000 people (but not ≥1,000,000, or else he'd be Level 14).
+</Callout>
+
+<Callout type="gm" heading="How many Factions can someone be a Follower of?">
+People can be Followers to many Factions at once.
+
+The Followers of the smallest village in a kingdom are considered Followers of the village mayor, the local province's lord, the magistrate above him, the bureaucratic body overseeing the region, & the emperor himself, in addition to being Followers of whichever businesses & gods & family members they patronize. Their commitments directly serve to reinforce & enhance the Factions they commit to. The degree of their devotion doesn't matter; the math already accounts for variation in support.
+</Callout>
+
+<Callout type="gm" heading="Why do we track or care about Capitals specifically?">
+Many reasons!
+
+- You do not rule *territory*; you rule *people*. Rural regions are of such thin density that to declare control over them is at best a technicality.
+- You need administrators to rule any other settlement. They're simply too distant to monitor.
+- You do not rule *territory*; you rule *people*. Rural regions are of such thin density that to declare control over them is at best a technicality.
+- You need administrators to rule any other settlement. They're simply too distant to monitor.
+- It is trivial (both in-world & as a GM) to count the population of one city, which is related to the fact that it's a small area that's easily managed by a person living in a single fortified location nearby.
+- As soon as you start counting all controlled populations, you have a billion issues determining which areas are controlled & which aren't; this leads to drawing borders & arguing over population density for people you'd have no right to know even existed.
+- Additionally, outlying populations' proof of existence is in *the existence of the city itself*. If a city didn't have rural populations, *the city would not exist*. It is dependent upon them for survival. Therefore, we can simplify them out of the equation & only account for the city.
+- Gods, too, are limited in power by space & distance. Every god is local.
+- Rulers, for much the same as the above reasons, cared far more about their local demesne & capital than outlying regions, and tended to invest heavily in their own capital precisely because it was most important to them.
+
+It is also worth noting that nearly all pre-industrial capitals were the single largest city in their respective realms, because power attracts *people* — specifically, it attracts courtesans, foreign diplomats, assassins & thieves, mercenaries, fellow rulers, scribes, spies, and every other form of scum who seek proximity to power.
+
+It is absolutely critical to maintain a basis in economics. All human relationships are economic in nature, especially grudges. A defined capital allows tethering of Faction activity to in-game economic factors (such as trade routes, iron mines, and population densities) which lets us turn proximity into relationships that matter.
+</Callout>

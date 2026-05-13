@@ -1,0 +1,18 @@
+name: NPC Reaction
+tags: [social, referee]
+die: 2d6
+# The /tables collection is for canonical tables cited from multiple locations —
+# not creature tables (those live in the bestiary YAML) or inline tables
+# (those live in the prose MDX). This one gets referenced from the social rules
+# chapter AND the GM guide AND anywhere else reactions come up.
+entries:
+  - roll: "2"
+    result: "Hostile. Attacks or drives party off immediately, no negotiation."
+  - roll: "3–5"
+    result: "Unfriendly. Will not help; may warn others. Leaves if it can."
+  - roll: "6–8"
+    result: "Neutral. Cautious interest. Open to a deal if terms are fair."
+  - roll: "9–11"
+    result: "Friendly. Helpful within reason; no cost unless asked for much."
+  - roll: "12"
+    result: "Enthusiastic. Goes out of their way; may become a follower."

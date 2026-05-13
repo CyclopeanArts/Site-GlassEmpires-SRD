@@ -1,0 +1,41 @@
+---
+title: "Battle Rating"
+tags: [rules, combat, battles, br]
+draft: false
+author: Histoire
+status: draft
+date: 2026-05-05
+summary: "BR formula — Power, Armor Multiplier, Damage Multiplier, and Feature multipliers."
+---
+
+## Battle Rating
+
+**Battle Rating** (BR) is a score representing everything that makes a character uniquely competent in a general combat scenario, not including exceptional cases. The formula for BR is as follows:
+
+> (*Power* × *Armor Multiplier* × *Damage Multiplier* × *Helpful Features Multiplier*) ÷ *Harmful Features Multiplier* = BR
+
+Always round to the nearest 1 BR increment. The calculation for each variable is as follows:
+
+- **Power**: Equal to your Level + HD.
+  - If you have a mount, add the mount's Power.
+- **Armor Multiplier**: Since Armor is a multiplier of Power & we assume 1 Power = 4 HP, this is calculable based on the degree of Armor. Your Armor Multiplier is equal to 1 plus your *highest* Armor score divided by 4. For leather, this is 1.25×; chain, 1.5×; plate, 2×.
+  - If mounted, use an averaged Armor score.
+- **Damage Multiplier**: Divide your *best possible Damage output per Turn* (accounting for all Strikes & other esoteric factors i.e. Reload weapons) by 4.
+  - Ask your GM if you have other, weirder modifiers for a given weapon.
+  - Mount attacks are only added if the mount is a sapient combatant.
+- **Helpful Features Multiplier**: Sum the number of Features you have that *help* your combat performance (*& that aren't already implicitly included in other multipliers*) & add 1.
+  - Add mount Features if applicable.
+- **Harmful Features Multiplier**: Sum the number of Features that *harm* your combat performance (*& that aren't already implicitly included in other multipliers*) & add 1.
+  - Add mount Features if applicable.
+
+<Callout type="example">
+A Lv2 human (HD 2) soldier with full plate, a shield & sword (medium melee, 5 Physical) & no outstandingly combat-useful Features (i.e. from his Class Features) has a Battle Rating of (4 × 2 × 1.25 × 1 ÷ 1) = **10**.
+
+An Army of 120 such soldiers would have a BR of 120 × 10 = **1,200**.
+</Callout>
+
+<Callout type="example">
+A Lv4 human (HD 2) with leather armor, a 2-handed longsword (large melee, 8 Physical), an extra Strike (for 2 total per Attack) & 2 other combat-applicable Features has a BR of (6 × 1.25 × 4 × 3) ÷ 1 = **90**. He's worth about 8 of the swordsmen in the previous example by himself.
+
+If he instead had plate armor, he'd be worth (6 × 2 × 4 × 3) ÷ 1 = **BR 144**. Not bad!
+</Callout>

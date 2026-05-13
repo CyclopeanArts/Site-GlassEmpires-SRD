@@ -1,0 +1,107 @@
+/* Glass Empires — Design Tokens
+   Source of truth: glass-empires-style-guide.html
+   Self-hosted fonts loaded in global.css via @fontsource packages */
+
+:root {
+  /* ── Color Palette ─────────────────────────────────────────────────────── */
+
+  --indigo-950:#0c0f1f; --indigo-900:#131836; --indigo-800:#1a2148;
+  --indigo-700:#252f5e; --indigo-600:#323f78; --indigo-500:#435294;
+  --indigo-400:#5e6eb0; --indigo-300:#8490c8; --indigo-200:#afb7db;
+  --indigo-100:#d5d9ed; --indigo-050:#eceef6;
+
+  --teal-950:#0a1e1e; --teal-900:#0f2f2f; --teal-800:#184040;
+  --teal-700:#235858; --teal-600:#2e7272; --teal-500:#3a8e8e;
+  --teal-400:#52a8a5; --teal-300:#78c2be; --teal-200:#a5d9d6;
+  --teal-100:#d0eceb; --teal-050:#e8f5f4;
+
+  --gold-950:#1f1508; --gold-900:#3a2a0e; --gold-800:#5c4216;
+  --gold-700:#7e5b1f; --gold-600:#a07528; --gold-500:#c49234;
+  --gold-400:#d4a94e; --gold-300:#e0c070; --gold-200:#ebda9e;
+  --gold-100:#f5ecc8; --gold-050:#faf5e4;
+
+  --crimson-900:#3b0d0d; --crimson-800:#5e1616; --crimson-700:#842020;
+  --crimson-600:#a52a2a; --crimson-500:#c43838; --crimson-400:#d45858;
+  --crimson-300:#e08080; --crimson-200:#ecabab; --crimson-100:#f5d4d4;
+  --crimson-050:#faf0f0;
+
+  --sienna-900:#2f1a0e; --sienna-800:#4e2c18; --sienna-700:#6e3f24;
+  --sienna-600:#905430; --sienna-500:#b06a3c; --sienna-400:#c48458;
+  --sienna-300:#d6a27e; --sienna-200:#e6c4a8; --sienna-100:#f2e0d0;
+  --sienna-050:#f9f0e8;
+
+  --ivory-warm:#f5efe4; --ivory-mid:#ede5d8;
+  --ivory-cool:#e8e2d6; --ivory-dark:#d8d0c2;
+
+  --ink-pure:#111111; --ink-body:#1c1c1e; --ink-soft:#3a3a3c;
+  --ink-muted:#636366; --ink-ghost:#8e8e93;
+
+  --cyc-orange:#ff8800; --cyc-pink:#ee2277;
+
+  /* ── Semantic Tokens — Light Theme (default) ───────────────────────────── */
+
+  --bg:            #faf8f3;
+  --bg-surface:    var(--ivory-warm);
+  --bg-elevated:   var(--ivory-mid);
+  --text:          var(--ink-body);
+  --text-soft:     var(--ink-soft);
+  --text-muted:    var(--ink-muted);
+  --heading-col:   var(--indigo-700);
+  --accent:        var(--teal-600);
+  --gold-ui:       var(--gold-500);
+  --border:        var(--ivory-dark);
+  --border-strong: #c0b8aa;
+  --flavor-col:    var(--crimson-800);
+  --link-col:      var(--teal-500);
+  --table-rule:    var(--gold-500);
+
+  /* Callout tokens */
+  --callout-gm-bg:    var(--gold-050);   --callout-gm-bdr:    var(--gold-500);   --callout-gm-head:   var(--gold-700);
+  --callout-rule-bg:  var(--sienna-050); --callout-rule-bdr:  var(--sienna-500); --callout-rule-head: var(--sienna-700);
+  --callout-ex-bg:    var(--teal-050);   --callout-ex-bdr:    var(--teal-500);   --callout-ex-head:   var(--teal-700);
+  --callout-hz-bg:    var(--crimson-050);--callout-hz-bdr:    var(--crimson-600);--callout-hz-head:   var(--crimson-700);
+
+  /* Nav */
+  --nav-bg:        var(--indigo-900);
+  --nav-text:      var(--ivory-warm);
+  --nav-accent:    var(--gold-400);
+  --nav-hover:     rgba(255,255,255,0.08);
+  --nav-active:    rgba(196,146,52,0.2);
+  --nav-width:     16rem;
+
+  /* Draft banner */
+  --draft-bg:      rgba(196,146,52,0.12);
+  --draft-bdr:     var(--gold-400);
+  --draft-text:    var(--gold-700);
+}
+
+/* ── Dark Theme ──────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg:            #14100c;
+  --bg-surface:    #1c1712;
+  --bg-elevated:   #251f16;
+  --text:          #f0e6d0;
+  --text-soft:     #c4b08a;
+  --text-muted:    #8a7458;
+  --heading-col:   var(--indigo-200);
+  --accent:        #62EDD8;
+  --gold-ui:       var(--gold-400);
+  --border:        rgba(196,146,52,0.18);
+  --border-strong: rgba(196,146,52,0.4);
+  --flavor-col:    #c4847a;
+  --link-col:      #62EDD8;
+  --table-rule:    var(--gold-400);
+
+  --callout-gm-bg:    rgba(196,146,52,0.08);  --callout-gm-bdr:    var(--gold-400);   --callout-gm-head:   var(--gold-300);
+  --callout-rule-bg:  rgba(176,106,60,0.1);   --callout-rule-bdr:  var(--sienna-400); --callout-rule-head: var(--sienna-300);
+  --callout-ex-bg:    rgba(58,142,142,0.1);   --callout-ex-bdr:    var(--teal-400);   --callout-ex-head:   var(--teal-300);
+  --callout-hz-bg:    rgba(164,42,42,0.1);    --callout-hz-bdr:    var(--crimson-400);--callout-hz-head:   var(--crimson-300);
+
+  --nav-bg:        #0e0b08;
+  --nav-text:      #f0e6d0;
+  --nav-accent:    #d4a94e;
+
+  --draft-bg:      rgba(196,146,52,0.08);
+  --draft-bdr:     var(--gold-400);
+  --draft-text:    var(--gold-300);
+}

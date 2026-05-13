@@ -1,0 +1,236 @@
+name: True Immortal
+tags: [human, immortal, deity-class, intelligent, unique]
+summary: "An immortal human of inscrutable age; radiant, hyper-real, and probably in disguise."
+hd: 7
+armor: 0
+damagemultiplier: 10
+size: 5
+weight: 60
+maxload: 40
+speeds:
+  run: 25
+  fly: 250
+group: "Solo / Cult patron (Level 2d6, Godhead enables summoning)"
+desc: "A radiant, hyper-real human, possibly disguised as a lesser being."
+wants: "Inscrutably mad whims fulfilled. An end to the ennui."
+intellect: "Brilliant but ordinary human, augmented by magic or tools."
+morality: "Twisted into knots by uncountable and unaccountable aeons."
+treasure: "3-in-6 chance of carrying a treasure; 1d6−2 more hidden elsewhere. Will not willingly relinquish them."
+features:
+  - name: "Hourai Immortal"
+    text: |
+      You are a true immortal and are subject to the following conditions:
+      - Your body replaces limbs, implants, Mutations, Wounds, and all other abnormalities to perfectly restore itself within 24 hours of any damage or change being inflicted.
+      - If killed, in 1d6 Rounds you immolate into ash and reconstitute in a burst of light and cold flame at a place of your choosing within 100', displacing or destroying any material present if no empty space is available.
+      - You are always conscious, even in death, and may choose to die and begin resurrecting as a Free Action.
+      - Your soul is not in your body; it is beyond the cycle of life and death. No effect targeting a soul works on you.
+      - You are still subject to all natural needs and vulnerabilities and have no special resistances to Damage, but you regenerate fast enough that mundane starvation, thirst, or exhaustion cannot kill you.
+      - This Feature can never be copied, borrowed, stolen, given, removed, inherited, overruled, or otherwise transferred by any means whatsoever.
+    combat: 10
+lore: |
+  Even an undying force, so long as it be carved in the shape of Man, can be swayed and broken. A god with boundaries is one that can be defeated. A human plus eternity is a predictable cycle.
+
+  An immortal knows every trade, has seen all of history, knows a man's inner character better than they do. You would have to be desperate or stupid to get in the way of an immortal — and there are plenty of desperate and stupid people in the world.
+gm_note:
+  heading: "Generating an immortal"
+  body: |
+    Optionally roll 2d6 for HD (range 2–12). Pilfer liberally from other bestiary entries for weapons, armor, and Features. Assume enormous competence, but play fairly. Immortals are still human and they aren't always smart — just very well-learned, with vast resources. Their Battle Rating is not meaningfully calculable; treat as effectively infinite.
+when_eaten:
+  flavor: "Bitter pork. Degenerates gradually into ash over 24 hours."
+  notes: "The Hourai Immortal Feature cannot be obtained, but other Features rolled on the Immortal Abilities table can be gained via normal consumption rules. Even still, the immortal will reconstitute, remember who ate them, and have opinions about it."
+tables:
+  - label: "Current Project"
+    die: d66
+    entries:
+      - roll: 11
+        max: 13
+        result: "**Trying to die for good.** Heard there was a method. Testing it out. Collateral damage is mounting? Who cares?"
+      - roll: 14
+        max: 16
+        result: "**Waiting for an event.** Political confluence, meeting, stars' alignment. It was calculated centuries ago. Don't distract me."
+      - roll: 21
+        max: 23
+        result: "**Brokering a treaty.** Acting as a neutral party. Both sides hate the other and will pay happily for anyone who can corrupt the immortal or destroy the other side's bargaining position."
+      - roll: 24
+        max: 26
+        result: "**Rebuilding.** There used to be a monument here. A palace, a canal, a machine. All this will go, one way or another."
+      - roll: 31
+        max: 33
+        result: "**Hiding.** May be on the run from the Lunar Princess. Scared badly enough that they won't tell you what. You might die for discovering them."
+      - roll: 34
+        max: 36
+        result: "**Governing.** Or rather, I'm just that good. They worship me. They do everything I say. What, you want something? Are you gonna get in the way?"
+      - roll: 41
+        max: 43
+        result: "**Collecting.** Every left shoe in the kingdom. All of the nobles' eyeballs. Every book containing an old king's name."
+      - roll: 44
+        max: 46
+        result: "**Teaching a single mortal.** He's becoming dangerously powerful and terrifically unaccountable. Good!"
+      - roll: 51
+        max: 53
+        result: "**Feuding with another neighboring immortal.** They enjoy the game. Two kingdoms exist entirely to sustain the conflict. Every proximal relationship is another front."
+      - roll: 54
+        max: 56
+        result: "**Familicide.** Systemically hunting down an entire bloodline across a continent."
+      - roll: 61
+        max: 63
+        result: "**Sleeping.** Everyone is terrified of the awakening. Nobody remembers what this one was like."
+      - roll: 64
+        max: 66
+        result: "**Prolonging a war.** Might be for entertainment; may be for a scheme. Might be testing the limits of a participant, or pressuring them."
+  - label: "Immortal Abilities"
+    die: d66
+    entries:
+      - roll: 11
+        max: 13
+        result: "**True Teleportation**. As a Major Action, instantly move to anywhere you can see or have been before."
+      - roll: 14
+        max: 16
+        result: "**Blood Memory**. As a Major Action, shapeshift into any humanoid form you have previously touched. The disguise is physically perfect. Features are not mimicked."
+      - roll: 21
+        max: 23
+        result: "**Perfect Memory**. You recall every face, word, and event you have ever witnessed. You can reproduce any document, map, or conversation verbatim. You cannot forget, even if you wish to."
+      - roll: 24
+        max: 26
+        result: "**Undeniable**. You may choose to be impossible to ignore. At any time, no creature within line-of-sight or earshot can look away, leave, or take any action not directed at you."
+      - roll: 31
+        max: 33
+        result: "**Spirit Sight**. You can see invisible entities, the structure of spirits, enchantments, illusions, and everything else as they truly are; nothing is hidden from your direct sight."
+      - roll: 34
+        max: 36
+        result: "**Compulsion of Truth**. Anyone speaking directly to you cannot knowingly lie, even by omission. They may refuse to speak. This is not magic; it is the sheer weight of your attention."
+      - roll: 41
+        max: 43
+        result: "**Iron Fortitude**. You do not tire, hunger, thirst, or need sleep, though you may choose to. You can march, work, or fight indefinitely without penalty."
+      - roll: 44
+        max: 46
+        result: "**Thousand Names**. You possess valid, established identities in dozens of cultures, courts, and institutions. You can arrive almost anywhere and be recognized as someone important, expected and trusted."
+      - roll: 51
+        max: 53
+        result: "**Prophecy**. Once per month, you may ask the GM a single yes/no question about the future. The GM answers truthfully based on his understanding of current trajectories. The future is not fixed."
+      - roll: 54
+        max: 56
+        result: "**Master of All**. You have mastered every mundane trade, art, and science known to civilization. Given materials and time, you can build or create anything a perfectionist master might."
+      - roll: 61
+        max: 63
+        result: "**Weather Controller**. Command the weather within three miles' radius to anything desired with minutes of notice. Summon hurricanes, snowstorms, rainstorms, or tornadoes."
+      - roll: 64
+        max: 66
+        result: "**Pronounce Death**. Once per day, speak aloud a character's true name and the deadly fate they'll meet. If it's possible that they meet it in the next 6 minutes and it affects nobody else, they meet it. No Save. Works on everything, including elementals."
+  - label: "Disposition & Swirling Legends"
+    die: d66
+    entries:
+      - roll: 11
+        max: 13
+        result: "**Furious.** Once sank a fleet by standing on the shore and screaming."
+      - roll: 14
+        max: 16
+        result: "**Amiable.** Taught the first salamanders how to smelt bronze."
+      - roll: 21
+        max: 23
+        result: "**Irritable.** Cursed a bloodline for a thousand years over an insult at dinner."
+      - roll: 24
+        max: 26
+        result: "**Inquisitive.** Has asked every mortal they've met the same question. No one has answered correctly yet. Nobody remembers the question."
+      - roll: 31
+        max: 33
+        result: "**Dismissive.** Used to rule a kingdom. Left because it bored them. The kingdom still exists and claims them as patron."
+      - roll: 34
+        max: 36
+        result: "**Pompous.** Wrote the foundational legal code of a civilization that collapsed centuries ago. Still quotes it."
+      - roll: 41
+        max: 43
+        result: "**Melancholic.** Was last seen weeping over a grave so old the name has weathered away."
+      - roll: 44
+        max: 46
+        result: "**Playful.** Regularly disguises themselves as a beggar and tests the hospitality of settlements. Rewards and punishes accordingly."
+      - roll: 51
+        max: 53
+        result: "**Paranoid.** Has not been seen in decades. The last person who found them was returned alive but unable to speak."
+      - roll: 54
+        max: 56
+        result: "**Generous.** Gives gifts freely... but every gift creates an obligation. The immortal remembers every debt."
+      - roll: 61
+        max: 63
+        result: "**Cold.** Speaks of mortal lives the way a farmer speaks of seasons."
+      - roll: 64
+        max: 66
+        result: "**Manic.** Alternates between frenzied activity and catatonic withdrawal on a cycle no one has been able to predict."
+  - label: "Peculiarities & Proclivations"
+    die: d66
+    entries:
+      - roll: 11
+        max: 13
+        result: "**Genuinely all-loving.** Would probably help if not already busy and if aid wouldn't hurt anyone. Never helps for free."
+      - roll: 14
+        max: 16
+        result: "**Distant ancestor of a PC.** Wants them to be more alike."
+      - roll: 21
+        max: 23
+        result: "**Recently became immortal.** Doesn't remember how. Wants — needs — to find out."
+      - roll: 24
+        max: 26
+        result: "**Trapped in an intangible state.** Can only interact with world via Godhead. Would like to restore physical body."
+      - roll: 31
+        max: 33
+        result: "**Collects mortal apprentices.** Teaches them everything, then abandons them at the peak of their ability. Former students scattered across the world, many in positions of power, all with complicated feelings about their teacher."
+      - roll: 34
+        max: 36
+        result: "**Has fallen in love with a mortal.** Knows they will die. This has happened before. It always ends the same way. The immortal does it anyway."
+      - roll: 41
+        max: 43
+        result: "**Maintains a personal archive of every text they've ever read.** Will do almost anything to acquire one they lack. Will kill to prevent one being destroyed."
+      - roll: 44
+        max: 46
+        result: "**Has sworn a binding oath to another immortal and regrets it.** The terms constrain their actions in ways they refuse to explain."
+      - roll: 51
+        max: 53
+        result: "**Is playing both sides of the current conflict.** Has real affection for people on each side. Cannot bring themselves to choose."
+      - roll: 54
+        max: 56
+        result: "**Lives as a mortal.** New name, new trade, new town every few decades. Currently deep in a life they care about. Reacts to exposure the way a cornered animal reacts to a torch."
+      - roll: 61
+        max: 63
+        result: "**Convinced it's being tested by an older, more powerful immortal.** Can't prove it. Paranoia manifests as irrational behavior."
+      - roll: 64
+        max: 66
+        result: "**Ridiculously formal.** Demands letters and formal proclamations. Keeps a massive calendar of debts, which substitutes for a moral compass."
+  - label: "Immortal Treasures"
+    die: d66
+    entries:
+      - roll: 11
+        max: 13
+        result: "**Apple of Mania.** Everyone who lays eyes upon it desires it. The desire is irrational, immediate, equal in strength to the character's greatest desire, and does not diminish with distance or time. The immortal is immune only by familiarity."
+      - roll: 14
+        max: 16
+        result: "**The Last Letter.** A sealed document from someone who died. Never opened, never will be. Not dangerous for what it says; dangerous for what the immortal will do if it is threatened or destroyed."
+      - roll: 21
+        max: 23
+        result: "**Unbreakable Chain.** A completely indestructible 244' chain of thin adamantine. Weighs 1#."
+      - roll: 24
+        max: 26
+        result: "**The Antidote.** A cure for the current worst thing. The immortal won't use it because the last time, the consequences were worse than the disease."
+      - roll: 31
+        max: 33
+        result: "**The Elixir.** The singular source of Hourai Immortality. Intended to be delivered to a specific person as a gift. One use; the entire container must be consumed."
+      - roll: 34
+        max: 36
+        result: "**Hunting Horn.** If blown loudly, this immortal will immediately appear. It's a voluntary thing. It will respect the horn."
+      - roll: 41
+        max: 43
+        result: "**Necklace of Ears.** Literally made from severed ears. The wearer can understand every language, including animal emotions, but not speak them."
+      - roll: 44
+        max: 46
+        result: "**Spare Fate.** A single slim red thread. Can be sacrificed to miraculously invert a fate that has just been sealed — a king's declaration of war, a love lost, your own death."
+      - roll: 51
+        max: 53
+        result: "**Tianshima.** A brass and redwood treasure junk, sans sails. Given a crew of 20, it can sail through the sky. Holds 6,000# in cargo. One-of-a-kind anomaly."
+      - roll: 54
+        max: 56
+        result: "**Small metal tablet.** Hand-sized, scuffed. Glassy panel on one surface; if touched, a trapped fairy mathematician appears to provide guidance."
+      - roll: 61
+        max: 63
+        result: "**Martyr's Bracelet.** Jagged thorns dig into skin. If an ally within line-of-sight or 1,000' would suffer a negative effect, you may transfer its full effect onto yourself."
+      - roll: 64
+        max: 66
+        result: "**Respect.** This immortal is borderline-undefeated. If you can kill it, it will perform a single favor for you to the spirit of your word and the limits of its abilities."

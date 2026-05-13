@@ -1,0 +1,198 @@
+---
+title: "Using the Ref Component"
+order: 10
+tags: [gm-guide, reference, components]
+draft: false
+summary: "How to use the Ref component to cross-link game terms, creatures, conditions, and glossary entries."
+---
+
+The `<Ref/>` component is the primary tool for cross-linking game content across the SRD. It pulls data from any content collection and renders it in the appropriate format.
+
+## Quick Start
+
+```mdx
+<Ref collection="conditions" slug="panicked" />
+```
+
+That's it. The component looks up `panicked` in the `conditions` collection and renders it inline.
+
+## Props
+
+| Prop | Required | Default | Description |
+|------|----------|---------|-------------|
+| `collection` | Yes | — | Content collection: `rules`, `bestiary`, `glossary`, `conditions`, `moves`, `spirits`, `lore`, `gm-guide` |
+| `slug` | Yes | — | Entry identifier within the collection (filename minus extension) |
+| `variant` | No | `"inline"` | Rendering mode: `"tooltip"`, `"card"`, `"inline"`, `"stat"` |
+| `label` | No | entry's name | Override the displayed name |
+| `linkSlug` | No | same as slug | Override the link target (for aliased references) |
+
+## Variants
+
+### Tooltip — `variant="tooltip"`
+
+An inline text link with the entry's summary shown on hover. Best used mid-sentence when you want a lightweight cross-reference that doesn't break the reading flow.
+
+```mdx
+Make a <Ref collection="conditions" slug="panicked" variant="tooltip" /> Save.
+```
+
+Renders as: underlined text that shows the Panicked condition's summary in a popover on hover. Requires the entry to have a `summary` field.
+
+**Best for:** inline references to conditions, glossary terms, or any entry where the name alone is sufficient and the summary adds helpful context.
+
+### Card — `variant="card"`
+
+A compact linked card with the entry's name, summary, and tags. Useful on index pages or galleries.
+
+```mdx
+<Ref collection="bestiary" slug="jiangshi" variant="card" />
+```
+
+Renders as: a bordered card with the creature name in small caps, its summary on the line below, and tag badges.
+
+**Best for:** bestiary galleries, class lists, tradition overviews — any page that is presenting a collection of entries as a navigable grid.
+
+### Inline — `variant="inline"` (default)
+
+A callout block embedded in the prose flow. Renders whatever fields the entry has: name, summary, duration, save, cost, rules, definition.
+
+```mdx
+<Ref collection="conditions" slug="cowering" />
+```
+
+Renders as: a bordered block (example callout style) with the condition's name, summary line, and any rules text. If the entry has `duration`, `save`, or `cost` fields, those appear as labeled lines. If it has `see_also`, those are rendered as links.
+
+**Auto-upgrade to stat:** If the entry has an `hd` field (i.e., it's a bestiary creature), `variant="inline"` automatically upgrades to `variant="stat"`. You never need to manually set `variant="stat"` for creatures.
+
+**Best for:** most prose cross-references — dropping a condition's full rules into a combat section, embedding a move's description in a class feature, or inserting a glossary definition.
+
+### Stat — `variant="stat"`
+
+A full bestiary stat block. Renders HD, BR, Size, Weight, Max Load, Speeds, Group, the Four Facts (desc, wants, intellect, morality), Features (with sub-bullet parsing), Lore, Treasure, and When Eaten.
+
+```mdx
+<Ref collection="bestiary" slug="bear" variant="stat" />
+```
+
+This is what you get automatically when referencing a `bestiary` entry with `variant="inline"`. You only need to set it explicitly if you're using a different default variant but want a stat block for one specific reference.
+
+**Best for:** dropping a full creature stat block into an adventure location or encounter description.
+
+## Collections and Their Fields
+
+What renders depends on what fields the entry has. The component does not assume any particular schema — it checks each field and renders only what's present.
+
+### Conditions (`collection="conditions"`)
+
+YAML entries. Typical fields used by Ref:
+
+```yaml
+name: Panicked
+summary: "Fleeing in terror from the source of fear."
+duration: "Until end of combat, or 1 hour outside combat."
+save: "Save to avoid when triggered."
+rules: |
+  Panicked NPCs flee. Panicked PCs take doubled Damage.
+tags: [condition, combat]
+see_also: [cowering, frightened]
+```
+
+Use `variant="inline"` to embed the full condition block. Use `variant="tooltip"` for lightweight mid-sentence references.
+
+### Bestiary (`collection="bestiary"`)
+
+YAML entries. The most feature-rich collection. The component renders:
+- Stat line: HD (HP + AP), BR, Size, Weight, Max Load, Speeds
+- Group size
+- The Four Facts: desc, wants, intellect, morality
+- Features (with sub-bullets parsed from `- ` lines)
+- Lore (with paragraph breaks)
+- Treasure
+- When Eaten block
+
+The `variant` auto-upgrades to `"stat"` for bestiary entries. Use `variant="card"` for gallery views or `variant="tooltip"` for quick creature name references.
+
+### Glossary (`collection="glossary"`)
+
+YAML entries. Typical fields:
+
+```yaml
+name: Battle Rating
+summary: "A score representing combat competence."
+definition: "BR = (Power × Armor Multiplier × Damage Multiplier × Helpful Features) ÷ Harmful Features."
+related_rule: "Battles"
+see_also: [skirmishes, armor]
+tags: [combat, mechanics]
+```
+
+`variant="inline"` renders the definition. `variant="tooltip"` makes a hover-link with the summary.
+
+### Moves (`collection="moves"`)
+
+YAML entries. Similar to conditions — name, summary, cost, rules.
+
+### Rules, Lore, GM Guide (`collection="rules"`, `"lore"`, `"gm-guide"`)
+
+Prose collections (.mdx/.md). Entries have frontmatter with `title`, `summary`, `tags`. Use `variant="tooltip"` for cross-page references or `variant="card"` for index pages. The `variant="inline"` for prose collections renders the title and summary only, since there's no structured rules payload.
+
+## Slug Format
+
+The `slug` is the entry's id in Astro's content collection. For flat files, it's the filename without the extension:
+
+```
+File:  src/content/rules/character-creation.mdx
+Slug:  "character-creation"
+
+File:  src/content/bestiary/bear.yaml
+Slug:  "bear"
+```
+
+For files in subdirectories, include the path:
+
+```
+File:  src/content/rules/classes/lord.mdx
+Slug:  "classes/lord"
+
+File:  src/content/rules/magical-traditions/origami-assassin.mdx
+Slug:  "magical-traditions/origami-assassin"
+```
+
+## Missing Entries
+
+If an entry is not found, the component renders the label (or slug) as plain text with a dotted underline and a `[?]` marker. The build does not fail. This is visible only in the HTML — look for the `ref-missing` class and the HTML comment `<!-- TODO: missing Ref -->`.
+
+## Common Patterns
+
+### Linking to a Class or Tradition from Prose
+
+```mdx
+Choose <Ref collection="rules" slug="classes/lord" variant="tooltip" /> if you were born to rule.
+```
+
+This renders "Lord" as a link to `/rules/classes/lord` with the Lord class's summary on hover.
+
+### Index Page Gallery
+
+```mdx
+<Ref collection="rules" slug="classes/lord" variant="card" />
+<Ref collection="rules" slug="classes/magistrate" variant="card" />
+<Ref collection="rules" slug="classes/magician" variant="card" />
+```
+
+### Inline Condition in Combat Rules
+
+```mdx
+While Burning, you take <Ref collection="conditions" slug="burning" /> at the start of each Turn.
+```
+
+Renders the full Burning condition block inline in the combat prose.
+
+### Bestiary Entry in Adventure Location
+
+```mdx
+The cave mouth stinks of rot and honey. Inside waits a
+<Ref collection="bestiary" slug="bear" />
+that has not eaten in a week.
+```
+
+Renders the full Bear stat block.

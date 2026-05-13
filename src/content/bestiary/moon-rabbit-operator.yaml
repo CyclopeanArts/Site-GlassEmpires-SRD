@@ -1,0 +1,60 @@
+name: Moon Rabbit Operator
+tags: [lunarian, moon, rabbit, assassin, soldier, lunar]
+summary: "A rabbit-eared Lunar soldier deployed to Aia on covert missions — literal-minded, well-armed, and adorably incompetent."
+hd: 1
+armor: 0
+damagemultiplier: 3.75
+size: 5
+weight: 12
+maxload: 8
+speeds:
+  run: 35
+group: "1d6+1 away team / 3d6 squad"
+desc: "A neotenous human with rabbit ears, tail, and legs. Always dressed in camouflage or (bad) disguise suitable for the environment. Their wide eyes and earnest expressions make them look perpetually surprised — which is often accurate."
+wants: "Vegetables. Not to be discovered."
+intellect: "Follows orders with *such literal precision* it loops back around to stupidity."
+morality: "The mission is morally correct because it is the mission."
+treasure: "Jade name tag (30 sp), 2d6 cakes."
+features:
+  - name: "Fists (Natural Weapon)"
+    text: "2 Physical."
+    combat: 0
+  - name: "Jade Pestle (Weapon)"
+    text: "1/4#, 1H, 4 Physical."
+    combat: 0
+  - name: "Ray Gun (Weapon)"
+    text: "1#; 2H; 15 Fire/Ice."
+    combat: 0
+  - name: "Ray Shield (Equipment)"
+    text: "1/4#. Immune to all Damage until struck by an effect that deals 6 or more Damage, at which point the shield gem instantly shatters, destroying the item (and fully absorbing that particular effect's Damage)."
+    combat: 1
+  - name: "Moon Telepathy"
+    text: "You are Immune to Mind Damage. You can broadcast and receive speech as if talking to *everyone* with Moon Telepathy up to *at most* a 1-mile radius. You can dim the range or mute your ability to hear other broadcasts."
+    combat: 1
+  - name: "Slightly Better Trained Rabbit Instincts"
+    text: "You must Save to not Panic from unexpected loud noises, dogs, or eagles. Mid-combat counts as expected. You must Save to not investigate interesting smells."
+    combat: -1
+  - name: "Bound"
+    text: "Once per Turn as a Free Action, leap up to 15' in any direction."
+    combat: 0
+  - name: "Rabbit Guard's Feet"
+    text: "You never make sounds while moving. You can jump hard enough to move between the Moon and Aia (takes 1 day) provided that a landing point on the Moon (or Aia) is currently visible. You cannot reach *anywhere else* with this ability."
+    combat: 0
+lore: |
+  The Lunar Kingdom hates everyone on Aia. If moon rabbits show up at your doorstep, you are being incompetently assassinated.
+tables:
+  - label: "Current Mission"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Retrieve a lunar artifact.** They have a sketch but cannot identify it. Will attempt to take anything vaguely similar back to the Moon, because they are all tired. The artifact has a 3-in-6 chance of even existing nearby and is *extremely* dangerous and powerful if it does."
+      - roll: 2
+        result: "**Observe and report.** They are observing. They have been observing for three weeks. Nobody told them what to report or how and everyone's afraid to ask."
+      - roll: 3
+        result: "**Secure the perimeter.** They have formed a perfect circle around something strategically valuable and will not let anyone cross it, including each other. They are now split across both sides of their own perimeter."
+      - roll: 4
+        result: "**Punish the random Aian who offended the Princess.** They have a name but no description. They will ask *every* person they meet \"Are you [name]?\""
+      - roll: 5
+        result: "**Training exercise.** You are part of the training simulation and are the targets."
+      - roll: 6
+        result: "**Lost.** Their commander received contradictory orders and they are now marching in a perfect holding pattern until resolution."

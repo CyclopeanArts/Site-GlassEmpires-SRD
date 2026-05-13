@@ -1,0 +1,27 @@
+name: Hit Dice
+tags: [core, mechanics, character, combat]
+summary: "A measure of a creature's raw toughness and combat capability — HD determines HP, contributes to Power, and scales many Features."
+definition: |
+  Hit Dice (HD) is a score representing a creature's raw physical toughness,
+  combat experience, and general resilience. HD is the foundation of several
+  derived stats:
+
+  **HP (Hit Points)**: Each HD grants a number of HP determined by the
+  creature's Race. Typical Glassian humans gain 4 HP per HD.
+
+  **Power**: Power = HD + Level. Power is used to calculate Armor Points (AP),
+  determines the death threshold, and scales certain Features.
+
+  **Battle Rating (BR)**: BR = HD × (1 + number of combat Features), used to
+  size armies and evaluate faction military strength.
+
+  **Strikes per Attack**: A character's HD determines how many Strikes they
+  can make per Attack action.
+
+  **Max. Load**: A character's carrying capacity in stone (#) is typically
+  derived from their HD and Strength.
+related_rule: "adventure/damage"
+see_also: [power, battle-rating, armor-points, max-load, level]
+author: Histoire
+status: draft
+date: 2026-05-05

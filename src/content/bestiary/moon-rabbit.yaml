@@ -1,0 +1,120 @@
+name: Moon Rabbit
+tags: [lunarian, moon, rabbit, civilian, lunar]
+summary: "A neotenous human with rabbit ears, friendly and eternally bored — the civilian population of the Lunar Kingdom."
+hd: 1
+armor: 0
+damagemultiplier: 0.5
+size: 5
+weight: 12
+maxload: 8
+speeds:
+  run: 35
+group: "1d6+1 fluffle / 3d6×10 warren"
+desc: "Neotenous human with rabbit ears, tail & legs, friendly smile. Light, casual, brightly-patterned clothes."
+wants: "Vegetables. To be sociable. Gossip & rumors. To cause trouble & confusion for fun."
+intellect: "Very literal. Diligent & systemic. Prone to logician's fallacies."
+morality: "Laid-back & easy-going. Genuinely well-intentioned."
+treasure: "Jade coins (3d6 × $10)."
+features:
+  - name: "Fists (Natural Weapon)"
+    text: "2 Physical."
+    combat: 0
+  - name: "Moon Telepathy"
+    text: "You are Immune to Mind Damage. You can broadcast & receive speech as if talking to *everyone* with Moon Telepathy up to *at most* a 1-mile radius. You can dim the range or mute your ability to hear other broadcasts."
+    combat: 1
+  - name: "Bound"
+    text: "Once per Turn as a Free Action, leap up to 15' in any direction."
+    combat: 0
+  - name: "Rabbit Instincts"
+    text: "You must Save to not Panic from unexpected loud noises, dogs, or eagles. Everything in combat is unexpected. You must Save to not investigate interesting smells."
+    combat: -1
+lore: |
+  Unchanging aeons of relative ease in Lunar cities has divorced them from the realities of life. They know almost nothing about Aia & are astonished (& easily entranced) by stories of war, conquest, famine, charisma, tournaments, politics, monster-slaying, etc. They will follow interesting people around asking *lots of questions* before *broadcasting the answers to everyone*.
+
+  Moon rabbits are immortal. On the Moon, they have a half-life of around 500 years.
+tables:
+  - label: "What they want from you"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Stories about Aia**. Will trade local information for entertainment. 3-in-6 chance they immediately tell everyone everything."
+      - roll: 2
+        result: "**Help with task**. Needs something fetched from dangerous/restricted area. Doesn't understand why it's dangerous. \"*Could you get this from the vault? I'm not allowed in there but YOU don't work here so it should be fine.*\""
+      - roll: 3
+        result: "**Vegetables from Aia**. Will pay *absurd* amounts of jade coins for normal carrots."
+      - roll: 4
+        result: "**Opinion on dispute**. Two rabbits are having an argument that's been going on for three months. They want outside perspective. The argument is *deeply* stupid."
+      - roll: 5
+        result: "**Introduction to interesting person**. Heard a rumor about someone (PC or NPC) and wants to meet them. Will drag you to them OR drag them to you, whichever is *less* convenient."
+      - roll: 6
+        result: "**Nothing yet, but...** Following you around because you're the most interesting thing to happen in weeks. Broadcasting running commentary on everything you do to all nearby rabbits. The Royal Guards will hear within hours."
+  - label: "The useful information they can offer"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Guard rotations**: Knows when Royal Guards change shifts, which routes they take, which ones are more alert. Learned this through decades of watching."
+      - roll: 2
+        result: "**Secret passages**: \"Oh, that wall? It's not really a wall. You just push on the third crystal from the left.\" Has no idea this is supposed to be secret."
+      - roll: 3
+        result: "**Current gossip**: Knows where everyone important is right now and what they're doing. Updates in real-time via telepathy network."
+      - roll: 4
+        result: "**Artifact locations**: \"That thing you're looking for? I think it's in the Eastern Vault. Or maybe the Archive? One of those buildings that glows purple.\""
+      - roll: 5
+        result: "**Cultural taboos**: Can explain what will DEFINITELY get you caught. \"Don't touch the statues. The Princess gets really mad. Last time someone did that she petrified an entire village.\""
+      - roll: 6
+        result: "**How things work**: Can explain lunar technology in terms that are technically accurate but utterly useless. \"The door opens when it recognizes you. How does it recognize you? It looks at you. With its eyes. The crystal eyes. They're in the frame.\""
+  - label: "Rabbit problems"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Lost something important**. \"*I'll get in trouble! I mean, it's not that important, but it's in a restricted area. Could you help me? I'll help you get in if you'll help me.*\""
+      - roll: 2
+        result: "**Witnessed something unintended**. Royal Guard moving artifact, classified gossip, mysterious break-in. Desperately want to tell people but I can't, so I'm telling you."
+      - roll: 3
+        result: "**Accidentally broke something**. \"*Don't tell my supervisor! I didn't mean to! I don't care if it's tiny! Help me replace it, or get him to stop looking or something!*\""
+      - roll: 4
+        result: "**In love with someone inappropriate**. Another rabbit, a Royal Guard, possibly one of the PCs. Their telepathic yearning is embarrassing everyone."
+      - roll: 5
+        result: "**Caught between orders**. \"*I can't do A because then I'm not doing B, but I can't do B because then I'm not doing A!*\""
+      - roll: 6
+        result: "**Bored beyond measure**. Has done the same job for 300 years. Will *absolutely* help you do *anything* illegal if it's interesting. Doesn't understand consequences because nothing consequential has happened to them ever."
+  - label: "Rabbit jobs"
+    die: d6
+    entries:
+      - roll: 1
+        result: "**Mochi production specialist**. Pounds rice all day. Very strong opinions about mochi texture."
+      - roll: 2
+        result: "**Decorator**. Arranges the same flowers in the same vase every day, going on 200 years."
+      - roll: 3
+        result: "**Agricultural tender**. Grows the deeply weird lunar crops."
+      - roll: 4
+        result: "**Archive assistant**. Files paperwork that no one will ever read. Has access to restricted information but doesn't realize it's restricted."
+      - roll: 5
+        result: "**Messenger runner**. Carries physical messages between locations that are within telepathic range. The job only still exists for bureaucratic reasons."
+      - roll: 6
+        result: "**Guard**. Stands places. Not actually capable of stopping anyone. Has never encountered an actual security threat and would not know what to do."
+  - label: "Today's rumor"
+    die: 2d6
+    entries:
+      - roll: 2
+        result: "**THE PRINCESS IS HAVING ANOTHER PARTY!** She does this every month."
+      - roll: 3
+        result: "**Hey, there's some weird foreigners here!** This is *you*. You have 10 minutes to an hour before the guards show up."
+      - roll: 4
+        result: "**Someone broke into one of the vaults over at [exact vault location] yesterday.** 1-in-6 chance it's another Aian interloper."
+      - roll: 5
+        result: "**The Guard is looking for [powerful magical item], if anyone misplaced it!** Someone had a really awful reason to borrow a very dangerous tool."
+      - roll: 6
+        result: "**Someone really screwed up.** A local jobber (see jobs table) had a problem."
+      - roll: 7
+        result: "**Did you hear about [rabbit]'s promotion?** Banal, pointless gossip."
+      - roll: 8
+        result: "**[Rabbit name] is in love with [guard name]!** Both parties mortified."
+      - roll: 9
+        result: "**Something fell from space recently!** Meteor, dead bird, celestial horror."
+      - roll: 10
+        result: "**The Archive is doing inventory today!** 3-in-6: restricted areas are especially active and watched. Else, areas are totally unwatched & chaotic."
+      - roll: 11
+        result: "**The Princess is angry!** Everyone starts panicking & hyperventilating over anything that could possibly be a problem, especially strange foreigners."
+      - roll: 12
+        result: "**Something strange last night happened in the sky!** Meteor shower, visible volcanic eruption on Aia, perfectly clear night on the Moon."

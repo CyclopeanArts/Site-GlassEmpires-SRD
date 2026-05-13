@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BookLayout from '../../layouts/BookLayout.astro';
+
+const entries = (await getCollection('rules'))
+  .filter(e => !e.data.draft)
+  .sort((a, b) => {
+    const ao = a.data.order ?? 999, bo = b.data.order ?? 999;
+    return ao !== bo ? ao - bo : a.data.title.localeCompare(b.data.title);
+  });
+---
+
+<BookLayout title="Rules">
+  <h1>Rules</h1>
+  <hr class="rule-divider" />
+
+  {entries.length === 0 ? (
+    <p class="empty-note">No rules pages written yet.</p>
+  ) : (
+    <ul class="page-list">
+      {entries.map(e => (
+        <li>
+          <a href={`/rules/${e.id}`}>{e.data.title}</a>
+          {e.data.summary && <span class="summary"> — {e.data.summary}</span>}
+        </li>
+      ))}
+    </ul>
+  )}
+</BookLayout>
+
+<style>
+  .page-list { list-style: none; padding: 0; }
+  .page-list li { padding: 0.35em 0; border-bottom: 1px solid var(--border-subtle); }
+  .page-list a { font-weight: 600; color: var(--link); }
+  .summary { color: var(--text-muted); font-size: 0.9em; }
+  .empty-note { color: var(--text-muted); font-style: italic; }
+</style>

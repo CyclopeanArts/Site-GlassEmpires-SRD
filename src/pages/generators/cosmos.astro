@@ -1,0 +1,365 @@
+---
+import BookLayout from '../../layouts/BookLayout.astro';
+
+const title = 'Cosmos Generator';
+
+const COSMOS = {
+  sun: {
+    label: 'The sun is…',
+    rows: [
+      ['Devoured at dusk & reborn at dawn; visible pregnancy-bulge in the sky in the early morning.', 'Stolen from the Moon. The thief dims & hides it every night.'],
+      ['A hole punched through reality; sunlight bleeds in from Elsewhere.', 'The last heavenly flame, growing dimmer over the centuries.'],
+      ['The iris of a titan. Sometimes, it blinks.', 'The golden egg of a great beast.'],
+      ['A burning chain of twelve linked spheres. One extinguishes each month; a new one ignites.', "The moon's predator — during eclipses you can hear it feeding."],
+      ['A tortured prison-hell; shadows of victims move across its surface.', 'A monstrously huge burning orb of fire.'],
+      ['Two visibly split birds orbiting the celestial throne.', 'Another world, blanketed in luminous clouds.'],
+    ]
+  },
+  moon: {
+    label: 'The moon is…',
+    rows: [
+      ['The first city. Things still live there; mostly ghosts & rabbits.', 'A huge chunk of the world, ripped up & into the heavens.'],
+      ['A mirror showing the world that should have been.', 'A refugee from the last world, parked in the sky.'],
+      ['Devoured at dusk & reborn at dawn; visible pregnancy-bulge in the sky in the early morning.', "A coin flipped at creation to see how the world will end. It's still spinning; that's what phases are."],
+      ['Watching us back. Each crater is an eye. They blink, if you look closely.', "The moon's predator. During eclipses, you can hear it feeding."],
+      ["The corpse of the sun's twin. Beautiful, cold, plummeting slowly towards us.", 'The skull of the first thing to die. It is said to sustain the dead.'],
+      ['A soon-to-bloom chrysalis. The realm\'s sacrifices go towards preventing it.', 'Close enough to fly to (if you were a bird) & much larger than it looks.'],
+    ]
+  },
+  stars: {
+    label: 'The stars are…',
+    rows: [
+      ['Holes in the shell that protect us from blazing chaos.', 'Other suns, separated by great distance.'],
+      ['Each a god waiting to be born.', 'Foreign anglerfish, waiting for prey.'],
+      ['Sparks from the forging. Each will plummet back to the ground in its own time.', 'Each a fallen soul, wrapped in a pearl.'],
+      ['The campfires of the dead, lost in a vast upside-down forest.', 'Our heroes, given peace in the heavens.'],
+      ['Crystallized moments of time. Telescopes can be used to spy on the past.', 'Dreamers wandering through the night. Those who touch the moon never re-awaken.'],
+      ['Not to be mentioned. Do not stare at them.', 'Gone, but for a single survivor, bless its heroic perseverence.'],
+    ]
+  },
+  sky: {
+    label: 'The sky is…',
+    rows: [
+      ['A thin spherical membrane separating us from an empty void.', "An ocean pressing down, held back by the world's breath, & the source of all rain."],
+      ['A lid, weighted with stones, to keep earthly things from heaven.', 'The jade mechanical clockwork that keeps the sky in motion.'],
+      ['A canvas, painted by the gods with clouds & thunder.', "Normally orange-yellow, & we're quite alarmed about this change."],
+      ['A vast, thick, impenetrable mist.', 'Thinner the further up you go, until all that remains is cold deathly vacuum.'],
+      ['The stomach of a goddess.', 'Lined with great rings that slip below the horizon.'],
+      ['Full of clouds & lightning in all directions, without end.', 'Tinted an alien hue, as a reminder of how we wrecked the world.'],
+    ]
+  },
+  world: {
+    label: 'The world is…',
+    rows: [
+      ['A flat disc. We live on the flat top; the underworld is beneath us.', 'An archipelago on a great ocean.'],
+      ['Shattered; each piece now held in place by huge bridges & iron rods.', 'The substance at the bottom of an enormous egg.'],
+      ['A gigantic geometric game-board. The players abandoned the rules (& maybe the game) long ago.', 'Shaped like an hourglass. A thin cylindrical stellar causeway connects the two worlds.'],
+      ["A cube, and we're just one face.", 'A mobius strip. You can see the other half in the sky.'],
+      ['A flat plane, surrounded by horrible, warped far-lands.', 'Spherical, hanging in the sky.'],
+      ['A single enormous terraced mountain.', 'A great bowl, ringed with mountains.'],
+    ]
+  },
+  support: {
+    label: 'Supported by…',
+    rows: [
+      ['An ocean of liquid darkness, denser than mercury, that runs to the edge of the sky.', "Thirteen crystals. If they're all broken, we'll sink into hell, and we've already lost four of them."],
+      ['Four titanic beasts, sentenced to carry it. Their shifts & moans make the earthquakes.', 'A stem connected to the center. We are but a single fruit on the world-tree.'],
+      ["Nothing; it's falling. The air rushing past is the wind.", 'The orbit of our own death, circling a temporal black hole.'],
+      ['The unseen grip of the sun.', 'The hand of the greatest god.'],
+      ['Chains anchored in the stars — visible during the day.', 'The head of a giant who wanders the true earth.'],
+      ['A monolithic pillar that plummets into the pearly clouds.', 'A tremendous spiderweb, woven by a tremendous celestial spider.'],
+    ]
+  },
+  gods: {
+    label: 'The gods are…',
+    rows: [
+      ['Physical, powerful, corporeal & ancient. You could become one if you tried.', "Incompetent creators, & we're their bastard children."],
+      ['Parasites, feeding on our worship & sacrifices.', 'Wardens of our illusory prison, set on testing us.'],
+      ['Trapped in the same eternal wheel of reincarnation as we are.', 'Just angels, scrambling to pull things together after the true god died.'],
+      ["On trial for creating worlds; we're evidence, verdict pending.", "Like children playing; unaware of their strength & heedless of mortal life."],
+      ['Refugees from the future, running from something worse.', 'Masks & puppets, worn by an alien thing pretending to be many.'],
+      ["At war with each other. We're their pawns.", '"Rewarding" us. This world is far better than the previous one.'],
+    ]
+  },
+  death: {
+    label: 'When we die, we…',
+    rows: [
+      ['Slowly lose our spirit, and roll with the rain into the vents at the bottom of the sea.', 'Get sorted. The celestial bureaucracy is as terrifying as it is slow.'],
+      ["Walk west, and leap off the edge of the world.", 'Get audited, questioned, & sentenced by a judge.'],
+      ['Migrate to the Moon.', 'Join the war in the afterlife.'],
+      ['Wait in the queue. It moves slowly. Nobody knows where the line ends.', 'Slip upwards, if unweighed by commitments.'],
+      ["Are chained to our bodies 'til they decay into ash.", "Cease to exist. Don't worry about it."],
+      ['Move to a higher — or lower — state of existence.', 'Are sent to live on other worlds.'],
+    ]
+  },
+  dead: {
+    label: 'Also, the dead must…',
+    rows: [
+      ['Wander the otherworld until they find their rest.', 'Apologize to everyone they wronged in life. You will have to wait until they all die.'],
+      ['Defeat their own reflection in a battle of their choosing.', 'Confess, and have their sins carved in stone upon the walls.'],
+      ['Bargain with their descendants to secure good passage.', 'Continue to labor as they did in life.'],
+      ['Navigate the maze. Wrong exits lead to worse hells.', 'Avoid ravens & owls (who eat ghosts & souls) until their divine post-mail arrives.'],
+      ['Win the game. Death chooses the game.', "Somehow build a tomb, if they didn't have one in life. A better tomb is a better afterlife."],
+      ['Pay the ferryman, or suffer the consequences.', 'Demonstrate worthiness before passing on.'],
+    ]
+  }
+};
+
+const SECTIONS = Object.entries(COSMOS);
+---
+
+<BookLayout title={title}>
+  <h1>{title}</h1>
+  <p class="gen-intro">Generate a complete cosmos for your campaign — sun, moon, stars, sky, world, cosmic support, gods, death, and the afterlife — all at once. Roll individually or roll everything together.</p>
+
+  <div class="gen-controls">
+    <button class="gen-btn gen-btn--all" id="roll-all" type="button">◆ Roll Entire Cosmos</button>
+    <button class="gen-btn gen-btn--reset" id="reset-all" type="button">Clear All</button>
+  </div>
+
+  <div class="cosmos-results" id="results">
+    {SECTIONS.map(([key, sec]) => (
+      <section class="cosmos-card" data-section={key}>
+        <div class="cosmos-card-header">
+          <h2 class="cosmos-card-title">{sec.label}</h2>
+          <button class="gen-btn gen-btn--reroll" type="button" data-reroll={key}>Reroll</button>
+        </div>
+        <div class="cosmos-card-body" data-result={key}>
+          <span class="cosmos-placeholder">—</span>
+        </div>
+      </section>
+    ))}
+  </div>
+</BookLayout>
+
+<script>
+  const COSMOS = {
+    sun: { rows: [
+      ['Devoured at dusk & reborn at dawn; visible pregnancy-bulge in the sky in the early morning.', 'Stolen from the Moon. The thief dims & hides it every night.'],
+      ['A hole punched through reality; sunlight bleeds in from Elsewhere.', 'The last heavenly flame, growing dimmer over the centuries.'],
+      ['The iris of a titan. Sometimes, it blinks.', 'The golden egg of a great beast.'],
+      ['A burning chain of twelve linked spheres. One extinguishes each month; a new one ignites.', "The moon's predator — during eclipses you can hear it feeding."],
+      ['A tortured prison-hell; shadows of victims move across its surface.', 'A monstrously huge burning orb of fire.'],
+      ['Two visibly split birds orbiting the celestial throne.', 'Another world, blanketed in luminous clouds.'],
+    ]},
+    moon: { rows: [
+      ['The first city. Things still live there; mostly ghosts & rabbits.', 'A huge chunk of the world, ripped up & into the heavens.'],
+      ['A mirror showing the world that should have been.', 'A refugee from the last world, parked in the sky.'],
+      ['Devoured at dusk & reborn at dawn; visible pregnancy-bulge in the sky in the early morning.', "A coin flipped at creation to see how the world will end. It's still spinning; that's what phases are."],
+      ['Watching us back. Each crater is an eye. They blink, if you look closely.', "The moon's predator. During eclipses, you can hear it feeding."],
+      ["The corpse of the sun's twin. Beautiful, cold, plummeting slowly towards us.", 'The skull of the first thing to die. It is said to sustain the dead.'],
+      ['A soon-to-bloom chrysalis. The realm\'s sacrifices go towards preventing it.', 'Close enough to fly to (if you were a bird) & much larger than it looks.'],
+    ]},
+    stars: { rows: [
+      ['Holes in the shell that protect us from blazing chaos.', 'Other suns, separated by great distance.'],
+      ['Each a god waiting to be born.', 'Foreign anglerfish, waiting for prey.'],
+      ['Sparks from the forging. Each will plummet back to the ground in its own time.', 'Each a fallen soul, wrapped in a pearl.'],
+      ['The campfires of the dead, lost in a vast upside-down forest.', 'Our heroes, given peace in the heavens.'],
+      ['Crystallized moments of time. Telescopes can be used to spy on the past.', 'Dreamers wandering through the night. Those who touch the moon never re-awaken.'],
+      ['Not to be mentioned. Do not stare at them.', 'Gone, but for a single survivor, bless its heroic perseverence.'],
+    ]},
+    sky: { rows: [
+      ['A thin spherical membrane separating us from an empty void.', "An ocean pressing down, held back by the world's breath, & the source of all rain."],
+      ['A lid, weighted with stones, to keep earthly things from heaven.', 'The jade mechanical clockwork that keeps the sky in motion.'],
+      ['A canvas, painted by the gods with clouds & thunder.', "Normally orange-yellow, & we're quite alarmed about this change."],
+      ['A vast, thick, impenetrable mist.', 'Thinner the further up you go, until all that remains is cold deathly vacuum.'],
+      ['The stomach of a goddess.', 'Lined with great rings that slip below the horizon.'],
+      ['Full of clouds & lightning in all directions, without end.', 'Tinted an alien hue, as a reminder of how we wrecked the world.'],
+    ]},
+    world: { rows: [
+      ['A flat disc. We live on the flat top; the underworld is beneath us.', 'An archipelago on a great ocean.'],
+      ['Shattered; each piece now held in place by huge bridges & iron rods.', 'The substance at the bottom of an enormous egg.'],
+      ['A gigantic geometric game-board. The players abandoned the rules (& maybe the game) long ago.', 'Shaped like an hourglass. A thin cylindrical stellar causeway connects the two worlds.'],
+      ["A cube, and we're just one face.", 'A mobius strip. You can see the other half in the sky.'],
+      ['A flat plane, surrounded by horrible, warped far-lands.', 'Spherical, hanging in the sky.'],
+      ['A single enormous terraced mountain.', 'A great bowl, ringed with mountains.'],
+    ]},
+    support: { rows: [
+      ['An ocean of liquid darkness, denser than mercury, that runs to the edge of the sky.', "Thirteen crystals. If they're all broken, we'll sink into hell, and we've already lost four of them."],
+      ['Four titanic beasts, sentenced to carry it. Their shifts & moans make the earthquakes.', 'A stem connected to the center. We are but a single fruit on the world-tree.'],
+      ["Nothing; it's falling. The air rushing past is the wind.", 'The orbit of our own death, circling a temporal black hole.'],
+      ['The unseen grip of the sun.', 'The hand of the greatest god.'],
+      ['Chains anchored in the stars — visible during the day.', 'The head of a giant who wanders the true earth.'],
+      ['A monolithic pillar that plummets into the pearly clouds.', 'A tremendous spiderweb, woven by a tremendous celestial spider.'],
+    ]},
+    gods: { rows: [
+      ['Physical, powerful, corporeal & ancient. You could become one if you tried.', "Incompetent creators, & we're their bastard children."],
+      ['Parasites, feeding on our worship & sacrifices.', 'Wardens of our illusory prison, set on testing us.'],
+      ['Trapped in the same eternal wheel of reincarnation as we are.', 'Just angels, scrambling to pull things together after the true god died.'],
+      ["On trial for creating worlds; we're evidence, verdict pending.", "Like children playing; unaware of their strength & heedless of mortal life."],
+      ['Refugees from the future, running from something worse.', 'Masks & puppets, worn by an alien thing pretending to be many.'],
+      ["At war with each other. We're their pawns.", '"Rewarding" us. This world is far better than the previous one.'],
+    ]},
+    death: { rows: [
+      ['Slowly lose our spirit, and roll with the rain into the vents at the bottom of the sea.', 'Get sorted. The celestial bureaucracy is as terrifying as it is slow.'],
+      ["Walk west, and leap off the edge of the world.", 'Get audited, questioned, & sentenced by a judge.'],
+      ['Migrate to the Moon.', 'Join the war in the afterlife.'],
+      ['Wait in the queue. It moves slowly. Nobody knows where the line ends.', 'Slip upwards, if unweighed by commitments.'],
+      ["Are chained to our bodies 'til they decay into ash.", "Cease to exist. Don't worry about it."],
+      ['Move to a higher — or lower — state of existence.', 'Are sent to live on other worlds.'],
+    ]},
+    dead: { rows: [
+      ['Wander the otherworld until they find their rest.', 'Apologize to everyone they wronged in life. You will have to wait until they all die.'],
+      ['Defeat their own reflection in a battle of their choosing.', 'Confess, and have their sins carved in stone upon the walls.'],
+      ['Bargain with their descendants to secure good passage.', 'Continue to labor as they did in life.'],
+      ['Navigate the maze. Wrong exits lead to worse hells.', 'Avoid ravens & owls (who eat ghosts & souls) until their divine post-mail arrives.'],
+      ['Win the game. Death chooses the game.', "Somehow build a tomb, if they didn't have one in life. A better tomb is a better afterlife."],
+      ['Pay the ferryman, or suffer the consequences.', 'Demonstrate worthiness before passing on.'],
+    ]}
+  };
+
+  function d6() { return Math.floor(Math.random() * 6) + 1; }
+  function rollCosmos(section) {
+    const row = d6() - 1;
+    const col = d6() <= 3 ? 0 : 1;
+    return section.rows[row][col];
+  }
+
+  function renderSection(key) {
+    const el = document.querySelector(`[data-result="${key}"]`);
+    if (!el) return;
+    const result = rollCosmos(COSMOS[key]);
+    el.innerHTML = `<p class="cosmos-result">${result}</p>`;
+    el.classList.add('rolled');
+  }
+
+  function rollAll() {
+    Object.keys(COSMOS).forEach(key => renderSection(key));
+  }
+
+  function resetAll() {
+    document.querySelectorAll('[data-result]').forEach(el => {
+      el.innerHTML = '<span class="cosmos-placeholder">—</span>';
+      el.classList.remove('rolled');
+    });
+  }
+
+  document.getElementById('roll-all')?.addEventListener('click', rollAll);
+  document.getElementById('reset-all')?.addEventListener('click', resetAll);
+  document.querySelectorAll('[data-reroll]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.reroll;
+      if (key) renderSection(key);
+    });
+  });
+
+  // Auto-roll on load
+  rollAll();
+</script>
+
+<style>
+  .gen-intro {
+    text-indent: 0;
+    color: var(--text-soft);
+    margin-bottom: 1.5em;
+  }
+
+  .gen-controls {
+    display: flex;
+    gap: 0.75em;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+  }
+
+  .gen-btn {
+    font-family: 'Inknut Antiqua', Georgia, serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    padding: 0.55em 1.4em;
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    background: var(--bg-surface);
+    color: var(--text);
+  }
+
+  .gen-btn:hover {
+    background: var(--bg-elevated);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .gen-btn--all {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+    font-size: 0.82em;
+  }
+
+  .gen-btn--all:hover {
+    background: var(--teal-700);
+    border-color: var(--teal-700);
+    color: var(--bg);
+  }
+
+  .gen-btn--reset {
+    font-size: 0.7em;
+    color: var(--text-muted);
+  }
+
+  .gen-btn--reroll {
+    font-size: 0.65em;
+    padding: 0.35em 0.9em;
+  }
+
+  .cosmos-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+  }
+
+  .cosmos-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .cosmos-card:has(.rolled) {
+    border-color: var(--border-strong);
+  }
+
+  .cosmos-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7em 1.2em;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cosmos-card-title {
+    font-size: 0.85em;
+    margin: 0;
+    color: var(--heading-col);
+  }
+
+  .cosmos-card-body {
+    padding: 1em 1.4em;
+    min-height: 3.2em;
+  }
+
+  .cosmos-result {
+    text-indent: 0;
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .cosmos-placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  @media (max-width: 48em) {
+    .cosmos-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5em;
+    }
+  }
+</style>

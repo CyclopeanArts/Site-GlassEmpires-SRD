@@ -1,0 +1,17 @@
+name: Structural Hardness
+tags: [core, combat, warfare]
+summary: "The material hardness scale for structures — weapons of inferior hardness have their damage divided by 10 against fortifications."
+definition: |
+  Structures divide all Damage delivered via weapons of **inferior hardness** by 10. Approximately, hardness in ascending order:
+
+  - Wood & bone & copper
+  - Stone & keratin & bronze
+  - Iron & steel
+  - Gemstones
+
+  Siege machines count as the toughest material used in their construction.
+related_rule: "Core Terms / Structural HP"
+see_also: [structural-hit-points, damage, damage-types]
+author: Histoire
+status: draft
+date: 2026-05-05

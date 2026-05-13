@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BookLayout from '../../layouts/BookLayout.astro';
+import Ref from '../../components/Ref.astro';
+
+const all = await getCollection('bestiary');
+const sorted = all.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+// Build full-ID → flat slug map for linkSlug
+function flatSlug(id: string): string {
+  return id.split('/').pop()!.replace(/\.(yaml|mdx)$/, '');
+}
+---
+
+<BookLayout title="Bestiary">
+  <h1>Bestiary</h1>
+  <hr class="rule-divider" />
+
+  <div class="bestiary-grid">
+    {sorted.map(c => (
+      <Ref collection="bestiary" slug={c.id} linkSlug={flatSlug(c.id)} variant="card" />
+    ))}
+    {sorted.length === 0 && (
+      <p class="empty-note">No bestiary entries yet.</p>
+    )}
+  </div>
+</BookLayout>
+
+<style>
+  .bestiary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    gap: 0.85em;
+  }
+  .empty-note { color: var(--text-muted); font-style: italic; }
+</style>

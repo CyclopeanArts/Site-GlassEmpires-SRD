@@ -1,0 +1,285 @@
+---
+import BookLayout from '../../layouts/BookLayout.astro';
+
+const title = 'Campaign Timeline Generator';
+
+const TIMELINE = {
+  millennia: {
+    label: 'Millennia ago…',
+    rows: [
+      ['The apocalypse cut the Prior Age short & filled the world with ruin. The Sleepers hid us, their servants & themselves in great underground vaults ... along with many lost secrets.', 'The Singing Throne ruled through resonance, their palatial amplifiers transmitting commands as music across the continent. Your blood will still obey their hymns.'],
+      ['Magicians operated on Time itself, removing infected decades & transplanting better years from elsewhere. When they exhausted their fortune, an age of fire & insanity ensued.', 'The stars were known with perfect precision, recorded in humming runes throughout the mountain-peak observatories. Their secrets were copied, their treasures drawn out, & stored far underground where they\'d never return to the skies.'],
+      ['The Lawgivers inscribed commands into the world. They thought their law would support their empire forever. Now, those laws are eternal chains that bind us in acts, promises, & patterns even today.', 'The Sleepers learned to pull mana from dreams, & never awoke again. Ruling from the dream-world, their slaves built lavish self-ruling palaces that still loom over the landscape.'],
+      ['A god spoke the first language, and it became law. Those words are carved deep in their temples, & can still make stone & fire obey.', 'Dragon teeth, soldier-seeds, & chimeric beasts let the Garden Kings take the world. Their dryad servants still rule the ruins in the wilderness.'],
+      ['The sky-miners hollowed out the firmament of Heaven & processed clouds like ore. Their crumbling islands & spindly towers still loom over the world.', 'We inherited a grand civilization from our departing forefathers. We maintained but never understood it, & gradually forgot how to maintain it. The automatic castles no longer know us, & their golems think us beasts.'],
+      ['The First Kingdom bound servitor-spirits into every tool, building, and weapon. When it fell, the spirits remained, still following their last orders in empty halls.', 'Great leylines were warped to build a nexus of power & an eternal kingdom. Darkness swept the hearts of the rulers, & plunged the eternal dungeon into the underworld.'],
+    ]
+  },
+  centuries: {
+    label: 'Centuries ago…',
+    rows: [
+      ['The God-Emperor massacred the imperial court & left, leaving his children behind to clean up the mess & reconquer the Empire. The sole saint survivor founded our Heavenly Dynasty.', 'The Seven Generals divided the continent by walking until they could no longer see each other\'s banners, then planted them. Our descendants still rule where those standards fell.'],
+      ['The slave revolts succeeded, & the collapsing aristocracy adopted our gods in desperation. A new King was chosen, & the People became the Parliament.', 'The Prophet-King emerged from the ruins with the blessings of the gods, & took control of the Holy Rivers of the kingdom. Now, the Hydraulic Priests kept us safe & free from drought.'],
+      ['The Reconstruction Army never disbanded, turning from heroism into government. Ranks became civil titles; supply lines became our tax districts.', 'Dueling conspiracies came to war. Backed by the masses, the Moon King was overthrown & our Sun King inherited the Garden-Cities.'],
+      ['Bloody battle between the twins saw one finally kill the other; Victor gave meaning to the word, claimed the world, & built our Senate on his Brother\'s Grave.', 'We settled on this land with blessings of the King Back Home. The King moved to levy taxes until we\'d break. We chose Glorious Revolution.'],
+      ['Our Father\'s Tribes were led to this land, & built upon it The Temple. We knew we\'d never cede it; we built Grand Walls to ensure we wouldn\'t.', 'The Admiralty built the Airships & declared all land "navigable waters" under Maritime Law. Captains became Captain-Governors; travel became trivial.'],
+      ['Precursor\'s remains let the Academy annihilate our Rival Neighbors. With the Old King dead & the magicians the survivors, our Scholar Patriarch took to rule.', 'Our Sea-Capital was founded on the coast, & all the waters were claimed by Merchant Fleets. Guilds became our houses, & their branches the Cadets that rule our cities to this day.'],
+    ]
+  },
+  hundred: {
+    label: 'A hundred years ago…',
+    rows: [
+      ['Our Tributary States sent wealth beyond counting — we had warehouses for our warehouses. Domestic production withered; entire industries became ceremonial.', 'The Imperial University taught every promising youth. Provincial talent drained to the capital; the periphery grew barren, then empty.'],
+      ['Our Professional Legions hadn\'t lost a war in ninety years. We froze the world in peace; our Generals became famous, bloated figureheads.', 'When the Dictator came to power, our old enemies melted before us. Conquering the Far Reaches brought us their Perpetual Harvest.'],
+      ['The Guilds cemented their ascendancy & built the Grand Alliance. The Silken Road grew to pass through our ports & cities, shattering our unity with a kaleidoscope of foreign wealth & belief.', 'Our Neighboring Rival was finally defeated, & we were free to conquer the world by ship & by horse. Colonial Settlers conquered distant lands & brought their riches & lethal dangers from every corner of the world.'],
+      ['The Astronomical Clockwork predicted weather, harvests, & wars perfectly. Our Priests replaced old wisdom with the Calendar Codex. The government grew rigid & inhuman.', 'Our Banks created wealth from promises of future wealth, and Guilded Lords from the mercenary-men of the past age. The Debt-Fortune funded miracles ... until miracles became necessities.'],
+      ['Industrial fervor had turned us from a backwater into a Gilded Power. To fuel our hunger, our Alchemists drank the sea, then the skies & the earth.', 'Subterranean surveying built the Depthmines. We breached the Veins of the Earth & found vast riches ... and deep terrors.'],
+      ['The Printing Press grew ubiquitous, and the Magicians adored it most of all. Knowledge became common. Without scribal controls, so did heresy.', 'The Medicine Colleges ended childhood death and plague. Our population doubled; the aging Infrastructure strained under the load.'],
+    ]
+  },
+  decades: {
+    label: 'Decades ago…',
+    rows: [
+      ['Barbarian Hordes suddenly spilled from the lands & seas, pillaging our trade & slaughtering our soldiers. Our coasts fell in days to Blood Machines we\'d never imagined.', 'The Great Earthquake shattered the capital & severed the roads. For six months, provinces governed themselves; while repairs rolled on, they acquired the taste.'],
+      ['The Colonial Provinces stopped sending tribute shortly after our Grand Fleet burned in a single night — sabotage said some, divine judgement said others.', 'The Long Winter came — our winters came early, summers brief & tepid. The calendar that had worked for centuries now choked our crops, & The Great Famine followed shortly.'],
+      ['Our Rival Empire offered riches to any master craftsman who relocated. Within ten years, entire guild quarters stood empty, & would-be apprentices formed Thug Bands — then Warbands.', 'The War of Five Fronts began when our uncountable enemies realized we couldn\'t be everywhere at once. The Legions won every battle while losing the war.'],
+      ['The Grain Blight spread through the monoculture the Ministry had mandated. 60% of harvests failed; we\'d already sold the Reserve Granaries to fund monuments.', 'The Succession Crisis erupted with seventeen heirs. Parliament chose one, the Army another, the Priests a third. All had legitimate claims, and the weapons to back them.'],
+      ['Merchants discovered the Imperial Mint had replaced gold with lead for decades ... and even the lead was borrowed. The Currency Collapse followed.', 'The Depthmines ran dry simultaneously, as if something drank the ore-veins. The currency backed by future extraction became pretty paper. The military grew desperate. Rivals soon invaded.'],
+      ['The Schism split when the Hierophant declared the empire\'s wealth blasphemous. They burned libraries & trade centers; converts included half our generals.', 'The Plague proved just as lethal to our golems as to us — water-mills ground backward, clocks ran sideways, the Astronomical Clockwork started lying.'],
+    ]
+  },
+  now: {
+    label: 'And now, just recently…',
+    rows: [
+      ['Just when we had the last crisis resolved, the Mother-Empress was declared possessed, & the Heir Son was imprisoned in the palace. Now the Four Houses & the Populist Uprising kill each other over inheritance while enemies loot the realm.', 'The Succession War ended when all heirs were assassinated simultaneously at the peace conference. Every major faction immediately crowned their own Emperor & set themselves to war.'],
+      ['The chaos was brought to a head when the army split in two. The East Legions seized the ports; the West Legions the fortresses. The Palace Guards auction their loyalty to the highest bidder.', 'A Barbarian Conquest half-succeeded, then suddenly fractured. Three Warlord-Kings claim the territory while Straggler Lords and Imperial Remnants fight both.'],
+      ['The Revolution slaughtered the failing government, but can\'t agree on what comes next. Radical Tribunals, Foreign Intruders, & Counter Revolutionaries control fractal warzones across the land.', 'The Provincial Governors declared independence to "restore order." A half-dozen Petty Kings claim to be the true empire. The Free Cities recognize none of them.'],
+      ['The Divine Plagues killed only those of noble blood. Merchant Princes claimed abandoned titles, Slave Armies claimed their freedom, and Plague Cults claim divine mandate.', 'The Bank Collapse brought down the realm & left 3 factions: the Merchant-Mercenaries who demand payment in land, the Debtors who refuse, and Foreign Kings financing both sides.'],
+      ['After decades of suffering, the Fleet mutinied and declared itself the Maritime Republic. They blockade all ports while the Land Armies starve. Smuggler Guilds grow rich between them.', 'Raging crises finally came to a head when every god finally took sides at once. Now 4 Heavenly Temples & the Heretical Schism fight for land, cult followers, & sacrifices.'],
+      ['The Star-Metal fell, bringing an alien rot into the midst of our wars. Today, Crater Lords defend the sources of the infection; Prospector Crews harvest the mineral-rich toxic creep, & Star-Touched Prophets promise divinity while fighting our Capital Remnants.', 'Driven by the madness, the Black Portal opened in the capital, disgorging eldritch Ancestral Beasts, here to take the world back. Now bloodshed rages between Loyalists & the Blackguards who betray us for promised glory.'],
+    ]
+  }
+};
+
+const ERAS = Object.entries(TIMELINE);
+---
+
+<BookLayout title={title}>
+  <h1>{title}</h1>
+  <p class="gen-intro">Generate a complete campaign world timeline — the fallen precursors, the golden age, the fracture, and the current crisis. Five eras rolled together to produce a coherent history for your setting.</p>
+
+  <div class="gen-controls">
+    <button class="gen-btn gen-btn--all" id="roll-all" type="button">◆ Roll Entire Timeline</button>
+    <button class="gen-btn gen-btn--reset" id="reset-all" type="button">Clear All</button>
+  </div>
+
+  <div class="timeline-results" id="results">
+    {ERAS.map(([key, era]) => (
+      <section class="timeline-card" data-section={key}>
+        <div class="timeline-card-header">
+          <h2 class="timeline-card-title">{era.label}</h2>
+          <button class="gen-btn gen-btn--reroll" type="button" data-reroll={key}>Reroll</button>
+        </div>
+        <div class="timeline-card-body" data-result={key}>
+          <span class="timeline-placeholder">—</span>
+        </div>
+      </section>
+    ))}
+  </div>
+</BookLayout>
+
+<script>
+  const TIMELINE = {
+    millennia: { rows: [
+      ['The apocalypse cut the Prior Age short & filled the world with ruin. The Sleepers hid us, their servants & themselves in great underground vaults ... along with many lost secrets.', 'The Singing Throne ruled through resonance, their palatial amplifiers transmitting commands as music across the continent. Your blood will still obey their hymns.'],
+      ['Magicians operated on Time itself, removing infected decades & transplanting better years from elsewhere. When they exhausted their fortune, an age of fire & insanity ensued.', 'The stars were known with perfect precision, recorded in humming runes throughout the mountain-peak observatories. Their secrets were copied, their treasures drawn out, & stored far underground where they\'d never return to the skies.'],
+      ['The Lawgivers inscribed commands into the world. They thought their law would support their empire forever. Now, those laws are eternal chains that bind us in acts, promises, & patterns even today.', 'The Sleepers learned to pull mana from dreams, & never awoke again. Ruling from the dream-world, their slaves built lavish self-ruling palaces that still loom over the landscape.'],
+      ['A god spoke the first language, and it became law. Those words are carved deep in their temples, & can still make stone & fire obey.', 'Dragon teeth, soldier-seeds, & chimeric beasts let the Garden Kings take the world. Their dryad servants still rule the ruins in the wilderness.'],
+      ['The sky-miners hollowed out the firmament of Heaven & processed clouds like ore. Their crumbling islands & spindly towers still loom over the world.', 'We inherited a grand civilization from our departing forefathers. We maintained but never understood it, & gradually forgot how to maintain it. The automatic castles no longer know us, & their golems think us beasts.'],
+      ['The First Kingdom bound servitor-spirits into every tool, building, and weapon. When it fell, the spirits remained, still following their last orders in empty halls.', 'Great leylines were warped to build a nexus of power & an eternal kingdom. Darkness swept the hearts of the rulers, & plunged the eternal dungeon into the underworld.'],
+    ]},
+    centuries: { rows: [
+      ['The God-Emperor massacred the imperial court & left, leaving his children behind to clean up the mess & reconquer the Empire. The sole saint survivor founded our Heavenly Dynasty.', 'The Seven Generals divided the continent by walking until they could no longer see each other\'s banners, then planted them. Our descendants still rule where those standards fell.'],
+      ['The slave revolts succeeded, & the collapsing aristocracy adopted our gods in desperation. A new King was chosen, & the People became the Parliament.', 'The Prophet-King emerged from the ruins with the blessings of the gods, & took control of the Holy Rivers of the kingdom. Now, the Hydraulic Priests kept us safe & free from drought.'],
+      ['The Reconstruction Army never disbanded, turning from heroism into government. Ranks became civil titles; supply lines became our tax districts.', 'Dueling conspiracies came to war. Backed by the masses, the Moon King was overthrown & our Sun King inherited the Garden-Cities.'],
+      ['Bloody battle between the twins saw one finally kill the other; Victor gave meaning to the word, claimed the world, & built our Senate on his Brother\'s Grave.', 'We settled on this land with blessings of the King Back Home. The King moved to levy taxes until we\'d break. We chose Glorious Revolution.'],
+      ['Our Father\'s Tribes were led to this land, & built upon it The Temple. We knew we\'d never cede it; we built Grand Walls to ensure we wouldn\'t.', 'The Admiralty built the Airships & declared all land "navigable waters" under Maritime Law. Captains became Captain-Governors; travel became trivial.'],
+      ['Precursor\'s remains let the Academy annihilate our Rival Neighbors. With the Old King dead & the magicians the survivors, our Scholar Patriarch took to rule.', 'Our Sea-Capital was founded on the coast, & all the waters were claimed by Merchant Fleets. Guilds became our houses, & their branches the Cadets that rule our cities to this day.'],
+    ]},
+    hundred: { rows: [
+      ['Our Tributary States sent wealth beyond counting — we had warehouses for our warehouses. Domestic production withered; entire industries became ceremonial.', 'The Imperial University taught every promising youth. Provincial talent drained to the capital; the periphery grew barren, then empty.'],
+      ['Our Professional Legions hadn\'t lost a war in ninety years. We froze the world in peace; our Generals became famous, bloated figureheads.', 'When the Dictator came to power, our old enemies melted before us. Conquering the Far Reaches brought us their Perpetual Harvest.'],
+      ['The Guilds cemented their ascendancy & built the Grand Alliance. The Silken Road grew to pass through our ports & cities, shattering our unity with a kaleidoscope of foreign wealth & belief.', 'Our Neighboring Rival was finally defeated, & we were free to conquer the world by ship & by horse. Colonial Settlers conquered distant lands & brought their riches & lethal dangers from every corner of the world.'],
+      ['The Astronomical Clockwork predicted weather, harvests, & wars perfectly. Our Priests replaced old wisdom with the Calendar Codex. The government grew rigid & inhuman.', 'Our Banks created wealth from promises of future wealth, and Guilded Lords from the mercenary-men of the past age. The Debt-Fortune funded miracles ... until miracles became necessities.'],
+      ['Industrial fervor had turned us from a backwater into a Gilded Power. To fuel our hunger, our Alchemists drank the sea, then the skies & the earth.', 'Subterranean surveying built the Depthmines. We breached the Veins of the Earth & found vast riches ... and deep terrors.'],
+      ['The Printing Press grew ubiquitous, and the Magicians adored it most of all. Knowledge became common. Without scribal controls, so did heresy.', 'The Medicine Colleges ended childhood death and plague. Our population doubled; the aging Infrastructure strained under the load.'],
+    ]},
+    decades: { rows: [
+      ['Barbarian Hordes suddenly spilled from the lands & seas, pillaging our trade & slaughtering our soldiers. Our coasts fell in days to Blood Machines we\'d never imagined.', 'The Great Earthquake shattered the capital & severed the roads. For six months, provinces governed themselves; while repairs rolled on, they acquired the taste.'],
+      ['The Colonial Provinces stopped sending tribute shortly after our Grand Fleet burned in a single night — sabotage said some, divine judgement said others.', 'The Long Winter came — our winters came early, summers brief & tepid. The calendar that had worked for centuries now choked our crops, & The Great Famine followed shortly.'],
+      ['Our Rival Empire offered riches to any master craftsman who relocated. Within ten years, entire guild quarters stood empty, & would-be apprentices formed Thug Bands — then Warbands.', 'The War of Five Fronts began when our uncountable enemies realized we couldn\'t be everywhere at once. The Legions won every battle while losing the war.'],
+      ['The Grain Blight spread through the monoculture the Ministry had mandated. 60% of harvests failed; we\'d already sold the Reserve Granaries to fund monuments.', 'The Succession Crisis erupted with seventeen heirs. Parliament chose one, the Army another, the Priests a third. All had legitimate claims, and the weapons to back them.'],
+      ['Merchants discovered the Imperial Mint had replaced gold with lead for decades ... and even the lead was borrowed. The Currency Collapse followed.', 'The Depthmines ran dry simultaneously, as if something drank the ore-veins. The currency backed by future extraction became pretty paper. The military grew desperate. Rivals soon invaded.'],
+      ['The Schism split when the Hierophant declared the empire\'s wealth blasphemous. They burned libraries & trade centers; converts included half our generals.', 'The Plague proved just as lethal to our golems as to us — water-mills ground backward, clocks ran sideways, the Astronomical Clockwork started lying.'],
+    ]},
+    now: { rows: [
+      ['Just when we had the last crisis resolved, the Mother-Empress was declared possessed, & the Heir Son was imprisoned in the palace. Now the Four Houses & the Populist Uprising kill each other over inheritance while enemies loot the realm.', 'The Succession War ended when all heirs were assassinated simultaneously at the peace conference. Every major faction immediately crowned their own Emperor & set themselves to war.'],
+      ['The chaos was brought to a head when the army split in two. The East Legions seized the ports; the West Legions the fortresses. The Palace Guards auction their loyalty to the highest bidder.', 'A Barbarian Conquest half-succeeded, then suddenly fractured. Three Warlord-Kings claim the territory while Straggler Lords and Imperial Remnants fight both.'],
+      ['The Revolution slaughtered the failing government, but can\'t agree on what comes next. Radical Tribunals, Foreign Intruders, & Counter Revolutionaries control fractal warzones across the land.', 'The Provincial Governors declared independence to "restore order." A half-dozen Petty Kings claim to be the true empire. The Free Cities recognize none of them.'],
+      ['The Divine Plagues killed only those of noble blood. Merchant Princes claimed abandoned titles, Slave Armies claimed their freedom, and Plague Cults claim divine mandate.', 'The Bank Collapse brought down the realm & left 3 factions: the Merchant-Mercenaries who demand payment in land, the Debtors who refuse, and Foreign Kings financing both sides.'],
+      ['After decades of suffering, the Fleet mutinied and declared itself the Maritime Republic. They blockade all ports while the Land Armies starve. Smuggler Guilds grow rich between them.', 'Raging crises finally came to a head when every god finally took sides at once. Now 4 Heavenly Temples & the Heretical Schism fight for land, cult followers, & sacrifices.'],
+      ['The Star-Metal fell, bringing an alien rot into the midst of our wars. Today, Crater Lords defend the sources of the infection; Prospector Crews harvest the mineral-rich toxic creep, & Star-Touched Prophets promise divinity while fighting our Capital Remnants.', 'Driven by the madness, the Black Portal opened in the capital, disgorging eldritch Ancestral Beasts, here to take the world back. Now bloodshed rages between Loyalists & the Blackguards who betray us for promised glory.'],
+    ]}
+  };
+
+  function d6() { return Math.floor(Math.random() * 6) + 1; }
+
+  function rollTimeline(section) {
+    const row = d6() - 1;
+    const col = d6() <= 3 ? 0 : 1;
+    return section.rows[row][col];
+  }
+
+  function renderSection(key) {
+    const el = document.querySelector(`[data-result="${key}"]`);
+    if (!el) return;
+    const result = rollTimeline(TIMELINE[key]);
+    el.innerHTML = `<p class="tl-result">${result}</p>`;
+    el.classList.add('rolled');
+  }
+
+  function rollAll() {
+    Object.keys(TIMELINE).forEach(key => renderSection(key));
+  }
+
+  function resetAll() {
+    document.querySelectorAll('[data-result]').forEach(el => {
+      el.innerHTML = '<span class="tl-placeholder">—</span>';
+      el.classList.remove('rolled');
+    });
+  }
+
+  document.getElementById('roll-all')?.addEventListener('click', rollAll);
+  document.getElementById('reset-all')?.addEventListener('click', resetAll);
+  document.querySelectorAll('[data-reroll]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.reroll;
+      if (key) renderSection(key);
+    });
+  });
+
+  rollAll();
+</script>
+
+<style>
+  .gen-intro {
+    text-indent: 0;
+    color: var(--text-soft);
+    margin-bottom: 1.5em;
+  }
+
+  .gen-controls {
+    display: flex;
+    gap: 0.75em;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+  }
+
+  .gen-btn {
+    font-family: 'Inknut Antiqua', Georgia, serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    padding: 0.55em 1.4em;
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    background: var(--bg-surface);
+    color: var(--text);
+  }
+
+  .gen-btn:hover {
+    background: var(--bg-elevated);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .gen-btn--all {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+    font-size: 0.82em;
+  }
+
+  .gen-btn--all:hover {
+    background: var(--teal-700);
+    border-color: var(--teal-700);
+    color: var(--bg);
+  }
+
+  .gen-btn--reset {
+    font-size: 0.7em;
+    color: var(--text-muted);
+  }
+
+  .gen-btn--reroll {
+    font-size: 0.65em;
+    padding: 0.35em 0.9em;
+  }
+
+  .timeline-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .timeline-card {
+    border-left: 3px solid var(--border);
+    padding-left: 1.2em;
+    transition: border-color 0.2s;
+  }
+
+  .timeline-card:has(.rolled) {
+    border-left-color: var(--gold-ui);
+  }
+
+  .timeline-card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75em;
+    margin-bottom: 0.4em;
+  }
+
+  .timeline-card-title {
+    font-size: 0.82em;
+    margin: 0;
+    color: var(--heading-col);
+  }
+
+  .timeline-card-body {
+    min-height: 2.5em;
+  }
+
+  .tl-result {
+    text-indent: 0;
+    margin: 0;
+    font-size: 0.92em;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .tl-placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  @media (max-width: 48em) {
+    .timeline-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

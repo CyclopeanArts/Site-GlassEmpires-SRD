@@ -1,0 +1,92 @@
+name: Travel
+tags: [adventure, movement, exploration]
+summary: "Resolve overland travel by a Party or mobile Faction across the campaign map, with Exhaustion Saves, Discoveries, and Travel Saves."
+rules: |
+  Travel by a Party or mobile Factions (such as Armies) is resolved via *free movement* tracked on a map of the campaign world by the GM.
+
+  In order to Travel, you must have a **route** & **destination** in mind. The route may be a *path* or a *direction*. The destination can be a *literal place* or a *time-based trigger* such as "three days north". Announce both to the GM.
+
+  ## Travel Procedure
+
+  1. The GM determines if the route can actually take you to the destination.
+  2. The GM measures out the path to the destination & determines the total distance that either *must* be traveled (to reach a target place) or that *will* be traveled (to travel for a certain period of time).
+     - If the party is following an erroneous route, the destination is the distance that the Party would have to travel before obviously realizing something is wrong (i.e. encountering an obviously out-of-the-way landmark or passing enough time to have reached the destination if on the correct course).
+  3. The GM determines if there's possible overlap with any other Faction movement based on relative Speeds & routes taken. If there appears to be a point of encounter, the GM (*secretly*) alters the destination to instead be the encounter & recalculates travel distance & time.
+  4. The GM sets a (*secret*) Deadline as the time at which the destination will be reached.
+  5. For each week of travel (or at the midpoint, if less than one), the GM calls for PCs in a traveling party to check for an Exhaustion Save if necessary & simultaneously rolls on the Discoveries table.
+  6. When the Deadline for a Travel Move to come up finishes, the GM rolls a Travel Save for the party.
+
+  ## Exhaustion Save
+
+  **Each week**, each PC in a party should check if any of the following conditions are true:
+
+  - A PC or their followers are carrying *less* than 2# of supplies each & are also not in a farmland, pastures, or otherwise settled region.
+    - None at all.
+  - The terrain is *barrens/wasteland* where food & water cannot be found easily.
+  - Your mounts are *unfit for the biome* (horses in the desert, camels in the arctic).
+
+  For each true condition, each *affected* PC in the Party must perform an Exhaustion Save. Add leadership, quartermastery & hunting skills as +1 bonuses.
+
+  |      Result      | Exhaustion Save Effects                                                                                                                                                                                                                    |
+  | :--------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+  |  Crit<br>*≥12*   | You can bump the Result of 1 other PC in the Party who failed up by 1 step — i.e. from a Fumble to a Failure.                                                                                                                              |
+  |  Pass<br>*8–11*  | Nothing bad happens.                                                                                                                                                                                                                       |
+  |   Seven<br>*7*   | Lose 10% of all nameless Followers traveling with you, rounded down. Lose [Power] HP.                                                                                                                                                      |
+  | Failure<br>*3–6* | Lose 33% of all nameless Followers traveling with you, rounded down. Half of them are dead; the other half deserted. For each named Retainer or Follower, roll 1d6. On 1, they're dead; on 2, they deserted. Lose [Power] × 2 HP.          |
+  |  Fumble<br>*≤2*  | Lose 50% of all nameless Followers traveling with you, rounded down. Two thirds of them are dead; the other third deserted. For each named Retainer or Follower, roll 1d6. On 1–2, they're dead; on 3, they deserted. Lose [Power] × 3 HP. |
+
+  **What if not all NPCs in the group are Followers of a PC?** If some members of the group are not Followers of any PC, one PC must on their Save treat them as their Followers for the sake of determining their fates, so as to prevent them from being immune to exhaustion or starvation.
+
+  ## Discoveries Table
+
+  The GM rolls once on the Discoveries table per week (or part thereof) that a Party spends traveling.
+
+  | 1d6 | Discoveries                                                                                                                                                                                                                                                                                                                                                                                                   |
+  | :-: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 1–2 | **Encounter**. An encounter with another traveler, travelers, or local Monsters. There is a 2-in-6 chance it is actually a Lair (mark it on the map as a Location), unless this Route already passes by a Lair.                                                                                                                                                                                               |
+  | 3–4 | **Location**. A new formerly unmarked Location is discovered. If the determined Location closely matches the identity of a Location that's already marked along the Route (i.e. if you roll a tower, & there's a castle on the way), there's no new Location; it's the existing one, instead.                                                                                                                 |
+  |  5  | **Omen**. Roll for 2 Encounters & determine the most likely thing that would happen if the two of them met. Traces of that outcome are discovered by the Party. A pointer indicating the identity of the first Encounter rolled remains (i.e. tattered banner, dead body, viscous slime, dropped letter, observant/curious local, paw-print) provided that anyone in the Party would recognize what it meant. |
+  |  6  | **Nothing**.                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+  In geographic terms, each Discovery is spaced out more or less evenly across the route.
+
+  ## Measuring distance & time taken
+
+  **Characters can travel ~1 mile per day across a medium for each 1' of Speed score they possess**. A human with a Run of 25' can travel 25 miles per day. A bird with a Fly of 40' can travel 40 miles per day.
+
+  | Type        | Examples                                                 | Distance Multiplier |
+  | ----------- | -------------------------------------------------------- | :-----------------: |
+  | Clear/road  | Plains, grasslands, farmland, highways & roads           |         ×1          |
+  | Rough       | Hills, desert, marsh, forest                             |         ×2          |
+  | Heavy       | Dunes, forested/snowy hills, swamp                       |         ×3          |
+  | Mountainous | Mountain                                                 |         ×4          |
+  | Extreme     | Forested/snowy mountain                                  |         ×5          |
+  | River       | *Adds +5 miles of the same terrain type it's located in* |        +5mi         |
+
+  Divide the effective distance in miles by the *slowest* Speed score among all traveling Party members. Remember: If any part of the route is off-road, the Speed of all wheeled vehicles is halved & if any Party member is Encumbered, their Speed is halved too.
+
+  The result is the number of days until the Deadline (at which point the Party reaches the destination).
+
+  ## Visibility
+
+  Aia is a flat disc & Glass is not an exception. **Your view is not limited by the curvature of the Earth**. Atmospheric scattering, weather, and terrain irregularities are the primary limiter of vision.
+
+  The basic determinant of view distance is **observer height**.
+
+  | Observer Position | Base Visibility | Distinguishable at this distance  |
+  | ----------------- | --------------- | --------------------------------- |
+  | Flat ground       | 5 miles         | Individuals, buildings            |
+  | Watchtower        | 10 miles        | Formations, buildings, ship types |
+  | Hills             | 20 miles        | Armies, towns, fleets, castles    |
+  | Mountains         | 40 miles        | Armies, cities, major terrain     |
+  | Peak              | 80 miles        | Only the largest features         |
+
+  Multiply by the following (all armies carry telescopes):
+
+  - **Hazy**: ×0.5
+  - **Foggy**: ×0.25
+  - **No telescope**: ×0.5
+see_also: [resting, hunting, factions]
+author: Histoire
+status: draft
+date: 2026-05-05

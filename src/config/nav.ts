@@ -1,0 +1,107 @@
+/**
+ * Navigation for the SRD sidebar.
+ *
+ * Format:
+ *   "slug"                — leaf page; label comes from the file's title
+ *   { slug, children }    — section with landing page; label from the file's title
+ *   { label, href }       — explicit link (external, ?args, non-content pages)
+ *   { label, children }   — section with no landing page (grouping only)
+ *
+ * Slugs are resolved at build time by scanning all content collections.
+ * Move files between folders freely — slugs stay the same, nav stays correct.
+ * Display order is array position; no `order` frontmatter needed.
+ */
+
+export type NavItem =
+  | string
+  | { slug: string; children?: NavItem[] }
+  | { label: string; href?: string; children?: NavItem[] };
+
+export const nav: NavItem[] = [
+  { label: "Introduction", children: [
+    "what-this-game-is", "dice-notation", "characters", "moves", "facts", "saves", "money", "campaigns",
+  ]},
+  { label: "Character Creation", children: [
+    "creation-process", "origins",
+    { slug: "races", children: ["coraler", "harpy", "human", "salamander"] },
+    { slug: "classes", children: [
+      "lord", "magistrate", "magician", "burgher", "warlord", "gangster",
+    ]},
+    { slug: "magical-traditions", children: [
+      "origami-assassin", "forester", "metallurge", "jester", "snowmime", "telluric-priest",
+    ]},
+    "level-retainer",
+    "party-cooperation",
+  ]},
+  { label: "Factions", children: [
+    "what-is-a-faction", "sovereignty-subfactions",
+    "families-capitals",
+    { slug: "faction-moves", children: [
+      "move-capital-relocation",
+      "move-create-subfaction",
+      "move-faction-activity",
+      "move-faction-sabotage",
+      "move-grow-followers",
+      "move-make-asset",
+      "move-plunder"
+    ]},
+    "faction-resolution",
+    "hidden-factions",
+    "party-is-faction",
+    { slug: "faction-types", children: [
+      "type-government",
+      "type-financier",
+      "type-business",
+      "type-army",
+      "type-godscult",
+      "type-personality-cult",
+      "type-mine-clan",
+    ]},
+    "growing-settlement",
+    "resources",
+  ]},
+  { label: "Magic", children: [
+    "spell-dice", "totems", "move-casting",
+    "using-corpses-spirits", "extracting-spirits", "ritual-cooking", "divination",
+  ]},
+  { label: "Marketplace", children: [
+    "on-prices-and-power", "debt-credit", "equipment", "retainers-hirelings", "construction-projects",
+  ]},
+  { label: "Adventure", children: ["encumbrance", "foresight", "conditions", "negotiation-persuasion", "resting", "movement", "travel", "hunting", "digging-excavation", "advancement"] },
+  { label: "Combat", children: [
+    { slug: "skirmishes", children: ["movement-space", "skirmish-actions", "engagement", "flight-pursuit", "panic-fear", "mounted-combat", "battle-conditions"] },
+    { slug: "battles", children: ["battle-rating", "battle-procedure", "end-of-battle"] },
+    "damage-types", "armor", "damage-death", "funerals",
+  ]},
+  { label: "Armies", children: [
+    "axioms",
+    "raising-armies",
+    "army-proficiency",
+    "cultural-retinues",
+    "personal-retinues",
+    "siege-blockade",
+  ]},
+  { label: "Lore", children: [
+    { slug: "world-of-aia", children: ["elements-spirits", "metals-materials"] },
+    { slug: "island-of-glass", children: ["geography-geodestiny", "architecture", "wonders"] },
+    "history",
+    { slug: "scenario", children: [
+      "house-eagle", "house-arcades", "house-beacon",
+      "commons-revolt", "glass-coralers",
+      "imperial-family", "oropolis-and-kain", "minor-powers",
+    ]},
+    { slug: "society", children: ["glassian-identity", "religion-and-gods"] },
+    { slug: "the-moon", children: ["lunar-landscape", "getting-there-and-back", "lunarian-kingdom", "practical-role"] },
+  ]},
+  { label: "Bestiary", href: "/bestiary", children: [
+    { label: "By Tradition",     href: "/bestiary?sort=tradition" },
+    { label: "By Biome",         href: "/bestiary?sort=biome" },
+    { label: "By Battle Rating", href: "/bestiary?sort=br" },
+    { label: "All Tags",         href: "/bestiary/tags" },
+  ]},
+  "gm-guide",
+  { label: "Indices", children: [
+    { label: "Moves",      href: "/moves" },
+    { label: "Conditions", href: "/conditions" },
+  ]},
+];

@@ -1,0 +1,17 @@
+name: Incapacitated
+tags: [physical, health, combat]
+summary: "Unconscious and at risk of death; makes a Mortality Save each turn."
+duration: "Until a Crit on a Mortality Save restores 1 HP, or permanent death on Fumble"
+rules: |
+  A character reduced to 0 HP becomes Incapacitated. Incapacitated characters are prone, cannot take actions, and are unconscious. They cannot be woken by any normal means.
+
+  While Incapacitated, at the start of each of their Turns, they make a Mortality Save:
+
+  | Result | Mortality Save Effect |
+  | :----: | --------------------- |
+  | Crit   | You stabilize and regain consciousness with 1 HP. |
+  | Pass   | You stabilize but remain unconscious. |
+  | Seven  | You remain unconscious. No change. |
+  | Fail   | You take 1 Damage and worsen. |
+  | Fumble | You die. |
+see_also: []

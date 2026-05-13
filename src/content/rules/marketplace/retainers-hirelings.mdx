@@ -1,0 +1,113 @@
+---
+title: "Retainers & Hirelings"
+tags: [rules, marketplace, retainers, hirelings]
+draft: false
+summary: "Availability by settlement, the Retainer Job Table, and monthly wages."
+---
+
+## Number Available
+
+To find out how many characters of a certain Level (# of Class Features) are available for hire in a Settlement per season, use the table below.
+
+| Settlement<br/>Level (pop) | Char.<br/>Lv0 | Char.<br/>Lv1 | Char.<br/>Lv2 | Char.<br/>Lv3 | Char.<br/>Lv4 |
+| ------------------------- | :----------: | :----------: | :----------: | :----------: | :----------: |
+| Lv6 (100+)                |      8       |      1       |      —       |      —       |      —       |
+| Lv7 (300+)                |      24      |      2       |      1       |      —       |      —       |
+| Lv8 (1k+)                 |      80      |      8       |      5       |      3       |      2       |
+| Lv9 (3k+)                 |     240      |      24      |      15      |      9       |      6       |
+| Lv10 (10k+)               |     800      |      80      |      50      |      30      |      20      |
+| Lv11 (30k+)               |    2,400     |     240      |     150      |      90      |      60      |
+| Lv12 (100k+)              |    8,000     |     800      |     500      |     300      |     200      |
+| Lv13 (300k+)              |    24,000    |    2,400     |    1,500     |     900      |     600      |
+| Lv14 (1m+)                |    80,000    |    8,000     |    5,000     |    3,000     |    2,000     |
+
+This excludes unemployment & unwillingness to work. Around 10% of a Settlement can be hired in total. Characters of Level 5 or greater are not normally available for recruitment — they have too much going on running their own organizations.
+
+The vast majority of Glassians are agricultural laborers, but cities & settlements are disproportionately specialized. In a Settlement, of those *available to hire*, approximately:
+
+- 15% are criminals & gangsters;
+- 20% are mercenaries & sailors of various rank;
+- 40% are commoners — laborers (skilled or otherwise), slaves, & servants;
+- 20% are burghers — artisans, merchants, entrepreneurs, doctors, & other specialists:
+- 5% are governors & magicians — Jesters, magicians, & lords.
+
+## Retainer Job Table
+
+<RollableTable die="d66" label="Retainer Jobs" entries={[
+  { roll: 11, result: "**Criminal** — Gangster" },
+  { roll: 12, result: "**Criminal** — Assassin" },
+  { roll: 13, result: "**Criminal** — Thief" },
+  { roll: 14, result: "**Criminal** — Harpy mercenary" },
+  { roll: 15, result: "**Criminal** — Pickpocket" },
+  { roll: 16, result: "**Commons, Military** — Mercenary" },
+  { roll: 21, result: "**Commons, Military** — Specialist" },
+  { roll: 22, result: "**Commons, Military** — Officer" },
+  { roll: 23, max: 26, result: "**Commons, Military** — Soldier/sailor" },
+  { roll: 31, max: 32, result: "**Commons, Labor** — Debtor's slave" },
+  { roll: 33, result: "**Commons, Labor** — Hereditary servant" },
+  { roll: 34, result: "**Commons, Labor** — Harpy courier" },
+  { roll: 35, max: 36, result: "**Commons, Labor** — Unskilled laborer" },
+  { roll: 41, max: 45, result: "**Commons, Labor** — Skilled laborer" },
+  { roll: 46, result: "**Commons** — Hunter" },
+  { roll: 51, result: "**Commons** — Scout" },
+  { roll: 52, result: "**Burgher** — Craftsman" },
+  { roll: 53, result: "**Burgher** — Artisan" },
+  { roll: 54, result: "**Burgher** — Entrepreneur" },
+  { roll: 55, result: "**Burgher** — Doctor" },
+  { roll: 56, result: "**Burgher** — Engineer" },
+  { roll: 61, result: "**Burgher** — Clerk/scribe" },
+  { roll: 62, result: "**Burgher** — Writer" },
+  { roll: 63, result: "**Magician, Jester** — Jester" },
+  { roll: 64, max: 65, result: "Roll on the **Ruler subtable** below" },
+  { roll: 66, result: "Roll on the **Foreigner subtable** below" }
+]} />
+
+**Ruler Subtable** (1d6):
+
+| 1d6 | Class    | Subclass   | Ruler Job  |
+| :-: | -------- | ---------- | ---------- |
+| 1–3 | Governor | Magistrate | Magistrate |
+| 4–5 | Governor | Lord       | Lord       |
+|  6  | Jester   | Jester     | Jester     |
+
+**Foreigner Subtable** (1d6):
+
+| 1d6 | Class     | Subclass | Foreigner Job |
+| :-: | --------- | -------- | ------------- |
+| 1–3 | Foreigner | —        | Harpy         |
+| 4–5 | Foreigner | —        | Salamander    |
+|  6  | Foreigner | —        | Sucker        |
+
+## Monthly Wages
+
+A Retainer hired for monthly wages will expect wages measured by how many Class Features they have *or* by their Battle Rating score, depending on the purpose of their employment (specialist labor vs. military force).
+
+### Wages by Level/Class Features
+
+Generally speaking, you cannot hire anyone over the rank of Level 4, but this table goes to Level 14 for completeness' sake. The cost reflects the expected monthly income for that character if they were to take up managing a Faction of a size befitting their experience.
+
+| Level | Monthly Wage |
+| :---: | ------------ |
+|   0   | $30          |
+|   1   | $45          |
+|   2   | $60          |
+|   3   | $90          |
+|   4   | $300         |
+|   5   | $1,000       |
+|   6   | $3,000       |
+|   7   | $10,000      |
+|   8   | $30,000      |
+|   9   | $100,000     |
+|  10   | $300,000     |
+|  11   | $1,000,000   |
+|  12   | $3,000,000   |
+|  13   | $10,000,000  |
+|  14   | $30,000,000  |
+
+### Wages by BR
+
+**Mercenaries charge $10 per BR per month** & usually come as a packaged unit consisting of at least a *lance* — a 3-man fire-squad consisting of a swordsman, archer (or windgunner), & specialist.
+
+An average human mercenary is 4.5 BR — a Level 0 spearman with a shield & chain armor. That's $45/month.
+
+If that sounds expensive, **they are**. Try taking out a Loan from a bank — maybe the Venetians.

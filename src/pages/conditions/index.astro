@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BookLayout from '../../layouts/BookLayout.astro';
+import Ref from '../../components/Ref.astro';
+
+const conditions = (await getCollection('conditions'))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<BookLayout title="Conditions">
+  <h1>Conditions</h1>
+  <hr class="rule-divider" />
+  <p class="section-intro">
+    Conditions are discrete game states applied to characters or creatures.
+    Each condition is a self-contained rule; a character may have multiple conditions simultaneously.
+  </p>
+
+  <div class="index-grid">
+    {conditions.map(c => (
+      <Ref collection="conditions" slug={c.id} variant="card" />
+    ))}
+    {conditions.length === 0 && (
+      <p class="empty-note">No conditions have been written yet.</p>
+    )}
+  </div>
+</BookLayout>
+
+<style>
+  .section-intro {
+    font-style: italic; color: var(--text-muted);
+    margin-bottom: 2em; max-width: 36em;
+  }
+  .index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    gap: 0.75em;
+  }
+  .empty-note { color: var(--text-muted); font-style: italic; }
+</style>

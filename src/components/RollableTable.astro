@@ -1,0 +1,371 @@
+---
+/**
+ * <RollableTable die="d6" entries={[...]} slug="..." label="..." />
+ *
+ * Collapsible rollable table. Default view: header row showing label,
+ * last-rolled result, d6 roll button, and expand toggle.
+ * Click the d6 icon or bar to re-roll. Click +/- to expand/collapse.
+ * Auto-rolls once on page load.
+ *
+ * Entry format: { roll: number, max?: number, result: string }
+ * Roll is the minimum of the range; max is the upper bound (inclusive).
+ * If max is omitted, the range is a single value.
+ */
+import { getEntry } from 'astro:content';
+
+export interface Props {
+  die: string;
+  entries?: Array<{ roll: number; max?: number; result: string }>;
+  slug?: string;
+  label?: string;
+}
+
+const { die, entries: inlineEntries, slug, label: propLabel } = Astro.props;
+
+let resolvedEntries: Array<{ roll: number; max?: number; result: string }> = [];
+let resolvedLabel = propLabel || '';
+
+if (slug) {
+  const table = await getEntry('tables', slug);
+  if (table) {
+    resolvedEntries = table.data.entries ?? [];
+    resolvedLabel = resolvedLabel || table.data.name || slug;
+  }
+} else {
+  resolvedEntries = inlineEntries ?? [];
+  resolvedLabel = resolvedLabel || die;
+}
+
+function rangeDisplay(r: number, m?: number): string {
+  return m !== undefined && m !== r ? `${r}–${m}` : `${r}`;
+}
+---
+
+{resolvedEntries.length > 0 && (
+  <div class="rt-wrap" data-die={die} data-entries={JSON.stringify(resolvedEntries)}>
+    <hr class="rt-rule" aria-hidden="true" />
+    <div class="rt-bar" data-rt-bar role="button" tabindex="0" aria-label="Roll {die}">
+      <div class="rt-controls">
+        <div class="rt-bar-icon" data-roll-icon role="button" tabindex="0" aria-label="Roll {die}"></div>
+        <button class="rt-toggle" type="button" data-rt-toggle aria-label="Show table" aria-expanded="false">
+          <svg class="rt-toggle-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="8" y1="3" x2="8" y2="13" />
+            <line x1="3" y1="8" x2="13" y2="8" />
+          </svg>
+        </button>
+      </div>
+      <div class="rt-result-area">
+        <div class="rt-result-label" data-rt-label>{resolvedLabel}</div>
+        <div class="rt-result-text" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="rt-table-wrap" data-rt-body data-rt-body-wrap hidden>
+      <table class="rt-table">
+        <thead>
+          <tr>
+            <th class="rt-roll-head">{die || 'Die'}</th>
+            <th class="rt-result-head">{resolvedLabel}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {resolvedEntries.map(e => {
+            const rangeStr = rangeDisplay(e.roll, e.max);
+            const html = e.result
+              .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+              .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+              .replace(/\n/g, '<br>');
+            return (
+              <tr data-roll={e.roll} data-max={e.max ?? e.roll}>
+                <td class="rt-roll-cell">{rangeStr}</td>
+                <td class="rt-result-cell" set:html={html} />
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
+<script>
+  function rollDie(s) { return Math.floor(Math.random() * s) + 1; }
+  function rollDieType(t) {
+    if (t === 'd6') return rollDie(6);
+    if (t === '2d6') return rollDie(6) + rollDie(6);
+    if (t === 'd66') return rollDie(6) * 10 + rollDie(6);
+    const m = t.match(/^d(\d+)$/);
+    if (m) return rollDie(parseInt(m[1], 10));
+    return rollDie(6);
+  }
+
+  const faceFiles = ['one', 'two', 'three', 'four', 'five', 'six'];
+  function randomFaceIcon(el) {
+    const i = Math.floor(Math.random() * 6);
+    const url = `/icons/dice-six-faces-${faceFiles[i]}.svg`;
+    el.style.mask = `url(${url}) center / contain no-repeat`;
+    el.style.webkitMask = `url(${url}) center / contain no-repeat`;
+  }
+
+  function mdToHtml(s) {
+    return s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  }
+
+  function doRoll(wrap) {
+    const die = wrap.dataset.die || 'd6';
+    const entries = JSON.parse(wrap.dataset.entries || '[]');
+    const table = wrap.querySelector('.rt-table');
+    const resultText = wrap.querySelector('.rt-result-text');
+    const icon = wrap.querySelector('[data-roll-icon]');
+
+    table?.querySelectorAll('[data-roll]').forEach(row => row.classList.remove('rt-hit'));
+
+    const rolled = rollDieType(die);
+    const match = entries.find(e => rolled >= e.roll && rolled <= (e.max ?? e.roll));
+
+    if (icon) {
+      randomFaceIcon(icon);
+      icon.classList.add('rt-spin');
+      setTimeout(() => icon.classList.remove('rt-spin'), 400);
+    }
+
+    if (!match) {
+      if (resultText) resultText.innerHTML = '';
+      return;
+    }
+
+    table?.querySelectorAll('[data-roll]').forEach(row => {
+      const r = parseInt(row.dataset.roll, 10);
+      const mx = parseInt(row.dataset.max, 10);
+      if (rolled >= r && rolled <= mx) row.classList.add('rt-hit');
+    });
+
+    if (resultText) resultText.innerHTML = mdToHtml(match.result);
+  }
+
+  document.addEventListener('click', e => {
+    const toggle = e.target.closest('[data-rt-toggle]');
+    const d6icon = e.target.closest('[data-roll-icon]');
+    const bar = e.target.closest('[data-rt-bar]');
+    const bodyWrap = e.target.closest('[data-rt-body-wrap]');
+
+    // ── Toggle expand/collapse (only the +/- button) ────────────
+    if (toggle) {
+      const wrap = toggle.closest('.rt-wrap');
+      const body = wrap?.querySelector('[data-rt-body]');
+      if (!body) return;
+      const expanded = !body.hidden;
+      body.hidden = expanded;
+      const icon = toggle.querySelector('.rt-toggle-icon');
+      if (icon) {
+        if (expanded) {
+          icon.innerHTML = '<line x1="8" y1="3" x2="8" y2="13" /><line x1="3" y1="8" x2="13" y2="8" />';
+        } else {
+          icon.innerHTML = '<line x1="3" y1="8" x2="13" y2="8" />';
+        }
+      }
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      toggle.setAttribute('aria-label', expanded ? 'Show table' : 'Hide table');
+      return;
+    }
+
+    // ── Roll on bar click, dice icon, or table body ─────────────
+    if (bar || d6icon || bodyWrap) {
+      const wrap = (bar || d6icon || bodyWrap).closest('.rt-wrap');
+      if (wrap) doRoll(wrap);
+      return;
+    }
+  });
+
+  // ── Auto-roll on page load ────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.rt-wrap').forEach(wrap => doRoll(wrap));
+  });
+</script>
+
+<style>
+  .rt-wrap {}
+
+  .rt-rule {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-400), transparent);
+    margin: 1.2em 0;
+  }
+
+  /* ── Bar ────────────────────────────────────────────────────── */
+  .rt-bar {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75em;
+    padding: 0.5em 0.5em;
+    cursor: pointer;
+    border-radius: 0.25em;
+    transition: background-color 0.2s ease;
+  }
+  .rt-bar:hover {
+    background-color: color-mix(in srgb, var(--callout-ex-bg) 50%, transparent);
+  }
+  .rt-bar:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* ── Dice icon ──────────────────────────────────────────────── */
+  .rt-bar-icon {
+    width: 1.8em;
+    height: 1.8em;
+    flex-shrink: 0;
+    background-color: var(--link-col);
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  .rt-bar-icon:hover {
+    background-color: var(--accent);
+  }
+  @keyframes rt-spin {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(0.85); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+  .rt-spin {
+    animation: rt-spin 0.4s ease-in-out;
+  }
+
+  /* ── Result area ────────────────────────────────────────────── */
+  .rt-result-area {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15em;
+  }
+  .rt-result-label {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 0.06em;
+    color: var(--text-soft);
+    line-height: 1.2;
+  }
+  .rt-result-text {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-size: 0.92em;
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 1.5em;
+  }
+  .rt-result-text strong {
+    font-weight: 700;
+    color: var(--heading-col);
+  }
+  .rt-result-text em {
+    font-style: italic;
+    color: var(--flavor-col);
+  }
+
+  /* ── Controls column (dice + toggle, stacked left) ────────── */
+  .rt-controls {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35em;
+  }
+  .rt-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    color: var(--link-col);
+    background: none;
+    border: none;
+    border-top: 1.5px solid var(--gold-400);
+    border-bottom: 1.5px solid var(--gold-400);
+    border-radius: 0.4em;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .rt-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .rt-toggle-icon {
+    width: 0.85em;
+    height: 0.85em;
+  }
+
+  /* ── Expanded table ─────────────────────────────────────────── */
+  .rt-table-wrap {
+    padding-top: 0.65em;
+    cursor: pointer;
+  }
+  .rt-table-wrap:hover {
+    background-color: color-mix(in srgb, var(--callout-ex-bg) 30%, transparent);
+    border-radius: 0.25em;
+  }
+  .rt-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85em;
+    font-feature-settings: 'lnum' 1, 'tnum' 1;
+  }
+  .rt-table thead tr {
+    border-bottom: 1px solid var(--table-rule);
+  }
+  .rt-table th {
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    padding: 0.45em 0.75em;
+    color: var(--text-soft);
+    text-align: left;
+  }
+  .rt-table td {
+    padding: 0.35em 0.75em;
+    color: var(--text);
+    vertical-align: top;
+  }
+  .rt-table tbody tr:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+  }
+  .rt-roll-head {
+    text-align: center;
+    width: 3.5em;
+  }
+  .rt-roll-cell {
+    text-align: center;
+    white-space: nowrap;
+  }
+  .rt-result-cell strong {
+    font-weight: 700;
+    color: var(--heading-col);
+  }
+  .rt-result-cell em {
+    font-style: italic;
+    color: var(--flavor-col);
+  }
+
+  /* ── Hit highlight ──────────────────────────────────────────── */
+  @keyframes rt-fadein {
+    from { background: transparent; border-left-color: transparent; text-shadow: none; }
+    to   { background: color-mix(in srgb, var(--callout-ex-bg) 60%, transparent); border-left-color: var(--callout-ex-bdr); text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 40%, transparent); }
+  }
+  .rt-table tr.rt-hit {
+    background: color-mix(in srgb, var(--callout-ex-bg) 60%, transparent);
+    border-left: 3px solid var(--callout-ex-bdr);
+    animation: rt-fadein 0.3s ease-out;
+  }
+  .rt-table tr.rt-hit td:first-child {
+    font-weight: 700;
+    color: var(--callout-ex-head);
+  }
+  .rt-table tr.rt-hit td:last-child {
+    color: var(--accent);
+  }
+  .rt-table tr.rt-hit td {
+    text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+</style>
