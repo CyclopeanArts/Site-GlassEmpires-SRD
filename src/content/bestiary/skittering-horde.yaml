@@ -14,7 +14,7 @@ desc: "A seething carpet of countless tiny bodies. Chittering, rustling, overwhe
 wants: "Food. Kill enemies. Nest."
 intellect: "Beneath even animalistic."
 morality: "Hunger."
-treasure: "N/A (though their nest may hold valuables from victims)."
+treasure: "None (though their nest may hold valuables from victims)."
 features:
   - name: "Bites & Stings (Natural Weapon)"
     text: "Physical/Poison. Damage equal to your HD."

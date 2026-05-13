@@ -14,7 +14,7 @@ desc: "Pale red egg-body on ten spindly red legs. Thick long brown proboscis und
 wants: "Corpses. If there are none, it will make some."
 intellect: "Notices only warmth, moisture, and decay."
 morality: "Hunger, sans haste."
-treasure: "N/A"
+treasure: "None."
 features:
   - name: "Proboscis (Natural Weapon)"
     text: "2 Poison."

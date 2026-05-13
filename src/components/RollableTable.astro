@@ -12,6 +12,7 @@
  * If max is omitted, the range is a single value.
  */
 import { getEntry } from 'astro:content';
+import { getSlugMap } from '../config/slug-resolver.js';
 
 export interface Props {
   die: string;
@@ -25,6 +26,20 @@ const { die, entries: inlineEntries, slug, label: propLabel } = Astro.props;
 let resolvedEntries: Array<{ roll: number; max?: number; result: string }> = [];
 let resolvedLabel = propLabel || '';
 
+const _slugMap = getSlugMap();
+
+function resolveWikilinks(text: string): string {
+  return text
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, s, lbl) => {
+      const found = _slugMap[s];
+      return `<a href="${found ? found.path : '/rules/' + s}">${lbl}</a>`;
+    })
+    .replace(/\[\[([^\]]+)\]\]/g, (_, s) => {
+      const found = _slugMap[s];
+      return `<a href="${found ? found.path : '/rules/' + s}">${found ? found.title : s}</a>`;
+    });
+}
+
 if (slug) {
   const table = await getEntry('tables', slug);
   if (table) {
@@ -35,6 +50,12 @@ if (slug) {
   resolvedEntries = inlineEntries ?? [];
   resolvedLabel = resolvedLabel || die;
 }
+
+// Pre-resolve wikilinks in entry results so both template table and client-side data have proper hrefs
+resolvedEntries = resolvedEntries.map(e => ({
+  ...e,
+  result: resolveWikilinks(e.result),
+}));
 
 function rangeDisplay(r: number, m?: number): string {
   return m !== undefined && m !== r ? `${r}–${m}` : `${r}`;
@@ -106,6 +127,7 @@ function rangeDisplay(r: number, m?: number): string {
     el.style.mask = `url(${url}) center / contain no-repeat`;
     el.style.webkitMask = `url(${url}) center / contain no-repeat`;
   }
+
 
   function mdToHtml(s) {
     return s

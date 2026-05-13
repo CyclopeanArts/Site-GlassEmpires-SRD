@@ -13,7 +13,7 @@ desc: "If as anything at all, a looping psychic recording of an unfortunate mome
 wants: "You to meet its fate."
 intellect: "Essentially absent."
 morality: "No."
-treasure: "Sometimes, a dead body to be looted (p. @)."
+treasure: "Sometimes, a dead body to be looted ."
 features:
   - name: "Illusion"
     text: "You are not incorporeal. You aren't even undead. You don't exist at all. You are a projection of light & sound from a corpse-body serving as a Totem, housing a trapped & tortured spirit. If your Totem is destroyed, you revert to being a normal loose spirit."
@@ -25,7 +25,7 @@ lore: |
 
   Besides satiation, ghosts may also be dealt with by:
   - **Destruction**: Destroying the Totem-corpse will end an effect, but place a curse upon the defiler.
-  - **Holding a Funeral**: A Psychopomp (p. @) will be attracted to the funerary rites; they will handle the ghost.
+  - **Holding a Funeral**: A Psychopomp [[magic/totems|Totem]] will be attracted to the funerary rites; they will handle the ghost.
   - **Clever Means**: If a Party comes up with an innovative solution to a curse that thematically resolves the ghost's fate, it may be treated as satiation. In this sense, the listed satiations may be considered suggestions rather than iron requirements.
 tables:
   - label: "Ghost Manifestations"

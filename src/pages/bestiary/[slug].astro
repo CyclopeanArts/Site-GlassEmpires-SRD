@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
+import { getSlugMap } from '../../config/slug-resolver.js';
 import BookLayout from '../../layouts/BookLayout.astro';
 import Callout from '../../components/Callout.astro';
 import Ref from '../../components/Ref.astro';
@@ -28,8 +29,21 @@ const entry = fullId ? await getEntry('bestiary', fullId) : null;
 if (!entry) return Astro.redirect('/bestiary');
 const d = entry.data;
 
+const _slugMap = getSlugMap();
+
 function renderBestiaryBody(text: string): string {
-  const blocks = text.split(/\n\n+/);
+  // Convert [[wikilink|label]] and [[wikilink]] via slug resolver
+  const withLinks = text
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, s, lbl) => {
+      const found = _slugMap[s];
+      return `<a href="${found ? found.path : '/rules/' + s}">${lbl}</a>`;
+    })
+    .replace(/\[\[([^\]]+)\]\]/g, (_, s) => {
+      const found = _slugMap[s];
+      return `<a href="${found ? found.path : '/rules/' + s}">${found ? found.title : s}</a>`;
+    });
+
+  const blocks = withLinks.split(/\n\n+/);
   const parts: string[] = [];
   for (const block of blocks) {
     const lines = block.split('\n');

@@ -1,0 +1,32 @@
+name: "Bush, Angry"
+tags: [plant, elemental, awakened, summoned]
+summary: "A shrub with an attitude problem. Berries are not for picking."
+hd: 1
+armor: 0
+damagemultiplier: 1
+size: 4
+weight: 2
+maxload: 1
+speeds:
+  run: 15
+group: "1 per caster / 2d6 thicket"
+desc: "A dense, scraggly mass of branches, thorns, and dry leaves that lurches forward on rippling roots with unsettling speed."
+wants: "To tangle & prick."
+intellect: "None. It's a bush."
+morality: "It will absolutely scratch your car."
+features:
+  - name: "Thornlash (Natural Weapon)"
+    text: "2 Physical. On a hit, the target is Grappled until they spend an Action breaking free."
+    combat: 0
+  - name: "Thicket"
+    text: "Each Angry Bush within 10' of another Angry Bush is Resistant to Physical Damage."
+    combat: 1
+  - name: "Pain in the Ass"
+    text: "Creatures moving through or starting their Turn in the same space as an Angry Bush take 1 Physical Damage from thorns. This does not stack with multiple bushes."
+    combat: 0
+  - name: "Extremely Flammable"
+    text: "You are Weak to Fire Damage."
+    combat: -1
+lore: |
+  What happens when a thornbush decides being stationary is for suckers.
+treasure: "None."

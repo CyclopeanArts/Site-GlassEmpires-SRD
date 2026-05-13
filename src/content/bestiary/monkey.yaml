@@ -14,7 +14,7 @@ desc: "Ugly 3-foot-tall white/pale red-faced monkey with a tail. Horse-like grin
 wants: "Monkey *see*, monkey *want*."
 intellect: "Very intelligent (for an animal). Devious, brilliant schemer."
 morality: "None, really."
-treasure: "N/A"
+treasure: "None."
 features:
   - name: "Claws (Natural Weapon)"
     text: "4 Physical."

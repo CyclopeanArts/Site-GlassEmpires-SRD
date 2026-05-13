@@ -14,7 +14,7 @@ desc: "A tall, sleek animal with a glossy coat, long muscled legs, and large dar
 wants: "Grass, water, the herd. A rider who knows what they're doing."
 intellect: "Reads emotion and intent. Can be trained extensively but panics easily."
 morality: "Flight before fight. Loyal to those who treat them well."
-treasure: "N/A"
+treasure: "None."
 features:
   - name: "Hooves (Natural Weapon)"
     text: "5 Physical."

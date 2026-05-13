@@ -16,9 +16,12 @@
  */
 
 import { getEntry } from 'astro:content';
+import { getSlugMap } from '../config/slug-resolver.js';
 
 const { collection, slug, variant = 'inline', label, linkSlug } = Astro.props;
 const hrefSlug = linkSlug ?? slug;
+
+const _slugMap = getSlugMap();
 
 function renderFeatureText(text: string): { intro: string; bullets: string[] } {
   const lines = text.split('\n');
@@ -41,8 +44,20 @@ function renderFeatureText(text: string): { intro: string; bullets: string[] } {
   };
 }
 
+function wikilinksToHtml(text: string): string {
+  return text
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, s, lbl) => {
+      const found = _slugMap[s];
+      return `<a href="${found ? found.path : '/rules/' + s}">${lbl}</a>`;
+    })
+    .replace(/\[\[([^\]]+)\]\]/g, (_, s) => {
+      const found = _slugMap[s];
+      return `<a href="${found ? found.path : '/rules/' + s}">${found ? found.title : s}</a>`;
+    });
+}
+
 function mdToHtml(md: string): string {
-  return md
+  return wikilinksToHtml(md)
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>');
 }

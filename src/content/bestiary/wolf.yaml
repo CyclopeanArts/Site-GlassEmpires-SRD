@@ -14,7 +14,7 @@ desc: "White and rust-red fur for Birchwood camouflage. Sleek, stalking. Yips, b
 wants: "Territory and prey. The pack is above all else. To please Tanto-on-the-Moon."
 intellect: "Animalistic but cunning. Body language before words."
 morality: "Hunger is neither cruel nor kind. Gentle if fed."
-treasure: "N/A"
+treasure: "None."
 features:
   - name: "Bite (Natural Weapon)"
     text: "6 Physical."
@@ -26,7 +26,7 @@ features:
     text: "Can track any creature by scent whose trail is less than 3 days old. While outdoors, you cannot be surprised by anything with a scent."
     combat: 1
 lore: |
-  The Jesters say Tanto-on-the-Moon wants the wolves hungry. If they're hungry, they're hunting. If they're hunting, they won't forget.
+  The [[jester|Jesters]] say Tanto-on-the-Moon wants the wolves hungry. If they're hungry, they're hunting. If they're hunting, they won't forget.
 tables:
   - label: "Wolf Variants"
     die: d6

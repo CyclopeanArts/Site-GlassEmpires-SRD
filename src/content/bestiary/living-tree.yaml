@@ -1,0 +1,32 @@
+name: "Tree, Living"
+tags: [plant, elemental, awakened, summoned]
+summary: "A tree that got sick of your shit. Roots rip from soil. Branches become fists."
+hd: 3
+armor: 2
+damagemultiplier: 1.5
+size: 15
+weight: 40
+maxload: 25
+speeds:
+  run: 5
+group: "1 per caster / 1d6 copse"
+desc: "A full-grown tree that has unrooted itself and is now walking around with murderous intent. Bark like plate. Branches like clubs. It makes the sound of old wood creaking amplified by an order of magnitude."
+wants: "To return to the earth. To hit things until they stop moving."
+intellect: "Vegetative. Responds only to threats and direct commands from its summoner."
+morality: "No malice. Just vegetation given a terrible brief."
+features:
+  - name: "Slam (Natural Weapon)"
+    text: "6 Physical. Deals double damage to structures."
+    combat: 1
+  - name: "Bark Hide"
+    text: "Armor 2 is natural. Fire damage ignores it."
+    combat: 0
+  - name: "Slow & Steady"
+    text: "Cannot be knocked Prone or moved against its will by anything weighing less than 500#."
+    combat: 1
+  - name: "Vulnerable to Fire"
+    text: "Fire Damage ignores Armor & deals 1.5× damage."
+    combat: -1
+lore: |
+  Not every tree that rises does so because a Forester asked nicely. Sometimes an old grove just decides it's had enough of your axes and your campfires and your pissing on its roots. Living Trees can remain rooted for centuries before waking — and they remember.
+treasure: "Fertile soil ($5 per tree), 1d6 branches suitable for quarterstaves."

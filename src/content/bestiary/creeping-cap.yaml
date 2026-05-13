@@ -28,26 +28,36 @@ features:
     text: "Immune to Poison; resistant to Ice; weak to Fire."
     combat: 0.5
 lore: |
-  There is little worse than waking up to find several "creepers" sitting outside your home's every exit, waiting for your door to open — a single mushroom can sit there for *weeks* before dropping dead. They prefer cornering prey in burrows, caves, or other tight spaces where they can't escape.
-
-  The Jesters say that Creeping Caps are the Old King's sentries, grown from spores that fell from his decaying crown. Whatever their origin, they are patient beyond reason and hungry beyond mercy.
+  There is little worse than waking up to find several "creepers" sitting outside your home's every exit, waiting for your door to open. A single mushroom can sit there for *weeks* before dropping dead. They prefer cornering prey in burrows, caves, or other tight spaces where they can't escape.
 treasure: "Creeping Cap stalks are a delicacy worth $500 each."
 when_eaten:
   flavor: "Earthy, fungal, with an umami depth like aged mushroom. Slightly numbing."
   notes: "Stalks are a delicacy worth $500 each. Eating the cap causes 7 Poison Damage (Save for half)."
 tables:
-  - label: "Mushroom Omens and Hiding Spots"
+  - label: "Mushroom Omens & Hiding Spots"
     die: d6
     entries:
       - roll: 1
-        result: "**Omen**: Old soldiers' corpses blooming in a field. **Hiding Spot**: Just inside a shadowed alcove."
+        result: |
+          **Omen**: Old soldiers' corpses blooming in a field.
+          **Hiding Spot**: Just inside a shadowed alcove.
       - roll: 2
-        result: "**Omen**: Mycelial floor coating. **Hiding Spot**: Under dense evergreens."
+        result: |
+          **Omen**: Mycelial floor coating.
+          **Hiding Spot**: Under dense evergreens.
       - roll: 3
-        result: "**Omen**: Drained and shriveled husks of fauna. **Hiding Spot**: Hidden by bushes, atop a dead elk."
+        result: |
+          **Omen**: Drained and shriveled husks of fauna.
+          **Hiding Spot**: Hidden by bushes, atop a dead elk.
       - roll: 4
-        result: "**Omen**: Black \"dust\" coating an empty home. **Hiding Spot**: Near the entrance to a cave."
+        result: |
+          **Omen**: Black "dust" coating an empty home.
+          **Hiding Spot**: Near the entrance to a cave.
       - roll: 5
-        result: "**Omen**: Split-open skulls, dotted with fungal melt. **Hiding Spot**: Planted alongside a dirt road."
+        result: |
+          **Omen**: Split-open skulls, dotted with fungal melt.
+          **Hiding Spot**: Planted alongside a dirt road.
       - roll: 6
-        result: "**Omen**: Quiet den, fungus-eaten cubs. **Hiding Spot**: Huddled around a building."
+        result: | 
+          **Omen**: Quiet den, fungus-eaten cubs.
+          **Hiding Spot**: Huddled around a building.
