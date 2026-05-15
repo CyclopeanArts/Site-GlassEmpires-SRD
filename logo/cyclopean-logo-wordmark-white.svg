@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="2101.5801"
+   height="320"
+   viewBox="0 0 556.04304 84.666662"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="Logo-Main-Wordmark-White.svg"
+   inkscape:export-filename="Logo-Main-Wordmark-White.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="0.99999999"
+     inkscape:cx="668.50001"
+     inkscape:cy="221"
+     inkscape:window-width="1920"
+     inkscape:window-height="1172"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1.3229166"
+       spacingy="1.3229166"
+       empcolor="#e50000"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="8"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient8"
+       inkscape:collect="always"
+       inkscape:label="Main">
+      <stop
+         style="stop-color:#ff8800;stop-opacity:1;"
+         offset="0"
+         id="stop8" />
+      <stop
+         style="stop-color:#ee2277;stop-opacity:1;"
+         offset="1"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8"
+       id="linearGradient9"
+       x1="62.177086"
+       y1="68.791672"
+       x2="62.177086"
+       y2="84.666672"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8"
+       id="linearGradient11"
+       x1="42.333336"
+       y1="5.291667"
+       x2="42.333336"
+       y2="79.375"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8"
+       id="linearGradient13"
+       gradientUnits="userSpaceOnUse"
+       x1="62.177086"
+       y1="68.791672"
+       x2="62.177086"
+       y2="84.666672" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke-width:10.5833;paint-order:markers stroke fill"
+       id="path2"
+       cx="42.333332"
+       cy="42.333332"
+       r="42.333332"
+       inkscape:label="White Halo" />
+    <circle
+       style="fill:url(#linearGradient11);fill-opacity:1;stroke-width:10.5833;paint-order:markers stroke fill"
+       id="path3"
+       cx="42.333332"
+       cy="42.333332"
+       r="37.041668"
+       inkscape:label="Sun" />
+    <g
+       id="g6"
+       inkscape:label="Background Pyramid"
+       transform="translate(-37.041668)">
+      <path
+         style="fill:#000000;fill-opacity:1;stroke-width:10.5833;paint-order:markers stroke fill"
+         d="m 60.854169,64.822918 -18.520834,19.843751 18.520834,-5e-6 z"
+         id="path8"
+         inkscape:label="Dark"
+         sodipodi:nodetypes="cccc" />
+      <path
+         style="fill:url(#linearGradient13);fill-opacity:1;stroke-width:10.5833;paint-order:markers stroke fill"
+         d="M 60.854169,66.145835 79.375002,84.666669 H 58.208335 Z"
+         id="path7"
+         sodipodi:nodetypes="cccc"
+         inkscape:label="Light" />
+      <path
+         style="fill:#ffffff;stroke-width:10.5833;paint-order:markers stroke fill"
+         d="M 37.041668,84.666669 60.854168,60.85417 84.666667,84.666669 H 79.375002 L 60.854169,66.145835 42.333335,84.666669 Z"
+         id="path1-5"
+         inkscape:label="Pyramid Edge"
+         sodipodi:nodetypes="ccccccc" />
+    </g>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke-width:10.5833;paint-order:markers stroke fill"
+       d="M 29.104166,84.666668 35.71875,15.875 48.947916,2.6458333 55.562502,9.2604168 V 84.666668 Z"
+       id="path4"
+       inkscape:label="Monolith Body" />
+    <g
+       id="g5"
+       style="display:inline"
+       inkscape:label="Front Face">
+      <path
+         id="rect4"
+         d="m 35.718751,15.875 13.229167,-13.2291666 -1.32292,82.0208336 -18.520831,2e-6 z"
+         style="fill:none;fill-opacity:1;stroke-width:10.5833;paint-order:markers stroke fill" />
+      <path
+         id="path5"
+         d="m 44.753242,17.135381 c -0.13024,3.232159 -1.967188,7.318638 -3.995065,8.928254 -1.922281,1.5258 -3.205095,0.154787 -2.962001,-2.891471 0.234681,-2.94083 1.828869,-6.571165 3.646709,-8.273173 1.911084,-1.78931 3.435655,-0.873132 3.310357,2.23639 z"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:10.5833;paint-order:markers stroke fill" />
+    </g>
+    <g
+       id="g13"
+       inkscape:label="Foreground Pyramid">
+      <path
+         style="fill:#000000;fill-opacity:1;stroke-width:10.5833;paint-order:markers stroke fill"
+         d="m 60.854168,64.822918 -18.520834,19.843751 18.520835,-5e-6 z"
+         id="path11"
+         inkscape:label="Dark"
+         sodipodi:nodetypes="cccc" />
+      <path
+         style="fill:url(#linearGradient9);fill-opacity:1;stroke-width:10.5833;paint-order:markers stroke fill"
+         d="M 60.854168,66.145835 79.375,84.666667 l -18.520831,-3e-6 z"
+         id="path12"
+         sodipodi:nodetypes="cccc"
+         inkscape:label="Light" />
+      <path
+         style="fill:#ffffff;stroke-width:10.5833;paint-order:markers stroke fill"
+         d="M 37.041668,84.666669 60.854168,60.85417 84.666667,84.666669 H 79.375002 L 60.854168,66.145835 42.333334,84.666669 Z"
+         id="path13"
+         inkscape:label="Pyramid Edge"
+         sodipodi:nodetypes="ccccccc" />
+    </g>
+    <path
+       id="text2"
+       style="font-size:75.9531px;line-height:0;font-family:'Russo One';-inkscape-font-specification:'Russo One';fill:#ffffff;stroke-width:12.5508;paint-order:markers stroke fill"
+       d="m 300.70309,14.9903 c -5.31671,0 -9.19049,1.215274 -11.62099,3.645772 -2.37986,2.379862 -3.56981,6.228318 -3.56981,11.545032 V 54.48608 c 0,5.316714 1.18995,9.189982 3.56981,11.62048 2.4305,2.379862 6.30428,3.569808 11.62099,3.569808 h 18.98799 c 5.31671,0 9.16516,-1.189946 11.54503,-3.569808 2.43049,-2.430498 3.64577,-6.303766 3.64577,-11.62048 V 30.181104 c 0,-5.316714 -1.21528,-9.16517 -3.64577,-11.545032 -2.37987,-2.430498 -6.22832,-3.645772 -11.54503,-3.645772 z m -190.2628,0.759643 c -5.31673,0 -9.18999,1.215275 -11.620487,3.645773 -2.379862,2.379863 -3.569808,6.228318 -3.569808,11.545032 v 24.304976 c 0,4.962266 1.164617,8.607573 3.493844,10.9368 2.329231,2.329227 5.974551,3.493844 10.936801,3.493844 7.4434,0 16.81099,-0.506064 28.10268,-1.518771 V 57.90396 c -3.2913,0.202541 -6.0506,0.379844 -8.27856,0.53175 -2.17732,0.151908 -3.97517,0.253227 -5.39296,0.303857 -1.36716,0.05064 -2.73389,0.100782 -4.10104,0.151412 -1.36715,0.05064 -2.68374,0.101299 -3.94963,0.151929 h -3.49384 c -1.06334,0 -1.94985,-0.32876 -2.65875,-0.98702 -0.65826,-0.708895 -0.98702,-1.645551 -0.98702,-2.810164 V 30.940748 c 0,-3.038123 1.51869,-4.557345 4.55682,-4.557345 h 29.777 l -5.47202,-10.63346 z m 32.81505,10.63346 14.65595,28.482499 v 14.051339 h 13.67152 V 54.865902 L 191.71026,15.749943 H 177.2791 L 164.74705,41.57369 152.21448,15.749943 h -14.43064 z m 63.64573,-10.63346 c -5.31671,0 -9.19051,1.215275 -11.621,3.645773 -2.37987,2.379863 -3.56981,6.228318 -3.56981,11.545032 v 24.304976 c 0,4.962266 1.16461,8.607573 3.49384,10.9368 2.32923,2.329227 5.97505,3.493844 10.93732,3.493844 7.4434,0 16.81099,-0.506064 28.10268,-1.518771 V 57.90396 c -3.29129,0.202541 -6.05112,0.379844 -8.27908,0.53175 -2.17732,0.151908 -3.97465,0.253227 -5.39244,0.303857 -1.36715,0.05064 -2.73441,0.100782 -4.10156,0.151412 -1.36715,0.05064 -2.68374,0.101299 -3.94963,0.151929 h -3.49384 c -1.06334,0 -1.94934,-0.32876 -2.65824,-0.98702 -0.65826,-0.708895 -0.98753,-1.645551 -0.98753,-2.810164 V 30.940748 c 0,-3.038123 1.51921,-4.557345 4.55734,-4.557345 h 30.38109 v 42.533838 h 41.39438 V 58.283781 H 253.99173 V 15.749943 h -13.67152 z m 135.57622,0 V 68.917241 H 356.1488 V 53.726437 h 18.22835 c 5.31671,0 9.16517,-1.189945 11.54503,-3.569808 2.4305,-2.430498 3.64577,-6.304282 3.64577,-11.620996 v -7.594885 c 0,-5.316714 -1.21527,-9.165169 -3.64577,-11.545032 -2.37986,-2.430498 -6.22832,-3.645773 -11.54503,-3.645773 z m 53.92642,0 v 53.167298 h 42.15402 v -10.63346 h -28.4825 V 47.2705 h 22.40638 V 36.637041 H 410.07523 V 26.383403 h 28.4825 v -10.63346 z m 42.15402,53.167298 h 14.81098 l 3.41788,-9.494511 h 18.98799 l 3.41788,9.494511 h 14.81098 13.67151 V 26.383403 h 18.22887 v 42.533838 h 14.43064 V 15.749943 h -46.33102 v 42.533838 h -4.0256 L 473.87598,15.749943 h -15.1908 z M 303.74115,25.623759 h 12.91187 c 3.03812,0 4.55735,1.519223 4.55735,4.557345 V 54.48608 c 0,3.038123 -1.51923,4.556828 -4.55735,4.556828 h -12.91187 c -3.03812,0 -4.55735,-1.518705 -4.55735,-4.556828 V 30.181104 c 0,-3.038122 1.51923,-4.557345 4.55735,-4.557345 z m 52.40765,0.759644 h 15.19029 c 3.03812,0 4.55734,1.519222 4.55734,4.557345 v 7.594885 c 0,3.038123 -1.51922,4.557344 -4.55734,4.557344 H 356.1488 Z m 110.13178,5.316471 6.07612,17.84904 h -12.15223 z" />
+  </g>
+</svg>
