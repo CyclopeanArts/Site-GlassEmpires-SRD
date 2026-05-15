@@ -113,13 +113,22 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
         return;
       }
 
-      // Subscribe modal close
-      if (target.closest('#modal-close') || target.closest('#subscribe-modal[aria-hidden="false"]:not(.modal-content)')) {
+      // Subscribe modal close — only X or outside the content box
+      if (target.closest('#modal-close')) {
         const modal = document.getElementById('subscribe-modal');
         modal?.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         document.getElementById('subscribe-btn')?.focus();
         return;
+      }
+      if (target.closest('#subscribe-modal') && !target.closest('.modal-content')) {
+        const modal = document.getElementById('subscribe-modal');
+        if (modal?.getAttribute('aria-hidden') === 'false') {
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          document.getElementById('subscribe-btn')?.focus();
+          return;
+        }
       }
 
       // Cyclopean modal open
@@ -135,13 +144,22 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
         return;
       }
 
-      // Cyclopean modal close
-      if (target.closest('#cyclopean-modal-close') || target.closest('#cyclopean-modal[aria-hidden="false"]:not(.modal-content)')) {
+      // Cyclopean modal close — only X or outside the content box
+      if (target.closest('#cyclopean-modal-close')) {
         const modal = document.getElementById('cyclopean-modal');
         modal?.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         document.getElementById('cyclopean-logo-btn')?.focus();
         return;
+      }
+      if (target.closest('#cyclopean-modal') && !target.closest('.modal-content')) {
+        const modal = document.getElementById('cyclopean-modal');
+        if (modal?.getAttribute('aria-hidden') === 'false') {
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          document.getElementById('cyclopean-logo-btn')?.focus();
+          return;
+        }
       }
 
       // Save nav scroll before navigating

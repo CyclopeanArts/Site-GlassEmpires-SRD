@@ -1,6 +1,7 @@
 ---
 import { nav } from '../config/nav';
 import NavTree from './NavTree.astro';
+import EmailReveal from './EmailReveal.astro';
 
 const { currentPath = '', id } = Astro.props;
 ---
@@ -49,6 +50,7 @@ const { currentPath = '', id } = Astro.props;
           <span class="cyclopean-link-sub">Cyclopean's DTRPG Page</span>
         </a>
       </div>
+      <p class="cyclopean-email">You can also email me at: <EmailReveal /></p>
     </div>
   </div>
 </div>
@@ -256,6 +258,12 @@ const { currentPath = '', id } = Astro.props;
     font-variant-caps: small-caps;
     letter-spacing: 0.15em;
     color: var(--text-muted);
+  }
+  .cyclopean-email {
+    font-size: 0.8em;
+    color: var(--text-soft);
+    margin: 0;
+    text-align: center;
   }
 
   @media (max-width: 48em) {
