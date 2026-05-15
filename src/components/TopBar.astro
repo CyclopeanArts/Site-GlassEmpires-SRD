@@ -11,6 +11,10 @@ const { title = '' } = Astro.props;
   <div class="search-area" id="search-area"></div>
 
   <div class="top-bar-right">
+    <a href="/versions" class="download-btn" id="download-btn" data-pagefind-ignore>
+      Download Rules
+    </a>
+
     <button class="subscribe-btn" id="subscribe-btn" aria-label="Get updates" data-pagefind-ignore>
       Get Updates
     </button>
@@ -314,6 +318,28 @@ const { title = '' } = Astro.props;
     gap: 0.6em;
     flex-shrink: 0;
     margin-left: auto;
+  }
+
+  /* ── Download button ─────────────────────────────────────────────── */
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: var(--link);
+    border: 1px solid var(--border-strong);
+    border-radius: 0.25em;
+    padding: 0.35em 0.75em;
+    font-family: 'Literata Variable', serif;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .download-btn:hover {
+    background: rgba(98,237,216,0.08);
+    border-color: var(--link);
+    text-decoration: none;
   }
 
   /* ── Subscribe button ─────────────────────────────────────────────── */

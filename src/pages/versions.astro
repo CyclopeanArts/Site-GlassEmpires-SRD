@@ -1,0 +1,224 @@
+---
+import BookLayout from '../layouts/BookLayout.astro';
+import EmailReveal from '../components/EmailReveal.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+interface VersionEntry {
+  version: string;
+  date: string;
+  sections: { heading: string; items: string[] }[];
+}
+
+function readChangelog(): string {
+  try {
+    return fs.readFileSync(
+      path.resolve(process.cwd(), 'CHANGELOG.md'),
+      'utf-8'
+    );
+  } catch {
+    return '';
+  }
+}
+
+function parseVersions(raw: string): VersionEntry[] {
+  const entries: VersionEntry[] = [];
+  const lines = raw.split('\n');
+  let current: VersionEntry | null = null;
+  let currentSection: string | null = null;
+
+  for (const line of lines) {
+    const versionMatch = line.match(/^## (\d+\.\d+\.\d+) — (\d{4}-\d{2}-\d{2})/);
+    if (versionMatch) {
+      current = { version: versionMatch[1], date: versionMatch[2], sections: [] };
+      entries.push(current);
+      currentSection = null;
+      continue;
+    }
+    if (!current) continue;
+
+    const sectionMatch = line.match(/^### (.+)/);
+    if (sectionMatch) {
+      currentSection = sectionMatch[1];
+      current.sections.push({ heading: currentSection, items: [] });
+      continue;
+    }
+
+    const itemMatch = line.match(/^- (.+)/);
+    if (itemMatch && current.sections.length > 0) {
+      current.sections[current.sections.length - 1].items.push(itemMatch[1]);
+    }
+  }
+
+  return entries;
+}
+
+const changelog = parseVersions(readChangelog());
+const latest = changelog.length > 0 ? changelog[0] : null;
+const ghDownloadUrl = (v: string) =>
+  `https://github.com/CyclopeanArts/Site-GlassEmpires-SRD/releases/download/v${v}/SRD-v${v}.zip`;
+const ghReleaseUrl = (v: string) =>
+  `https://github.com/CyclopeanArts/Site-GlassEmpires-SRD/releases/tag/v${v}`;
+---
+
+<BookLayout title="Download the SRD">
+  <p>
+    Each release of the Glass Empires SRD is available as a downloadable
+    offline archive. Unzip it and open <code>index.html</code> &mdash;
+    it works in any browser, no internet required.
+  </p>
+
+  <p>
+    If you&rsquo;re online, your downloaded copy will automatically notify you
+    when a new version is available.
+  </p>
+
+  <hr />
+
+  {latest && (
+    <>
+      <h2 id="latest">Latest Release &mdash; v{latest.version}</h2>
+      <p class="release-date">{latest.date}</p>
+
+      <p>
+        <a href={ghDownloadUrl(latest.version)} class="download-link">
+          Download SRD v{latest.version} (ZIP)
+        </a>
+      </p>
+
+      <p class="subscribe-cta">
+        Want release notifications?
+        <a href="https://sakiroku.com" target="_blank" rel="noopener">
+          Subscribe to Sakiroku
+        </a>
+        &mdash; I post about every new version there.
+      </p>
+
+      {latest.sections.map((section) => (
+        <>
+          <h3>{section.heading}</h3>
+          <ul>
+            {section.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </>
+      ))}
+    </>
+  )}
+
+  <hr />
+
+  <h2>All Versions</h2>
+
+  {changelog.length === 0 && (
+    <p><em>No releases yet. Check back soon!</em></p>
+  )}
+
+  {changelog.map((entry) => (
+    <div class="version-entry">
+      <h3 id={`v-${entry.version.replace(/\./g, '-')}`}>
+        v{entry.version}
+        <span class="version-date">{entry.date}</span>
+      </h3>
+      <a href={ghDownloadUrl(entry.version)} class="version-download">
+        Download ZIP
+      </a>
+      <a href={ghReleaseUrl(entry.version)} class="version-release-link">
+        GitHub Release
+      </a>
+      <ul>
+        {entry.sections.length > 0 ? (
+          entry.sections.map((section) => (
+            <>{section.items.map((item) => <li>{item}</li>)}</>
+          ))
+        ) : (
+          <li class="no-details">No details recorded.</li>
+        )}
+      </ul>
+    </div>
+  ))}
+
+  {changelog.length > 0 && (
+    <p class="subscribe-cta">
+      You can also email me at: <EmailReveal />
+    </p>
+  )}
+</BookLayout>
+
+<style>
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.5em 0;
+  }
+  .release-date {
+    font-size: 0.85em;
+    color: var(--text-muted);
+    margin: -0.5em 0 0.75em;
+  }
+  .download-link {
+    display: inline-block;
+    background: var(--link-col);
+    color: #111;
+    font-weight: 700;
+    padding: 0.5em 1.25em;
+    border-radius: 0.3em;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background 0.15s;
+  }
+  .download-link:hover {
+    background: var(--gold-400);
+    text-decoration: none;
+  }
+  .subscribe-cta {
+    font-size: 0.85em;
+    color: var(--text-soft);
+    margin-top: 0.75em;
+  }
+  .version-entry {
+    border-bottom: 1px solid var(--border);
+    padding: 0.75em 0;
+  }
+  .version-entry:last-child {
+    border-bottom: none;
+  }
+  .version-entry h3 {
+    margin: 0;
+    font-size: 1em;
+  }
+  .version-date {
+    font-weight: 400;
+    font-size: 0.75em;
+    color: var(--text-muted);
+    margin-left: 0.6em;
+    font-variant-caps: small-caps;
+  }
+  .version-download,
+  .version-release-link {
+    font-size: 0.78em;
+    margin-right: 0.75em;
+  }
+  .version-entry ul {
+    margin: 0.4em 0 0;
+    padding-left: 1.25em;
+  }
+  .version-entry li {
+    font-size: 0.82em;
+    color: var(--text-soft);
+    margin-bottom: 0.15em;
+  }
+  .no-details {
+    list-style: none;
+    font-style: italic;
+    color: var(--text-faint);
+    font-size: 0.78em;
+  }
+  code {
+    background: var(--bg-elevated);
+    padding: 0.1em 0.35em;
+    border-radius: 0.2em;
+    font-size: 0.85em;
+  }
+</style>

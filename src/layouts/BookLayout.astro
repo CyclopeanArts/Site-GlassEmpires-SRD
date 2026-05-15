@@ -2,6 +2,7 @@
 import SideNav from '../components/SideNav.astro';
 import TopBar from '../components/TopBar.astro';
 import PagePreviews from '../components/PagePreviews.astro';
+import UpdateBanner from '../components/UpdateBanner.astro';
 import ClientRouter from 'astro/components/ClientRouter.astro';
 import '../styles/global.css';
 
@@ -232,6 +233,7 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
     </div>
   </div>
   <PagePreviews />
+  <UpdateBanner />
 </body>
 </html>
 

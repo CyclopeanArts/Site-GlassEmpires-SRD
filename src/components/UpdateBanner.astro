@@ -1,0 +1,80 @@
+---
+/**
+ * Offline update check banner.
+ * Bundled into every release zip. On page load, fetches the live version.json
+ * and shows a gold banner if a newer version exists.
+ * Does nothing when offline (fetch fails silently).
+ */
+---
+
+<div id="update-banner" class="update-banner" hidden aria-live="polite"></div>
+
+<script is:inline>
+(function () {
+  // Read this zip's bundled version
+  var localVersion = null;
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "version.json", false);
+  try {
+    xhr.send();
+    if (xhr.status === 200) localVersion = JSON.parse(xhr.responseText).version;
+  } catch (_) {}
+
+  if (!localVersion) return; // not a bundled offline copy
+
+  // Fetch the live site's latest version
+  var req = new XMLHttpRequest();
+  req.open("GET", "https://srd.glassempires.com/version.json");
+  req.onload = function () {
+    if (req.status !== 200) return;
+    var remote;
+    try { remote = JSON.parse(req.responseText); } catch (_) { return; }
+    if (!remote.version || remote.version === localVersion) return;
+
+    var banner = document.getElementById("update-banner");
+    if (!banner) return;
+    banner.innerHTML =
+      'SRD v' + remote.version + ' is available \u2014 ' +
+      '<a href="https://srd.glassempires.com/versions">Download the latest</a>';
+    banner.removeAttribute("hidden");
+
+    // Slide-in animation trigger
+    requestAnimationFrame(function () {
+      banner.classList.add("visible");
+    });
+  };
+  req.onerror = function () {}; // offline = silent
+  req.send();
+})();
+</script>
+
+<style>
+  .update-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, var(--gold-700, #7e5b1f), var(--gold-500, #c49234));
+    color: #111;
+    font-family: 'Literata Variable', Georgia, serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.6em 1em;
+    transform: translateY(-100%);
+    transition: transform 0.35s ease;
+  }
+  .update-banner.visible {
+    transform: translateY(0);
+  }
+  .update-banner a {
+    color: #111;
+    text-decoration: underline;
+    font-weight: 700;
+    text-underline-offset: 2px;
+  }
+  .update-banner a:hover {
+    color: #fff;
+  }
+</style>
