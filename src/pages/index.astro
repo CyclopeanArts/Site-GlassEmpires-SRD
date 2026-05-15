@@ -1,5 +1,6 @@
 ---
 import BookLayout from '../layouts/BookLayout.astro';
+import EmailReveal from '../components/EmailReveal.astro';
 import { getSlugMap } from '../config/slug-resolver.js';
 
 const _slugMap = getSlugMap();
@@ -27,6 +28,10 @@ function resolveWikilinks(text: string): string {
     This is the System Reference Document, containing the complete rules, setting, and bestiary
     for Glass Empires and the faction engine powering it!
     Use the navigation on the left, or search by keyword using the button above.!
+  </p>
+
+  <p>
+    Glass Empires is in open beta. Parts of the rules are still incomplete or in playtesting! Feedback is appreciated. Email: <EmailReveal />
   </p>
 
   <h2>At a glance</h2>

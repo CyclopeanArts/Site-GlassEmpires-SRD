@@ -1,0 +1,60 @@
+---
+/**
+ * Click-to-reveal email address from base64.
+ * Reusable — drop <EmailReveal /> wherever you need it.
+ */
+const { label = "click to reveal" } = Astro.props;
+const b64 = "c2FraUBjeWNsb3BlYW4ubmV0"; // saki@cyclopean.net
+---
+
+<span class="email-reveal">
+  <button class="email-reveal-btn" aria-label="Reveal email address">
+    {label}
+  </button>
+</span>
+
+<script>
+  (function () {
+    const btns = document.querySelectorAll('.email-reveal-btn');
+    const b64 = btns.length > 0 ? btns[0].closest('.email-reveal').dataset.b64 : '';
+    btns.forEach(function (btn) {
+      function reveal() {
+        var addr = atob('c2FraUBjeWNsb3BlYW4ubmV0');
+        var link = document.createElement('a');
+        link.href = 'mailto:' + addr;
+        link.textContent = addr;
+        link.style.color = 'var(--link)';
+        btn.replaceWith(link);
+      }
+      btn.addEventListener('click', reveal);
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          reveal();
+        }
+      });
+    });
+  })();
+</script>
+
+<style>
+  .email-reveal-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: var(--link);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.15s;
+  }
+  .email-reveal-btn:hover {
+    color: var(--accent);
+  }
+  .email-reveal-btn:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+</style>
