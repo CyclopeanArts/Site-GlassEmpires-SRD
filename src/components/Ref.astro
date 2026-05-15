@@ -17,6 +17,7 @@
 
 import { getEntry } from 'astro:content';
 import { getSlugMap } from '../config/slug-resolver.js';
+import RollableTable from './RollableTable.astro';
 
 const { collection, slug, variant = 'inline', label, linkSlug } = Astro.props;
 const hrefSlug = linkSlug ?? slug;
@@ -39,8 +40,8 @@ function renderFeatureText(text: string): { intro: string; bullets: string[] } {
     }
   }
   return {
-    intro: introParts.join(' '),
-    bullets: bulletParts
+    intro: mdToHtml(introParts.join(' ')),
+    bullets: bulletParts.map(b => mdToHtml(b))
   };
 }
 
@@ -178,7 +179,6 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
 
 {d && effectiveVariant === 'stat' && (
   <div class="ref-stat">
-    <div class="ref-stat-name">{displayName}</div>
     <table class="ref-stat-table">
       <tbody>
         <tr>
@@ -194,11 +194,11 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
             ))}
           </td>
         </tr>
-        {d.group     && <tr><td class="sb-label">Group</td>     <td class="sb-data">{d.group}</td></tr>}
-        {(d.desc ?? d.summary) && <tr><td class="sb-label">Desc.</td>     <td class="sb-data">{d.desc ?? d.summary}</td></tr>}
-        {d.wants     && <tr><td class="sb-label">Wants</td>     <td class="sb-data">{d.wants}</td></tr>}
-        {d.intellect && <tr><td class="sb-label">Intellect</td> <td class="sb-data">{d.intellect}</td></tr>}
-        {d.morality  && <tr><td class="sb-label">Morality</td>  <td class="sb-data">{d.morality}</td></tr>}
+        {d.group     && <tr><td class="sb-label">Group</td>     <td class="sb-data" set:html={mdToHtml(d.group)}></td></tr>}
+        {(d.desc ?? d.summary) && <tr><td class="sb-label">Desc.</td>     <td class="sb-data" set:html={mdToHtml(d.desc ?? d.summary)}></td></tr>}
+        {d.wants     && <tr><td class="sb-label">Wants</td>     <td class="sb-data" set:html={mdToHtml(d.wants)}></td></tr>}
+        {d.intellect && <tr><td class="sb-label">Intellect</td> <td class="sb-data" set:html={mdToHtml(d.intellect)}></td></tr>}
+        {d.morality  && <tr><td class="sb-label">Morality</td>  <td class="sb-data" set:html={mdToHtml(d.morality)}></td></tr>}
       </tbody>
     </table>
 
@@ -209,12 +209,12 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
             const { intro, bullets } = renderFeatureText(a.text);
             return (
               <li>
-                <strong>{a.name}</strong>: {intro}
-                {bullets.length > 0 && (
-                  <ul class="ability-sub-list">
-                    {bullets.map((b: string) => <li>{b}</li>)}
-                  </ul>
-                )}
+              <strong>{a.name}</strong>: <span set:html={intro}></span>
+              {bullets.length > 0 && (
+              <ul class="ability-sub-list">
+              {bullets.map((b: string) => <li set:html={b}></li>)}
+              </ul>
+              )}
               </li>
             );
           })}
@@ -227,14 +227,21 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
     )}
 
     {d.treasure && (
-      <p class="ref-stat-treasure"><strong>Treasure</strong>: {d.treasure}</p>
+      <p class="ref-stat-treasure"><strong>Treasure</strong>: <span set:html={mdToHtml(d.treasure)}></span></p>
     )}
 
     {d.when_eaten && (
       <div class="ref-when-eaten">
         <div class="ref-when-eaten-head">When Eaten</div>
-        {d.when_eaten.flavor && <p class="ref-when-eaten-flavor">{d.when_eaten.flavor}</p>}
-        {d.when_eaten.notes  && <p class="ref-when-eaten-notes">{d.when_eaten.notes}</p>}
+        {d.when_eaten.flavor && <p class="ref-when-eaten-flavor" set:html={mdToHtml(d.when_eaten.flavor)}></p>}
+        {d.when_eaten.notes  && <p class="ref-when-eaten-notes" set:html={mdToHtml(d.when_eaten.notes)}></p>}
+        {d.when_eaten.table && (
+          <RollableTable
+            die={d.when_eaten.table.die}
+            entries={d.when_eaten.table.entries}
+            label={d.when_eaten.table.label || 'Effects'}
+          />
+        )}
       </div>
     )}
   </div>
@@ -307,7 +314,7 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
   .ref-tag {
     font-size: 0.68em;
     font-family: 'Literata Variable', serif;
-    font-variant-caps: small-caps;
+    text-transform: capitalize; font-variant-caps: small-caps;
     font-weight: 700;
     padding: 0.15em 0.6em;
     background: var(--bg-elevated);

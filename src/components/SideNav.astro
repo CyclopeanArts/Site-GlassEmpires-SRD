@@ -29,22 +29,24 @@ const { currentPath = '', id } = Astro.props;
     <div class="modal-body">
       <img src="/logo/cyclopean-logo-wordmark-black.svg" alt="Cyclopean" class="cyclopean-modal-logo cyclopean-modal-logo-light" />
       <img src="/logo/cyclopean-logo-wordmark-white.svg" alt="Cyclopean" class="cyclopean-modal-logo cyclopean-modal-logo-dark" />
-      <p class="cyclopean-provenance">Glass Empires is a game by <strong>Cyclopean</strong>. We make fantasy tabletop roleplaying games and supplements.</p>
+      <p class="cyclopean-provenance">Glass Empires is a game by <a href="https://sakiroku.com">Saki</a>, published by <strong>Cyclopean</strong>. I make a lot of weird stuff; you can check out the rest of it below.</p>
       <div class="cyclopean-links">
+        <a href="https://glassempires.com" target="_blank" rel="noopener" class="cyclopean-link">
+          <img src="/logo/main-wide.webp" alt="Glass Empires" class="cyclopean-link-logo cyclopean-link-logo-wide" />
+          <span class="cyclopean-link-sub">Home</span>
+        </a>
         <a href="https://dndungeon.com" target="_blank" rel="noopener" class="cyclopean-link">
           <img src="/logo/Logo-Icon-Name-Outline.svg" alt="DnDungeon" class="cyclopean-link-logo" />
-          <span class="cyclopean-link-label">Battle Maps &amp; Assets</span>
-          <span class="cyclopean-link-desc">at DnDungeon</span>
+          <span class="cyclopean-link-sub">Asian Fantasy Maps &amp; Assets</span>
         </a>
-        <a href="https://sakiroku.com" target="_blank" rel="noopener" class="cyclopean-link cyclopean-link-sakiroku">
-          <img src="/logo/sakiroku-wordmark-thin-red.png" alt="Sakiroku" class="cyclopean-link-logo" />
-          <span class="cyclopean-link-label">Dev Blog</span>
-          <span class="cyclopean-link-desc">Sakiroku</span>
+        <a href="https://sakiroku.com" target="_blank" rel="noopener" class="cyclopean-link">
+          <img src="/logo/sakiroku-wordmark-thin-red.png" alt="Sakiroku" class="cyclopean-link-logo sakiroku-logo-light" />
+          <img src="/logo/sakiroku-wordmark-thin-red-lighttext.png" alt="Sakiroku" class="cyclopean-link-logo sakiroku-logo-dark" />
+          <span class="cyclopean-link-sub">RPG Blog</span>
         </a>
         <a href="https://www.drivethrurpg.com/en/publisher/24595/Cyclopean" target="_blank" rel="noopener" class="cyclopean-link">
           <img src="/logo/dtrpg.png" alt="DriveThruRPG" class="cyclopean-link-logo" />
-          <span class="cyclopean-link-label">Publisher Page</span>
-          <span class="cyclopean-link-desc">DriveThruRPG</span>
+          <span class="cyclopean-link-sub">Cyclopean's DTRPG Page</span>
         </a>
       </div>
     </div>
@@ -155,8 +157,11 @@ const { currentPath = '', id } = Astro.props;
   .modal-content {
     position: relative;
     background: var(--bg-surface);
-    border: 1px solid var(--border-strong);
-    border-radius: 0.5em;
+    border-top: 2px solid var(--border-strong);
+    border-bottom: 2px solid var(--border-strong);
+    border-left: none;
+    border-right: none;
+    border-radius: 1em;
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     max-width: 90vw;
     padding: 2em 2em 1.5em;
@@ -212,45 +217,45 @@ const { currentPath = '', id } = Astro.props;
   .cyclopean-links {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
     width: 100%;
     margin-top: 0.5em;
   }
   .cyclopean-link {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.6em;
-    padding: 0.5em 0.75em;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 0.25em;
+    gap: 0.4em;
+    padding: 0.75em 0.25em;
     text-decoration: none;
-    color: var(--heading-col);
-    font-family: 'Literata Variable', serif;
-    transition: border-color 0.15s;
+    color: var(--text);
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .cyclopean-link:last-child {
+    border-bottom: none;
   }
   .cyclopean-link:hover {
-    border-color: var(--gold-ui);
     text-decoration: none;
+    opacity: 0.7;
   }
   .cyclopean-link-logo {
     display: block;
-    height: 1.5em;
+    height: 1.8em;
     width: auto;
-    flex-shrink: 0;
   }
-  .cyclopean-link-label {
-    font-family: 'Literata Variable', serif;
+  .cyclopean-link-logo-wide {
+    height: auto;
+    width: 100%;
+    max-width: 9em;
+  }
+  .sakiroku-logo-dark { display: none; }
+  :global([data-theme="dark"]) .sakiroku-logo-light { display: none; }
+  :global([data-theme="dark"]) .sakiroku-logo-dark { display: block; }
+  .cyclopean-link-sub {
+    font-size: 0.65em;
     font-variant-caps: small-caps;
-    font-weight: 700;
-    font-size: 0.85em;
-    color: var(--heading-col);
-    letter-spacing: 0.04em;
-  }
-  .cyclopean-link-desc {
-    font-size: 0.75em;
+    letter-spacing: 0.15em;
     color: var(--text-muted);
-    margin-left: auto;
   }
 
   @media (max-width: 48em) {

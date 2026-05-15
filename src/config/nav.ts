@@ -67,7 +67,7 @@ export const nav: NavItem[] = [
   { label: "Marketplace", children: [
     "on-prices-and-power", "debt-credit", "equipment", "retainers-hirelings", "construction-projects",
   ]},
-  { label: "Adventure", children: ["encumbrance", "foresight", "conditions", "negotiation-persuasion", "resting", "movement", "travel", "hunting", "digging-excavation", "advancement"] },
+  { label: "Adventure", children: ["encumbrance", "foresight", "conditions", "negotiation-persuasion", "resting", "movement", "travel", "hunting", "advancement"] },
   { label: "Combat", children: [
     { slug: "skirmishes", children: ["movement-space", "skirmish-actions", "engagement", "flight-pursuit", "panic-fear", "mounted-combat", "battle-conditions"] },
     { slug: "battles", children: ["battle-rating", "battle-procedure", "end-of-battle"] },

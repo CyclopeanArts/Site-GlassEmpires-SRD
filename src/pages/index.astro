@@ -1,16 +1,117 @@
 ---
 import BookLayout from '../layouts/BookLayout.astro';
+import { getSlugMap } from '../config/slug-resolver.js';
+
+const _slugMap = getSlugMap();
+
+function resolveWikilinks(text: string): string {
+  return text
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, s, lbl) => {
+      const found = _slugMap[s];
+      return `<a href="${found ? found.path : '/rules/' + s}">${lbl}</a>`;
+    })
+    .replace(/\[\[([^\]]+)\]\]/g, (_, s) => {
+      const found = _slugMap[s];
+      return `<a href="${found ? found.path : '/rules/' + s}">${found ? found.title : s}</a>`;
+    });
+}
 ---
 
 <BookLayout title="Glass Empires SRD">
-  <p class="flavor">
-    A Braunstein-style tabletop RPG set on the island of Glass, in the world of Aia.
-    Civil war. Salamander cartels. Immortal rulers who abdicated.
-    Spirit cannibalism. Faction politics.
+  <p>
+    <strong>Glass Empires</strong> is a Braunstein-style tabletop RPG of faction politics,
+    pre-industrial power, and ritual cannibalism on the discworld of Aia.
+    <a href="https://glassempires.com">Learn more about the game →</a>
   </p>
   <p>
     This is the System Reference Document — the complete rules, setting, and bestiary
     for Glass Empires and the faction engine powering it.
     Use the navigation on the left, or search by keyword using the button above.
   </p>
+
+  <h2>At a glance</h2>
+
+  <div class="qa-grid">
+
+    <div class="qa-card">
+      <h3>I want to run a game tonight.</h3>
+      <p set:html={resolveWikilinks("[[creation-process|Character creation]] takes 10 minutes. The [[scenario|main scenario]] has pre-built high-level faction situations ready to drop into play. Start with a house war, a caravan in need of protection, or a village that stopped paying taxes.")}>
+      </p>
+    </div>
+
+    <div class="qa-card">
+      <h3>What do players actually do?</h3>
+      <p set:html={resolveWikilinks("They lead a Party-as-[[what-is-a-faction|faction]]: recruit [[level-retainer|retainers]], negotiate with [[lord|lords]], hunt monsters for [[ritual-cooking|ritual cooking]], and escalate their faction's power. Every action is a [[moves|Move]] resolved against a 2d6 Save.")}>
+      </p>
+    </div>
+
+    <div class="qa-card">
+      <h3>How is this different from D&amp;D?</h3>
+      <p set:html={resolveWikilinks("No skill list. Your capabilities come from [[facts|Facts]], true statements about who your character is. Your [[level-retainer|Level]] comes from how many people follow you. Power flows through followers, not murder or gold.")}>
+      </p>
+    </div>
+
+    <div class="qa-card">
+      <h3>What's with the cannibalism?</h3>
+      <p set:html={resolveWikilinks("[[ritual-cooking|Ritual cooking]] is the primary advancement mechanic. Kill a creature, cook it, gain its strength ... and its nature. Want to fly? Eat a Qilin. Want superhuman strength? Eat a stronger human. Each meal is a gamble: power comes with the price of becoming what you consume.")}>
+      </p>
+    </div>
+
+    <div class="qa-card">
+      <h3>How do factions work?</h3>
+      <p set:html={resolveWikilinks("Every PC leads a [[what-is-a-faction|Faction]] with a [[faction-types|type]] (Army, Business, Government, Mine Clan, Personality Cult, Godscult). Factions have resources, Moves, and a Capital, and learning how to wield them is just as important as wielding your own sword.")}>
+      </p>
+    </div>
+
+    <div class="qa-card">
+      <h3>My friend wants to play a wizard.</h3>
+      <p set:html={resolveWikilinks("[[magician|Magicians]] are spirit-speakers who capture spells as [[totems|Totems]]. Six [[magical-traditions|traditions]] (Jester, Origami Assassin, Forester, Metallurge, Snowmime, Telluric Priest) are available, each with unique mechanics. Magic is powerful, unstable, and demands respect. Most magicians die horribly.")}>
+      </p>
+    </div>
+
+    <div class="qa-card">
+      <h3>What's the setting?</h3>
+      <p set:html={resolveWikilinks("[[island-of-glass|The island of Glass]] on the discworld of [[world-of-aia|Aia]]. THe immortal emperor abdicated. Three houses at war, a populist uprising, a salamander mineral cartel, and a passive-aggressive [[the-moon|Lunar Kingdom]] watching from above. Every faction has a goal. Every goal creates conflict.")}>
+      </p>
+    </div>
+
+    <div class="qa-card">
+      <h3>How does combat work?</h3>
+      <p set:html={resolveWikilinks("[[battle-rating|Battle Rating]] (BR) measures combat power at a glance. [[skirmishes|Skirmishes]] resolve personal fights with granular actions (Move, Strike, Cast, Disengage). [[battles|Battles]] handle any larger-scale combat without grids. [[damage-types|Damage]] comes in types with different effects.")}>
+      </p>
+    </div>
+
+  </div>
 </BookLayout>
+
+<style>
+  .qa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25em;
+    margin: 1.5em 0;
+  }
+  .qa-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.35em;
+    padding: 1.25em;
+    display: flex;
+    flex-direction: column;
+  }
+  .qa-card h3 {
+    font-size: 0.95em;
+    margin: 0 0 0.5em;
+  }
+  .qa-card p {
+    font-size: 0.85em;
+    color: var(--text-soft);
+    margin: 0;
+    line-height: 1.6;
+  }
+  @media (max-width: 48em) {
+    .qa-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

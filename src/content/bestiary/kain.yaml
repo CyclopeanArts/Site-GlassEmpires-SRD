@@ -1,0 +1,149 @@
+name: Kain
+tags: [human, immortal, deity-class, intelligent, unique, glass]
+summary: "The absent God-Emperor of Glass — axis of legitimacy, walking apocalypse, and the only being who can bless a new Emperor."
+hd: 10
+armor: 0
+damagemultiplier: 5
+size: 6
+weight: 160
+maxload: 60
+speeds:
+  run: 25
+  fly: 250
+group: "Solo (cannot be fought)"
+desc: "A foreign-looking pale-skinned blonde resembling no human race on Aia, dressed in finest silk."
+wants: "You cannot offer him anything."
+intellect: "A reasonably smart human with unlimited wisdom & a crippling resignation."
+morality: "Morality is for peers in power. Only five beings in Aia are his equals."
+features:
+  - name: "Hourai Immortal (Kain)"
+    text: |
+      You are a true immortal.
+      - Your body replaces limbs, implants, Mutations, Wounds, new HD or Racial Features, and other abnormalities to perfectly restore itself to ordinary functionality within 24 hours of any damage or change being inflicted.
+      - If killed, in 1d6 Rounds you immolate into ash and reconstitute instantly in a burst of light and cold flame at a place of your choosing that you have previously visited. Kain has visited every single location in Aia's tiny universe.
+      - You are always conscious, even in death, and as a Free Action may choose to die and begin resurrecting.
+      - Your soul is not in your body; it is beyond the cycle of life and death. No effect targeting a soul works on you.
+      - You are still subject to all natural needs and vulnerabilities and have no special resistances to Damage, but you regenerate fast enough that only an absence of air will kill you.
+      - This Feature can never be copied, borrowed, stolen, given, removed, inherited, overruled, or otherwise transferred by any means whatsoever.
+    combat: 15
+lore: |
+  Kain is screwed up. Human psychology is not made to last tens of trillions of years. He can only remember a small portion of his own history, but it is a kaleidoscope of every pattern imaginable compressed into a nearly perfect predictive engine. He can see everything coming. He has heard and done everything.
+
+  Knowing the shape and nature of yourself — your own emotions — does nothing to let you level their impact upon your psyche. They are your psyche. Kain is deeply aware of every way in which he fails and is unable to stop or correct it.
+
+  The handful of human immortals have a habit of fluctuating over centuries-long cycles between mindsets and behaviors. Kain is the only one who regularly tries to build recognizably human empires. The others are normally reclusive and hard to find.
+treasure: See the [[true-immortal|True Immortal's]] treasure tables.
+gm_note:
+  heading: "Kain Is Not a Monster to Defeat"
+  body: |
+    Kain's role is to be persuaded to stay on his mountain, or to return to his throne. The entire point of his bestiary entry is to make his motivations procedurally unpredictable across campaigns; roll his tables at campaign start & keep the results secret. The factions all have theories, but the GM knows the truth.
+
+    Kain does not have meaningful stats or a spell list. If you think you need them, you are using him wrong. He automatically kills anyone who inconveniences him in a deliberate effort to kill him or harm his priorities. He otherwise tries to avoid violence.
+
+    If he is led into fighting another true immortal & you are in doubt about whether the argument can be resolved, then the Disc shatters into hundreds of islands, the Moon becomes an asteroid field, a second Moon is created in the process, and a new Age begins. Restart the campaign.
+when_eaten:
+  flavor: "Bitter pork. Degenerates gradually into ash over 24 hours."
+  notes: "The Hourai Immortal Feature cannot be obtained by any means. Kain reconstitutes, remembers who ate you, and has opinions about it."
+tables:
+  - label: "Rumored Reasons He Abdicated"
+    die: d66
+    entries:
+      - roll: 11
+        max: 13
+        result: "**He is testing us**. He wants to see if we can survive without him!"
+      - roll: 14
+        max: 16
+        result: "**He's afraid of something**. The Lunar Princess. Something deep & evil. Another immortal."
+      - roll: 21
+        max: 23
+        result: "**He has gone mad**! He'll never recover."
+      - roll: 24
+        max: 26
+        result: "**He's searching for his wife**. He's not actually on the mountain."
+      - roll: 31
+        max: 33
+        result: "**He's dead**. Glass is a ghost story; the man on the mountain is an illusion."
+      - roll: 34
+        max: 36
+        result: "**He's waiting for a specific person**. It's another damned prophecy."
+      - roll: 41
+        max: 43
+        result: "**He is breeding a successor**. The civil war is a crucible. The winner gets to be the next emperor!"
+      - roll: 44
+        max: 46
+        result: "**He knows how this world ends**. He's just choosing to abandon us!"
+      - roll: 51
+        max: 53
+        result: "**He got bored**. Everyone knows how old he is."
+      - roll: 54
+        max: 56
+        result: "**He made a deal**. Someone asked him to leave ... and he agreed. And now we're all dying."
+      - roll: 61
+        max: 63
+        result: "**He is punishing us**. The court betrayed him! The magistrates & lords are pure evil!"
+      - roll: 64
+        max: 66
+        result: "**He forgot the promise**. He doesn't think we're his people anymore."
+  - label: "The Autumn Massacre"
+    die: d6
+    entries:
+      - roll: 1
+        max: 1
+        result: "**Lost my temper**. The court pushed too far on a bad day; stepping down was just resignation. It's not the first time."
+      - roll: 2
+        max: 2
+        result: "**They tried to kill me first**. A coordinated assassination backed by foreign interests. The abdication was disgust."
+      - roll: 3
+        max: 3
+        result: "**A recursive plan**. I saw a pattern repeating. I killed only the people who would have triggered the cycle. The abdication was the next step in the plan."
+      - roll: 4
+        max: 4
+        result: "**Yuko left that morning**. She gave me an ultimatum, and I never liked those much. I chose differently."
+      - roll: 5
+        max: 5
+        result: "**I don't remember**. I think I was possessed."
+      - roll: 6
+        max: 6
+        result: "**Staged**. I needed to disappear. A massacre was an exit; no loose ends, no claimants, no regency."
+  - label: "What He Wants This Century"
+    die: d6
+    entries:
+      - roll: 1
+        max: 1
+        result: "**To see if Glass survives**. I spent a millennium building a gilded cage, breeding weak ducklings."
+      - roll: 2
+        max: 2
+        result: "**To die**. Genuinely. I heard rumors of a method that works. I'm investigating. Why would I care about your war?"
+      - roll: 3
+        max: 3
+        result: "**Nothing**. I'll get over it eventually."
+      - roll: 4
+        max: 4
+        result: "**To be proven wrong**. I've seen how this ends. I'm waiting to know if I'm right or wrong."
+      - roll: 5
+        max: 5
+        result: "**Yuko**. Finding her, or news of her, or a reason she might come back."
+      - roll: 6
+        max: 6
+        result: "**To finish something I started before Glass**. An older project, wager or feud. Glass was always a side experiment. I'll come back if this is resolved."
+  - label: "What Might Reach Him"
+    die: d6
+    entries:
+      - roll: 1
+        max: 1
+        result: "**His promise**. An appeal framed as a broken oath to his children. He remembers making that promise, but is not sure he'll keep it."
+      - roll: 2
+        max: 2
+        result: "**Novelty**. Something he has genuinely never seen before. A problem he has not solved. A question he has not been asked. This is vanishingly rare but always works."
+      - roll: 3
+        max: 3
+        result: "**Yuko**. Anything related to her. Her location. A message. An object she left behind. The mention of her name changes the temperature of the room."
+      - roll: 4
+        max: 4
+        result: "**Recognition**. A mortal who acts exactly as he would have at their age. Not flattery, he can smell flattery, but genuine mirrored stubbornness. He wants to see what they do next."
+      - roll: 5
+        max: 5
+        result: "**Being wrong**. A mortal who can show him an error in his reasoning. Not correct him; that implies authority. Show him a gap. He has not had this experience in centuries."
+      - roll: 6
+        max: 6
+        result: "**Nothing.** He cannot be reached this century. He is too deep in whatever cycle he is running. Come back in fifty years."

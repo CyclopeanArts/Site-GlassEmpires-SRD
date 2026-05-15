@@ -95,6 +95,15 @@ const bestiary = defineCollection({
     when_eaten: z.object({
       flavor: z.string(),            // terse description of taste & if notable, physical experience
       notes:  z.string(),            // rules / caveats about consumption.
+      table: z.object({
+        die: z.string().default('d6'),
+        label: z.string().optional(),
+        entries: z.array(z.object({
+          roll: z.int(),
+          max: z.int().optional(),
+          result: z.string(),
+        })),
+      }).optional(),
     }).optional(),
     tables: z.array(z.object({ // supplementary tables to generate.
       label:   z.string(), // table name
