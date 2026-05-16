@@ -51,7 +51,7 @@ function resolveWikilinks(text: string): string {
     </div>
 
     <div class="qa-card">
-      <h3>How is this different from D&amp;D?</h3>
+      <h3>How is this different from D<span class="amp-alt">&amp;</span>D?</h3>
       <p set:html={resolveWikilinks("No skill list. Your capabilities come from [[facts|Facts]], true statements about who your character is. Your [[level-retainer|Level]] comes from how many people follow you. Power flows through followers, not murder or gold.")}>
       </p>
     </div>
@@ -107,6 +107,11 @@ function resolveWikilinks(text: string): string {
   .qa-card h3 {
     font-size: 0.95em;
     margin: 0 0 0.5em;
+  }
+  .amp-alt {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
   }
   .qa-card p {
     font-size: 0.85em;
