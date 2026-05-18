@@ -24,8 +24,8 @@ def load_version():
 
 def relativise_html(text):
     """Replace root-absolute src/href with dot-prefixed equivalents."""
-    text = re.sub(r'\b(src|href)="(/)', r'\1=".', text)
-    text = re.sub(r"\b(src|href)='(/)", r"\1='.", text)
+    text = re.sub(r'\b(src|href)="(/)', r'\1="./', text)
+    text = re.sub(r"\b(src|href)='(/)", r"\1='./", text)
     return text
 
 
