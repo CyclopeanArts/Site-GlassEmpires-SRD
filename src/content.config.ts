@@ -43,9 +43,27 @@ const conditions = defineCollection({
   schema: dataSchema,
 });
 
-const moves = defineCollection({
-  loader: glob({ pattern: '**/*.yaml', base: './src/content/moves' }),
-  schema: dataSchema,
+const saveTableSchema = z.object({
+  type: z.string(),
+  table: z.object({
+    crit: z.string(),
+    pass: z.string(),
+    seven: z.string(),
+    failure: z.string(),
+    fumble: z.string(),
+  }),
+});
+
+const actions = defineCollection({
+  loader: glob({ pattern: '**/*.yaml', base: './src/content/actions' }),
+  schema: z.object({
+    name: z.string(),
+    tags: z.array(z.string()).default([]),
+    duration: z.string(),
+    trigger: z.string().optional(),
+    save: saveTableSchema.nullable().optional(),
+    rules: z.string(),
+  }).passthrough(),
 });
 
 const bestiary = defineCollection({
@@ -154,7 +172,7 @@ export const collections = {
   'gm-guide': gmGuide,
   lore,
   conditions,
-  moves,
+  actions,
   bestiary,
   glossary,
   tables,

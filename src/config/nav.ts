@@ -19,7 +19,7 @@ export type NavItem =
 
 export const nav: NavItem[] = [
   { label: "Introduction", children: [
-    "what-this-game-is", "dice-notation", "characters", "moves", "facts", "saves", "money", "campaigns",
+    "what-this-game-is", "dice-notation", "characters", "actions", "facts", "saves", "money", "campaigns",
   ]},
   { label: "Character Creation", children: [
     "creation-process", "origins",
@@ -37,13 +37,13 @@ export const nav: NavItem[] = [
     "what-is-a-faction", "sovereignty-subfactions",
     "families-capitals",
     { slug: "faction-moves", children: [
-      "move-capital-relocation",
-      "move-create-subfaction",
-      "move-faction-activity",
-      "move-faction-sabotage",
-      "move-grow-followers",
-      "move-make-asset",
-      "move-plunder"
+      "action-capital-relocation",
+      "action-create-subfaction",
+      "action-faction-activity",
+      "action-sabotage",
+      "action-grow-followers",
+      "action-make-asset",
+      "action-plunder-settlement"
     ]},
     "faction-resolution",
     "hidden-factions",
@@ -61,7 +61,7 @@ export const nav: NavItem[] = [
     "resources",
   ]},
   { label: "Magic", children: [
-    "magic-spell-dice-totems", "move-casting",
+    "magic-spell-dice-totems", "action-casting",
     "using-corpses-spirits", "extracting-spirits", "ritual-cooking", "divination",
   ]},
   { label: "Marketplace", children: [
@@ -99,7 +99,7 @@ export const nav: NavItem[] = [
     { label: "By Tag", href: "/bestiary/tags" },
   ]},
   { label: "Indices", children: [
-    { label: "Moves",      href: "/moves" },
+    { label: "Actions",      href: "/actions" },
     { label: "Conditions", href: "/conditions" },
   ]},
 ];

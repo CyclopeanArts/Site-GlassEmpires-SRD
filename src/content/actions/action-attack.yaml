@@ -1,0 +1,32 @@
+name: Attack
+tags: [combat, basic]
+duration: instant
+trigger: "When you declare a target you intend to harm and make an attack roll..."
+save:
+  type: strike
+  table:
+    crit: "The defender suffers the weapon's effects at twice the normal severity (normally, by doubling Damage taken)."
+    pass: "The defender suffers the weapon's effects, including Damage taken."
+    seven: "The defender suffers the weapon's effects with *halved* normal severity (normally, by halving Damage taken; round down)."
+    failure: "Your Strike is deflected, poorly aimed, or otherwise a failure."
+    fumble: "Your Strike fails & if you're using a windgun or weapon with Reload, it's jammed or requires reloading."
+rules: |
+  Declare a single target who you intend to harm & how (kill, shove, knock out). If the defender allows it, it happens. If not, perform 1 or more Strikes; by default, characters receive 1 Strike per Attack (but may receive more through Features or other abilities).
+
+  In order to attack a target, they must be within your weapon's **reach**. A character's melee reach is equal to their Size by default. Ranged attacks use the weapon's listed range as its reach.
+
+  To perform a Strike against a chosen valid target, choose an available weapon & roll a Strike Save. **You may not add personal Fact bonuses to a Save**, but should otherwise add factors such as the environment, Conditions, & the like.
+
+  If your Strike deals enough Damage to outright *kill* the defender, you receive the Action you spent on your Attack back.
+
+  ### Ranged Weapon Rules
+
+  The following extra rules apply only to ranged attacks.
+
+  - **Out of Range**: Ranged attacks may be performed at up to *twice* a weapon's listed range, but when doing so, each Strike Save suffers a −1 penalty.
+  - **Firing into Melee**: When firing on a foe engaged in melee, the victim is chosen by random die roll from among all those visible within that foe's melee reach whose Heights are greater than half the intended target's Height.
+  - **Cover**: If the target has low/weak cover (half a character's Height), ranged attacks' Strike Saves suffer a −2 penalty. If the target has high/strong cover (covering their whole body), it's a −4 penalty.
+
+  ### The Angry Step
+
+  While starting an Attack Action & while not suffering any terrain or Condition that limits or alters your free movement, you may choose to move a distance up to or equal to your melee reach before making any Strikes. This extra distance is called **the Angry Step** & it does not count against your movement for your Turn.

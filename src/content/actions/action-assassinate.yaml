@@ -1,0 +1,7 @@
+name: Assassinate
+tags: [factions, espionage, combat]
+duration: variable
+trigger: "When you arrange for a targeted individual to be killed."
+save: null
+rules: |
+  **TODO** — This action needs proper rules. The current content is a placeholder that was copy-pasted from Plunder Settlement and is incorrect.

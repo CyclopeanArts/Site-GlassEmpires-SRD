@@ -1,0 +1,64 @@
+name: Hunting
+tags: [adventure, exploration, creatures]
+duration: variable
+trigger: "When a Party deliberately searches for a specific creature in an area where it's known to exist."
+save:
+  type: Hunting
+  table:
+    crit: "You find the creature & also its lair/territory."
+    pass: "4-in-6 chance that you find the creature; otherwise, you find its lair (if applicable)."
+    seven: "You find signs/tracks — spend another search period at half duration."
+    failure: "You found nothing, but learned something useful about why (depleted area, wrong season, someone else hunting it)."
+    fumble: "Something else found you first — GM rolls on the biome encounter table."
+rules: |
+  **When a Party deliberately searches for a specific creature** in a biome where it's known to exist, the GM sets a Deadline based on the creature's Rarity Tier:
+
+  | Rarity        | Examples                                     | Base Search Time | Population per Biome Region |
+  | ------------- | -------------------------------------------- | ---------------- | --------------------------- |
+  | **Common**    | Boar, wolf, monkey, spider, skittering horde | 1 day            | Dozens to hundreds          |
+  | **Uncommon**  | Bear, toad, ant colony, therianthrope        | 3 days           | Several to a dozen          |
+  | **Rare**      | Vanishing tiger, oni, forest witch, kappa    | 1 week           | A handful                   |
+  | **Legendary** | Hydra, grootslang, phoenix, dragon tiger     | 1 month          | ~2–6 on all of Glass        |
+  | **Unique**    | Three-Legged Owl, Simurgh, Great Stag        | 3 months+        | Exactly 1 on all of Glass   |
+
+  The Deadline is modified by the local terrain's distance multiplier:
+
+  | Type        | Examples                                                 | Distance Multiplier |
+  | ----------- | -------------------------------------------------------- | :-----------------: |
+  | Clear/road  | Plains, grasslands, farmland, highways & roads           |         ×1          |
+  | Rough       | Hills, desert, marsh, forest                             |         ×2          |
+  | Heavy       | Dunes, forested/snowy hills, swamp                       |         ×3          |
+  | Mountainous | Mountain                                                 |         ×4          |
+  | Extreme     | Forested/snowy mountain                                  |         ×5          |
+
+  ## Save
+  
+  At the Duration's end, Save. In addition to any ordinary modifiers (i.e. Facts), you receive +1 modifiers to your Save for each of the following that are true:
+
+  - At least one participant in your Party has a Fact that is specifically relevant to hunting this kind of creature.
+  - Harpy aerial scout
+  - Local knowledge about the creature in question
+  - Bait or lure appropriate to the creature's wants
+  - You brought 10 or more people to hunt a Common creature
+    - You brought 20 or more people
+    - You brought 50 or more people
+    - You brought 100 or more people
+
+  You suffer a −1 penalty for each of the following being true:
+
+  - You brought 10 or more people to hunt a Rare, Legendary, or Unique creature
+    - You brought 20 or more people
+    - You brought 50 or more people
+    - You brought 100 or more people
+  - The area was pillaged, raided, or beseiged within the last month.
+
+  Finally, subtract a penalty equal to the Distance Multiplier of the searched area's terrain.
+
+  | Type        | Examples                                                 | Distance Multiplier | Penalty |
+  | ----------- | -------------------------------------------------------- | :-----------------: | :-----: |
+  | Clear/road  | Plains, grasslands, farmland, highways & roads           |         ×1          | −1      |
+  | Rough       | Hills, desert, marsh, forest                             |         ×2          | −2      |
+  | Heavy       | Dunes, forested/snowy hills, swamp                       |         ×3          | −3      |
+  | Mountainous | Mountain                                                 |         ×4          | −4      |
+  | Extreme     | Forested/snowy mountain                                  |         ×5          | −5      |
+  | River       | *Adds +5 miles of the same terrain type it's located in* |        +5mi         | −1      |

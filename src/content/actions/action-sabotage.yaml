@@ -1,0 +1,18 @@
+name: Sabotage
+tags: [factions, espionage, warfare]
+duration: "1 month"
+trigger: "When you commit espionage, debt warfare, or indirect political conflict against a target..."
+save:
+  type: success
+  table:
+    crit: "The target loses 50% of their current Followers."
+    pass: "The target loses 30% of their current Followers."
+    seven: "The target loses 10% of their current Followers."
+    failure: "The GM picks a Faction (*preferably an Idle one that would be opposed to the action*) that's to blame for or related to getting in the way of your sabotage (by incompetence, opposition, or accident). That Faction grows Angrier with you."
+    fumble: "The sabotage fails catastrophically. You lose 10% of your Followers; roll for a Random Faction Event & interpret it as the worst possible consequence of the failed sabotage."
+rules: |
+  Intangible forms of harm — trade deals, subterfuge, espionage, debt, political & religious conflict, & other forms of intangible & indirect conflict — are handled via this action. To commit Sabotage, explain the plausible means by which you would conduct it. You need a valid attack vector on the target & the tools & methodology to exploit the weakness.
+
+  The **Duration** is set to 1 month from the day that planning begins.
+
+  When the Duration elapses, Save.

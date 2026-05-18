@@ -1,0 +1,16 @@
+name: Faction Activity
+tags: [factions, leadership]
+duration: variable
+trigger: "When your Faction undertakes an unusual action that doesn't fit a predefined action..."
+save:
+  type: success
+  table:
+    crit: "The action succeeds twice as well as anyone hoped for, or in an exceptional way. If the outcome *directly* benefited or aided other Factions, they grow Pleased."
+    pass: "The action succeeds exactly as intended."
+    seven: "The action succeeds half as well as intended."
+    failure: "A new, secondary problem has emerged that prevents the completion of the action until resolved. Pick a Faction (*preferably an Idle one that would be opposed to the action*) that's to blame for or related to the new problem."
+    fumble: "The action fails catastrophically. The worst possible thing that could happen (for you & the local environment) happens."
+rules: |
+  Lots of weird Faction actions won't cleanly fall into any other niche. In these cases, a GM may determine a **Duration** based on the nature of the act & use the Success Save template table to determine the general outcome.
+
+  When the Duration elapses, Save.

@@ -1,0 +1,34 @@
+name: Grow Followers
+tags: [factions, recruitment, leadership]
+duration: variable
+trigger: "When you attempt to convert more of a Settlement's population to follow your Faction..."
+save:
+  type: success
+  table:
+    crit: "100% of the target's current Families."
+    pass: "50% of the target's current Families."
+    seven: "10% of the target's current Families."
+    failure: "Nothing."
+    fumble: "10% of *your* current Families (not the target's) leave *you*."
+rules: |
+  If your Faction has its Capital located *inside* a Settlement & only has Families equal to a *portion* of that Settlement's total Families, you may attempt to raise your number of Families by converting more people within the Settlement to follow *you*, an *ally*, one of your *Retainers*/*Subfactions* or your *Liege*.
+
+  Describe to the GM how you are plausibly attempting to convert people & to whose side. It doesn't have to be *your* Faction; you can work on someone else's behalf.
+
+  The **Duration** is **2 months** for low switching costs (commodities & entertainment), **4 months** for medium (guilds & banking, mercenary services), & **8 months** for high switching costs (ethnic associations, religious faiths, nobility).
+
+  When the Duration elapses, make a Success Save to determine the *base number* of how many Families *could* be gained.
+
+  Reduce the amount gained to *at most*:
+
+  > ([Settlement's Families] - [Competitors' Families]) / 2
+
+  A Competitor is a Faction in the same Settlement that shares the *same financial niche* as you — whether that be a *mercantile*, *banking*, *legal*, *government*, *military*, *magical*, *educational*, *industrial*, or *entertainment* niche matters not.
+
+  **Examples abound**: Two bakeries serving the same artisan niche; a messenger guild & a cult serving a divine messenger; two gate/guard societies; two banking houses; two divisions within the same company (they can't share employees). When in doubt, ask: "Would a customer choosing Faction A have *any* reason to also patronize Faction B?" If not, they're Competitors.
+
+  If you want to try to claim Families from a Competitor, you should try Sabotage, warfare, or other forms of attack. You can also differentiate your offerings so that you're not directly competing with entrenched forces — for example, a revolutionary movement would struggle to make *open* headway against an established town police force, so they can differentiate by *instead* going underground & only move to the open after growing in numbers.
+
+  <Callout type="gm" heading="Wait, so can't I found a business or bank in a major city & get tons of Followers quickly, and then hit a high level?">
+  **Yes**, if you have a business that has absolutely no overlap with any other extant businesses — a difficult proposition when you consider that Glass's markets are fairly well-developed. Any major success would likely have to come in the wake of disruption from the war.
+  </Callout>

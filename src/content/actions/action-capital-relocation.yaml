@@ -1,0 +1,48 @@
+name: Capital Relocation
+tags: [factions, administration]
+duration: variable
+trigger: "When you try to relocate your base of operations or seat of government to a new Settlement or Location..."
+save:
+  type: faction
+  table:
+    crit: "The transition is seamless. Your administrative apparatus settles in ahead of schedule. The new arrangement may qualify you for Advancement."
+    pass: "Success. Your Capital is established in the new location without incident."
+    seven: "Difficult. Your Capital is established, but your Faction suffers -1 to all actions for 1 month while the administration reorganizes."
+    failure: "Beset by complications — lost records, defecting officials, local resistance. Your Faction suffers -2 to all actions for 1 month."
+    fumble: "Catastrophic breakdown. Your Capital is established, but you lose a number of Families in the new location equal to 10% of your current Families (officials who refused the move, local power structures that undermine you). Roll a Random Faction Event."
+rules: |
+  You can relocate your Capital to a new Settlement or Location. The old Capital becomes a provincial seat or secondary holding; the new one becomes the administrative heart of your Faction.
+
+  If the destination is already a Location you control (a Settlement in your realm), this is a *transfer of administration*. If it's a new Location (a conquered or claimed site), this is a *planting of the flag*.
+
+  ## Duration
+
+  The Duration is determined by the *distance* between the old and new Capital, in days. Measure the time taken to travel via the Travel action, and double it. That's how long the relocation takes.
+
+  When the Duration elapses, your Capital is established in the new location.
+
+  ## Cost
+
+  Relocating a Capital costs $10 per day of the Duration to cover transport, supplies, and the initial establishment of offices and residences.
+
+  If the destination is a Location you *already control* (a Settlement in your realm), halve the costs. The infrastructure exists, you just have to shift personnel and priority.
+
+  ## Save
+
+  **No Save is required** for a Faction with 0 Families (a solo Leader or small party just moving their base of operations).
+
+  If your Faction has at least 1 Family, Save at the end of the Duration. The Save represents the legal, administrative, and diplomatic headaches of untethering your seat of power from one place and re-establishing it in another.
+
+  Apply modifiers from the standard Faction Resolution process (Institutional Knowledge, Power, Precedent, Foreign, Opposition), plus:
+
+  - **+1** if the destination is already a Location in your realm (you're consolidating, not claiming)
+  - **-1** for each hostile Faction whose territory your route passes through or whose region contains your destination
+  - **-1** if your old Capital is more than 100 miles from the new one (distance strains administrative continuity)
+
+  ## Benefits
+
+  A well-chosen Capital relocation can open new opportunities — closer access to resources, better defensive position, political legitimacy in a newly-conquered region.
+
+  ## Capital Decay
+
+  Your old Capital becomes a Settlement (or Location) in your realm, but it loses the prestige and administrative focus that made it your Capital. It now functions as a regular Location of its type. If another Faction moves in, they may claim it as *their* Capital.

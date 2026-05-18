@@ -1,0 +1,24 @@
+name: Negotiation
+tags: [social, interaction, trade]
+duration: variable
+trigger: "When you bargain with a target for an exchange of what you have for what you want."
+save:
+  type: negotiation
+  table:
+    crit: "Target accepts your offer enthusiastically and becomes invested in your success. They offer additional value, recommend you to others, actively advocate for you, or improve their opinion of you by one step."
+    pass: "The target accepts your offer."
+    seven: "The target makes a counter-offer, either asking for more or wanting to give less. If refused, repeated Saves for negotiating this deal are made with an additional −1 penalty."
+    failure: "The target rejects your proposal and won't listen to additional offers on this matter until something radical changes."
+    fumble: "The target feels *insulted*. They will demand an act of apology to restore their honor; if refused, their relationship decays one step (friendly → neutral → hostile). Where appropriate, targets may also warn others or attack/flee."
+rules: |
+  Negotiation is defined by an exchange with a target of something you have for something you want. Consider:
+
+  - **Value**: Does the target believe what you're offering provides sufficient value relative to what you're asking, given their current priorities and available alternatives?
+    - Is your offer noticeably better/worse than alternatives?
+    - If you're intimidating the target, do they believe that the demand is worse than the harm you'll inflict?
+  - **Trust**: Does the target believe you can and will fulfill your commitments?
+    - Is there clear means and motive by which you might violate the agreement?
+    - Do you have the means and motive to carry out a threat?
+    - Do you have a proven record of trustworthiness and/or obvious means by which you would suffer for failing to fulfill the deal?
+
+  If both are *true*, the target will accept your offer. If *neither* are true, the target will refuse. If *only one* is true, a Save is required.
