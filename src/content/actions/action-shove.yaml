@@ -1,0 +1,27 @@
+name: Shove (Action)
+tags: [combat, skirmish]
+duration: instant
+cost: minor
+trigger: "When you try to push a target away from you..."
+save:
+  type: shove
+  table:
+    crit: "Target moves up to four times their Size in distance."
+    pass: "Target moves up to twice their Size in distance."
+    seven: "Target moves up to their Size in distance, but may choose to pull you an equal distance along with them (into their previously occupied space), maintaining Engagement and/or initiating a Grapple if the target desires."
+    failure: "Target doesn't move."
+    fumble: "Target may push *you* up to *your* Size in distance."
+rules: |
+  Save to shove a target in any direction that moves them further away from you. Use the adjacent Weight modifier table in addition to any other modifiers.
+
+  | The opponent is...   | Mod |
+  | -------------------- | :-: |
+  | ≥10× heavier         | −4  |
+  | ≥2× heavier          | −2  |
+  | At least 10% heavier | −1  |
+  | About the same       | N/A |
+  | At least 10% lighter | +1  |
+  | ≥2× lighter          | +2  |
+  | ≥10× lighter         | +4  |
+
+  Shoving may break Engagement & Grappling automatically if the shover wishes; the shover may also *follow* the shoved into the space they used to occupy if desired.

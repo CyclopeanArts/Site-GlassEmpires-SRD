@@ -1,4 +1,4 @@
-name: Foresight
+name: Foresight (Action)
 tags: [adventure, basic, save]
 duration: instant
 trigger: "When presented with a challenge that off-screen planning may have addressed..."

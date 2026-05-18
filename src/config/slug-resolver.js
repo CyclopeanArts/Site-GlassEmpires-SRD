@@ -11,7 +11,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'fs';
 import { join } from 'path';
 
 const CONTENT_DIR = 'src/content';
-const DATA_COLLECTIONS = ['conditions', 'glossary', 'bestiary', 'actions', 'spirits', 'tables'];
+const DATA_COLLECTIONS = ['conditions', 'bestiary', 'actions', 'spirits', 'tables'];
 const PROSE_COLLECTIONS = ['rules', 'lore', 'gm-guide'];
 
 let _slugMap = null;

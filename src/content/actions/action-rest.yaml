@@ -1,4 +1,4 @@
-name: Rest
+name: Rest (Action)
 tags: [adventure, healing, downtime]
 duration: variable
 trigger: "When you remain idle for an extended period to recover..."

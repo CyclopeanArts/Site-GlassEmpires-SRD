@@ -1,0 +1,8 @@
+name: Extinguish Fire (Action)
+tags: [combat, skirmish]
+duration: instant
+cost: full-turn
+trigger: "When you need to put out a fire on yourself..."
+save: null
+rules: |
+  Drop to the ground (becoming **Prone**) & simultaneously remove your own [[battle-conditions|Burning]] Condition.

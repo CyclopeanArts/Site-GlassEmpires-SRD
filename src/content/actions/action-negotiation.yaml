@@ -1,4 +1,4 @@
-name: Negotiation
+name: Negotiation (Action)
 tags: [social, interaction, trade]
 duration: variable
 trigger: "When you bargain with a target for an exchange of what you have for what you want."

@@ -1,0 +1,21 @@
+name: Siege (Action)
+tags: [warfare, armies, factions, siege]
+duration: variable
+trigger: "When you besiege a fortified Location..."
+save: null
+rules: |
+  Sum the defending armies' BR along with the Location's Families & SHP. Divide it by the attacking armies' BR & multiply by 100. The result is how many days out the Duration should be set for.
+
+  At the end of the period, Save.
+
+  | Result | Success Save Effect |
+  | :----: | ------------------- |
+  | Crit & Pass (≥8) | The besieged Location falls under the besieging armies' control. |
+  | Seven (7) | Make another Save tomorrow. |
+  | Failure & Fumble (≤6) | The siege has been delayed. Recalculate & reset the siege Duration. |
+
+  When the Location is captured, resolve casualties by hosting a Battle between the two sides — sans any Families, SHP bonus, or terrain/defensive fortification bonuses. Flight for the defenders is considered surrender instead of escape.
+
+  ### Assaults
+
+  An *assault* is a rapid assault of a fortification. It is played out as a Battle with each Turn covering 1 day of events. Add the assaulted Location's Families & SHP to the defending side's BR.

@@ -1,0 +1,29 @@
+name: Grapple (Action)
+tags: [combat, skirmish]
+duration: instant
+cost: minor
+trigger: "When you try to seize and restrain a target..."
+save:
+  type: grapple
+  table:
+    crit: "Target is Grappled & may also be knocked Prone if desired."
+    pass: "Target is Grappled."
+    seven: "Target can *choose* to enter a Grapple, but you don't receive any benefits from this until the start of your next Turn."
+    failure: "Target can *choose* to enter a Grapple, but you don't receive any benefits from this until the start of your next Turn."
+    fumble: "Target can *choose* to enter a Grapple, but you don't receive any benefits from this until the start of your next Turn, & if they do so they can also knock you Prone."
+rules: |
+  If you have at least one free hand, you can Save to **Grapple** an opponent. Use the adjacent Weight modifier table in addition to any other modifiers.
+
+  | The opponent is...   | Mod |
+  | -------------------- | :-: |
+  | ≥10× heavier         | −4  |
+  | ≥2× heavier          | −2  |
+  | At least 10% heavier | −1  |
+  | About the same       | N/A |
+  | At least 10% lighter | +1  |
+  | ≥2× lighter          | +2  |
+  | ≥10× lighter         | +4  |
+
+  Grappling is a Condition that affects *both* characters. Neither character can move except by Shoving the other, which is also the only way to break a Grapple. Melee attacks gain a +2 to hit anyone in a Grapple, even if the attacker is outside the Grapple.
+
+  Characters who are more than twice the Weight of the largest opponent in a Grapple may freely move around, dragging the Grapple with them.

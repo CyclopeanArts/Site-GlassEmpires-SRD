@@ -1,7 +1,21 @@
 name: Assassinate
 tags: [factions, espionage, combat]
-duration: variable
-trigger: "When you arrange for a targeted individual to be killed."
-save: null
+duration: "2 weeks"
+trigger: "When you arrange for an unsuspecting NPC to be killed."
+save:
+  type: assassination
+  table:
+    crit: "The target appears to have died from natural causes."
+    pass: "The target dies. Signs of foul play are present but circumstantial."
+    seven: "The target dies, but messily, and the assassination was obvious murder."
+    failure: "The assassination fails. The target survives unharmed and the attempt becomes known."
+    fumble: "The assassination fails catastrophically. The perpetrator is caught & arrested."
 rules: |
-  **TODO** — This action needs proper rules. The current content is a placeholder that was copy-pasted from Plunder Settlement and is incorrect.
+  Assassination is the art of killing an unsuspecting NPC — a carefully planned murder meant to go unnoticed. It cannot be used against Player Characters or NPCs who have reason to expect an attempt on their life.
+
+  The GM sets the **Duration** at 2 weeks, modified by:
+
+  - **+1 week** if the target is heavily guarded, reclusive, or lives in a secure location.
+  - **−1 week** if the target has a public routine, known vulnerabilities, or you have inside access.
+
+  At the end of the Duration, Save.

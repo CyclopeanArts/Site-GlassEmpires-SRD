@@ -1,13 +1,13 @@
 ---
 /**
- * <Ref collection="conditions" slug="panicked" />
+ * <Ref collection="actions" slug="action-attack" variant="inline" />
  * <Ref collection="bestiary" slug="jiangshi" variant="card" />
- * <Ref collection="glossary" slug="battle-rating" variant="tooltip" />
+ * <Ref collection="conditions" slug="panicked" variant="tooltip" />
  *
  * Renders whatever fields are present in the entry — nothing is assumed.
  * variant:
- *   "inline"  — a callout block embedded in prose (default)
- *   "card"    — compact card for index pages
+ *   "inline"  — paper-clipping document embed (default)
+ *   "card"    — compact paper-clipping for index pages
  *   "tooltip" — anchor with hover summary (for <Term> usage)
  *   "stat"    — bestiary stat block format
  *
@@ -23,6 +23,14 @@ const { collection, slug, variant = 'inline', label, linkSlug } = Astro.props;
 const hrefSlug = linkSlug ?? slug;
 
 const _slugMap = getSlugMap();
+
+const collectionLabel =
+  collection === 'actions'    ? 'Action'
+  : collection === 'conditions' ? 'Condition'
+  : collection === 'spirits'    ? 'Spirit'
+  : collection === 'bestiary'   ? 'Creature'
+  : collection === 'tables'     ? 'Table'
+  : collection.charAt(0).toUpperCase() + collection.slice(1).replace(/^\w/, c => c.toLowerCase());
 
 function renderFeatureText(text: string): { intro: string; bullets: string[] } {
   const lines = text.split('\n');
@@ -43,6 +51,96 @@ function renderFeatureText(text: string): { intro: string; bullets: string[] } {
     intro: mdToHtml(introParts.join(' ')),
     bullets: bulletParts.map(b => mdToHtml(b))
   };
+}
+
+function renderTableBlock(text: string): string {
+  const lines = text.split('\n').filter(l => l.trim());
+  if (lines.length < 2) return text;
+
+  const headerMatch = lines[0].match(/^\|(.+)\|$/);
+  if (!headerMatch) return text;
+
+  const headers = headerMatch[1].split('|').map(h => h.trim());
+  const bodyRows = lines.slice(2).filter(l => l.match(/^\|.+\|$/));
+
+  let html = '<table class="ref-clipping-table"><thead><tr>';
+  for (const h of headers) {
+    html += `<th>${h.replace(/\*(\*?.+?\*?)\*/g, '<strong>$1</strong>')}</th>`;
+  }
+  html += '</tr></thead><tbody>';
+  for (const row of bodyRows) {
+    const cells = row.split('|').filter((_, i, a) => i > 0 && i < a.length - 1).map(c => c.trim());
+    html += '<tr>';
+    for (const cell of cells) {
+      const rendered = mdToHtml(cell);
+      html += `<td>${rendered}</td>`;
+    }
+    html += '</tr>';
+  }
+  html += '</tbody></table>';
+  return html;
+}
+
+function renderFullMarkdown(text: string): string {
+  // Split into blocks by double newlines
+  const blocks = text.split(/\n\n+/);
+  const parts: string[] = [];
+
+  for (const block of blocks) {
+    const trimmed = block.trim();
+    if (!trimmed) continue;
+
+    const lines = trimmed.split('\n');
+
+    // Table detection: first non-empty line starts and ends with |
+    if (lines.some(l => l.trim().match(/^\|.+\|$/))) {
+      parts.push(renderTableBlock(trimmed));
+      continue;
+    }
+
+    // Heading detection
+    const headingMatch = trimmed.match(/^(#{2,4})\s+(.+)$/m);
+    if (headingMatch) {
+      const level = headingMatch[1].length; // ## = 2, ### = 3, etc.
+      const tag = `h${Math.min(level + 2, 6)}`; // ## → h4, ### → h5
+      parts.push(`<${tag} class="ref-clipping-heading">${mdToHtml(headingMatch[2])}</${tag}>`);
+      continue;
+    }
+
+    // Ordered list detection
+    const hasOrderedItems = lines.some(l => l.trim().match(/^\d+\.\s/));
+    if (hasOrderedItems) {
+      const items = lines
+        .filter(l => l.trim().match(/^\d+\.\s/))
+        .map(l => `<li>${mdToHtml(l.trim().replace(/^\d+\.\s/, ''))}</li>`);
+      parts.push(`<ol>${items.join('\n')}</ol>`);
+      continue;
+    }
+
+    // Unordered list detection
+    const hasListItems = lines.some(l => l.trim().match(/^[-*]\s/));
+    if (hasListItems) {
+      const items = lines
+        .filter(l => l.trim().match(/^[-*]\s/))
+        .map(l => `<li>${mdToHtml(l.trim().replace(/^[-*]\s/, ''))}</li>`);
+      parts.push(`<ul>${items.join('\n')}</ul>`);
+      continue;
+    }
+
+    // Callout detection (<Callout type=...)
+    // Pass through as-is — it's an Astro component already rendered
+    if (trimmed.startsWith('<Callout') || trimmed.startsWith('</Callout')) {
+      parts.push(trimmed);
+      continue;
+    }
+
+    // Regular paragraph
+    // Check if there are <br> tags (from single newlines in a paragraph block)
+    const withBreaks = trimmed.replace(/\n/g, '<br>');
+    parts.push(`<p>${mdToHtml(withBreaks)}</p>`);
+  }
+
+  return parts.join('\n');
 }
 
 function wikilinksToHtml(text: string): string {
@@ -91,9 +189,7 @@ function buildSpeeds(speeds: any): { label: string; value: string }[] {
 }
 
 function computeBR(d: any): number | string {
-  // Explicit override via frontmatter
   if (d.br !== undefined) return d.br;
-
   const power = (d.level || 0) + d.hd;
   const armorMult = 1 + ((d.armor || 0) / 4);
   const dmgMult = d.damagemultiplier ?? 1;
@@ -102,6 +198,12 @@ function computeBR(d: any): number | string {
   const negSum = features.reduce((s: number, f: any) => s + (f.combat < 0 ? Math.abs(f.combat) : 0), 0);
   const featMult = (posSum + 1) / (negSum + 1);
   return Math.round(power * armorMult * dmgMult * featMult);
+}
+
+function formatSave(d: any): string {
+  if (!d.save) return '';
+  if (typeof d.save === 'string') return d.save;
+  return d.save.type || '';
 }
 
 let entry: any = null;
@@ -146,34 +248,46 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
 )}
 
 {d && effectiveVariant === 'card' && (
-  <a href={`/${collection}/${hrefSlug}`} class="ref-card">
-    <span class="ref-card-name">{displayName}</span>
-    {d.summary && <span class="ref-card-summary">{d.summary}</span>}
-    {d.tags?.length > 0 && (
-      <span class="ref-card-tags">
-        {d.tags.map((t: string) => <span class="ref-tag">{t}</span>)}
-      </span>
-    )}
-  </a>
+  <div class="ref-clipping ref-clipping-card">
+    <div class="ref-clipping-topbar"></div>
+    <div class="ref-clipping-body">
+      <div class="ref-clipping-header-row">
+        <div class="ref-clipping-name">{displayName}</div>
+        <a href={`/${collection}/${hrefSlug}`} class="ref-clipping-link">View full {collectionLabel}</a>
+      </div>
+      {d.tags?.length > 0 && (
+        <div class="ref-clipping-tags">
+          {d.tags.map((t: string) => <span class="ref-tag">{t}</span>)}
+        </div>
+      )}
+      {d.duration && <p class="ref-clipping-field"><strong>Duration:</strong> {d.duration}</p>}
+      {d.cost && <p class="ref-clipping-field"><strong>Cost:</strong> {d.cost}</p>}
+    </div>
+    <div class="ref-clipping-bottombar"></div>
+  </div>
 )}
 
 {d && effectiveVariant === 'inline' && (
-  <div class="ref-inline">
-    <div class="ref-inline-name">{displayName}</div>
-    {d.summary && <p class="ref-inline-summary">{d.summary}</p>}
-    {d.duration && <p class="ref-inline-field"><strong>Duration:</strong> {d.duration}</p>}
-    {d.save    && <p class="ref-inline-field"><strong>Save:</strong> {d.save}</p>}
-    {d.cost    && <p class="ref-inline-field"><strong>Cost:</strong> {d.cost}</p>}
-    {d.rules   && <div class="ref-inline-rules" set:html={d.rules.replace(/\n/g, '<br>')} />}
-    {d.definition && <p class="ref-inline-rules">{d.definition}</p>}
-    {d.see_also?.length > 0 && (
-      <p class="ref-inline-seealso">
-        See also:{' '}
-        {d.see_also.map((s: string, i: number) => (
-          <>{i > 0 && ', '}<a href={`#${s}`}>{s}</a></>
-        ))}
-      </p>
-    )}
+  <div class="ref-clipping">
+    <div class="ref-clipping-topbar"></div>
+    <div class="ref-clipping-body">
+      <div class="ref-clipping-header-row">
+        <div class="ref-clipping-name">{displayName}</div>
+        <a href={`/${collection}/${hrefSlug}`} class="ref-clipping-link">View full {collectionLabel}</a>
+      </div>
+      {d.tags?.length > 0 && (
+        <div class="ref-clipping-tags">
+          {d.tags.map((t: string) => <span class="ref-tag">{t}</span>)}
+        </div>
+      )}
+      {d.duration && <p class="ref-clipping-field"><strong>Duration:</strong> {d.duration}</p>}
+      {d.cost && <p class="ref-clipping-field"><strong>Cost:</strong> {d.cost}</p>}
+      {d.trigger && <p class="ref-clipping-field"><strong>Trigger:</strong> {d.trigger}</p>}
+      {formatSave(d) && <p class="ref-clipping-field"><strong>Save:</strong> {formatSave(d)}</p>}
+      {d.rules && <div class="ref-clipping-rules" set:html={renderFullMarkdown(d.rules)} />}
+      {d.definition && <div class="ref-clipping-rules" set:html={renderFullMarkdown(d.definition)} />}
+    </div>
+    <div class="ref-clipping-bottombar"></div>
   </div>
 )}
 
@@ -285,32 +399,7 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
   }
   .ref-term[data-tooltip]:hover::after { opacity: 1; }
 
-  /* ── Card ──────────────────────────────────────────── */
-  .ref-card {
-    display: block;
-    padding: 0.85em 1em;
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 0.25em;
-    text-decoration: none;
-    transition: border-color 0.15s;
-  }
-  .ref-card:hover { border-color: var(--gold-ui); text-decoration: none; }
-  .ref-card-name {
-    font-family: 'Literata Variable', serif;
-    font-variant-caps: small-caps;
-    font-weight: 700;
-    color: var(--heading-col);
-    display: block;
-    margin-bottom: 0.25em;
-  }
-  .ref-card-summary {
-    font-size: 0.85em;
-    color: var(--text-soft);
-    display: block;
-    margin-bottom: 0.4em;
-  }
-  .ref-card-tags { display: flex; gap: 0.4em; flex-wrap: wrap; }
+  /* ── Shared tag badge ──────────────────────────────── */
   .ref-tag {
     font-size: 0.68em;
     font-family: 'Literata Variable', serif;
@@ -326,28 +415,173 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
     line-height: 1.2;
   }
 
-  /* ── Inline block ──────────────────────────────────── */
-  .ref-inline {
-    background: var(--callout-ex-bg);
-    border-left: 3px solid var(--callout-ex-bdr);
-    padding: 0.85em 1.1em;
-    margin: 1.2em 0;
-    border-radius: 0 0.25em 0.25em 0;
+  /* ── Paper clipping container ──────────────────────── */
+  .ref-clipping {
+    margin: 1.5em 0;
+    position: relative;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.07);
+    overflow: visible;
+    font-family: 'Literata Variable', serif;
+    font-size: 0.9em;
   }
-  .ref-inline-name {
+  .ref-clipping::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/vellum.webp');
+    background-repeat: repeat;
+    background-size: 400px 400px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    .ref-clipping {
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+    }
+  }
+
+  .ref-clipping-topbar {
+    position: absolute;
+    top: -1px;
+    left: -0.2em;
+    width: calc(100% + 0.4em);
+    height: 0.35em;
+    background: linear-gradient(180deg, #c8a84e, #a8862a);
+    z-index: 2;
+  }
+
+  .ref-clipping-bottombar {
+    position: absolute;
+    bottom: -1px;
+    left: -0.2em;
+    width: calc(100% + 0.4em);
+    height: 0.35em;
+    background: linear-gradient(180deg, #a8862a, #c8a84e);
+    z-index: 2;
+  }
+
+  .ref-clipping-body {
+    position: relative;
+    z-index: 1;
+    padding: 0.85em 1.1em 0.5em;
+  }
+
+  .ref-clipping-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.2em;
+  }
+  .ref-clipping-name {
     font-family: 'Literata Variable', serif;
     font-variant-caps: small-caps;
     font-weight: 700;
-    font-size: 1.05em;
-    color: var(--callout-ex-head);
-    margin-bottom: 0.35em;
+    font-size: 1.3em;
+    color: var(--heading-col);
   }
-  .ref-inline-summary { font-style: italic; color: var(--text-soft); margin-bottom: 0.4em; }
-  .ref-inline-field   { font-size: 0.9em; color: var(--text-soft); margin-bottom: 0.2em; }
-  .ref-inline-rules   { font-size: 0.9em; color: var(--text); margin-top: 0.5em; }
-  .ref-inline-seealso { font-size: 0.8em; color: var(--text-muted); margin-top: 0.5em; }
+  .ref-clipping-link {
+    font-size: 0.75em;
+    color: var(--link-col);
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 0.5em;
+  }
+  .ref-clipping-link:hover {
+    text-decoration: underline;
+  }
 
-  /* ── Stat block ────────────────────────────────────── */
+  .ref-clipping-tags {
+    display: flex;
+    gap: 0.4em;
+    flex-wrap: wrap;
+    margin-bottom: 0.5em;
+  }
+
+  .ref-clipping-link {
+
+    font-size: 0.75em;
+    color: var(--link-col);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.3em;
+  }
+  .ref-clipping-link:hover {
+    text-decoration: underline;
+  }
+
+  .ref-clipping-field {
+    font-size: 0.92em;
+    color: var(--text-soft);
+    margin: 0.15em 0;
+    line-height: 1.5;
+  }
+  .ref-clipping-field strong {
+    color: var(--text);
+    font-weight: 600;
+    margin-right: 0.25em;
+  }
+
+  .ref-clipping-rules {
+    font-size: 0.92em;
+    color: var(--text);
+    margin-top: 0.6em;
+    line-height: 1.65;
+    clear: both;
+  }
+  .ref-clipping-rules p { margin: 0.5em 0; }
+  .ref-clipping-rules ul,
+  .ref-clipping-rules ol { margin: 0.4em 0; padding-left: 1.4em; }
+  .ref-clipping-rules li { margin: 0.15em 0; }
+
+  .ref-clipping-heading {
+    font-family: 'Literata Variable', serif;
+    font-weight: 700;
+    color: var(--heading-col);
+    margin: 0.8em 0 0.3em;
+    font-variant-caps: small-caps;
+  }
+  .ref-clipping-rules h4 { font-size: 1.05em; }
+  .ref-clipping-rules h5 { font-size: 0.95em; }
+  .ref-clipping-rules h6 { font-size: 0.9em; }
+
+  .ref-clipping-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    margin: 0.5em 0;
+  }
+  .ref-clipping-table th {
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    text-align: left;
+    padding: 0.35em 0.5em;
+    border-bottom: 2px solid var(--border);
+    color: var(--text-soft);
+  }
+  .ref-clipping-table td {
+    padding: 0.3em 0.5em;
+    border-bottom: 1px solid var(--table-rule);
+    vertical-align: top;
+  }
+
+  /* ── Compact card variant ──────────────────────────── */
+  .ref-clipping-card {
+    font-size: 0.82em;
+    margin: 0.5em 0;
+  }
+  .ref-clipping-card .ref-clipping-name {
+    font-size: 1.1em;
+  }
+  .ref-clipping-card .ref-clipping-body {
+    padding: 0.6em 0.9em 0.35em;
+  }
+
+  /* ── Stat block (unchanged) ────────────────────────── */
   .ref-stat { margin: 1.5em 0; }
   .ref-stat-name {
     font-size: 2.2em;
@@ -391,8 +625,6 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
     list-style: none;
     padding: 0;
     margin: 0.35em 0 0 1em;
-  }
-  .ability-sub-list > li {
   }
   .ref-stat-lore {
     margin-top: 1em; padding-top: 0.75em;

@@ -1,4 +1,4 @@
-name: Persuasion
+name: Persuasion (Action)
 tags: [social, interaction]
 duration: variable
 trigger: "When you try to persuade a target of something meaningful..."

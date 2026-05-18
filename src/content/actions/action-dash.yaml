@@ -1,0 +1,8 @@
+name: Dash (Action)
+tags: [combat, movement, skirmish]
+duration: instant
+cost: full-turn
+trigger: "When you move up to twice your Speed in a single burst..."
+save: null
+rules: |
+  Move up to twice any of your Speed scores. You must Save to pass through any form of difficult or slowing terrain without falling.

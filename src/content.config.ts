@@ -136,14 +136,6 @@ const bestiary = defineCollection({
   }),
 });
 
-const glossary = defineCollection({
-  loader: glob({ pattern: '**/*.yaml', base: './src/content/glossary' }),
-  schema: dataSchema.extend({
-    definition: z.string().optional(),      // full definition text
-    related_rule: z.string().optional(),    // slug of the rules page that covers this term
-  }),
-});
-
 const tables = defineCollection({
   loader: glob({ pattern: '**/*.yaml', base: './src/content/tables' }),
   schema: z.object({
@@ -174,7 +166,6 @@ export const collections = {
   conditions,
   actions,
   bestiary,
-  glossary,
   tables,
   spirits,
 };

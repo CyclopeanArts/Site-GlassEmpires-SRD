@@ -1,4 +1,4 @@
-name: Create Subfaction
+name: Create Subfaction (Action)
 tags: [factions, administration, leadership]
 duration: variable
 trigger: "When you promote a Retainer and gift them a Capital to form a new Subfaction..."

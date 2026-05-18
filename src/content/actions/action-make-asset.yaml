@@ -1,4 +1,4 @@
-name: Make Asset
+name: Make Asset (Action)
 tags: [factions, construction]
 duration: variable
 trigger: "When you build a non-commodity physical asset such as a statue, fortress, bridge, or road..."

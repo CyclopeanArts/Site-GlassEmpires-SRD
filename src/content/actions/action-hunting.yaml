@@ -1,4 +1,4 @@
-name: Hunting
+name: Hunting (Action)
 tags: [adventure, exploration, creatures]
 duration: variable
 trigger: "When a Party deliberately searches for a specific creature in an area where it's known to exist."
@@ -11,7 +11,7 @@ save:
     failure: "You found nothing, but learned something useful about why (depleted area, wrong season, someone else hunting it)."
     fumble: "Something else found you first — GM rolls on the biome encounter table."
 rules: |
-  **When a Party deliberately searches for a specific creature** in a biome where it's known to exist, the GM sets a Deadline based on the creature's Rarity Tier:
+  **When a Party deliberately searches for a specific creature** in a biome where it's known to exist, the GM sets a Duration based on the creature's Rarity Tier:
 
   | Rarity        | Examples                                     | Base Search Time | Population per Biome Region |
   | ------------- | -------------------------------------------- | ---------------- | --------------------------- |
@@ -21,7 +21,7 @@ rules: |
   | **Legendary** | Hydra, grootslang, phoenix, dragon tiger     | 1 month          | ~2–6 on all of Glass        |
   | **Unique**    | Three-Legged Owl, Simurgh, Great Stag        | 3 months+        | Exactly 1 on all of Glass   |
 
-  The Deadline is modified by the local terrain's distance multiplier:
+  The Duration is modified by the local terrain's distance multiplier:
 
   | Type        | Examples                                                 | Distance Multiplier |
   | ----------- | -------------------------------------------------------- | :-----------------: |

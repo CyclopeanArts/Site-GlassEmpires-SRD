@@ -1,4 +1,4 @@
-name: Sabotage
+name: Sabotage (Action)
 tags: [factions, espionage, warfare]
 duration: "1 month"
 trigger: "When you commit espionage, debt warfare, or indirect political conflict against a target..."

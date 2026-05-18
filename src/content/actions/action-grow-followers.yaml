@@ -1,4 +1,4 @@
-name: Grow Followers
+name: Grow Followers (Action)
 tags: [factions, recruitment, leadership]
 duration: variable
 trigger: "When you attempt to convert more of a Settlement's population to follow your Faction..."

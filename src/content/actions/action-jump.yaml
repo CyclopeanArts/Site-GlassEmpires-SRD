@@ -1,0 +1,8 @@
+name: Jump (Action)
+tags: [combat, movement, skirmish]
+duration: instant
+cost: minor
+trigger: "When you attempt a jump..."
+save: null
+rules: |
+  Attempt a jump as per the rules for [[movement|jumping]].

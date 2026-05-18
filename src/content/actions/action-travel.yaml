@@ -1,15 +1,8 @@
-name: Travel
+name: Travel (Action)
 tags: [adventure, movement, exploration]
 duration: variable
 trigger: "When you set out on a route with a destination in mind..."
-save:
-  type: travel
-  table:
-    crit: "You can bump the Result of 1 other PC in the Party who failed up by 1 step — i.e. from a Fumble to a Failure."
-    pass: "Nothing bad happens."
-    seven: "Lose 10% of all nameless Followers traveling with you, rounded down. Lose [Power] HP."
-    failure: "Lose 33% of all nameless Followers traveling with you, rounded down. Half of them are dead; the other half deserted. For each named Retainer or Follower, roll 1d6. On 1, they're dead; on 2, they deserted. Lose [Power] × 2 HP."
-    fumble: "Lose 50% of all nameless Followers traveling with you, rounded down. Two thirds of them are dead; the other third deserted. For each named Retainer or Follower, roll 1d6. On 1–2, they're dead; on 3, they deserted. Lose [Power] × 3 HP."
+save: null
 rules: |
   Travel by a Party or mobile Factions (such as Armies) is resolved via *free movement* tracked on a map of the campaign world by the GM.
 
@@ -21,9 +14,9 @@ rules: |
   2. The GM measures out the path to the destination & determines the total distance that either *must* be traveled (to reach a target place) or that *will* be traveled (to travel for a certain period of time).
      - If the party is following an erroneous route, the destination is the distance that the Party would have to travel before obviously realizing something is wrong (i.e. encountering an obviously out-of-the-way landmark or passing enough time to have reached the destination if on the correct course).
   3. The GM determines if there's possible overlap with any other Faction movement based on relative Speeds & routes taken. If there appears to be a point of encounter, the GM (*secretly*) alters the destination to instead be the encounter & recalculates travel distance & time.
-  4. The GM sets a (*secret*) Deadline as the time at which the destination will be reached.
+  4. The GM sets a (*secret*) Duration as the time at which the destination will be reached.
   5. For each week of travel (or at the midpoint, if less than one), the GM calls for PCs in a traveling party to check for an Exhaustion Save if necessary & simultaneously rolls on the Discoveries table.
-  6. When the Deadline for a Travel Move to come up finishes, the GM rolls a Travel Save for the party.
+  6. When the Duration for a Travel Action expires, the Party has arrived at the destination.
 
   ## Exhaustion Save
 
@@ -35,6 +28,14 @@ rules: |
   - Your mounts are *unfit for the biome* (horses in the desert, camels in the arctic).
 
   For each true condition, each *affected* PC in the Party must perform an Exhaustion Save. Add leadership, quartermastery & hunting skills as +1 bonuses.
+
+  |      Result      | Exhaustion Save Effects                                                                                                                                                                                                                    |
+  | :--------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+  |  Crit<br/>*≥12*   | You can bump the Result of 1 other PC in the Party who failed up by 1 step — i.e. from a Fumble to a Failure.                                                                                                                              |
+  |  Pass<br/>*8–11*  | Nothing bad happens.                                                                                                                                                                                                                       |
+  |   Seven<br/>*7*   | Lose 10% of all nameless Followers traveling with you, rounded down. Lose [Power] HP.                                                                                                                                                      |
+  | Failure<br/>*3–6* | Lose 33% of all nameless Followers traveling with you, rounded down. Half of them are dead; the other half deserted. For each named Retainer or Follower, roll 1d6. On 1, they're dead; on 2, they deserted. Lose [Power] × 2 HP.          |
+  |  Fumble<br/>*≤2*  | Lose 50% of all nameless Followers traveling with you, rounded down. Two thirds of them are dead; the other third deserted. For each named Retainer or Follower, roll 1d6. On 1–2, they're dead; on 3, they deserted. Lose [Power] × 3 HP. |
 
   ## Discoveries Table
 
@@ -62,7 +63,7 @@ rules: |
 
   Divide the effective distance in miles by the *slowest* Speed score among all traveling Party members. Remember: If any part of the route is off-road, the Speed of all wheeled vehicles is halved & if any Party member is Encumbered, their Speed is halved too.
 
-  The result is the number of days until the Deadline (at which point the Party reaches the destination).
+  The result is the number of days until the Duration (at which point the Party reaches the destination).
 
   ## Visibility
 

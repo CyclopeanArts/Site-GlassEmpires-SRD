@@ -1,4 +1,4 @@
-name: Faction Activity
+name: Faction Activity (Action)
 tags: [factions, leadership]
 duration: variable
 trigger: "When your Faction undertakes an unusual action that doesn't fit a predefined action..."

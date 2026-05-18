@@ -1,0 +1,8 @@
+name: Disengage (Action)
+tags: [combat, skirmish]
+duration: instant
+cost: major
+trigger: "When you break engagement with enemies..."
+save: null
+rules: |
+  Break [[engagement|Engagement]] with any number of enemies. If you don't *also* move to a location outside their melee reach by the end of your Turn, you'll be Engaged again.
