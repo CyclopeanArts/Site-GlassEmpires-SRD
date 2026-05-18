@@ -22,16 +22,30 @@ def load_version():
         return json.load(f)["version"]
 
 
-def relativise_html(text):
-    """Replace root-absolute src/href with dot-prefixed equivalents."""
-    text = re.sub(r'\b(src|href)="(/)', r'\1="./', text)
-    text = re.sub(r"\b(src|href)='(/)", r"\1='./", text)
+def inject_base(text, prefix):
+    """Inject <base href="{prefix}"> after <head> (or <head ...>).
+    This makes ALL root-absolute URLs (src, href, JS fetch, etc.)
+    resolve correctly from any file depth.
+    """
+    text = re.sub(r'(<head[^>]*>)', lambda m: f'{m.group(1)}\n<base href="{prefix}">', text)
     return text
 
 
 def relativise_css(text):
-    """Replace url(/) with url(./) in CSS files."""
-    return re.sub(r"url\(/([^)]+)\)", r"url(./\1)", text)
+    """Relativise CSS url() references.
+    Astro puts both CSS and referenced assets (fonts, etc.) in _astro/,
+    so url(/_astro/foo) becomes url(./foo) for same-directory resolution.
+    """
+    return re.sub(r"url\(/_astro/", "url(./", text)
+
+
+def depth_prefix(file_path, staging_root):
+    """Calculate the relative prefix to reach the root from a file's location."""
+    rel = file_path.relative_to(staging_root)
+    parts = len(rel.parents)  # number of directories deep
+    if parts == 0:
+        return "./"
+    return "../" * parts
 
 
 def main(dist_dir=None):
@@ -52,7 +66,8 @@ def main(dist_dir=None):
         shutil.copytree(dist_dir, staging)
 
         for html_file in sorted(staging.rglob("*.html")):
-            html_file.write_text(relativise_html(html_file.read_text()))
+            prefix = depth_prefix(html_file, staging)
+            html_file.write_text(inject_base(html_file.read_text(), prefix))
 
         for css_file in sorted(staging.rglob("*.css")):
             css_file.write_text(relativise_css(css_file.read_text()))
