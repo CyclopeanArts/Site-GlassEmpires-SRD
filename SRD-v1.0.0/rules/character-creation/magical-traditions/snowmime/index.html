@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en" data-theme="light" data-astro-cid-l3js6ivh> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Snowmime — Glass Empires SRD</title><meta name="description" content="Snowmime — Glass Empires System Reference Document"><link rel="icon" type="image/svg+xml" href="../../../../favicon.webp"><!-- Theme initialization: run before paint to prevent flash --><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="../../../../_astro/ClientRouter.astro_astro_type_script_index_0_lang.j56hQv-j.js"></script><script>
+    // ── Global component init queue ────────────────────────────────
+    // Components push their setup functions here. They run immediately
+    // on page load AND after every ClientRouter navigation, so interactive
+    // elements work without per-component astro:page-load listeners.
+    window.__astroInit = [];
+    document.addEventListener('astro:page-load', () => {
+      window.__astroInit.forEach(fn => fn());
+    });
+
+    // ── Theme: read from localStorage before paint ────────────────
+    const t = localStorage.getItem('ge-theme');
+    if (t) document.documentElement.dataset.theme = t;
+  </script><script>
+    document.addEventListener('astro:page-load', () => {
+      const path = location.pathname;
+      document.querySelectorAll('.nav-child-link, .nav-section-label').forEach(el => {
+        const href = el.getAttribute('href');
+        el.classList.toggle('is-active', href === path);
+      });
+      // Scroll nav to reveal active page, or restore saved position
+      const active = document.querySelector('.nav-scroll .is-active');
+      if (active) {
+        active.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      } else {
+        const ns = document.querySelector('.nav-scroll');
+        if (ns) {
+          const s = sessionStorage.getItem('ge-nav-scroll');
+          if (s) ns.scrollTop = parseInt(s, 10);
+        }
+      }
+      // Re-apply theme from localStorage (ClientRouter may reset <html> attrs)
+      const theme = localStorage.getItem('ge-theme');
+      if (theme) document.documentElement.dataset.theme = theme;
+      // Re-initialize PagefindUI if the search area was swapped
+      if (typeof PagefindUI !== 'undefined' && document.getElementById('search-area') && !document.querySelector('#search-area .pagefind-ui')) {
+        new PagefindUI({
+          element: '#search-area',
+          showSubResults: false,
+          resetStyles: true,
+          pageSize: 6,
+        });
+      }
+    });
+
+    // ── Delegated interactions (survive ClientRouter DOM swaps) ────────
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+
+      // Mobile nav toggle
+      const toggle = target.closest('#nav-toggle');
+      if (toggle) {
+        const sideNav = document.getElementById('side-nav');
+        const open = sideNav?.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(!!open));
+        return;
+      }
+
+      // Close nav when clicking outside
+      if (target.closest('.side-nav.is-open') === null &&
+          document.getElementById('side-nav')?.classList.contains('is-open') &&
+          !target.closest('#nav-toggle')) {
+        const sideNav = document.getElementById('side-nav');
+        const toggle = document.getElementById('nav-toggle');
+        sideNav?.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      }
+
+      // Theme toggle
+      const themeBtn = target.closest('#theme-toggle');
+      if (themeBtn) {
+        const html = document.documentElement;
+        const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.body.classList.add('theme-fade');
+        html.dataset.theme = next;
+        localStorage.setItem('ge-theme', next);
+        // Remove class after transition completes
+        setTimeout(() => document.body.classList.remove('theme-fade'), 300);
+        return;
+      }
+
+      // Subscribe modal open
+      if (target.closest('#subscribe-btn')) {
+        const modal = document.getElementById('subscribe-modal');
+        const close = document.getElementById('modal-close');
+        modal?.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        close?.focus();
+        return;
+      }
+
+      // Subscribe modal close — only X or outside the content box
+      if (target.closest('#modal-close')) {
+        const modal = document.getElementById('subscribe-modal');
+        modal?.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.getElementById('subscribe-btn')?.focus();
+        return;
+      }
+      if (target.closest('#subscribe-modal') && !target.closest('.modal-content')) {
+        const modal = document.getElementById('subscribe-modal');
+        if (modal?.getAttribute('aria-hidden') === 'false') {
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          document.getElementById('subscribe-btn')?.focus();
+          return;
+        }
+      }
+
+      // Cyclopean modal open
+      if (target.closest('#cyclopean-logo-btn, #about-btn')) {
+        const modal = document.getElementById('cyclopean-modal');
+        const close = document.getElementById('cyclopean-modal-close');
+        modal?.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        close?.focus();
+        // Save nav scroll before nav changes
+        const ns = document.querySelector('.nav-scroll');
+        if (ns) sessionStorage.setItem('ge-nav-scroll', ns.scrollTop);
+        return;
+      }
+
+      // Cyclopean modal close — only X or outside the content box
+      if (target.closest('#cyclopean-modal-close')) {
+        const modal = document.getElementById('cyclopean-modal');
+        modal?.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.getElementById('cyclopean-logo-btn')?.focus();
+        return;
+      }
+      if (target.closest('#cyclopean-modal') && !target.closest('.modal-content')) {
+        const modal = document.getElementById('cyclopean-modal');
+        if (modal?.getAttribute('aria-hidden') === 'false') {
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          document.getElementById('cyclopean-logo-btn')?.focus();
+          return;
+        }
+      }
+
+      // Save nav scroll before navigating
+      if (target.closest('.nav-list a')) {
+        const ns = document.querySelector('.nav-scroll');
+        if (ns) sessionStorage.setItem('ge-nav-scroll', ns.scrollTop);
+      }
+    });
+
+    // Escape key for modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const subs = document.getElementById('subscribe-modal');
+        if (subs?.getAttribute('aria-hidden') === 'false') {
+          subs.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          document.getElementById('subscribe-btn')?.focus();
+        }
+        const cyc = document.getElementById('cyclopean-modal');
+        if (cyc?.getAttribute('aria-hidden') === 'false') {
+          cyc.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          document.getElementById('cyclopean-logo-btn')?.focus();
+        }
+      }
+    });
+
+    // Collection-nav — A (prev), D (next)
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+      if (e.key.toLowerCase() === 'a') {
+        const prev = document.querySelector('.collection-nav .cn-prev');
+        if (prev) prev.click();
+      }
+      if (e.key.toLowerCase() === 'd') {
+        const next = document.querySelector('.collection-nav .cn-next');
+        if (next) next.click();
+      }
+    });
+
+    // Nav-tree navigation — W (prev), S (next)
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+      if (e.key.toLowerCase() === 'w') {
+        const prev = document.querySelector('.navtree-nav .ntn-prev');
+        if (prev) prev.click();
+      }
+      if (e.key.toLowerCase() === 's') {
+        const next = document.querySelector('.navtree-nav .ntn-next');
+        if (next) next.click();
+      }
+    });
+  </script><style>.callout[data-astro-cid-mrmim4ef]{padding:0 1em;margin:1.2em 0;border-radius:0 .25em .25em 0}.callout-heading[data-astro-cid-mrmim4ef]{font-family:Literata Variable,serif;font-variant-caps:small-caps;font-weight:700;font-size:1.25em;letter-spacing:.04em;margin-bottom:.35em}.callout-body[data-astro-cid-mrmim4ef]{font-family:Literata Variable,serif;font-size:1em;line-height:1.6}.callout-gm[data-astro-cid-mrmim4ef]{background:var(--callout-gm-bg);border:2px solid var(--callout-gm-bdr)}.callout-rule[data-astro-cid-mrmim4ef]{background:var(--callout-rule-bg);border:2px solid var(--callout-rule-bdr)}.callout-example[data-astro-cid-mrmim4ef]{background:var(--callout-ex-bg);border:2px solid var(--callout-ex-bdr)}.callout-hazard[data-astro-cid-mrmim4ef]{background:var(--callout-hz-bg);border:2px solid var(--callout-hz-bdr)}.callout-gm[data-astro-cid-mrmim4ef] .callout-heading[data-astro-cid-mrmim4ef]{color:var(--callout-gm-head)}.callout-rule[data-astro-cid-mrmim4ef] .callout-heading[data-astro-cid-mrmim4ef]{color:var(--callout-rule-head)}.callout-example[data-astro-cid-mrmim4ef] .callout-heading[data-astro-cid-mrmim4ef]{color:var(--callout-ex-head)}.callout-hazard[data-astro-cid-mrmim4ef] .callout-heading[data-astro-cid-mrmim4ef]{color:var(--callout-hz-head)}
+</style>
+<link rel="stylesheet" href="../../../../_astro/BookLayout.C8afLgQw.css">
+<link rel="stylesheet" href="../../../../_astro/Ref.D6HTCefG.css"></head> <body data-astro-cid-l3js6ivh> <div class="site-wrapper" data-astro-cid-l3js6ivh> <nav class="side-nav" id="side-nav" aria-label="Site navigation" data-astro-cid-fuxoqa64> <a href="../../../../" class="nav-home-link" aria-label="Glass Empires SRD home" data-astro-cid-fuxoqa64> <img src="../../../../logo/main.webp" alt="Glass Empires" class="nav-logo" data-astro-cid-fuxoqa64> <span class="nav-wordmark-sub" data-astro-cid-fuxoqa64>System Reference Document</span> </a> <div class="navtree-nav" data-active="true" data-astro-cid-agqbukvf> <a href="../../../../rules/character-creation/magical-traditions/jester/index.html" class="ntn-prev" title="Jester" data-astro-cid-agqbukvf> <svg viewBox="0 0 24 24" class="ntn-arrow" aria-hidden="true" data-astro-cid-agqbukvf><path fill="currentColor" d="M15 4 7 12l8 8v-4.5L11 12l4-3.5V4z" data-astro-cid-agqbukvf></path></svg> <kbd data-astro-cid-agqbukvf>W</kbd> </a> <a href="../../../../" class="ntn-index" data-astro-cid-agqbukvf>Index</a> <a href="../../../../rules/character-creation/magical-traditions/telluric-priest/index.html" class="ntn-next" title="Telluric Priest" data-astro-cid-agqbukvf> <kbd data-astro-cid-agqbukvf>S</kbd> <svg viewBox="0 0 24 24" class="ntn-arrow" aria-hidden="true" data-astro-cid-agqbukvf><path fill="currentColor" d="M9 4l8 8-8 8v-4.5L13 12 9 8.5V4z" data-astro-cid-agqbukvf></path></svg> </a> </div> <div class="nav-scroll" data-astro-cid-fuxoqa64> <ul class="nav-list" id="nav-list" data-astro-cid-fuxoqa64> <li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Introduction</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/what-this-game-is/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>What This Game Is</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/introduction/dice-notation/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Dice &amp; Notation</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/introduction/characters/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Characters</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/actions/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Actions</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/introduction/facts/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Facts</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/introduction/saves/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Saves</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/introduction/money/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Money</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/introduction/campaigns/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Campaigns</a></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Character Creation</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/creation-process/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Creation Process</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/origins/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Origins</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/races/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Races</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/races/coraler/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Coraler</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/races/harpy/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Harpy</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/races/human/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Human</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/races/salamander/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Salamander</a></li></ul></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/classes/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Classes</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/classes/lord/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Lord</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/classes/magistrate/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Magistrate</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/classes/magician/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Magician</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/classes/burgher/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Burgher</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/classes/warlord/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Warlord</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/classes/gangster/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Gangster</a></li></ul></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/magical-traditions/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Magical Traditions</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/magical-traditions/origami-assassin/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Origami Assassin</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/magical-traditions/forester/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Forester</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/magical-traditions/metallurge/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Metallurge</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/magical-traditions/jester/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Jester</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/magical-traditions/snowmime/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Snowmime</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/magical-traditions/telluric-priest/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Telluric Priest</a></li></ul></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/level-retainer/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Level &amp; Retainer</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/character-creation/party-cooperation/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Party Cooperation</a></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Factions</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/what-is-a-faction/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>What Is a Faction</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/sovereignty-subfactions/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Sovereignty &amp; Subfactions</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/families-capitals/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Families, Capitals &amp; Settlements</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/faction-actions/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Faction Moves</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/faction-resolution/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Faction Action Resolution</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/hidden-factions/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Hidden Factions</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/party-is-faction/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>The Party is a Faction</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/faction-types/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Faction Types</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/type-government/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Government</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/type-financier/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Financier</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/type-business/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Business</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/type-army/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Army</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/type-godscult/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Godscult</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/type-personality-cult/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Cult of Personality</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/type-mine-clan/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Mine Clan</a></li></ul></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/growing-settlement/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Growing a Settlement</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/factions/resources/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Resources</a></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Magic</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/magic/what-magic-is/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>What Magic Is</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/magic/spell-dice-totems/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Spell Dice &amp; Totems</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/magic/spellcasting/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Spellcasting</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/magic/using-corpses-spirits/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Using Corpses &amp; Spirits</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/magic/extracting-spirits/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Extracting Spirits</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/magic/ritual-cooking/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Ritual Cooking</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/magic/divination/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Divination</a></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Marketplace</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/marketplace/on-prices-and-power/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>On Prices &amp; Power</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/marketplace/debt-credit/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Debt &amp; Credit</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/marketplace/equipment/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Equipment</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/marketplace/retainers-hirelings/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Retainers &amp; Hirelings</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/marketplace/construction-projects/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Construction &amp; Projects</a></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Adventure</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/adventure/encumbrance/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Encumbrance</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/adventure/foresight/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Foresight</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/adventure/conditions/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Conditions</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/adventure/negotiation-persuasion/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Negotiation &amp; Persuasion</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/adventure/resting/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Resting</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/adventure/movement/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Movement</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/adventure/travel/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Traveling</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/adventure/hunting/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Hunting Rare Beasts</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/adventure/advancement/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Advancement &amp; Leveling Up</a></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Combat</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/skirmishes/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Skirmishes</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/movement-space/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Movement &amp; Space</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/skirmish-actions/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Skirmish Actions</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/engagement/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Engagement</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/flight-pursuit/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Flight &amp; Pursuit</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/panic-fear/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Panic &amp; Fear</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/mounted-combat/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Mounted Combat</a></li></ul></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/battles/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Battles</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/battle-rating/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Battle Rating</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/battle-procedure/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Battle Procedure</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/end-of-battle/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>End of Battle</a></li></ul></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/damage-types/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Damage Types</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/armor/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Armor &amp; Armor Points</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/damage-death/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Damage, Incapacitation &amp; Death</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/mutations-and-wounds/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Mutations &amp; Wounds</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/combat/funerals/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Funerals</a></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Armies</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../rules/armies/axioms/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Axioms</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/armies/raising-armies/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Raising Armies</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/armies/army-proficiency/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Army Proficiency</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/armies/cultural-retinues/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Cultural Retinues</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/armies/personal-retinues/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Personal Retinues</a></li><li data-astro-cid-kj4mmsin><a href="../../../../rules/armies/siege-blockade/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Siege &amp; Blockade</a></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Lore</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../lore/world-of-aia/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>The World of Aia</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../lore/world-of-aia/elements-spirits/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Elements &amp; Spirits</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/world-of-aia/metals-materials/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Metals &amp; Materials</a></li></ul></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/island-of-glass/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>The Island of Glass</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../lore/island-of-glass/geography-geodestiny/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Geography &amp; Biome</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/island-of-glass/architecture/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Architecture</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/island-of-glass/wonders/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Wonders of Glass</a></li></ul></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/history/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>History of Glass</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/scenario/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>The Scenario</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../lore/scenario/house-eagle/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>House Eagle</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/scenario/house-arcades/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>House Arcades</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/scenario/house-beacon/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>House Beacon</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/scenario/commons-revolt/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Commons Revolt</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/scenario/glass-coralers/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Glass Coralers</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/scenario/imperial-family/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Imperial Family</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/scenario/oropolis-and-kain/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Oropolis &amp; Kain</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/scenario/minor-powers/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Minor Powers</a></li></ul></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/society/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Society &amp; Culture</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/religion-and-gods/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Religion &amp; Gods</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/the-moon/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>The Moon</a><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../lore/the-moon/getting-there-and-back/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Getting There &amp; Back</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/the-moon/lunarian-kingdom/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Lunarian Kingdom</a></li><li data-astro-cid-kj4mmsin><a href="../../../../lore/the-moon/practical-role/index.html" class="nav-child-link nav-depth-2" data-astro-cid-kj4mmsin>Practical Role</a></li></ul></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Bestiary</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../bestiary/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>By Alphabetical</a></li><li data-astro-cid-kj4mmsin><a href="../../../../bestiary/tags/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>By Tag</a></li></ul></li><li class="nav-section" data-astro-cid-kj4mmsin><span class="nav-section-label nav-section-nolink" data-astro-cid-kj4mmsin>Indices</span><ul class="nav-children" data-astro-cid-kj4mmsin><li data-astro-cid-kj4mmsin><a href="../../../../actions/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Actions</a></li><li data-astro-cid-kj4mmsin><a href="../../../../conditions/index.html" class="nav-child-link nav-depth-1" data-astro-cid-kj4mmsin>Conditions</a></li></ul></li> </ul> </div> <button class="cyclopean-logo-btn" id="cyclopean-logo-btn" aria-label="About Cyclopean" data-astro-cid-fuxoqa64> <img src="../../../../logo/cyclopean-logo-wordmark-white.svg" alt="Cyclopean" class="cyclopean-logo-img" data-astro-cid-fuxoqa64> </button> </nav> <!-- Cyclopean Modal --> <div class="modal-overlay" id="cyclopean-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="About Cyclopean" data-astro-cid-fuxoqa64> <div class="modal-content modal-cyclopean" data-astro-cid-fuxoqa64> <button class="modal-close" id="cyclopean-modal-close" aria-label="Close" data-astro-cid-fuxoqa64>✕</button> <div class="modal-body" data-astro-cid-fuxoqa64> <img src="../../../../logo/cyclopean-logo-wordmark-black.svg" alt="Cyclopean" class="cyclopean-modal-logo cyclopean-modal-logo-light" data-astro-cid-fuxoqa64> <img src="../../../../logo/cyclopean-logo-wordmark-white.svg" alt="Cyclopean" class="cyclopean-modal-logo cyclopean-modal-logo-dark" data-astro-cid-fuxoqa64> <p class="cyclopean-provenance" data-astro-cid-fuxoqa64>Glass Empires is a game by <a href="https://sakiroku.com" data-astro-cid-fuxoqa64>Saki</a>, published by <strong data-astro-cid-fuxoqa64>Cyclopean</strong>. I make a lot of weird stuff; you can check out the rest of it below.</p> <div class="cyclopean-links" data-astro-cid-fuxoqa64> <a href="https://glassempires.com" target="_blank" rel="noopener" class="cyclopean-link" data-astro-cid-fuxoqa64> <img src="../../../../logo/main-wide.webp" alt="Glass Empires" class="cyclopean-link-logo cyclopean-link-logo-wide" data-astro-cid-fuxoqa64> <span class="cyclopean-link-sub" data-astro-cid-fuxoqa64>Home</span> </a> <a href="https://dndungeon.com" target="_blank" rel="noopener" class="cyclopean-link" data-astro-cid-fuxoqa64> <img src="../../../../logo/Logo-Icon-Name-Outline.svg" alt="DnDungeon" class="cyclopean-link-logo" data-astro-cid-fuxoqa64> <span class="cyclopean-link-sub" data-astro-cid-fuxoqa64>Asian Fantasy Maps &amp; Assets</span> </a> <a href="https://sakiroku.com" target="_blank" rel="noopener" class="cyclopean-link" data-astro-cid-fuxoqa64> <img src="../../../../logo/sakiroku-wordmark-thin-red.png" alt="Sakiroku" class="cyclopean-link-logo sakiroku-logo-light" data-astro-cid-fuxoqa64> <img src="../../../../logo/sakiroku-wordmark-thin-red-lighttext.png" alt="Sakiroku" class="cyclopean-link-logo sakiroku-logo-dark" data-astro-cid-fuxoqa64> <span class="cyclopean-link-sub" data-astro-cid-fuxoqa64>RPG Blog</span> </a> <a href="https://www.drivethrurpg.com/en/publisher/24595/Cyclopean" target="_blank" rel="noopener" class="cyclopean-link" data-astro-cid-fuxoqa64> <img src="../../../../logo/dtrpg.png" alt="DriveThruRPG" class="cyclopean-link-logo" data-astro-cid-fuxoqa64> <span class="cyclopean-link-sub" data-astro-cid-fuxoqa64>Cyclopean's DTRPG Page</span> </a> </div> <p class="cyclopean-email" data-astro-cid-fuxoqa64>You can also email me at: <span class="email-reveal" data-astro-cid-l5jotwmk> <button class="email-reveal-btn" aria-label="Reveal email address" data-astro-cid-l5jotwmk> click to reveal </button> </span> <script type="module">(function(){const n=document.querySelectorAll(".email-reveal-btn");n.length>0&&n[0].closest(".email-reveal").dataset.b64,n.forEach(function(a){function l(){var e=atob("c2FraUBjeWNsb3BlYW4ubmV0"),t=document.createElement("a");t.href="mailto:"+e,t.textContent=e,t.style.color="var(--link)",a.replaceWith(t)}a.addEventListener("click",l),a.addEventListener("keydown",function(e){(e.key==="Enter"||e.key===" ")&&(e.preventDefault(),l())})})})();</script></p> </div> </div> </div> <script type="module">window.addEventListener("beforeunload",()=>{const e=document.querySelector(".nav-scroll");e&&sessionStorage.setItem("ge-nav-scroll",e.scrollTop)});</script> <div class="content-column" data-astro-cid-l3js6ivh> <header class="top-bar" id="top-bar" data-astro-cid-lq7i5isa> <div class="top-bar-inner" data-astro-cid-lq7i5isa> <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="side-nav" data-astro-cid-lq7i5isa> <span class="hamburger" data-astro-cid-lq7i5isa></span> </button> <div class="search-area" id="search-area" data-astro-cid-lq7i5isa></div> <div class="top-bar-right" data-astro-cid-lq7i5isa> <button class="btn-secondary" id="about-btn" aria-label="About Glass Empires" data-pagefind-ignore data-astro-cid-lq7i5isa>
+About
+</button> <a href="../../../../versions/index.html" class="btn-secondary" id="download-btn" data-pagefind-ignore data-astro-cid-lq7i5isa>
+Download Rules
+</a> <button class="btn-primary" id="subscribe-btn" aria-label="Get updates" data-pagefind-ignore data-astro-cid-lq7i5isa>
+Get Updates
+</button> <button class="btn-secondary theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" data-astro-cid-lq7i5isa> <div class="theme-icon" aria-hidden="true" data-astro-cid-lq7i5isa></div> </button> </div> </div> </header> <!-- Subscribe Modal --> <div class="modal-overlay" id="subscribe-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Subscribe for updates" data-pagefind-ignore data-astro-cid-lq7i5isa> <div class="modal-content" data-astro-cid-lq7i5isa> <button class="modal-close" id="modal-close" aria-label="Close" data-astro-cid-lq7i5isa>✕</button> <div class="modal-body" data-astro-cid-lq7i5isa> <h2 class="modal-heading" data-astro-cid-lq7i5isa>Get Updates</h2> <p class="modal-desc" data-astro-cid-lq7i5isa>I post updates on my blog — get all the latest news as it&rsquo;s released.</p> <div class="iframe-wrapper" data-astro-cid-lq7i5isa> <iframe src="https://sakiroku.com/embed" width="480" height="320" style="border: none; background: var(--bg-surface); width: 100%;" frameborder="0" scrolling="no" allowtransparency="true" data-astro-cid-lq7i5isa></iframe> </div> </div> </div> </div> <script src="../../../../pagefind/pagefind-ui.js"></script> <script>
+  (function initSearch() {
+    function mount() {
+      if (typeof PagefindUI !== 'undefined') {
+        new PagefindUI({
+          element: '#search-area',
+          showSubResults: false,
+          resetStyles: true,
+          pageSize: 6,
+        });
+      } else {
+        setTimeout(mount, 50);
+      }
+    }
+    mount();
+  })();
+</script> <main class="page-content" id="main-content" data-astro-cid-l3js6ivh>  <article class="prose" data-astro-cid-l3js6ivh>  <h1 data-pagefind-ignore data-astro-cid-l3js6ivh>Snowmime</h1> <p class="page-tags" data-pagefind-ignore data-astro-cid-l3js6ivh> <span class="ref-tag" data-astro-cid-l3js6ivh>rules</span><span class="ref-tag" data-astro-cid-l3js6ivh>character-creation</span><span class="ref-tag" data-astro-cid-l3js6ivh>magical-traditions</span> </p>  <ul>
+<li><strong>Races</strong>: Mostly human Glassians, but a handful of salamanders &amp; harpies are also Snow Jesters.</li>
+<li><strong>Sex</strong>: Both.</li>
+</ul>
+<p>Out in the taiga, between the mountain’s towering rock-pillars &amp; beneath boughs of icy conifer, silence deafens the senses. A blanket of snow is a quieting thing. It cushions sound, smothers it as it does life.</p>
+<p><strong>You are stilling. You control excess, not exude it.</strong> A Jester is a clown. You are a mime. You quietly act out the motions &amp; maintain the illusory walls.</p>
+<p>There is no heaven on Aia that is not man-made. When you die, your spirit is in your corpse. If you are fortunate &amp; have pious relations, you can be rescued via a funeral to call a psychopomp to ferry your soul to an afterlife.</p>
+<p>But a psychopomp is just a friendly crow or beaver, and an afterlife is just a fancy casket in the ground. An afterlife is when your spirit rests in a Totem <a href="../../../../rules/magic/totems/index.html">Totem</a>, like any other spirit. <strong>What separates you from an animal, or from an elemental?</strong> Your flesh is elemental. Your spirit is a spell. Your “afterlife” is a decorated funerary urn in a Snowmime’s basement, or a plot in his graveyard, ‘til the last of your energies fade &amp; nirvana takes you.</p>
+<p><strong>It is the Snowmimes who stand between the mass summoning of the dead &amp; their quiet rest.</strong> Your <em>job</em> as a Snowmime is to <em>make sure they can rest</em>. The Jesters are tightly bound to their communities. They are entertainers, teachers &amp; negotiators. You, in absence of negotiation, are a <em>mortuary priest</em>. You control &amp; protect a field of the dead. You collect ruinous fees &amp; shepherd grandfathers into the grave. Your leverage in debt is in <em>keeping the graveyards</em>. Every dead body you can bring to slumber in your home is another weapon you can raise when threatened in war. In times of peace, you bring to slumber the hundreds dead. In times of war, you bring those corpses up as armies — in service to your lord, or independently.</p>
+<h4 id="tradition-feature">Tradition Feature</h4>
+<ul>
+<li><strong>Snowmime</strong>: You are a mortuary priest. Your smiles, rather than the lively, smiling shrine-keeping Jester, are understanding &amp; voiceless. Everyone on Glass must deal with you eventually. Everyone on Glass has reason to dread &amp; love you.
+<ul>
+<li><strong>You are sworn to muteness</strong>. You can communicate through gestures &amp; writing, but not voice. This is a penalty for persuasion &amp; negotiation. You can cast spells without speaking.</li>
+<li>You are <em>assumed neutral</em>. You are welcome at all non-private social functions where invites are distributed provided that you <em>do not act to harm anyone</em>, up to &amp; including distribution or malicious use of private information obtained at the event. This protection extends to all sacred shrine grounds &amp; general hospitality.</li>
+<li>If you violate your neutrality, your own internal guilt means exhausted SD cannot be restored until you persuade the victim to accept an offering in apology.</li>
+<li>You can maintain a spirit-keeping <strong>Afterlife</strong> in the <a href="../../../../rules/factions/families-capitals/index.html">Capital</a> of a temple Faction you control. You can maintain as many urns or graves as that temple Faction has Followers.</li>
+<li>Everyone on Glass who isn’t a noble owes funerary fees. You can Save to politely pressure a character into providing you personal accommodations, shelter, or supplies, adding your Power as a bonus &amp; subtracting theirs as a penalty.</li>
+</ul>
+</li>
+</ul>
+<h4 id="backgrounds">Backgrounds</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:center">1d6</th><th>I was (a)…</th></tr></thead><tbody><tr><td style="text-align:center">1</td><td>Held a lord’s father’s corpse for three years until the family paid</td></tr><tr><td style="text-align:center">2</td><td>Debt collector for a temple whose fees bankrupted two noble houses</td></tr><tr><td style="text-align:center">3</td><td>Sold a man’s grandfather’s urn back to him at triple the original fee</td></tr><tr><td style="text-align:center">4</td><td>Battlefield vulture, stripping &amp; interring the dead for profit</td></tr><tr><td style="text-align:center">5</td><td>Inheritor of a graveyard so mismanaged the dead were walking out on their own</td></tr><tr><td style="text-align:center">6</td><td>Negotiated a ceasefire by threatening to raise every casualty on both sides</td></tr></tbody></table>
+<h4 id="spells">Spells</h4>
+<ol>
+<li><strong>Animate Corpse</strong>: Animate [Sum] corpses within 30’ as Undead under your control for [Dice] days. If cast with 3+ SD, the animation is permanent &amp; your control lasts until you die. There’s a 1-in-6 chance that any given Undead is willful enough to stick around as feral Undead after the spell ends</li>
+<li><strong>Command Undead</strong>: Make a commanding gesture to a group of up to [Sum] Undead within line-of-sight. They obey until the command is resolved or for [Dice] × 10 minutes, overriding any existing controller.</li>
+<li><strong>Read the Spirit</strong>: Touch a grave, Totem urn, or corpse containing a spirit. Ask [Dice] yes-or-no questions. The spirit answers truthfully. At 2+ SD, you can communicate with spirits interred in an Afterlife you maintain from any distance. At 3+ SD, you may instead ask a single complex question with up to [Sum] words &amp; receive a reply of up to [Dice] words.</li>
+<li><strong>Blizzard</strong>: A radiating flurry of snowflakes slows non-Snowmimes within [Dice] × 30’ to half speed &amp; deals [Dice] Cold Damage at the start of each Round for [Sum] Rounds. At 2+ SD, the afflicted also may only take a single Major Action per turn. At 3+ SD, the blizzard is so intense that the afflicted are blinded. At 4+ SD, the afflicted cannot take any Actions. You may concentrate to maintain the blizzard.</li>
+<li><strong>Hideous Stare</strong>: A single living target within line-of-sight locks eyes with you. You may perform a single silent Minor Action; they must perform a mirrored version of it. At 3+ SD, you may perform a Major Action. At 4+ SD, you may control them entirely for one Round.</li>
+<li><strong>Petrification</strong>: Touched living target is frozen in place for [Dice] × [Dice] Rounds. If the target takes Damage, the spell immediately ends &amp; they receive a Turn on that Round. If you target an elemental object, natural processes cease to function &amp; the object is held in suspended animation for up to [Sum] × [Sum] hours. This prevents rot &amp; other decay.</li>
+<li><strong>Psychopomp</strong>: Summon up to [Sum] psychopomps to perform tasks for you for up to [Sum] hours. They can do anything in service of moving corpses, carrying spirits (to new Totems), burying or cremating bodies, or performing funerals. Psychopomps are animals (crows, beavers, owls, cats) with some spiritual wisdom; given the task at hand, the most appropriate beasts of the area will be summoned. At 3+ SD, you can ask them to do other things that animals could do.</li>
+<li><strong>Silence</strong>: Create a [Dice] × 30’ sphere of unnatural silence at a target point within line-of-sight for [Sum] Rounds. Inside, nothing can be heard. The sudden silence is noticeable to anyone suddenly engulfed. Spellcasters who can’t cast silently are unable to cast spells. You may concentrate to sustain the sphere.</li>
+<li><strong>Possession</strong>: Target creature of [Sum] or less Power is suppressed &amp; put to sleep. You seize control of their body for [Dice] hours. In the meantime, your body is left crumpled in a soulless coma. If either your victim or your body dies, your spirit will be stranded once the spell’s duration ends.</li>
+<li><strong>Corpse Storage</strong>: Force an object into an open orifice or wound of a corpse or willing/friendly creature. You can store up to [Sum] in # in a creature without impact to that creature (including Weight). If the target is destroyed, the creature chooses to, or the item is not retrieved within [Sum] hours, they violently expel it (with no harm to themselves).</li>
+<li><strong>Invisible Wall</strong>: Gesture to define a flat plane contained within a [Dice] × 10’ sphere centered on a point within 30’. An invisible, immovable, ¼” thick wall of force occupies that plane for [Sum] Rounds. It blocks physical passage &amp; projectiles but not light, sound, or spells. At 2+ SD, you can shape the wall into simple folded shapes (i.e. a box or dome). At 3+ SD, the wall blocks spells &amp; sound as well &amp; you may create shapes of any arbitrary size.</li>
+<li><strong>Funeral Rites</strong>: Perform a 10-minute silent ritual dance over a corpse. The spirit within is laid to rest in a valid Totem of your choosing (including urns or their own interred bodies). While interred, the spirit cannot be summoned, animated, or disturbed by anyone other than you without destroying the Totem. At 2+ SD, you can perform this rite on a still-living creature of [Sum] or less Power; their spirit is partially interred, and they fall into a deep sleep for [Dice] days (or until harmed). At 3+ SD, you can inter [Dice] targets simultaneously.</li>
+</ol>  </article>  </main> </div> </div> <script type="module">let l=null,p=!1,c=null;const m=500,n=document.createElement("div");n.className="page-popup";n.setAttribute("aria-live","polite");document.body.appendChild(n);let u=null,o=null;function h(t){const e=t.getBoundingClientRect();let i=e.left+e.width/2,r=e.bottom+8;n.style.display="block",n.style.opacity="0";const s=n.offsetWidth,a=n.offsetHeight;i-s/2<10&&(i=10+s/2),i+s/2>window.innerWidth-10&&(i=window.innerWidth-10-s/2),r+a>window.innerHeight-10&&(r=e.top-a-8),n.style.left=i+"px",n.style.top=r+"px"}function d(t){let e=t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");return e=e.replace(/!\[([^\]]*)\]\(([^)]+)\)/g,"<em>[$1]</em>"),e=e.replace(/\[([^\]]*)\]\(([^)]+)\)/g,'<a href="$2/index.html" target="_blank" rel="noopener">$1</a>'),e=e.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g,"$2"),e=e.replace(/\[\[([^\]]+)\]\]/g,"$1"),e=e.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>"),e=e.replace(/__([^_]+)__/g,"<strong>$1</strong>"),e=e.replace(/\*([^*]+)\*/g,"<em>$1</em>"),e=e.replace(/_([^_]+)_/g,"<em>$1</em>"),e=e.replace(/`([^`]+)`/g,"<code>$1</code>"),e}function w(t){t&&(n.innerHTML=`
+      <div class="pp-title">${d(t.title)}</div>
+      <div class="pp-preview">${d(t.preview)}</div>
+    `,n.style.display="block",o&&h(o),requestAnimationFrame(()=>{n.style.opacity="1"}))}function g(){n.style.opacity="0",n.style.display="none",o=null}async function y(){if(l)return l;if(p)return new Promise(t=>{c=t});p=!0;try{return l=await(await fetch("/page-previews.json")).json(),c&&(c(l),c=null),l}catch{return l={},l}finally{p=!1}}document.addEventListener("mouseover",async t=>{const e=t.target.closest("a[href]");if(!e)return;const i=e.getAttribute("href");if(!i||i.startsWith("http")||i.startsWith("#")||i.startsWith("mailto:"))return;let r=i;r.endsWith("/")&&(r=r.slice(0,-1)),o=e,clearTimeout(u),u=setTimeout(async()=>{const a=(await y())[r];a&&w(a)},m)});document.addEventListener("mouseout",t=>{if(!o)return;const e=t.relatedTarget;(!e||!e.closest("a[href]")&&!e.closest(".page-popup"))&&(clearTimeout(u),g())});let f;window.addEventListener("scroll",()=>{clearTimeout(f),f=setTimeout(()=>{o&&g()},150)},{passive:!0});</script>  <div id="update-banner" class="update-banner" hidden aria-live="polite" data-astro-cid-la2f2v5k></div> <script>
+(function () {
+  // Read this zip's bundled version
+  var localVersion = null;
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "version.json", false);
+  try {
+    xhr.send();
+    if (xhr.status === 200) localVersion = JSON.parse(xhr.responseText).version;
+  } catch (_) {}
+
+  if (!localVersion) return; // not a bundled offline copy
+
+  // Fetch the live site's latest version
+  var req = new XMLHttpRequest();
+  req.open("GET", "https://srd.glassempires.com/version.json");
+  req.onload = function () {
+    if (req.status !== 200) return;
+    var remote;
+    try { remote = JSON.parse(req.responseText); } catch (_) { return; }
+    if (!remote.version || remote.version === localVersion) return;
+
+    var banner = document.getElementById("update-banner");
+    if (!banner) return;
+    banner.innerHTML =
+      'SRD v' + remote.version + ' is available \u2014 ' +
+      '<a href="https://srd.glassempires.com/versions">Download the latest</a>';
+    banner.removeAttribute("hidden");
+
+    // Slide-in animation trigger
+    requestAnimationFrame(function () {
+      banner.classList.add("visible");
+    });
+  };
+  req.onerror = function () {}; // offline = silent
+  req.send();
+})();
+</script></body></html>
