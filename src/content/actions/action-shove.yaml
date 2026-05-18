@@ -8,11 +8,11 @@ rules: |
 
   | Result | Effect |
   | :----: | ------ |
-  | Crit (>=12) | Target moves up to four times their Size in distance. |
-  | Pass (8-11) | Target moves up to twice their Size in distance. |
+  | Crit (≥12) | Target moves up to four times their Size in distance. |
+  | Pass (8–11) | Target moves up to twice their Size in distance. |
   | Seven (7) | Target moves up to their Size in distance, but may choose to pull you an equal distance along with them (into their previously occupied space), maintaining Engagement and/or initiating a Grapple if the target desires. |
-  | Failure (3-6) | Target doesn't move. |
-  | Fumble (<=2) | Target may push *you* up to *your* Size in distance. |
+  | Failure (3–6) | Target doesn't move. |
+  | Fumble (≤2) | Target may push *you* up to *your* Size in distance. |
 
   | The opponent is...   | Mod |
   | -------------------- | :-: |

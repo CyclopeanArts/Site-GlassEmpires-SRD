@@ -1,8 +1,7 @@
 name: Create Subfaction (Action)
 tags: [factions, administration, leadership]
-duration: variable
-trigger: "When you promote a Retainer and gift them a Capital to form a new Subfaction..."
-save: null
+duration: Variable
+trigger: "When you promote a Retainer and gift them a Capital to form a new Subfaction."
 rules: |
   To create a new Subfaction, you must:
 

@@ -7,11 +7,11 @@ rules: |
 
   | Result | Effect |
   | :----: | ------ |
-  | Crit (>=12) | You planned what you needed to overcome this obstacle as stated. |
-  | Pass (8-11) | You planned what you needed to overcome this obstacle as stated. |
+  | Crit (≥12) | You planned what you needed to overcome this obstacle as stated. |
+  | Pass (8–11) | You planned what you needed to overcome this obstacle as stated. |
   | Seven (7) | Something similar to your assertion but insufficient by itself; enough for a +1 bonus to a related Save. If no partial preparation is possible, treat as Failure. |
-  | Failure (3-6) | You failed to have foresight and have nothing special prepared. |
-  | Fumble (<=2) | You were catastrophically wrong. The situation is the worst the GM can imagine given your claimed preparation. |
+  | Failure (3–6) | You failed to have foresight and have nothing special prepared. |
+  | Fumble (≤2) | You were catastrophically wrong. The situation is the worst the GM can imagine given your claimed preparation. |
 
   **Criteria**
   - Must not require information the PCs had absolutely no way of knowing.

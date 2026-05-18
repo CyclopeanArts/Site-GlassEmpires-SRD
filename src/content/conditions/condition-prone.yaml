@@ -1,4 +1,4 @@
-name: Prone
+name: Prone (Condition)
 tags: [physical, movement, combat, position]
 rules: |
   Being on the ground is called being Prone, and this Condition covers crawling,

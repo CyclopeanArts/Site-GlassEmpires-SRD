@@ -1,4 +1,4 @@
-name: Incapacitated
+name: Incapacitated (Condition)
 tags: [physical, health, combat]
 duration: "Until a Crit on a Mortality Save restores 1 HP, or permanent death on Fumble"
 rules: |

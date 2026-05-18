@@ -1,0 +1,161 @@
+---
+/**
+ * <Suggestions />
+ *
+ * Client-side component for the 404 page. Reads the current URL,
+ * extracts a search query from the last path segment, searches Pagefind,
+ * and renders matching pages styled like the search dropdown result cards.
+ *
+ * Uses is:global so client-injected DOM elements receive styling.
+ */
+---
+
+<div class="suggestions" id="suggestions-root"></div>
+
+<script is:inline>
+  (function() {
+    let initialized = false;
+
+    async function runSearch() {
+      const root = document.getElementById('suggestions-root');
+      if (!root) return;
+
+      // Don't re-run if already populated on this page view
+      if (root.dataset.populated === 'true') return;
+
+      const path = location.pathname;
+      const segments = path.split('/').filter(Boolean);
+      let query = segments.pop() || '';
+      const parent = segments.pop() || '';
+      if (parent && !parent.match(/^\d+$/)) {
+        query = parent + ' ' + query;
+      }
+      query = query.replace(/[-_]/g, ' ').trim();
+      if (!query) return;
+
+      root.innerHTML = '<p class="suggestions__heading">Did you mean…</p><ol class="suggestions__list" id="suggestions-list"></ol>';
+      root.dataset.populated = 'true';
+
+      const list = document.getElementById('suggestions-list');
+
+      try {
+        const pf = await import('/pagefind/pagefind.js');
+        const search = await pf.search(query);
+
+        if (search?.results?.length > 0) {
+          const data = await Promise.all(
+            search.results.slice(0, 5).map(r => r.data())
+          );
+          for (const item of data) {
+            const title = item.meta?.title || item.title || item.url;
+            const li = document.createElement('li');
+            li.className = 'suggestions__item';
+            li.innerHTML = `
+              <div class="suggestions__item-inner">
+                <p class="suggestions__item-title">
+                  <a class="suggestions__item-link" href="${item.meta?.url || item.url}">${title}</a>
+                </p>
+                ${item.excerpt ? `<p class="suggestions__item-excerpt">${item.excerpt}</p>` : ''}
+              </div>
+            `;
+            list.appendChild(li);
+          }
+        } else {
+          root.innerHTML += '<p style="color: var(--text-muted); text-indent: 0;">No similar pages found. Try the search bar at the top of the page.</p>';
+        }
+      } catch (e) {
+        root.innerHTML += '<p style="color: var(--text-muted); text-indent: 0;">Search unavailable. Try the search bar at the top of the page.</p>';
+      }
+    }
+
+    // Run on initial load
+    if (!initialized) {
+      initialized = true;
+      runSearch();
+    }
+
+    // Re-run on ClientRouter navigation (back button, etc.)
+    document.addEventListener('astro:page-load', () => {
+      const root = document.getElementById('suggestions-root');
+      if (root) {
+        delete root.dataset.populated;
+        root.innerHTML = '<p class="suggestions__searching" style="color: var(--text-muted); font-style: italic;">Searching…</p>';
+      }
+      runSearch();
+    });
+  })();
+</script>
+
+<style is:global>
+  .suggestions {
+    margin-top: 1em;
+  }
+  .suggestions__heading {
+    font-size: 0.85em;
+    color: var(--text-soft);
+    margin-bottom: 0.5em;
+    text-indent: 0;
+  }
+  ol.suggestions__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .suggestions__item {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .suggestions__item::before {
+    display: none;
+    content: none;
+  }
+  .suggestions__item:last-child {
+    border-bottom: none;
+  }
+  .suggestions__item-inner {
+    padding: 1em;
+    transition: background 0.1s;
+    cursor: pointer;
+  }
+  .suggestions__item:hover .suggestions__item-inner {
+    background: var(--nav-hover);
+  }
+  .suggestions__item-title {
+    margin: 0;
+    padding: 0;
+  }
+  .suggestions__item-link {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.85em;
+    color: var(--heading-col);
+    text-decoration: none;
+    display: block;
+    text-indent: 0;
+  }
+  .suggestions__item-link:hover {
+    color: var(--link-col);
+    text-decoration: underline;
+  }
+  .suggestions__item-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .suggestions__item-excerpt {
+    margin: 0.15em 0 0;
+    padding: 0;
+    font-family: 'Literata Variable', Georgia, serif;
+    font-size: 0.72em;
+    color: var(--text-soft);
+    line-height: 1.4;
+    text-indent: 0;
+  }
+  .suggestions__item-excerpt mark {
+    background: rgba(196, 146, 52, 0.3);
+    color: inherit;
+  }
+</style>

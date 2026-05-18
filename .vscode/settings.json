@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.mdx": "astro"
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
+}

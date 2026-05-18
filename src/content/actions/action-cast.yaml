@@ -1,8 +1,0 @@
-name: Cast
-tags: [combat, magic, skirmish]
-duration: instant
-cost: major
-trigger: "When you perform the Casting Action in combat..."
-save: null
-rules: |
-  Perform the [[action-casting|Casting Action]].

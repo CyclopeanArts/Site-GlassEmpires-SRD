@@ -5,4 +5,4 @@ cost: Minor Action
 trigger: "When you attempt a jump."
 save: null
 rules: |
-  Attempt a jump as per the rules for [[movement|jumping]].
+  As a Minor Action, attempt a jump. Horizontal jumps cover a number of feet equal to half your Run score on a running start, or one quarter standing still. Vertical jumps reach one quarter of those distances. Characters who are [[encumbered|encumbered]] halve their effective jumping distance.

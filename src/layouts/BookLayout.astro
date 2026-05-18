@@ -48,11 +48,16 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
         const href = el.getAttribute('href');
         el.classList.toggle('is-active', href === path);
       });
-      // Restore nav scroll
-      const ns = document.querySelector('.nav-scroll');
-      if (ns) {
-        const s = sessionStorage.getItem('ge-nav-scroll');
-        if (s) ns.scrollTop = parseInt(s, 10);
+      // Scroll nav to reveal active page, or restore saved position
+      const active = document.querySelector('.nav-scroll .is-active');
+      if (active) {
+        active.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      } else {
+        const ns = document.querySelector('.nav-scroll');
+        if (ns) {
+          const s = sessionStorage.getItem('ge-nav-scroll');
+          if (s) ns.scrollTop = parseInt(s, 10);
+        }
       }
       // Re-apply theme from localStorage (ClientRouter may reset <html> attrs)
       const theme = localStorage.getItem('ge-theme');
@@ -205,10 +210,10 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
 
         <article class="prose">
           <slot name="top" />
-          <h1>{title}</h1>
+          <h1 data-pagefind-ignore>{title}</h1>
 
           {tags.length > 0 && (
-            <p class="page-tags">
+            <p class="page-tags" data-pagefind-ignore>
               {tags.map((t: string) => <span class="ref-tag">{t}</span>)}
             </p>
           )}

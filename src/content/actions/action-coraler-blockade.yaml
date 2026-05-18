@@ -1,13 +1,13 @@
 name: Coraler Blockade (Action)
 tags: [warfare, armies, factions, naval]
-duration: variable
-trigger: "When a Coraler army establishes a naval blockade..."
-save: null
+duration: 1 day
+trigger: "When a Coraler army establishes a naval blockade."
 rules: |
-  **Duration**: 1 day. Once established, a blockade can be maintained indefinitely in warm waters. In cold waters, a supply chain to a friendly base is required. In rim waters, blockades are impossible.
 
   A Coraler army can blockade a circular region of ocean. A blockaded oceanic area is considered to be *controlled* by an army for the sake of supply chains and trade.
 
   For every mile in the radius of the blockade, 10 BR is required. If the army's BR is reduced below the minimum viable army size for the desired blockade, it shrinks to match.
+  
+  It takes 1 day to establish a blockade. Once established, a blockade can be maintained indefinitely in warm waters. In cold waters, a supply chain to a friendly base is required. In rim waters, blockades are impossible.
 
   When a blockade is established, the operators may choose to allow trade routes or supply chains on an as-needed basis. They could, for example, extort payment from any component of the supply chain.

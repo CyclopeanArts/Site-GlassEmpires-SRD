@@ -13,11 +13,11 @@ rules: |
 
   | Result | Effect |
   | :----: | ------ |
-  | Crit (>=12) | 100% of the target's current Families. |
-  | Pass (8-11) | 50% of the target's current Families. |
+  | Crit (≥12) | 100% of the target's current Families. |
+  | Pass (8–11) | 50% of the target's current Families. |
   | Seven (7) | 10% of the target's current Families. |
-  | Failure (3-6) | Nothing. |
-  | Fumble (<=2) | 10% of *your* current Families (not the target's) leave *you*. |
+  | Failure (3–6) | Nothing. |
+  | Fumble (≤2) | 10% of *your* current Families (not the target's) leave *you*. |
 
   Reduce the amount gained to *at most*:
 

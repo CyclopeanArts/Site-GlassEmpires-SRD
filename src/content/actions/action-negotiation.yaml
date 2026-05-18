@@ -17,8 +17,8 @@ rules: |
 
   | Result | Effect |
   | :----: | ------ |
-  | Crit (>=12) | Target accepts your offer enthusiastically and becomes invested in your success. They offer additional value, recommend you to others, actively advocate for you, or improve their opinion of you by one step. |
-  | Pass (8-11) | The target accepts your offer. |
+  | Crit (≥12) | Target accepts your offer enthusiastically and becomes invested in your success. They offer additional value, recommend you to others, actively advocate for you, or improve their opinion of you by one step. |
+  | Pass (8–11) | The target accepts your offer. |
   | Seven (7) | The target makes a counter-offer, either asking for more or wanting to give less. If refused, repeated Saves for negotiating this deal are made with an additional −1 penalty. |
-  | Failure (3-6) | The target rejects your proposal and won't listen to additional offers on this matter until something radical changes. |
-  | Fumble (<=2) | The target feels *insulted*. They will demand an act of apology to restore their honor; if refused, their relationship decays one step (friendly → neutral → hostile). Where appropriate, targets may also warn others or attack/flee. |
+  | Failure (3–6) | The target rejects your proposal and won't listen to additional offers on this matter until something radical changes. |
+  | Fumble (≤2) | The target feels *insulted*. They will demand an act of apology to restore their honor; if refused, their relationship decays one step (friendly → neutral → hostile). Where appropriate, targets may also warn others or attack/flee. |

@@ -1,4 +1,4 @@
-name: Grappled
+name: Grappled (Condition)
 tags: [physical, combat, position]
 duration: "Until broken by Shoving or other means"
 rules: |

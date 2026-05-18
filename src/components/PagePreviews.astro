@@ -43,6 +43,9 @@
     h = h.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<em>[$1]</em>');
     // Links: [text](url)
     h = h.replace(/\[([^\]]*)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    // Wikilinks: [[slug|text]] → text, [[slug]] → slug
+    h = h.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2');
+    h = h.replace(/\[\[([^\]]+)\]\]/g, '$1');
     // Bold: **text** or __text__
     h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     h = h.replace(/__([^_]+)__/g, '<strong>$1</strong>');

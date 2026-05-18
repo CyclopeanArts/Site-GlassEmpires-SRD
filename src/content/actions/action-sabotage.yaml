@@ -11,8 +11,8 @@ rules: |
 
   | Result | Effect |
   | :----: | ------ |
-  | Crit (>=12) | The target loses 50% of their current Followers. |
-  | Pass (8-11) | The target loses 30% of their current Followers. |
+  | Crit (≥12) | The target loses 50% of their current Followers. |
+  | Pass (8–11) | The target loses 30% of their current Followers. |
   | Seven (7) | The target loses 10% of their current Followers. |
-  | Failure (3-6) | The GM picks a Faction (*preferably an Idle one that would be opposed to the action*) that's to blame for or related to getting in the way of your sabotage (by incompetence, opposition, or accident). That Faction grows Angrier with you. |
-  | Fumble (<=2) | The sabotage fails catastrophically. You lose 10% of your Followers; roll for a Random Faction Event & interpret it as the worst possible consequence of the failed sabotage. |
+  | Failure (3–6) | The GM picks a Faction (*preferably an Idle one that would be opposed to the action*) that's to blame for or related to getting in the way of your sabotage (by incompetence, opposition, or accident). That Faction grows Angrier with you. |
+  | Fumble (≤2) | The sabotage fails catastrophically. You lose 10% of your Followers; roll for a Random Faction Event & interpret it as the worst possible consequence of the failed sabotage. |

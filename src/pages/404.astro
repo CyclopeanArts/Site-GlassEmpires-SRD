@@ -1,0 +1,16 @@
+---
+import BookLayout from '../layouts/BookLayout.astro';
+import Suggestions from '../components/Suggestions.astro';
+---
+
+<BookLayout title="Page Not Found">
+  <p style="margin-bottom: 1.2em;">
+    Nothing at <code id="missing-path" style="word-break: break-all;"></code>.
+  </p>
+
+  <Suggestions />
+</BookLayout>
+
+<script is:inline>
+  document.getElementById('missing-path').textContent = location.pathname;
+</script>

@@ -3,6 +3,5 @@ tags: [combat, skirmish]
 duration: Instant
 cost: Full-Turn Action
 trigger: "When you need to put out a fire on yourself."
-save: null
 rules: |
   Drop to the ground (becoming **Prone**) & simultaneously remove your own [[condition-burning|Burning]] Condition. As a Minor Action, recover from the Burning Condition by dropping to the ground & rolling.

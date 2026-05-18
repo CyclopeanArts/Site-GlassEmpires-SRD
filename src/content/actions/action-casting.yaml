@@ -1,8 +1,7 @@
-name: Casting
+name: Casting (Action)
 tags: [magic, casting, combat]
-duration: instant
+duration: Instant
 trigger: "When you want to cast a spell from a Totem."
-save: null
 rules: |
   **Casting** is an Instant Save Action. There are two casting methods to follow depending on the *kind* of spirit you have. There are two kinds of spell-spirits:
 

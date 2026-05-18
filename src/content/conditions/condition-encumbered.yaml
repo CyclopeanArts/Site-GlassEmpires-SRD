@@ -1,4 +1,4 @@
-name: Encumbered
+name: Encumbered (Condition)
 tags: [physical, movement, equipment]
 rules: |
   While Encumbered, characters halve their effective Speed scores while measuring

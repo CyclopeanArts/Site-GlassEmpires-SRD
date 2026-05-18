@@ -16,11 +16,11 @@ rules: |
 
   | Result | Effect |
   | :----: | ------ |
-  | Crit (>=12) | The asset is complete on time & clever management has eliminated the debts involved in the asset's creation (if any were made through prior cost overruns). |
-  | Pass (8-11) | The asset is complete on time. |
+  | Crit (≥12) | The asset is complete on time & clever management has eliminated the debts involved in the asset's creation (if any were made through prior cost overruns). |
+  | Pass (8–11) | The asset is complete on time. |
   | Seven (7) | There were cost overruns. You can either find a valid Faction who will loan you **10%** of the asset's value within the next week to complete it, or set a new Duration to finish the project using the remaining cost as the basis. |
-  | Failure (3-6) | There were cost overruns. You can either find a valid Faction who will loan you **50%** of the asset's value within the next week to complete it, or set a new Duration to finish the project using the remaining cost as the basis. |
-  | Fumble (<=2) | The construction fails catastrophically. You lose 10% of your Followers; roll for a Random Faction Event & interpret it as the worst possible consequence of the failed efforts. |
+  | Failure (3–6) | There were cost overruns. You can either find a valid Faction who will loan you **50%** of the asset's value within the next week to complete it, or set a new Duration to finish the project using the remaining cost as the basis. |
+  | Fumble (≤2) | The construction fails catastrophically. You lose 10% of your Followers; roll for a Random Faction Event & interpret it as the worst possible consequence of the failed efforts. |
 
   <Callout type="gm" heading="How do I make an asset when I don't rule a Faction?">
   Characters may treat their job as a Fact. Similarly, applicable Facts (i.e. greed, thriftiness) may indicate higher production capacity than your Faction's Followers otherwise suggests. In addition, if you have a liquid sum (such as silver dollars you plundered), you can simply dump that into an Asset.

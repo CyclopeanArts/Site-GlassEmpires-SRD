@@ -1,8 +1,7 @@
-name: Attack
+name: Attack (Action)
 tags: [combat, basic]
-duration: instant
-trigger: "When you declare a target you intend to harm and make an attack roll..."
-save: null
+duration: Instant
+trigger: "When you declare a target you intend to harm and make an attack roll."
 rules: |
   Declare a single target who you intend to harm & how (kill, shove, knock out). If the defender allows it, it happens. If not, perform 1 or more Strikes; by default, characters receive 1 Strike per Attack (but may receive more through Features or other abilities).
 
@@ -12,11 +11,11 @@ rules: |
 
   | Result | Effect |
   | :----: | ------ |
-  | Crit (>=12) | The defender suffers the weapon's effects at twice the normal severity (normally, by doubling Damage taken). |
-  | Pass (8-11) | The defender suffers the weapon's effects, including Damage taken. |
+  | Crit (≥12) | The defender suffers the weapon's effects at twice the normal severity (normally, by doubling Damage taken). |
+  | Pass (8–11) | The defender suffers the weapon's effects, including Damage taken. |
   | Seven (7) | The defender suffers the weapon's effects with *halved* normal severity (normally, by halving Damage taken; round down). |
-  | Failure (3-6) | Your Strike is deflected, poorly aimed, or otherwise a failure. |
-  | Fumble (<=2) | Your Strike fails & if you're using a windgun or weapon with Reload, it's jammed or requires reloading. |
+  | Failure (3–6) | Your Strike is deflected, poorly aimed, or otherwise a failure. |
+  | Fumble (≤2) | Your Strike fails & if you're using a windgun or weapon with Reload, it's jammed or requires reloading. |
 
   If your Strike deals enough Damage to outright *kill* the defender, you receive the Action you spent on your Attack back.
 
