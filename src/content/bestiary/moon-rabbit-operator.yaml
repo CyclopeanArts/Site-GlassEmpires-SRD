@@ -32,7 +32,7 @@ features:
     text: "You are Immune to Mind Damage. You can broadcast and receive speech as if talking to *everyone* with Moon Telepathy up to *at most* a 1-mile radius. You can dim the range or mute your ability to hear other broadcasts."
     combat: 1
   - name: "Slightly Better Trained Rabbit Instincts"
-    text: "You must Save to not Panic from unexpected loud noises, dogs, or eagles. Mid-combat counts as expected. You must Save to not investigate interesting smells."
+    text: "You must Save or [[condition-panicked|Panic]] from unexpected loud noises, dogs, or eagles. Mid-combat counts as expected. You must Save to not investigate interesting smells."
     combat: -1
   - name: "Bound"
     text: "Once per Turn as a Free Action, leap up to 15' in any direction."

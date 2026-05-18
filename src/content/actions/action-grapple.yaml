@@ -1,18 +1,18 @@
 name: Grapple (Action)
 tags: [combat, skirmish]
-duration: instant
-cost: minor
-trigger: "When you try to seize and restrain a target..."
-save:
-  type: grapple
-  table:
-    crit: "Target is Grappled & may also be knocked Prone if desired."
-    pass: "Target is Grappled."
-    seven: "Target can *choose* to enter a Grapple, but you don't receive any benefits from this until the start of your next Turn."
-    failure: "Target can *choose* to enter a Grapple, but you don't receive any benefits from this until the start of your next Turn."
-    fumble: "Target can *choose* to enter a Grapple, but you don't receive any benefits from this until the start of your next Turn, & if they do so they can also knock you Prone."
+duration: Instant
+cost: Minor Action
+trigger: "When you try to seize and restrain a target."
 rules: |
   If you have at least one free hand, you can Save to **Grapple** an opponent. Use the adjacent Weight modifier table in addition to any other modifiers.
+
+  | Result | Effect |
+  | :----: | ------ |
+  | Crit (≥12) | Target is Grappled & may also be knocked Prone if desired. |
+  | Pass (8−11) | Target is Grappled. |
+  | Seven (7) | Target can *choose* to enter a Grapple, but you don't receive any benefits from this until the start of your next Turn. |
+  | Failure (3−6) | Target can *choose* to enter a Grapple, but you don't receive any benefits from this until the start of your next Turn. |
+  | Fumble (≤2) | Target can *choose* to enter a Grapple, but you don't receive any benefits from this until the start of your next Turn, & if they do so they can also knock you Prone. |
 
   | The opponent is...   | Mod |
   | -------------------- | :-: |

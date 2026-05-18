@@ -2,14 +2,7 @@ name: Assassinate
 tags: [factions, espionage, combat]
 duration: "2 weeks"
 trigger: "When you arrange for an unsuspecting NPC to be killed."
-save:
-  type: assassination
-  table:
-    crit: "The target appears to have died from natural causes."
-    pass: "The target dies. Signs of foul play are present but circumstantial."
-    seven: "The target dies, but messily, and the assassination was obvious murder."
-    failure: "The assassination fails. The target survives unharmed and the attempt becomes known."
-    fumble: "The assassination fails catastrophically. The perpetrator is caught & arrested."
+save: null
 rules: |
   Assassination is the art of killing an unsuspecting NPC — a carefully planned murder meant to go unnoticed. It cannot be used against Player Characters or NPCs who have reason to expect an attempt on their life.
 
@@ -19,3 +12,11 @@ rules: |
   - **−1 week** if the target has a public routine, known vulnerabilities, or you have inside access.
 
   At the end of the Duration, Save.
+
+  | Result | Effect |
+  | :----: | ------ |
+  | Crit (>=12) | The target appears to have died from natural causes. |
+  | Pass (8-11) | The target dies. Signs of foul play are present but circumstantial. |
+  | Seven (7) | The target dies, but messily, and the assassination was obvious murder. |
+  | Failure (3-6) | The assassination fails. The target survives unharmed and the attempt becomes known. |
+  | Fumble (<=2) | The assassination fails catastrophically. The perpetrator is caught & arrested. |

@@ -1,8 +1,7 @@
 name: Rest (Action)
 tags: [adventure, healing, downtime]
-duration: variable
-trigger: "When you remain idle for an extended period to recover..."
-save: null
+duration: Variable
+trigger: "When you remain idle for an extended period to recover."
 rules: |
   Resting is performed by individual characters or whole Factions. The resting party
   remains idle (no strenuous activity) until the end of the intended period or until

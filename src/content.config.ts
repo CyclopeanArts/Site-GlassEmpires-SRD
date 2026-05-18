@@ -34,7 +34,6 @@ const lore = defineCollection({
 const dataSchema = z.object({
   name: z.string(),
   tags: z.array(z.string()).default([]),
-  summary: z.string().optional(),           // short description; used for hover tooltips
   see_also: z.array(z.string()).default([]), // slugs of related entries (any collection)
 }).passthrough();                            // allow arbitrary extra fields without schema error
 

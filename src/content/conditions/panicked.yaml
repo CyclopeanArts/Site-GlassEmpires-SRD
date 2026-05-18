@@ -1,6 +1,5 @@
 name: Panicked
 tags: [mental, morale, combat]
-summary: "Fleeing in terror; doubled damage taken from all sources."
 duration: "Until end of combat (or 1 hour outside combat)"
 rules: |
   Characters Save to avoid Panic when: their Group is harmed by a Strike for the first time, they personally reach 1/2 HP, charged with threat of trampling, whenever something spectacular/frightening/sorcerous happens, or a hostile Spell is cast whose HD exceeds theirs.

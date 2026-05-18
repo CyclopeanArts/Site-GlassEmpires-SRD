@@ -133,7 +133,7 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
       }
 
       // Cyclopean modal open
-      if (target.closest('#cyclopean-logo-btn')) {
+      if (target.closest('#cyclopean-logo-btn, #about-btn')) {
         const modal = document.getElementById('cyclopean-modal');
         const close = document.getElementById('cyclopean-modal-close');
         modal?.setAttribute('aria-hidden', 'false');
@@ -204,6 +204,7 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
         )}
 
         <article class="prose">
+          <slot name="top" />
           <h1>{title}</h1>
 
           {tags.length > 0 && (

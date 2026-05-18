@@ -1,12 +1,11 @@
 name: Movement (Action)
 tags: [combat, movement, skirmish]
-duration: instant
-cost: minor
-trigger: "When you move across the battlefield..."
-save: null
+duration: Instant
+cost: Minor Action
+trigger: "When you move across the battlefield."
 rules: |
   Move a distance up to one of your Speed scores (Run, Dig, Swim, Fly) across the appropriate medium. Keep in mind:
 
   - You may not take other Actions while in the middle of a Move; you must end your Move first.
-  - Be mindful of [[engagement|Engagement]] & [[grappled|Grappling]], which punish & prevent normal movement respectively.
+  - Be mindful of [[engagement|Engagement]] & [[condition-grappled|Grappling]], which punish & prevent normal movement respectively.
   - You may not move through space occupied by a foe or stop within space occupied by an ally.

@@ -1,8 +1,7 @@
 name: Interact (Action)
 tags: [combat, skirmish]
-duration: instant
-cost: minor
-trigger: "When you manipulate an object within reach..."
-save: null
+duration: Instant
+cost: Minor Action
+trigger: "When you manipulate an object within reach."
 rules: |
   Swap items around in your hands, sheathe or draw a weapon, pick up an item within your reach, or interact with something nearby (lever, door, etc). Light a torch, lantern, or flask.

@@ -5,4 +5,4 @@ cost: full-turn
 trigger: "When you move in a straight line to close distance and attack..."
 save: null
 rules: |
-  Move *at least* & *up to 3×* any of your Speed scores in a *straight unobstructed line* & then perform an Attack at the end as per the [[action-attack|Attack Action]]'s rules. At the end of the Attack, the target, if less than half your Weight, must Save or Panic.
+  Move *at least* & *up to 3×* any of your Speed scores in a *straight unobstructed line* & then perform an Attack at the end as per the [[action-attack|Attack Action's rules]]. At the end of the Attack, the target, if less than half your Weight, must Save or [[condition-panicked|Panic]].

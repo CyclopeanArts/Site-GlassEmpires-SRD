@@ -2,6 +2,8 @@
 import { getCollection, getEntry } from 'astro:content';
 import BookLayout from '../../layouts/BookLayout.astro';
 import Ref from '../../components/Ref.astro';
+import CollectionNav from '../../components/CollectionNav.astro';
+import { renderFullMarkdown } from '../../utils/markdown.js';
 
 export async function getStaticPaths() {
   const conditions = await getCollection('conditions');
@@ -13,10 +15,25 @@ const entry = await getEntry('conditions', slug!);
 if (!entry) return Astro.redirect('/conditions');
 
 const d = entry.data;
+
+// Sorted list for prev/next navigation
+const allConditions = (await getCollection('conditions'))
+  .map(c => ({ slug: c.id, name: c.data.name }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+const idx = allConditions.findIndex(c => c.slug === slug);
+const prev = idx > 0 ? allConditions[idx - 1] : null;
+const next = idx < allConditions.length - 1 ? allConditions[idx + 1] : null;
 ---
 
-<BookLayout title={d.name}>
-  <Ref collection="conditions" slug={slug!} variant="inline" />
+<BookLayout title={d.name} tags={d.tags}>
+
+  <CollectionNav indexPath="/conditions" {prev} {next} indexLabel="Conditions Index" slot="top" border="bottom" />
+
+  {d.duration && <p class="condition-field"><strong>Duration:</strong> {d.duration}</p>}
+
+  {d.rules && <div class="condition-rules" set:html={renderFullMarkdown(d.rules)} />}
+
+  <CollectionNav indexPath="/conditions" {prev} {next} indexLabel="Conditions Index" border="top" />
 
   {d.see_also?.length > 0 && (
     <section class="see-also">
@@ -31,6 +48,30 @@ const d = entry.data;
 </BookLayout>
 
 <style>
+  .condition-field {
+    font-size: 0.92em;
+    color: var(--text-soft);
+    margin: 0.15em 0;
+    line-height: 1.5;
+  }
+  .condition-field strong {
+    color: var(--text);
+    font-weight: 600;
+    margin-right: 0.25em;
+  }
+  .condition-rules {
+    font-size: 1em;
+    color: var(--text);
+    margin-top: 0.6em;
+    line-height: 1.65;
+  }
+  .condition-rules p { margin: 0.5em 0; }
+  .condition-rules ul,
+  .condition-rules ol { margin: 0.4em 0; padding-left: 1.4em; }
+  .condition-rules li { margin: 0.15em 0; }
+  .condition-rules h4 { font-size: 1.05em; }
+  .condition-rules h5 { font-size: 0.95em; }
+  .condition-rules h6 { font-size: 0.9em; }
   .see-also { margin-top: 2.5em; }
   .see-also-grid {
     display: grid;

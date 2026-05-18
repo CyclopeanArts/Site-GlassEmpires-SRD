@@ -2,6 +2,8 @@
 import { getCollection, getEntry } from 'astro:content';
 import BookLayout from '../../layouts/BookLayout.astro';
 import Ref from '../../components/Ref.astro';
+import CollectionNav from '../../components/CollectionNav.astro';
+import { renderFullMarkdown, mdToHtml } from '../../utils/markdown.js';
 
 export async function getStaticPaths() {
   const actions = await getCollection('actions');
@@ -13,10 +15,34 @@ const entry = await getEntry('actions', slug!);
 if (!entry) return Astro.redirect('/actions');
 
 const d = entry.data;
+
+function formatSave(): string {
+  if (!d.save) return '';
+  if (typeof d.save === 'string') return d.save;
+  return d.save.type || '';
+}
+
+// Sorted list for prev/next navigation
+const allActions = (await getCollection('actions'))
+  .map(a => ({ slug: a.id, name: a.data.name }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+const idx = allActions.findIndex(a => a.slug === slug);
+const prev = idx > 0 ? allActions[idx - 1] : null;
+const next = idx < allActions.length - 1 ? allActions[idx + 1] : null;
 ---
 
-<BookLayout title={d.name}>
-  <Ref collection="actions" slug={slug!} variant="inline" />
+<BookLayout title={d.name} tags={d.tags}>
+
+  <CollectionNav indexPath="/actions" {prev} {next} indexLabel="Actions Index" slot="top" border="bottom" />
+
+  {d.duration && <p class="action-field"><strong>Duration:</strong> {d.duration}</p>}
+  {d.cost && <p class="action-field"><strong>Cost:</strong> {d.cost}</p>}
+  {d.trigger && <p class="action-field"><strong>Trigger:</strong> {d.trigger}</p>}
+  {formatSave() && <p class="action-field"><strong>Save:</strong> {formatSave()}</p>}
+
+  {d.rules && <div class="action-rules" set:html={renderFullMarkdown(d.rules)} />}
+
+  <CollectionNav indexPath="/actions" {prev} {next} indexLabel="Actions Index" border="top" />
 
   {d.see_also?.length > 0 && (
     <section class="see-also">
@@ -31,6 +57,30 @@ const d = entry.data;
 </BookLayout>
 
 <style>
+  .action-field {
+    font-size: 0.92em;
+    color: var(--text-soft);
+    margin: 0.15em 0;
+    line-height: 1.5;
+  }
+  .action-field strong {
+    color: var(--text);
+    font-weight: 600;
+    margin-right: 0.25em;
+  }
+  .action-rules {
+    font-size: 1em;
+    color: var(--text);
+    margin-top: 0.6em;
+    line-height: 1.65;
+  }
+  .action-rules p { margin: 0.5em 0; }
+  .action-rules ul,
+  .action-rules ol { margin: 0.4em 0; padding-left: 1.4em; }
+  .action-rules li { margin: 0.15em 0; }
+  .action-rules h4 { font-size: 1.05em; }
+  .action-rules h5 { font-size: 0.95em; }
+  .action-rules h6 { font-size: 0.9em; }
   .see-also { margin-top: 2.5em; }
   .see-also-grid {
     display: grid;

@@ -1,0 +1,95 @@
+---
+/**
+ * <CollectionNav indexPath="/actions" prev={prev} next={next} indexLabel="Actions Index" />
+ *
+ * Reusable Previous / Index / Next navigation for collection detail pages.
+ * Uses CSS grid so the Index stays centered even when prev or next is null.
+ *
+ * Props:
+ *   indexPath   — root path for the collection, e.g. "/actions" or "/bestiary"
+ *   prev        — { slug, name } | null
+ *   next        — { slug, name } | null
+ *   indexLabel  — text for the Index link (default: derived from indexPath, e.g. "Actions Index")
+ *   border      — "top" (line above, for bottom of page, default)
+ *                 "bottom" (line below, for top of page above h1)
+ *                 "none" (no line)
+ */
+
+interface NavEntry {
+  slug: string;
+  name: string;
+}
+
+interface Props {
+  indexPath: string;
+  prev: NavEntry | null;
+  next: NavEntry | null;
+  indexLabel?: string;
+  border?: 'top' | 'bottom' | 'none';
+}
+
+const { indexPath, prev, next, border = 'top' } = Astro.props;
+
+function deriveLabel(path: string): string {
+  const segment = path.replace(/^\/+/, '').replace(/\/+$/, '');
+  if (!segment) return 'Index';
+  return segment.charAt(0).toUpperCase() + segment.slice(1) + ' Index';
+}
+
+const label = Astro.props.indexLabel ?? deriveLabel(indexPath);
+const root = indexPath.replace(/\/+$/, '');
+---
+
+<nav class="collection-nav" aria-label="Collection navigation" data-border={border}>
+  {prev
+    ? <a href={`${root}/${prev.slug}`} class="cn-prev">← {prev.name}</a>
+    : <span />
+  }
+  <a href={root} class="cn-index">{label}</a>
+  {next
+    ? <a href={`${root}/${next.slug}`} class="cn-next">{next.name} →</a>
+    : <span />
+  }
+</nav>
+
+<style>
+  .collection-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .collection-nav[data-border="top"] {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid var(--border);
+  }
+  .collection-nav[data-border="bottom"] {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .collection-nav a {
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.8em;
+    color: var(--link-col);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .collection-nav a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .cn-prev { text-align: left; }
+  .cn-next { text-align: right; }
+  .cn-index {
+    text-align: center;
+    font-size: 0.7em;
+    color: var(--text-muted) !important;
+  }
+  .cn-index:hover { color: var(--text) !important; }
+</style>

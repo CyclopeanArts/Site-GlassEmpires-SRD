@@ -47,7 +47,7 @@ tables:
       - roll: 4
         result: "**Bullet Ants.** Also deals Mind damage."
       - roll: 5
-        result: "**Wasps.** Fly 30'. Stings deal Mind damage on top of Physical/Poison. Burning smoke forces a Save or Panic."
+        result: "**Wasps.** Fly 30'. Stings deal Mind damage on top of Physical/Poison. Burning smoke forces a Save or [[condition-panicked|Panic]]."
       - roll: 6
         result: "**Vampire Mosquitos.** Fly 30'. Heals HP equal to Damage dealt to enemies."
   - label: "What Is This Horde Doing?"

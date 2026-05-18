@@ -1,0 +1,8 @@
+name: Burning
+tags: [combat, fire, physical]
+duration: "Until extinguished (submersion or full-turn action)"
+rules: |
+  Characters who are *ignited* catch the **Burning** Condition. While Burning, at the start of each of their Turns, characters must Save or take [Power] Fire Damage.
+
+  The Burning Condition ends if a character is submerged in water. Characters may also receive a Save to attempt to put out a fire by spending a Full-Turn Action rolling on the ground.
+see_also: [action-extinguish]

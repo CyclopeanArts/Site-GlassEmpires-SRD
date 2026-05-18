@@ -2,14 +2,7 @@ name: Capital Relocation
 tags: [factions, administration]
 duration: variable
 trigger: "When you try to relocate your base of operations or seat of government to a new Settlement or Location..."
-save:
-  type: faction
-  table:
-    crit: "The transition is seamless. Your administrative apparatus settles in ahead of schedule. The new arrangement may qualify you for Advancement."
-    pass: "Success. Your Capital is established in the new location without incident."
-    seven: "Difficult. Your Capital is established, but your Faction suffers -1 to all actions for 1 month while the administration reorganizes."
-    failure: "Beset by complications — lost records, defecting officials, local resistance. Your Faction suffers -2 to all actions for 1 month."
-    fumble: "Catastrophic breakdown. Your Capital is established, but you lose a number of Families in the new location equal to 10% of your current Families (officials who refused the move, local power structures that undermine you). Roll a Random Faction Event."
+save: null
 rules: |
   You can relocate your Capital to a new Settlement or Location. The old Capital becomes a provincial seat or secondary holding; the new one becomes the administrative heart of your Faction.
 
@@ -28,6 +21,14 @@ rules: |
   If the destination is a Location you *already control* (a Settlement in your realm), halve the costs. The infrastructure exists, you just have to shift personnel and priority.
 
   ## Save
+
+  | Result | Effect |
+  | :----: | ------ |
+  | Crit (>=12) | The transition is seamless. Your administrative apparatus settles in ahead of schedule. The new arrangement may qualify you for Advancement. |
+  | Pass (8-11) | Success. Your Capital is established in the new location without incident. |
+  | Seven (7) | Difficult. Your Capital is established, but your Faction suffers -1 to all actions for 1 month while the administration reorganizes. |
+  | Failure (3-6) | Beset by complications — lost records, defecting officials, local resistance. Your Faction suffers -2 to all actions for 1 month. |
+  | Fumble (<=2) | Catastrophic breakdown. Your Capital is established, but you lose a number of Families in the new location equal to 10% of your current Families (officials who refused the move, local power structures that undermine you). Roll a Random Faction Event. |
 
   **No Save is required** for a Faction with 0 Families (a solo Leader or small party just moving their base of operations).
 

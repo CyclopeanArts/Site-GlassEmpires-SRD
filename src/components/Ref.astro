@@ -18,6 +18,7 @@
 import { getEntry } from 'astro:content';
 import { getSlugMap } from '../config/slug-resolver.js';
 import RollableTable from './RollableTable.astro';
+import { mdToHtml, wikilinksToHtml, renderFullMarkdown, renderTableBlock } from '../utils/markdown.js';
 
 const { collection, slug, variant = 'inline', label, linkSlug } = Astro.props;
 const hrefSlug = linkSlug ?? slug;
@@ -206,6 +207,8 @@ function formatSave(d: any): string {
   return d.save.type || '';
 }
 
+
+
 let entry: any = null;
 try {
   entry = await getEntry(collection, slug);
@@ -240,8 +243,8 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
   <a
     href={`/${collection}/${hrefSlug}`}
     class="ref-term"
-    data-tooltip={d.summary ?? ''}
-    aria-description={d.summary}
+    data-tooltip=""
+    aria-description=""
   >
     {displayName}
   </a>
@@ -267,6 +270,23 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
   </div>
 )}
 
+
+{d && effectiveVariant === 'page' && (
+  <div class="ref-page">
+    <div class="ref-page-name">{displayName}</div>
+    {d.tags?.length > 0 && (
+      <div class="ref-clipping-tags">
+        {d.tags.map((t: string) => <span class="ref-tag">{t}</span>)}
+      </div>
+    )}
+    {d.duration && <p class="ref-clipping-field"><strong>Duration:</strong> {d.duration}</p>}
+    {d.cost && <p class="ref-clipping-field"><strong>Cost:</strong> {d.cost}</p>}
+    {d.trigger && <p class="ref-clipping-field"><strong>Trigger:</strong> {d.trigger}</p>}
+    {formatSave(d) && <p class="ref-clipping-field"><strong>Save:</strong> {formatSave(d)}</p>}
+    {d.rules && <div class="ref-page-rules" set:html={renderFullMarkdown(d.rules)} />}
+    {d.definition && <div class="ref-page-rules" set:html={renderFullMarkdown(d.definition)} />}
+  </div>
+)}
 {d && effectiveVariant === 'inline' && (
   <div class="ref-clipping">
     <div class="ref-clipping-scrollbar"></div>
@@ -309,7 +329,7 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
           </td>
         </tr>
         {d.group     && <tr><td class="sb-label">Group</td>     <td class="sb-data" set:html={mdToHtml(d.group)}></td></tr>}
-        {(d.desc ?? d.summary) && <tr><td class="sb-label">Desc.</td>     <td class="sb-data" set:html={mdToHtml(d.desc ?? d.summary)}></td></tr>}
+        {d.desc && <tr><td class="sb-label">Desc.</td>     <td class="sb-data" set:html={mdToHtml(d.desc)}></td></tr>}
         {d.wants     && <tr><td class="sb-label">Wants</td>     <td class="sb-data" set:html={mdToHtml(d.wants)}></td></tr>}
         {d.intellect && <tr><td class="sb-label">Intellect</td> <td class="sb-data" set:html={mdToHtml(d.intellect)}></td></tr>}
         {d.morality  && <tr><td class="sb-label">Morality</td>  <td class="sb-data" set:html={mdToHtml(d.morality)}></td></tr>}
@@ -430,8 +450,9 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
     top: -1px;
     left: -0.2em;
     width: calc(100% + 0.4em);
-    height: 0.35em;
-    background: linear-gradient(180deg, var(--gold-400), var(--gold-600));
+    height: 0.3em;
+    background: var(--border-strong);
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
     z-index: 2;
   }
   .ref-clipping-scrollbar:last-child {
@@ -439,16 +460,22 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
     bottom: -1px;
     left: -0.2em;
     width: calc(100% + 0.4em);
-    height: 0.35em;
-    background: linear-gradient(180deg, var(--gold-600), var(--gold-400));
+    height: 0.3em;
+    background: var(--border-strong);
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
     z-index: 2;
+  }
+
+  [data-theme="dark"] .ref-clipping-scrollbar:first-child,
+  [data-theme="dark"] .ref-clipping-scrollbar:last-child {
+    background: var(--gold-600);
   }
 
   .ref-clipping-body {
     position: relative;
     z-index: 1;
     padding: 0.85em 1.1em 0.5em;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
   }
 
   .ref-clipping-header-row {
@@ -550,6 +577,7 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
     border-bottom: 1px solid var(--table-rule);
     vertical-align: top;
   }
+
 
   /* ── Compact card variant ──────────────────────────── */
   .ref-clipping-card {

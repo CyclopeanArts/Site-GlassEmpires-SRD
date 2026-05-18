@@ -27,7 +27,7 @@ features:
     text: "If you strike an enemy twice in melee with natural weapons, you may immediately Grapple them."
     combat: 1
   - name: "Terrible Roar"
-    text: "Once per 10 minutes, may roar as a Free Action. All creatures of lesser Power within earshot must Save or Panic."
+    text: "Once per 10 minutes, may roar as a Free Action. All creatures of lesser Power within earshot must Save or [[condition-panicked|Panic]]."
     combat: 1
 lore: |
   Can smell food from a mile away. Will investigate anything edible. A brown bear in your granary is a problem you solve not by fighting, but by moving.

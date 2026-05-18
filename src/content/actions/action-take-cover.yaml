@@ -1,8 +1,7 @@
 name: Take Cover / Stand Up (Action)
 tags: [combat, skirmish]
-duration: instant
-cost: minor
-trigger: "When you drop prone or rise from prone..."
-save: null
+duration: Instant
+cost: Minor Action
+trigger: "When you drop Prone or rise from Prone status."
 rules: |
-  Become [[conditions|Prone]] *or* recover from the Prone Condition.
+  As a Minor Action, become [[condition-prone|Prone]] *or* recover from the Prone Condition.

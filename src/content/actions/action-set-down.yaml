@@ -1,8 +1,7 @@
 name: Set Down Gently (Action)
 tags: [combat, skirmish]
-duration: instant
-cost: major
-trigger: "When you set something down carefully to avoid damaging it..."
-save: null
+duration: Instant
+cost: Full-Turn Action
+trigger: "When you set something down carefully to avoid damaging it."
 rules: |
   Set something down gently without damaging it — especially bags, backpacks, or fragile items.

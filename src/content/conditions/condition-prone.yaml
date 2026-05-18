@@ -1,6 +1,5 @@
 name: Prone
 tags: [physical, movement, combat, position]
-summary: "On the ground; quartered Speed and height. Counts as a Fact where relevant."
 rules: |
   Being on the ground is called being Prone, and this Condition covers crawling,
   sitting, and any other form of limited movement. A character's effective Speed

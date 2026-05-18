@@ -1,8 +1,7 @@
 name: Plunder Settlement (Action)
 tags: [factions, warfare, armies]
-duration: variable
+duration: Variable
 trigger: "When you order an Army to plunder a controlled Settlement."
-save: null
 rules: |
   To plunder a controlled Settlement, you must order an Army whose BR is at least equal to the Settlement's Families to do so.
 

@@ -69,7 +69,7 @@ export const nav: NavItem[] = [
   ]},
   { label: "Adventure", children: ["encumbrance", "foresight", "conditions", "negotiation-persuasion", "resting", "movement", "travel", "hunting", "advancement"] },
   { label: "Combat", children: [
-    { slug: "skirmishes", children: ["movement-space", "skirmish-actions", "engagement", "flight-pursuit", "panic-fear", "mounted-combat", "battle-conditions"] },
+    { slug: "skirmishes", children: ["movement-space", "skirmish-actions", "engagement", "flight-pursuit", "panic-fear", "mounted-combat"] },
     { slug: "battles", children: ["battle-rating", "battle-procedure", "end-of-battle"] },
     "damage-types", "armor", "damage-death", "mutations-and-wounds", "funerals",
   ]},

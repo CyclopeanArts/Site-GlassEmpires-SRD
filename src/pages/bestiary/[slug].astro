@@ -5,6 +5,7 @@ import BookLayout from '../../layouts/BookLayout.astro';
 import Callout from '../../components/Callout.astro';
 import Ref from '../../components/Ref.astro';
 import RollableTable from '../../components/RollableTable.astro';
+import CollectionNav from '../../components/CollectionNav.astro';
 
 export async function getStaticPaths() {
   const allEntries = await getCollection('bestiary');
@@ -72,6 +73,8 @@ const next = idx < all.length - 1 ? all[idx + 1] : null;
 ---
 
 <BookLayout title={d.name} tags={d.tags}>
+  <CollectionNav indexPath="/bestiary" {prev} {next} indexLabel="Bestiary Index" slot="top" border="bottom" />
+
   <Ref collection="bestiary" slug={fullId!} variant="stat" />
 
   {d.gm_note && (
@@ -84,43 +87,9 @@ const next = idx < all.length - 1 ? all[idx + 1] : null;
     <RollableTable label={t.label} die={t.die} entries={t.entries} />
   ))}
 
-  <nav class="bestiary-nav" aria-label="Bestiary navigation">
-    {prev
-      ? <a href={`/bestiary/${prev.slug}`} class="bn-prev">← {prev.name}</a>
-      : <span />
-    }
-    <a href="/bestiary" class="bn-index">Index</a>
-    {next
-      ? <a href={`/bestiary/${next.slug}`} class="bn-next">{next.name} →</a>
-      : <span />
-    }
-  </nav>
+  <CollectionNav indexPath="/bestiary" {prev} {next} indexLabel="Bestiary Index" />
 </BookLayout>
 
 <style>
-  .bestiary-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3em;
-    padding-top: 1em;
-    border-top: 1px solid var(--border);
-  }
-  .bestiary-nav a {
-    font-family: 'Literata Variable', serif;
-    font-variant-caps: small-caps;
-    font-weight: 700;
-    font-size: 0.85em;
-    color: var(--link-col);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .bestiary-nav a:hover { color: var(--accent); text-decoration: none; }
-  .bn-prev { text-align: left; }
-  .bn-next { text-align: right; }
-  .bn-index {
-    font-size: 0.75em;
-    color: var(--text-muted) !important;
-  }
-  .bn-index:hover { color: var(--text) !important; }
+
 </style>

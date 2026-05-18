@@ -1,15 +1,7 @@
 name: Grow Followers (Action)
 tags: [factions, recruitment, leadership]
-duration: variable
+duration: Variable
 trigger: "When you attempt to convert more of a Settlement's population to follow your Faction..."
-save:
-  type: success
-  table:
-    crit: "100% of the target's current Families."
-    pass: "50% of the target's current Families."
-    seven: "10% of the target's current Families."
-    failure: "Nothing."
-    fumble: "10% of *your* current Families (not the target's) leave *you*."
 rules: |
   If your Faction has its Capital located *inside* a Settlement & only has Families equal to a *portion* of that Settlement's total Families, you may attempt to raise your number of Families by converting more people within the Settlement to follow *you*, an *ally*, one of your *Retainers*/*Subfactions* or your *Liege*.
 
@@ -18,6 +10,14 @@ rules: |
   The **Duration** is **2 months** for low switching costs (commodities & entertainment), **4 months** for medium (guilds & banking, mercenary services), & **8 months** for high switching costs (ethnic associations, religious faiths, nobility).
 
   When the Duration elapses, make a Success Save to determine the *base number* of how many Families *could* be gained.
+
+  | Result | Effect |
+  | :----: | ------ |
+  | Crit (>=12) | 100% of the target's current Families. |
+  | Pass (8-11) | 50% of the target's current Families. |
+  | Seven (7) | 10% of the target's current Families. |
+  | Failure (3-6) | Nothing. |
+  | Fumble (<=2) | 10% of *your* current Families (not the target's) leave *you*. |
 
   Reduce the amount gained to *at most*:
 

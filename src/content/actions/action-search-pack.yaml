@@ -1,8 +1,7 @@
 name: Search Your Pack (Action)
 tags: [combat, skirmish]
-duration: instant
-cost: full-turn
-trigger: "When you search a backpack or bag for a specific item..."
-save: null
+duration: Instant
+cost: Full-Turn Action
+trigger: "When you search a backpack or bag for a specific item."
 rules: |
   Search a backpack or other bag for a specific item & pull it into your hand.

@@ -26,7 +26,7 @@ features:
     text: "Once per Turn as a Free Action, leap up to 15' in any direction."
     combat: 0
   - name: "Rabbit Instincts"
-    text: "You must Save to not Panic from unexpected loud noises, dogs, or eagles. Everything in combat is unexpected. You must Save to not investigate interesting smells."
+    text: "You must Save or [[condition-panicked|Panic]] from unexpected loud noises, dogs, or eagles. Everything in combat is unexpected. You must Save to not investigate interesting smells."
     combat: -1
 lore: |
   Unchanging aeons of relative ease in Lunar cities has divorced them from the realities of life. They know almost nothing about Aia & are astonished (& easily entranced) by stories of war, conquest, famine, charisma, tournaments, politics, monster-slaying, etc. They will follow interesting people around asking *lots of questions* before *broadcasting the answers to everyone*.

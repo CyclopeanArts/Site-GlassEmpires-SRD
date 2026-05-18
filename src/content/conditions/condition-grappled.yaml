@@ -1,6 +1,5 @@
 name: Grappled
 tags: [physical, combat, position]
-summary: "Locked in close combat; neither grappler can move except by Shoving."
 duration: "Until broken by Shoving or other means"
 rules: |
   Grappling is a Condition that affects both characters. Neither character can move except by Shoving the other, which is also the only way to break a Grapple. Melee attacks gain a +2 to hit anyone in a Grapple, even if the attacker is outside the Grapple.

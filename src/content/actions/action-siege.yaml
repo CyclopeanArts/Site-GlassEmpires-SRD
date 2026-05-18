@@ -1,8 +1,7 @@
 name: Siege (Action)
 tags: [warfare, armies, factions, siege]
-duration: variable
-trigger: "When you besiege a fortified Location..."
-save: null
+duration: Variable
+trigger: "When you besiege a fortified Location."
 rules: |
   Sum the defending armies' BR along with the Location's Families & SHP. Divide it by the attacking armies' BR & multiply by 100. The result is how many days out the Duration should be set for.
 

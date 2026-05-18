@@ -1,15 +1,7 @@
 name: Persuasion (Action)
 tags: [social, interaction]
-duration: variable
+duration: Variable
 trigger: "When you try to persuade a target of something meaningful..."
-save:
-  type: persuasion
-  table:
-    crit: "Target wholly accepts your information and alters or synthesizes their worldview to adapt to it. This may cause a radical or unpredictable realignment."
-    pass: "Target accepts your *specific* point, but works it into their existing worldview (i.e. as an exception or oddity) and will not strongly/openly espouse it or any downstream consequences."
-    seven: "Target demands additional evidence (or action on your part) beyond what you've already provided. If not provided, see Failure."
-    failure: "The target doesn't believe you. The GM rolls 1d6 for a Disbelief penalty."
-    fumble: "The target doesn't believe you. The GM rolls 3 times on the Disbelief table."
 rules: |
   When you try to persuade a target of something meaningful, consider two axes:
 
@@ -23,6 +15,16 @@ rules: |
     - Do they believe you to be an authority on the topic?
 
   If both are *true*, the target will believe you. If both are *false*, the target will never believe you. If *only one* is true, a Save is required.
+
+  | Result | Effect |
+  | :----: | ------ |
+  | Crit (>=12) | Target wholly accepts your information and alters or synthesizes their worldview to adapt to it. This may cause a radical or unpredictable realignment. |
+  | Pass (8-11) | Target accepts your *specific* point, but works it into their existing worldview (i.e. as an exception or oddity) and will not strongly/openly espouse it or any downstream consequences. |
+  | Seven (7) | Target demands additional evidence (or action on your part) beyond what you've already provided. If not provided, see Failure. |
+  | Failure (3-6) | The target doesn't believe you. The GM rolls 1d6 for a Disbelief penalty. |
+  | Fumble (<=2) | The target doesn't believe you. The GM rolls 3 times on the Disbelief table. |
+
+  If you suffer one or more Disbelief Penalties, the GM rolls secretly on the table below.
 
   | 1d6 | Disbelief Penalties |
   | :-: | ------------------- |

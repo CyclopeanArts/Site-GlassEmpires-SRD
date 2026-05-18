@@ -37,7 +37,7 @@ tables:
         result: "**Draft horse**. HD 4, Weight 150#, Max. Load 100#, Run 35'. Always flees from combat."
       - roll: 3
         max: 4
-        result: "**Warhorse**. HD 4, Weight 120#, Max. Load 80#. Trained for combat; immune to Panic."
+        result: "**Warhorse**. HD 4, Weight 120#, Max. Load 80#. Trained for combat; immune to [[condition-panicked|Panic]]."
       - roll: 5
         max: 6
         result: "**Steppe horse**. HD 3, Weight 60#, Max. Load 40#. Can survive on steppe grass alone."

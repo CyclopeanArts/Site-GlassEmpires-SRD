@@ -60,7 +60,7 @@ tables:
       - roll: 14
         result: "**Death**: Lost Item.\n**Premonition**: Frightening vision of having lost a treasure. It's down here somewhere, it has to be...\n**Effect**: A random item disappears from your pack (but not your hands) every 10 minutes.\n**Satiation**: Return envisioned item to ghost's corpse. Items are found in a pile soon afterwards."
       - roll: 15
-        result: "**Death**: Parasite.\n**Premonition**: Something's growing inside you. You can feel it. You know it's there. It has to die, before it eats you inside-out.\n**Effect**: Every 10 minutes, Save vs Panic or drink poison & rip at your flesh & stomach to get the parasite out.\n**Satiation**: Find and kill a member of the species that infested the ghost's corpse."
+        result: "**Death**: Parasite.\n**Premonition**: Something's growing inside you. You can feel it. You know it's there. It has to die, before it eats you inside-out.\n**Effect**: Every 10 minutes, Save or [[condition-panicked|Panic]] & drink poison & rip at your flesh & stomach to get the parasite out.\n**Satiation**: Find and kill a member of the species that infested the ghost's corpse."
       - roll: 16
         result: "**Death**: Petrified.\n**Premonition**: Heavy pressure on your skull; reaching out for something and never touching.\n**Effect**: Limbs lock up and petrify as rounds pass. Only continual human touch restores you to life.\n**Satiation**: Move the ghost's statue to whatever it was trying to reach before it was petrified."
       - roll: 17

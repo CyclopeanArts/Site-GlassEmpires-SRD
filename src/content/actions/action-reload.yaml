@@ -1,8 +1,7 @@
 name: Reload / Unjam (Action)
 tags: [combat, skirmish]
-duration: instant
-cost: major
-trigger: "When you need to reload or unjam a crossbow or windgun..."
-save: null
+duration: Instant
+cost: Major Action
+trigger: "When you need to reload or unjam a crossbow or windgun."
 rules: |
   Reload or unjam a crossbow or windgun.

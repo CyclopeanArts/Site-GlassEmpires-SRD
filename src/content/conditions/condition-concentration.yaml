@@ -1,0 +1,8 @@
+name: Concentration
+tags: [combat, mental]
+duration: "Until broken (Damage or incapacitation ends it)"
+rules: |
+  **Concentration** is a Condition for characters who are preoccupied with an ongoing activity & cannot focus clearly. Concentration ends if a character takes any amount of Damage or falls under a Condition that precludes Concentration (such as being Incapacitated). In addition, characters may have to Save up to once per round to maintain Concentration if exposed to violent motion (a moving mount, ship deck in a storm) or violent weather (blinding rain, hail).
+
+  If a character loses Concentration, whatever task they were focused on fails automatically.
+see_also: [condition-incapacitated]

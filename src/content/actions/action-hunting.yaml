@@ -1,15 +1,7 @@
 name: Hunting (Action)
 tags: [adventure, exploration, creatures]
-duration: variable
+duration: Variable
 trigger: "When a Party deliberately searches for a specific creature in an area where it's known to exist."
-save:
-  type: Hunting
-  table:
-    crit: "You find the creature & also its lair/territory."
-    pass: "4-in-6 chance that you find the creature; otherwise, you find its lair (if applicable)."
-    seven: "You find signs/tracks — spend another search period at half duration."
-    failure: "You found nothing, but learned something useful about why (depleted area, wrong season, someone else hunting it)."
-    fumble: "Something else found you first — GM rolls on the biome encounter table."
 rules: |
   **When a Party deliberately searches for a specific creature** in a biome where it's known to exist, the GM sets a Duration based on the creature's Rarity Tier:
 
@@ -34,6 +26,14 @@ rules: |
   ## Save
   
   At the Duration's end, Save. In addition to any ordinary modifiers (i.e. Facts), you receive +1 modifiers to your Save for each of the following that are true:
+
+  | Result | Effect |
+  | :----: | ------ |
+  | Crit (>=12) | You find the creature & also its lair/territory. |
+  | Pass (8-11) | 4-in-6 chance that you find the creature; otherwise, you find its lair (if applicable). |
+  | Seven (7) | You find signs/tracks — spend another search period at half duration. |
+  | Failure (3-6) | You found nothing, but learned something useful about why (depleted area, wrong season, someone else hunting it). |
+  | Fumble (<=2) | Something else found you first — GM rolls on the biome encounter table. |
 
   - At least one participant in your Party has a Fact that is specifically relevant to hunting this kind of creature.
   - Harpy aerial scout

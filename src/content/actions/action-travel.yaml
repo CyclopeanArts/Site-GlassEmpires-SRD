@@ -1,12 +1,11 @@
 name: Travel (Action)
 tags: [adventure, movement, exploration]
-duration: variable
+duration: Variable
 trigger: "When you set out on a route with a destination in mind..."
-save: null
 rules: |
   Travel by a Party or mobile Factions (such as Armies) is resolved via *free movement* tracked on a map of the campaign world by the GM.
 
-  In order to Travel, you must have a **route** & **destination** in mind. The route may be a *path* or a *direction*. The destination can be a *literal place* or a *time-based trigger* such as "three days north". Announce both to the GM.
+  In order to [[travel|travel]], you must have a **route** & **destination** in mind. The route may be a *path* or a *direction*. The destination can be a *literal place* or a *time-based trigger* such as "three days north". Announce both to the GM.
 
   ## Travel Procedure
 
