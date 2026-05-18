@@ -27,7 +27,7 @@ def inject_base(text, prefix):
     This makes ALL root-absolute URLs (src, href, JS fetch, etc.)
     resolve correctly from any file depth.
     """
-    text = re.sub(r'(<head[^>]*>)', lambda m: f'{m.group(1)}\n<base href="{prefix}">', text)
+    text = re.sub(r'(<head\b[^>]*>)', lambda m: f'{m.group(1)}\n<base href="{prefix}">', text)
     return text
 
 
@@ -36,13 +36,13 @@ def relativise_css(text):
     Astro puts both CSS and referenced assets (fonts, etc.) in _astro/,
     so url(/_astro/foo) becomes url(./foo) for same-directory resolution.
     """
-    return re.sub(r"url\(/_astro/", "url(./", text)
+    return re.sub(r"url\(/([^)]+)\)", r"url(../\1)", text)
 
 
 def depth_prefix(file_path, staging_root):
     """Calculate the relative prefix to reach the root from a file's location."""
     rel = file_path.relative_to(staging_root)
-    parts = len(rel.parents)  # number of directories deep
+    parts = len(rel.parents) - 1  # number of directories deep
     if parts == 0:
         return "./"
     return "../" * parts
