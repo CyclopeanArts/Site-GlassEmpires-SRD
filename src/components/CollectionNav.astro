@@ -42,12 +42,20 @@ const root = indexPath.replace(/\/+$/, '');
 
 <nav class="collection-nav" aria-label="Collection navigation" data-border={border}>
   {prev
-    ? <a href={`${root}/${prev.slug}`} class="cn-prev">← {prev.name}</a>
+    ? <a href={`${root}/${prev.slug}`} class="cn-prev">
+        <svg viewBox="0 0 24 24" class="cn-arrow" width="1.6em" height="1.6em" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" d="M15 4 7 12l8 8v-4.5L11 12l4-3.5V4z"/></svg>
+        {prev.name}
+        <kbd>A</kbd>
+      </a>
     : <span />
   }
   <a href={root} class="cn-index">{label}</a>
   {next
-    ? <a href={`${root}/${next.slug}`} class="cn-next">{next.name} →</a>
+    ? <a href={`${root}/${next.slug}`} class="cn-next">
+        <kbd>D</kbd>
+        {next.name}
+        <svg viewBox="0 0 24 24" class="cn-arrow" width="1.6em" height="1.6em" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" d="M9 4l8 8-8 8v-4.5L13 12 9 8.5V4z"/></svg>
+      </a>
     : <span />
   }
 </nav>
@@ -84,12 +92,37 @@ const root = indexPath.replace(/\/+$/, '');
     text-decoration: underline;
   }
 
-  .cn-prev { text-align: left; }
-  .cn-next { text-align: right; }
+  .cn-prev, .cn-next {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+  }
+
+  .cn-prev { text-align: left; justify-content: flex-start; }
+  .cn-next { text-align: right; justify-content: flex-end; }
   .cn-index {
     text-align: center;
     font-size: 0.7em;
     color: var(--text-muted) !important;
   }
   .cn-index:hover { color: var(--text) !important; }
+
+  .cn-arrow {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
+  .collection-nav kbd {
+    font-family: inherit;
+    font-size: 0.7em;
+    font-weight: 600;
+    padding: 0.2em 0.25em;
+    border: 1px solid currentColor;
+    border-radius: 0.2em;
+    opacity: 0.45;
+    line-height: 1;
+  }
 </style>

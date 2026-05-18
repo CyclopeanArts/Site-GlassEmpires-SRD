@@ -192,6 +192,32 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
         }
       }
     });
+
+    // Collection-nav — A (prev), D (next)
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+      if (e.key.toLowerCase() === 'a') {
+        const prev = document.querySelector('.collection-nav .cn-prev');
+        if (prev) prev.click();
+      }
+      if (e.key.toLowerCase() === 'd') {
+        const next = document.querySelector('.collection-nav .cn-next');
+        if (next) next.click();
+      }
+    });
+
+    // Nav-tree navigation — W (prev), S (next)
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+      if (e.key.toLowerCase() === 'w') {
+        const prev = document.querySelector('.navtree-nav .ntn-prev');
+        if (prev) prev.click();
+      }
+      if (e.key.toLowerCase() === 's') {
+        const next = document.querySelector('.navtree-nav .ntn-next');
+        if (next) next.click();
+      }
+    });
   </script>
 </head>
 <body>

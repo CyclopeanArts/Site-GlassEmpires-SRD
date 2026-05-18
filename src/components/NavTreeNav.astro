@@ -1,0 +1,127 @@
+---
+/**
+ * <NavTreeNav currentPath="/rules/..." />
+ *
+ * Renders a compact prev/index/next row in the sidebar for pages that
+ * appear in the nav tree. Greyed/disabled for pages outside the tree.
+ * Keyboard: W (prev), S (next) — separate from A/D (CollectionNav).
+ */
+import { nav } from '../config/nav';
+import { getSlugMap } from '../config/slug-resolver';
+
+interface NavEntry {
+  href: string;
+  label: string;
+}
+
+const { currentPath = '' } = Astro.props;
+const normalized = currentPath.replace(/\/+$/, '');
+
+function buildFlatOrder(items: any[], into: NavEntry[]): void {
+  const slugMap = getSlugMap();
+  for (const item of items) {
+    if (typeof item === 'string') {
+      const entry = slugMap[item];
+      if (entry) into.push({ href: entry.path, label: entry.title });
+    } else if ('href' in item && item.href) {
+      into.push({ href: item.href, label: item.label ?? item.href });
+    } else if ('slug' in item) {
+      const entry = slugMap[item.slug];
+      if (entry) into.push({ href: entry.path, label: entry.title });
+      if (item.children) buildFlatOrder(item.children, into);
+    } else if ('label' in item && item.children) {
+      buildFlatOrder(item.children, into);
+    }
+  }
+}
+
+const flat: NavEntry[] = [];
+buildFlatOrder(nav, flat);
+
+const idx = flat.findIndex(e => e.href === normalized);
+const inTree = idx >= 0;
+const prev = inTree && idx > 0 ? flat[idx - 1] : null;
+const next = inTree && idx < flat.length - 1 ? flat[idx + 1] : null;
+---
+
+<div class="navtree-nav" data-active={inTree}>
+  {prev
+    ? <a href={prev.href} class="ntn-prev" title={prev.label}>
+        <svg viewBox="0 0 24 24" class="ntn-arrow" aria-hidden="true"><path fill="currentColor" d="M15 4 7 12l8 8v-4.5L11 12l4-3.5V4z"/></svg>
+        <kbd>W</kbd>
+      </a>
+    : <span class="ntn-disabled">
+        <svg viewBox="0 0 24 24" class="ntn-arrow" aria-hidden="true"><path fill="currentColor" d="M15 4 7 12l8 8v-4.5L11 12l4-3.5V4z"/></svg>
+        <kbd>W</kbd>
+      </span>
+  }
+  <a href="/" class="ntn-index">Index</a>
+  {next
+    ? <a href={next.href} class="ntn-next" title={next.label}>
+        <kbd>S</kbd>
+        <svg viewBox="0 0 24 24" class="ntn-arrow" aria-hidden="true"><path fill="currentColor" d="M9 4l8 8-8 8v-4.5L13 12 9 8.5V4z"/></svg>
+      </a>
+    : <span class="ntn-disabled">
+        <kbd>S</kbd>
+        <svg viewBox="0 0 24 24" class="ntn-arrow" aria-hidden="true"><path fill="currentColor" d="M9 4l8 8-8 8v-4.5L13 12 9 8.5V4z"/></svg>
+      </span>
+  }
+</div>
+
+<style>
+  .navtree-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    padding: 0.4em 0.75em;
+    margin: 0 0.75em 0.25em;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .navtree-nav a,
+  .navtree-nav .ntn-disabled {
+    font-family: 'Literata Variable', serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.7em;
+    text-decoration: none;
+    transition: color 0.15s;
+    padding: 0.1em 0.3em;
+    line-height: 1;
+  }
+  .navtree-nav a {
+    color: var(--nav-text);
+  }
+  .navtree-nav a:hover {
+    color: var(--nav-accent);
+    text-decoration: none;
+  }
+  .navtree-nav .ntn-disabled {
+    color: rgba(255,255,255,0.15);
+    cursor: default;
+  }
+  .navtree-nav[data-active="false"] a {
+    color: rgba(255,255,255,0.15);
+    pointer-events: none;
+  }
+  .ntn-index {
+    font-size: 0.65em !important;
+    letter-spacing: 0.12em;
+  }
+  .navtree-nav kbd {
+    font-family: inherit;
+    font-size: 0.7em;
+    font-weight: 600;
+    padding: 0.2em 0.25em;
+    border: 1px solid currentColor;
+    border-radius: 0.2em;
+    opacity: 0.55;
+    line-height: 1;
+  }
+  .ntn-arrow {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    vertical-align: middle;
+  }
+</style>

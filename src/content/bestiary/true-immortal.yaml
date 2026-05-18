@@ -10,7 +10,7 @@ maxload: 40
 speeds:
   run: 25
   fly: 250
-group: "Solo / Cult patron (Level 2d6, Godhead enables summoning)"
+group: "Solo / Cult patron (Level 2d6, [[divination|Godhead]] enables summoning)"
 desc: "A radiant, hyper-real human, possibly disguised as a lesser being."
 wants: "Inscrutably mad whims fulfilled. An end to the ennui."
 intellect: "Brilliant but ordinary human, augmented by magic or tools."

@@ -6,7 +6,7 @@ rules: |
   **Casting** is an Instant Save Action. There are two casting methods to follow depending on the *kind* of spirit you have. There are two kinds of spell-spirits:
 
   - **Spells** are *little* spirits. They are captured or tamed & used as *lenses for power* by magicians of similar mindset & character.
-  - **Souls** are the spiritual containers of more powerful entities. They are largely fixed in nature & cannot be changed simply by dumping power into them, but given an appropriate sacrifice will act on your behalf.
+  - **Souls** are the spirits of more powerful entities. They are largely fixed in nature & cannot be changed simply by dumping power into them, but given an appropriate sacrifice will act on your behalf.
 
   Both kinds of casting are dangerous.
 
@@ -33,7 +33,7 @@ rules: |
 
   1. Have a Totem containing a soul held in a hand in front of you (it doesn't have to be your hand), with one of your hands free for gestures & invocation.
   2. Take Damage equal to the spirit's Power. This Damage is called your **sacrifice**.
-     - You may reduce Damage taken by using Spell Dice if you have any.
+     - You may at this point invest SD to reduce the Damage you would otherwise take by the [Sum] of the SD invested.
   3. Choose a benefit you wish to invoke from the spirit's list of Features:
      - Grant a **passive** Feature (or natural weapon) to a target you're touching for a chosen number of hours if you *immediately* take Damage equal to the spirit's Power times the chosen number of hours, ignoring Armor.
        - If it doesn't cost an Action to trigger, it's Passive.

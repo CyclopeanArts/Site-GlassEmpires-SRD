@@ -1,7 +1,7 @@
 name: Grow Followers (Action)
 tags: [factions, recruitment, leadership]
 duration: Variable
-trigger: "When you attempt to convert more of a Settlement's population to follow your Faction..."
+trigger: "When you attempt to convert more of a Settlement's population to follow your Faction."
 rules: |
   If your Faction has its Capital located *inside* a Settlement & only has Families equal to a *portion* of that Settlement's total Families, you may attempt to raise your number of Families by converting more people within the Settlement to follow *you*, an *ally*, one of your *Retainers*/*Subfactions* or your *Liege*.
 

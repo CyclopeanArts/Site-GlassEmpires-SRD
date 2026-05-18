@@ -103,7 +103,7 @@ function renderFullMarkdown(text: string): string {
     const headingMatch = trimmed.match(/^(#{2,4})\s+(.+)$/m);
     if (headingMatch) {
       const level = headingMatch[1].length; // ## = 2, ### = 3, etc.
-      const tag = `h${Math.min(level + 2, 6)}`; // ## → h4, ### → h5
+      const tag = `h${Math.min(level, 6)}`; // ## → h2, ### → h3
       parts.push(`<${tag} class="ref-clipping-heading">${mdToHtml(headingMatch[2])}</${tag}>`);
       continue;
     }
@@ -545,18 +545,18 @@ const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
   .ref-clipping-rules p { margin: 0.5em 0; }
   .ref-clipping-rules ul,
   .ref-clipping-rules ol { margin: 0.4em 0; padding-left: 1.4em; }
-  .ref-clipping-rules li { margin: 0.15em 0; }
+  .ref-clipping-rules :global(li) { margin: 0.15em 0; }
 
-  .ref-clipping-heading {
+  :global(.ref-clipping-heading) {
     font-family: 'Literata Variable', serif;
     font-weight: 700;
     color: var(--heading-col);
     margin: 0.8em 0 0.3em;
     font-variant-caps: small-caps;
   }
-  .ref-clipping-rules h4 { font-size: 1.05em; }
-  .ref-clipping-rules h5 { font-size: 0.95em; }
-  .ref-clipping-rules h6 { font-size: 0.9em; }
+  .ref-clipping-rules :global(h2) { font-size: 1.05em; }
+  .ref-clipping-rules :global(h3) { font-size: 0.95em; }
+  .ref-clipping-rules :global(h4) { font-size: 0.9em; }
 
   .ref-clipping-table {
     width: 100%;

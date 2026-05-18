@@ -36,15 +36,7 @@ export const nav: NavItem[] = [
   { label: "Factions", children: [
     "what-is-a-faction", "sovereignty-subfactions",
     "families-capitals",
-    { slug: "faction-moves", children: [
-      "action-capital-relocation",
-      "action-create-subfaction",
-      "action-faction-activity",
-      "action-sabotage",
-      "action-grow-followers",
-      "action-make-asset",
-      "action-plunder-settlement"
-    ]},
+    "faction-actions",
     "faction-resolution",
     "hidden-factions",
     "party-is-faction",
@@ -61,8 +53,13 @@ export const nav: NavItem[] = [
     "resources",
   ]},
   { label: "Magic", children: [
-    "magic-spell-dice-totems", "action-casting",
-    "using-corpses-spirits", "extracting-spirits", "ritual-cooking", "divination",
+    "what-magic-is",
+    "spell-dice-totems",
+    "spellcasting",
+    "using-corpses-spirits",
+    "extracting-spirits",
+    "ritual-cooking",
+    "divination",
   ]},
   { label: "Marketplace", children: [
     "on-prices-and-power", "debt-credit", "equipment", "retainers-hirelings", "construction-projects",

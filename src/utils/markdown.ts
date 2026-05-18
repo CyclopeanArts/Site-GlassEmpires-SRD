@@ -71,7 +71,7 @@ export function renderFullMarkdown(text: string): string {
     const headingMatch = trimmed.match(/^(#{2,4})\s+(.+)$/m);
     if (headingMatch) {
       const level = headingMatch[1].length;
-      const tag = `h${Math.min(level + 2, 6)}`;
+      const tag = `h${Math.min(level, 6)}`;
       parts.push(`<${tag} class="ref-clipping-heading">${mdToHtml(headingMatch[2])}</${tag}>`);
       continue;
     }

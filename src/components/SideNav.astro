@@ -2,6 +2,7 @@
 import { nav } from '../config/nav';
 import NavTree from './NavTree.astro';
 import EmailReveal from './EmailReveal.astro';
+import NavTreeNav from './NavTreeNav.astro';
 
 const { currentPath = '', id } = Astro.props;
 ---
@@ -11,6 +12,8 @@ const { currentPath = '', id } = Astro.props;
     <img src="/logo/main.webp" alt="Glass Empires" class="nav-logo" />
     <span class="nav-wordmark-sub">System Reference Document</span>
   </a>
+
+  <NavTreeNav {currentPath} />
 
   <div class="nav-scroll">
     <ul class="nav-list" id="nav-list">
@@ -105,7 +108,7 @@ const { currentPath = '', id } = Astro.props;
     display: block;
     font-family: 'Literata Variable', serif;
     font-variant-caps: small-caps;
-    font-size: 0.6em;
+    font-size: 0.7em;
     color: var(--nav-accent);
     letter-spacing: 0.15em;
     margin-top: 0.5em;

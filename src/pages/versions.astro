@@ -64,8 +64,8 @@ const ghReleaseUrl = (v: string) =>
 <BookLayout title="Download the SRD">
   <p>
     Each release of the Glass Empires SRD is available as a downloadable
-    offline archive. Unzip it and open <code>index.html</code> &mdash;
-    it works in any browser, no internet required.
+    offline archive. Unzip it and open <code>index.html</code>.
+    It works in any browser, no internet required. Good for if you want a stable copy that won't change when new updates are published.
   </p>
 
   <p>
@@ -77,7 +77,7 @@ const ghReleaseUrl = (v: string) =>
 
   {latest && (
     <>
-      <h2 id="latest">Latest Release &mdash; v{latest.version}</h2>
+      <h2 id="latest">Latest Release: v{latest.version}</h2>
       <p class="release-date">{latest.date}</p>
 
       <p>
@@ -87,11 +87,7 @@ const ghReleaseUrl = (v: string) =>
       </p>
 
       <p class="subscribe-cta">
-        Want release notifications?
-        <a href="https://sakiroku.com" target="_blank" rel="noopener">
-          Subscribe to Sakiroku
-        </a>
-        &mdash; I post about every new version there.
+        Want release notifications? <a href="https://sakiroku.com" target="_blank" rel="noopener">Subscribe to Sakiroku!</a> I post about every new version there.
       </p>
 
       {latest.sections.map((section) => (
@@ -141,7 +137,7 @@ const ghReleaseUrl = (v: string) =>
 
   {changelog.length > 0 && (
     <p class="subscribe-cta">
-      You can also email me at: <EmailReveal />
+      If you'd like to send me feedback, you can also email me at: <EmailReveal />
     </p>
   )}
 </BookLayout>
