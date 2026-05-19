@@ -91,6 +91,10 @@ export const nav: NavItem[] = [
     "religion-and-gods",
     { slug: "the-moon", children: ["getting-there-and-back", "lunarian-kingdom", "practical-role"] },
   ]},
+  { label: "GM's Guide", children: [
+    "braunsteins",
+    "gm-inspirations",
+  ]},
   { label: "Bestiary", children: [
     { label: "By Alphabetical", href: "/bestiary" },
     { label: "By Tag", href: "/bestiary/tags" },

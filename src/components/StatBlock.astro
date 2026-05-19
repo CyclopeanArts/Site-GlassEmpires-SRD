@@ -1,0 +1,187 @@
+---
+/**
+ * <StatBlock entry={entry} slugMap={slugMap} />
+ *
+ * Renders a full bestiary stat block from a content entry.
+ * Extracted from the old <Ref variant="stat">.
+ */
+import RollableTable from "./RollableTable.astro";
+
+const { entry, slugMap } = Astro.props;
+const _slugMap = slugMap ?? {};
+
+const d = entry?.data ?? null;
+if (!d) { return; }
+
+function mdToHtml(md) {
+  return (md ?? "")
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, s, lbl) => {
+      const found = _slugMap[s];
+      return '<a href="' + (found ? found.path : "/rules/" + s) + '">' + lbl + "</a>";
+    })
+    .replace(/\[\[([^\]]+)\]\]/g, (_, s) => {
+      const found = _slugMap[s];
+      return '<a href="' + (found ? found.path : "/rules/" + s) + '">' + (found ? found.title : s) + "</a>";
+    })
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>");
+}
+
+function renderFeatureText(text) {
+  const lines = text.split("\n");
+  const introParts = [];
+  const bulletParts = [];
+  let inBullets = false;
+  for (const line of lines) {
+    const t = line.trim();
+    if (!t) continue;
+    if (t.startsWith("- ")) {
+      inBullets = true;
+      bulletParts.push(t.slice(2));
+    } else if (!inBullets) {
+      introParts.push(t);
+    }
+  }
+  return {
+    intro: mdToHtml(introParts.join(" ")),
+    bullets: bulletParts.map(b => mdToHtml(b))
+  };
+}
+
+function renderLore(text) {
+  if (!text) return "";
+  const blocks = text.split(/\n\n+/);
+  const parts = [];
+  for (const block of blocks) {
+    const lines = block.split("\n");
+    const hasBullets = lines.some(l => l.trimStart().startsWith("- "));
+    if (hasBullets) {
+      const items = lines
+        .filter(l => l.trimStart().startsWith("- "))
+        .map(l => "<li>" + mdToHtml(l.trimStart().slice(2).trim()) + "</li>");
+      parts.push("<ul>" + items.join("\n") + "</ul>");
+    } else {
+      parts.push("<p>" + mdToHtml(block.replace(/\n/g, "<br>")) + "</p>");
+    }
+  }
+  return parts.join("\n");
+}
+
+function buildSpeeds(speeds) {
+  const parts = [];
+  if (speeds?.run)  parts.push({ label: "Run", value: speeds.run + "'" });
+  if (speeds?.fly)  parts.push({ label: "Fly", value: speeds.fly + "'" });
+  if (speeds?.swim) parts.push({ label: "Swim", value: speeds.swim + "'" });
+  if (speeds?.dig)  parts.push({ label: "Dig", value: speeds.dig + "'" });
+  return parts;
+}
+
+function computeBR(d) {
+  if (d.br !== undefined) return d.br;
+  const power = (d.level || 0) + d.hd;
+  const armorMult = 1 + ((d.armor || 0) / 4);
+  const dmgMult = d.damagemultiplier ?? 1;
+  const features = d.features || [];
+  const posSum = features.reduce((s, f) => s + (f.combat > 0 ? f.combat : 0), 0);
+  const negSum = features.reduce((s, f) => s + (f.combat < 0 ? Math.abs(f.combat) : 0), 0);
+  const featMult = (posSum + 1) / (negSum + 1);
+  return Math.round(power * armorMult * dmgMult * featMult);
+}
+
+const power = (d.level || 0) + d.hd;
+const hp = power * 4;
+const ap = d ? (d.armor || 0) * d.hd : 0;
+const br = computeBR(d);
+const speeds = buildSpeeds(d.speeds);
+const weight = d?.weight !== undefined ? d.weight + "#" : "";
+const maxload = d?.maxload !== undefined ? d.maxload + "#" : "";
+---
+
+<div class="ref-stat">
+  <table class="ref-stat-table">
+    <tbody>
+      <tr>
+        <td class="sb-label">Stats</td>
+        <td class="sb-data">
+          <span class="sb-stat"><strong>HD</strong>{" "}{d.hd}{" "}({hp}{ap > 0 ? " + " + ap + " AP" : ""})</span>
+          <span class="sb-stat"><strong>BR</strong>{" "}{br}</span>
+          {d.size !== undefined && d.size !== null && d.size !== false && <span class="sb-stat"><strong>Size</strong>{" "}{d.size}'</span>}
+          {weight && <span class="sb-stat"><strong>Weight</strong>{" "}{weight}</span>}
+          {maxload && <span class="sb-stat"><strong>Max. Load</strong>{" "}{maxload}</span>}
+          {speeds.length > 0 && speeds.map((s) => (
+            <span class="sb-stat"><strong>{s.label}</strong>{" "}{s.value}</span>
+          ))}
+        </td>
+      </tr>
+      {d.group     && <tr><td class="sb-label">Group</td>     <td class="sb-data" set:html={mdToHtml(d.group)}></td></tr>}
+      {d.desc  && <tr><td class="sb-label">Desc.</td>     <td class="sb-data" set:html={mdToHtml(d.desc)}></td></tr>}
+      {d.wants     && <tr><td class="sb-label">Wants</td>     <td class="sb-data" set:html={mdToHtml(d.wants)}></td></tr>}
+      {d.intellect && <tr><td class="sb-label">Intellect</td> <td class="sb-data" set:html={mdToHtml(d.intellect)}></td></tr>}
+      {d.morality  && <tr><td class="sb-label">Morality</td>  <td class="sb-data" set:html={mdToHtml(d.morality)}></td></tr>}
+    </tbody>
+  </table>
+
+  {d.features?.length > 0 && (
+    <div class="ref-stat-abilities">
+      <ul class="ability-list">
+        {d.features.map((a) => {
+          const { intro, bullets } = renderFeatureText(a.text);
+          return (
+            <li>
+            <strong>{a.name}</strong>: <span set:html={intro}></span>
+            {bullets.length > 0 && (
+            <ul class="ability-sub-list">
+            {bullets.map((b) => <li set:html={b}></li>)}
+            </ul>
+            )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  )}
+
+  {d.lore && (
+    <div class="ref-stat-lore" set:html={renderLore(d.lore)} />
+  )}
+
+  {d.treasure && (
+    <p class="ref-stat-treasure"><strong>Treasure</strong>: <span set:html={mdToHtml(d.treasure)}></span></p>
+  )}
+
+  {d.when_eaten && (
+    <div class="ref-when-eaten">
+      <div class="ref-when-eaten-head">When Eaten</div>
+      {d.when_eaten.flavor && <p class="ref-when-eaten-flavor" set:html={mdToHtml(d.when_eaten.flavor)}></p>}
+      {d.when_eaten.notes  && <p class="ref-when-eaten-notes" set:html={mdToHtml(d.when_eaten.notes)}></p>}
+      {d.when_eaten.table && (
+        <RollableTable
+          die={d.when_eaten.table.die}
+          entries={d.when_eaten.table.entries}
+          label={d.when_eaten.table.label || "Effects"}
+        />
+      )}
+    </div>
+  )}
+</div>
+
+<style>
+  .ref-stat { margin: 1.5em 0; }
+  .ref-stat-name { font-size: 2.2em; margin-bottom: 0.35em; }
+  .ref-stat-tags { display: flex; gap: 0.4em; flex-wrap: wrap; margin: 0 0 0.65em; text-indent: 0; }
+  .ref-stat-table { width: 100%; border-collapse: collapse; font-family: "Literata Variable", serif; font-size: 0.9em; }
+  .sb-label { font-variant-caps: small-caps; font-weight: 700; font-size: 1em; color: var(--text-soft); white-space: nowrap; padding: 0.4em 0.75em 0.4em 0; vertical-align: top; width: 6.5em; text-align: right; }
+  .sb-data { border-left: 1px solid var(--table-rule); padding: 0.4em 0 0.4em 0.85em; color: var(--text); vertical-align: top; }
+  .sb-stat { display: inline-block; margin-right: 0.65em; white-space: nowrap; }
+  .ref-stat-abilities { margin-top: 0.85em; padding-top: 0.65em; border-top: 1px solid var(--border); }
+  .ability-list { list-style: none; padding: 0; margin: 0; }
+  .ability-list > li { font-family: "Literata Variable", serif; font-size: 0.9em; line-height: 1.6; }
+  .ability-sub-list { list-style: none; padding: 0; margin: 0.35em 0 0 1em; }
+  .ref-stat-lore { margin-top: 1em; padding-top: 0.75em; border-top: 1px solid var(--border); font-size: 0.9em; color: var(--text); }
+  .ref-stat-lore p { margin: 0.5em 0; }
+  .ref-stat-treasure { font-family: "Literata Variable", serif; font-size: 0.9em; color: var(--text); margin: 0.85em 0 0 0; }
+  .ref-when-eaten { margin-top: 0.85em; padding: 0.7em 1em; background: var(--callout-rule-bg); border: 2px solid var(--callout-rule-bdr); border-radius: 0 0.25em 0.25em 0; font-family: "Literata Variable", serif; font-size: 0.9em; }
+  .ref-when-eaten-head { font-family: "Literata Variable", serif; font-variant-caps: small-caps; font-weight: 700; font-size: 1.25em; letter-spacing: 0.04em; color: var(--callout-rule-head); margin-bottom: 0.35em; }
+  .ref-when-eaten-flavor { font-style: italic; color: var(--flavor-col); margin: 0 0 0.3em; }
+  .ref-when-eaten-notes { margin: 0; color: var(--text); }
+</style>

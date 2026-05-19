@@ -29,7 +29,7 @@ const tierLabels: Record<string, string> = {
       <h2>{tierLabels[tier]}</h2>
       <div class="index-grid">
         {byTier[tier].map(s => (
-          <Ref collection="spirits" slug={s.id} variant="card" />
+          <Ref slug={s.id} />
         ))}
       </div>
     </section>

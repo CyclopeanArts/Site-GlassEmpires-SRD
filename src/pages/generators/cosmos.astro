@@ -109,3 +109,283 @@ const SECTIONS = Object.entries(COSMOS);
 ---
 
 <BookLayout title={title}>
+  <p class="gen-intro">
+    A table of random prompts for building a unique cosmology. Roll each section
+    for a cosmic truth, or roll all of them at once for a full creation myth.
+  </p>
+
+  <div class="gen-all-bar" id="roll-all" role="button" tabindex="0" aria-label="Generate all sections">
+    <div class="gen-all-icon" data-all-icon></div>
+    <div class="gen-all-label">Generate Cosmos</div>
+  </div>
+
+  <div class="gen-sections" id="gen-sections">
+    {SECTIONS.map(([key, section]) => (
+      <div class="gs-wrap" id={"gs-" + key} data-skey={key} data-entries={JSON.stringify(section.rows)}>
+        <hr class="gs-rule" aria-hidden="true" />
+        <div class="gs-bar" data-gs-bar role="button" tabindex="0" aria-label={'Roll ' + section.label}>
+          <div class="gs-controls">
+            <div class="gs-bar-icon" data-gs-icon role="button" tabindex="0" aria-label={'Roll ' + section.label}></div>
+            <button class="gs-toggle" type="button" data-gs-toggle aria-label="Show options" aria-expanded="false">
+              <svg class="gs-toggle-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="8" y1="3" x2="8" y2="13" />
+                <line x1="3" y1="8" x2="13" y2="8" />
+              </svg>
+            </button>
+          </div>
+          <div class="gs-result-area">
+            <div class="gs-result-label" data-gs-label>{section.label}</div>
+            <div class="gs-result-text" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="gs-table-wrap" data-gs-body hidden>
+          <table class="gs-table">
+            <thead>
+              <tr>
+                <th class="gs-roll-head">#</th>
+                <th class="gs-result-head">Option A</th>
+                <th class="gs-result-head">Option B</th>
+              </tr>
+            </thead>
+            <tbody>
+              {section.rows.map((row, i) => (
+                <tr data-idx={i}>
+                  <td class="gs-roll-cell">{i + 1}</td>
+                  <td class="gs-result-cell">{row[0]}</td>
+                  <td class="gs-result-cell">{row[1]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ))}
+  </div>
+</BookLayout>
+
+<script is:inline>
+(function() {
+  const faceFiles = ['one', 'two', 'three', 'four', 'five', 'six'];
+
+  function randomFaceIcon(el) {
+    if (!el) return;
+    const i = Math.floor(Math.random() * 6);
+    const url = '/icons/dice-six-faces-' + faceFiles[i] + '.svg';
+    el.style.mask = 'url(' + url + ') center / contain no-repeat';
+    el.style.webkitMask = 'url(' + url + ') center / contain no-repeat';
+  }
+
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function rollSections(key) {
+    const wrap = document.getElementById('gs-' + key);
+    if (!wrap) return;
+    const entries = JSON.parse(wrap.dataset.entries || '[]');
+    const row = pick(entries);
+    const icon = wrap.querySelector('[data-gs-icon]');
+    const text = wrap.querySelector('.gs-result-text');
+    const table = wrap.querySelector('.gs-table');
+
+    if (icon) {
+      randomFaceIcon(icon);
+      icon.classList.add('gs-spin');
+      setTimeout(function() { icon.classList.remove('gs-spin'); }, 400);
+    }
+
+    table?.querySelectorAll('[data-idx]').forEach(function(r) {
+      r.classList.toggle('gs-hit', parseInt(r.dataset.idx, 10) === entries.indexOf(row));
+    });
+
+    if (text) {
+      text.innerHTML = '<div class="gs-row"><div class="gs-opt">' + row[0] + '</div><div class="gs-or">or</div><div class="gs-opt">' + row[1] + '</div></div>';
+    }
+  }
+
+  function rollAll() {
+    document.querySelectorAll('[data-gs-bar]').forEach(function(bar) {
+      const key = bar.closest('[data-skey]')?.dataset.skey;
+      if (key) rollSections(key);
+    });
+    const icon = document.querySelector('[data-all-icon]');
+    if (icon) {
+      randomFaceIcon(icon);
+      icon.classList.add('gs-spin');
+      setTimeout(function() { icon.classList.remove('gs-spin'); }, 400);
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    const toggle = e.target.closest('[data-gs-toggle]');
+    const icon = e.target.closest('[data-gs-icon]');
+    const bar = e.target.closest('[data-gs-bar]');
+    const bodyWrap = e.target.closest('[data-gs-body]');
+    const allBar = e.target.closest('#roll-all');
+
+    if (allBar) { rollAll(); return; }
+
+    if (toggle) {
+      const wrap = toggle.closest('[data-skey]');
+      const body = wrap?.querySelector('[data-gs-body]');
+      if (!body) return;
+      const expanded = !body.hidden;
+      body.hidden = expanded;
+      const iconEl = toggle.querySelector('.gs-toggle-icon');
+      if (iconEl) {
+        iconEl.innerHTML = expanded
+          ? '<line x1="8" y1="3" x2="8" y2="13" /><line x1="3" y1="8" x2="13" y2="8" />'
+          : '<line x1="3" y1="8" x2="13" y2="8" />';
+      }
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      toggle.setAttribute('aria-label', expanded ? 'Show options' : 'Hide options');
+      return;
+    }
+
+    if (bar || icon || bodyWrap) {
+      const wrap = (bar || icon || bodyWrap).closest('[data-skey]');
+      if (wrap) rollSections(wrap.dataset.skey);
+      return;
+    }
+  });
+})();
+</script>
+
+<style>
+  .gen-intro { font-style: italic; color: var(--text-muted); margin-bottom: 2em; max-width: 36em; }
+
+  .gen-all-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75em;
+    padding: 0.5em 0.75em;
+    cursor: pointer;
+    border: 1px solid var(--gold-ui);
+    border-radius: 0.25em;
+    margin-bottom: 1.2em;
+    transition: background 0.15s;
+  }
+  .gen-all-bar:hover { background: rgba(196,146,52,0.1); }
+  .gen-all-icon {
+    width: 1.8em; height: 1.8em;
+    background: var(--gold-400);
+    mask: url(/icons/dice-six-faces-one.svg) center / contain no-repeat;
+    -webkit-mask: url(/icons/dice-six-faces-one.svg) center / contain no-repeat;
+    flex-shrink: 0;
+  }
+  .gen-all-label {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+    font-size: 0.85em;
+    letter-spacing: 0.12em;
+    color: var(--gold-300);
+  }
+
+  .gs-rule {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-400), transparent);
+    margin: 1.2em 0;
+  }
+  .gs-bar {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75em;
+    padding: 0.5em 0.5em;
+    cursor: pointer;
+    border-radius: 0.25em;
+    transition: background 0.2s;
+  }
+  .gs-bar:hover { background: color-mix(in srgb, var(--callout-ex-bg) 50%, transparent); }
+  .gs-controls {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35em;
+  }
+  .gs-bar-icon {
+    width: 1.8em; height: 1.8em;
+    background: var(--link-col);
+    mask: url(/icons/dice-six-faces-one.svg) center / contain no-repeat;
+    -webkit-mask: url(/icons/dice-six-faces-one.svg) center / contain no-repeat;
+    cursor: pointer;
+    transition: background 0.15s;
+    flex-shrink: 0;
+  }
+  .gs-bar-icon:hover { background: var(--accent); }
+  @keyframes gs-spin {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(0.85); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+  .gs-spin { animation: gs-spin 0.4s ease-in-out; }
+
+  .gs-toggle {
+    display: flex; align-items: center; justify-content: center;
+    width: 2em; height: 2em; padding: 0;
+    color: var(--link-col); background: none; border: none;
+    border-top: 1.5px solid var(--gold-400);
+    border-bottom: 1.5px solid var(--gold-400);
+    border-radius: 0.4em; cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .gs-toggle:hover { color: var(--accent); border-color: var(--accent); }
+  .gs-toggle-icon { width: 0.85em; height: 0.85em; }
+
+  .gs-result-area {
+    flex: 1; min-width: 0;
+    display: flex; flex-direction: column; gap: 0.15em;
+  }
+  .gs-result-label {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-variant-caps: small-caps; font-weight: 700;
+    font-size: 1em; letter-spacing: 0.06em;
+    color: var(--text-soft); line-height: 1.2;
+  }
+  .gs-result-text {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-size: 0.92em; color: var(--text);
+    line-height: 1.5; min-height: 1.5em;
+  }
+  .gs-row { display: flex; gap: 0.75em; align-items: stretch; }
+  .gs-opt {
+    flex: 1; padding: 0.5em 0.6em;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 0.2em;
+    line-height: 1.55;
+  }
+  .gs-or {
+    flex-shrink: 0; display: flex; align-items: center;
+    padding: 0 0.2em;
+    font-size: 0.75em; font-style: italic;
+    font-variant-caps: small-caps;
+    color: var(--text-muted);
+  }
+
+  .gs-table-wrap { padding-top: 0.65em; cursor: pointer; }
+  .gs-table-wrap:hover { background: color-mix(in srgb, var(--callout-ex-bg) 30%, transparent); border-radius: 0.25em; }
+  .gs-table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+  .gs-table thead tr { border-bottom: 1px solid var(--table-rule); }
+  .gs-table th {
+    font-variant-caps: small-caps; font-weight: 700;
+    padding: 0.45em 0.75em; color: var(--text-soft); text-align: left;
+  }
+  .gs-table td { padding: 0.35em 0.75em; color: var(--text); vertical-align: top; }
+  .gs-table tbody tr:not(:last-child) { border-bottom: 1px solid var(--border); }
+  .gs-roll-head { width: 3em; text-align: center; }
+  .gs-roll-cell { text-align: center; white-space: nowrap; }
+
+  @keyframes gs-fadein {
+    from { background: transparent; border-left-color: transparent; text-shadow: none; }
+    to { background: color-mix(in srgb, var(--callout-ex-bg) 60%, transparent); border-left-color: var(--callout-ex-bdr); text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 40%, transparent); }
+  }
+  .gs-table tr.gs-hit {
+    background: color-mix(in srgb, var(--callout-ex-bg) 60%, transparent);
+    border-left: 3px solid var(--callout-ex-bdr);
+    animation: gs-fadein 0.3s ease-out;
+  }
+  .gs-table tr.gs-hit td:first-child { font-weight: 700; color: var(--callout-ex-head); }
+  .gs-table tr.gs-hit td:last-child { color: var(--accent); }
+  .gs-table tr.gs-hit td { text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 40%, transparent); }
+</style>

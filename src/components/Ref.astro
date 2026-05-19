@@ -1,672 +1,105 @@
 ---
 /**
- * <Ref collection="actions" slug="action-attack" variant="inline" />
- * <Ref collection="bestiary" slug="jiangshi" variant="card" />
- * <Ref collection="conditions" slug="panicked" variant="tooltip" />
+ * <Ref slug="action-hunting" />
  *
- * Renders whatever fields are present in the entry — nothing is assumed.
- * variant:
- *   "inline"  — paper-clipping document embed (default)
- *   "card"    — compact paper-clipping for index pages
- *   "tooltip" — anchor with hover summary (for <Term> usage)
- *   "stat"    — bestiary stat block format
+ * Cross-references a content entry by slug. Looks up the collection
+ * from slug-resolver. Renders a paper-clipping card with name, tags,
+ * and available fields (duration, cost, trigger, save, rules).
+ *
+ * Props:
+ *   slug     - the file slug (e.g. "action-hunting", "bear")
+ *   label    - optional override for the display name
+ *   linkSlug - optional override for the href slug
  *
  * If the entry isn't found, renders plain text with an HTML comment.
- * Build does not fail on missing entries.
  */
+import { getEntry } from "astro:content";
+import { getSlugMap } from "../config/slug-resolver.js";
+import { renderFullMarkdown } from "../utils/markdown.js";
 
-import { getEntry } from 'astro:content';
-import { getSlugMap } from '../config/slug-resolver.js';
-import RollableTable from './RollableTable.astro';
-import { mdToHtml, wikilinksToHtml, renderFullMarkdown, renderTableBlock } from '../utils/markdown.js';
-
-const { collection, slug, variant = 'inline', label, linkSlug } = Astro.props;
+const { slug, label, linkSlug } = Astro.props;
 const hrefSlug = linkSlug ?? slug;
 
 const _slugMap = getSlugMap();
+const slugInfo = _slugMap[slug];
+const collection = slugInfo ? slugInfo.path.split("/")[1] : null;
 
 const collectionLabel =
-  collection === 'actions'    ? 'Action'
-  : collection === 'conditions' ? 'Condition'
-  : collection === 'spirits'    ? 'Spirit'
-  : collection === 'bestiary'   ? 'Creature'
-  : collection === 'tables'     ? 'Table'
-  : collection.charAt(0).toUpperCase() + collection.slice(1).replace(/^\w/, c => c.toLowerCase());
+  collection === "actions"    ? "Action"
+  : collection === "conditions" ? "Condition"
+  : collection === "spirits"    ? "Spirit"
+  : collection === "bestiary"   ? "Creature"
+  : collection === "tables"     ? "Table"
+  : collection
+    ? collection.charAt(0).toUpperCase() + collection.slice(1).replace(/^\w/, c => c.toLowerCase())
+    : "";
 
-function renderFeatureText(text: string): { intro: string; bullets: string[] } {
-  const lines = text.split('\n');
-  const introParts: string[] = [];
-  const bulletParts: string[] = [];
-  let inBullets = false;
-  for (const line of lines) {
-    const t = line.trim();
-    if (!t) continue;
-    if (t.startsWith('- ')) {
-      inBullets = true;
-      bulletParts.push(t.slice(2));
-    } else if (!inBullets) {
-      introParts.push(t);
-    }
-  }
-  return {
-    intro: mdToHtml(introParts.join(' ')),
-    bullets: bulletParts.map(b => mdToHtml(b))
-  };
-}
-
-function renderTableBlock(text: string): string {
-  const lines = text.split('\n').filter(l => l.trim());
-  if (lines.length < 2) return text;
-
-  const headerMatch = lines[0].match(/^\|(.+)\|$/);
-  if (!headerMatch) return text;
-
-  const headers = headerMatch[1].split('|').map(h => h.trim());
-  const bodyRows = lines.slice(2).filter(l => l.match(/^\|.+\|$/));
-
-  let html = '<table class="ref-clipping-table"><thead><tr>';
-  for (const h of headers) {
-    html += `<th>${h.replace(/\*(\*?.+?\*?)\*/g, '<strong>$1</strong>')}</th>`;
-  }
-  html += '</tr></thead><tbody>';
-  for (const row of bodyRows) {
-    const cells = row.split('|').filter((_, i, a) => i > 0 && i < a.length - 1).map(c => c.trim());
-    html += '<tr>';
-    for (const cell of cells) {
-      const rendered = mdToHtml(cell);
-      html += `<td>${rendered}</td>`;
-    }
-    html += '</tr>';
-  }
-  html += '</tbody></table>';
-  return html;
-}
-
-function renderFullMarkdown(text: string): string {
-  // Split into blocks by double newlines
-  const blocks = text.split(/\n\n+/);
-  const parts: string[] = [];
-
-  for (const block of blocks) {
-    const trimmed = block.trim();
-    if (!trimmed) continue;
-
-    const lines = trimmed.split('\n');
-
-    // Table detection: first non-empty line starts and ends with |
-    if (lines.some(l => l.trim().match(/^\|.+\|$/))) {
-      parts.push(renderTableBlock(trimmed));
-      continue;
-    }
-
-    // Heading detection
-    const headingMatch = trimmed.match(/^(#{2,4})\s+(.+)$/m);
-    if (headingMatch) {
-      const level = headingMatch[1].length; // ## = 2, ### = 3, etc.
-      const tag = `h${Math.min(level, 6)}`; // ## → h2, ### → h3
-      parts.push(`<${tag} class="ref-clipping-heading">${mdToHtml(headingMatch[2])}</${tag}>`);
-      continue;
-    }
-
-    // Ordered list detection
-    const hasOrderedItems = lines.some(l => l.trim().match(/^\d+\.\s/));
-    if (hasOrderedItems) {
-      const items = lines
-        .filter(l => l.trim().match(/^\d+\.\s/))
-        .map(l => `<li>${mdToHtml(l.trim().replace(/^\d+\.\s/, ''))}</li>`);
-      parts.push(`<ol>${items.join('\n')}</ol>`);
-      continue;
-    }
-
-    // Unordered list detection
-    const hasListItems = lines.some(l => l.trim().match(/^[-*]\s/));
-    if (hasListItems) {
-      const items = lines
-        .filter(l => l.trim().match(/^[-*]\s/))
-        .map(l => `<li>${mdToHtml(l.trim().replace(/^[-*]\s/, ''))}</li>`);
-      parts.push(`<ul>${items.join('\n')}</ul>`);
-      continue;
-    }
-
-    // Callout detection (<Callout type=...)
-    // Pass through as-is — it's an Astro component already rendered
-    if (trimmed.startsWith('<Callout') || trimmed.startsWith('</Callout')) {
-      parts.push(trimmed);
-      continue;
-    }
-
-    // Regular paragraph
-    // Check if there are <br> tags (from single newlines in a paragraph block)
-    const withBreaks = trimmed.replace(/\n/g, '<br>');
-    parts.push(`<p>${mdToHtml(withBreaks)}</p>`);
-  }
-
-  return parts.join('\n');
-}
-
-function wikilinksToHtml(text: string): string {
-  return text
-    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, s, lbl) => {
-      const found = _slugMap[s];
-      return `<a href="${found ? found.path : '/rules/' + s}">${lbl}</a>`;
-    })
-    .replace(/\[\[([^\]]+)\]\]/g, (_, s) => {
-      const found = _slugMap[s];
-      return `<a href="${found ? found.path : '/rules/' + s}">${found ? found.title : s}</a>`;
-    });
-}
-
-function mdToHtml(md: string): string {
-  return wikilinksToHtml(md)
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>');
-}
-
-function renderLore(text: string): string {
-  const blocks = text.split(/\n\n+/);
-  const parts: string[] = [];
-  for (const block of blocks) {
-    const lines = block.split('\n');
-    const hasBullets = lines.some(l => l.trimStart().startsWith('- '));
-    if (hasBullets) {
-      const items = lines
-        .filter(l => l.trimStart().startsWith('- '))
-        .map(l => `<li>${mdToHtml(l.trimStart().slice(2).trim())}</li>`);
-      parts.push(`<ul>${items.join('\n')}</ul>`);
-    } else {
-      parts.push(`<p>${mdToHtml(block.replace(/\n/g, '<br>'))}</p>`);
-    }
-  }
-  return parts.join('\n');
-}
-
-function buildSpeeds(speeds: any): { label: string; value: string }[] {
-  const parts: { label: string; value: string }[] = [];
-  if (speeds?.run)  parts.push({ label: 'Run', value: `${speeds.run}'` });
-  if (speeds?.fly)  parts.push({ label: 'Fly', value: `${speeds.fly}'` });
-  if (speeds?.swim) parts.push({ label: 'Swim', value: `${speeds.swim}'` });
-  if (speeds?.dig)  parts.push({ label: 'Dig', value: `${speeds.dig}'` });
-  return parts;
-}
-
-function computeBR(d: any): number | string {
-  if (d.br !== undefined) return d.br;
-  const power = (d.level || 0) + d.hd;
-  const armorMult = 1 + ((d.armor || 0) / 4);
-  const dmgMult = d.damagemultiplier ?? 1;
-  const features = d.features || [];
-  const posSum = features.reduce((s: number, f: any) => s + (f.combat > 0 ? f.combat : 0), 0);
-  const negSum = features.reduce((s: number, f: any) => s + (f.combat < 0 ? Math.abs(f.combat) : 0), 0);
-  const featMult = (posSum + 1) / (negSum + 1);
-  return Math.round(power * armorMult * dmgMult * featMult);
-}
-
-function formatSave(d: any): string {
-  if (!d.save) return '';
-  if (typeof d.save === 'string') return d.save;
-  return d.save.type || '';
-}
-
-
-
-let entry: any = null;
-try {
-  entry = await getEntry(collection, slug);
-} catch {
-  // entry not found — handled below
+let entry = null;
+if (collection) {
+  try {
+    entry = await getEntry(collection, slug);
+  } catch {}
 }
 
 const d = entry?.data ?? null;
 const displayName = d?.name ?? label ?? slug;
 
-const hasStatFields = d && d.hd !== undefined;
-const effectiveVariant = variant === 'inline' && hasStatFields ? 'stat' : variant;
-
-// Derived stats
-const power = d ? (d.level || 0) + d.hd : 0;
-const hp = power * 4;
-const ap = d ? (d.armor || 0) * d.hd : 0;
-const br = d ? computeBR(d) : 0;
-const speeds = d ? buildSpeeds(d.speeds) : '';
-const weight = d?.weight !== undefined ? `${d.weight}#` : '';
-const maxload = d?.maxload !== undefined ? `${d.maxload}#` : '';
+function formatSave(d) {
+  if (!d?.save) return "";
+  if (typeof d.save === "string") return d.save;
+  return d.save.type || "";
+}
 ---
 
 {!d && (
   <>
-    <!-- TODO: missing Ref — collection="{collection}" slug="{slug}" -->
+    <!-- TODO: missing Ref -- slug="{slug}" -->
     <span class="ref-missing">{displayName}</span>
   </>
 )}
 
-{d && effectiveVariant === 'tooltip' && (
-  <a
-    href={`/${collection}/${hrefSlug}`}
-    class="ref-term"
-    data-tooltip=""
-    aria-description=""
-  >
-    {displayName}
-  </a>
-)}
-
-{d && effectiveVariant === 'card' && (
-  <div class="ref-clipping ref-clipping-card">
-    <div class="ref-clipping-scrollbar"></div>
-    <div class="ref-clipping-body">
-      <div class="ref-clipping-header-row">
-        <div class="ref-clipping-name">{displayName}</div>
-        <a href={`/${collection}/${hrefSlug}`} class="ref-clipping-link">View full {collectionLabel}</a>
-      </div>
-      {d.tags?.length > 0 && (
-        <div class="ref-clipping-tags">
-          {d.tags.map((t: string) => <span class="ref-tag">{t}</span>)}
-        </div>
-      )}
-      {d.duration && <p class="ref-clipping-field"><strong>Duration:</strong> {d.duration}</p>}
-      {d.cost && <p class="ref-clipping-field"><strong>Cost:</strong> {d.cost}</p>}
-    </div>
-    <div class="ref-clipping-scrollbar"></div>
-  </div>
-)}
-
-
-{d && effectiveVariant === 'page' && (
-  <div class="ref-page">
-    <div class="ref-page-name">{displayName}</div>
-    {d.tags?.length > 0 && (
-      <div class="ref-clipping-tags">
-        {d.tags.map((t: string) => <span class="ref-tag">{t}</span>)}
-      </div>
-    )}
-    {d.duration && <p class="ref-clipping-field"><strong>Duration:</strong> {d.duration}</p>}
-    {d.cost && <p class="ref-clipping-field"><strong>Cost:</strong> {d.cost}</p>}
-    {d.trigger && <p class="ref-clipping-field"><strong>Trigger:</strong> {d.trigger}</p>}
-    {formatSave(d) && <p class="ref-clipping-field"><strong>Save:</strong> {formatSave(d)}</p>}
-    {d.rules && <div class="ref-page-rules" set:html={renderFullMarkdown(d.rules)} />}
-    {d.definition && <div class="ref-page-rules" set:html={renderFullMarkdown(d.definition)} />}
-  </div>
-)}
-{d && effectiveVariant === 'inline' && (
+{d && (
   <div class="ref-clipping">
     <div class="ref-clipping-scrollbar"></div>
     <div class="ref-clipping-body">
       <div class="ref-clipping-header-row">
         <div class="ref-clipping-name">{displayName}</div>
-        <a href={`/${collection}/${hrefSlug}`} class="ref-clipping-link">View full {collectionLabel}</a>
+        <a href={"/" + collection + "/" + hrefSlug} class="ref-clipping-link">View full {collectionLabel}</a>
       </div>
       {d.tags?.length > 0 && (
         <div class="ref-clipping-tags">
-          {d.tags.map((t: string) => <span class="ref-tag">{t}</span>)}
+          {d.tags.map((t) => <span class="ref-tag">{t}</span>)}
         </div>
       )}
       {d.duration && <p class="ref-clipping-field"><strong>Duration:</strong> {d.duration}</p>}
       {d.cost && <p class="ref-clipping-field"><strong>Cost:</strong> {d.cost}</p>}
       {d.trigger && <p class="ref-clipping-field"><strong>Trigger:</strong> {d.trigger}</p>}
       {formatSave(d) && <p class="ref-clipping-field"><strong>Save:</strong> {formatSave(d)}</p>}
-      {d.rules && <div class="ref-clipping-rules" set:html={renderFullMarkdown(d.rules)} />}
-      {d.definition && <div class="ref-clipping-rules" set:html={renderFullMarkdown(d.definition)} />}
+      {d.rules && <div class="ref-clipping-rules" set:html={renderFullMarkdown(d.rules, _slugMap)} />}
+      {d.definition && <div class="ref-clipping-rules" set:html={renderFullMarkdown(d.definition, _slugMap)} />}
     </div>
     <div class="ref-clipping-scrollbar"></div>
   </div>
 )}
 
-{d && effectiveVariant === 'stat' && (
-  <div class="ref-stat">
-    <table class="ref-stat-table">
-      <tbody>
-        <tr>
-          <td class="sb-label">Stats</td>
-          <td class="sb-data">
-            <span class="sb-stat"><strong>HD</strong>{' '}{d.hd}{' '}({hp}{ap > 0 ? ` + ${ap} AP` : ''})</span>
-            <span class="sb-stat"><strong>BR</strong>{' '}{br}</span>
-            {d.size !== undefined && d.size !== null && d.size !== false && <span class="sb-stat"><strong>Size</strong>{' '}{d.size}'</span>}
-            {weight && <span class="sb-stat"><strong>Weight</strong>{' '}{weight}</span>}
-            {maxload && <span class="sb-stat"><strong>Max. Load</strong>{' '}{maxload}</span>}
-            {speeds.length > 0 && speeds.map((s: { label: string; value: string }) => (
-              <span class="sb-stat"><strong>{s.label}</strong>{' '}{s.value}</span>
-            ))}
-          </td>
-        </tr>
-        {d.group     && <tr><td class="sb-label">Group</td>     <td class="sb-data" set:html={mdToHtml(d.group)}></td></tr>}
-        {d.desc && <tr><td class="sb-label">Desc.</td>     <td class="sb-data" set:html={mdToHtml(d.desc)}></td></tr>}
-        {d.wants     && <tr><td class="sb-label">Wants</td>     <td class="sb-data" set:html={mdToHtml(d.wants)}></td></tr>}
-        {d.intellect && <tr><td class="sb-label">Intellect</td> <td class="sb-data" set:html={mdToHtml(d.intellect)}></td></tr>}
-        {d.morality  && <tr><td class="sb-label">Morality</td>  <td class="sb-data" set:html={mdToHtml(d.morality)}></td></tr>}
-      </tbody>
-    </table>
-
-    {d.features?.length > 0 && (
-      <div class="ref-stat-abilities">
-        <ul class="ability-list">
-          {d.features.map((a: { name: string; text: string }) => {
-            const { intro, bullets } = renderFeatureText(a.text);
-            return (
-              <li>
-              <strong>{a.name}</strong>: <span set:html={intro}></span>
-              {bullets.length > 0 && (
-              <ul class="ability-sub-list">
-              {bullets.map((b: string) => <li set:html={b}></li>)}
-              </ul>
-              )}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    )}
-
-    {d.lore && (
-      <div class="ref-stat-lore" set:html={renderLore(d.lore)} />
-    )}
-
-    {d.treasure && (
-      <p class="ref-stat-treasure"><strong>Treasure</strong>: <span set:html={mdToHtml(d.treasure)}></span></p>
-    )}
-
-    {d.when_eaten && (
-      <div class="ref-when-eaten">
-        <div class="ref-when-eaten-head">When Eaten</div>
-        {d.when_eaten.flavor && <p class="ref-when-eaten-flavor" set:html={mdToHtml(d.when_eaten.flavor)}></p>}
-        {d.when_eaten.notes  && <p class="ref-when-eaten-notes" set:html={mdToHtml(d.when_eaten.notes)}></p>}
-        {d.when_eaten.table && (
-          <RollableTable
-            die={d.when_eaten.table.die}
-            entries={d.when_eaten.table.entries}
-            label={d.when_eaten.table.label || 'Effects'}
-          />
-        )}
-      </div>
-    )}
-  </div>
-)}
-
 <style>
-  /* ── Missing reference ─────────────────────────────── */
-  .ref-missing {
-    color: var(--crimson-600);
-    text-decoration: underline dotted;
-    cursor: help;
-  }
-  .ref-missing::after { content: ' [?]'; font-size: 0.8em; opacity: 0.6; }
-
-  /* ── Tooltip anchor ────────────────────────────────── */
-  .ref-term {
-    color: var(--link-col);
-    text-decoration: underline dotted;
-    position: relative;
-    cursor: help;
-  }
-  .ref-term[data-tooltip]:not([data-tooltip=''])::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: calc(100% + 0.5em);
-    left: 0;
-    min-width: 14em;
-    max-width: 22em;
-    background: var(--nav-bg);
-    color: var(--nav-text);
-    padding: 0.55em 0.75em;
-    border-radius: 0.25em;
-    font-size: 0.82em;
-    line-height: 1.5;
-    z-index: 50;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.15s;
-    border: 1px solid rgba(196,146,52,0.3);
-    white-space: normal;
-  }
-  .ref-term[data-tooltip]:hover::after { opacity: 1; }
-
-  /* ── Shared tag badge ──────────────────────────────── */
-  .ref-tag {
-    font-size: 0.68em;
-    font-family: 'Literata Variable', serif;
-    text-transform: capitalize; font-variant-caps: small-caps;
-    font-weight: 700;
-    padding: 0.15em 0.6em;
-    background: var(--bg-elevated);
-    color: var(--text-muted);
-    border-radius: 0.2em;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.2;
-  }
-
-  /* ── Paper clipping container ──────────────────────── */
-  .ref-clipping {
-    margin: 1.5em 0;
-    position: relative;
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border);
-    overflow: visible;
-    font-family: 'Literata Variable', serif;
-    font-size: 0.9em;
-  }
-  .ref-clipping-scrollbar:first-child {
-    position: absolute;
-    top: -1px;
-    left: -0.2em;
-    width: calc(100% + 0.4em);
-    height: 0.3em;
-    background: var(--border-strong);
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    z-index: 2;
-  }
-  .ref-clipping-scrollbar:last-child {
-    position: absolute;
-    bottom: -1px;
-    left: -0.2em;
-    width: calc(100% + 0.4em);
-    height: 0.3em;
-    background: var(--border-strong);
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    z-index: 2;
-  }
-
-  [data-theme="dark"] .ref-clipping-scrollbar:first-child,
-  [data-theme="dark"] .ref-clipping-scrollbar:last-child {
-    background: var(--gold-600);
-  }
-
-  .ref-clipping-body {
-    position: relative;
-    z-index: 1;
-    padding: 0.85em 1.1em 0.5em;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
-  }
-
-  .ref-clipping-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.2em;
-  }
-  .ref-clipping-name {
-    font-family: 'Literata Variable', serif;
-    font-variant-caps: small-caps;
-    font-weight: 700;
-    font-size: 1.3em;
-    color: var(--heading-col);
-  }
-  .ref-clipping-link {
-    font-size: 0.75em;
-    color: var(--link-col);
-    text-decoration: none;
-    font-weight: 500;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-left: 0.5em;
-  }
-  .ref-clipping-link:hover {
-    text-decoration: underline;
-  }
-
-  .ref-clipping-tags {
-    display: flex;
-    gap: 0.4em;
-    flex-wrap: wrap;
-    margin-bottom: 0.5em;
-  }
-
-  .ref-clipping-link {
-
-    font-size: 0.75em;
-    color: var(--link-col);
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 0.3em;
-  }
-  .ref-clipping-link:hover {
-    text-decoration: underline;
-  }
-
-  .ref-clipping-field {
-    font-size: 0.92em;
-    color: var(--text-soft);
-    margin: 0.15em 0;
-    line-height: 1.5;
-  }
-  .ref-clipping-field strong {
-    color: var(--text);
-    font-weight: 600;
-    margin-right: 0.25em;
-  }
-
-  .ref-clipping-rules {
-    font-size: 0.92em;
-    color: var(--text);
-    margin-top: 0.6em;
-    line-height: 1.65;
-    clear: both;
-  }
+  .ref-missing { color: var(--crimson-600); text-decoration: underline dotted; cursor: help; }
+  .ref-missing::after { content: " [?]"; font-size: 0.8em; opacity: 0.6; }
+  .ref-tag { font-size: 0.68em; font-family: "Literata Variable", serif; text-transform: capitalize; font-variant-caps: small-caps; font-weight: 700; padding: 0.15em 0.6em; background: var(--bg-elevated); color: var(--text-muted); border-radius: 0.2em; display: inline-flex; align-items: center; justify-content: center; line-height: 1.2; }
+  .ref-clipping { margin: 1.5em 0; position: relative; background-color: var(--bg-surface); border: 1px solid var(--border); overflow: visible; font-family: "Literata Variable", serif; font-size: 0.9em; }
+  .ref-clipping-scrollbar:first-child { position: absolute; top: -1px; left: -0.2em; width: calc(100% + 0.4em); height: 0.3em; background: var(--border-strong); box-shadow: 3px 3px 6px rgba(0,0,0,0.5); z-index: 2; }
+  .ref-clipping-scrollbar:last-child { position: absolute; bottom: -1px; left: -0.2em; width: calc(100% + 0.4em); height: 0.3em; background: var(--border-strong); box-shadow: 3px 3px 6px rgba(0,0,0,0.5); z-index: 2; }
+  [data-theme="dark"] .ref-clipping-scrollbar:first-child, [data-theme="dark"] .ref-clipping-scrollbar:last-child { background: var(--gold-600); }
+  .ref-clipping-body { position: relative; z-index: 1; padding: 0.85em 1.1em 0.5em; box-shadow: 3px 3px 10px rgba(0,0,0,0.5); }
+  .ref-clipping-header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.2em; }
+  .ref-clipping-name { font-family: "Literata Variable", serif; font-variant-caps: small-caps; font-weight: 700; font-size: 1.3em; color: var(--heading-col); }
+  .ref-clipping-link { font-size: 0.75em; color: var(--link-col); text-decoration: none; font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 0.5em; }
+  .ref-clipping-link:hover { text-decoration: underline; }
+  .ref-clipping-tags { display: flex; gap: 0.4em; flex-wrap: wrap; margin-bottom: 0.5em; }
+  .ref-clipping-field { font-size: 0.92em; color: var(--text-soft); margin: 0.15em 0; line-height: 1.5; }
+  .ref-clipping-field strong { color: var(--text); font-weight: 600; margin-right: 0.25em; }
+  .ref-clipping-rules { font-size: 0.92em; color: var(--text); margin-top: 0.6em; line-height: 1.65; clear: both; }
   .ref-clipping-rules p { margin: 0.5em 0; }
-  .ref-clipping-rules ul,
-  .ref-clipping-rules ol { margin: 0.4em 0; padding-left: 1.4em; }
+  .ref-clipping-rules ul, .ref-clipping-rules ol { margin: 0.4em 0; padding-left: 1.4em; }
   .ref-clipping-rules :global(li) { margin: 0.15em 0; }
-
-  :global(.ref-clipping-heading) {
-    font-family: 'Literata Variable', serif;
-    font-weight: 700;
-    color: var(--heading-col);
-    margin: 0.8em 0 0.3em;
-    font-variant-caps: small-caps;
-  }
-  .ref-clipping-rules :global(h2) { font-size: 1.05em; }
-  .ref-clipping-rules :global(h3) { font-size: 0.95em; }
-  .ref-clipping-rules :global(h4) { font-size: 0.9em; }
-
-  .ref-clipping-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9em;
-    margin: 0.5em 0;
-  }
-  .ref-clipping-table th {
-    font-variant-caps: small-caps;
-    font-weight: 700;
-    text-align: left;
-    padding: 0.35em 0.5em;
-    border-bottom: 2px solid var(--border);
-    color: var(--text-soft);
-  }
-  .ref-clipping-table td {
-    padding: 0.3em 0.5em;
-    border-bottom: 1px solid var(--table-rule);
-    vertical-align: top;
-  }
-
-
-  /* ── Compact card variant ──────────────────────────── */
-  .ref-clipping-card {
-    font-size: 0.82em;
-    margin: 0.5em 0;
-  }
-  .ref-clipping-card .ref-clipping-name {
-    font-size: 1.1em;
-  }
-  .ref-clipping-card .ref-clipping-body {
-    padding: 0.6em 0.9em 0.35em;
-  }
-
-  /* ── Stat block (unchanged) ────────────────────────── */
-  .ref-stat { margin: 1.5em 0; }
-  .ref-stat-name {
-    font-size: 2.2em;
-    margin-bottom: 0.35em;
-  }
-  .ref-stat-tags {
-    display: flex; gap: 0.4em; flex-wrap: wrap;
-    margin: 0 0 0.65em;
-    text-indent: 0;
-  }
-  .ref-stat-table {
-    width: 100%; border-collapse: collapse;
-    font-family: 'Literata Variable', serif; font-size: 0.9em;
-  }
-  .sb-label {
-    font-variant-caps: small-caps; font-weight: 700; font-size: 1em;
-    color: var(--text-soft); white-space: nowrap;
-    padding: 0.4em 0.75em 0.4em 0;
-    vertical-align: top; width: 6.5em; text-align: right;
-  }
-  .sb-data {
-    border-left: 1px solid var(--table-rule);
-    padding: 0.4em 0 0.4em 0.85em;
-    color: var(--text); vertical-align: top;
-  }
-  .sb-stat {
-    display: inline-block;
-    margin-right: 0.65em;
-    white-space: nowrap;
-  }
-  .ref-stat-abilities {
-    margin-top: 0.85em; padding-top: 0.65em;
-    border-top: 1px solid var(--border);
-  }
-  .ability-list { list-style: none; padding: 0; margin: 0; }
-  .ability-list > li {
-    font-family: 'Literata Variable', serif; font-size: 0.9em;
-    line-height: 1.6;
-  }
-  .ability-sub-list {
-    list-style: none;
-    padding: 0;
-    margin: 0.35em 0 0 1em;
-  }
-  .ref-stat-lore {
-    margin-top: 1em; padding-top: 0.75em;
-    border-top: 1px solid var(--border);
-    font-size: 0.9em;
-    color: var(--text);
-  }
-  .ref-stat-lore p { margin: 0.5em 0; }
-  .ref-stat-treasure {
-    font-family: 'Literata Variable', serif;
-    font-size: 0.9em;
-    color: var(--text);
-    margin: 0.85em 0 0 0;
-  }
-  .ref-when-eaten {
-    margin-top: 0.85em; padding: 0.7em 1em;
-    background: var(--callout-rule-bg);
-    border: 2px solid var(--callout-rule-bdr);
-    border-radius: 0 0.25em 0.25em 0;
-    font-family: 'Literata Variable', serif;
-    font-size: 0.9em;
-  }
-  .ref-when-eaten-head {
-    font-family: 'Literata Variable', serif;
-    font-variant-caps: small-caps; font-weight: 700;
-    font-size: 1.25em;
-    letter-spacing: 0.04em;
-    color: var(--callout-rule-head); margin-bottom: 0.35em;
-  }
-  .ref-when-eaten-flavor {
-    font-style: italic; color: var(--flavor-col);
-    margin: 0 0 0.3em;
-  }
-  .ref-when-eaten-notes { margin: 0; color: var(--text); }
 </style>

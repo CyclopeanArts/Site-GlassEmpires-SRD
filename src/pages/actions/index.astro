@@ -15,7 +15,7 @@ const actions = (await getCollection('actions'))
 
   <div class="index-grid">
     {actions.map(a => (
-      <Ref collection="actions" slug={a.id} variant="card" />
+      <Ref slug={a.id} />
     ))}
     {actions.length === 0 && (
       <p class="empty-note">No actions written yet.</p>

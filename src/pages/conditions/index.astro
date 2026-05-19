@@ -15,7 +15,7 @@ const conditions = (await getCollection('conditions'))
 
   <div class="index-grid">
     {conditions.map(c => (
-      <Ref collection="conditions" slug={c.id} variant="card" />
+      <Ref slug={c.id} />
     ))}
     {conditions.length === 0 && (
       <p class="empty-note">No conditions have been written yet.</p>

@@ -410,7 +410,7 @@ tables:
         result: "Strangers are lurking and asking odd pointed questions. We're being cased!"
       - roll: 63
         max: 64
-        result: "Two villages in a feud over a shared resource (ford, mill, grazing land). This commoner is trying to broker peace before it turns bloody."
+        result: "Two villages in a feud over a shared resource (ford, mill, grazing land). I'm trying to broker peace before it turns bloody."
       - roll: 65
         max: 66
         result: "Something in the forest ate our horses. The tracks are strange."

@@ -33,6 +33,12 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
     // on page load AND after every ClientRouter navigation, so interactive
     // elements work without per-component astro:page-load listeners.
     window.__astroInit = [];
+    // Save nav scroll before ClientRouter swaps the DOM
+    document.addEventListener('astro:before-swap', () => {
+      const ns = document.querySelector('.nav-scroll');
+      if (ns) sessionStorage.setItem('ge-nav-scroll', ns.scrollTop);
+    });
+
     document.addEventListener('astro:page-load', () => {
       window.__astroInit.forEach(fn => fn());
     });
@@ -42,22 +48,23 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
     if (t) document.documentElement.dataset.theme = t;
   </script>
   <script is:inline>
+    // Save nav scroll before ClientRouter swaps the DOM
+    document.addEventListener('astro:before-swap', () => {
+      const ns = document.querySelector('.nav-scroll');
+      if (ns) sessionStorage.setItem('ge-nav-scroll', ns.scrollTop);
+    });
+
     document.addEventListener('astro:page-load', () => {
       const path = location.pathname;
       document.querySelectorAll('.nav-child-link, .nav-section-label').forEach(el => {
         const href = el.getAttribute('href');
         el.classList.toggle('is-active', href === path);
       });
-      // Scroll nav to reveal active page, or restore saved position
-      const active = document.querySelector('.nav-scroll .is-active');
-      if (active) {
-        active.scrollIntoView({ block: 'center', behavior: 'smooth' });
-      } else {
-        const ns = document.querySelector('.nav-scroll');
-        if (ns) {
-          const s = sessionStorage.getItem('ge-nav-scroll');
-          if (s) ns.scrollTop = parseInt(s, 10);
-        }
+      // Restore nav scroll position — set before paint, no bounce
+      const ns = document.querySelector('.nav-scroll');
+      if (ns) {
+        const s = sessionStorage.getItem('ge-nav-scroll');
+        if (s) ns.scrollTop = parseInt(s, 10);
       }
       // Re-apply theme from localStorage (ClientRouter may reset <html> attrs)
       const theme = localStorage.getItem('ge-theme');
@@ -168,11 +175,7 @@ const pageTitle = title === 'Glass Empires SRD' ? title : `${title} — Glass Em
         }
       }
 
-      // Save nav scroll before navigating
-      if (target.closest('.nav-list a')) {
-        const ns = document.querySelector('.nav-scroll');
-        if (ns) sessionStorage.setItem('ge-nav-scroll', ns.scrollTop);
-      }
+
     });
 
     // Escape key for modals

@@ -3,65 +3,264 @@ import BookLayout from '../../layouts/BookLayout.astro';
 
 const title = 'Campaign Timeline Generator';
 
-const TIMELINE = {
-  millennia: {
-    label: 'Millennia ago…',
-    rows: [
-      ['The apocalypse cut the Prior Age short & filled the world with ruin. The Sleepers hid us, their servants & themselves in great underground vaults ... along with many lost secrets.', 'The Singing Throne ruled through resonance, their palatial amplifiers transmitting commands as music across the continent. Your blood will still obey their hymns.'],
-      ['Magicians operated on Time itself, removing infected decades & transplanting better years from elsewhere. When they exhausted their fortune, an age of fire & insanity ensued.', 'The stars were known with perfect precision, recorded in humming runes throughout the mountain-peak observatories. Their secrets were copied, their treasures drawn out, & stored far underground where they\'d never return to the skies.'],
-      ['The Lawgivers inscribed commands into the world. They thought their law would support their empire forever. Now, those laws are eternal chains that bind us in acts, promises, & patterns even today.', 'The Sleepers learned to pull mana from dreams, & never awoke again. Ruling from the dream-world, their slaves built lavish self-ruling palaces that still loom over the landscape.'],
-      ['A god spoke the first language, and it became law. Those words are carved deep in their temples, & can still make stone & fire obey.', 'Dragon teeth, soldier-seeds, & chimeric beasts let the Garden Kings take the world. Their dryad servants still rule the ruins in the wilderness.'],
-      ['The sky-miners hollowed out the firmament of Heaven & processed clouds like ore. Their crumbling islands & spindly towers still loom over the world.', 'We inherited a grand civilization from our departing forefathers. We maintained but never understood it, & gradually forgot how to maintain it. The automatic castles no longer know us, & their golems think us beasts.'],
-      ['The First Kingdom bound servitor-spirits into every tool, building, and weapon. When it fell, the spirits remained, still following their last orders in empty halls.', 'Great leylines were warped to build a nexus of power & an eternal kingdom. Darkness swept the hearts of the rulers, & plunged the eternal dungeon into the underworld.'],
-    ]
-  },
-  centuries: {
-    label: 'Centuries ago…',
-    rows: [
-      ['The God-Emperor massacred the imperial court & left, leaving his children behind to clean up the mess & reconquer the Empire. The sole saint survivor founded our Heavenly Dynasty.', 'The Seven Generals divided the continent by walking until they could no longer see each other\'s banners, then planted them. Our descendants still rule where those standards fell.'],
-      ['The slave revolts succeeded, & the collapsing aristocracy adopted our gods in desperation. A new King was chosen, & the People became the Parliament.', 'The Prophet-King emerged from the ruins with the blessings of the gods, & took control of the Holy Rivers of the kingdom. Now, the Hydraulic Priests kept us safe & free from drought.'],
-      ['The Reconstruction Army never disbanded, turning from heroism into government. Ranks became civil titles; supply lines became our tax districts.', 'Dueling conspiracies came to war. Backed by the masses, the Moon King was overthrown & our Sun King inherited the Garden-Cities.'],
-      ['Bloody battle between the twins saw one finally kill the other; Victor gave meaning to the word, claimed the world, & built our Senate on his Brother\'s Grave.', 'We settled on this land with blessings of the King Back Home. The King moved to levy taxes until we\'d break. We chose Glorious Revolution.'],
-      ['Our Father\'s Tribes were led to this land, & built upon it The Temple. We knew we\'d never cede it; we built Grand Walls to ensure we wouldn\'t.', 'The Admiralty built the Airships & declared all land "navigable waters" under Maritime Law. Captains became Captain-Governors; travel became trivial.'],
-      ['Precursor\'s remains let the Academy annihilate our Rival Neighbors. With the Old King dead & the magicians the survivors, our Scholar Patriarch took to rule.', 'Our Sea-Capital was founded on the coast, & all the waters were claimed by Merchant Fleets. Guilds became our houses, & their branches the Cadets that rule our cities to this day.'],
-    ]
-  },
-  hundred: {
-    label: 'A hundred years ago…',
-    rows: [
-      ['Our Tributary States sent wealth beyond counting — we had warehouses for our warehouses. Domestic production withered; entire industries became ceremonial.', 'The Imperial University taught every promising youth. Provincial talent drained to the capital; the periphery grew barren, then empty.'],
-      ['Our Professional Legions hadn\'t lost a war in ninety years. We froze the world in peace; our Generals became famous, bloated figureheads.', 'When the Dictator came to power, our old enemies melted before us. Conquering the Far Reaches brought us their Perpetual Harvest.'],
-      ['The Guilds cemented their ascendancy & built the Grand Alliance. The Silken Road grew to pass through our ports & cities, shattering our unity with a kaleidoscope of foreign wealth & belief.', 'Our Neighboring Rival was finally defeated, & we were free to conquer the world by ship & by horse. Colonial Settlers conquered distant lands & brought their riches & lethal dangers from every corner of the world.'],
-      ['The Astronomical Clockwork predicted weather, harvests, & wars perfectly. Our Priests replaced old wisdom with the Calendar Codex. The government grew rigid & inhuman.', 'Our Banks created wealth from promises of future wealth, and Guilded Lords from the mercenary-men of the past age. The Debt-Fortune funded miracles ... until miracles became necessities.'],
-      ['Industrial fervor had turned us from a backwater into a Gilded Power. To fuel our hunger, our Alchemists drank the sea, then the skies & the earth.', 'Subterranean surveying built the Depthmines. We breached the Veins of the Earth & found vast riches ... and deep terrors.'],
-      ['The Printing Press grew ubiquitous, and the Magicians adored it most of all. Knowledge became common. Without scribal controls, so did heresy.', 'The Medicine Colleges ended childhood death and plague. Our population doubled; the aging Infrastructure strained under the load.'],
-    ]
-  },
-  decades: {
-    label: 'Decades ago…',
-    rows: [
-      ['Barbarian Hordes suddenly spilled from the lands & seas, pillaging our trade & slaughtering our soldiers. Our coasts fell in days to Blood Machines we\'d never imagined.', 'The Great Earthquake shattered the capital & severed the roads. For six months, provinces governed themselves; while repairs rolled on, they acquired the taste.'],
-      ['The Colonial Provinces stopped sending tribute shortly after our Grand Fleet burned in a single night — sabotage said some, divine judgement said others.', 'The Long Winter came — our winters came early, summers brief & tepid. The calendar that had worked for centuries now choked our crops, & The Great Famine followed shortly.'],
-      ['Our Rival Empire offered riches to any master craftsman who relocated. Within ten years, entire guild quarters stood empty, & would-be apprentices formed Thug Bands — then Warbands.', 'The War of Five Fronts began when our uncountable enemies realized we couldn\'t be everywhere at once. The Legions won every battle while losing the war.'],
-      ['The Grain Blight spread through the monoculture the Ministry had mandated. 60% of harvests failed; we\'d already sold the Reserve Granaries to fund monuments.', 'The Succession Crisis erupted with seventeen heirs. Parliament chose one, the Army another, the Priests a third. All had legitimate claims, and the weapons to back them.'],
-      ['Merchants discovered the Imperial Mint had replaced gold with lead for decades ... and even the lead was borrowed. The Currency Collapse followed.', 'The Depthmines ran dry simultaneously, as if something drank the ore-veins. The currency backed by future extraction became pretty paper. The military grew desperate. Rivals soon invaded.'],
-      ['The Schism split when the Hierophant declared the empire\'s wealth blasphemous. They burned libraries & trade centers; converts included half our generals.', 'The Plague proved just as lethal to our golems as to us — water-mills ground backward, clocks ran sideways, the Astronomical Clockwork started lying.'],
-    ]
-  },
-  now: {
-    label: 'And now, just recently…',
-    rows: [
-      ['Just when we had the last crisis resolved, the Mother-Empress was declared possessed, & the Heir Son was imprisoned in the palace. Now the Four Houses & the Populist Uprising kill each other over inheritance while enemies loot the realm.', 'The Succession War ended when all heirs were assassinated simultaneously at the peace conference. Every major faction immediately crowned their own Emperor & set themselves to war.'],
-      ['The chaos was brought to a head when the army split in two. The East Legions seized the ports; the West Legions the fortresses. The Palace Guards auction their loyalty to the highest bidder.', 'A Barbarian Conquest half-succeeded, then suddenly fractured. Three Warlord-Kings claim the territory while Straggler Lords and Imperial Remnants fight both.'],
-      ['The Revolution slaughtered the failing government, but can\'t agree on what comes next. Radical Tribunals, Foreign Intruders, & Counter Revolutionaries control fractal warzones across the land.', 'The Provincial Governors declared independence to "restore order." A half-dozen Petty Kings claim to be the true empire. The Free Cities recognize none of them.'],
-      ['The Divine Plagues killed only those of noble blood. Merchant Princes claimed abandoned titles, Slave Armies claimed their freedom, and Plague Cults claim divine mandate.', 'The Bank Collapse brought down the realm & left 3 factions: the Merchant-Mercenaries who demand payment in land, the Debtors who refuse, and Foreign Kings financing both sides.'],
-      ['After decades of suffering, the Fleet mutinied and declared itself the Maritime Republic. They blockade all ports while the Land Armies starve. Smuggler Guilds grow rich between them.', 'Raging crises finally came to a head when every god finally took sides at once. Now 4 Heavenly Temples & the Heretical Schism fight for land, cult followers, & sacrifices.'],
-      ['The Star-Metal fell, bringing an alien rot into the midst of our wars. Today, Crater Lords defend the sources of the infection; Prospector Crews harvest the mineral-rich toxic creep, & Star-Touched Prophets promise divinity while fighting our Capital Remnants.', 'Driven by the madness, the Black Portal opened in the capital, disgorging eldritch Ancestral Beasts, here to take the world back. Now bloodshed rages between Loyalists & the Blackguards who betray us for promised glory.'],
-    ]
-  }
-};
+const TIMELINE = {};
 
 const ERAS = Object.entries(TIMELINE);
 ---
 
 <BookLayout title={title}>
+  <p class="gen-intro">
+    Roll through each era to build a campaign setting history. Each roll picks
+    one of six possible events per era. Mix and match, or roll all at once for
+    a complete timeline.
+  </p>
+
+  <div class="gen-all-bar" id="roll-all" role="button" tabindex="0" aria-label="Generate all eras">
+    <div class="gen-all-icon" data-all-icon></div>
+    <div class="gen-all-label">Generate Full Timeline</div>
+  </div>
+
+  <div class="gen-sections" id="gen-sections">
+    {ERAS.map(([key, era]) => (
+      <div class="gs-wrap" id={"gs-" + key} data-skey={key} data-entries={JSON.stringify(era.rows)}>
+        <hr class="gs-rule" aria-hidden="true" />
+        <div class="gs-bar" data-gs-bar role="button" tabindex="0" aria-label={'Roll ' + era.label}>
+          <div class="gs-controls">
+            <div class="gs-bar-icon" data-gs-icon role="button" tabindex="0" aria-label={'Roll ' + era.label}></div>
+            <button class="gs-toggle" type="button" data-gs-toggle aria-label="Show options" aria-expanded="false">
+              <svg class="gs-toggle-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="8" y1="3" x2="8" y2="13" />
+                <line x1="3" y1="8" x2="13" y2="8" />
+              </svg>
+            </button>
+          </div>
+          <div class="gs-result-area">
+            <div class="gs-result-label" data-gs-label>{era.label}</div>
+            <div class="gs-result-text" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="gs-table-wrap" data-gs-body hidden>
+          <table class="gs-table">
+            <thead>
+              <tr>
+                <th class="gs-roll-head">#</th>
+                <th class="gs-result-head">Event</th>
+              </tr>
+            </thead>
+            <tbody>
+              {era.rows.map((row, i) => (
+                <tr data-idx={i}>
+                  <td class="gs-roll-cell">{i + 1}</td>
+                  <td class="gs-result-cell">{row[0]}<br />{row[1]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ))}
+  </div>
+</BookLayout>
+
+<script is:inline>
+(function() {
+  const faceFiles = ['one', 'two', 'three', 'four', 'five', 'six'];
+
+  function randomFaceIcon(el) {
+    if (!el) return;
+    const i = Math.floor(Math.random() * 6);
+    const url = '/icons/dice-six-faces-' + faceFiles[i] + '.svg';
+    el.style.mask = 'url(' + url + ') center / contain no-repeat';
+    el.style.webkitMask = 'url(' + url + ') center / contain no-repeat';
+  }
+
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function rollEra(key) {
+    const wrap = document.getElementById('gs-' + key);
+    if (!wrap) return;
+    const entries = JSON.parse(wrap.dataset.entries || '[]');
+    const row = pick(entries);
+    const icon = wrap.querySelector('[data-gs-icon]');
+    const text = wrap.querySelector('.gs-result-text');
+    const table = wrap.querySelector('.gs-table');
+
+    if (icon) {
+      randomFaceIcon(icon);
+      icon.classList.add('gs-spin');
+      setTimeout(function() { icon.classList.remove('gs-spin'); }, 400);
+    }
+
+    table?.querySelectorAll('[data-idx]').forEach(function(r) {
+      r.classList.toggle('gs-hit', parseInt(r.dataset.idx, 10) === entries.indexOf(row));
+    });
+
+    if (text) {
+      text.innerHTML = '<div class="gs-tl-row"><div class="gs-opt">' + row[0] + '</div><div style="padding:0.25em 0;color:var(--gold-400);text-align:center;font-size:0.8em;">&#9670;</div><div class="gs-opt">' + row[1] + '</div></div>';
+    }
+  }
+
+  function rollAll() {
+    document.querySelectorAll('[data-gs-bar]').forEach(function(bar) {
+      const key = bar.closest('[data-skey]')?.dataset.skey;
+      if (key) rollEra(key);
+    });
+    const icon = document.querySelector('[data-all-icon]');
+    if (icon) {
+      randomFaceIcon(icon);
+      icon.classList.add('gs-spin');
+      setTimeout(function() { icon.classList.remove('gs-spin'); }, 400);
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    const toggle = e.target.closest('[data-gs-toggle]');
+    const icon = e.target.closest('[data-gs-icon]');
+    const bar = e.target.closest('[data-gs-bar]');
+    const bodyWrap = e.target.closest('[data-gs-body]');
+    const allBar = e.target.closest('#roll-all');
+
+    if (allBar) { rollAll(); return; }
+
+    if (toggle) {
+      const wrap = toggle.closest('[data-skey]');
+      const body = wrap?.querySelector('[data-gs-body]');
+      if (!body) return;
+      const expanded = !body.hidden;
+      body.hidden = expanded;
+      const iconEl = toggle.querySelector('.gs-toggle-icon');
+      if (iconEl) {
+        iconEl.innerHTML = expanded
+          ? '<line x1="8" y1="3" x2="8" y2="13" /><line x1="3" y1="8" x2="13" y2="8" />'
+          : '<line x1="3" y1="8" x2="13" y2="8" />';
+      }
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      toggle.setAttribute('aria-label', expanded ? 'Show options' : 'Hide options');
+      return;
+    }
+
+    if (bar || icon || bodyWrap) {
+      const wrap = (bar || icon || bodyWrap).closest('[data-skey]');
+      if (wrap) rollEra(wrap.dataset.skey);
+      return;
+    }
+  });
+})();
+</script>
+
+<style>
+  .gen-intro { font-style: italic; color: var(--text-muted); margin-bottom: 2em; max-width: 36em; }
+
+  .gen-all-bar {
+    display: inline-flex; align-items: center; gap: 0.75em;
+    padding: 0.5em 0.75em; cursor: pointer;
+    border: 1px solid var(--gold-ui); border-radius: 0.25em;
+    margin-bottom: 1.2em; transition: background 0.15s;
+  }
+  .gen-all-bar:hover { background: rgba(196,146,52,0.1); }
+  .gen-all-icon {
+    width: 1.8em; height: 1.8em;
+    background: var(--gold-400);
+    mask: url(/icons/dice-six-faces-one.svg) center / contain no-repeat;
+    -webkit-mask: url(/icons/dice-six-faces-one.svg) center / contain no-repeat;
+    flex-shrink: 0;
+  }
+  .gen-all-label {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-variant-caps: small-caps; font-weight: 700;
+    font-size: 0.85em; letter-spacing: 0.12em;
+    color: var(--gold-300);
+  }
+
+  .gs-rule {
+    border: none; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-400), transparent);
+    margin: 1.2em 0;
+  }
+  .gs-bar {
+    display: flex; align-items: flex-start; gap: 0.75em;
+    padding: 0.5em 0.5em; cursor: pointer;
+    border-radius: 0.25em; transition: background 0.2s;
+  }
+  .gs-bar:hover { background: color-mix(in srgb, var(--callout-ex-bg) 50%, transparent); }
+  .gs-controls {
+    flex-shrink: 0; display: flex; flex-direction: column;
+    align-items: center; gap: 0.35em;
+  }
+  .gs-bar-icon {
+    width: 1.8em; height: 1.8em;
+    background: var(--link-col);
+    mask: url(/icons/dice-six-faces-one.svg) center / contain no-repeat;
+    -webkit-mask: url(/icons/dice-six-faces-one.svg) center / contain no-repeat;
+    cursor: pointer; transition: background 0.15s; flex-shrink: 0;
+  }
+  .gs-bar-icon:hover { background: var(--accent); }
+  @keyframes gs-spin {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(0.85); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+  .gs-spin { animation: gs-spin 0.4s ease-in-out; }
+
+  .gs-toggle {
+    display: flex; align-items: center; justify-content: center;
+    width: 2em; height: 2em; padding: 0;
+    color: var(--link-col); background: none; border: none;
+    border-top: 1.5px solid var(--gold-400);
+    border-bottom: 1.5px solid var(--gold-400);
+    border-radius: 0.4em; cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .gs-toggle:hover { color: var(--accent); border-color: var(--accent); }
+  .gs-toggle-icon { width: 0.85em; height: 0.85em; }
+
+  .gs-result-area {
+    flex: 1; min-width: 0;
+    display: flex; flex-direction: column; gap: 0.15em;
+  }
+  .gs-result-label {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-variant-caps: small-caps; font-weight: 700;
+    font-size: 1em; letter-spacing: 0.06em;
+    color: var(--text-soft); line-height: 1.2;
+  }
+  .gs-result-text {
+    font-family: 'Literata Variable', Georgia, serif;
+    font-size: 0.92em; color: var(--text);
+    line-height: 1.5; min-height: 1.5em;
+  }
+  .gs-tl-row { display: flex; flex-direction: column; gap: 0; }
+  .gs-opt {
+    padding: 0.5em 0.6em;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 0.2em;
+    line-height: 1.55;
+  }
+
+  .gs-table-wrap { padding-top: 0.65em; cursor: pointer; }
+  .gs-table-wrap:hover { background: color-mix(in srgb, var(--callout-ex-bg) 30%, transparent); border-radius: 0.25em; }
+  .gs-table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+  .gs-table thead tr { border-bottom: 1px solid var(--table-rule); }
+  .gs-table th {
+    font-variant-caps: small-caps; font-weight: 700;
+    padding: 0.45em 0.75em; color: var(--text-soft); text-align: left;
+  }
+  .gs-table td { padding: 0.35em 0.75em; color: var(--text); vertical-align: top; }
+  .gs-table tbody tr:not(:last-child) { border-bottom: 1px solid var(--border); }
+  .gs-roll-head { width: 3em; text-align: center; }
+  .gs-roll-cell { text-align: center; white-space: nowrap; }
+
+  @keyframes gs-fadein {
+    from { background: transparent; border-left-color: transparent; text-shadow: none; }
+    to { background: color-mix(in srgb, var(--callout-ex-bg) 60%, transparent); border-left-color: var(--callout-ex-bdr); text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 40%, transparent); }
+  }
+  .gs-table tr.gs-hit {
+    background: color-mix(in srgb, var(--callout-ex-bg) 60%, transparent);
+    border-left: 3px solid var(--callout-ex-bdr);
+    animation: gs-fadein 0.3s ease-out;
+  }
+  .gs-table tr.gs-hit td:first-child { font-weight: 700; color: var(--callout-ex-head); }
+  .gs-table tr.gs-hit td:last-child { color: var(--accent); }
+  .gs-table tr.gs-hit td { text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 40%, transparent); }
+</style>

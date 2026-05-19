@@ -1,71 +1,66 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
-import { getSlugMap } from '../../config/slug-resolver.js';
-import BookLayout from '../../layouts/BookLayout.astro';
-import Callout from '../../components/Callout.astro';
-import Ref from '../../components/Ref.astro';
-import RollableTable from '../../components/RollableTable.astro';
-import CollectionNav from '../../components/CollectionNav.astro';
+import { getCollection, getEntry } from "astro:content";
+import { getSlugMap } from "../../config/slug-resolver.js";
+import BookLayout from "../../layouts/BookLayout.astro";
+import Callout from "../../components/Callout.astro";
+import StatBlock from "../../components/StatBlock.astro";
+import RollableTable from "../../components/RollableTable.astro";
+import CollectionNav from "../../components/CollectionNav.astro";
 
 export async function getStaticPaths() {
-  const allEntries = await getCollection('bestiary');
-  const slugToId: Record<string, string> = {};
+  const allEntries = await getCollection("bestiary");
+  const slugToId = {};
   for (const e of allEntries) {
-    const flat = e.id.split('/').pop()!.replace(/\.(yaml|mdx)$/, '');
+    const flat = e.id.split("/").pop().replace(/\.(yaml|mdx)$/, "");
     slugToId[flat] = e.id;
   }
   return Object.keys(slugToId).map(slug => ({ params: { slug } }));
 }
 
-const allEntries = await getCollection('bestiary');
-const slugToId: Record<string, string> = {};
+const allEntries = await getCollection("bestiary");
+const slugToId = {};
 for (const e of allEntries) {
-  const flat = e.id.split('/').pop()!.replace(/\.(yaml|mdx)$/, '');
+  const flat = e.id.split("/").pop().replace(/\.(yaml|mdx)$/, "");
   slugToId[flat] = e.id;
 }
 
 const { slug } = Astro.params;
-const fullId = slugToId[slug!];
-const entry = fullId ? await getEntry('bestiary', fullId) : null;
-if (!entry) return Astro.redirect('/bestiary');
+const fullId = slugToId[slug];
+const entry = fullId ? await getEntry("bestiary", fullId) : null;
+if (!entry) return Astro.redirect("/bestiary");
 const d = entry.data;
 
 const _slugMap = getSlugMap();
 
-function renderBestiaryBody(text: string): string {
-  // Convert [[wikilink|label]] and [[wikilink]] via slug resolver
+function renderBestiaryBody(text) {
   const withLinks = text
     .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, s, lbl) => {
       const found = _slugMap[s];
-      return `<a href="${found ? found.path : '/rules/' + s}">${lbl}</a>`;
+      return '<a href="' + (found ? found.path : "/rules/" + s) + '">' + lbl + "</a>";
     })
     .replace(/\[\[([^\]]+)\]\]/g, (_, s) => {
       const found = _slugMap[s];
-      return `<a href="${found ? found.path : '/rules/' + s}">${found ? found.title : s}</a>`;
+      return '<a href="' + (found ? found.path : "/rules/" + s) + '">' + (found ? found.title : s) + "</a>";
     });
-
   const blocks = withLinks.split(/\n\n+/);
-  const parts: string[] = [];
+  const parts = [];
   for (const block of blocks) {
-    const lines = block.split('\n');
-    const hasBullets = lines.some(l => l.trimStart().startsWith('- '));
+    const lines = block.split("\n");
+    const hasBullets = lines.some(l => l.trimStart().startsWith("- "));
     if (hasBullets) {
-      const items = lines
-        .filter(l => l.trimStart().startsWith('- '))
-        .map(l => `<li>${l.trimStart().slice(2).trim().replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>')}</li>`);
-      parts.push(`<ul>${items.join('\n')}</ul>`);
+      const items = lines.filter(l => l.trimStart().startsWith("- ")).map(l =>
+        "<li>" + l.trimStart().slice(2).trim().replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>") + "</li>"
+      );
+      parts.push("<ul>" + items.join("\n") + "</ul>");
     } else {
-      parts.push(`<p>${block.replace(/\n/g, '<br>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>')}</p>`);
+      parts.push("<p>" + block.replace(/\n/g, "<br>").replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>") + "</p>");
     }
   }
-  return parts.join('\n');
+  return parts.join("\n");
 }
 
 const all = allEntries
-  .map(e => ({
-    slug: e.id.split('/').pop()!.replace(/\.(yaml|mdx)$/, ''),
-    name: e.data.name
-  }))
+  .map(e => ({ slug: e.id.split("/").pop().replace(/\.(yaml|mdx)$/, ""), name: e.data.name }))
   .sort((a, b) => a.name.localeCompare(b.name));
 const idx = all.findIndex(e => e.slug === slug);
 const prev = idx > 0 ? all[idx - 1] : null;
@@ -74,22 +69,14 @@ const next = idx < all.length - 1 ? all[idx + 1] : null;
 
 <BookLayout title={d.name} tags={d.tags}>
   <CollectionNav indexPath="/bestiary" {prev} {next} indexLabel="Bestiary Index" slot="top" border="bottom" />
-
-  <Ref collection="bestiary" slug={fullId!} variant="stat" />
-
+  <StatBlock entry={entry} slugMap={_slugMap} />
   {d.gm_note && (
     <Callout type="gm" heading={d.gm_note.heading}>
       <div class="callout-body-content" set:html={renderBestiaryBody(d.gm_note.body)} />
     </Callout>
   )}
-
-  {d.tables?.length > 0 && d.tables.map((t: any) => (
+  {d.tables?.length > 0 && d.tables.map((t) => (
     <RollableTable label={t.label} die={t.die} entries={t.entries} />
   ))}
-
   <CollectionNav indexPath="/bestiary" {prev} {next} indexLabel="Bestiary Index" />
 </BookLayout>
-
-<style>
-
-</style>

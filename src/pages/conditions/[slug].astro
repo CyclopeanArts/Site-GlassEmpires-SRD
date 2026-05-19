@@ -40,7 +40,7 @@ const next = idx < allConditions.length - 1 ? allConditions[idx + 1] : null;
       <h3>See Also</h3>
       <div class="see-also-grid">
         {d.see_also.map((s: string) => (
-          <Ref collection="conditions" slug={s} variant="card" />
+          <Ref slug={s} />
         ))}
       </div>
     </section>
